@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Exxeguttor — Boceto: Pantalla 4, Modal "Elegir Pokémon" (cover flow)</title>
+<style>
+  :root {
+    --bg-window: #ffffff;
+    --bg-surface: #f4f4f5;
+    --border: #dcdce0;
+    --border-accent: #3b82f6;
+    --text-primary: #1c1c1f;
+    --text-secondary: #6b6b70;
+    --text-muted: #9a9aa0;
+    --accent: #3b82f6;
+    --accent-bg: #eaf1fe;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, "Segoe UI", "Cantarell", "Ubuntu", sans-serif;
+    background: rgba(20,20,24,0.55);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 24px;
+  }
+  .note {
+    position: fixed;
+    top: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 12px;
+    color: #eee;
+    background: #1c1c1f;
+    border-radius: 6px;
+    padding: 4px 12px;
+    text-align: center;
+    max-width: 90%;
+  }
+  .modal {
+    width: 700px;
+    max-width: 100%;
+    background: var(--bg-window);
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    box-shadow: 0 16px 40px rgba(0,0,0,0.35);
+    overflow: hidden;
+  }
+
+  .header { padding: 14px 20px; border-bottom: 1px solid var(--border); }
+  .header-row { display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; }
+  .header-title { font-size: 15px; font-weight: 600; margin: 0; color: var(--text-primary); }
+  .result-count { font-size: 11px; color: var(--text-muted); }
+  .search-input {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .type-row { display: flex; gap: 6px; overflow-x: auto; padding-bottom: 2px; }
+  .type-chip {
+    font-size: 11px;
+    border-radius: 14px;
+    padding: 4px 12px;
+    white-space: nowrap;
+    flex-shrink: 0;
+    border: 1px solid var(--border);
+    background: #fff;
+    color: var(--text-secondary);
+    cursor: pointer;
+  }
+  .type-chip.active { background: var(--accent); border-color: var(--accent); color: #fff; }
+
+  .coverflow-wrap { padding: 22px 0 6px; position: relative; }
+  .nav-btn {
+    position: absolute;
+    top: 40%;
+    transform: translateY(-50%);
+    width: 28px; height: 28px;
+    border-radius: 50%;
+    border: 1px solid var(--border);
+    background: #fff;
+    cursor: pointer;
+    font-size: 15px;
+    display: flex; align-items: center; justify-content: center;
+    z-index: 10;
+  }
+  .nav-btn.prev { left: 8px; }
+  .nav-btn.next { right: 8px; }
+
+  .coverflow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    perspective: 1000px;
+    padding: 0 32px;
+  }
+  .card {
+    flex-shrink: 0;
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    text-align: center;
+  }
+  .card img { display: block; margin: 0 auto 6px; image-rendering: pixelated; }
+  .card .num { font-size: 10px; color: var(--text-muted); margin: 0; }
+  .card .name { font-size: 11px; margin: 1px 0 0; }
+  .card .types { display: flex; gap: 4px; justify-content: center; margin-top: 4px; }
+  .card .type-badge {
+    font-size: 9px; border-radius: 8px; padding: 1px 6px;
+    background: var(--bg-surface); border: 1px solid var(--border); color: var(--text-secondary);
+  }
+
+  .card.far {
+    width: 100px; padding: 10px; opacity: 0.45;
+  }
+  .card.far img { width: 56px; height: 56px; }
+  .card.far.left { transform: rotateY(35deg) scale(0.72); transform-origin: right center; margin-right: -26px; }
+  .card.far.right { transform: rotateY(-35deg) scale(0.72); transform-origin: left center; margin-left: -26px; z-index: 0; }
+
+  .card.near {
+    width: 140px; padding: 12px; opacity: 0.7; z-index: 1;
+  }
+  .card.near img { width: 72px; height: 72px; }
+  .card.near.left { transform: rotateY(24deg) scale(0.86); transform-origin: right center; margin-right: -16px; }
+  .card.near.right { transform: rotateY(-24deg) scale(0.86); transform-origin: left center; margin-left: -16px; }
+
+  .card.focused {
+    width: 180px; padding: 16px; border: 1.5px solid var(--border-accent); z-index: 5; position: relative;
+  }
+  .card.focused img { width: 96px; height: 96px; margin-bottom: 8px; }
+  .card.focused .types { margin-bottom: 8px; }
+  .card.focused .type-badge { font-size: 10px; padding: 2px 8px; border-radius: 8px; }
+  .card.focused .name { font-size: 15px; font-weight: 600; margin: 2px 0; }
+  .type-badge.ground { background: #fdf1e0; color: #b45309; border-color: #fdf1e0; }
+
+  .scrubber-zone { padding: 16px 32px 4px; }
+  .scrubber-input { width: 100%; margin-bottom: 4px; }
+  .scrubber-labels { display: flex; justify-content: space-between; font-size: 10px; color: var(--text-muted); margin-top: 2px; }
+  .scrubber-labels .current { color: var(--text-secondary); }
+
+  .footer {
+    padding: 10px 20px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .shortcuts { font-size: 10px; color: var(--text-muted); }
+  .btn {
+    font-size: 13px;
+    padding: 6px 16px;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+    background: #fafafa;
+    cursor: pointer;
+  }
+</style>
+</head>
+<body>
+
+<div class="note">Boceto estático — Pantalla 4: Modal "Elegir Pokémon" con cover flow (ver screen-04-pokemon-picker.md para el spec completo). Sprites de referencia servidos desde jsdelivr/PokeAPI.</div>
+
+<div class="modal">
+
+  <div class="header">
+    <div class="header-row">
+      <p class="header-title">Elegir Pokémon</p>
+      <span class="result-count">386 resultados</span>
+    </div>
+    <input class="search-input" type="text" placeholder="Buscar por nombre o N.°..." />
+    <div class="type-row">
+      <span class="type-chip active">Todos</span>
+      <span class="type-chip">Fire</span>
+      <span class="type-chip">Water</span>
+      <span class="type-chip">Grass</span>
+      <span class="type-chip">Electric</span>
+      <span class="type-chip">Psychic ›</span>
+    </div>
+  </div>
+
+  <div class="coverflow-wrap">
+    <button class="nav-btn prev" aria-label="Anterior">‹</button>
+    <button class="nav-btn next" aria-label="Siguiente">›</button>
+
+    <div class="coverflow">
+
+      <div class="card far left">
+        <img src="https://cdn.jsdelivr.net/gh/PokeAPI/sprites/sprites/pokemon/48.png" alt="Venonat" width="56" height="56" />
+        <p class="num">#048</p>
+        <p class="name">Venonat</p>
+      </div>
+
+      <div class="card near left">
+        <img src="https://cdn.jsdelivr.net/gh/PokeAPI/sprites/sprites/pokemon/49.png" alt="Venomoth" width="72" height="72" />
+        <p class="num">#049</p>
+        <p class="name">Venomoth</p>
+        <div class="types"><span class="type-badge">Bug</span></div>
+      </div>
+
+      <div class="card focused">
+        <div class="types"><span class="type-badge ground">Ground</span></div>
+        <img src="https://cdn.jsdelivr.net/gh/PokeAPI/sprites/sprites/pokemon/50.png" alt="Diglett" width="96" height="96" />
+        <p class="num">#050</p>
+        <p class="name">Diglett</p>
+      </div>
+
+      <div class="card near right">
+        <img src="https://cdn.jsdelivr.net/gh/PokeAPI/sprites/sprites/pokemon/51.png" alt="Dugtrio" width="72" height="72" />
+        <p class="num">#051</p>
+        <p class="name">Dugtrio</p>
+        <div class="types"><span class="type-badge">Ground</span></div>
+      </div>
+
+      <div class="card far right">
+        <img src="https://cdn.jsdelivr.net/gh/PokeAPI/sprites/sprites/pokemon/52.png" alt="Meowth" width="56" height="56" />
+        <p class="num">#052</p>
+        <p class="name">Meowth</p>
+      </div>
+
+    </div>
+
+    <div class="scrubber-zone">
+      <input class="scrubber-input" type="range" min="1" max="386" value="50" aria-label="Saltar a un resultado específico" />
+      <div class="scrubber-labels">
+        <span>#001</span>
+        <span class="current">50 / 386 · Diglett</span>
+        <span>#386</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span class="shortcuts">← → mover · Shift+← → saltar de a 10 · Home/End extremos</span>
+    <button class="btn">Cancelar</button>
+  </div>
+
+</div>
+
+</body>
+</html>

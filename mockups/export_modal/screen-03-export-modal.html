@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Exxeguttor — Boceto: Pantalla 3, Modal de exportación</title>
+<style>
+  :root {
+    --bg-window: #ffffff;
+    --bg-surface: #f4f4f5;
+    --border: #dcdce0;
+    --border-accent: #3b82f6;
+    --text-primary: #1c1c1f;
+    --text-secondary: #6b6b70;
+    --text-muted: #9a9aa0;
+    --accent: #3b82f6;
+    --accent-bg: #eaf1fe;
+    --success: #16a34a;
+    --success-bg: #e9f9ef;
+    --warning: #b45309;
+    --warning-bg: #fef3e0;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, "Segoe UI", "Cantarell", "Ubuntu", sans-serif;
+    background: rgba(20,20,24,0.55);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 24px;
+  }
+  .note {
+    position: fixed;
+    top: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 12px;
+    color: #eee;
+    background: #1c1c1f;
+    border-radius: 6px;
+    padding: 4px 12px;
+  }
+  .modal {
+    width: 680px;
+    max-width: 100%;
+    background: var(--bg-window);
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    box-shadow: 0 16px 40px rgba(0,0,0,0.35);
+    overflow: hidden;
+  }
+
+  .header { padding: 14px 20px; border-bottom: 1px solid var(--border); }
+  .header-row { display: flex; align-items: center; justify-content: space-between; }
+  .header-title { font-size: 15px; font-weight: 600; margin: 0; color: var(--text-primary); }
+  .badges { display: flex; gap: 8px; }
+  .badge {
+    font-size: 11px;
+    border-radius: 10px;
+    padding: 2px 9px;
+    white-space: nowrap;
+  }
+  .badge.selected { background: var(--accent-bg); color: var(--accent); }
+  .badge.warning { background: var(--warning-bg); color: var(--warning); }
+  .dest-line {
+    font-size: 11px;
+    color: var(--text-muted);
+    margin: 6px 0 0;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .carousel-wrap { padding: 20px 0 10px; position: relative; }
+  .nav-btn {
+    position: absolute;
+    top: 45%;
+    transform: translateY(-50%);
+    width: 28px; height: 28px;
+    border-radius: 50%;
+    border: 1px solid var(--border);
+    background: #fff;
+    cursor: pointer;
+    font-size: 15px;
+    display: flex; align-items: center; justify-content: center;
+    z-index: 10;
+  }
+  .nav-btn.prev { left: 8px; }
+  .nav-btn.next { right: 8px; }
+
+  .carousel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 0 20px;
+  }
+
+  .card {
+    flex-shrink: 0;
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 9px;
+    padding: 10px;
+    opacity: 0.75;
+    width: 130px;
+  }
+  .card.focused {
+    opacity: 1;
+    width: 190px;
+    padding: 14px;
+    border: 1.5px solid var(--border-accent);
+    border-radius: 11px;
+    position: relative;
+  }
+  .checkbox {
+    position: absolute;
+    top: 9px; left: 9px;
+    width: 17px; height: 17px;
+    border-radius: 4px;
+    background: var(--accent);
+    color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 11px;
+  }
+  .card-head { display: flex; flex-direction: column; align-items: center; gap: 3px; }
+  .card.focused .card-head { gap: 5px; margin-top: 4px; }
+  .sprite {
+    width: 32px; height: 32px;
+    border-radius: 6px;
+    background: var(--accent-bg);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 15px;
+    color: var(--accent);
+  }
+  .card.focused .sprite { width: 46px; height: 46px; font-size: 20px; border-radius: 9px; }
+  .card-name { font-size: 11px; margin: 2px 0 0; color: var(--text-primary); }
+  .card.focused .card-name { font-size: 14px; font-weight: 600; }
+  .card-sub { font-size: 9px; color: var(--text-muted); margin: 0; }
+  .card.focused .card-sub { font-size: 11px; }
+
+  .divider { height: 1px; background: var(--border); margin: 7px 0 5px; }
+  .checklist { display: flex; flex-direction: column; gap: 3px; }
+  .check-row {
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: 9px; color: var(--text-secondary);
+  }
+  .card.focused .check-row { font-size: 11px; }
+  .ok { color: var(--success); font-weight: 700; }
+  .warn { color: var(--warning); font-weight: 700; }
+
+  .card-footer-badge {
+    border-top: 1px solid var(--border);
+    margin-top: 7px; padding-top: 6px;
+    display: flex; justify-content: center;
+  }
+  .card-footer-badge span {
+    font-size: 11px; color: var(--warning); background: var(--warning-bg);
+    border-radius: 10px; padding: 2px 9px;
+  }
+
+  .pagination { display: flex; justify-content: center; gap: 6px; margin-top: 14px; }
+  .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--success); }
+  .dot.warn-dot { background: #d97706; }
+  .dot.active {
+    width: 8px; height: 8px;
+    box-shadow: 0 0 0 3px var(--warning-bg);
+  }
+  .dot.active.ok-active { box-shadow: 0 0 0 3px var(--success-bg); }
+
+  .footer {
+    padding: 12px 20px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+  }
+  .btn {
+    font-size: 13px;
+    padding: 6px 16px;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+    background: #fafafa;
+    cursor: pointer;
+  }
+  .btn.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+</style>
+</head>
+<body>
+
+<div class="note">Boceto estático — Pantalla 3: Modal de exportación (ver screen-03-export-modal.md para el spec completo)</div>
+
+<div class="modal">
+
+  <div class="header">
+    <div class="header-row">
+      <p class="header-title">Revisar antes de exportar</p>
+      <div class="badges">
+        <span class="badge selected">4 de 5 seleccionados</span>
+        <span class="badge warning">1 a revisar</span>
+      </div>
+    </div>
+    <p class="dest-line">⬆ Se exportará a pokemon_yellow.sav</p>
+  </div>
+
+  <div class="carousel-wrap">
+    <button class="nav-btn prev">‹</button>
+    <button class="nav-btn next">›</button>
+
+    <div class="carousel">
+
+      <div class="card">
+        <div class="card-head">
+          <div class="sprite">◐</div>
+          <p class="card-name">Eevee</p>
+          <p class="card-sub">Nv.38</p>
+        </div>
+        <div class="divider"></div>
+        <div class="checklist">
+          <div class="check-row"><span>Moves</span><span class="ok">✓</span></div>
+          <div class="check-row"><span>IVs/EVs</span><span class="ok">✓</span></div>
+          <div class="check-row"><span>Ability</span><span class="ok">✓</span></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="sprite">◑</div>
+          <p class="card-name">Ditto</p>
+          <p class="card-sub">Nv.60</p>
+        </div>
+        <div class="divider"></div>
+        <div class="checklist">
+          <div class="check-row"><span>Moves</span><span class="ok">✓</span></div>
+          <div class="check-row"><span>IVs/EVs</span><span class="ok">✓</span></div>
+          <div class="check-row"><span>Ability</span><span class="ok">✓</span></div>
+        </div>
+      </div>
+
+      <div class="card focused">
+        <div class="checkbox">✓</div>
+        <div class="card-head">
+          <div class="sprite">⚡</div>
+          <p class="card-name">Pikachu</p>
+          <p class="card-sub">Nv.25 · ♂</p>
+        </div>
+        <div class="divider"></div>
+        <div class="checklist">
+          <div class="check-row"><span>Moves</span><span class="ok">✓</span></div>
+          <div class="check-row"><span>IVs / EVs</span><span class="ok">✓</span></div>
+          <div class="check-row"><span>Ability</span><span class="ok">✓</span></div>
+          <div class="check-row"><span>Nature</span><span class="ok">✓</span></div>
+          <div class="check-row"><span>Met Location</span><span class="warn">⚠</span></div>
+        </div>
+        <div class="card-footer-badge"><span>1 a revisar</span></div>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="sprite">◒</div>
+          <p class="card-name">Charmander</p>
+          <p class="card-sub">Nv.5</p>
+        </div>
+        <div class="divider"></div>
+        <div class="checklist">
+          <div class="check-row"><span>Moves</span><span class="ok">✓</span></div>
+          <div class="check-row"><span>IVs/EVs</span><span class="ok">✓</span></div>
+          <div class="check-row"><span>Ability</span><span class="ok">✓</span></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="sprite">◓</div>
+          <p class="card-name">Bulbasaur</p>
+          <p class="card-sub">Nv.20</p>
+        </div>
+        <div class="divider"></div>
+        <div class="checklist">
+          <div class="check-row"><span>Moves</span><span class="ok">✓</span></div>
+          <div class="check-row"><span>IVs/EVs</span><span class="ok">✓</span></div>
+          <div class="check-row"><span>Ability</span><span class="ok">✓</span></div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="pagination">
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot warn-dot active"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+    </div>
+  </div>
+
+  <div class="footer">
+    <button class="btn">Cancelar</button>
+    <button class="btn primary">Exportar</button>
+  </div>
+
+</div>
+
+</body>
+</html>
