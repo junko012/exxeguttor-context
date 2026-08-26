@@ -15,9 +15,9 @@ la reemplaza por dos zonas: **recientes** (izquierda) y **acción principal** (d
 ```
 ┌───────────────────────────────┬──────────────────────────────────────┐
 │  RECIENTES (panel izquierdo)  │   ZONA DE ACCIÓN (drag & drop)        │
-│  ancho = ancho del panel       │   centrada vertical y horizontalmente │
-│  derecho de PokemonEditorView  │                                       │
-│  (ver "Pendiente de confirmar")│                                       │
+│  ancho = 400px                 │   centrada vertical y horizontalmente │
+│  (igual a la columna derecha   │                                       │
+│  de MainWindow.axaml)          │                                       │
 └───────────────────────────────┴──────────────────────────────────────┘
 ```
 
@@ -91,18 +91,25 @@ generación (1–9) o por juego individual, lo que sea más simple de mantener.
 - Cada item necesita poder resolver `ExpandGameName()` y el número de generación
   (ya existe mapeo similar en `MapVersionToGameId()` / `TrainerViewModel`).
 
-## Pendiente de confirmar antes de implementar
+## Decisiones confirmadas (cierran los 3 puntos pendientes del hand-off original)
 
-1. **Ancho del panel de recientes**: debe igualar el ancho del panel derecho
-   (`PokemonEditorView`) del editor cargado, para que la transición entre pantallas se
-   sienta natural. En el mockup se usó 380px como estimación — **confirmar el valor real
-   en el AXAML de `PokemonEditorView`** y ajustar.
-2. **Persistencia de recientes**: ¿se guardan en disco (ej.
-   `~/.config/exxeguttor/recent.json`) para sobrevivir entre sesiones, o viven solo en
-   memoria mientras la app está abierta? — no se definió en la sesión de diseño.
-3. **Sprites de portada por juego**: el mockup usa placeholders con gradiente + ícono.
-   Definir si se usan assets reales embebidos por juego o se mantiene el criterio
-   procedural (color derivado de `GameVersion` + ícono por generación).
+1. **Ancho del panel de recientes: 400px, no 380px.** Confirmado contra el AXAML real
+   de `MainWindow.axaml` — el layout principal usa
+   `<Grid ColumnDefinitions="200,*,400">` (izquierda=Entrenador/Party, centro=Caja/Info,
+   derecha=`PokemonStatsView`). El panel de recientes debe igualar la columna derecha
+   (`400px`), no el valor estimado de 380px del mockup original.
+2. **Persistencia de recientes: en disco.** Se guardan en
+   `~/.config/exxeguttor/recent.json` para sobrevivir entre sesiones (no solo en
+   memoria mientras la app está abierta).
+3. **Sprites de portada por juego: assets reales, carpeta nueva.** Hoy
+   `Assets/sprites/` solo tiene `pokemon/`, `items/` y `types/` (ver
+   `Assets/sprites/README.md` + `index.json`) — no existe ninguna carpeta de portadas
+   por juego todavía. Se agrega **`Assets/sprites/games/`**, mismo patrón que las
+   carpetas existentes: un `.png` por juego + entrada nueva en `index.json` +
+   línea nueva en `README.md`. **Fallback si falta el asset de un juego puntual**: el
+   criterio procedural del mockup (color derivado de `GameVersion` + ícono por
+   generación, ver tabla de paleta arriba) — no bloquear la fila de "recientes" por un
+   sprite faltante.
 
 ## Ver también
 
