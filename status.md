@@ -67,3 +67,165 @@ Sesión larga, de punta a punta:
 - Columna de MT/MO en Learnsets es angosta y trunca el texto — cosmético.
 - Conectar el checkbox `IsIncluded` del modal de revisión a un filtro real (sigue siendo
   decorativo, documentado desde antes de esta sesión).
+
+---
+
+## 2026-08 — Edición de entrenador, generalización del modal de exportación, legalidad y cintas editables
+
+Sesión centrada en extender el mismo patrón de "edición pendiente hasta exportar" (ya usado por
+el editor de Pokémon) a nuevas superficies, más un renombre de servicio y varios ajustes:
+
+**Panel de entrenador ahora editable**
+- `TrainerViewModel` pasó de ser 100% solo lectura a tener editables: Nombre, TID/SID (con
+  formato `D5`), Género (ComboBox Macho/Hembra), Dinero, Monedas de casino, y **Battle Points**
+  (campo nuevo, no existía ningún soporte previo para BP).
+- Mismo mecanismo que el editor de Pokémon: `Set<T>` reporta a `EditSessionService` usando una
+  clave sentinel nueva, `PokemonSlotKey.ForTrainer()` — reusa toda la infraestructura existente
+  (captura de valor prístino, diff, restauración) en vez de construir un sistema paralelo.
+- Botones "Max" para Dinero/Monedas (al tope real que reporta PKHeX.Core para ese save) y Battle
+  Points (tope `9999` hardcodeado, PKHeX.Core no expone ningún "MaxBP").
+- Dos bugs de datos encontrados y corregidos en `TrainerService`: (a) `Money`/`Coin`/`BP` son
+  `uint` en PKHeX.Core, no `int` — un cast directo tiraba `InvalidCastException`, corregido con
+  `Convert.ToInt32` + manejo de overflow; (b) la propiedad real de monedas de casino es `Coin`
+  (singular), no `Coins` — con el nombre viejo el campo nunca se detectaba en ninguna generación.
+
+**Modal de exportación generalizado**
+- El modal de revisión ahora también arma una tarjeta de entrenador (`EditedTrainerSummary`,
+  sprite de entrenador/entrenadora, cambios agrupados por categoría) aparte de las tarjetas de
+  Pokémon existentes — sin legalidad ni checkbox de inclusión, porque los datos de entrenador se
+  exportan siempre que haya alguna edición.
+- Se agregó el patrón de "valor prístino" a `EditSessionService` (`CapturePristine` +
+  comparación en `RecordEdit`): revertir una edición a su valor original ahora borra la entrada
+  en vez de quedar marcada como cambio para siempre — antes tildar y destildar algo (o volver a
+  una opción de combo anterior) quedaba "pegado" sin motivo real en la libreta y el modal.
+
+**Cintas: de solo lectura a editables**
+- El tab Ribbons pasó de mostrar únicamente el estado real del PKM a permitir tildar/destildar
+  cada cinta libremente. Nuevo `RibbonReader` (Exxeguttor.UI) resuelve, cinta por cinta
+  (`RibbonIndex`), a qué interfaz de PKHeX.Core (`IRibbonIndex` directo en formatos modernos, o
+  `IRibbonSetCommon3..9`/`Event3/4`/`Memory6`/`Mark8/9` en formatos viejos) hay que preguntarle
+  el valor — cobertura completa de los ~34 valores relevantes del enum.
+  - Los cambios se trackean con el prefijo `"Ribbon:"` en `EditSessionService`, agrupados aparte
+    en la categoría "Cintas" del modal de revisión y de la libreta.
+  - **Sigue sin escribirse al PKM real** — mismo patrón pendiente-hasta-exportar que todo lo
+    demás, esto es "más superficie editable en memoria", no un avance del pipeline de escritura.
+
+**Renombre: `LegalityMessageTranslator` → `LegalityMessageMapper`**
+- Mismo archivo/responsabilidad (traduce `LegalityAnalysis` de PKHeX.Core a categorías/mensajes
+  amigables en español, fuente única compartida entre el badge del panel principal y el preview
+  del modal de exportación), solo cambió el nombre de la clase. Cualquier referencia al nombre
+  viejo en código o docs de sesiones anteriores es simplemente obsoleta.
+
+**Otros cambios menores**
+- Nuevos converters `RibbonCategoryColorConverter` y `TypeSoftConverters` para el rediseño visual
+  de cintas y chips de filtro.
+- `BusyStateService` ahora también cubre el análisis de legalidad al exportar (antes solo
+  cubría creación de Pokémon y abrir/guardar save).
+
+**Pendiente para una sesión futura** (ver también `context.md` para el detalle de cada uno):
+- Pipeline de escritura real (GAP CRÍTICO) — sigue sin existir. Ahora que `EditSessionService`
+  es la fuente única de "qué cambió" (Pokémon, cintas, entrenador, creaciones), implementarlo es
+  más mecánico que antes: releer PKM/SaveFile real, aplicar el mismo mapeo que ya usa
+  `AnalyzeLegality` como base (extendido a Habilidad/HeldItem/Ribbons/Special), `RefreshChecksum`,
+  `SetBoxSlotAtIndex`/`SetPartySlot`/escritura directa de campos de entrenador.
+- `IsIncluded` en el modal sigue sin filtrar nada real (mismo pendiente de antes).
+- `AnalyzeLegality` sigue sin correlacionar Habilidad/HeldItem/Ribbons/Special con la legalidad
+  previsualizada (se muestran en la lista de cambios pero nunca disparan ⚠).
+- Pokédex: `fetch-species-extra.py` ya genera `species_extra.json` desde PokeAPI, pero sigue sin
+  existir el script de carga a `pokemon.db` ni ninguna vista que lo consuma.
+- Módulo de Items/Bag: sigue en etapa de mockup/análisis, sin código.
+
+---
+
+## 2026-08 — Módulo Mochila completo + pipeline de escritura real (GAP CRÍTICO cerrado) + fixes reales en producción
+
+Sesión larga y densa, con dos entregas grandes (Mochila + pipeline de escritura) y varios bugs
+reales encontrados sobre la marcha, cada uno con causa raíz confirmada por test o reflection —
+no hay ningún fix a ciegas en esta lista.
+
+**Pipeline de escritura real — el GAP CRÍTICO histórico queda cerrado**
+- Nuevo `EditApplyService` (Exxeguttor.UI), llamado desde `ConfirmExportAsync` antes de
+  exportar — aplica de verdad al `SaveFile` en memoria todo lo tildado (`IsIncluded`) en el
+  modal de revisión. Hasta ahora, exportar escribía el save tal cual estaba, sin aplicar nada.
+- `IsIncluded` **ahora filtra de verdad** en las tres tarjetas del modal (Pokémon, Entrenador,
+  Mochila) — antes solo existía en la de Pokémon, y era decorativo en los tres casos.
+- Cuatro superficies con mecanismo propio: Pokémon+Cintas (releer PKM real, aplicar campos vía
+  setters directos incluyendo ahora Habilidad/HeldItem/Shiny/Dynamax/Alpha, `RefreshChecksum`,
+  `SetBoxSlotAtIndex`/`SetPartySlotAtIndex`), Cintas vía `RibbonWriter` nuevo (simétrico a
+  `RibbonReader`, generado a partir de su mismo mapeo), Entrenador vía `TrainerService.
+  ApplyEdits` nuevo, Mochila reconstruyendo el pouch real (**el array de ítems es de tamaño
+  fijo, confirmado con test** — hay que mutar in-place, nunca cambiar el largo).
+- `SaveFileService`: nombre sugerido de exportación y backup ahora usan las convenciones reales
+  de PKHeX.Core (`GetSuggestedExtension`/`GetBackupFileName`) en vez de lógica propia.
+- Confirmado con test de round-trip real (`WritePipelineRoundTripTests.cs`, mutación en memoria
+  contra la misma instancia — no round-trip binario completo, ver `context.md` para el porqué):
+  Pokémon básico en 5 generaciones, Entrenador, Mochila, Cintas viejas y modernas. **Sin test
+  todavía**: Habilidad, HeldItem, Shiny, Dynamax, Alpha/Noble, creación de Pokémon nuevo —
+  compilan y están cableados, pero sin confirmar con datos reales.
+- Deliberadamente afuera: Tera sigue sin escribirse (solo lectura en la UI, como ya estaba).
+
+**Módulo Mochila — implementado de punta a punta**
+- `ItemInventoryService` (lectura de `SaveFile.Inventory`), `BagViewModel`/
+  `BagItemRowViewModel`/`BagPouchTileViewModel` (UI), navegación de categorías **tipo caja**
+  (mismo lenguaje visual que `BoxView` — `◀ nombre ▶` con texto de posición debajo, no una
+  grilla de tiles como el primer boceto) por pedido explícito del usuario ("solo cambia el
+  texto" respecto a como ya funcionaba Caja).
+- Botón MAX en el stepper de cantidad, topeado al `MaxCount` real de cada pouch (nunca
+  hardcodeado — varía mucho por juego).
+- Toggle Mochila/PC — confirmado con test que solo tiene sentido en Gen1-3 (únicas
+  generaciones con pouch `PCItems` real).
+
+**Bug real: categorización de ítems rota para Gen1/2/4/5/6 — investigación en curso, BLOQUEADA**
+- Reportado por el usuario: ítems de categorías distintas apareciendo mezclados en "Objetos".
+- Investigación con tests reales (no supuestos) descartó dos hipótesis de PKHeX.Core:
+  `InventoryPouch.CanContain` no es confiable como filtro de categoría en los formatos sin
+  subclase propia (Gen1/2/4/5/6) — da resultados que ni respetan qué ítems existen en esa
+  generación. `IItemStorage.IsLegal` (alternativa investigada) resultó peor: siempre `true`.
+- Solución diseñada y acordada: agregar columna `CategoryUpper` a `pokemon.db.Items`,
+  agrupando las ~48 categorías de PokeAPI en los 15 valores de `InventoryType` + una categoría
+  virtual nueva `"Stones"` (piedras evolutivas, decisión de producto: aparece como su propia
+  tile navegable aunque no exista ese pouch en ningún juego real). Mapeo completo ya cerrado.
+- **BLOQUEADO**: durante la misma investigación, el usuario detectó que el problema de fondo
+  está en cómo `pokemon.db` modela las TMs/HMs (un solo `ItemId` por "tm01" no alcanza para
+  representar que enseña movimientos distintos entre eras) — lo está resolviendo en otra sesión
+  aparte y va a traer los pasos validados. **No tocar la migración de `CategoryUpper` hasta que
+  llegue eso.**
+
+**Otros bugs reales encontrados y corregidos**
+- **Crash real en producción**: editar el género del entrenador junto con Pokémon disparaba
+  `ArgumentOutOfRangeException` (`PokemonService.GetBox(-1)`) — `"Gender"` es una clave
+  compartida entre el `CategoryMap` de Pokémon y el de Entrenador, y `BuildSummary()` no
+  filtraba las claves sentinel de Entrenador/Mochila antes de asumir "esto es un Pokémon".
+- **Tab Special no aparecía para ningún save de Gen9 (Escarlata/Púrpura)**: `SaveFile.Version`
+  puede devolver el valor genérico `GameVersion.Gen9` en vez del específico según el caso — ya
+  había un comentario en el código documentando el mismo problema encontrado antes para Gen6,
+  pero el fix nunca se había aplicado a Gen9. Corregido en `SaveCapabilities.Detect()` y
+  `MapVersionToGameId()`.
+- **Tab Special tampoco aparecía para Legends Z-A**: resultó ser un bug distinto con el mismo
+  síntoma — Z-A usa su propio formato `PA9`/`SAV9ZA` (no `PK9`, pese a ser "Gen9"), sin ningún
+  `case` para `GameVersion.ZA` en `SaveCapabilities`. `PA9` tiene `IsAlpha` (mismo mecanismo
+  que Legends Arceus) pero no `IsNoble`.
+- **IVs/EVs permitían valores fuera de rango en Gen1/2**: los IVs ahí son en realidad DVs
+  (0-15, no 0-31), y el DV de PS no es editable de verdad (se deriva de los otros cuatro,
+  confirmado con test que asignarlo se ignora). Los EVs son "Stat Experience" (0-65.535, no
+  0-252), con fórmula de stats propia (`floor(sqrt(StatExp)/4)` en vez de `floor(EV/4)`).
+
+**Metodología — lección dura de esta sesión**
+Varias veces se asumió mal una firma o comportamiento de PKHeX.Core sin verificar primero
+(`SetChecksums` resultó `protected`, `GetFileName` resultó `private`, `CanContain` resultó no
+confiable pese a compilar perfecto) — cada vez costó una vuelta completa de compile-error o un
+bug sutil. Sin dotnet SDK disponible para Claude en el sandbox de análisis, se afinó un flujo de
+verificación por **reflection cruda sobre el DLL real** (librería Python `dnfile`, sin necesitar
+el runtime de .NET) que evitó varios de estos casos apenas se adoptó — pero no reemplaza
+verificar **comportamiento** (no solo firmas) con tests reales que corre el usuario.
+
+**Pendiente para una sesión futura** (ver también `context.md` para el detalle de cada uno):
+- Categorización de Mochila para Gen1/2/4/5/6 — bloqueada, esperando el fix de TMs en la DB.
+- Tests de round-trip para Habilidad/HeldItem/Shiny/Dynamax/Alpha/creación de Pokémon (cableados
+  pero sin confirmar con datos reales).
+- `TID`/`SID` de entrenador no están en `TrainerCategoryMap` — se aplican bien al exportar pero
+  no se listan en la libreta/modal (gap chico, no bloqueante).
+- Límite de suma total de EVs (510 en Gen3+) sigue sin forzarse en el código — gap preexistente,
+  no tocado esta sesión.
+- Pokédex y Módulo de Items/Bag (mockup previo, ahora superado por el módulo Mochila real):
+  Pokédex sigue sin script de carga ni vista.
