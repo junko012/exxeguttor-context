@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Exxeguttor — Boceto: Confirmación de exportación exitosa</title>
+<style>
+  :root {
+    --bg-surface: #f4f4f5;
+    --bg-window: #ffffff;
+    --border: #dcdce0;
+    --border-strong: #b8b8bf;
+    --text-primary: #1c1c1f;
+    --text-secondary: #6b6b70;
+    --text-muted: #9a9aa0;
+    --success: #16a34a;
+    --warning: #f59e0b;
+    --accent: #3b82f6;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, "Segoe UI", "Cantarell", "Ubuntu", sans-serif;
+    background: rgba(20,20,24,0.55);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 24px;
+  }
+  .note {
+    position: fixed;
+    top: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 12px;
+    color: #eee;
+    background: #1c1c1f;
+    border-radius: 6px;
+    padding: 4px 12px;
+    text-align: center;
+    max-width: 90%;
+  }
+  .panel {
+    width: 380px;
+    background: var(--bg-window);
+    border-radius: 14px;
+    padding: 28px 24px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    box-shadow: 0 16px 40px rgba(0,0,0,0.35);
+    position: relative;
+  }
+  .close-btn {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    border: 1px solid var(--border);
+    background: #fff;
+    cursor: pointer;
+    font-size: 13px;
+    color: var(--text-secondary);
+  }
+
+  .scene { width: 100%; height: 150px; position: relative; }
+
+  .porygon-wrap { position: absolute; bottom: 0; left: 14px; width: 76px; height: 86px; z-index: 2; }
+  .porygon-sprite { position: absolute; bottom: 0; left: 0; width: 76px; height: 76px; image-rendering: pixelated; animation: porygon-idle 3s ease-in-out 1 forwards; }
+  @keyframes porygon-idle { 0%,58% { transform: translateY(0); opacity:1; } 61% { opacity:1; } 65%,100% { opacity:0; transform: translateY(-4px) scale(1.3); } }
+
+  .evolve-flash { position: absolute; bottom: 20px; left: 8px; width: 60px; height: 60px; border-radius: 50%; background: radial-gradient(circle, #fff 0%, transparent 70%); animation: evolve-flash 3s ease-in-out 1 forwards; }
+  @keyframes evolve-flash { 0%,61% { opacity:0; transform: scale(0.5); } 66% { opacity:1; transform: scale(1.6); } 80%,100% { opacity:0; transform: scale(2); } }
+
+  .porygon2-sprite { position: absolute; bottom: 0; left: -6px; width: 86px; height: 86px; image-rendering: pixelated; animation: porygon2-reveal 3s ease-in-out 1 forwards; }
+  @keyframes porygon2-reveal { 0%,63% { opacity:0; transform: scale(0.4); } 70% { opacity:1; transform: scale(1.25); } 80%,100% { transform: scale(1); opacity:1; } }
+
+  .pc-column { position: absolute; bottom: 0; right: 6px; display: flex; flex-direction: column; align-items: center; z-index: 2; }
+  .pc-screen { width: 70px; height: 60px; background: var(--bg-surface); border: 2px solid var(--border-strong); border-radius: 8px; display: flex; align-items: center; justify-content: center; }
+  .rotom-sprite { width: 42px; height: 42px; image-rendering: pixelated; animation: rotom-happy 3s ease-in-out 1 forwards; }
+  @keyframes rotom-happy { 0%,58% { transform: scale(1); } 64% { transform: scale(1.15); } 78%,100% { transform: scale(1); } }
+  .pc-neck { width: 20px; height: 8px; background: var(--border-strong); margin-top: 1px; }
+  .pc-keyboard { width: 78px; height: 16px; background: var(--bg-window); border: 1.5px solid var(--border-strong); border-radius: 4px; margin-top: 2px; display: grid; grid-template-columns: repeat(9, 1fr); gap: 1.5px; padding: 2px 4px; align-items: center; }
+  .pc-key { width: 100%; height: 5px; background: var(--border); border-radius: 1px; }
+
+  .plug-flash { position: absolute; bottom: 92px; right: 16px; width: 26px; height: 26px; border-radius: 50%; background: radial-gradient(circle, var(--warning) 0%, transparent 70%); animation: flash-once 3s ease-in-out 1 forwards; }
+  @keyframes flash-once { 0%,58% { opacity:0; transform: scale(0.5); } 64% { opacity:1; transform: scale(1.2); } 78%,100% { opacity:0; transform: scale(1.5); } }
+
+  .pipe-back { animation: none; }
+  .pipe-front { animation: pipe-pulse 3s ease-in-out 1 forwards; }
+  @keyframes pipe-pulse { 0%,15% { opacity:0.25; } 25%,55% { opacity:0.85; } 65%,100% { opacity:0.35; } }
+
+  .success-row { display: flex; align-items: center; gap: 6px; }
+  .success-icon { color: var(--success); font-size: 18px; }
+  .success-title { font-size: 15px; font-weight: 500; margin: 0; color: var(--text-primary); }
+  .filename { font-size: 12px; color: var(--text-secondary); margin: 0; }
+
+  .done-btn { font-size: 13px; padding: 7px 20px; border-radius: 6px; border: 1px solid var(--border); background: #fafafa; cursor: pointer; margin-top: 4px; }
+</style>
+</head>
+<body>
+
+<div class="note">Boceto — Confirmación de exportación exitosa. La animación corre una sola vez y queda congelada en el estado final (Porygon2 + Rotom PC). Recargar la página para volver a verla desde el inicio.</div>
+
+<div class="panel">
+  <button class="close-btn" aria-label="Cerrar">✕</button>
+
+  <div class="scene">
+
+    <svg viewBox="0 0 300 150" width="300" height="150" style="position:absolute; top:0; left:0;">
+      <path class="pipe-back" d="M52,58 L52,36 Q52,18 70,18 L260,18 Q278,18 278,36 L278,58"
+            fill="none" stroke="var(--border-strong)" stroke-width="10" stroke-linecap="round" opacity="0.5"></path>
+      <path id="pipepath" class="pipe-front" d="M52,58 L52,36 Q52,18 70,18 L260,18 Q278,18 278,36 L278,58"
+            fill="none" stroke="var(--accent)" stroke-width="4" stroke-linecap="round"></path>
+
+      <image href="https://cdn.jsdelivr.net/gh/PokeAPI/sprites/sprites/pokemon/items/up-grade.png" x="-11" y="-11" width="22" height="22">
+        <animateMotion dur="3s" repeatCount="1" fill="freeze" keyPoints="0;0;1;1" keyTimes="0;0.15;0.58;1" calcMode="linear">
+          <mpath href="#pipepath"></mpath>
+        </animateMotion>
+        <animate attributeName="opacity" values="1;1;0;0" keyTimes="0;0.15;0.16;1" dur="3s" repeatCount="1" fill="freeze"></animate>
+      </image>
+    </svg>
+
+    <div class="porygon-wrap">
+      <img class="porygon-sprite" src="https://cdn.jsdelivr.net/gh/PokeAPI/sprites/sprites/pokemon/137.png" alt="Porygon" />
+      <div class="evolve-flash"></div>
+      <img class="porygon2-sprite" src="https://cdn.jsdelivr.net/gh/PokeAPI/sprites/sprites/pokemon/233.png" alt="Porygon2" />
+    </div>
+
+    <div class="pc-column">
+      <div class="pc-screen">
+        <img class="rotom-sprite" src="https://cdn.jsdelivr.net/gh/PokeAPI/sprites/sprites/pokemon/479.png" alt="Rotom" />
+      </div>
+      <div class="pc-neck"></div>
+      <div class="pc-keyboard">
+        <span class="pc-key"></span><span class="pc-key"></span><span class="pc-key"></span>
+        <span class="pc-key"></span><span class="pc-key"></span><span class="pc-key"></span>
+        <span class="pc-key"></span><span class="pc-key"></span><span class="pc-key"></span>
+      </div>
+    </div>
+
+    <div class="plug-flash"></div>
+
+  </div>
+
+  <div class="success-row">
+    <i class="success-icon">✓</i>
+    <p class="success-title">Save exportado</p>
+  </div>
+  <p class="filename">pokemon_yellow_edited.sav</p>
+
+  <button class="done-btn">Listo</button>
+</div>
+
+</body>
+</html>
