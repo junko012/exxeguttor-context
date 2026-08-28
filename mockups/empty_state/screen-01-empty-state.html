@@ -140,9 +140,8 @@
     gap: 6px;
     padding: 24px;
   }
-  .action-icon { font-size: 26px; color: var(--text-muted); margin-bottom: 4px; }
   .action-title { font-size: 16px; color: var(--text-primary); margin: 0; }
-  .action-or { font-size: 12px; color: var(--text-muted); margin: 2px 0; }
+  .action-hint { font-size: 10px; color: var(--text-muted); margin: 2px 0 0; }
   .action-btn {
     font-size: 13px;
     padding: 7px 18px;
@@ -177,7 +176,7 @@
 </head>
 <body>
 
-<div class="note">Boceto estático — Pantalla 1: Estado vacío / Carga de save (ver screen-01-empty-state.md para el spec completo)</div>
+<div class="note">Boceto estático — Pantalla 1: Estado vacío / Carga de save · versión final implementada (sin drag&amp;drop — ver screen-01-empty-state.md). Modal de error: ver mockups/error_empty_state/</div>
 
 <div class="window">
   <div class="titlebar">Exxeguttor — Pokémon Save File Editor</div>
@@ -235,15 +234,15 @@
     </div>
 
     <div class="action-zone">
-      <div class="action-icon">⇧</div>
-      <p class="action-title">Arrastra tu save aquí</p>
-      <p class="action-or">o</p>
+      <p class="action-title">No hay ninguna partida cargada</p>
       <button class="action-btn">Abrir save...</button>
+      <p class="action-hint">Formatos soportados</p>
       <div class="badges">
         <span class="badge">Gen 1-9</span>
         <span class="badge">.sav</span>
         <span class="badge">.dsv</span>
-        <span class="badge">.dat</span>
+        <span class="badge">.gci / .bin / .bak</span>
+        <span class="badge">main (Switch)</span>
       </div>
     </div>
 

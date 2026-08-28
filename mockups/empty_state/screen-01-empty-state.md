@@ -3,6 +3,11 @@
 > Diseñada en sesión de UI/UX separada (Claude, chat). Este documento + el boceto
 > `screen-01-empty-state.html` adjunto son el hand-off para la sesión de implementación.
 > Ver también `CLAUDE.md` / `context.md` del proyecto para contexto general de arquitectura.
+>
+> **Estado: implementado.** Este `.md` refleja la versión final tal como quedó en código
+> (`EmptyStateView.axaml`, `MainWindowViewModel.cs`, `RecentSavesViewModel.cs` y afines en
+> `exxeguttor`), no el hand-off original — ver "Historial de cambios respecto al hand-off
+> original" al final para el detalle de qué cambió y por qué.
 
 ## Qué reemplaza
 
@@ -14,7 +19,7 @@ la reemplaza por dos zonas: **recientes** (izquierda) y **acción principal** (d
 
 ```
 ┌───────────────────────────────┬──────────────────────────────────────┐
-│  RECIENTES (panel izquierdo)  │   ZONA DE ACCIÓN (drag & drop)        │
+│  RECIENTES (panel izquierdo)  │   ZONA DE ACCIÓN                      │
 │  ancho = 400px                 │   centrada vertical y horizontalmente │
 │  (igual a la columna derecha   │                                       │
 │  de MainWindow.axaml)          │                                       │
@@ -24,93 +29,113 @@ la reemplaza por dos zonas: **recientes** (izquierda) y **acción principal** (d
 - Panel izquierdo y zona derecha viven dentro del mismo contenedor raíz que hoy
   centra el texto/botón — se reemplaza ese contenido, no la ventana completa.
 - Separador vertical de 1px (`var`/color de borde estándar de la app) entre ambas zonas.
-- Sin scroll en ninguna de las dos zonas para la cantidad de ítems esperada (ver abajo).
+- Sin scroll en la zona de acción; el panel de Recientes sí tiene `ScrollViewer` propio
+  (por si en el futuro se sube el máximo de 5 entradas).
 
 ## Zona "Recientes" (panel izquierdo)
 
-- Título de sección: "Recientes" (clave i18n nueva, ej. `Recent_Title`).
+- Título de sección: "Recientes" (texto fijo por ahora, no i18n — pendiente si se
+  agrega clave `Recent_Title` más adelante).
 - Lista vertical de hasta 5 entradas (más reciente arriba). Sin recientes → la zona
-  simplemente no se muestra (el drag&drop ocupa todo el ancho) — ver
-  "Pendiente de confirmar" sobre persistencia.
+  completa no se muestra — la columna colapsa a 0 (`Auto` sin contenido visible) y la
+  zona de acción ocupa todo el ancho, sola.
 - Cada fila (de arriba hacia abajo):
-  1. **Sprite de portada del juego**: rectángulo 26×34px, `CornerRadius=4`, con
-     degradado + ícono representativo por generación/juego (ver tabla de colores abajo).
-     Este es un placeholder de diseño — la implementación real debería usar un asset
-     por versión de juego (`GameVersion`), similar a como `SpriteService` ya maneja
-     sprites de Pokémon/ítems. Si no existe asset por juego, se puede sustituir por un
-     color sólido derivado de `GameVersion` + ícono genérico de consola/cartucho.
+  1. **Sprite de portada del juego**: rectángulo 26×34px, `CornerRadius=4`. Sprite real si
+     existe en `Assets/sprites/games/{codigo}.png` (código crudo de `GameVersion.ToString()`
+     en minúscula, ej. `sv.png`, `za.png` — ver `ExpandGameName()` en `TrainerViewModel` para
+     la lista completa de códigos). **Hoy esa carpeta está vacía** — todas las portadas caen
+     en el fallback procedural: degradado + glyph por generación (ver tabla más abajo,
+     resuelto por `GameCoverService`).
   2. **Nombre de archivo** (ej. `pokemon_yellow.sav`), una línea, elipsis si excede ancho.
-  3. **Subtítulo**: `{NombreJuego} · Gen {N}` (usar `ExpandGameName()` ya existente en
-     `TrainerViewModel` para el nombre completo del juego).
+  3. **Subtítulo**: `{NombreJuego} · Gen {N}` (usa `ExpandGameName()` de `TrainerViewModel`,
+     subido de `private` a `internal` para poder reusarlo desde el ViewModel de esta pantalla
+     sin duplicar el mapeo).
   4. **Fecha relativa**, alineada a la derecha de la fila: "Hoy · HH:mm", "Ayer",
      o fecha corta ("12 ago") si es más antigua.
 - Fila superior (más reciente) con fondo levemente distinto (`surface` un tono más claro
   que el resto de la lista) para destacarla como "la última usada".
-- Click en cualquier fila → abre ese save directamente (mismo flujo que
-  `SaveFileService.OpenAsync(path)` con el path guardado).
+- Click en cualquier fila → abre ese save directamente (mismo flujo interno que el botón
+  "Abrir save...", vía `MainWindowViewModel.OpenSaveFromPathAsync`).
 
-## Zona de acción (drag & drop)
+## Zona de acción
 
 De arriba hacia abajo, todo centrado horizontal y verticalmente dentro de su mitad:
 
-1. Ícono de upload/archivo (outline, ~24px).
-2. Texto: "Arrastra tu save aquí".
-3. Texto secundario, más chico y atenuado: "o".
-4. Botón primario: "Abrir save..." (mismo comando que existe hoy, `OpenSaveCommand`).
-5. Fila de badges chips (pill, borde 0.5px, fondo `surface`, texto chico ~10-11px):
-   `Gen 1-9` · `.sav` · `.dsv` · `.dat` — lista de generaciones/extensiones soportadas.
-   Ajustar el contenido real de los badges a lo que el proyecto efectivamente soporta.
+1. Texto: "No hay ninguna partida cargada".
+2. Botón primario: "Abrir save..." (mismo comando de siempre, `OpenSaveFileCommand`).
+3. Etiqueta pequeña: "Formatos soportados".
+4. Fila de badges chips (pill, borde 1px, fondo blanco, texto chico ~10px):
+   `Gen 1-9` · `.sav` · `.dsv` · `.gci / .bin / .bak` · `main (Switch)`.
 
-### Comportamiento drag & drop
+**No hay drag & drop.** El hand-off original lo incluía (badges + ícono de upload + texto
+"Arrastra tu save aquí / o"); se sacó por completo en implementación — ver el historial de
+cambios al final para el motivo (no es negociable con más tiempo de desarrollo, es un límite
+real de la versión de Avalonia que usa el proyecto).
 
-- Toda la zona derecha es un drop target. Al arrastrar un archivo sobre la ventana con
-  extensión válida, dar feedback visual (ej. borde discontinuo se resalta, fondo cambia
-  levemente) — no especificado en el mockup visual, usar criterio estándar de Avalonia
-  (`DragDrop.AllowDrop`, eventos `DragEnter`/`DragLeave`/`Drop`).
-- Extensión inválida → feedback de error breve (no bloqueante) y no intenta abrir.
-- Reutilizar la misma lógica de apertura que el botón "Abrir save..." una vez que se
-  suelta un archivo válido.
+## Modal de error al abrir un save
 
-## Paleta de colores de portada por juego (placeholder, ajustar a gusto)
+Los 4 casos con boceto propio en `mockups/error_empty_state/` (`screen-01-error-messages.md`)
+están implementados: un modal centrado, overlay semitransparente sobre toda la pantalla,
+sprite Pokémon temático con animación en loop + título + mensaje, según el tipo de error
+(`SaveOpenErrorKind` en código): Ditto (save inválido), MissingNo. (corrupto), Abra (archivo no
+encontrado — único con botón secundario "Quitar de recientes"), Snorlax (sin permisos). Ver ese
+mockup para el detalle visual completo; no se repite acá.
 
-| Juego (ejemplo) | Gradiente | Ícono sugerido |
-|---|---|---|
-| Yellow (Gen 1) | `#F4D03F → #F7DC6F` | rayo (bolt) |
-| Crystal (Gen 2) | `#5DADE2 → #85C1E9` | diamante |
-| Emerald (Gen 3) | `#58D68D → #82E0AA` | hoja |
-| Platinum (Gen 4) | `#A569BD → #BB8FCE` | montaña |
+## Paleta de colores de portada por juego (fallback procedural)
 
-Esto es solo el criterio usado en el mockup para diferenciar visualmente las entradas;
-no es una paleta oficial. La sesión de implementación puede definir una paleta fija por
-generación (1–9) o por juego individual, lo que sea más simple de mantener.
+| Generación | Gradiente | Glyph | Origen |
+|---|---|---|---|
+| 1 | `#F4D03F → #F7DC6F` | ⚡ | mockup original (Yellow) |
+| 2 | `#5DADE2 → #85C1E9` | ◆ | mockup original (Crystal) |
+| 3 | `#58D68D → #82E0AA` | 🍃 | mockup original (Emerald) |
+| 4 | `#A569BD → #BB8FCE` | ▲ | mockup original (Platinum) |
+| 5 | `#85929E → #AEB6BF` | ❄ | definido en implementación |
+| 6 | `#F06292 → #F48FB1` | ✧ | definido en implementación |
+| 7 | `#F5B041 → #F8C471` | ☀ | definido en implementación |
+| 8 | `#16A085 → #48C9B0` | ⚔ | definido en implementación |
+| 9 | `#EC7063 → #F1948A` | ✦ | mockup original (Violet) |
 
-## Datos / bindings esperados
+Resuelto por generación, no por juego individual — más simple de mantener. Fuente de verdad
+en código: `GameCoverService.PaletteByGeneration`.
 
-- `RecentSavesViewModel` (o similar) con una colección de hasta 5 items:
-  `FilePath`, `FileName`, `GameVersion` (enum existente), `LastOpenedAt` (DateTime).
-- Cada item necesita poder resolver `ExpandGameName()` y el número de generación
-  (ya existe mapeo similar en `MapVersionToGameId()` / `TrainerViewModel`).
+## Datos / bindings (tal como quedó implementado)
 
-## Decisiones confirmadas (cierran los 3 puntos pendientes del hand-off original)
+- `RecentSavesViewModel` (Exxeguttor.UI) orquesta la colección de hasta 5
+  `RecentSaveRowViewModel`, cada uno envolviendo un `RecentSaveEntry` (Exxeguttor.App):
+  `FilePath`, `FileName`, `GameVersion` (código crudo string, no el enum), `LastOpenedAt`.
+- Persistencia real en `~/.config/exxeguttor/recent.json` vía `RecentSavesService`
+  (`Environment.SpecialFolder.ApplicationData`, que en .NET/Linux ya resuelve a
+  `$XDG_CONFIG_HOME` o `~/.config`).
 
-1. **Ancho del panel de recientes: 400px, no 380px.** Confirmado contra el AXAML real
-   de `MainWindow.axaml` — el layout principal usa
-   `<Grid ColumnDefinitions="200,*,400">` (izquierda=Entrenador/Party, centro=Caja/Info,
-   derecha=`PokemonStatsView`). El panel de recientes debe igualar la columna derecha
-   (`400px`), no el valor estimado de 380px del mockup original.
-2. **Persistencia de recientes: en disco.** Se guardan en
-   `~/.config/exxeguttor/recent.json` para sobrevivir entre sesiones (no solo en
-   memoria mientras la app está abierta).
-3. **Sprites de portada por juego: assets reales, carpeta nueva.** Hoy
-   `Assets/sprites/` solo tiene `pokemon/`, `items/` y `types/` (ver
-   `Assets/sprites/README.md` + `index.json`) — no existe ninguna carpeta de portadas
-   por juego todavía. Se agrega **`Assets/sprites/games/`**, mismo patrón que las
-   carpetas existentes: un `.png` por juego + entrada nueva en `index.json` +
-   línea nueva en `README.md`. **Fallback si falta el asset de un juego puntual**: el
-   criterio procedural del mockup (color derivado de `GameVersion` + ícono por
-   generación, ver tabla de paleta arriba) — no bloquear la fila de "recientes" por un
-   sprite faltante.
+## Historial de cambios respecto al hand-off original
+
+1. **Ancho del panel: 400px, no 380px.** Confirmado contra `MainWindow.axaml`
+   (`<Grid ColumnDefinitions="200,*,400">` — la columna derecha, `PokemonStatsView`, mide
+   400px real).
+2. **Persistencia: en disco**, no solo en memoria — ver sección de arriba.
+3. **Portadas por juego: carpeta `Assets/sprites/games/` creada, pero vacía.** El fallback
+   procedural (tabla de arriba) cubre el caso mientras no haya assets reales — agregar el
+   `.png` correspondiente alcanza, no requiere tocar código.
+4. **Badges de formato corregidos**: el mockup original tenía `.dat` como placeholder — no
+   existe en ningún lado del proyecto real. El set real es `.sav / .dsv / .gci / .bin / .bak`
+   + archivos sin extensión, con `main (Switch)` como badge explícito (saves de Switch —
+   Espada/Escudo, BD/SP, Legends: Arceus, Escarlata/Púrpura, Legends: Z-A — se llaman
+   literalmente `main`, sin extensión).
+5. **Drag & drop sacado por completo.** Se implementó primero tal como especificaba este
+   hand-off (`DragDrop.AllowDrop`, handlers de `DragEnter`/`DragLeave`/`Drop`), pero no
+   funcionaba: **Avalonia 11.x (la versión que usa el proyecto) no tiene ningún target XDND
+   en el backend de X11** — un archivo soltado desde un gestor de archivos externo
+   (confirmado con Nautilus/GNOME/X11) nunca le llega a la app. Se implementa recién en
+   Avalonia 12.1, no portado hacia atrás a la serie 11.x. No es un bug de la implementación
+   de Exxeguttor, es un límite de la plataforma — por eso se sacó del todo en vez de dejarlo
+   "roto" o a medias. Sigue quedando el botón "Abrir save..." como único punto de entrada
+   además de clickear una fila de "Recientes".
+6. **Modal de error agregado** (no estaba en el hand-off original) — ver sección propia
+   arriba y `mockups/error_empty_state/` para el spec completo.
 
 ## Ver también
 
-- `screen-01-empty-state.html` — boceto visual navegable (abrir en cualquier navegador).
+- `screen-01-empty-state.html` — boceto visual navegable (abrir en cualquier navegador),
+  actualizado para reflejar el estado final de esta lista.
+- `mockups/error_empty_state/` — spec completo del modal de error (4 casos).
+
