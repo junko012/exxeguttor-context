@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Exxeguttor — Boceto: Barra de estado inferior con íconos temáticos</title>
+<style>
+  :root {
+    --bg-window: #ffffff;
+    --bg-surface: #f4f4f5;
+    --border: #dcdce0;
+    --border-strong: #b8b8bf;
+    --text-primary: #1c1c1f;
+    --text-secondary: #6b6b70;
+    --text-muted: #9a9aa0;
+    --accent: #3b82f6;
+    --success: #16a34a;
+    --danger: #ef4444;
+    --warning: #f59e0b;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, "Segoe UI", "Cantarell", "Ubuntu", sans-serif;
+    background: #e5e5e8;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 28px;
+  }
+  .note {
+    font-size: 12px;
+    color: #6b6b70;
+    text-align: center;
+    max-width: 640px;
+  }
+  .group {
+    width: 640px;
+    max-width: 100%;
+    background: var(--bg-window);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  }
+  .group-label {
+    font-size: 11px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    padding: 10px 14px 6px;
+  }
+  .status-row {
+    height: 22px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0 14px;
+    border-top: 1px solid var(--border);
+    font-size: 12px;
+    color: var(--text-secondary);
+  }
+
+  /* --- Voltorb / Electrode (pokeball abstraction) --- */
+  .pball {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid var(--border-strong);
+    position: relative;
+    flex-shrink: 0;
+  }
+  .pball::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--border-strong);
+    transform: translateY(-1px);
+  }
+  .pball::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 6px;
+    height: 6px;
+    background: #fff;
+    border: 2px solid var(--border-strong);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .pball.idle { background: var(--bg-window); }
+  .pball.loading { background: conic-gradient(var(--accent) 0deg 180deg, #fff 180deg 360deg); animation: spin 0.6s linear infinite; }
+  .pball.success { background: conic-gradient(var(--success) 0deg 180deg, #fff 180deg 360deg); border-color: var(--success); }
+  .pball.success::before, .pball.success::after { border-color: var(--success); }
+  .pball.error { animation: flash 0.4s steps(1) infinite; }
+  .pball.electrode-loading { background: conic-gradient(var(--accent) 0deg 180deg, #fff 180deg 360deg); animation: spin-fast 0.35s linear infinite; }
+  .pball.electrode-loading::before { content: none; }
+  .pball.electrode-loading .ring { position: absolute; left: 0; right: 0; height: 1.5px; background: var(--border-strong); }
+  .pball.electrode-success { background: conic-gradient(var(--success) 0deg 180deg, #fff 180deg 360deg); border-color: var(--success); }
+  .pball.electrode-success::before { content: none; }
+  .pball.electrode-success::after { border-color: var(--success); }
+  .pball.electrode-success .ring { position: absolute; left: 0; right: 0; height: 1.5px; background: var(--success); }
+
+  @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+  @keyframes spin-fast { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+  @keyframes flash { 0%,100% { background: conic-gradient(var(--danger) 0deg 180deg, #fff 180deg 360deg); } 50% { background: conic-gradient(#fff 0deg 180deg, var(--danger) 180deg 360deg); } }
+
+  /* --- Rotom (real sprite, cropped+zoomed, no bar growth) --- */
+  .rotom-box {
+    width: 18px;
+    height: 18px;
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+    flex-shrink: 0;
+  }
+  .rotom-box img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 34px;
+    height: 34px;
+    transform: translate(-50%, -50%) scale(1.3);
+    image-rendering: pixelated;
+  }
+  .rotom-box.clean img { filter: grayscale(1) opacity(0.6); }
+  .rotom-box.dirty img { animation: rotom-glow 1s ease-in-out infinite; }
+  @keyframes rotom-glow {
+    0%,100% { filter: drop-shadow(0 0 2px var(--warning)); }
+    50% { filter: drop-shadow(0 0 5px var(--warning)); }
+  }
+
+  .warn-text { color: var(--warning); }
+  .danger-text { color: var(--danger); }
+</style>
+</head>
+<body>
+
+<p class="note">Boceto animado — Barra de estado inferior con 8 estados temáticos (ver status-bar-states.md para el spec completo). Cada fila mide lo mismo que la barra de estado real de la app (~22px) para verificar que ningún ícono la agrande.</p>
+
+<div class="group">
+  <p class="group-label">I/O — Voltorb (abrir) / Electrode (exportar), 20px uniforme</p>
+
+  <div class="status-row">
+    <div class="pball idle"></div>
+    <span>Ready</span>
+  </div>
+
+  <div class="status-row">
+    <div class="pball loading"></div>
+    <span>Abriendo save...</span>
+  </div>
+
+  <div class="status-row">
+    <div class="pball success"></div>
+    <span>File loaded: pokemon_yellow.sav</span>
+  </div>
+
+  <div class="status-row">
+    <div class="pball error"></div>
+    <span class="danger-text">No se pudo abrir el archivo</span>
+  </div>
+
+  <div class="status-row">
+    <div class="pball electrode-loading">
+      <div class="ring" style="top:22%;"></div>
+      <div class="ring" style="top:50%; transform:translateY(-1px);"></div>
+      <div class="ring" style="top:78%;"></div>
+    </div>
+    <span>Exportando...</span>
+  </div>
+
+  <div class="status-row">
+    <div class="pball electrode-success">
+      <div class="ring" style="top:22%;"></div>
+      <div class="ring" style="top:50%; transform:translateY(-1px);"></div>
+      <div class="ring" style="top:78%;"></div>
+    </div>
+    <span>Save exportado: pokemon_yellow_edited.sav</span>
+  </div>
+</div>
+
+<div class="group">
+  <p class="group-label">Edición — Rotom (sprite real, recortado y ampliado, sin crecer la barra)</p>
+
+  <div class="status-row">
+    <div class="rotom-box clean">
+      <img src="https://cdn.jsdelivr.net/gh/PokeAPI/sprites/sprites/pokemon/479.png" alt="Rotom" />
+    </div>
+    <span>Sin cambios</span>
+  </div>
+
+  <div class="status-row">
+    <div class="rotom-box dirty">
+      <img src="https://cdn.jsdelivr.net/gh/PokeAPI/sprites/sprites/pokemon/479.png" alt="Rotom" />
+    </div>
+    <span class="warn-text">Cambios sin exportar</span>
+  </div>
+</div>
+
+</body>
+</html>
