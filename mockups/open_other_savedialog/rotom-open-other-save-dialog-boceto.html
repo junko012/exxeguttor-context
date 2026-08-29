@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Exxeguttor — Boceto: Abrir otro save sin exportar</title>
+<style>
+  :root {
+    --bg-window: #ffffff;
+    --bg-surface: #f4f4f5;
+    --border: #dcdce0;
+    --text-primary: #1c1c1f;
+    --text-secondary: #6b6b70;
+    --danger: #ef4444;
+    --warning: #f59e0b;
+    --accent: #3b82f6;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, "Segoe UI", "Cantarell", "Ubuntu", sans-serif;
+    background: #e5e5e8;
+    padding: 32px;
+    display: flex;
+    justify-content: center;
+  }
+  .note {
+    position: fixed;
+    top: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 12px;
+    color: #6b6b70;
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 4px 12px;
+    text-align: center;
+    max-width: 90%;
+  }
+  .dialog-card {
+    width: 380px;
+    background: var(--bg-window);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  }
+  .dialog-body { display: flex; gap: 16px; align-items: flex-start; }
+  .sprite-wrap { position: relative; width: 90px; height: 70px; flex-shrink: 0; }
+  .sprite-wrap img.rotom { position: absolute; bottom: 0; left: 0; width: 56px; height: 56px; image-rendering: pixelated; animation: fan-bob 1.6s ease-in-out infinite; }
+  @keyframes fan-bob { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-4px); } }
+  .paper { position: absolute; background: #fff; border: 1px solid #b8b8bf; border-radius: 1px; animation: paper-fly 1.6s ease-out infinite; }
+  @keyframes paper-fly { 0% { transform: translate(0,0) rotate(0deg); opacity:1; } 20% { opacity:1; } 100% { transform: translate(70px,-24px) rotate(200deg); opacity:0; } }
+  .paper-line { margin: 4px 2px 0; height: 1px; background: var(--border); }
+  .paper-line.short { width: 60%; }
+  .dialog-title { font-size: 15px; font-weight: 600; margin: 0 0 6px; color: var(--text-primary); }
+  .dialog-text { font-size: 13px; color: var(--text-secondary); margin: 0; line-height: 1.5; }
+  .dialog-footer { display: flex; justify-content: flex-end; gap: 8px; margin-top: 16px; }
+  .btn { font-size: 13px; padding: 6px 16px; border-radius: 6px; border: 1px solid var(--border); background: #fafafa; cursor: pointer; }
+  .btn.danger { background: var(--danger); color: #fff; border-color: var(--danger); }
+</style>
+</head>
+<body>
+
+<div class="note">Boceto — "¿Abrir otro save sin exportar?" (reusa el ícono y animación de Rotom-Ventilador de rotom-confirmation-dialogs.md). Ver rotom-open-other-save-dialog.md para el texto en español e inglés.</div>
+
+<div class="dialog-card">
+  <div class="dialog-body">
+    <div class="sprite-wrap">
+      <img class="rotom" src="https://cdn.jsdelivr.net/gh/PokeAPI/sprites/sprites/pokemon/10011.png" alt="Rotom Ventilador" />
+
+      <div class="paper" style="bottom:10px; left:36px; width:16px; height:20px;">
+        <div class="paper-line"></div>
+        <div class="paper-line short"></div>
+      </div>
+      <div class="paper" style="bottom:14px; left:34px; width:14px; height:18px; animation-delay:0.25s;">
+        <div class="paper-line"></div>
+      </div>
+      <div class="paper" style="bottom:18px; left:38px; width:12px; height:15px; animation-delay:0.5s;"></div>
+    </div>
+    <div>
+      <p class="dialog-title">¿Abrir otro save sin exportar?</p>
+      <p class="dialog-text">Hay cambios de esta sesión que todavía no se exportaron — se perderán si abres otro archivo ahora.</p>
+    </div>
+  </div>
+  <div class="dialog-footer">
+    <button class="btn">Cancelar</button>
+    <button class="btn danger">Abrir de todos modos</button>
+  </div>
+</div>
+
+</body>
+</html>
