@@ -5,4 +5,6 @@
 
 28-08-26
 1. En el panel Equipo al crear un pokemon el "+" no pasa al siguiente slot para crear otro pokemon sino desaparece.
-2. El boton cerrar save genera una alerta antes de cerrar de cambios sin exportar cuando has editado el save y luego has limpiado/descartado los cambios en el save. 
+2. El boton cerrar save genera una alerta antes de cerrar de cambios sin exportar cuando has editado el save y luego has limpiado/descartado los cambios en el save.
+29-08-26
+1. Al crear un pokemon el apodo aparece en blanco y genera un error de legalidad, el apodo debe tener el nombre de la especie del pokemon an mayusculas por defecto. 
