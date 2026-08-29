@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Exxeguttor — Boceto: Mensajes de error al exportar</title>
+<style>
+  :root {
+    --bg-window: #ffffff;
+    --bg-surface: #f4f4f5;
+    --border: #dcdce0;
+    --border-strong: #b8b8bf;
+    --text-primary: #1c1c1f;
+    --text-secondary: #6b6b70;
+    --text-muted: #9a9aa0;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, "Segoe UI", "Cantarell", "Ubuntu", sans-serif;
+    background: #e5e5e8;
+    padding: 32px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    justify-content: center;
+  }
+  .note {
+    width: 100%;
+    text-align: center;
+    font-size: 12px;
+    color: #6b6b70;
+    margin-bottom: 8px;
+  }
+  .modal-card {
+    width: 300px;
+    background: var(--bg-window);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 22px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  }
+  .case-label { font-size: 11px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.03em; text-align: center; }
+  .msg-title { font-size: 14px; font-weight: 600; margin: 0; text-align: center; color: var(--text-primary); }
+  .msg-text { font-size: 12px; color: var(--text-secondary); margin: 0; text-align: center; line-height: 1.5; }
+  .btn { font-size: 13px; padding: 6px 16px; border-radius: 6px; border: 1px solid var(--border); background: var(--text-primary); color: #fff; cursor: pointer; margin-top: 4px; }
+
+  /* --- Caso 1: Sudowoodo + bosque --- */
+  .forest-scene { display: flex; align-items: flex-end; justify-content: center; gap: 1px; }
+  .tree { display: flex; flex-direction: column; align-items: center; }
+  .tree-crown { border-radius: 50% 50% 45% 45%; }
+  .tree-trunk { }
+  .sudowoodo-sprite { width: 60px; height: 60px; image-rendering: pixelated; margin: 0 -2px; animation: sudowoodo-shake 2s ease-in-out infinite; }
+  @keyframes sudowoodo-shake { 0%,100% { transform: rotate(0deg); } 25% { transform: rotate(-2deg); } 75% { transform: rotate(2deg); } }
+
+  /* --- Caso 2: Farfetch'd grande + hoja --- */
+  .write-scene { width: 140px; height: 110px; position: relative; }
+  .paper { position: absolute; bottom: 4px; left: 6px; width: 36px; height: 46px; background: #fff; border: 1px solid var(--border-strong); border-radius: 2px; }
+  .paper-line { margin: 6px 5px 0; height: 1.5px; background: var(--border); }
+  .paper-line.short { width: 60%; }
+  .farfetchd-sprite { position: absolute; bottom: 10px; right: 0; width: 96px; height: 96px; image-rendering: pixelated; transform-origin: bottom left; animation: scribble-attempt 1.8s ease-in-out infinite; }
+  @keyframes scribble-attempt { 0%,15% { transform: rotate(0deg); } 30% { transform: rotate(-15deg); } 45% { transform: rotate(8deg); } 60% { transform: rotate(-12deg); } 75%,100% { transform: rotate(0deg); } }
+  .leek { position: absolute; bottom: 32px; left: 32px; width: 16px; height: 4px; background: #7fb241; border-radius: 2px; transform-origin: left center; animation: leek-snap 1.8s ease-in-out infinite; }
+  @keyframes leek-snap { 0%,65% { transform: rotate(0deg); opacity:1; } 70% { transform: rotate(35deg); } 75% { opacity:0; transform: rotate(50deg) translateX(6px); } 100% { opacity:0; } }
+  .poof { position: absolute; bottom: 40px; left: 22px; font-size: 16px; opacity: 0; animation: poof 1.8s ease-in-out infinite; }
+  @keyframes poof { 0%,68% { opacity:0; transform: scale(0.5); } 74% { opacity:0.6; transform: scale(1.1); } 85%,100% { opacity:0; transform: scale(1.4); } }
+</style>
+</head>
+<body>
+
+<div class="note">Boceto animado — Mensajes de error al exportar (ver export-error-messages.md para el spec completo)</div>
+
+<div class="modal-card">
+  <p class="case-label">Caso 1 — Sin permisos de escritura</p>
+
+  <div class="forest-scene">
+    <div class="tree" style="margin-bottom:4px;">
+      <div class="tree-crown" style="width:20px;height:20px;background:#5a8c4f;"></div>
+      <div class="tree-trunk" style="width:5px;height:7px;background:#6b4a2f;"></div>
+    </div>
+    <div class="tree" style="margin-bottom:1px;">
+      <div class="tree-crown" style="width:26px;height:26px;background:#4a7c3f;"></div>
+      <div class="tree-trunk" style="width:6px;height:9px;background:#6b4a2f;"></div>
+    </div>
+    <div class="tree">
+      <div class="tree-crown" style="width:32px;height:32px;background:#3f6e35;"></div>
+      <div class="tree-trunk" style="width:7px;height:11px;background:#5c3f27;"></div>
+    </div>
+    <div class="tree">
+      <div class="tree-crown" style="width:36px;height:36px;background:#356028;"></div>
+      <div class="tree-trunk" style="width:8px;height:13px;background:#4f3620;"></div>
+    </div>
+
+    <img class="sudowoodo-sprite" src="https://cdn.jsdelivr.net/gh/PokeAPI/sprites/sprites/pokemon/185.png" alt="Sudowoodo bloqueando el único paso" />
+
+    <div class="tree">
+      <div class="tree-crown" style="width:36px;height:36px;background:#356028;"></div>
+      <div class="tree-trunk" style="width:8px;height:13px;background:#4f3620;"></div>
+    </div>
+    <div class="tree">
+      <div class="tree-crown" style="width:32px;height:32px;background:#3f6e35;"></div>
+      <div class="tree-trunk" style="width:7px;height:11px;background:#5c3f27;"></div>
+    </div>
+    <div class="tree" style="margin-bottom:1px;">
+      <div class="tree-crown" style="width:26px;height:26px;background:#4a7c3f;"></div>
+      <div class="tree-trunk" style="width:6px;height:9px;background:#6b4a2f;"></div>
+    </div>
+    <div class="tree" style="margin-bottom:4px;">
+      <div class="tree-crown" style="width:20px;height:20px;background:#5a8c4f;"></div>
+      <div class="tree-trunk" style="width:5px;height:7px;background:#6b4a2f;"></div>
+    </div>
+  </div>
+
+  <p class="msg-title">Sudowoodo bloquea el único paso</p>
+  <p class="msg-text">No tenés permiso para escribir en esta carpeta. Elegí otra ubicación o revisá los permisos.</p>
+  <button class="btn">Entendido</button>
+</div>
+
+<div class="modal-card">
+  <p class="case-label">Caso 2 — Falla durante la escritura</p>
+
+  <div class="write-scene">
+    <div class="paper">
+      <div class="paper-line"></div>
+      <div class="paper-line short"></div>
+    </div>
+    <img class="farfetchd-sprite" src="https://cdn.jsdelivr.net/gh/PokeAPI/sprites/sprites/pokemon/83.png" alt="Farfetch'd intentando escribir" />
+    <div class="leek"></div>
+    <div class="poof">💨</div>
+  </div>
+
+  <p class="msg-title">Farfetch'd no logró escribir el archivo</p>
+  <p class="msg-text">Algo interrumpió la exportación y el archivo no se guardó correctamente. Probá de nuevo.</p>
+  <button class="btn">Entendido</button>
+</div>
+
+</body>
+</html>
