@@ -1,0 +1,8 @@
+25-08-26
+1. Las Box con pokemon deben poder navegarse en ambos lados con las flechitas arriba y abajo.
+2. A partir de la gen 3 hay un limite en los EVs del pokemon el cual es 510 como suma total 
+3. Modificar los Evs no genera nada al guardar en gen4, es decir le das click a guardar y no anota nada en la libreta, revisar si sucede para otras gen.
+
+28-08-26
+1. En el panel Equipo al crear un pokemon el "+" no pasa al siguiente slot para crear otro pokemon sino desaparece.
+2. El boton cerrar save genera una alerta antes de cerrar de cambios sin exportar cuando has editado el save y luego has limpiado/descartado los cambios en el save. 
