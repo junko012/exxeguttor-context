@@ -229,3 +229,57 @@ verificar **comportamiento** (no solo firmas) con tests reales que corre el usua
   no tocado esta sesión.
 - Pokédex y Módulo de Items/Bag (mockup previo, ahora superado por el módulo Mochila real):
   Pokédex sigue sin script de carga ni vista.
+
+---
+
+## Sesión: corrección real de categorización de Mochila + gestión de sesión de save
+
+**Resumen**: la categorización de ítems de Mochila (Gen1/2/4/5/6, bloqueada en la sesión
+anterior esperando un fix de modelado de TMs) quedó resuelta de raíz — la causa real no era el
+modelado de TMs en `pokemon.db`, sino que `ItemInventoryService` nunca usó la columna
+`RawItemId` que ya traía `ItemGameCodes` desde el hotfix `fix_database`. Además se rediseñó el
+panel central de Mochila (ahora grilla de tiles tipo Caja de Pokémon, con origen Mochila/PC
+navegable arriba — antes era navegación de a una categoría), se agregaron descripciones de
+MT/HM por generación, y se sumó gestión de sesión de save (Cerrar/Limpiar ediciones/confirmar
+antes de abrir otro archivo). Ver `context.md`, sección "🎒 Módulo Mochila", para el detalle
+técnico completo (incluye el historial de las cuatro correcciones hasta llegar a la causa real).
+
+**Resuelto y probado con saves reales**:
+- Categorización de Mochila para TODAS las generaciones, vía `ItemGameCodes.RawItemId` (no
+  `ItemId`) — corrige tanto MTs/MOs (antes vacías en Gen1/2) como otros ítems que fallaban en
+  silencio (Piedras evolutivas, Llaves, Cebo Bueno, etc. en Gen1/2).
+- `TmDescriptionResolver` — descripción de MT/HM resuelta a la generación del save cargado, en
+  vez de mostrar la prosa cruda con movimientos de varias generaciones mezclados.
+- Panel central de Mochila rediseñado: grilla de tiles de categoría (antes navegación de a una),
+  origen Mochila/PC navegable con ◀▶ (antes toggle), tiles agrandadas a 204×108 (antes 84×84,
+  heredado sin querer de `PokemonSlotView`).
+- Origen PC ahora también desglosado por categoría (antes una sola tile "Objetos (PC)" con todo
+  mezclado, incluyendo ítems que ni pertenecían a esa generación).
+- Modal de revisión de Mochila: una tarjeta por origen (Mochila/PC) en vez de una por categoría,
+  con nombres correctos en la línea de cada ítem (antes se reconstruían mal por ID para
+  Gen1/2/3, mostrando nombres sin relación con el ítem editado).
+- Bug real: `EditSessionService` no se reseteaba al abrir un save nuevo — ediciones pendientes
+  de un save anterior quedaban pegadas y se aplicaban sobre el save recién abierto.
+- Cerrar save (nuevo), Limpiar ediciones sin cerrar el save (nuevo), confirmación antes de abrir
+  otro save con ediciones pendientes (nuevo) — los tres con modal de confirmación cuando
+  corresponde.
+
+**Gap de datos, no bloqueante**:
+- Colosseum/XD: `ItemGameCodes` solo mapea los 122 ítems exclusivos de esos juegos, no los
+  compartidos con el resto de la saga (Poké Ball, Potion, etc.) — ver
+  `hotfixes/colosseum_xd_shared_items_gap.md`.
+- TRs de Espada/Escudo sin `Description` cargada desde el origen (`items.json`) — nada que
+  `TmDescriptionResolver` pueda resolver ahí.
+
+**Caso pendiente, revisar antes de sacar el ejecutable**: tras editar y usar "Limpiar", las
+alertas de Cerrar/Abrir-otro-save siguen disparando como si hubiera ediciones pendientes, y
+"Limpiar" clickeado dos veces seguidas muestra el modal de confirmación las dos veces en vez de
+avisar que no había nada que descartar. Análisis extenso por lectura de código no encontró la
+causa — sospecha principal es build no limpio, sin confirmar. Recomendado: `dotnet clean` +
+rebuild antes de retomar, y si persiste, ir directo a diagnóstico real (mismo método que se usó
+para encontrar el bug de `RawItemId`) en vez de releer código de nuevo.
+
+**Sin tocar esta sesión** (arrastrados de antes): tests de round-trip para Habilidad/HeldItem/
+Shiny/Dynamax/Alpha/creación de Pokémon nuevo; `TID`/`SID` de entrenador no listados en
+libreta/modal; límite de suma de EVs (510 en Gen3+) sin forzar; Pokédex sin script de carga ni
+vista.

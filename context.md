@@ -1,11 +1,10 @@
 # context.md — Estado actual del proyecto Exxeguttor
 
-_Última actualización: sesión del módulo Mochila (completo) + pipeline de escritura real
-(EditApplyService, cierra el GAP CRÍTICO histórico) + varios bugs reales encontrados y
-corregidos (Trainer+Gender crash, Gen9/Terastal, Legends Z-A, IVs/EVs Gen1-2). Queda una
-investigación abierta y bloqueada: categorización de ítems de Mochila para Gen1/2/4/5/6, a la
-espera de un fix de modelado de TMs en `pokemon.db` que el usuario está resolviendo en otra
-sesión aparte. Sin repo git — no hay historial de commits._
+_Última actualización: sesión larga de corrección del módulo Mochila (categorización real por
+generación vía `ItemGameCodes.RawItemId`, ya no bloqueada), rediseño del panel central a grilla
+de tiles tipo Caja de Pokémon con origen Mochila/PC navegable, descripciones de MT/HM por
+generación, y gestión de sesión de save (Cerrar/Limpiar ediciones/confirmar antes de abrir otro
+archivo). Sin repo git — no hay historial de commits._
 
 ---
 
@@ -110,134 +109,157 @@ UI — no se escribe todavía.
 
 ---
 
-## 🎒 Módulo Mochila — implementado esta sesión
+## 🎒 Módulo Mochila — categorización corregida, panel rediseñado (sesión larga)
 
-### Arquitectura
-- **`Exxeguttor.App/Services/ItemInventoryService.cs`** — lee `SaveFile.Inventory` (PKHeX.Core)
-  y cruza con `PokemonDatabase` para nombre/descripción de cada ítem. `Items.ItemId` de
-  `pokemon.db` coincide 1:1 con el índice de PKHeX.Core (mismo criterio que ya usaban Mega
-  Stones/Z-Crystals) — **excepto para TMs/HMs, ver "Bug conocido, bloqueado" más abajo**. Solo
-  lectura — las ediciones de cantidad pasan por `EditSessionService`, este servicio no las
-  conoce.
-- **`Exxeguttor.UI/ViewModels/BagViewModel.cs`** — orquestador: pouches disponibles del save
-  actual (`Initialize()`, se llama al abrir el save y cada vez que se entra al modo Mochila),
-  categoría seleccionada, lista de ítems de esa categoría (búsqueda **acotada a la categoría
-  actual**, no global), toggle Mochila/PC.
-- **`BagItemRowViewModel.cs`** — una fila de ítem: checkbox poseído (toggle qty 0↔1), stepper
-  `−/+`, botón **MAX** (topea al `MaxCount` real de ese pouch — nunca hardcodeado, varía mucho
-  por juego: 99 en Gen1-2, hasta 999 en Gen4+).
-- **`BagPouchTileViewModel.cs`** — modelo de una categoría (ícono, nombre, contador).
-- **`RibbonWriter.cs`**/**`EditApplyService.cs`** — ver GAP CRÍTICO arriba.
+### Arquitectura de lectura — `ItemInventoryService` (Exxeguttor.App)
 
-### Navegación — tipo caja, no grilla de tiles
-El panel central de Mochila (`BagPouchGridView.axaml`) usa el mismo lenguaje visual que
-`BoxView`: un header `◀ [ícono + nombre de categoría] ▶` con texto de posición debajo
-("Categoría 2 / 6"), en vez de una grilla de tiles clickeables (diseño descartado — el pedido
-explícito fue "solo cambia el texto" respecto al patrón ya usado para cajas de Pokémon). Mismo
-clamp sin wrap en los extremos que `BoxViewModel.PreviousBox`/`NextBox`
-(`BagViewModel.PreviousPouch`/`NextPouch`). El toggle Mochila/PC vive aparte, arriba de ese
-header — cambiar el toggle recarga la lista completa de categorías y reinicia la posición a la
-primera.
+**`pokemon.db.ItemGameCodes` es la ÚNICA fuente de qué categorías existen y qué ítems caen en
+cada una, para toda generación por igual** — `SaveFile.Inventory` de PKHeX.Core solo se consulta
+para leer/ubicar la CANTIDAD poseída real de cada ítem, nunca para decidir categorización. Esto
+reemplaza por completo el diseño de `CategoryUpper` que se había acordado en la sesión anterior
+y nunca llegó a implementarse (ver "Historial de diseño" abajo — la causa real resultó ser otra).
 
-El code-behind de `BagPouchGridView.axaml.cs` quedó vacío (solo `InitializeComponent()`) — ya
-no hace falta manejar clicks sobre tiles, los botones `◀`/`▶` tienen `Command` directo.
+**`ItemGameCodes` tiene dos columnas de ID por fila, con roles distintos**:
+- `ItemId` — el ID unificado de `pokemon.db` (para buscar `Name`/`Description`/`Category` en
+  `Items`).
+- `RawItemId` — el índice REAL que usa PKHeX.Core para ESE juego puntual. **Casi nunca coincide
+  con `ItemId`** (confirmado contra un save real de Yellow: 125 de 130 filas difieren) — es el
+  que hay que usar para matchear contra `InventoryPouch.Items[].Index`, tanto en lectura
+  (`ItemInventoryService.GetPouches`/`GetItems`) como en escritura
+  (`EditApplyService.ApplyBagPouch`).
 
-### Confirmado por reflection/test esta sesión (mecánica de Inventory)
-- Gen1 tiene solo 2 pouches (`Items`, `PCItems`) — TMs/HMs, bolas y objetos clave viven todos
-  mezclados en el mismo pouch `Items`, no hay separación real en el juego para esa generación.
-- El toggle Mochila/PC solo tiene sentido en Gen1-3 (únicas generaciones con pouch `PCItems`
-  real, confirmado por diagnóstico) — de Gen4 en adelante no existe ese storage aparte,
-  `ShowStoreToggle` ya lo oculta automáticamente.
-- `InventoryPouch.Items` es de tamaño **fijo** — ver GAP CRÍTICO arriba, sección Mochila.
-- `IItemStorage.IsLegal(InventoryType, int, int)` (vía `InventoryPouch.Info`) — investigado
-  como posible filtro de categoría más confiable que `CanContain`, **descartado**: siempre
-  devuelve `true` para cualquier ítem en cualquier pouch, inútil para esto.
+`PokemonDatabase.GetItemPouchRows(gameId)` devuelve `List<ItemPouchRow>` (`ItemId`, `RawItemId`,
+`UserPouchCategory`) para un `GameId` puntual — reemplaza al viejo
+`GetItemUserPouchCategories(gameId)` (que devolvía solo `ItemId`→categoría, sin `RawItemId`, la
+causa real del bug de MTs/MOs y de otros ítems que fallaban en silencio — ver más abajo).
 
-### ⚠️ Bug conocido, investigación EN CURSO Y BLOQUEADA — categorización de ítems
+**"Origen" (Mochila vs PC) es un eje ortogonal a la categoría** — ambos parámetros públicos de
+`ItemInventoryService` (`GetPouches`/`GetItems`) llevan `useAlternateStorage: bool`:
+- **Mochila**: cada categoría busca SU pouch real por `Type` en `save.Inventory`, con fallback
+  al pouch genérico `Items` si esa generación no tiene uno dedicado (ej. "Bolas" en Gen1 — el
+  juego solo tiene un pouch `Items` real donde vive todo mezclado). Mismo fallback en
+  `EditApplyService.ApplyBagPouch` para la escritura.
+- **PC**: un ÚNICO pouch físico real (`PCItems`/`FreeSpace`) sirve a TODAS las categorías —
+  mismas tiles que Mochila, pero leyendo/escribiendo cantidades del pouch de PC. Si esta
+  generación no tiene ningún pouch de PC real (Gen4+), `GetPouches(useAlternateStorage: true)`
+  devuelve vacío — señal para `BagViewModel.ShowStoreNav`.
 
-**Síntoma reportado por el usuario**: en la UI, ítems de categorías distintas (Bolas, MTs)
-aparecen mezclados dentro de "Objetos" para Gen1/2/3, y en Gen1 las MTs/HMs no aparecen
-agrupadas en absoluto.
+`InventoryPouch.CanContain` de PKHeX.Core **ya no se usa para nada** en este módulo (ver
+Historial de diseño — se probó, resultó no confiable, y ni siquiera hacía falta una vez que se
+encontró que `RawItemId` ya tenía el dato correcto desde el hotfix `fix_database`).
 
-**Investigación realizada** (con tests de diagnóstico reales, no supuestos):
+### Descripción de MT/HM por generación — `TmDescriptionResolver` (Exxeguttor.App, nuevo)
 
-1. **`BagItemCategoryDiagnosticTests`** — para cada ítem de un rango amplio (1-400), en qué
-   pouch(es) de un save real `CanContain` devuelve `true`. Resultado:
-   - **Gen3 (Esmeralda) está bien** — cada ítem cae en un único pouch (Balls/KeyItems/TMHMs/
-     Berries todos exclusivos entre sí). El único "solapamiento" es Items↔PCItems, y es
-     **correcto**: el PC de objetos en Gen3 acepta lo mismo que la mochila general, no bolas/
-     MTs/bayas — no hay que tocar nada de Gen3 en adelante (esas generaciones usan subclases
-     dedicadas de `InventoryPouch`, ver más abajo).
-   - **Gen1/Gen2 salieron mal, y no es solo "categorías mezcladas"** — es más profundo: para
-     Gen2, el ítem 54 apareció como `"old-gateau"` (un ítem de Sinnoh/Gen4) marcado como legal
-     en un save de Gen2, donde ni debería existir. Great Ball (id=3) salió clasificada en
-     "Items" en vez de "Balls"; Dive Ball (id=7) salió en "KeyItems" en vez de "Balls".
-2. **`ItemStorageDiagnosticTests`** — comparó `CanContain` contra `InventoryPouch.Info.IsLegal
-   (InventoryType, int, int)`, pensando que podía ser un chequeo más preciso. Resultado:
-   `IsLegal` da **`true` para absolutamente todo, en cualquier pouch** — descartado por
-   completo, no sirve.
+Para ítems `Category == "all-machines"` (TM/HM/TR), la `Description` cruda de `pokemon.db` es
+prosa libre de veekun que menciona el movimiento de VARIAS generaciones a la vez en una sola
+oración (ej. TM01: *"Teaches Hone Claws... (Gen IV & III: Focus Punch Gen II: DynamicPunch Gen
+I: Mega Punch)"*) — confuso mostrado tal cual cuando el usuario mira el save de una generación
+puntual. `TmDescriptionResolver.Resolve(rawDescription, generation)` parsea esa prosa (regex
+sobre el patrón `"Gen <romano>[ & <romano>]: <movimiento>"`) y devuelve solo el movimiento que
+corresponde a `save.Generation`. De Gen6 en adelante la Description ya viene sin paréntesis (un
+solo movimiento, roster de MTs no reciclado entre generaciones) — se devuelve intacta.
 
-**Causa raíz confirmada**: `InventoryPouch.CanContain` en los formatos **sin subclase propia**
-de PKHeX.Core (Gen1/2/4/5/6 usan la clase base genérica `InventoryPouch`, a diferencia de
-Gen3/7/8/9 que tienen subclases dedicadas `InventoryPouch3`/`7`/`8`/`9`) no hace un chequeo real
-de categoría — devuelve resultados inconsistentes que ni siquiera respetan qué ítems existen
-realmente en esa generación.
+**Gap de datos, no bloqueante**: TRs de Espada/Escudo (`Category` también `"all-machines"`) no
+tienen `Description` cargada en absoluto desde el origen (`items.json` del hotfix
+`fix_database`) — el resolver no tiene nada que parsear ahí, no es un bug del resolver.
 
-**Solución diseñada y acordada con el usuario** (todavía sin implementar):
+### UI — panel central rediseñado a grilla de tiles tipo Caja (`BagPouchGridView`)
 
-En vez de confiar en PKHeX.Core para categorizar estos formatos, agregar una columna nueva
-**`CategoryUpper`** a la tabla `Items` de `pokemon.db`, poblada agrupando las 46-48 categorías
-existentes de PokeAPI (columna `Category`, ya en la DB) en los mismos 15 valores del enum
-`InventoryType` — guardando literalmente el *nombre del enum* como string (`"Balls"`,
-`"TMHMs"`, `"Medicine"`, etc.), para que el cruce en C# sea un `Enum.TryParse` directo sin
-tabla intermedia. Mapeo completo de las 46-48 categorías PokeAPI → `CategoryUpper` ya acordado
-con el usuario (ver el propio historial de la sesión si hace falta el detalle exacto
-categoría-por-categoría; no repetido acá para no duplicar una tabla larga que puede cambiar).
+**Corrección de diseño explícita del usuario**: el diseño anterior (navegación `◀ nombre ▶` de a
+una categoría, "mismo patrón que Caja pero solo cambia el texto") se descartó — el pedido fue
+que el panel central se vea **exactamente como la grilla de Cajas de Pokémon**: arriba se navega
+el **origen** (Mochila/PC, ◀▶, equivalente a Caja 1/Caja 2 — `BagViewModel.PreviousStoreCommand`/
+`NextStoreCommand`, clamp sin wrap, mismo criterio que `BoxViewModel.PreviousBox`/`NextBox`), y
+la **grilla de abajo muestra las categorías como tiles clickeables** (equivalente a los Pokémon
+dentro de una caja), no una única categoría a la vez.
 
-Se agregó además una categoría **virtual nueva, `"Stones"`** (piedras evolutivas — Fuego, Agua,
-Trueno, Hoja, Luna, Sol, etc., categoría PokeAPI `evolution`) que **no corresponde a ningún
-`InventoryType` real** de PKHeX.Core (las piedras evolutivas siempre viven físicamente en el
-pouch `Items` en todos los juegos, ninguno tiene un pouch dedicado). Decisión de diseño
-explícita del usuario: que aparezca como su **propia tile navegable** en Mochila (como Bolas o
-Bayas), no solo como un tag de búsqueda interno. Esto implica que las tiles de Mochila van a
-depender de `CategoryUpper` (categorización propia), **no** directamente de qué pouches reales
-tenga `save.Inventory` — el pouch real de PKHeX.Core solo va a decidir *dónde* se escribe la
-cantidad al aplicar una edición (con fallback al pouch genérico `Items`/`PCItems` cuando esa
-generación no tiene un pouch dedicado para esa categoría — ej. una MT en Gen1 se vería bajo la
-tile "MTs/MOs" en la UI, pero la cantidad se escribiría físicamente en el pouch `Items`, que es
-el único que existe ahí).
+- **`Views/BagPouchTileView.axaml`** (nuevo, equivalente a `PokemonSlotView`) — la tile
+  individual: ícono, nombre, contador "poseídos/legales". 204×108 (no 84×84 — ese tamaño se
+  heredó sin querer de `PokemonSlotView` en un primer intento y hubo que agrandarlo para que
+  entren 3 tiles por fila).
+- **`BagPouchGridView.axaml`** — nav de origen arriba (`◀ Mochila/PC ▶` + texto "Almacenamiento
+  X / 2") + `ItemsControl`/`WrapPanel` de tiles abajo, mismo esqueleto que `BoxView.axaml`.
+  Code-behind maneja el click sobre una tile (`BagViewModel.SelectPouch`), igual que
+  `BoxView.axaml.cs` con `PokemonSlotView`.
+- **`BagItemListView.axaml`** (panel derecho) — sin cambios de estructura: buscador acotado a la
+  categoría seleccionada, lista de todos los ítems legales (poseídos y no), cada fila con
+  checkbox/sprite/descripción/stepper/MAX.
 
-Conteos reales de categorías-tile por este diseño, confirmados cruzando el mapeo contra los
-límites de `ItemId` observados empíricamente en el diagnóstico (**antes** de descubrirse el
-problema de modelado de TMs, ver bloqueo abajo — van a necesitar recalcularse):
-- **Gen1/Gen2** (`ItemId` hasta ~250, límite real observado): **9** categorías → Objetos,
-  Bolas, Batalla, Bayas, Clave, Correo, Medicina, Piedras, Tesoros.
-- **Gen3** (`ItemId` hasta 376, límite real observado con `tm72`): **10** → las 9 de arriba +
-  MTs/MOs.
-- **Toda la DB sin filtrar por generación**: 14 categorías reales + Piedras = 15 posibles en
-  total (las 4 que faltan hasta Gen3 — Caramelos, Ingredientes, Mega Piedras, Z-Crystals — son
-  mecánicas introducidas en Gen6+/7/8/9 respectivamente).
+### Historial de diseño — por qué se descartó `CategoryUpper` (dejar como referencia, no repetir)
 
-**⚠️ BLOQUEADO ahora mismo**: durante esta misma investigación, el usuario detectó que el
-problema de fondo está en **cómo `pokemon.db` modela las TMs/HMs**, no solo en `CanContain`.
-Al revisar la tabla `Items` filtrada por nombre `tm%`/`hm%`, las MTs aparecen todas con
-`ItemId` en el rango 305+ (muy por encima del corte real observado de Gen1/Gen2, ~250) — la
-hipótesis es que un solo `ItemId` por "tm01" no alcanza para representar correctamente que en
-Gen1/2 esa MT enseña un movimiento **distinto** al que enseña en Gen3+ (el roster de TMs
-cambió completamente entre eras), y la tabla necesitaría múltiples filas (una por era) en vez
-de una sola fila reusada para todas las generaciones.
+La sesión anterior había diseñado y dado por acordada una migración de `pokemon.db` agregando
+una columna `CategoryUpper` a `Items`, bloqueada esperando un fix de modelado de TMs. **Esa
+migración nunca se hizo** — en la sesión siguiente se aplicó en cambio el hotfix `fix_database`
+(ver `exxeguttor-context/hotfixes/fix_database/`), que creó una tabla nueva **`ItemGameCodes`**
+(no una columna en `Items`) con `PouchCategory`/`UserPouchCategory` **por juego** (no un valor
+global por ítem como iba a ser `CategoryUpper`) — diseño más granular y correcto, que de paso ya
+traía la columna `RawItemId` que terminó siendo la pieza que faltaba.
 
-El usuario está resolviendo esto en **otra sesión de Claude aparte**, y va a traer los pasos ya
-validados para ejecutar acá. **No tocar la migración de `CategoryUpper` ni el código de
-categorización de Mochila hasta que ese fix llegue** — armar la columna nueva sobre una tabla
-`Items` con las MTs mal modeladas apilaría un problema sobre el otro. Todo lo demás del diseño
-(mapeo de las demás categorías, decisión de tiles virtuales, `Stones`) quedó cerrado y no hace
-falta revisarlo de nuevo cuando se retome — solo falta el fix de TMs + recalcular los conteos
-finales + implementar la migración + tocar `ItemInventoryService`/`BagViewModel`/
-`BagPouchTileViewModel` para que las tiles dependan de `CategoryUpper`.
+El camino hasta la causa real (documentado para no repetir la misma investigación):
+1. Primera versión de esta sesión usó `InventoryPouch.CanContain` con un camino dual según si el
+   save tenía una subclase dedicada de `InventoryPouch` — resultó poco confiable (Gen1 no se
+   detectaba como esperado en runtime).
+2. Se sacó `CanContain`, todo pasó a `ItemGameCodes.UserPouchCategory` — pero matcheando por
+   `ItemId` (el unificado) contra `pouch.Items[].Index`. Funcionó para la mayoría de "Objetos"
+   por coincidencia (muchos ítems comunes con ID bajo tienen `ItemId == RawItemId`), pero falló
+   en silencio para el resto — visible sobre todo en MTs/MOs, donde SIEMPRE difieren.
+3. Se armó un camino especial solo para MTs/MOs resolviendo índices y nombres en vivo contra
+   PKHeX.Core (`InventoryPouch.GetAllItems()` + `GameStrings.GetItemStrings(save.Context,
+   save.Version)`, confirmado por reflection real sobre el DLL vía tests `[Fact]` con
+   `Assert.Fail` — sin acceso a NuGet en el sandbox de análisis, no se pudo verificar por
+   reflection cruda esta vez, hizo falta que el usuario corriera los tests y pegara la salida).
+   Funcionaba, pero dejaba el mismo bug sin resolver para el resto de categorías en Gen1/2 (Cebo
+   Bueno, Piedras evolutivas, etc. — nunca reportado porque no se probó con esos ítems
+   puntuales).
+4. **Causa real**: `ItemGameCodes.RawItemId` ya tenía el índice correcto por juego desde el
+   hotfix — nunca se había usado esa columna. Con eso, un solo camino uniforme alcanza para
+   todas las categorías y generaciones — se sacó el camino especial de MTs/MOs por completo.
+
+**Piedras evolutivas**: decisión de producto re-confirmada esta sesión — siguen dentro de la
+tile genérica "Objetos", **no** tienen tile propia (la idea de una categoría virtual `"Stones"`
+del diseño viejo no se implementó).
+
+**Gap conocido, no bloqueante — Colosseum/XD**: `ItemGameCodes` solo tiene los 122 ítems
+EXCLUSIVOS de esos dos juegos (llaves, discos, ADN Samples — rango sintético `ItemId >= 90000`,
+sin ID unificado de PKHeX.Core). Los ítems COMPARTIDOS con el resto de la saga (Poké Ball,
+Potion, etc., que también existen y se usan en Colosseum/XD) no están mapeados a esos dos
+`GameCode` — un save real de Colosseum/XD hoy solo mostraría la tile "Clave" en Mochila. Ver
+`hotfixes/colosseum_xd_shared_items_gap.md` para el detalle completo si se retoma.
+
+### Gestión de sesión de save (Cerrar / Limpiar ediciones / confirmar antes de abrir otro)
+
+Tres agregados a `MainWindowViewModel`, todos con el mismo lenguaje visual (overlay oscuro +
+tarjeta blanca centrada, botón de acción destructiva en rojo):
+
+- **Bug real corregido**: `EditSessionService` no se reseteaba al abrir un save nuevo — las
+  claves de edición son estructurales (`PokemonSlotKey` de Box1/Slot1 es la misma para
+  cualquier save), así que las ediciones pendientes de un save anterior quedaban pegadas y se
+  mostraban/aplicaban sobre el save recién abierto. `EditSessionService.ResetSession()` (nuevo —
+  limpia `_pendingEdits`/`_pristineValues`/`_displayNames`/`_nicknames`/`_pendingCreations`, las
+  5 estructuras de estado) se llama ahora tras un `OpenAsync` exitoso (no antes — si el open
+  falla, el save viejo si lo había sigue intacto).
+- **Cerrar save** (`CloseSaveCommand`, ícono ✖ + menú File `Ctrl+W`) — vuelve a Pantalla 1
+  (Recientes/drag&drop). Pregunta confirmación solo si `EditSessionService.HasAnyEdits` (ahora
+  también cuenta `_pendingCreations`, no solo `_pendingEdits` — un Pokémon recién creado sin
+  editar ninguna propiedad todavía antes no contaba como "hay cambios").
+- **Limpiar ediciones** (`ClearEditsCommand`, ícono 🧹 al lado de la libreta) — descarta todo lo
+  pendiente SIN cerrar el save, repoblando los paneles desde el `SaveFile` real (nunca se
+  mutó — las ediciones son pendientes hasta exportar), mismo bloque de repoblado que
+  `OpenSaveFromPathAsync`.
+- **Confirmar antes de abrir otro save** (`RequestOpenSaveFromPath`, gatekeeper único para las
+  tres formas de abrir — diálogo del sistema, Recientes, y a futuro drag&drop) — mismo gap que
+  Cerrar pero en la otra puerta de entrada, agregado a pedido explícito del usuario.
+
+**Caso pendiente sin resolver, revisar antes de sacar el ejecutable**: reportado que, tras
+editar y luego usar "Limpiar", las alertas de Cerrar/Abrir-otro-save siguen apareciendo como si
+hubiera ediciones pendientes, y "Limpiar" clickeado dos veces seguidas muestra el modal de
+confirmación las dos veces en vez de "no había nada que descartar" la segunda. Análisis extenso
+por lectura de código no encontró la causa (`ResetSession`, `HasAnyEdits`, `RecordEdit`/
+`CapturePristine`, instancia única de `EditSessionService`, bindings XAML — todo revisado y
+correcto en papel). Sospecha principal: build no limpio del lado del usuario (no confirmado). Si
+persiste tras un `dotnet clean` + rebuild, retomar con diagnóstico real en vez de releer código.
 
 ---
-
 ## Stack técnico
 
 | Componente | Versión |
@@ -311,7 +333,9 @@ exxeguttor/
 │       │   ├── TrainerView.axaml(.cs)
 │       │   ├── PokemonSlotView.axaml(.cs)
 │       │   ├── SpeciesPickerView.axaml(.cs)
-│       │   ├── BagPouchGridView.axaml(.cs) # NUEVO — panel central Mochila, navegación tipo caja
+│       │   ├── BagPouchGridView.axaml(.cs) # NUEVO — panel central Mochila, grilla de tiles
+│       │   │                                tipo Caja (origen Mochila/PC navegable arriba)
+│       │   ├── BagPouchTileView.axaml(.cs) # NUEVO — tile individual de categoría (204x108)
 │       │   └── BagItemListView.axaml(.cs)  # NUEVO — panel derecho Mochila, lista de ítems
 │       ├── Services/
 │       │   ├── SpeciesDatabase.cs
@@ -328,8 +352,12 @@ exxeguttor/
 │       │   ├── TypeEffectivenessDatabase.cs
 │       │   ├── MovesetDatabase.cs
 │       │   ├── SpriteService.cs
-│       │   ├── EditSessionService.cs    # Sigue siendo la fuente de "qué cambió" — ahora con
-│       │   │                              guards contra colisión de nombre Gender Pokémon/Trainer
+│       │   ├── EditSessionService.cs    # Fuente de "qué cambió" — guards contra colisión de
+│       │   │                              nombre Gender Pokémon/Trainer, ResetSession() nuevo
+│       │   │                              (limpia las 5 estructuras al abrir/cerrar/limpiar
+│       │   │                              un save), BagItemEditValue (nombre+cantidad
+│       │   │                              capturado al momento de editar, ya no se
+│       │   │                              reconstruye por ID en el modal de revisión)
 │       │   ├── EditApplyService.cs      # NUEVO — el pipeline de escritura real
 │       │   ├── BusyStateService.cs
 │       │   └── FileDialogService.cs
@@ -352,8 +380,8 @@ exxeguttor/
 │   └── fetch-species-extra.py
 ├── pokemon-database/
 │   ├── database/
-│   │   └── pokemon.db                   # Pendiente: columna CategoryUpper nueva en Items
-│   │                                       (bloqueado, ver sección Mochila arriba)
+│   │   └── pokemon.db                   # ItemGameCodes.RawItemId es la fuente real de
+│   │                                       categorización de Mochila — ver sección Mochila
 │   ├── resources/
 │   ├── docs/
 │   ├── ROADMAP.md, CHANGELOG.md, DATA_SOURCES.md, CONTRIBUTING.md
@@ -369,11 +397,13 @@ exxeguttor/
 - **Species**, **SpeciesTypes**, **SpeciesAbilities**, **Moves**, **Abilities**,
   **TypeEffectiveness**, **Learnsets** — sin cambios esta sesión.
 - **Items** — columnas confirmadas: `ItemId` (PK, coincide 1:1 con el índice de PKHeX.Core
-  salvo para TMs/HMs, ver bug bloqueado arriba), `Name`, `Description`, `Category` (46-48
-  valores de PokeAPI, categorización por efecto/uso — NO es la agrupación por bolsillo de
-  mochila), `Cost`, `FlingPower`, `FlingEffect`. **Pendiente**: columna `CategoryUpper` nueva
-  (agrupación de `Category` en los 15 valores de `InventoryType` + `Stones` virtual) —
-  bloqueada, ver sección Mochila.
+  salvo para MTs/MOs, ver sección Mochila), `Name`, `Description`, `Category` (46-48 valores de
+  PokeAPI, categorización por efecto/uso — NO es la agrupación por bolsillo de mochila), `Cost`,
+  `FlingPower`, `FlingEffect`.
+- **ItemGameCodes** (nueva, del hotfix `fix_database`) — `ItemId`, `GameId`, `RawItemId`
+  (índice real de PKHeX.Core para ese juego — ver sección Mochila, la pieza que faltaba),
+  `PouchCategory` (real, fiel al motor), `UserPouchCategory` (la tile de UI a mostrar — igual a
+  `PouchCategory` en Gen4-9, subclasificada a mano en Gen1-3+Colosseum/XD).
 
 **Nota**: naturalezas y categorías/nombres de cintas siguen sin estar en la DB — tablas
 estáticas en `NatureDatabase.cs`/`RibbonDatabase.cs`. Mismo criterio ahora para
@@ -398,14 +428,14 @@ de nuevo (recarga defensiva).
 Izquierda: TrainerView + PartyView. Centro: BoxView + PokemonInfoView. Derecha:
 PokemonStatsView (tabs). Selección de Pokémon dispara `LoadPokemon`.
 
-### Panel principal — modo Mochila (nuevo)
-- **Centro** (`BagPouchGridView`): header tipo caja `◀ [ícono + nombre] ▶` con texto de
-  posición debajo, en vez de grilla de tiles. Toggle Mochila/PC arriba (solo visible si el save
-  tiene pouch `PCItems`, o sea Gen1-3).
+### Panel principal — modo Mochila
+- **Centro** (`BagPouchGridView`): nav de origen arriba (`◀ Mochila/PC ▶`, equivalente a
+  Caja 1/Caja 2 — solo visible si el save tiene un segundo origen real, o sea Gen1-3) + grilla
+  de tiles de categoría abajo (mismo lenguaje visual que la grilla de Cajas de Pokémon).
 - **Derecha** (`BagItemListView`): buscador (acotado a la categoría actual), lista de **todos**
   los ítems legales de esa categoría (poseídos y no — para poder agregar, no solo editar
   cantidad), cada fila con checkbox, sprite, descripción, stepper `−/+` y botón MAX.
-- Ver "Módulo Mochila" arriba para el detalle de categorización (bug conocido, bloqueado).
+- Ver "Módulo Mochila" arriba para el detalle de categorización (`RawItemId`, ya no bloqueado).
 
 ### TrainerView (sin cambios esta sesión, ya editable de antes)
 Nombre, TID/SID, Género, Dinero, Monedas, Battle Points — todo con el mismo mecanismo
@@ -649,12 +679,11 @@ obsoleto en su redacción original.)_
     "genéricos" de PKHeX.Core (Gen1/2/4/5/6, clase base `InventoryPouch` sin subclase propia)
     — SÍ es confiable en Gen3/7/8/9 (subclases dedicadas `InventoryPouch3`/`7`/`8`/`9`).** No
     es solo impreciso: devuelve resultados que ni siquiera respetan qué ítems existen en esa
-    generación (confirmado con datos reales, ver sección "Bug conocido" del módulo Mochila
-    arriba). `IItemStorage.IsLegal` (investigado como alternativa) resultó peor: siempre
-    `true`. La solución en curso es categorizar por `pokemon.db` propia (`CategoryUpper`
-    nuevo), no por PKHeX.Core, para estos formatos — bloqueado por un problema de modelado de
-    TMs en la DB que el usuario está resolviendo aparte (ver sección Mochila para el detalle
-    completo, no repetido acá).
+    generación (confirmado con datos reales). `IItemStorage.IsLegal` (investigado como
+    alternativa) resultó peor: siempre `true`. **Ya no se usa ninguno de los dos en el módulo
+    Mochila** — la categorización sale entera de `pokemon.db.ItemGameCodes` (ver sección
+    Mochila arriba para el detalle completo, incluida la causa real y por qué ya no hace falta
+    la columna `CategoryUpper` que se había diseñado antes).
 
 27. **`InventoryPouch.Items` es un array de tamaño FIJO por pouch, nunca se agranda ni se
     achica** — confirmado con round-trip test real (`InventoryPouch.SetPouch` tira
