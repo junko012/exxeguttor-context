@@ -64,7 +64,7 @@ El ZIP del proyecto siempre estará en `/mnt/user-data/uploads/`. Extraer en
 
 Hasta hace poco, todo el editor era una capa de "edición pendiente en memoria" que nunca se
 aplicaba al `SaveFile` real — exportar escribía el save tal cual estaba, sin las ediciones de
-la UI. Eso ya no es así.
+la UI. Eso ya cambió.
 
 **Cómo quedó armado**, siguiendo el mismo patrón pendiente-hasta-confirmar de siempre pero con
 un paso nuevo antes de exportar:
