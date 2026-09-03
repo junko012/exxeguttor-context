@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Exxeguttor — Tips de edición (stack 3D)</title>
+<style>
+  :root {
+    --bg-window: #ffffff;
+    --bg-surface: #f4f4f5;
+    --border: #dcdce0;
+    --border-accent: #3b82f6;
+    --text-primary: #1c1c1f;
+    --text-secondary: #6b6b70;
+    --text-muted: #9a9aa0;
+    --accent: #3b82f6;
+    --accent-bg: #eaf1fe;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, "Segoe UI", "Cantarell", "Ubuntu", sans-serif;
+    background: rgba(20,20,24,0.55);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 24px;
+  }
+  .note {
+    position: fixed;
+    top: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 12px;
+    color: #eee;
+    background: #1c1c1f;
+    border-radius: 6px;
+    padding: 4px 12px;
+    text-align: center;
+    max-width: 90vw;
+  }
+  .modal {
+    width: 380px;
+    background: var(--bg-window);
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    box-shadow: 0 16px 40px rgba(0,0,0,0.35);
+    overflow: hidden;
+  }
+  .header {
+    padding: 14px 18px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .header-title { font-size: 15px; font-weight: 600; margin: 0; color: var(--text-primary); }
+  .header-count { font-size: 11px; color: var(--text-muted); margin-left: 8px; font-weight: 500; }
+  .close-btn {
+    width: 24px; height: 24px; border-radius: 50%;
+    border: 1px solid var(--border); background: #fff; cursor: pointer;
+    font-size: 12px; color: var(--text-secondary);
+  }
+
+  /* ── Zona de stack 3D ──────────────────────────────────────────────
+     A diferencia de la v1 (4 "slots" que solo recalculaban geometría y
+     cambiaban de contenido al mismo tiempo, sin movimiento visible), acá
+     los 4 <div> de tarjeta son elementos PERSISTENTES — cada uno lleva
+     consigo un tip mientras se mueve. Al navegar, la clase pos-0..pos-3
+     de cada elemento cambia, y como la transición CSS es sobre esas
+     mismas propiedades (height/width/opacity), el navegador anima CADA
+     tarjeta física moviéndose a su nueva posición — la de adelante se ve
+     encogerse hacia atrás, la de atrás se ve crecer hacia adelante. */
+  .stack-wrap {
+    position: relative;
+    height: 258px;
+    margin: 20px 18px 6px;
+    overflow: hidden;
+    --stack-dur: 420ms; /* default — JS lo pisa acá mismo (wrap.style.setProperty)
+                            para saltos largos, y como es el padre, cascada
+                            hacia las 4 tarjetas sin que cada una necesite su
+                            propia declaración (eso bloquearía la herencia). */
+  }
+  .stack-card {
+    position: absolute;
+    left: 0; right: 0; margin: 0 auto;
+    top: 0;
+    border-radius: 14px;
+    background: #fff;
+    border: 1.5px solid var(--border);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+    overflow: hidden;
+    transition: height var(--stack-dur) cubic-bezier(.22,.9,.32,1),
+                width var(--stack-dur) cubic-bezier(.22,.9,.32,1),
+                opacity var(--stack-dur) cubic-bezier(.22,.9,.32,1),
+                filter var(--stack-dur) cubic-bezier(.22,.9,.32,1),
+                border-color var(--stack-dur) ease,
+                box-shadow var(--stack-dur) ease,
+                background var(--stack-dur) ease;
+    cursor: pointer;
+  }
+  /* Geometría por posición — igual que antes, pero ahora se le asigna a
+     un elemento que YA tenía otra posición, así que lo que se ve es el
+     tránsito de una a otra, no una reaparición instantánea. */
+  .stack-card.pos-0 {
+    height: 212px; width: 100%;
+    z-index: 40; opacity: 1; filter: none;
+    border-color: var(--border-accent);
+    box-shadow: 0 10px 24px rgba(59,130,246,0.18);
+    background: #fff;
+    cursor: default;
+  }
+  .stack-card.pos-1 {
+    height: 228px; width: calc(100% - 20px);
+    z-index: 30; opacity: .85; filter: saturate(.6);
+    border-color: var(--border);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+    background: #fafafb;
+  }
+  .stack-card.pos-2 {
+    height: 242px; width: calc(100% - 40px);
+    z-index: 20; opacity: .55; filter: saturate(.3);
+    border-color: var(--border);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+    background: #f4f4f5;
+  }
+  .stack-card.pos-3 {
+    height: 254px; width: calc(100% - 60px);
+    z-index: 10; opacity: .3; filter: saturate(0);
+    border-color: var(--border);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+    background: #eeeef0;
+  }
+
+  /* Texto: transición PROPIA (más corta, 160ms) e independiente de la
+     geometría — se oculta rápido apenas la tarjeta empieza a irse del
+     frente, y recién se revela cuando la que llega YA es la de adelante
+     (ver JS: el toggle de esta clase va con un pequeño delay respecto al
+     cambio de pos-*, a propósito, para no mostrar texto de reojo en una
+     tarjeta a mitad de camino/de costado). */
+  .card-inner {
+    padding: 14px 16px;
+    opacity: 0;
+    transition: opacity .16s ease;
+  }
+  .stack-card.show-text .card-inner { opacity: 1; }
+  .card-topline {
+    display: flex; justify-content: space-between; align-items: center;
+    margin-bottom: 10px;
+  }
+  .card-cat {
+    font-size: 11px; font-weight: 700; color: var(--accent);
+    background: var(--accent-bg); padding: 2px 9px; border-radius: 10px;
+  }
+  .card-counter { font-size: 11px; color: var(--text-muted); }
+  .card-sprite {
+    width: 64px; height: 64px; margin: 4px auto 10px;
+    background: var(--bg-surface); border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 26px;
+  }
+  .card-title {
+    font-size: 14px; font-weight: 700; color: var(--text-primary);
+    text-align: center; margin: 0 0 6px;
+  }
+  .card-text {
+    font-size: 12px; color: var(--text-secondary); text-align: center;
+    line-height: 1.5; margin: 0;
+  }
+  .card-text code {
+    background: var(--bg-surface); border-radius: 4px; padding: 1px 5px;
+    font-size: 11px; font-family: ui-monospace, monospace;
+  }
+
+  /* ── Navegación (igual función que el boceto anterior — solo cambió
+     lo de arriba) ── */
+  .nav-row {
+    display: flex; align-items: center; justify-content: center;
+    gap: 14px; padding: 8px 0 14px;
+  }
+  .nav-arrow {
+    width: 30px; height: 30px; border-radius: 50%;
+    border: 1px solid var(--border); background: #fff; cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 14px; color: var(--text-secondary);
+  }
+  .nav-arrow:hover { background: var(--bg-surface); }
+  .dots { display: flex; gap: 5px; }
+  .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--border); transition: all .25s; }
+  .dot.active { width: 16px; border-radius: 3px; background: var(--accent); }
+
+  .chips {
+    display: flex; gap: 6px; padding: 0 18px 18px; flex-wrap: wrap;
+    justify-content: center;
+  }
+  .chip {
+    font-size: 11px; padding: 5px 12px; border-radius: 14px;
+    border: 1px solid var(--border); background: #fff; color: var(--text-secondary);
+    cursor: pointer;
+  }
+  .chip.active { background: var(--accent-bg); border-color: var(--accent); color: var(--accent); font-weight: 600; }
+</style>
+</head>
+<body>
+<div class="note">Boceto interactivo — Stack 3D de tips de edición (abrí esto en un navegador: flechas, chips, o click en una tarjeta de atrás)</div>
+
+<div class="modal">
+  <div class="header">
+    <div style="display:flex; align-items:baseline;">
+      <p class="header-title">Tips de edición</p>
+    </div>
+    <button class="close-btn">✕</button>
+  </div>
+
+  <div class="stack-wrap" id="stackWrap"></div>
+
+  <div class="nav-row">
+    <button class="nav-arrow" id="prevBtn">‹</button>
+    <div class="dots" id="dots"></div>
+    <button class="nav-arrow" id="nextBtn">›</button>
+  </div>
+
+  <div class="chips" id="chips"></div>
+</div>
+
+<script>
+// Contenido ilustrativo — mismo criterio que el boceto anterior, NO es
+// copy final. Solo para mostrar el formato/comportamiento del stack.
+const tips = [
+  { cat: "General", icon: "📂", title: "Abrí un save arrastrándolo", text: "Soltá el archivo .sav directo sobre la ventana — no hace falta pasar por el diálogo del sistema." },
+  { cat: "General", icon: "💾", title: "Guardar no exporta", text: "Guardar anota un checkpoint de esta sesión. Para escribir al disco real, usá Exportar." },
+  { cat: "General", icon: "📤", title: "Revisá antes de exportar", text: "El modal de exportación te deja incluir/excluir cada Pokémon, entrenador y mochila por separado." },
+  { cat: "Creación", icon: "🔍", title: "Buscá por nombre o número", text: "El picker de especie filtra a medida que escribís, sin importar mayúsculas ni tildes." },
+  { cat: "Creación", icon: "⌨️", title: "Salto rápido por teclado", text: "Mantené <code>Shift</code> mientras usás las flechas para saltar de a diez resultados." },
+  { cat: "Edición", icon: "📊", title: "IVs y EVs por generación", text: "En Gen1/2 son DVs (0-15) y Stat Experience (0-65535) — el editor ajusta los rangos solo." },
+  { cat: "Edición", icon: "🎖️", title: "Ribbons por juego", text: "Solo se muestran las cintas que existen en la generación del save cargado." },
+  { cat: "Legalidad", icon: "⚠️", title: "Qué significa el ícono ⚠", text: "Marca un campo que un juego/consola real rechazaría — no necesariamente un error tuyo." },
+];
+
+let current = 0;
+let isAnimating = false;
+const total = tips.length;
+const wrap = document.getElementById('stackWrap');
+
+// ── Las 4 tarjetas son elementos PERSISTENTES (se crean una sola vez acá
+// abajo) — cada una guarda su propio tipIndex y su posición actual (0 =
+// frente ... 3 = más atrás). Navegar YA NO significa "recalcular qué va
+// en cada slot y listo": significa cambiarle la clase pos-N a cada
+// elemento, y la transición CSS (ver <style>) anima ESE elemento
+// específico moviéndose — por eso ahora sí se ve la tarjeta de adelante
+// irse para atrás y la de atrás subir, en vez de un cambio instantáneo.
+const cards = [];
+for (let i = 0; i < 4; i++) {
+  const el = document.createElement('div');
+  el.className = `stack-card pos-${i}`;
+  el.innerHTML = `<div class="card-inner">
+      <div class="card-topline">
+        <span class="card-cat"></span>
+        <span class="card-counter"></span>
+      </div>
+      <div class="card-sprite"></div>
+      <p class="card-title"></p>
+      <p class="card-text"></p>
+    </div>`;
+  wrap.appendChild(el);
+  cards.push({ el, tipIndex: i, pos: i });
+  if (i === 0) el.classList.add('show-text');
+  // OJO: el listener se ata a las 4 tarjetas por igual (no solo a las que
+  // arrancan como "de atrás") — la que está al frente cambia con cada
+  // rotación, así que el chequeo "¿soy yo la de adelante?" tiene que
+  // hacerse en el momento del click (leyendo cards[i].pos en vivo), no
+  // decidirse una sola vez al crear los elementos. Si no, la tarjeta que
+  // arrancó en pos-0 queda sin click funcional para siempre, aunque
+  // después pase a ser una de atrás.
+  el.addEventListener('click', () => {
+    if (cards[i].pos === 0) return; // ya es la de adelante, no hace nada
+    goTo(cards[i].tipIndex);
+  });
+}
+
+// El contador de cada tarjeta se calcula a partir de SU PROPIO tipIndex,
+// no de `current` — así el número siempre queda correcto sin importar
+// qué tarjeta física termine ocupando el frente.
+function paintCard(card) {
+  const tip = tips[card.tipIndex];
+  const el = card.el;
+  el.querySelector('.card-cat').textContent = tip.cat;
+  el.querySelector('.card-counter').textContent = `Tip ${card.tipIndex + 1} de ${total}`;
+  el.querySelector('.card-sprite').textContent = tip.icon;
+  el.querySelector('.card-title').textContent = tip.title;
+  el.querySelector('.card-text').innerHTML = tip.text;
+}
+cards.forEach(paintCard);
+
+function setDuration(ms) {
+  wrap.style.setProperty('--stack-dur', `${ms}ms`);
+}
+
+// direction: +1 (siguiente) o -1 (anterior). durationMs opcional, para
+// que los saltos largos (chip de categoría lejana) encadenen varios
+// pasos más rápido que un solo click de flecha.
+function step(direction, durationMs = 420) {
+  return new Promise(resolve => {
+    setDuration(durationMs);
+
+    if (direction === 1) {
+      // La que está al frente (pos 0) es la que se va para atrás.
+      const leaving = cards.find(c => c.pos === 0);
+      leaving.el.classList.remove('show-text');
+      cards.forEach(c => { c.pos = (c.pos - 1 + 4) % 4; c.el.className = `stack-card pos-${c.pos}`; });
+      current = (current + 1) % total;
+      // La que llega al frente (nueva pos 0) ya tenía el contenido correcto
+      // (ver razonamiento de la ventana deslizante más abajo) — solo hace
+      // falta revelar su texto, con un pequeño delay para que no se vea
+      // "de reojo" a mitad de camino.
+      const arriving = cards.find(c => c.pos === 0);
+      setTimeout(() => arriving.el.classList.add('show-text'), durationMs * 0.55);
+      // Recién cuando termina el movimiento, la que quedó atrás (pos 3)
+      // pasa a representar el próximo tip que todavía no había entrado en
+      // el stack — está oculta, así que el cambio de contenido no se nota.
+      setTimeout(() => {
+        leaving.tipIndex = (current + 3) % total;
+        paintCard(leaving);
+        resolve();
+      }, durationMs);
+    } else {
+      // Camino inverso: la de más atrás (pos 3) es la que pasa al frente.
+      const entering = cards.find(c => c.pos === 3);
+      entering.tipIndex = (current - 1 + total) % total;
+      paintCard(entering); // todavía invisible acá (show-text no se agregó aún)
+      cards.forEach(c => { c.pos = (c.pos + 1) % 4; c.el.className = `stack-card pos-${c.pos}`; });
+      current = (current - 1 + total) % total;
+      setTimeout(() => entering.el.classList.add('show-text'), durationMs * 0.55);
+      const nowLeaving = cards.find(c => c.pos === 3);
+      nowLeaving.el.classList.remove('show-text');
+      setTimeout(resolve, durationMs);
+    }
+  });
+}
+
+async function goTo(target) {
+  if (isAnimating || target === current) return;
+  isAnimating = true;
+  const fwd = (target - current + total) % total;
+  const bwd = (current - target + total) % total;
+  const dir = fwd <= bwd ? 1 : -1;
+  const steps = Math.min(fwd, bwd);
+  // Un solo paso (flecha ‹›) usa la duración completa, bien visible. Saltos
+  // de varios tips (chip de categoría lejana, click en tarjeta de atrás)
+  // encadenan pasos más cortos — se sigue viendo el "flujo" tarjeta por
+  // tarjeta, pero sin hacer esperar una eternidad si hay que cruzar 5 tips.
+  const dur = steps > 1 ? 220 : 420;
+  for (let i = 0; i < steps; i++) {
+    await step(dir, dur);
+  }
+  renderDots();
+  renderChips();
+  isAnimating = false;
+}
+
+function renderDots() {
+  const dotsEl = document.getElementById('dots');
+  dotsEl.innerHTML = tips.map((_, i) =>
+    `<div class="dot ${i === current ? 'active' : ''}"></div>`).join('');
+}
+
+function renderChips() {
+  const cats = [...new Set(tips.map(t => t.cat))];
+  const chipsEl = document.getElementById('chips');
+  chipsEl.innerHTML = cats.map(c => {
+    const active = tips[current].cat === c;
+    return `<button class="chip ${active ? 'active' : ''}" data-cat="${c}">${c}</button>`;
+  }).join('');
+  chipsEl.querySelectorAll('.chip').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const idx = tips.findIndex(t => t.cat === btn.dataset.cat);
+      goTo(idx);
+    });
+  });
+}
+
+document.getElementById('prevBtn').addEventListener('click', () => goTo((current - 1 + total) % total));
+document.getElementById('nextBtn').addEventListener('click', () => goTo((current + 1) % total));
+
+renderDots();
+renderChips();
+</script>
+</body>
+</html>
