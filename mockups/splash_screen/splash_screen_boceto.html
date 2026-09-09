@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Exxeguttor — Boceto Splash Screen</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #fafafa;
+    --panel: #ffffff;
+    --border: #e5e5e8;
+    --ink: #1c1c1f;
+    --ink-soft: #6b6b70;
+    --ink-faint: #9a9aa0;
+    --accent: #4f9c78;      /* verde apagado, mismo espíritu que el "OK" de status bar, sin saturar */
+    --accent-soft: rgba(79,156,120,0.14);
+    --scan-opacity: 0.05;
+  }
+
+  /* ── Opción de paleta "pantalla LCD" ──────────────────────────────────────────────
+     Toma prestado el espíritu de las pantallas monocromáticas verdosas de handhelds
+     viejos (no exclusivo de una marca — Tiger, Game & Watch, etc. usaban variantes
+     similares), pero a propósito NO usa el hex exacto de ninguna paleta icónica
+     puntual. Es un guiño de color de pantalla, no una recreación de carcasa/botones/
+     logo — nada de eso aparece acá. Se activa como modificador sobre .splash, así que
+     cascadea a todo lo que ya usa las custom properties (wordmark, carrusel, hexfield,
+     scanlines, barra de escaneo) sin tocar su estructura. ─────────────────────────── */
+  .splash.palette-lcd{
+    --bg: #dbdfd0;
+    --ink: #3c4235;
+    --ink-soft: #5c6355;
+    --ink-faint: #7d8371;
+    --accent: #6b7a5a;
+    --accent-soft: rgba(107,122,90,0.18);
+    --scan-opacity: 0.06;
+  }
+
+  *{ box-sizing: border-box; }
+
+  html, body{
+    margin:0; padding:0; height:100%;
+    background: #d9d9dc;
+    font-family: -apple-system, "Segoe UI", "Cantarell", "Ubuntu", sans-serif;
+  }
+
+  /* ── "Escritorio" de fondo — solo para mostrar que el splash es una ventana propia,
+     flotando SIN chrome del sistema, igual que el splash de GIMP al arrancar (no vive
+     dentro de MainWindow: es una SplashWindow aparte con SystemDecorations="None" en
+     Avalonia, que se cierra cuando el resto de servicios ya cargó). ─────────────────── */
+  .desktop-backdrop{
+    width: 100%;
+    min-height: 100vh;
+    padding: 70px 0;
+    background:
+      repeating-linear-gradient(45deg, rgba(0,0,0,0.015) 0px, rgba(0,0,0,0.015) 1px, transparent 1px, transparent 14px),
+      #c9cad0;
+    display:flex; align-items:center; justify-content:center;
+  }
+
+  /* ── Splash propiamente dicho: ventana flotante SIN decoraciones ─────────────────── */
+  .splash{
+    position: relative;
+    width: 460px;
+    height: 300px;
+    background: var(--bg);
+    border: 1px solid rgba(0,0,0,0.12);
+    border-radius: 12px; /* mismo radio que ya usás en tarjetas/paneles del resto de la
+                             app (empty_state, pokemon_picker, etc.) — una ventana 100%
+                             recta en realidad desentonaba con eso, no al revés */
+    box-shadow: 0 18px 44px rgba(0,0,0,0.28), 0 2px 6px rgba(0,0,0,0.12);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /* recorta scanlines/hexfield/scan-bar a las esquinas redondeadas */
+  }
+
+  /* ── Opción 2: "bisel CRT" — un marco grueso alrededor de la pantalla, como si el
+     splash fuera un tubo viejo enmarcado en su carcasa. Se activa con una clase
+     modificadora para poder comparar contra la opción 1 (rounded rectangle) sin
+     duplicar todo el markup — el grosor del borde ya empuja el contenido interno hacia
+     adentro solo por box-sizing: border-box (ver *{} arriba), así que el efecto de
+     "pantalla recesada" sale gratis, sin tocar el resto de la estructura. ─────────── */
+  .splash.style-bezel{
+    border: 11px solid #edeff0;
+    border-radius: 16px;
+    box-shadow: 0 18px 44px rgba(0,0,0,0.28), 0 2px 6px rgba(0,0,0,0.12),
+                inset 0 0 0 1px rgba(0,0,0,0.05);
+  }
+  .splash.style-bezel::after{
+    /* sombra interior sutil sobre el área de "pantalla" — vende la sensación de que
+       está un poco recesada respecto del marco, sin oscurecer el contenido */
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 5px;
+    box-shadow: inset 0 2px 8px rgba(0,0,0,0.12);
+    pointer-events: none;
+    z-index: 20;
+  }
+
+  /* Textura de scanlines — muy tenue, es tejido de fondo, no un filtro que grite "retro" */
+  .scanlines{
+    position:absolute; inset:0;
+    pointer-events:none;
+    background: repeating-linear-gradient(
+      to bottom,
+      rgba(0,0,0,var(--scan-opacity)) 0px,
+      rgba(0,0,0,var(--scan-opacity)) 1px,
+      transparent 1px,
+      transparent 3px
+    );
+    mix-blend-mode: multiply;
+    z-index: 2;
+  }
+
+  /* Flicker de encendido — sutil, una sola vez */
+  .power-flicker{
+    position:absolute; inset:0;
+    background: var(--bg);
+    z-index: 10;
+    animation: flicker 0.6s steps(1) forwards;
+  }
+  @keyframes flicker{
+    0%   { opacity: 1; }
+    8%   { opacity: 0.15; }
+    16%  { opacity: 0.85; }
+    24%  { opacity: 0.05; }
+    32%  { opacity: 1; }
+    100% { opacity: 0; visibility: hidden; }
+  }
+
+  /* Datos hex/binarios de fondo — referencia a "leyendo un save file", muy tenue */
+  .hexfield{
+    position:absolute; inset:0;
+    z-index: 1;
+    display:flex; flex-wrap:wrap; align-content:center; justify-content:center;
+    gap: 18px 26px;
+    padding: 60px;
+    font-family: 'Courier New', monospace;
+    font-size: 11px;
+    color: var(--ink);
+    opacity: 0;
+    animation: hexfade 1.2s ease-out 0.9s forwards;
+  }
+  .hexfield span{ opacity: 0.06; }
+  @keyframes hexfade{
+    to { opacity: 1; }
+  }
+
+  /* ── Zona central: wordmark con revelado por barrido ─────────────────────────── */
+  .wordmark-zone{
+    position: relative;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 22px;
+  }
+
+  .wordmark-clip{
+    position: relative;
+    overflow: hidden;
+    height: 40px;
+    display:flex; align-items:center;
+  }
+
+  .wordmark{
+    font-family: 'Press Start 2P', monospace;
+    font-size: 26px;
+    color: var(--ink);
+    letter-spacing: 2px;
+    white-space: nowrap;
+    transform: translateY(0);
+  }
+
+  /* barra de escaneo que revela el wordmark de arriba a abajo */
+  .scan-reveal{
+    position:absolute; inset:0;
+    background: var(--bg);
+    animation: reveal 1.1s cubic-bezier(.65,0,.35,1) 0.8s forwards;
+    z-index: 4;
+  }
+  .scan-bar{
+    position:absolute; left:0; right:0; top:0;
+    height: 2px;
+    background: var(--accent);
+    box-shadow: 0 0 6px 0 var(--accent-soft);
+    animation: scanmove 1.1s cubic-bezier(.65,0,.35,1) 0.8s forwards;
+    z-index: 5;
+  }
+  @keyframes reveal{
+    from { clip-path: inset(0 0 0 0); }
+    to   { clip-path: inset(100% 0 0 0); }
+  }
+  @keyframes scanmove{
+    from { top: 0%; opacity: 1; }
+    to   { top: 100%; opacity: 0; }
+  }
+
+  .subtitle{
+    font-size: 11px;
+    color: var(--ink-soft);
+    letter-spacing: 0.04em;
+    opacity: 0;
+    animation: fadein 0.6s ease-out 2.1s forwards;
+  }
+
+  /* ── Hint de carga, abajo — reemplazado por el carrusel de etapas (ver más abajo) ── */
+
+  @keyframes fadein{
+    from { opacity: 0; transform: translateY(4px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ── Carrusel vertical de etapas — mismo espíritu que el cover flow del picker de
+     Pokémon, pero solo texto y en vertical: la etapa activa al centro, grande y nítida;
+     las adyacentes más chicas y tenues; el resto invisible fuera del viewport. ──────── */
+  .stage-carousel{
+    position: absolute;
+    bottom: 34px;
+    left: 0; right: 0;
+    height: 78px;               /* 3 filas de 26px */
+    overflow: hidden;
+    z-index: 3;
+    opacity: 0;
+    /* arranca recién cuando el wordmark ya terminó de revelarse (scan-reveal termina en
+       0.8s + 1.1s = 1.9s) — antes no había ninguna espera y el primer texto competía
+       visualmente con el propio dibujo del nombre. */
+    animation: fadein 0.4s ease-out 2.0s forwards;
+  }
+  .stage-fade-top, .stage-fade-bottom{
+    position: absolute; left:0; right:0; height: 26px; z-index: 4; pointer-events:none;
+  }
+  .stage-fade-top{ top:0; background: linear-gradient(var(--bg), rgba(250,250,250,0)); }
+  .stage-fade-bottom{ bottom:0; background: linear-gradient(rgba(250,250,250,0), var(--bg)); }
+
+  .stage-track{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transform: translateY(26px); /* arranca con el ítem 0 centrado */
+    transition: transform 0.75s cubic-bezier(.65,0,.35,1);
+  }
+  .stage-item{
+    height: 26px;
+    line-height: 26px;
+    font-size: 12px;
+    letter-spacing: 0.03em;
+    color: var(--ink-faint);
+    white-space: nowrap;
+    opacity: 0.22;
+    transform: scale(0.82);
+    transition: transform 0.75s cubic-bezier(.65,0,.35,1),
+                opacity 0.75s ease,
+                color 0.75s ease,
+                font-weight 0.75s ease;
+  }
+  .stage-item.is-adjacent{
+    opacity: 0.4;
+    transform: scale(0.9);
+  }
+  .stage-item.is-current{
+    color: var(--ink);
+    opacity: 1;
+    transform: scale(1);
+    font-weight: 400; /* los de carga de módulos quedan en peso normal — el contraste
+                         real lo dan los dos mensajes "marco" de abajo, no un 600 vs 700
+                         casi imperceptible a este tamaño de texto */
+  }
+  /* Los dos mensajes "marco" (arranque y cierre) llevan más peso que los de carga de
+     módulos intermedios — negrita real (no un paso intermedio) + una sombra de texto
+     con más presencia, nada de glow ni color extra. Solo se aplica mientras están
+     activos. */
+  .stage-item.is-milestone.is-current{
+    font-weight: 700;
+    text-shadow: 0 1px 0 rgba(28,28,31,0.18), 0 2px 5px rgba(28,28,31,0.35);
+  }
+
+  .version-tag{
+    position:absolute; bottom:14px; right:16px;
+    font-size: 10px; color: var(--ink-faint);
+    z-index:3;
+    opacity:0;
+    animation: fadein 0.6s ease-out 2.3s forwards;
+  }
+
+  /* ── Controles de demo (no forman parte del splash real) ─────────────────────── */
+  .demo-controls{
+    max-width: 900px;
+    margin: 0 auto 40px;
+    display:flex; justify-content:center;
+  }
+  .demo-controls button{
+    font-family: inherit;
+    font-size: 13px;
+    padding: 8px 16px;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+    background: var(--panel);
+    color: var(--ink);
+    cursor: pointer;
+  }
+  .demo-controls button:hover{ background: #f4f4f5; }
+
+  .notes{
+    max-width: 900px;
+    margin: 0 auto 60px;
+    padding: 0 4px;
+    color: #444;
+    font-size: 13px;
+    line-height: 1.6;
+  }
+  .notes h2{ font-size: 14px; margin-bottom: 6px; }
+  .notes code{ background:#eee; padding:1px 5px; border-radius:3px; font-size:12px; }
+</style>
+</head>
+<body>
+
+  <div class="desktop-backdrop">
+    <div class="splash" id="splash">
+      <div class="scanlines"></div>
+      <div class="hexfield" id="hexfield"></div>
+
+      <div class="wordmark-zone">
+        <div class="wordmark-clip">
+          <div class="wordmark">EXXEGUTTOR</div>
+          <div class="scan-reveal"></div>
+          <div class="scan-bar"></div>
+        </div>
+        <div class="subtitle">EDITOR DE SAVE FILES</div>
+      </div>
+
+      <div class="stage-carousel" id="stageCarousel">
+        <div class="stage-fade-top"></div>
+        <div class="stage-track" id="stageTrack">
+          <div class="stage-item is-milestone">Preparando entorno</div>
+          <div class="stage-item">Cargando base de datos</div>
+          <div class="stage-item">Cargando módulos de lectura</div>
+          <div class="stage-item">Cargando editor</div>
+          <div class="stage-item">Cargando exportador</div>
+          <div class="stage-item is-milestone">Entorno completo y funcional</div>
+        </div>
+        <div class="stage-fade-bottom"></div>
+      </div>
+
+      <div class="version-tag">v0.1.0</div>
+      <div class="power-flicker" id="flicker"></div>
+    </div>
+  </div>
+
+  <div class="demo-controls">
+    <button onclick="replay()">↻ Repetir animación</button>
+    <button onclick="toggleBezel(this)" style="margin-left:10px;">▢ Ver opción bisel CRT</button>
+    <button onclick="togglePalette(this)" style="margin-left:10px;">◑ Ver paleta LCD verde</button>
+  </div>
+
+  <div class="notes">
+    <h2>Notas del boceto</h2>
+    <p>
+      Fondo <code>#fafafa</code> y panel de ventana <code>#ffffff</code> — mismos tokens que el resto
+      de la app, nada de negro ni fósforo verde saturado. El único acento de color es
+      <code>#4f9c78</code> (mismo espíritu que el verde de "OK" en la status bar), usado solo en la
+      barra de escaneo — un único momento con color, todo lo demás en escala de grises.
+    </p>
+    <p>
+      <strong>Dos opciones de forma de ventana</strong> — usá el botón "Ver opción bisel CRT"
+      para alternar. <strong>Opción 1 (rounded rectangle)</strong>: radio de 12px, igual al
+      que ya usás en tarjetas/paneles del resto de la app — la más segura y consistente.
+      <strong>Opción 2 (bisel CRT)</strong>: un marco grueso (11px, gris muy claro
+      <code>#edeff0</code>) alrededor de la pantalla, con una sombra interior sutil que vende
+      la sensación de que el contenido está levemente recesado respecto del marco — más
+      específico al concepto retro, pero también más decorativo. Ambas comparten la misma
+      sombra exterior y el mismo contenido interno, cambia solo el tratamiento del borde.
+    </p>
+    <p>
+      Secuencia: <strong>(1)</strong> flicker de encendido brevísimo (~0.6s) →
+      <strong>(2)</strong> aparece tenue el campo de datos hex de fondo (referencia a "leyendo un save") →
+      <strong>(3)</strong> una barra de escaneo horizontal revela el wordmark "EXXEGUTTOR" en
+      Press Start 2P (misma fuente que ya usás en las cover cards de juegos) →
+      <strong>(4)</strong> el subtítulo aparece con fade suave, mismo timing que usás en el
+      resto de transiciones de la app.
+    </p>
+    <p>
+      <strong>Carrusel vertical de etapas</strong> — mismo lenguaje visual que el cover flow
+      del picker de Pokémon, pero solo texto y en vertical: la etapa activa queda al centro,
+      grande y nítida (negrita, opacidad 100%); la anterior y la siguiente se ven más chicas
+      y tenues arriba/abajo; el resto queda fuera del viewport. Dos degradados (arriba/abajo)
+      difuminan el corte para que no se sienta un recorte brusco. Recorre las 6 etapas una
+      sola vez (no hace loop) y la última queda fija. Arranca recién cuando el wordmark ya
+      terminó de dibujarse (~1.9s) — antes competía visualmente con el propio nombre
+      apareciendo. Cada etapa queda visible ~1.1s con una transición de 0.75s entre una y la
+      siguiente.
+    </p>
+    <p>
+      <strong>Mensajes "marco"</strong> — el primero ("Preparando entorno") y el último
+      ("Entorno completo y funcional") llevan más peso que los cuatro de carga de módulos
+      del medio: un poco más de grosor y una sombra de texto sutil
+      (<code>text-shadow: 0 1px 3px rgba(28,28,31,0.22)</code>, sin glow ni color extra) que
+      los separa visualmente como el "antes" y el "después" de la secuencia, en vez de un
+      paso de carga más. El mensaje final le confirma al usuario que todo terminó de cargar
+      antes de que se cierre el splash y aparezca <code>MainWindow</code>.
+    </p>
+    <p>
+      Nota de redacción: usé minúscula sostenida ("Cargando base de datos") en vez de
+      Mayúscula En Cada Palabra — es el criterio que ya seguís en el resto de la copia de la
+      app (nada de title case salvo nombres propios). Si preferís mantenerlo más "etiqueta de
+      sistema" con mayúsculas, es un cambio de una línea.
+    </p>
+    <p>
+      <strong>Sobre el piso de 3 segundos</strong>: con este nuevo ritmo más pausado, el
+      recorrido completo de las 5 etapas ya dura más que los 3s (arranca a los ~1.9s y cada
+      etapa se lleva ~1.1s, así que el total ronda los 7.5s) — y está bien que así sea: el
+      piso de 3s es una garantía mínima para que no se vea un flash, no un techo. En el
+      código real, cada etapa tiene una duración <em>mínima</em> de exhibición (para que no
+      parpadee ilegible si la carga real de esa etapa es instantánea), y si una etapa real
+      tarda más, el mensaje se queda quieto esperando el evento real antes de avanzar.
+    </p>
+    <p>
+      Scanlines de fondo al 5% de opacidad, estáticas — es textura, no efecto. Sin curvatura de
+      pantalla ni aberración cromática: eso rompería la geometría recta del resto de la UI.
+    </p>
+    <p>
+      Nota técnica para cuando pase a producción: acá cargo Press Start 2P desde Google Fonts
+      solo para la demo del boceto — en la app real se embebe el <code>.ttf</code> igual que ya
+      se hace con las cover cards, sin dependencia de red.
+    </p>
+    <p>
+      <strong>Ventana propia, sin chrome</strong> — igual que el splash de GIMP al arrancar: no
+      vive dentro de <code>MainWindow</code>, es una ventana Avalonia aparte
+      (<code>SystemDecorations="None"</code>, sin barra de título ni botones min/max/close,
+      tamaño fijo, centrada en pantalla) que se muestra mientras cargan los servicios pesados
+      (<code>PokemonDatabase</code>, sprites embebidos, <code>MovesetDatabase</code>) y se cierra
+      sola cuando <code>MainWindow</code> ya está lista para mostrarse — nunca las dos visibles
+      a la vez. El fondo gris con textura de esta demo representa el escritorio, no forma parte
+      del diseño real.
+    </p>
+  </div>
+
+<script>
+  const hexChars = ['0F','A3','7C','E1','2B','9D','FF','00','C4','56','B8','1A'];
+  function fillHex(){
+    const field = document.getElementById('hexfield');
+    field.innerHTML = '';
+    for(let i=0;i<48;i++){
+      const s = document.createElement('span');
+      s.textContent = hexChars[Math.floor(Math.random()*hexChars.length)];
+      field.appendChild(s);
+    }
+  }
+  fillHex();
+
+  // ── Carrusel vertical de etapas ─────────────────────────────────────────────────
+  // Arranca DESPUÉS de que el wordmark termina de revelarse (~1.9s), no en paralelo —
+  // ver retraso de 2.0s en el CSS de .stage-carousel. Transiciones más lentas (0.75s,
+  // ver CSS) y cada etapa permanece bien visible antes de pasar a la siguiente. En el
+  // código real esto NO es un timer desacoplado de la carga real: cada etapa tiene una
+  // duración MÍNIMA de exhibición (para que sea legible aunque esa carga real sea
+  // instantánea), pero si una etapa tarda más de verdad, el mensaje se queda quieto
+  // hasta que el evento real de esa etapa dispare el avance.
+  const stages = [
+    'Preparando entorno',
+    'Cargando base de datos',
+    'Cargando módulos de lectura',
+    'Cargando editor',
+    'Cargando exportador',
+    'Entorno completo y funcional',
+  ];
+  const stageDurationsMs = [1100, 1150, 1150, 1150, 1150, 1150]; // el último valor no se usa (no hay etapa siguiente), se deja por consistencia
+  const rowHeight = 26;
+  let stageTimers = [];
+
+  function runStages(){
+    const carousel = document.getElementById('stageCarousel');
+    const track = document.getElementById('stageTrack');
+    if (!track || !carousel) return;
+    const items = track.querySelectorAll('.stage-item');
+
+    function setActive(index){
+      items.forEach((el, i) => {
+        el.classList.remove('is-current', 'is-adjacent');
+        if (i === index) el.classList.add('is-current');
+        else if (Math.abs(i - index) === 1) el.classList.add('is-adjacent');
+      });
+      track.style.transform = `translateY(${ -index * rowHeight + rowHeight }px)`;
+    }
+
+    // Fijamos el índice 0 ya mismo, aunque el contenedor todavía esté invisible (opacity:
+    // 0 por el fade-in con delay de la .stage-carousel) — así, apenas termina de aparecer,
+    // lo primero que se ve ya es "Preparando entorno" bien plantado, sin ningún salto.
+    setActive(0);
+
+    function startTimeline(){
+      let elapsed = stageDurationsMs[0];
+      for (let i = 1; i < stages.length; i++){
+        const t = setTimeout(() => setActive(i), elapsed);
+        stageTimers.push(t);
+        elapsed += stageDurationsMs[i];
+      }
+    }
+
+    // FIX: antes el timer de avance arrancaba en paralelo al fade-in del contenedor
+    // (que tarda ~0.4s en completarse tras su propio delay de 2s) — el primer cambio de
+    // etapa caía mientras el contenedor todavía estaba invisible u opacándose, así que
+    // "Preparando entorno" nunca llegaba a verse y la etapa siguiente aparecía "de
+    // golpe" ya en su posición final (con transición de salida hacia la tercera, pero
+    // sin transición de entrada visible hacia ella). Ahora el avance arranca recién
+    // cuando termina de verdad la animación de aparición del contenedor.
+    carousel.addEventListener('animationend', startTimeline, { once: true });
+  }
+  runStages();
+
+  function toggleBezel(btn){
+    const splash = document.getElementById('splash');
+    const isBezel = splash.classList.toggle('style-bezel');
+    btn.textContent = isBezel ? '▢ Ver opción redondeada' : '▢ Ver opción bisel CRT';
+  }
+
+  function togglePalette(btn){
+    const splash = document.getElementById('splash');
+    const isLcd = splash.classList.toggle('palette-lcd');
+    btn.textContent = isLcd ? '◑ Ver paleta sobria' : '◑ Ver paleta LCD verde';
+  }
+
+  function replay(){
+    stageTimers.forEach(clearTimeout);
+    stageTimers = [];
+
+    const splash = document.getElementById('splash');
+    const clone = splash.cloneNode(false);
+    splash.parentNode.replaceChild(clone, splash);
+    clone.id = 'splash';
+    // Reconstruir contenido interno para reiniciar animaciones CSS
+    clone.innerHTML = `
+      <div class="scanlines"></div>
+      <div class="hexfield" id="hexfield"></div>
+      <div class="wordmark-zone">
+        <div class="wordmark-clip">
+          <div class="wordmark">EXXEGUTTOR</div>
+          <div class="scan-reveal"></div>
+          <div class="scan-bar"></div>
+        </div>
+        <div class="subtitle">EDITOR DE SAVE FILES</div>
+      </div>
+      <div class="stage-carousel" id="stageCarousel">
+        <div class="stage-fade-top"></div>
+        <div class="stage-track" id="stageTrack">
+          <div class="stage-item is-milestone">Preparando entorno</div>
+          <div class="stage-item">Cargando base de datos</div>
+          <div class="stage-item">Cargando módulos de lectura</div>
+          <div class="stage-item">Cargando editor</div>
+          <div class="stage-item">Cargando exportador</div>
+          <div class="stage-item is-milestone">Entorno completo y funcional</div>
+        </div>
+        <div class="stage-fade-bottom"></div>
+      </div>
+      <div class="version-tag">v0.1.0</div>
+      <div class="power-flicker" id="flicker"></div>
+    `;
+    fillHex();
+    runStages();
+  }
+</script>
+
+</body>
+</html>

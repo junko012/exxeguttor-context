@@ -139,9 +139,21 @@ dan los dos extremos, no una diferencia sutil entre pesos intermedios.
 
 ### Timing
 
-- Cada mensaje de carga real queda visible un **mínimo** de tiempo aunque la carga de
-  ese módulo haya sido instantánea (evita que parpadee ilegible) — los mensajes "marco"
-  se sostienen un poco más que los intermedios.
+- El subtítulo se dibuja primero y se sostiene solo un momento — recién después se
+  habilita el carrusel de etapas (antes pasaban las dos cosas juntas, y el primer
+  mensaje competía visualmente con el propio subtítulo).
+- Cada mensaje de carga real queda visible un **mínimo de 1.3s** — tiene que ser
+  claramente más largo que la Transition de 0.75s del carrusel; con un valor apenas
+  mayor a eso, el siguiente mensaje empieza a moverse antes de que el anterior termine
+  de asentarse, y se ve todo pegoteado/artificial en vez de una sucesión de pasos
+  prolijos (esto pasó en una primera pasada con valores de 700ms).
+- El **último módulo real** ("Preparando ventana principal...") se sostiene un poco
+  más que el resto (**1.9s**) — dan la sensación de que ahí hay algo más sustancial
+  cargándose, en vez de que todos los pasos se sientan intercambiables. Esto se marca
+  con un flag `extraHold` en `SetStage`, separado de `isMilestone` (que sigue siendo
+  exclusivo de negrita + sombra) — un mensaje puede durar más sin llevar el peso visual
+  de un mensaje "marco".
+- Los dos mensajes "marco" se sostienen **1.6s**.
 - Este mínimo por etapa vive **adentro del splash** (no en el orquestador de arranque)
   — ver Nota de arquitectura abajo. La carga real puede completarse a la velocidad que
   sea; la experiencia visual no depende de eso.
@@ -150,26 +162,67 @@ dan los dos extremos, no una diferencia sutil entre pesos intermedios.
 
 ## Nota de arquitectura — sincronización (importante para no reintroducir el bug)
 
-La primera versión de código de este splash sostenía cada etapa bloqueando el hilo de
-UI con `Thread.Sleep` (heredado tal cual del splash viejo, que solo hacía saltos
-instantáneos de texto/barra, sin animación). Eso **bloquea por completo el reloj de
-animación de Avalonia** — con el splash rediseñado, que depende de `Transitions` y de
-una secuencia `async`/`Task.Delay` interna (el flicker, el reveal del wordmark), el
-resultado fue que el wordmark apenas llegaba a revelarse y ningún mensaje del carrusel
-aparecía nunca, sin importar cuánto se ajustaran los tiempos.
+Esta parte tuvo dos vueltas de bug, no una — documento ambas porque las dos son formas
+distintas de romper lo mismo si alguien vuelve a tocar el arranque.
 
-**Corrección aplicada**: `SetStage`/`SetStatus` ahora solo encolan el mensaje en un
-`Channel` (instantáneo, no bloqueante, seguro de llamar incluso sincrónicamente desde
-adentro de un constructor). Un consumidor `async` interno del propio `SplashWindow`
-(`ConsumeStagesAsync`) es quien decide, con `await Task.Delay` (nunca `Thread.Sleep`),
-cuánto tiempo mínimo sostener cada mensaje — desacoplando por completo el ritmo visual
-de la velocidad real de carga. `App.axaml.cs` ya no tiene ningún `Thread.Sleep` ni
-`Dispatcher.UIThread.RunJobs(Render)`.
+**Vuelta 1 — bloquear el hilo de UI.** La primera versión de código sostenía cada etapa
+con `Thread.Sleep` sobre el hilo de UI (heredado tal cual del splash viejo, que solo
+hacía saltos instantáneos de texto/barra, sin animación). Eso bloquea por completo el
+reloj de animación de Avalonia — con el splash rediseñado (que depende de `Transitions`
+y de una secuencia `async`/`Task.Delay` interna), el resultado fue que nada se
+animaba. **Corrección**: `SetStage`/`SetStatus` pasaron a solo *encolar* el mensaje en
+un `Channel` (instantáneo, no bloqueante), con un consumidor `async` interno del propio
+`SplashWindow` (`ConsumeStagesAsync`) decidiendo cuánto sostener cada uno vía
+`await Task.Delay` — nunca `Thread.Sleep`.
 
-Si en algún momento se vuelve a tocar el orquestador de arranque: **cualquier mecanismo
-que bloquee el hilo de UI (Sleep, loops síncronos largos) va a romper las animaciones
-del splash otra vez** — el patrón correcto es siempre encolar + esperar de forma async,
-nunca dormir el hilo.
+**Vuelta 2 — competencia por el único hilo de UI, sin bloqueo explícito.** Sacar el
+`Thread.Sleep` no alcanzó. La construcción de `MainWindowViewModel`/`MainWindow` es
+código **totalmente síncrono, sin ningún `await` adentro** — mientras corre, monopoliza
+el hilo de UI de punta a punta, sin importar qué prioridad de `Dispatcher` se le
+asigne (esto no tiene nada que ver con prioridades: un método síncrono no se puede
+"interrumpir" para dejar correr otra cosa mientras tanto, en un hilo único). Si esa
+construcción arrancaba antes de que la animación de apertura del splash (flicker +
+reveal del wordmark) llegara a completarse, quedaba congelada a mitad de camino hasta
+que la construcción terminara — el síntoma observado fue: el splash aparece en blanco,
+**la ventana principal aparece primero**, y recién después el splash "revive" y
+muestra todos los mensajes de golpe, para cerrarse solo al toque. **Corrección**:
+`SplashWindow` expone `IntroCompletedTask` (se resuelve cuando termina el reveal del
+wordmark), y `App.axaml.cs` hace `await splash.IntroCompletedTask;` **antes** de
+arrancar la construcción pesada — sincronización explícita, no prioridades del
+dispatcher cruzando los dedos.
+
+**Vuelta 3 — intentar solapar animación con trabajo real, en un solo hilo, no funciona.**
+Con la vuelta 2 resuelta, apareció el mismo problema un escalón más abajo: `main.Show()`
+se llamaba apenas terminaba la construcción (síncrona, rápida), sin esperar a que el
+carrusel de etapas llegara a *reproducir* los mensajes ya encolados — la ventana
+principal aparecía primero, y recién cuando el hilo de UI volvía a quedar libre el
+splash mostraba todo de golpe. La lección de fondo: **no hay forma real de solapar una
+animación con trabajo síncrono en un único hilo de UI** sin mover ese trabajo a otro
+hilo (cambio de arquitectura bastante más riesgoso). **Corrección**: se abandonó el
+intento de solapamiento — el splash ahora reproduce **toda** su secuencia de punta a
+punta (intro + los 4 mensajes de carga real + el mensaje final) sin que nada más
+compita por el hilo de UI en el medio, y recién cuando termina aparece
+`MainWindow`. Esto es, de hecho, más fiel al patrón "splash primero, app después" tipo
+GIMP pedido desde el arranque de esta función — los intentos de solapamiento fueron
+una optimización propia, no algo pedido, y terminaron siendo la raíz de las vueltas 2
+y 3.
+
+Si en algún momento se vuelve a tocar el orquestador de arranque, tres reglas (no dos):
+1. Cualquier mecanismo que bloquee el hilo de UI (Sleep, loops síncronos largos)
+   rompe las animaciones del splash — encolar + esperar de forma async, nunca dormir
+   el hilo.
+2. Cualquier trabajo síncrono pesado (sin `await` adentro) que se dispare mientras el
+   splash todavía está animando su apertura va a congelarla, sin importar la
+   prioridad del `Dispatcher` — hay que esperar explícitamente (`await`) a que la
+   animación de apertura termine antes de arrancarlo (`IntroCompletedTask`).
+3. **No tratar de mostrar `MainWindow` mientras el carrusel de etapas todavía está
+   reproduciendo mensajes** — esperar `StagesDrainedTask` antes de `main.Show()`. Si en
+   el futuro se necesita de verdad que la carga real corra en paralelo con la
+   animación (para que el arranque total sea más rápido, no solo prolijo), la única
+   forma correcta de lograrlo es mover la construcción pesada a otro hilo real
+   (`Task.Run`) — auditando antes que ningún servicio/sub-viewmodel toque tipos
+   Visual/Control de Avalonia desde ese hilo, porque eso sí rompería con una
+   excepción real de afinidad de hilo.
 
 ---
 

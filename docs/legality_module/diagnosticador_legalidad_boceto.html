@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Exxeguttor — Boceto Diagnosticador de Legalidad</title>
+<style>
+  :root{
+    --bg: #fafafa;
+    --panel: #ffffff;
+    --border: #e5e5e8;
+    --ink: #1c1c1f;
+    --ink-soft: #6b6b70;
+    --ink-faint: #9a9aa0;
+    --legal-green: #2E7D32;      /* mismo hex que LegalityColorConverter real */
+    --illegal-red: #C62828;      /* ídem */
+    --legal-tint: #EAF6F0;       /* mismo hex que LegalityBackgroundTintConverter real */
+    --illegal-tint: #FBEAEA;     /* ídem */
+    --fishy-amber: #B7791F;
+    --fishy-tint: #FDF3E3;
+    --accent-blue: #3b82f6;      /* de la paleta ya usada en empty_state */
+  }
+  *{ box-sizing:border-box; }
+  html,body{ margin:0; padding:0; background:#d9d9dc;
+    font-family: -apple-system, "Segoe UI", "Cantarell", "Ubuntu", sans-serif; }
+
+  .demo-controls{
+    max-width: 900px; margin: 24px auto 0; display:flex; gap:10px; justify-content:center;
+  }
+  .demo-controls button{
+    font-family: inherit; font-size: 13px; padding: 8px 16px; border-radius: 6px;
+    border: 1px solid var(--border); background: var(--panel); color: var(--ink); cursor:pointer;
+  }
+  .demo-controls button.active{ background: var(--accent-blue); color:#fff; border-color:var(--accent-blue); }
+  .demo-controls button:hover:not(.active){ background:#f4f4f5; }
+
+  .app-shell{
+    width: 900px; margin: 16px auto 40px; background: var(--bg);
+    border: 1px solid var(--border); border-radius: 8px; overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  }
+  .panel{ background: var(--panel); padding: 14px; position: relative; }
+
+  /* ── Cabecera: sprite+badge / Identity / Status / Origin — mismas proporciones y
+     tamaños de fuente que PokemonInfoView.axaml real (Grid 130,*,*,*; filas 18-20px,
+     labels a 62px, FontSize 9-10) ─────────────────────────────────────────────── */
+  .header-grid{ display:grid; grid-template-columns: 130px 1fr 1fr 1fr; gap:0; }
+  .col{ padding: 0 8px; }
+  .col-title{ font-size:9px; font-weight:600; opacity:.5; margin-bottom:4px; letter-spacing:.02em; }
+  .field-row{ display:grid; grid-template-columns: 62px 1fr; align-items:center; height:20px; margin-bottom:1px; }
+  .field-label{ font-size:10px; opacity:.6; }
+  .field-value{ font-size:10px; }
+  .field-control{
+    font-size:10px; height:18px; padding:2px 4px; border:1px solid var(--border);
+    border-radius:3px; background:#fff; color:var(--ink); width:100%;
+  }
+  select.field-control{ padding:1px 3px; }
+
+  /* Resaltado de campo con fix pendiente — mismo lenguaje que ya usa la app para
+     "estado activo" (Border.dynamax-active/alpha-active en PokemonStatsView.axaml: borde
+     de color, nada de fondo sólido que rompa el resto de la fila). Sugerencia SIEMPRE
+     visible como texto chico debajo, no escondida en un tooltip — así el usuario no
+     tiene que pasar el mouse para enterarse de qué poner. */
+  .field-flagged .field-control{
+    border: 1.5px solid var(--illegal-red);
+    background: var(--illegal-tint);
+  }
+  .field-hint{
+    font-size:8.5px; color:var(--illegal-red); grid-column: 2; margin: 1px 0 3px;
+    line-height:1.3;
+  }
+
+  .sprite-col{ display:flex; flex-direction:column; align-items:center; gap:4px; width:130px; }
+  .sprite-placeholder{
+    width:64px; height:64px; border-radius:8px; background:#eee;
+    display:flex; align-items:center; justify-content:center; font-size:10px; color:var(--ink-faint);
+  }
+  .type-pills{ display:flex; gap:3px; }
+  .type-pill{ font-size:10px; font-weight:700; color:#fff; padding:2px 6px; border-radius:4px; }
+
+  .legality-badge{
+    display:flex; align-items:center; gap:3px; padding:2px 6px; border-radius:4px;
+    background: var(--illegal-red); cursor: pointer; position:relative;
+  }
+  .legality-badge .icon{ font-size:10px; color:#fff; }
+  .legality-badge .txt{ font-size:10px; font-weight:600; color:#fff; }
+  .legality-tags{
+    display:flex; flex-wrap:wrap; gap:3px; justify-content:center; max-width:126px;
+  }
+  .legality-chip{
+    font-size:8.5px; font-weight:600; color:var(--illegal-red);
+    background: var(--illegal-tint); border:1px solid #F3C6C6;
+    border-radius: 8px; padding: 2px 6px;
+    transition: opacity 0.35s ease, transform 0.35s ease;
+  }
+  .legality-chip.resolved{ display:none; }
+  /* Mismo efecto que Border.notebook-icon.pulse en MainWindow.axaml (el pulso al
+     apretar "Guardar") — pop de escala 1 → 1.3 → 1 en 0.45s, reusado acá tal cual para
+     confirmar "esta categoría se acaba de resolver" justo antes de esconder la ficha. */
+  @keyframes legalityChipPulse{
+    0%   { transform: scale(1); }
+    35%  { transform: scale(1.3); }
+    100% { transform: scale(1); }
+  }
+  .legality-chip.popping{ animation: legalityChipPulse 0.45s ease; }
+
+  /* ── Tab strip (Opción A) ─────────────────────────────────────────────────────── */
+  .tabstrip{ display:flex; gap:2px; border-bottom:1px solid var(--border); margin-top:10px; padding: 0 4px; }
+  .tab{ font-size:10px; padding:6px 10px; color:var(--ink-soft); border-bottom:2px solid transparent; cursor:default; }
+  .tab.active{ color:var(--ink); font-weight:600; border-bottom-color:var(--accent-blue); }
+  .tab.diag-tab{ color:var(--illegal-red); font-weight:600; display:flex; align-items:center; gap:4px; }
+  .tab.diag-tab .dot{ width:6px; height:6px; border-radius:50%; background:var(--illegal-red); }
+
+  .diag-body{ padding: 12px 4px; }
+
+  /* ── Popover (Opción B) ───────────────────────────────────────────────────────── */
+  .popover{
+    position:absolute; top: 74px; left: 14px; width: 420px; z-index: 20;
+    background:#fff; border:1px solid var(--border); border-radius:8px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15); padding: 10px;
+    display:none;
+  }
+  .popover.open{ display:block; }
+  .popover-arrow{
+    position:absolute; top:-6px; left:22px; width:12px; height:12px; background:#fff;
+    border-left:1px solid var(--border); border-top:1px solid var(--border); transform:rotate(45deg);
+  }
+
+  /* ── Contenido del diagnosticador (compartido entre Tab y Popover) ──────────────── */
+  .diag-header{ font-size:11px; font-weight:600; margin-bottom:8px; }
+  .step{
+    border:1px solid var(--border); border-radius:6px; margin-bottom:8px; overflow:hidden;
+  }
+  .step-head{
+    display:flex; align-items:center; gap:6px; padding:6px 8px;
+  }
+  .step.invalid .step-head{ background: var(--illegal-tint); }
+  .step.fishy .step-head{ background: var(--fishy-tint); }
+  .sev-dot{ width:7px; height:7px; border-radius:50%; flex-shrink:0; }
+  .step.invalid .sev-dot{ background: var(--illegal-red); }
+  .step.fishy .sev-dot{ background: var(--fishy-amber); }
+  .step-cat{ font-size:11px; font-weight:600; color:var(--ink); }
+  .step-cat .sev-label{ font-size:8.5px; font-weight:400; opacity:.65; margin-left:4px; }
+  .step-summary{ font-size:9.5px; color:var(--ink-soft); padding: 0 8px 6px 21px; }
+
+  .fixes{ padding: 0 8px 8px 21px; display:flex; flex-direction:column; gap:5px; }
+  .fix-row{
+    display:flex; align-items:center; justify-content:space-between; gap:8px;
+    background:#fff; border:1px solid var(--border); border-radius:5px; padding:5px 7px;
+  }
+  .fix-info{ font-size:9.5px; line-height:1.5; }
+  .fix-field{ font-weight:600; color:var(--ink); }
+  .fix-values{ color:var(--ink-soft); }
+  .fix-values b{ color: var(--illegal-red); font-weight:600; }
+  .fix-source{ font-size:8px; color:var(--ink-faint); }
+  .apply-btn{
+    font-size:9px; padding:4px 8px; border-radius:4px; border:1px solid var(--border);
+    background:#f4f4f5; color:var(--ink-faint); white-space:nowrap; cursor:not-allowed;
+    display:flex; flex-direction:column; align-items:center; line-height:1.2;
+  }
+  .apply-btn .v2tag{ font-size:7px; opacity:.8; }
+
+  .no-fix-note{
+    font-size:9px; color:var(--ink-faint); font-style:italic; padding: 0 8px 8px 21px;
+  }
+
+  .notes{ max-width:900px; margin: 0 auto 60px; padding: 0 4px; color:#444; font-size:13px; line-height:1.6; }
+  .notes h2{ font-size:14px; margin-bottom:6px; }
+  .notes code{ background:#eee; padding:1px 5px; border-radius:3px; font-size:12px; }
+</style>
+</head>
+<body>
+
+  <div class="demo-controls">
+    <button id="btnTab" class="active" onclick="setMode('tab')">Opción A — Tab "Diagnóstico"</button>
+    <button id="btnPopover" onclick="setMode('popover')">Opción B — Popover desde el badge</button>
+  </div>
+
+  <div class="app-shell">
+    <div class="panel">
+
+      <!-- ══ Cabecera real: sprite+badge / Identity / Status / Origin ══ -->
+      <div class="header-grid">
+        <div class="sprite-col">
+          <div class="sprite-placeholder">sprite</div>
+          <div class="type-pills">
+            <div class="type-pill" style="background:#F08030">Fire</div>
+            <div class="type-pill" style="background:#A890F0">Flying</div>
+          </div>
+          <div class="legality-badge" id="badge" onclick="togglePopover()">
+            <span class="icon">✗</span><span class="txt">Ilegal</span>
+          </div>
+          <div class="legality-tags" id="legalityTags">
+            <span class="legality-chip" id="chip-location" title="La ubicación de captura no corresponde a ningún encuentro real de esta especie en este juego.">Ubicación</span>
+            <span class="legality-chip" id="chip-ability" title="La habilidad actual no está disponible para el encuentro que corresponde.">Habilidad</span>
+            <span class="legality-chip" id="chip-moves" title="&quot;Draco Meteor&quot; no está en el learnset de Charizard para este juego, a este nivel.">Movimientos</span>
+          </div>
+
+          <!-- Popover (Opción B) — anclado acá, mismo contenido que la tab -->
+          <div class="popover" id="popover">
+            <div class="popover-arrow"></div>
+            <div id="popoverContent"></div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="col-title">IDENTITY</div>
+          <div class="field-row"><span class="field-label">Species</span><span class="field-value">Charizard</span></div>
+          <div class="field-row"><span class="field-label">Nickname</span><input class="field-control" value="Charizard"></div>
+          <div class="field-row"><span class="field-label">Level</span><input class="field-control" value="36" style="width:40px"></div>
+          <div class="field-row field-flagged" id="field-ability"><span class="field-label">Ability</span>
+            <select class="field-control" id="select-ability">
+              <option value="solar">Solar Power</option>
+              <option value="blaze">Blaze</option>
+            </select>
+          </div>
+          <div class="field-hint" id="hint-ability">Sugerido: Blaze (la habilidad actual no está disponible para este encuentro)</div>
+        </div>
+
+        <div class="col">
+          <div class="col-title">STATUS</div>
+          <div class="field-row"><span class="field-label">Item</span><select class="field-control"><option>— None —</option></select></div>
+          <div class="field-row"><span class="field-label">Friendship</span><input class="field-control" value="70" style="width:40px"></div>
+          <div class="field-row"><span class="field-label">Handler</span><span class="field-value">—</span></div>
+          <div class="field-row"><span class="field-label">Pokérus</span><span class="field-value">☐</span></div>
+          <div class="field-row field-flagged" id="field-moves"><span class="field-label">Move 1</span>
+            <select class="field-control" id="select-moves">
+              <option value="draco">Draco Meteor</option>
+              <option value="flame">Flamethrower</option>
+            </select>
+          </div>
+          <div class="field-hint" id="hint-moves">Draco Meteor no está en el learnset de esta especie en este juego (vive en el tab Moves, acá solo a modo de ejemplo)</div>
+        </div>
+
+        <div class="col">
+          <div class="col-title">ORIGIN</div>
+          <div class="field-row"><span class="field-label">OT</span><input class="field-control" value="Erick"></div>
+          <div class="field-row field-flagged" id="field-location"><span class="field-label">Location</span>
+            <select class="field-control" id="select-location">
+              <option value="verde">Ciudad Verde</option>
+              <option value="ruta1">Ruta 1</option>
+            </select>
+          </div>
+          <div class="field-hint" id="hint-location">Sugerido: Ruta 1 (Charmander no se encuentra en Ciudad Verde en este juego)</div>
+          <div class="field-row"><span class="field-label">Ball</span><select class="field-control"><option>Poké Ball</option></select></div>
+          <div class="field-row"><span class="field-label">Met level</span><input class="field-control" value="5" style="width:40px"></div>
+        </div>
+      </div>
+
+      <!-- ══ Opción A: Tab strip con "Diagnóstico" ══ -->
+      <div id="tabView">
+        <div class="tabstrip">
+          <div class="tab">IVs / EVs</div>
+          <div class="tab">Moves</div>
+          <div class="tab">Learnsets</div>
+          <div class="tab active diag-tab"><span class="dot"></span>Diagnóstico</div>
+        </div>
+        <div class="diag-body" id="tabDiagBody"></div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="notes">
+    <h2>Notas del boceto</h2>
+    <p>
+      Colores, tamaños y proporciones tomados directo de <code>PokemonInfoView.axaml</code> y
+      <code>PokemonStatsView.axaml</code> reales — mismo verde/rojo de badge
+      (<code>#2E7D32</code>/<code>#C62828</code>), mismo tinte suave de píldora que ya usa el
+      modal de revisión (<code>#EAF6F0</code>/<code>#FBEAEA</code>), mismo alto de fila (20px)
+      y tamaño de fuente (9-10px) que el resto del panel. El resaltado de campo con borde de
+      color no es un patrón nuevo — es el mismo lenguaje que ya usan
+      <code>Border.dynamax-active</code>/<code>alpha-active</code> en el tab Special.
+    </p>
+    <p>
+      <strong>Resaltado de campo</strong>: la sugerencia queda como texto chico SIEMPRE visible
+      debajo del campo (no escondida en un tooltip) — así no hace falta pasar el mouse para
+      enterarse de qué poner. El mismo <code>FieldId</code> del modelo (<code>Ability</code>,
+      <code>MetLocation</code>) es el que decide qué campo de la cabecera se resalta.
+    </p>
+    <p>
+      <strong>Los tres niveles, representados en el diagnosticador</strong>: Ubicación
+      (Nivel B, valor sale de <code>EncounterMatch</code>) y Habilidad (también Nivel B) traen
+      botón "Aplicar" — deshabilitado a propósito, es la v2 futura, no funcional todavía.
+      IVs (Fishy, "todas iguales" — sospechoso pero técnicamente válido) no tiene un único valor
+      correcto que sugerir, así que no lleva botón. Movimientos (Nivel C, puramente descriptivo)
+      tampoco.
+    </p>
+    <p>
+      <strong>Comparación Tab vs. Popover</strong>: la Tab (Opción A) es más consistente con el
+      resto de la app (mismo patrón que Ribbons/Special) pero compite por espacio en la fila de
+      tabs. El Popover (Opción B) es más contextual — aparece pegado al badge que ya mirás — pero
+      es un componente que hoy no existe en Avalonia dentro de este proyecto, más trabajo de
+      construir. Probá el toggle de arriba para comparar los dos en el mismo contexto.
+    </p>
+  </div>
+
+<script>
+  const stepsHtml = `
+    <div class="step invalid" data-step="location">
+      <div class="step-head"><span class="sev-dot"></span><span class="step-cat">Ubicación<span class="sev-label">— inválido</span></span></div>
+      <div class="step-summary">La ubicación de captura no corresponde a ningún encuentro real de esta especie en este juego.</div>
+      <div class="fixes">
+        <div class="fix-row">
+          <div class="fix-info">
+            <div class="fix-field">Met Location</div>
+            <div class="fix-values">tenías: Ciudad Verde → <b>sugerido: Ruta 1</b></div>
+            <div class="fix-source">fuente: encuentro válido más cercano (EncounterMatch)</div>
+          </div>
+          <div class="apply-btn">Aplicar<span class="v2tag">v2 · próx.</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="step invalid" data-step="ability">
+      <div class="step-head"><span class="sev-dot"></span><span class="step-cat">Habilidad<span class="sev-label">— inválido</span></span></div>
+      <div class="step-summary">La habilidad actual no está disponible para el encuentro que corresponde a esta especie/ubicación.</div>
+      <div class="fixes">
+        <div class="fix-row">
+          <div class="fix-info">
+            <div class="fix-field">Ability</div>
+            <div class="fix-values">tenías: Solar Power → <b>sugerido: Blaze</b></div>
+            <div class="fix-source">fuente: ranura de habilidad del encuentro válido</div>
+          </div>
+          <div class="apply-btn">Aplicar<span class="v2tag">v2 · próx.</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="step fishy" data-step="ivs">
+      <div class="step-head"><span class="sev-dot"></span><span class="step-cat">IVs / EVs<span class="sev-label">— sospechoso, ya es legal así</span></span></div>
+      <div class="step-summary">Las 6 IVs tienen el mismo valor (31) — técnicamente válido, pero muy inusual fuera de una edición manual o un evento específico. Revisalo si no lo esperabas.</div>
+      <div class="no-fix-note">Sin sugerencia puntual — no hay un valor "correcto" único para IVs libres, es criterio del jugador. No aparece como ficha arriba: es "raro" pero ya es legal, no bloquea nada.</div>
+    </div>
+
+    <div class="step invalid" data-step="moves">
+      <div class="step-head"><span class="sev-dot"></span><span class="step-cat">Movimientos<span class="sev-label">— inválido</span></span></div>
+      <div class="step-summary">"Draco Meteor" no está en el learnset de Charizard para este juego, a este nivel, por ningún método.</div>
+      <div class="no-fix-note">Sin sugerencia puntual — hay varios movimientos válidos posibles, no un único reemplazo correcto. (Se arregla desde el tab Moves, fuera de este boceto — click en la ficha simula que ya se corrigió ahí.)</div>
+    </div>
+  `;
+
+  document.getElementById('tabDiagBody').innerHTML = stepsHtml;
+  document.getElementById('popoverContent').innerHTML =
+    '<div class="diag-header">Diagnóstico de legalidad</div>' + stepsHtml;
+
+  function setMode(mode){
+    const tabBtn = document.getElementById('btnTab');
+    const popBtn = document.getElementById('btnPopover');
+    const tabView = document.getElementById('tabView');
+    const popover = document.getElementById('popover');
+    if (mode === 'tab'){
+      tabBtn.classList.add('active'); popBtn.classList.remove('active');
+      tabView.style.display = 'block';
+      popover.classList.remove('open');
+    } else {
+      popBtn.classList.add('active'); tabBtn.classList.remove('active');
+      tabView.style.display = 'none';
+    }
+  }
+  function togglePopover(){
+    const tabBtn = document.getElementById('btnTab');
+    if (tabBtn.classList.contains('active')) return; // en modo Tab, el badge no abre nada
+    document.getElementById('popover').classList.toggle('open');
+  }
+
+  // ── El campo real es quien dispara la reacción — la ficha, el resaltado y el step
+  // del panel son solo REFLEJO del mismo estado, nunca al revés. Esto imita lo que en
+  // el código real haría el recálculo en vivo (con debounce) al detectar que
+  // AnalyzeLegality ya no encuentra un FieldFix para esa categoría — reacciona a lo que
+  // el usuario cambió, el usuario nunca interactúa con la ficha directamente. ─────────
+  const chipMap  = { location: 'chip-location', ability: 'chip-ability', moves: 'chip-moves' };
+  const fieldMap = { location: 'field-location', ability: 'field-ability', moves: 'field-moves' };
+  const hintMap  = { location: 'hint-location',  ability: 'hint-ability',  moves: 'hint-moves'  };
+
+  function setResolved(key, resolved){
+    const chip = document.getElementById(chipMap[key]);
+    if (chip){
+      if (resolved && !chip.classList.contains('resolved')){
+        // Recién se resuelve ahora — mismo pulso que la libreta al guardar, como
+        // confirmación de "esta categoría se acaba de arreglar", y RECIÉN después se
+        // esconde la ficha (no de golpe).
+        chip.classList.add('popping');
+        const onPulseEnd = () => {
+          chip.classList.remove('popping');
+          chip.classList.add('resolved');
+          chip.removeEventListener('animationend', onPulseEnd);
+        };
+        chip.addEventListener('animationend', onPulseEnd);
+      } else if (!resolved){
+        chip.classList.remove('resolved', 'popping');
+      }
+    }
+
+    const fieldEl = document.getElementById(fieldMap[key]);
+    if (fieldEl) fieldEl.classList.toggle('field-flagged', !resolved);
+
+    const hintEl = document.getElementById(hintMap[key]);
+    if (hintEl) hintEl.style.display = resolved ? 'none' : 'block';
+
+    document.querySelectorAll(`[data-step="${key}"]`).forEach(step => {
+      step.style.display = resolved ? 'none' : 'block';
+    });
+
+    // El badge espera al pulso antes de recalcular, si corresponde (450ms + margen).
+    setTimeout(checkAllClear, resolved ? 500 : 0);
+  }
+
+  function checkAllClear(){
+    const remainingVisible = [...document.querySelectorAll('.legality-chip')]
+      .filter(c => !c.classList.contains('resolved')).length;
+    const badge = document.getElementById('badge');
+    if (remainingVisible === 0){
+      badge.style.background = 'var(--legal-green)';
+      badge.querySelector('.icon').textContent = '✓';
+      badge.querySelector('.txt').textContent = 'Legal';
+    } else {
+      badge.style.background = 'var(--illegal-red)';
+      badge.querySelector('.icon').textContent = '✗';
+      badge.querySelector('.txt').textContent = 'Ilegal';
+    }
+  }
+
+  document.getElementById('select-ability').addEventListener('change', e => {
+    setResolved('ability', e.target.value === 'blaze');
+  });
+  document.getElementById('select-location').addEventListener('change', e => {
+    setResolved('location', e.target.value === 'ruta1');
+  });
+  document.getElementById('select-moves').addEventListener('change', e => {
+    setResolved('moves', e.target.value === 'flame');
+  });
+
+  function resetDemo(){ location.reload(); }
+</script>
+
+<div class="demo-controls" style="margin-top:0;">
+  <button onclick="resetDemo()">↻ Reiniciar demo</button>
+</div>
+
+</body>
+</html>
