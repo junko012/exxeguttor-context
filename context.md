@@ -1,10 +1,17 @@
 # context.md — Estado actual del proyecto Exxeguttor
 
-_Última actualización: sesión larga de corrección del módulo Mochila (categorización real por
-generación vía `ItemGameCodes.RawItemId`, ya no bloqueada), rediseño del panel central a grilla
-de tiles tipo Caja de Pokémon con origen Mochila/PC navegable, descripciones de MT/HM por
-generación, y gestión de sesión de save (Cerrar/Limpiar ediciones/confirmar antes de abrir otro
-archivo). Sin repo git — no hay historial de commits._
+_Última actualización: sesión muy larga y densa, la más grande documentada hasta ahora (~50
+commits sobre `master`, mensajes de commit genéricos tipo "updating files" — no sirven como
+changelog, por eso esta reescritura salió de leer el código real, no del historial de git).
+Dos módulos nuevos completos — **Pokédex** (álbum de figuritas, revierte la decisión de scope-
+out documentada en la versión anterior de este archivo) y **Diagnosticador de legalidad**
+(tab "Diagnóstico" con arreglos automáticos accionables) — más una extensión grande de
+`PokemonService` (el "intercambio entre versiones hermanas" para construir especies exclusivas
+ahora cubre Gen3, no solo Gen1/2, con el caso especial de Feebas→Milotic por Belleza) y un lote
+de campos que quedaban "editables en la UI pero se perdían en silencio al exportar" (Shiny,
+Huevo, Amistad, Género del Pokémon, OT, TID propio, fechas) ahora sí cableados al pipeline de
+escritura real. `pokemon.db` creció de ~46 MB a ~51 MB (datos de Pokédex). Repo git ya
+inicializado del lado del usuario — 50 commits en `master`, sin ninguna rama aparte._
 
 ---
 
@@ -100,9 +107,30 @@ Pokémon (Nickname/Level/Nature/IVs/EVs/Moves+PPUps) en 5 generaciones, Entrenad
 Cintas (formato viejo en Gen3+Gen4, formato moderno en Gen9).
 
 **Sin test de round-trip dedicado todavía** (compila, tipos verificados por reflection, pero
-sin confirmar con datos reales): Habilidad, HeldItem, Shiny, Dynamax/Gigantamax, Alpha/Noble,
-creación de Pokémon nuevo. Prioridad para una sesión futura antes de dar el pipeline por
-100% cerrado.
+sin confirmar con datos reales): Habilidad, HeldItem, Dynamax/Gigantamax, Alpha/Noble, creación
+de Pokémon nuevo. Prioridad para una sesión futura antes de dar el pipeline por 100% cerrado.
+
+### ⚠️→✅ Bug real corregido esta sesión — "campos huérfanos" que se perdían en silencio al exportar
+
+Varios campos editables desde hacía tiempo en el panel principal (**Brillante, Huevo, Amistad,
+Género del Pokémon, OT (nombre del entrenador original), TID propio del Pokémon, Fecha de
+encuentro, Fecha/Ubicación de huevo**) sí pasaban por `Set<T>`/`RecordEdit` — aparecían bien en
+la libreta y en el modal de revisión — pero `EditApplyService.ApplyFieldsToPkm` nunca tenía un
+`case` para ellos: la edición se perdía en silencio al exportar, sin ningún error. Mismo síntoma
+que tuvo Met Level/Ball/Ubicación en una sesión anterior. Todos quedaron agregados esta sesión:
+
+- La mayoría son setters directos y abstractos en `PKM` (`Gender`, `CurrentFriendship`, `IsEgg`,
+  `TID16`, `OriginalTrainerName` — confirmado en el código real de PKHeX.Core, no asumido).
+  `MetDate`/`EggMetDate` son `DateOnly?` con setter propio.
+- **`IsShiny` es la excepción** — `virtual bool IsShiny => TSV == PSV`, get-only, **sin
+  setter**. Tildar/destildar Brillante desde la UI reusa el mismo sorteo de PID que ya usaba el
+  botón "Corregir automáticamente" del tab Diagnóstico (`PokemonService.TryRegeneratePid`), pero
+  apuntando al estado que el usuario pidió, no al que el PKM ya tenía. Si el sorteo no encuentra
+  combinación válida en el tope de intentos (caso raro — ej. Brillante + Naturaleza puntual en
+  Gen3-5), se ignora en silencio.
+- `IsNicknamed` se separó de la edición de `Nickname` — antes se forzaba a `true` sin condición
+  ni forma de destildarlo desde la UI (causa real de "apodo ilegal con texto normal": el flag no
+  coincidía con el contenido). Ahora tiene su propio checkbox (`IsNicknamedFlag`).
 
 **Deliberadamente afuera**: Tera (`PK9.TeraTypeOriginal`/`Override`) sigue solo lectura en la
 UI — no se escribe todavía.
@@ -258,6 +286,147 @@ por lectura de código no encontró la causa (`ResetSession`, `HasAnyEdits`, `Re
 `CapturePristine`, instancia única de `EditSessionService`, bindings XAML — todo revisado y
 correcto en papel). Sospecha principal: build no limpio del lado del usuario (no confirmado). Si
 persiste tras un `dotnet clean` + rebuild, retomar con diagnóstico real en vez de releer código.
+**Sigue sin tocarse esta sesión** — nada en el diff de `EditSessionService.cs` toca
+`HasAnyEdits`/`ResetSession`, así que sigue exactamente en el mismo estado.
+
+---
+
+## 🩺 Diagnosticador de legalidad — módulo nuevo esta sesión (tab "Diagnóstico")
+
+Reemplaza la idea original de un simple resumen de legalidad por un tab dedicado que, por cada
+problema detectado, muestra categoría + explicación + (cuando hay un valor concreto que
+sugerir) un botón **"Corregir automáticamente"**. Diseñado desde el arranque para poder crecer
+a v2 (aplicar arreglos con un click) sin rediseñar nada — v1 (esta sesión) solo lista y resalta.
+
+### Arquitectura — `DiagnosticStep` + `FieldFix` (Exxeguttor.App)
+
+- **`DiagnosticStep`** — un paso por categoría con problema (misma agrupación de siempre que ya
+  arma `LegalityMessageMapper`), con `Order` (prioridad de resolución sugerida: Origen del
+  encuentro → Especie/Forma/Habilidad/Género → PID/Naturaleza/IVs/Brillante →
+  Nivel/EVs/Movimientos → Apodo/Idioma/Entrenador/Ball/Objeto/Cintas/Marcas/Recuerdos),
+  `Severity` (solo `Invalid` o `Fishy` — nunca `Valid`, un step solo existe para un problema),
+  `Summary`/`TechnicalDetail` (el texto amigable y el `CheckResult.ToString()` crudo de
+  siempre) y `Fixes` (0 a N `FieldFix` — vacío cuando el problema es "Nivel C": puramente
+  descriptivo, sin un valor correcto conocible, ej. "existen varios movimientos ilegales
+  posibles, no un único reemplazo").
+- **`LegalityDiagnosticBuilder.BuildDiagnosticSteps(analysis, pkm)`** — punto de entrada único,
+  junta cuatro fuentes distintas de `FieldFix` por categoría (nunca un diff genérico):
+  - **`LegalityArgumentFormatter`** ("Nivel A") — un `FieldFix` por `CheckResult` individual
+    cuando `CheckResult.Value`/`.Argument`/`.Argument2` traen un valor accionable. **Ojo**:
+    `CheckResult` es un struct con `[StructLayout(LayoutKind.Explicit)]` — `Value` y
+    `Argument`/`Argument2` comparten la MISMA memoria (una unión, no tres campos
+    independientes). Para códigos de un solo argumento, `Value` y `Argument` dan el mismo
+    número; para códigos de dos argumentos empaquetados (sufijo `_01`), hay que leer
+    `Argument`/`Argument2` por separado — leer `Value` ahí da un número empaquetado sin
+    sentido. Confirmado leyendo `CheckResult.cs`/`Verifier.GetInvalid` de PKHeX.Core 25.11.7.
+  - **`LegalityEncounterFormatter`** ("Nivel B") — cuando el `CheckResult` no trae el valor
+    (ej. `IVNotCorrect`, sin argumento) pero `LegalityAnalysis.EncounterMatch` sí lo sabe (es la
+    plantilla de encuentro real contra la que PKHeX comparó). Cubre ubicación (`ILocation`) e
+    IVs fijas de un regalo/estático (`IFixedIVSet`).
+  - **`LegalityMoveFormatter`** — sistema TOTALMENTE APARTE: los movimientos no generan
+    `CheckResult` propio para "este movimiento no es legal" (solo para PP) — hay que leer
+    `LegalityAnalysis.Info.Moves`/`.Relearn` (arrays de `MoveResult`, 1 por slot 1-4) en vez de
+    `.Results`. Ventaja real: el índice del array da el slot exacto sin ambigüedad, y
+    `MoveResult.Expect` a veces ya trae el ID del movimiento sugerido — la sugerencia más
+    precisa de todo el diagnosticador.
+  - **`LegalityEvFormatter`** — los dos códigos de suma de EVs (`EffortAbove510` y el asociado)
+    no traen NINGÚN argumento en el `CheckResult` (confirmado en `EffortValueVerifier.cs`: el
+    `AddLine` correspondiente no pasa valor) — se calcula a mano leyendo `pkm.EVs` directo. Única
+    fuente de `FieldFix` del diagnosticador que no depende de ningún dato que exponga PKHeX
+    (`FieldFixSource.DerivedFromPkm`). **Ojo con el orden de `pkm.GetEVs()`/`GetIVs()`**: no es
+    el estándar HP/Atk/Def/SpA/SpD/Spe — usan la misma convención "Speed en el índice 3" que
+    `IndividualValueSet` (confirmado leyendo `PKM.cs` línea por línea, no asumido).
+
+### Botones "Corregir automáticamente" — `FieldFixAction` (v1: 3 acciones)
+
+`PokemonEditorViewModel.ApplyAutoFix(FieldFix fix)` despacha por `FieldFixAction`:
+
+- **`RegeneratePid`** — `PokemonService.TryRegeneratePid(pkm, generation, out newPid)`, sortea
+  un PID nuevo que resuelva Naturaleza/Género/Habilidad/Brillante según corresponda a la
+  generación. Si no encuentra combinación en el tope de intentos (raro), devuelve `false` y no
+  se aplica nada — sin aviso, mismo criterio que el resto del sorteo de PID en el proyecto.
+  Reusado también por el checkbox de Brillante en el editor normal (ver sección "campos
+  huérfanos" arriba).
+- **`RegeneratePidMethod1`** — variante para el bug de "Método 1" de generación de PID en
+  Gen3/4 (RNG antiguo). A diferencia de `RegeneratePid`, puede necesitar avisar que también
+  cambió la Naturaleza asociada (`changedNAG`) — todavía **sin canal de aviso real para esto en
+  la UI**, queda como gap abierto.
+- **`RecalculateCatchRate`** — solo PK1. `PokemonService.TryRecalculateCatchRate(pkm, out
+  newCatchRate)`. Devuelve `false` si el PKM no es un `PK1` (no debería llegar a ofrecerse el
+  botón en ese caso desde la UI, pero el método es defensivo igual).
+
+### UI — tab "Diagnóstico" (`PokemonStatsView.axaml`, después de "Special")
+
+- `DiagnosticSteps` (`ObservableCollection<DiagnosticStep>`) — la lista completa (Invalid +
+  Fishy), con un `Expander "Detalle técnico"` colapsado por paso para el texto crudo.
+- `LegalityChips` — subset (solo `Invalid`, nunca `Fishy`) usado para las fichas rojas de la
+  cabecera del editor — Fishy solo aparece en el tab, nunca como ficha, para no mandar la señal
+  de "esto también hay que arreglar" cuando el Pokémon ya es legal así como está.
+- **Recálculo en vivo mientras se edita**: `EditSessionService.BuildLiveDiagnosticSteps(key,
+  edits, getCurrentPkm)` — cada edición pendiente dispara un recálculo independiente del que
+  corre en el modal de exportación (`PokemonService.GetLegalityDiagnosticSteps`, corrido en
+  `Task.Run` en paralelo con las otras dos tareas del preview de exportación vía
+  `Task.WhenAll`), para no bloquear la UI del editor.
+- Resaltado de campo (`FieldHighlightConverter`, nuevo converter) — usa `FieldFix.FieldId` para
+  iluminar visualmente el control de la UI que corresponde a cada arreglo sugerido.
+
+Ver `exxeguttor-context/docs/legality_module/legality_diagnosticador.md` para el spec de diseño
+original (Etapas 3.1 a 3.3) si hace falta retomar la v2 (aplicar con un click, no solo v1).
+
+---
+
+## 📖 Módulo Pokédex — implementado esta sesión (revierte la decisión de scope-out anterior)
+
+La versión anterior de este archivo documentaba a Pokédex como sacada deliberadamente del enum
+`AppMode` ("decisión de alcance de `mockups/navigation_rail` — no implementar ni dejar
+placeholder"). **Esa decisión se revirtió esta sesión, a pedido explícito del usuario** — es un
+cambio de rumbo intencional, no una corrección de un error. El mockup de `navigation_rail`
+queda sin actualizar todavía a propósito (ver `screen-pokedex-album.md`, a crear/retomar en
+`exxeguttor-context/mockups/` si no existe aún).
+
+- `AppMode` vuelve a tener 3 valores: `Pokemon`, `Bag`, `Pokedex`. A diferencia de Mochila,
+  **Pokédex no usa panel derecho separado** — ocupa todo el ancho (`IsPokedexMode` en
+  `MainWindowViewModel`, nuevo `SwitchToPokedexModeCommand`).
+- **`PokedexService`** (Exxeguttor.App) — orquestador sin estado de UI ni dependencia de
+  Avalonia. Combina `PokemonService` (qué hay en Caja/Equipo → posesión de cada especie),
+  `PokemonDatabase` (género/hábitat/cadena evolutiva/flavor text — 4 métodos nuevos:
+  `GetSpeciesOrigin`, `GetFlavorText`, `GetEvolutionInto`, `GetEvolutionsFrom`) y una lista
+  embebida de disponibilidad restringida por juego.
+- **Álbum de figuritas** — una tarjeta por especie BASE (sin formas, decisión de diseño ya
+  tomada), con posesión real (`Owned`) según lo que haya en el save cargado.
+- **Reverso de la tarjeta** (`PokedexOriginInfo`) — Género (con fallback a inglés si no hay
+  traducción), Hábitat (`HabitatDatabase`, nuevo — tabla fija de 9 valores es/en, mismo criterio
+  que `NatureDatabase`: set cerrado que no vive en SQLite), y flavor text del juego cargado
+  (`null` si no hay dato — la UI muestra "sin datos de origen", sin distinguir por qué faltó).
+- **Cadena evolutiva con condición en español** (`PokedexEvolutionFamily`: 1 previa + 0..N
+  siguientes) — `EvolutionConditionFormatter` traduce el diccionario EAV crudo de
+  `DbEvolutionEdge.Conditions` (valores en inglés de PokeAPI vía EvolutionConditions) a una
+  línea corta en español. Best-effort: un `ConditionType` nuevo desconocido cae al fallback
+  humanizado (guiones→espacios, capitalizado) en vez de romper. **Caveat de fidelidad heredado
+  de la fuente**: Sylveon (Encanto + amistad) solo trae `min_happiness` en PokeAPI, sin
+  `known_move` — el texto sale incompleto para ese caso puntual.
+- **Disponibilidad restringida por juego** — `restricted_dex_availability.json` (nuevo asset
+  embebido, ~1860 líneas) cubre Espada/Escudo, Escarlata/Púrpura, Legends Arceus y Legends Z-A
+  (juegos que recortan qué especies tienen datos programados, a diferencia de Gen1-7+BDSP donde
+  alcanza con `SaveFile.MaxSpeciesID`). Lazy-load + double-check lock (mismo patrón que
+  `MovesetDatabase`) — no se parsea si el usuario nunca abre la Pokédex.
+- **`GameVersionMappings`** (Exxeguttor.App, nuevo) — deliberadamente separado de los otros DOS
+  `MapVersionToGameId` que ya existían (`PokemonService.cs`, `PokemonEditorViewModel.cs`).
+  Auditar el enum real de PKHeX.Core 25.11.7 confirmó que `SaveFile.Version` puede devolver
+  tanto valores "específicos" (`GameVersion.R`) como "agregados" (`GameVersion.RS`), y **cuando
+  llega el agregado no hay forma de saber cuál de los dos juegos del par es** (Rubí/Zafiro
+  tienen flavor text distinto entre sí) — `TryGetFlavorTextSlug` devuelve `null` en ese caso en
+  vez de adivinar. Más conservador de lo estrictamente necesario (algunos agregados podrían
+  resolverse leyendo otra propiedad del `SaveFile` real, sin auditar todavía por falta de
+  acceso a `PKHeX.Core.dll` esta sesión).
+- **Efecto de sonido** (`SoundService`, Exxeguttor.UI, nuevo) — sin dependencia de audio previa
+  en el proyecto; para UN sonido cortito de UI (`spark_chime.wav`, al completar/atrapar una
+  entrada) no se justifica sumar una librería completa. Extrae el `.wav` embebido a un archivo
+  temporal cacheado en disco y lo reproduce vía `paplay` (PulseAudio/PipeWire) con `aplay`
+  (ALSA) como respaldo — falla en silencio (try/catch) si ninguno está instalado, un sonido
+  decorativo nunca debería poder romper la app.
+- `pokemon.db` creció de ~46 MB a ~51 MB por los datos nuevos de género/hábitat/flavor
+  text/cadenas evolutivas que alimentan este módulo.
 
 ---
 ## Stack técnico
@@ -293,20 +462,38 @@ exxeguttor/
 │   │   │   └── SaveCapabilities.cs      # Detección automática — incluye Alpha (Legends
 │   │   │                                  Z-A vía GameVersion.ZA) y el fix de GameVersion
 │   │   │                                  genérico vs específico (Gen6, Gen9)
+│   │   ├── Assets/
+│   │   │   └── restricted_dex_availability.json  # NUEVO — ~1860 líneas, disponibilidad
+│   │   │                                            restringida SW/SH, SV, PLA, Legends Z-A
 │   │   └── Services/
 │   │       ├── LegalityMessageMapper.cs # Traducción CheckIdentifier→categoría/mensaje ES
-│   │       ├── PokemonDatabase.cs       # Acceso SQLite + DTOs
-│   │       ├── PokemonService.cs        # Lectura de party/box/legalidad (NO escritura)
+│   │       ├── PokemonDatabase.cs       # Acceso SQLite + DTOs — +GetSpeciesOrigin/
+│   │       │                              GetFlavorText/GetEvolutionInto/GetEvolutionsFrom
+│   │       ├── PokemonService.cs        # Lectura de party/box/legalidad + construcción
+│   │       │                              cross-versión Gen1/2/3, TryRegeneratePid(Method1),
+│   │       │                              TryRecalculateCatchRate, TrySetShiny (NO escritura
+│   │       │                              al SaveFile real — eso sigue siendo EditApplyService)
 │   │       ├── SaveFileService.cs       # Abrir/guardar saves — backup y nombre sugerido
 │   │       │                              ahora usan la convención real de PKHeX.Core
 │   │       ├── TrainerService.cs        # Lectura Y ESCRITURA de entrenador (ApplyEdits nuevo)
-│   │       └── ItemInventoryService.cs  # NUEVO — lectura de mochila/inventario del save
+│   │       ├── ItemInventoryService.cs  # lectura de mochila/inventario del save
+│   │       ├── PokedexService.cs        # NUEVO — orquestador del álbum Pokédex
+│   │       ├── GameVersionMappings.cs   # NUEVO — GameVersion→slug de flavor text (Pokédex)
+│   │       ├── DiagnosticStep.cs        # NUEVO — modelo DiagnosticStep/FieldFix
+│   │       ├── LegalityDiagnosticBuilder.cs   # NUEVO — punto de entrada del diagnosticador
+│   │       ├── LegalityArgumentFormatter.cs   # NUEVO — Nivel A (CheckResult.Value/Argument)
+│   │       ├── LegalityEncounterFormatter.cs  # NUEVO — Nivel B (EncounterMatch)
+│   │       ├── LegalityMoveFormatter.cs       # NUEVO — Moves/Relearn (sistema aparte)
+│   │       └── LegalityEvFormatter.cs         # NUEVO — suma de EVs, derivado del PKM
 │   └── Exxeguttor.UI/                   # UI Avalonia
 │       ├── ViewModels/
-│       │   ├── MainWindowViewModel.cs   # Orquestador — ahora con CurrentMode (Pokémon/
-│       │   │                              Pokédex/Mochila) y wiring de EditApplyService
+│       │   ├── MainWindowViewModel.cs   # Orquestador — CurrentMode (Pokémon/Mochila/
+│       │   │                              Pokédex, reincorporada esta sesión) y wiring de
+│       │   │                              EditApplyService/PokedexService
 │       │   ├── PokemonEditorViewModel.cs # Editor de Pokémon — UsesLegacyIVs (Gen1/2),
-│       │   │                              EvContribution() con fórmula sqrt para Stat Exp
+│       │   │                              EvContribution() con fórmula sqrt para Stat Exp,
+│       │   │                              DiagnosticSteps/LegalityChips + ApplyAutoFix()
+│       │   │                              (tab Diagnóstico, NUEVO esta sesión)
 │       │   ├── TrainerViewModel.cs      # Editable: Nombre/TID/SID/Género/Dinero/Monedas/BP
 │       │   ├── MoveSelectorViewModel.cs
 │       │   ├── RecommendedSetGroup.cs
@@ -319,24 +506,29 @@ exxeguttor/
 │       │   ├── SpeciesPickerViewModel.cs / SpeciesPickerItemViewModel.cs
 │       │   ├── RibbonItemViewModel.cs / RibbonGroupViewModel.cs / RibbonChipViewModel.cs
 │       │   ├── TypeChipViewModel.cs
-│       │   ├── BagViewModel.cs          # NUEVO — orquestador de Mochila
-│       │   ├── BagItemRowViewModel.cs   # NUEVO — fila de ítem (checkbox/stepper/max)
-│       │   └── BagPouchTileViewModel.cs # NUEVO — modelo de categoría
+│       │   ├── BagViewModel.cs          # orquestador de Mochila
+│       │   ├── BagItemRowViewModel.cs   # fila de ítem (checkbox/stepper/max)
+│       │   ├── BagPouchTileViewModel.cs # modelo de categoría
+│       │   └── PokedexViewModel.cs      # NUEVO — álbum de figuritas, paginado/cacheado
 │       ├── Views/
 │       │   ├── MainWindow.axaml(.cs)    # Selector de modo + panel central/derecho según modo
 │       │   ├── PokemonEditorView.axaml(.cs)
 │       │   ├── PokemonInfoView.axaml(.cs)
-│       │   ├── PokemonStatsView.axaml(.cs) # EffectiveMax() ahora clampea Iv*/Ev* según
-│       │   │                                  UsesLegacyIVs, no solo Iv* como antes
+│       │   ├── PokemonStatsView.axaml(.cs) # EffectiveMax() clampea Iv*/Ev* según
+│       │   │                                  UsesLegacyIVs; tab "Diagnóstico" NUEVO al final
+│       │   │                                  (después de Special) con lista de DiagnosticStep
+│       │   │                                  + Expander de detalle técnico
 │       │   ├── BoxView.axaml(.cs)
 │       │   ├── PartyView.axaml(.cs)
 │       │   ├── TrainerView.axaml(.cs)
 │       │   ├── PokemonSlotView.axaml(.cs)
 │       │   ├── SpeciesPickerView.axaml(.cs)
-│       │   ├── BagPouchGridView.axaml(.cs) # NUEVO — panel central Mochila, grilla de tiles
-│       │   │                                tipo Caja (origen Mochila/PC navegable arriba)
-│       │   ├── BagPouchTileView.axaml(.cs) # NUEVO — tile individual de categoría (204x108)
-│       │   └── BagItemListView.axaml(.cs)  # NUEVO — panel derecho Mochila, lista de ítems
+│       │   ├── BagPouchGridView.axaml(.cs) # panel central Mochila, grilla de tiles tipo
+│       │   │                                Caja (origen Mochila/PC navegable arriba)
+│       │   ├── BagPouchTileView.axaml(.cs) # tile individual de categoría (204x108)
+│       │   ├── BagItemListView.axaml(.cs)  # panel derecho Mochila, lista de ítems
+│       │   └── PokedexView.axaml(.cs)      # NUEVO — álbum, ocupa todo el ancho (sin
+│       │                                     panel derecho separado, a diferencia de Bag)
 │       ├── Services/
 │       │   ├── SpeciesDatabase.cs
 │       │   ├── MoveDatabase.cs
@@ -358,10 +550,15 @@ exxeguttor/
 │       │   │                              un save), BagItemEditValue (nombre+cantidad
 │       │   │                              capturado al momento de editar, ya no se
 │       │   │                              reconstruye por ID en el modal de revisión)
-│       │   ├── EditApplyService.cs      # NUEVO — el pipeline de escritura real
+│       │   ├── EditApplyService.cs      # el pipeline de escritura real — ahora también
+│       │   │                              PID/CatchRate (auto-fix) y campos huérfanos
+│       │   │                              (Shiny/Huevo/Amistad/Género/OT/TID/fechas)
+│       │   ├── HabitatDatabase.cs       # NUEVO — 9 hábitats es/en (Pokédex, tabla fija)
+│       │   ├── SoundService.cs          # NUEVO — spark_chime.wav vía paplay/aplay (Pokédex)
 │       │   ├── BusyStateService.cs
 │       │   └── FileDialogService.cs
-│       ├── Converters/                  # (sin cambios esta sesión)
+│       ├── Converters/                  # +FieldHighlightConverter (tab Diagnóstico),
+│       │                                  +BoolToFontWeightConverter, +SeverityColorConverters
 │       └── i18n/
 ├── lang/
 ├── tests/
@@ -380,8 +577,10 @@ exxeguttor/
 │   └── fetch-species-extra.py
 ├── pokemon-database/
 │   ├── database/
-│   │   └── pokemon.db                   # ItemGameCodes.RawItemId es la fuente real de
-│   │                                       categorización de Mochila — ver sección Mochila
+│   │   └── pokemon.db                   # ~51 MB (era ~46 MB) — creció con datos de género/
+│   │                                       hábitat/flavor text/cadena evolutiva para Pokédex.
+│   │                                       ItemGameCodes.RawItemId sigue siendo la fuente
+│   │                                       real de categorización de Mochila — ver esa sección
 │   ├── resources/
 │   ├── docs/
 │   ├── ROADMAP.md, CHANGELOG.md, DATA_SOURCES.md, CONTRIBUTING.md
@@ -417,16 +616,18 @@ Sin cambios: `/usr/share/exxeguttor/pokemon.db` → `{AppContext.BaseDirectory}/
 
 ## Estado actual de la UI
 
-### Selector de modo general (nuevo)
-`MainWindowViewModel.CurrentMode` (`AppMode` enum: `Pokemon`/`Pokedex`/`Mochila`) controla qué
-se muestra en el panel central y derecho — el panel Entrenador (columna izquierda) queda
-**igual en cualquier modo**. Pokédex sigue deshabilitado como placeholder. Al abrir un save
-nuevo, el modo vuelve siempre a Pokémon. Al cambiar a modo Mochila se llama `Bag.Initialize()`
-de nuevo (recarga defensiva).
+### Selector de modo general
+`MainWindowViewModel.CurrentMode` (`AppMode` enum: `Pokemon`/`Bag`/`Pokedex`) controla qué se
+muestra en el panel central y derecho — el panel Entrenador (columna izquierda) queda **igual
+en cualquier modo**. **Pokédex reincorporada esta sesión** (ver sección "📖 Módulo Pokédex"
+arriba — ya no es un placeholder deshabilitado). Al abrir un save nuevo, el modo vuelve siempre
+a Pokémon y se llama `Pokedex.Reload(save)` (recarga defensiva, mismo criterio que
+`Bag.Initialize()`).
 
 ### Panel principal — modo Pokémon (sin cambios de fondo)
 Izquierda: TrainerView + PartyView. Centro: BoxView + PokemonInfoView. Derecha:
-PokemonStatsView (tabs). Selección de Pokémon dispara `LoadPokemon`.
+PokemonStatsView (tabs, incluido el tab "Diagnóstico" nuevo — ver esa sección arriba).
+Selección de Pokémon dispara `LoadPokemon`.
 
 ### Panel principal — modo Mochila
 - **Centro** (`BagPouchGridView`): nav de origen arriba (`◀ Mochila/PC ▶`, equivalente a
@@ -436,6 +637,13 @@ PokemonStatsView (tabs). Selección de Pokémon dispara `LoadPokemon`.
   los ítems legales de esa categoría (poseídos y no — para poder agregar, no solo editar
   cantidad), cada fila con checkbox, sprite, descripción, stepper `−/+` y botón MAX.
 - Ver "Módulo Mochila" arriba para el detalle de categorización (`RawItemId`, ya no bloqueado).
+
+### Panel principal — modo Pokédex (NUEVO esta sesión)
+- **A diferencia de Bag, ocupa todo el ancho** — sin panel derecho separado.
+- `PokedexView` — grilla de tarjetas del álbum (una por especie base), estado de posesión real
+  según el save cargado. Al voltear una tarjeta: género/hábitat/flavor text del juego +
+  familia evolutiva con condición en texto (ver "📖 Módulo Pokédex" arriba para el detalle
+  completo de arquitectura, `GameVersionMappings`, y el efecto de sonido `SoundService`).
 
 ### TrainerView (sin cambios esta sesión, ya editable de antes)
 Nombre, TID/SID, Género, Dinero, Monedas, Battle Points — todo con el mismo mecanismo
@@ -506,11 +714,18 @@ Usuario abre save
   → BoxViewModel.Initialize(boxCount)
   → PartyViewModel.Load()
   → Bag.Initialize()                 # pouches de Mochila disponibles ni bien se abre el save
+  → Pokedex.Reload(save)             # NUEVO — posesión real de cada especie para este save
   → CurrentMode = AppMode.Pokemon    # un save nuevo siempre arranca en modo Pokémon
 
 Usuario hace click en slot (modo Pokémon)
   → PokemonEditorViewModel.LoadPokemon(pkm, capabilities, slotKey)
-      → (sin cambios de flujo — ver sesiones anteriores para el detalle completo)
+      → PokemonService.GetLegalityDiagnosticSteps(pkm) corre en paralelo (Task.WhenAll) con
+        el resto del análisis de legalidad de siempre — llena DiagnosticSteps/LegalityChips
+        para el tab Diagnóstico (NUEVO esta sesión, ver esa sección arriba)
+
+Usuario edita un campo con recálculo en vivo de diagnóstico (Pokémon)
+  → EditSessionService.BuildLiveDiagnosticSteps(key, edits, getCurrentPkm) — independiente
+    del análisis que corre en el modal de exportación, no bloquea la UI del editor
 
 Usuario navega Mochila (modo Mochila)
   → BagViewModel.PreviousPouch/NextPouch/SwitchToBag/SwitchToPc
@@ -557,10 +772,12 @@ GameVersion.SL or GameVersion.VL or GameVersion.SV or GameVersion.Gen9 => 18,
 
 ## Sets competitivos (MovesetDatabase) — sin cambios esta sesión
 
-## Legalidad (LegalityMessageMapper) — sin cambios de fondo esta sesión
-`EditApplyService` reusa el mismo mapeo campo→PKM que `EditSessionService.AnalyzeLegality` ya
-tenía para el preview, extendido a los campos que el preview no cubre (ver GAP CRÍTICO arriba)
-— no hay una copia nueva de esta lógica, es la misma fuente.
+## Legalidad (LegalityMessageMapper) — base sin cambios, extendida por el diagnosticador nuevo
+`EditApplyService` sigue reusando el mismo mapeo campo→PKM que `EditSessionService.AnalyzeLegality`
+ya tenía para el preview (ver GAP CRÍTICO arriba) — no hay una copia nueva de esa lógica. Lo
+nuevo esta sesión es un consumidor más de `LegalityMessageMapper.GetCategory` (la agrupación por
+categoría, sin cambios): `LegalityDiagnosticBuilder`, que arma el tab Diagnóstico entero — ver
+"🩺 Diagnosticador de legalidad" arriba para el detalle completo.
 
 ## i18n — sin cambios esta sesión
 
@@ -585,13 +802,79 @@ tenía para el preview, extendido a los campos que el preview no cubre (ver GAP 
 - **`MaxItemIdDiagnosticTests.cs`** (nuevo) — pendiente de correr, iba a dar `MaxItemID` real
   por generación pero quedó superado por el hallazgo del bug de TMs en la DB (bloqueante
   distinto, ver sección Mochila).
-- **Gap de testing que sigue abierto**: Habilidad/HeldItem/Shiny/Dynamax/Alpha/Noble y creación
-  de Pokémon nuevo compilan y están cableados al pipeline de escritura, pero sin test de
-  round-trip dedicado todavía — prioridad para la próxima sesión de testing.
+- **Gap de testing que sigue abierto**: Habilidad/HeldItem/Dynamax/Alpha/Noble y creación de
+  Pokémon nuevo compilan y están cableados al pipeline de escritura, pero sin test de
+  round-trip dedicado todavía — prioridad para la próxima sesión de testing. Shiny salió de esta
+  lista (ver campos huérfanos arriba, reusa `TryRegeneratePid`, mismo mecanismo que el
+  diagnosticador). **Sin ningún test nuevo** para el diagnosticador de legalidad ni para la
+  extensión de Gen3 en `TryEvolveForward`/construcción cross-versión (`PokemonService.cs`) —
+  todo lo de esta sesión en esas dos áreas está sin cobertura de test dedicada todavía, a
+  diferencia del resto del proyecto que sí tiende a tener `[Fact]`s de por medio.
+- `SaveCapabilitiesTests.cs` sí tuvo cambios esta sesión (+19 líneas) — cubre el fix de `Ball`
+  (Gen3+, no Gen2+) y la capacidad `Breeding` nueva (ver sección de Capacidades más abajo).
 
 ---
 
-## Pokédex (tab planeado, no implementado) — sin cambios esta sesión
+## 🧬 `PokemonService` — construcción cross-versión extendida a Gen3, con evolución por Belleza
+
+Extiende la funcionalidad de "crear Pokémon exclusivo de la versión hermana" (intercambio por
+cable link, ya existente para Gen1/Gen2 desde la sesión de julio) a **Gen3**. Mismo espíritu:
+elegir una especie exclusiva de otra versión de la misma generación debe funcionar igual que en
+el juego real, donde el intercambio simple entre cartuchos hermanos era mecánica central.
+
+- **Versiones que ahora se agregan como origen válido para Gen3**: Rubí/Zafiro/Esmeralda/
+  RojoFuego/VerdeHoja — los cinco se intercambiaban libremente entre sí por cable link de GBA.
+  Se excluye a propósito `GameVersion.CXD` (Colosseum/XD, GameCube) — mecánicamente muy
+  distintos (Pokémon Sombra, cámara de purificación, sin intercambio directo simple con
+  RSE/FRLG), no tiene sentido meterlo en este broadening.
+- **`TryEvolveForward` ahora recibe también el encuentro (`IEncounterTemplate enc`)**, no solo
+  la especie objetivo — hace falta para el caso nuevo de Belleza (ver abajo). Nuevos casos de
+  Gen3 confirmados por lectura directa de PKHeX.Core, no asumidos:
+  - **Nincada→Ninjask/Shedinja** — ramificación terminal, mismo mecanismo que Eevee en Gen1/2.
+    El glitch de relación de PID "hermano" para Shedinja es exclusivo de **Gen4** (confirmado en
+    `GenderVerifier.cs` de PKHeX.Core, acotado a `pk.Format == 4`) — no aplica acá.
+  - **Clamperl→Huntail/Gorebyss, Seadra→Kingdra** (intercambio + objeto sostenido) — mismo
+    patrón `UseItem`/`TradeHeldItem` que ya se usaba en Gen2, PKHeX no vuelve a verificar la
+    evidencia después del hecho.
+  - **Feebas→Milotic por Belleza — ÚNICA excepción real, a diferencia de todo lo anterior**:
+    PKHeX SÍ vuelve a verificar esto después del hecho (`EvolutionMethod.cs`:
+    `LevelUpBeauty when pk is IContestStatsReadOnly s && s.ContestBeauty < Argument =>
+    LowContestStat`). El umbral (170) vive en `Argument`, no en `Level` — de ahí un acumulador
+    aparte (`neededBeauty`/umbral de Belleza) en vez de reusar el de nivel.
+    - **Segundo bug real encontrado recién al probar Milotic**: no alcanza con subir
+      `ContestBeauty` a mano — en el juego real cada Pokébloque también sube el "Brillo"
+      (Sheen) de forma correlacionada, y PKHeX vuelve a chequear esa correlación
+      (`ContestSheenGEQ_0`, fórmula intrincada que depende de las 5 stats de concurso a la
+      vez). En vez de reimplementarla a mano, se usa el helper real de PKHeX.Core —
+      `PKM.SetSuggestedContestStats(enc, new EvolutionHistory())` — que además tiene un caso
+      hardcodeado específico para Milotic (pone las 5 stats y el Brillo al máximo, 255, la
+      combinación más simple que siempre cae en rango válido). `new EvolutionHistory()` vacío
+      alcanza para Gen3 (su constructor sin parámetros deja todo en None/false, y
+      `GetContestStatRestriction` ni siquiera lo consulta para `pk.Format < 6`).
+- **CatchRate/Tipo1/Tipo2 al evolucionar** — confirmado que PK2/PK3 (a diferencia de PK1) no
+  tienen ningún mecanismo tipo "CatchRate como marca de intercambio" que preservar: a partir de
+  Gen2 el tipo se deriva de la tabla de especie, no se guarda por individuo. Asignar `Species`
+  por la propiedad real + `ResetPartyStats()` alcanza para todos los formatos.
+- **Alcance sin ampliar todavía**: Gen4+ (piedras con condición de género/hora/región,
+  evolución en batalla, cadenas con ramas no terminales, formas regionales) sigue sin
+  investigarse — probablemente necesite más que este mismo método genérico.
+
+---
+
+## Capacidades por generación (`SaveCapabilities`) — dos cambios reales esta sesión
+
+- **Nueva capacidad `Breeding`** (Gen2+) — puede existir el concepto mismo de "huevo sin
+  eclosionar". Gen1 no tiene mecánica de cría (Day Care) en absoluto: `PK1.IsEgg` está
+  hardcodeado a `get => false; set { }` en PKHeX.Core — un no-op total, no un campo vacío.
+  Distinta de `EggLocation`/`EggDate` (esas son "sabemos que `IsEgg=true` pero no dónde/cuándo",
+  Gen3+/Gen4+ respectivamente) — `Breeding` es "puede existir el concepto mismo de huevo".
+- **⚠️→✅ Bug real corregido: `Ball` vivía en el bloque `gen >= 2`, ahora en `gen >= 3`** — recién
+  desde Gen3 los juegos registran con qué Poké Ball se atrapó al Pokémon; en Gen1/Gen2 el dato
+  no existe en el formato de guardado (todo lo capturado ahí se muestra como Poké Ball estándar
+  al pasar a generaciones posteriores — confirmado, no es límite de PKHeX ni nuestro). Antes de
+  este fix, el combo de Ball quedaba editable y aparentaba funcionar en Gen2, pero cualquier
+  cambio se perdía en silencio al exportar porque `pkm.Ball` no tiene dónde persistir en un
+  `PK2`.
 
 ## Empaquetado y distribución — sin cambios esta sesión
 
@@ -691,3 +974,63 @@ obsoleto en su redacción original.)_
     elimina del array. Cualquier código que escriba en la mochila tiene que buscar el slot
     existente del ítem o el primer slot libre (`Count==0`) y mutarlo in-place — nunca construir
     un array de largo distinto y asignarlo.
+
+28. **`CheckResult` es una unión de memoria (`[StructLayout(LayoutKind.Explicit)]`), no tres
+    campos independientes** — `Value` y `Argument`/`Argument2` comparten los mismos bytes. Para
+    códigos de un solo argumento, leer cualquiera de los dos da el mismo número; para códigos
+    de dos argumentos empaquetados (sufijo `_01`), HAY que leer `Argument`/`Argument2` por
+    separado — leer `Value` ahí da un número empaquetado sin sentido para un humano. Confirmado
+    leyendo `CheckResult.cs`/`Verifier.GetInvalid` de PKHeX.Core 25.11.7 (ver
+    `LegalityArgumentFormatter`).
+
+29. **Los movimientos no generan `CheckResult` propio para "este movimiento no es legal"** —
+    solo lo generan para PP. La legalidad real de cada slot vive en
+    `LegalityAnalysis.Info.Moves`/`.Relearn` (arrays de `MoveResult`, uno por slot 1-4), un
+    sistema totalmente aparte de `.Results`. Cualquier código que quiera diagnosticar
+    movimientos ilegales tiene que leer esos dos arrays, no intentar encontrarlos agrupando
+    `Results` como el resto de las categorías (ver `LegalityMoveFormatter`).
+
+30. **Los dos códigos de suma de EVs por encima de 510 (`EffortAbove510` y el asociado) no
+    traen NINGÚN argumento en el `CheckResult`** — confirmado en `EffortValueVerifier.cs`: el
+    `AddLine` correspondiente no pasa ningún valor. Si hace falta saber el total real o cuánto
+    se pasó, hay que calcularlo a mano leyendo `pkm.EVs` directo — PKHeX no lo va a dar nunca
+    para este código puntual (ver `LegalityEvFormatter`). Relacionado pero distinto: el orden
+    de `pkm.GetEVs()`/`GetIVs()` no es el estándar HP/Atk/Def/SpA/SpD/Spe — usan la misma
+    convención "Speed en el índice 3" que `IndividualValueSet` (confirmado leyendo `PKM.cs`
+    línea por línea).
+
+31. **`IsShiny` es `virtual bool IsShiny => TSV == PSV` — get-only, sin setter propio.** No se
+    puede "tildar Brillante" con una asignación directa como el resto de los booleanos del
+    editor; hay que sortear un PID que cumpla `TSV == PSV` (y de paso siga resolviendo
+    Naturaleza/Género/Habilidad según la generación) — mismo mecanismo que ya usa el botón
+    "Corregir automáticamente" del tab Diagnóstico para el código de legalidad "PID inválido"
+    (`PokemonService.TryRegeneratePid`). Si el sorteo no encuentra combinación en el tope de
+    intentos (raro — ej. Brillante + Naturaleza puntual en Gen3-5), se ignora en silencio.
+
+32. **Feebas→Milotic (Gen3) es la ÚNICA evolución con condición que PKHeX vuelve a verificar
+    DESPUÉS del hecho** — a diferencia de amistad, nivel, o intercambio+objeto (donde PKHeX
+    solo le importa que la especie final sea alcanzable por alguna cadena válida, sin
+    re-chequear "evidencia"), Belleza sí se re-verifica (`EvolutionMethod.cs`:
+    `LevelUpBeauty when pk is IContestStatsReadOnly s && s.ContestBeauty < Argument`). Y ni
+    siquiera alcanza con subir `ContestBeauty` sola: PKHeX también re-verifica la correlación
+    con el "Brillo" (Sheen) que cada Pokébloque sube a la vez en el juego real
+    (`ContestSheenGEQ_0`, fórmula intrincada sobre las 5 stats de concurso). La forma correcta
+    de resolver esto es el helper real de PKHeX.Core, `PKM.SetSuggestedContestStats(enc,
+    evolutionHistory)` — tiene un caso hardcodeado específico para Milotic (pone las 5 stats +
+    Brillo al máximo, 255, la combinación más simple que siempre cae en rango válido). NO
+    reimplementar la fórmula de Sheen a mano — alto riesgo de error, y PKHeX ya trae la
+    solución correcta empaquetada.
+
+33. **El glitch de relación de PID "hermano" de Nincada→Shedinja es EXCLUSIVO de Gen4** — no
+    aplica al construir Ninjask/Shedinja para un save de Gen3 (confirmado en
+    `GenderVerifier.cs` de PKHeX.Core, el chequeo está acotado a `pk.Format == 4`). No asumir
+    que un glitch conocido de una generación aplica igual a la generación vecina solo porque
+    la mecánica de evolución (Nincada partiéndose en dos) es la misma en ambas.
+
+34. **`Ball` solo se puede editar de verdad desde Gen3 en adelante** — en Gen1/Gen2 el dato de
+    "con qué Poké Ball se atrapó" NO EXISTE en el formato de guardado (todo lo capturado ahí se
+    muestra como Poké Ball estándar al pasar a generaciones posteriores — confirmado,
+    limitación real del juego, no de PKHeX ni nuestra). Antes de que `SaveCapabilities.Detect()`
+    moviera esta capacidad del bloque `gen >= 2` al `gen >= 3` (bug real corregido esta sesión),
+    el combo de Ball quedaba editable y aparentaba funcionar en Gen2, pero cualquier cambio se
+    perdía en silencio al exportar porque `pkm.Ball` no tiene dónde persistir en un `PK2`.

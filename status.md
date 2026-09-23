@@ -283,3 +283,86 @@ para encontrar el bug de `RawItemId`) en vez de releer código de nuevo.
 Shiny/Dynamax/Alpha/creación de Pokémon nuevo; `TID`/`SID` de entrenador no listados en
 libreta/modal; límite de suma de EVs (510 en Gen3+) sin forzar; Pokédex sin script de carga ni
 vista.
+
+---
+
+## Sesión muy larga (~50 commits, mensajes de commit genéricos — reconstruida leyendo código,
+## no el historial de git): Pokédex, Diagnosticador de legalidad, construcción cross-versión
+## Gen3, campos huérfanos del pipeline
+
+**Resumen**: la sesión más grande documentada hasta ahora. Dos módulos nuevos completos
+(Pokédex y Diagnosticador de legalidad), una extensión grande de la construcción "intercambio
+entre versiones hermanas" a Gen3, y un lote de campos que se editaban en la UI pero se perdían
+en silencio al exportar, ahora corregidos. Ver `context.md` para el detalle técnico completo de
+cada punto — acá solo el resumen de producto y qué quedó pendiente.
+
+**Pokédex — implementada de punta a punta (revierte una decisión de producto anterior)**
+- Una sesión previa había sacado Pokédex del enum `AppMode` a propósito ("no implementar ni
+  dejar placeholder", documentado en `context.md` y en `mockups/navigation_rail`). El usuario
+  confirmó explícitamente esta sesión que es un cambio de rumbo intencional: Pokédex se
+  reincorpora y se implementa completa (álbum de figuritas, no un placeholder).
+- Álbum con una tarjeta por especie base, posesión real según Caja/Equipo del save cargado.
+  Reverso de la tarjeta con género, hábitat, flavor text del juego, y cadena evolutiva con la
+  condición traducida a español.
+- Disponibilidad restringida por juego (Espada/Escudo, Escarlata/Púrpura, Legends Arceus,
+  Legends Z-A) — esos juegos recortan qué especies tienen datos programados.
+- Efecto de sonido nuevo (primera dependencia de audio del proyecto — vía `paplay`/`aplay` de
+  línea de comandos, sin librería .NET, para no sumar peso por un solo sonido de UI).
+- `pokemon.db` creció de ~46 MB a ~51 MB con los datos nuevos que alimentan este módulo.
+- **Decisión de producto pendiente de registrar**: el mockup de `navigation_rail` queda sin
+  actualizar todavía a propósito — falta crear/retomar un mockup dedicado de Pokédex
+  (`screen-pokedex-album.md` en `exxeguttor-context/mockups/`, no existe todavía).
+
+**Diagnosticador de legalidad — módulo nuevo (tab "Diagnóstico")**
+- Reemplaza la idea original de un simple resumen de legalidad por un tab con, por cada
+  problema, categoría + explicación + (cuando hay un valor concreto que sugerir) un botón
+  "Corregir automáticamente".
+- v1 (esta sesión): listar y resaltar el campo correspondiente en la UI. v2 (a futuro, no
+  arrancada): aplicar el arreglo con un click — la arquitectura ya está pensada para eso sin
+  rediseñar nada.
+- Tres acciones de auto-arreglo disponibles: regenerar PID (resuelve Naturaleza/Género/
+  Habilidad/Brillante), variante para el bug de "Método 1" de PID en Gen3/4, y recalcular
+  CatchRate en PK1.
+- Recálculo en vivo mientras el usuario edita (no solo al exportar), corriendo en paralelo sin
+  bloquear la UI.
+- **Gap conocido, no bloqueante**: la variante "Método 1" de regenerar PID puede cambiar
+  también la Naturaleza asociada, pero todavía no hay ningún aviso de esto en la UI — el
+  usuario podría no notar que cambió algo más además del PID.
+
+**Construcción cross-versión (Crear Pokémon exclusivo de versión hermana) extendida a Gen3**
+- Hasta esta sesión, esto solo cubría Gen1/Gen2 (intercambio por cable link entre versiones
+  hermanas, para poder crear especies exclusivas de una versión que el save no es). Ahora
+  también Gen3 — Rubí/Zafiro/Esmeralda/RojoFuego/VerdeHoja.
+- Caso especial encontrado y resuelto: Feebas→Milotic (evolución por Belleza) necesitó un
+  tratamiento distinto a todo lo demás — es la única evolución de las que maneja esta
+  funcionalidad donde el juego vuelve a verificar una condición después del hecho, y hubo que
+  descubrir además el mecanismo real de cómo se correlaciona con el "Brillo" (Sheen) en el
+  juego real antes de que funcionara.
+
+**Bug real corregido: campos "huérfanos" del pipeline de escritura**
+- Brillante, Huevo, Amistad, Género del Pokémon, Nombre de Entrenador Original, TID propio del
+  Pokémon, y las fechas de encuentro/huevo se podían editar desde hacía tiempo en la UI
+  (aparecían bien en la libreta y en el modal de revisión) pero la edición se perdía en
+  silencio al exportar — nunca se había conectado al pipeline de escritura real. Mismo síntoma
+  que tuvo Met Level/Ball/Ubicación en una sesión anterior. Todos corregidos esta sesión.
+- De paso se separó "apodo" de "flag de apodado" (antes se forzaba a apodado sin condición al
+  editar el nombre, sin forma de destildarlo — causaba apodos ilegales con texto normal).
+
+**Otros bugs reales encontrados y corregidos**
+- **`Ball` (Poké Ball con la que se atrapó) solo tiene sentido editarla desde Gen3** — en
+  Gen1/Gen2 ese dato no existe en el formato de guardado del juego real. Antes se podía editar
+  en Gen2 y el cambio se perdía en silencio al exportar. Se agregó también una capacidad nueva,
+  `Breeding` (Gen2+, puede existir el concepto de huevo sin eclosionar — Gen1 no tiene cría).
+
+**Pendiente para una sesión futura** (ver también `context.md` para el detalle de cada uno):
+- Tests de round-trip para el Diagnosticador de legalidad y para la extensión de Gen3 en la
+  construcción cross-versión — ninguno de los dos tiene cobertura de test dedicada todavía, a
+  diferencia del resto del proyecto.
+- Aviso en la UI cuando "Corregir automáticamente" (variante Método 1) cambia también la
+  Naturaleza, no solo el PID.
+- Mockup de Pokédex (`screen-pokedex-album.md`) — no existe todavía en `exxeguttor-context/mockups/`.
+- El caso pendiente de alertas post-"Limpiar ediciones" (documentado en la sesión anterior)
+  sigue exactamente igual — no se tocó nada de `EditSessionService` relacionado esta sesión.
+- Arrastrados de antes, sin tocar esta sesión: tests de round-trip para Habilidad/HeldItem/
+  Dynamax/Alpha/creación de Pokémon nuevo; `TID`/`SID` de entrenador no listados en
+  libreta/modal; límite de suma de EVs (510 en Gen3+) sin forzar.
