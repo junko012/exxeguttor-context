@@ -2,41 +2,67 @@
 
 ## Lo primero que debes hacer en cada sesión
 
-1. **Leer `context.md`** — contiene el estado actual del proyecto, arquitectura, decisiones
-   técnicas clave y trampas conocidas de PKHeX.Core.
-2. Si el usuario sube un ZIP del proyecto, extraer y leer los archivos fuente relevantes para
-   refrescar tu contexto antes de opinar o modificar código. No confiar ciegamente en
-   `context.md`/`CLAUDE.md`: el código real puede haber avanzado desde la última actualización
-   de estos archivos (no hay repo git en el ZIP para verificar por commits, así que la única
-   forma de confirmar es leer el código).
-3. Antes de asumir el comportamiento de cualquier API de PKHeX.Core que no hayas verificado en
+1. **Leer `context.md`** (y `status.md` para el changelog) — contienen el estado actual del
+   proyecto, arquitectura, decisiones técnicas clave y trampas conocidas de PKHeX.Core. Este
+   archivo (`CLAUDE.md`) es de proceso — reglas de trabajo y gotchas de PKHeX.Core que no
+   cambian sesión a sesión. El estado del proyecto (qué está hecho, qué falta, bugs en curso)
+   vive en `context.md`/`status.md`, no acá — si algo de esta sección parece contradecir lo que
+   dice `context.md`, gana `context.md` (más reciente).
+2. **Repo de código** (`junko012/exxeguttor`, privado): clonarlo con
+   `git clone https://TOKEN@github.com/junko012/exxeguttor.git`, pidiendo el PAT si no lo
+   tenés en esta sesión (nunca persiste entre conversaciones). Reclonar es normal a mitad de
+   sesión si el usuario hace push de un cambio. Con el repo clonado, `git log`/`git diff` SÍ dan
+   una fuente confiable de qué cambió — a diferencia de cuando este proyecto se trabajaba por
+   ZIP subido sin historial. **Ojo**: los mensajes de commit del usuario suelen ser genéricos
+   ("updating files", "updating pokemon service") — no sirven como changelog por sí solos, hay
+   que leer el diff/código real para saber qué cambió de verdad, aunque el hash/fecha del commit
+   sí son confiables.
+3. **Repo de contexto** (`junko012/exxeguttor-context`, público): clonable sin token, o leíble
+   directo por HTTP (`raw.githubusercontent.com`) si no hace falta el repo completo. Contiene
+   `CLAUDE.md`/`context.md`/`status.md`, `mockups/` (bocetos HTML+notas por pantalla) y
+   `hotfixes/` (scripts ya preparados para correcciones puntuales).
+4. No confiar ciegamente en `context.md`/`CLAUDE.md` aunque estén recién actualizados: el
+   código real puede haber avanzado desde la última sesión que los escribió. Con el repo de
+   código clonado, comparar el hash del último commit contra lo que documenta `status.md` es la
+   forma más rápida de saber si hay trabajo sin documentar — si hay commits después de la
+   última entrada del changelog, leer el diff real antes de asumir que el estado documentado
+   sigue vigente.
+5. Antes de asumir el comportamiento de cualquier API de PKHeX.Core que no hayas verificado en
    ESTA sesión, **confirmala primero** (reflection sobre el DLL real, o un test que corra el
-   usuario). Ya pasó varias veces esta sesión: asumir mal una firma/accesibilidad/comportamiento
-   de PKHeX.Core sin verificar cuesta una vuelta completa de compile-error o, peor, un bug
-   sutil que recién se nota con datos reales (ver "Trampas de PKHeX.Core" más abajo, es una
-   lista larga por una razón).
+   usuario). Asumir mal una firma/accesibilidad/comportamiento de PKHeX.Core sin verificar
+   cuesta una vuelta completa de compile-error o, peor, un bug sutil que recién se nota con
+   datos reales (ver "Trampas de PKHeX.Core" más abajo, es una lista larga por una razón).
 
 ---
 
 ## ⚠️ No hay dotnet SDK disponible en el sandbox de análisis
 
-Claude no puede compilar ni correr el proyecto en su entorno de trabajo — no hay red hacia los
-dominios de Microsoft para instalar el SDK. El ciclo de trabajo real es:
+Claude no puede compilar ni correr el proyecto en su entorno de trabajo — la lista de dominios
+permitidos en el sandbox no incluye los feeds de NuGet/Microsoft necesarios para restaurar
+paquetes ni instalar el SDK. El ciclo de trabajo real es:
 
-1. Claude escribe/edita código basándose en el análisis del código existente.
+1. Claude escribe/edita código basándose en el análisis del código existente (clonado del repo
+   privado, ver arriba).
 2. Antes de asumir cualquier firma/comportamiento de la API de **PKHeX.Core** que no esté ya
    confirmado en sesiones anteriores, Claude debe verificarlo por **reflection cruda sobre el
-   DLL real** (`tests/Exxeguttor.Tests/bin/Debug/net9.0/PKHeX.Core.dll`, si está presente en el
-   ZIP subido) usando la librería Python `dnfile` — permite leer nombres, firmas, flags de
-   accesibilidad y tokens de tipo sin necesitar el runtime de .NET. Esto evitó varios errores
-   de compilación esta sesión (`SetChecksums` resultó `protected`, `GetFileName` resultó
-   `private`, hubo que decodificar bytes de firma a mano para confirmar tipos de parámetro).
+   DLL real** usando la librería Python `dnfile` — permite leer nombres, firmas, flags de
+   accesibilidad y tokens de tipo sin necesitar el runtime de .NET. **El DLL NO llega con el
+   `git clone`** — `bin/`/`obj/` están en `.gitignore` (se regeneran con `dotnet build`) y el
+   proyecto no vendorea sus dependencias, así que el repo de código nunca trae
+   `PKHeX.Core.dll`. Si hace falta reflection real sobre el DLL, pedirle al usuario que lo suba
+   directo a `/mnt/user-data/uploads/` (desde su `bin/Debug/net9.0/` o `obj/` local, o el cache
+   de NuGet `~/.nuget/packages/pkhex.core/<versión>/lib/`) — no asumir que va a estar
+   disponible solo por haber clonado el repo. Esto evitó varios errores de compilación en
+   sesiones anteriores (`SetChecksums` resultó `protected`, `GetFileName` resultó `private`,
+   `IsShiny` resultó get-only sin setter propio, hubo que decodificar bytes de firma a mano
+   para confirmar tipos de parámetro).
 3. El usuario compila localmente y pega el error/output completo.
 4. Para preguntas de **comportamiento en runtime** (no solo firmas) — ej. "¿`CanContain`
    realmente filtra por categoría?" — reflection cruda no alcanza, hace falta un test real
    (`[Fact]`/`[Theory]` con `Assert.Fail` volcando resultados, o assertions reales) que el
    usuario corra y pegue la salida. No asumir comportamiento de datos reales sin este paso.
-5. Si algo fallaba, Claude corrige y entrega solo los archivos tocados (no el ZIP entero) para
+5. Si algo fallaba, Claude corrige y entrega solo los archivos tocados (via `present_files` —
+   sin permiso de push a ningún repo, el usuario hace `add`/`commit`/`push` manualmente) para
    minimizar qué tiene que pisar el usuario.
 
 **Regla dura de esta sesión**: cuando la reflection de firmas y el comportamiento real
@@ -55,8 +81,9 @@ Avalonia UI, usando PKHeX.Core 25.11.7 como motor de lectura/escritura de saves.
 real ya está conectada** (ver sección siguiente) — dejó de ser el gap crítico que fue durante
 gran parte del desarrollo.
 
-El ZIP del proyecto siempre estará en `/mnt/user-data/uploads/`. Extraer en
-`/home/claude/exxeguttor/`.
+Acceso al código: `git clone` del repo privado `junko012/exxeguttor` con el PAT que provea el
+usuario (ver "Lo primero que debes hacer en cada sesión" arriba) — ya no se trabaja por ZIP
+subido a `/mnt/user-data/uploads/`.
 
 ---
 
@@ -115,9 +142,12 @@ archivo): campos básicos de Pokémon (Nickname/Level/Nature/IVs/EVs/Moves+PPUps
 generaciones, Entrenador, Mochila, Cintas (formato viejo Gen3+Gen4, formato moderno Gen9).
 
 **Qué NO está confirmado con test todavía** (compila, tipos verificados por reflection, pero
-sin round-trip dedicado): Habilidad, HeldItem, Shiny, Dynamax/Gigantamax, Alpha/Noble,
-creación de Pokémon nuevo. Antes de dar por cerrado el pipeline al 100%, priorizar tests para
-estos.
+sin round-trip dedicado): Habilidad, HeldItem, Dynamax/Gigantamax, Alpha/Noble, creación de
+Pokémon nuevo. Antes de dar por cerrado el pipeline al 100%, priorizar tests para estos. Shiny
+salió de esta lista en una sesión posterior — ver `context.md`, sección de "campos huérfanos":
+al no tener setter propio (`IsShiny` es get-only), se resuelve regenerando el PID
+(`PokemonService.TryRegeneratePid`), mismo mecanismo que usa el botón "Corregir
+automáticamente" del tab Diagnóstico.
 
 **Deliberadamente afuera**: Tera (`PK9.TeraTypeOriginal`/`Override`) sigue solo lectura en la
 UI, no se escribe.
@@ -181,25 +211,17 @@ solo decide *dónde* se escribe la cantidad (con fallback a `Items`/`PCItems` si
 no tiene un pouch dedicado para esa categoría — ej. una MT en Gen1 se ve bajo la tile "MTs/MOs"
 pero físicamente se escribe en el pouch `Items`, porque ese es el único que existe ahí).
 
-**⚠️ BLOQUEADO ahora mismo**: el usuario detectó, durante esta misma investigación, que el
-problema real de raíz está en **cómo `pokemon.db` modela las TMs/HMs** — ninguna MT de
-generaciones tempranas trae su categoría `all-machines` esperada (aparecen 110 filas `tm01`...
-en la DB, todas con `ItemId` en el rango 305+, pero el corte real de Gen1/Gen2 quedó
-observado ~250 — sugiere que el `ItemId` único por "tm01" no contempla que en Gen1/2 esa MT
-enseña un movimiento distinto al de Gen3+, y una sola fila no alcanza para representar eso
-correctamente entre generaciones). El usuario está resolviendo esto en **otra sesión de
-Claude aparte** y va a traer los pasos ya validados para que se ejecuten acá. **No tocar la
-migración de `CategoryUpper` ni el código de categorización de Mochila hasta que eso llegue** —
-armar la columna/mapeo sobre una tabla `Items` con las MTs mal modeladas solo agregaría un
-problema encima del otro.
+### ⚠️→✅ Categorización de ítems para Gen1/2/4/5/6 — resuelto en una sesión posterior
 
-**Qué SÍ quedó cerrado y no hace falta revisar de nuevo cuando se retome**:
-- El mapeo completo PokeAPI category → CategoryUpper (todas las categorías salvo TM/HM, que
-  depende del fix pendiente).
-- El diseño de tiles virtuales por `CategoryUpper` con fallback de pouch real.
-- Conteos reales confirmados (antes del hallazgo del bug de TMs): Gen1/2 → 9 categorías
-  (Objetos, Bolas, Batalla, Bayas, Clave, Correo, Medicina, Piedras, Tesoros), Gen3 → 10 (+
-  MTs/MOs). Van a necesitar recalcularse una vez resuelto el modelado de TMs en la DB.
+Esta sección documentaba un bug de categorización (ítems mezclados con Objetos en pouches sin
+subclase propia de PKHeX.Core) que quedó **bloqueado** esperando un fix del modelado de TMs/HMs
+en `pokemon.db`, a resolverse en otra sesión aparte. **Ese fix ya llegó y se aplicó** — la
+categorización real hoy usa `ItemGameCodes.RawItemId` (ya no bloqueada), no el `CanContain`/
+`IsLegal` de PKHeX.Core que resultó no confiable para estos formatos. Ver `context.md`, sección
+Mochila, para el estado y arquitectura actual (`BagPouchGridView` con grilla de tiles tipo Caja,
+navegación por origen Mochila/PC). El diagnóstico técnico de por qué `CanContain`/`IsLegal` no
+sirven para esto (abajo, en "Reglas de código") sigue siendo válido como trampa de PKHeX.Core,
+aunque el bug de producto que causaba ya no está.
 
 ---
 
@@ -309,7 +331,38 @@ la propiedad de monedas de casino es **`Coin`** (singular), no `Coins`.
   MegaStones`. `PCItems`/`FreeSpace` son el "almacén aparte de la mochila" de generaciones
   tempranas (Gen1-3 tienen `PCItems`; de Gen4 en adelante no existe ese pouch).
 
-### IVs/EVs — Gen1/2 tienen mecánica propia, no son "0-31 / 0-252" genérico
+**Legalidad (`CheckResult`/`LegalityAnalysis`) — confirmado en una sesión posterior, al
+construir el diagnosticador de legalidad (ver `context.md`)**:
+- `CheckResult` es un struct con `[StructLayout(LayoutKind.Explicit)]` — **`Value` y
+  `Argument`/`Argument2` comparten la misma memoria** (unión, no tres campos independientes).
+  Para códigos de un solo argumento da lo mismo leer cualquiera; para códigos de dos argumentos
+  empaquetados (sufijo `_01`) hay que leer `Argument`/`Argument2` por separado — leer `Value`
+  ahí da un número empaquetado sin sentido.
+- **Los movimientos NO generan `CheckResult` propio para "este movimiento no es legal"** (solo
+  para PP) — la legalidad real de cada slot vive en `LegalityAnalysis.Info.Moves`/`.Relearn`
+  (arrays de `MoveResult`, uno por slot 1-4), un sistema aparte de `.Results`.
+- Los códigos de suma de EVs por encima de 510 (`EffortAbove510` y el asociado) **no traen
+  ningún argumento en el `CheckResult`** (`EffortValueVerifier.cs` no lo pasa) — para saber el
+  total real hay que leer `pkm.EVs` directo.
+- `pkm.GetEVs()`/`GetIVs()` **no** usan el orden estándar HP/Atk/Def/SpA/SpD/Spe — misma
+  convención "Speed en el índice 3" que `IndividualValueSet`.
+- **`IsShiny` es `virtual bool IsShiny => TSV == PSV`, get-only, sin setter propio** — no se
+  puede tildar Brillante con una asignación directa, hay que sortear un PID que cumpla
+  `TSV == PSV` (`PokemonService.TryRegeneratePid`).
+- **Feebas→Milotic (Belleza) es la única evolución con condición que PKHeX vuelve a verificar
+  DESPUÉS del hecho** (`EvolutionMethod.cs`: `LevelUpBeauty when pk is IContestStatsReadOnly s
+  && s.ContestBeauty < Argument`), y no alcanza con subir `ContestBeauty` sola — también
+  re-verifica la correlación con el "Brillo" (Sheen). Usar el helper real de PKHeX.Core,
+  `PKM.SetSuggestedContestStats(enc, new EvolutionHistory())` (tiene un caso hardcodeado para
+  Milotic) — no reimplementar la fórmula de Sheen a mano.
+- **El glitch de PID "hermano" de Nincada→Shedinja es exclusivo de Gen4** (`GenderVerifier.cs`,
+  acotado a `pk.Format == 4`) — no asumir que aplica igual en Gen3 solo porque la mecánica de
+  evolución (partirse en dos) es la misma.
+- **`Ball` solo tiene sentido editarla desde Gen3** — en Gen1/Gen2 ese dato no existe en el
+  formato de guardado real (confirmado, limitación del juego, no de PKHeX). No agregarla al
+  bloque de capacidades `gen >= 2` en `SaveCapabilities` (bug real ya corregido una vez).
+
+
 
 Bug real encontrado y corregido esta sesión — antes el editor permitía IVs hasta 31 y EVs hasta
 252 en **cualquier** generación, incluida Gen1/2:
@@ -373,17 +426,21 @@ Bug real encontrado y corregido esta sesión — antes el editor permitía IVs h
 - El botón "Guardar" del toolbar (`CheckpointCommand`) es un checkpoint visual (libreta,
   `GetSimpleSummary()`) — no escribe a disco ni aplica nada, solo refresca el resumen.
 
-### Selector de modo general (Pokémon / Pokédex / Mochila)
+### Selector de modo general (Pokémon / Mochila / Pokédex)
 - `MainWindowViewModel.CurrentMode` (`AppMode` enum) controla qué panel central/derecho se
   muestra — el panel Entrenador queda igual en cualquier modo.
-- **Pokédex sigue siendo un placeholder deshabilitado** — no implementado todavía.
-- Al cambiar a modo Mochila se llama `Bag.Initialize()` de nuevo (recarga defensiva, mismo
-  criterio que `LoadPokemon` en el editor).
+- **Pokédex está implementada** (revierte una decisión de scope-out anterior, documentada en
+  `context.md` sección "📖 Módulo Pokédex") — a diferencia de Mochila, ocupa todo el ancho, sin
+  panel derecho separado.
+- Al cambiar de modo se recarga defensivamente: `Bag.Initialize()` para Mochila,
+  `Pokedex.Reload(save)` para Pokédex (mismo criterio que `LoadPokemon` en el editor).
 
 ### Legalidad (LegalityMessageMapper)
-- Única fuente compartida de traducción `CheckIdentifier → categoría/mensaje ES`. Dos
-  consumidores: `PokemonService.GetLegalitySummary` y `EditSessionService.AnalyzeLegality`.
-  Tocar solo este archivo si hace falta agregar/corregir una categoría.
+- Única fuente compartida de traducción `CheckIdentifier → categoría/mensaje ES`. Consumidores:
+  `PokemonService.GetLegalitySummary`, `EditSessionService.AnalyzeLegality`, y
+  `LegalityDiagnosticBuilder` (tab "Diagnóstico" con arreglos automáticos — ver `context.md`,
+  sección "🩺 Diagnosticador de legalidad", para la arquitectura completa). Tocar solo
+  `LegalityMessageMapper` si hace falta agregar/corregir una categoría.
 
 ### Capacidades por generación (`SaveCapabilities`)
 - Detecta automáticamente qué campos mostrar según el save cargado — la UI usa las propiedades
@@ -426,10 +483,16 @@ Abrir save → SaveFileService.OpenAsync()
             → PokemonService.GetBox/GetParty()
             → BoxViewModel / PartyViewModel
             → Bag.Initialize() (pouches de Mochila, disponible ni bien se abre el save)
+            → Pokedex.Reload(save) (posesión real de cada especie, ídem)
+            → CurrentMode = AppMode.Pokemon (un save nuevo siempre arranca en modo Pokémon)
 
             → click en slot → PokemonEditorViewModel.LoadPokemon(pkm, caps, slotKey)
+              → PokemonService.GetLegalityDiagnosticSteps(pkm) en paralelo (Task.WhenAll) con
+                el resto del análisis → llena DiagnosticSteps/LegalityChips (tab Diagnóstico)
             → edición en UI (Pokémon, Entrenador o Mochila) → Set<T>/RecordEdit
               → EditSessionService (pendiente en memoria, PKM/SaveFile real sin tocar todavía)
+              → recálculo en vivo del diagnóstico si aplica (BuildLiveDiagnosticSteps, no
+                bloquea la UI del editor)
 
             → Exportar → EditSessionService.BuildSummary()/BuildTrainerSummary()/BuildBagSummaries()
               (clon + LegalityAnalysis solo para Pokémon; Entrenador/Mochila sin legalidad)
