@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Exxeguttor — Boceto: Diálogos de confirmación con Rotom (hojas de papel)</title>
+<style>
+  :root {
+    --bg-window: #ffffff;
+    --bg-surface: #f4f4f5;
+    --border: #dcdce0;
+    --border-strong: #b8b8bf;
+    --text-primary: #1c1c1f;
+    --text-secondary: #6b6b70;
+    --danger: #ef4444;
+    --accent: #3b82f6;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, "Segoe UI", "Cantarell", "Ubuntu", sans-serif;
+    background: #e5e5e8;
+    padding: 32px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    justify-content: center;
+  }
+  .note {
+    width: 100%;
+    text-align: center;
+    font-size: 12px;
+    color: #6b6b70;
+    margin-bottom: 8px;
+  }
+  .dialog-card {
+    width: 380px;
+    background: var(--bg-window);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  }
+  .dialog-label { font-size: 11px; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.03em; text-align: center; margin: 0 0 10px; }
+  .dialog-body { display: flex; gap: 16px; align-items: flex-start; }
+  .scene { position: relative; width: 90px; height: 70px; flex-shrink: 0; }
+  .rotom { position: absolute; bottom: 0; left: 0; width: 56px; height: 56px; image-rendering: pixelated; }
+  .dialog-title { font-size: 15px; font-weight: 600; margin: 0 0 6px; color: var(--text-primary); }
+  .dialog-text { font-size: 13px; color: var(--text-secondary); margin: 0; line-height: 1.5; }
+  .dialog-footer { display: flex; justify-content: flex-end; gap: 8px; margin-top: 16px; }
+  .btn { font-size: 13px; padding: 6px 16px; border-radius: 6px; border: 1px solid var(--border); background: #fafafa; cursor: pointer; }
+  .btn.danger { background: var(--danger); color: #fff; border-color: var(--danger); }
+
+  .paper { position: absolute; background: #fff; border: 1px solid var(--border-strong); border-radius: 1px; }
+  .paper-line { margin: 3px 2px 0; height: 1px; background: var(--border); }
+  .paper-line.short { width: 60%; }
+
+  /* Diálogo 1 — Rotom-Ventilador, hojas voladas */
+  .fan-bob { animation: fan-bob 1.6s ease-in-out infinite; }
+  @keyframes fan-bob { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-4px); } }
+  .paper-fly { animation: paper-fly 1.6s ease-out infinite; }
+  @keyframes paper-fly { 0% { transform: translate(0,0) rotate(0deg); opacity:1; } 20% { opacity:1; } 100% { transform: translate(70px,-24px) rotate(200deg); opacity:0; } }
+
+  /* Diálogo 2 — Rotom-Lavadora, hoja mojada */
+  .wash-bob { animation: wash-bob 1.6s ease-in-out infinite; }
+  @keyframes wash-bob { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-3px); } }
+  .water-drop { position: absolute; width: 3px; height: 5px; background: var(--accent); border-radius: 0 0 50% 50%; animation: water-drop 2s ease-in infinite; }
+  @keyframes water-drop { 0%,10% { opacity:0; transform: translateY(0); } 25% { opacity:1; } 60% { transform: translateY(22px); opacity:1; } 65% { opacity:0; } 100% { opacity:0; } }
+  .paper-wet-overlay { position: absolute; inset: 0; background: var(--accent); border-radius: 1px; animation: paper-wet 2s ease-in-out infinite; }
+  @keyframes paper-wet { 0%,55% { opacity:0; } 62% { opacity:0.7; } 100% { opacity:0.7; } }
+  .paper-sag { transform-origin: bottom center; animation: paper-sag 2s ease-in-out infinite; }
+  @keyframes paper-sag { 0%,55% { transform: rotate(0deg) scaleY(1); } 100% { transform: rotate(4deg) scaleY(0.9); } }
+</style>
+</head>
+<body>
+
+<div class="note">Boceto animado — Diálogos de confirmación con Rotom interactuando con hojas de papel reales (ver rotom-confirmation-dialogs.md). Texto idéntico al ya implementado en la app.</div>
+
+<div class="dialog-card">
+  <p class="dialog-label">Diálogo 1 — Rotom-Ventilador vuela las hojas</p>
+  <div class="dialog-body">
+    <div class="scene">
+      <img class="rotom fan-bob" src="https://cdn.jsdelivr.net/gh/PokeAPI/sprites/sprites/pokemon/10011.png" alt="Rotom Ventilador" />
+
+      <div class="paper paper-fly" style="bottom:10px; left:36px; width:16px; height:20px;">
+        <div class="paper-line"></div>
+        <div class="paper-line short"></div>
+      </div>
+      <div class="paper paper-fly" style="bottom:14px; left:34px; width:14px; height:18px; animation-delay:0.25s;">
+        <div class="paper-line"></div>
+      </div>
+      <div class="paper paper-fly" style="bottom:18px; left:38px; width:12px; height:15px; animation-delay:0.5s;"></div>
+    </div>
+    <div>
+      <p class="dialog-title">¿Cerrar sin exportar?</p>
+      <p class="dialog-text">Hay cambios de esta sesión que todavía no exportaste — se van a perder si cerrás ahora.</p>
+    </div>
+  </div>
+  <div class="dialog-footer">
+    <button class="btn">Cancelar</button>
+    <button class="btn danger">Cerrar de todos modos</button>
+  </div>
+</div>
+
+<div class="dialog-card">
+  <p class="dialog-label">Diálogo 2 — Rotom-Lavadora moja la hoja</p>
+  <div class="dialog-body">
+    <div class="scene">
+      <img class="rotom wash-bob" src="https://cdn.jsdelivr.net/gh/PokeAPI/sprites/sprites/pokemon/10009.png" alt="Rotom Lavadora" />
+
+      <div class="paper paper-sag" style="bottom:8px; right:6px; width:20px; height:26px;">
+        <div class="paper-line" style="margin-top:5px;"></div>
+        <div class="paper-line short"></div>
+        <div class="paper-wet-overlay"></div>
+      </div>
+
+      <div class="water-drop" style="top:6px; right:12px;"></div>
+      <div class="water-drop" style="top:6px; right:20px; animation-delay:0.3s;"></div>
+      <div class="water-drop" style="top:6px; right:16px; animation-delay:0.6s;"></div>
+    </div>
+    <div>
+      <p class="dialog-title">¿Descartar ediciones?</p>
+      <p class="dialog-text">El save vuelve a como estaba al cargarlo — se pierden todos los cambios de esta sesión que no exportaste.</p>
+    </div>
+  </div>
+  <div class="dialog-footer">
+    <button class="btn">Cancelar</button>
+    <button class="btn danger">Descartar cambios</button>
+  </div>
+</div>
+
+</body>
+</html>

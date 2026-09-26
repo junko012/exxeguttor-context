@@ -119,6 +119,43 @@ de referencia: 2.8s, ajustable):
 - Mensaje de estado: `"Generando a {especie elegida}..."`.
 - Debajo, la barra de progreso real de la operación de creación (si aplica).
 
+### ✅ Resueltos — duración mínima, barra de progreso, y estado de error
+
+Los tres puntos que quedaban abiertos para este loader en particular (ver "Pendiente de
+confirmar" más abajo, que sigue aplicando a Loader 1/Loader 2) quedaron resueltos así, a partir
+de confirmación directa del usuario:
+
+- **Duración mínima — no es un problema real**: a diferencia de cambiar de pestaña o abrir un
+  Pokémon ya en memoria, crear un Pokémon pasa por el test de legalidad completo (análisis vía
+  PKHeX.Core sobre el encuentro elegido) antes de terminar, así que la operación real ya toma
+  "un poquito" de tiempo por sí sola — no es instantánea en la práctica.
+- **Aun así, se agrega un mínimo artificial de duración por robustez**: el comando que dispara
+  la creación (al confirmar especie en el picker) debe correr la construcción real en paralelo
+  con un `Task.Delay` que cubra al menos **un ciclo completo de la animación decorativa (2.2s)**
+  — `Task.WhenAll(construcciónRealTask, Task.Delay(2200))`. Esto garantiza que el huevo llegue a
+  revelar el sprite al menos una vez, incluso en el caso puntual de que la construcción real
+  termine antes de lo esperado (ej. una especie sin ninguna condición especial que resolver).
+  Ese mismo mínimo artificial es la fuente de la barra de progreso de abajo — no hace falta
+  instrumentar pasos internos reales de la construcción por separado, alcanza con que la barra
+  se rellene linealmente durante esos 2.2s.
+- **Sin estado de error — no hace falta, la creación nunca falla como operación**: confirmado
+  que el flujo siempre termina generando un PKM válido como objeto, sea cual sea el resultado.
+  Cualquier problema de legalidad (PID/IVs/nivel que no coincidan con lo esperado para el
+  encuentro elegido, etc.) se resuelve **después**, en el tab Diagnóstico del editor normal —
+  no es una falla de la operación de creación en sí, así que Loader 3 no necesita contemplar
+  ningún camino de error. Siempre termina en el reveal del sprite.
+
+**⚠️ Caveat de alcance — esta resolución está confirmada solo para "crear/elegir Pokémon", no
+para "crear un objeto nuevo"**: la tabla de arriba lista ambos triggers bajo Loader 3, pero el
+razonamiento de los tres puntos (duración por el test de legalidad, mínimo artificial, sin
+estado de error) depende de que la creación de Pokémon pasa por `LegalityAnalysis` — un ítem
+de Mochila no tiene ese paso, así que no hay garantía de que la operación real tome "un
+poquito" de tiempo por sí sola, y no está confirmado si la creación de un ítem puede fallar
+(ej. cantidad inválida, categoría no permitida en esa versión). Si "crear objeto" también usa
+Loader 3, aplicar igual el mínimo artificial de 2.2s por consistencia visual (sigue siendo
+válido sin importar la razón), pero **no asumir sin confirmar** que "crear objeto" tampoco
+necesita un estado de error — revisar esto puntualmente cuando se implemente ese flujo.
+
 ## Consideraciones técnicas para Avalonia
 
 - Todas las animaciones descritas (bob, rotación continua, fade de puntos, aparición
@@ -139,15 +176,19 @@ de referencia: 2.8s, ajustable):
   observa jank en hardware más limitado.
 - Cada loader corre su animación decorativa en loop **independientemente** de la
   barra de progreso real — no hay que sincronizar el ciclo de la animación temática
-  con el porcentaje real de avance en ninguno de los tres loaders.
+  con el porcentaje real de avance en ninguno de los tres loaders. **Única excepción
+  puntual**: en Loader 3, la barra de progreso deriva del mínimo artificial de 2.2s (ver
+  "Resueltos" en la sección de Loader 3 arriba), que coincide a propósito con la duración de
+  un ciclo decorativo completo — no es que dejen de ser independientes conceptualmente, es que
+  ambos comparten la misma duración de referencia por diseño.
 
-## Pendiente de confirmar antes de implementar
+## Pendiente de confirmar antes de implementar (Loader 1 y Loader 2 — Loader 3 ya resuelto arriba)
 
-1. **Progreso real vs. indeterminado**: para cada uno de los tres flujos (abrir save +
-   precarga combinada, cargar Pokémon, crear Pokémon/objeto), definir si existe un
-   porcentaje real calculable (ej. bytes leídos del archivo, pasos de un pipeline de
-   precarga) o si conviene mostrar directamente un modo indeterminado sin barra
-   numérica.
+1. **Progreso real vs. indeterminado**: para Loader 1 (abrir save + precarga combinada) y
+   Loader 2 (cargar Pokémon), definir si existe un porcentaje real calculable (ej. bytes
+   leídos del archivo, pasos de un pipeline de precarga) o si conviene mostrar directamente un
+   modo indeterminado sin barra numérica. Loader 3 ya no es parte de esta pregunta — usa el
+   mínimo artificial de 2.2s como fuente de la barra, ver arriba.
 2. **Duración mínima de aparición**: si alguna de estas operaciones es casi
    instantánea (ej. cargar un Pokémon ya en memoria), evaluar si vale la pena mostrar
    el modal igual (por consistencia) o si se omite para operaciones por debajo de
