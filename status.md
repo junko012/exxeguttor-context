@@ -366,3 +366,71 @@ cada punto — acá solo el resumen de producto y qué quedó pendiente.
 - Arrastrados de antes, sin tocar esta sesión: tests de round-trip para Habilidad/HeldItem/
   Dynamax/Alpha/creación de Pokémon nuevo; `TID`/`SID` de entrenador no listados en
   libreta/modal; límite de suma de EVs (510 en Gen3+) sin forzar.
+
+---
+
+## Sesión de loaders temáticos, diálogos de Rotom, pantalla de éxito de exportación, e
+## idioma de la UI (selector + preferencias persistentes — primera vez que existe)
+
+**Resumen**: sesión larga trabajada en mockups+implementación de a poco (no todo de una
+vez), terminó cubriendo los 4 loaders que faltaban reemplazar de la pokebola genérica, los 3
+diálogos de confirmación sin tratamiento visual, una pantalla de éxito de exportación que
+antes no existía en absoluto, y el arranque real de idioma de la UI (existía la
+infraestructura de `LocalizationService` hace tiempo, pero nunca se había expuesto en la UI
+ni conectado a un selector). Ver `context.md`, secciones "🎬 Loaders temáticos..." y "🌐
+Idioma de la UI", para el detalle técnico completo de cada punto — acá el resumen de
+producto y pendientes.
+
+**Loaders temáticos — los 4 que faltaban, ya ninguno usa la pokebola genérica para esto**
+- Loader 1 (abrir save): 2 bugs reales de una sesión anterior corregidos (barra de progreso
+  que nunca se movía — clase de animación huérfana; tarjeta que cortaba a Hitmonlee a la
+  mitad — pasó por dos vueltas de ajuste de ancho + `ClipToBounds`). Se sacó además una
+  espera artificial de ~2.9s que ya no se justificaba.
+- Loader 3 (crear Pokémon): sin cambios esta sesión, ya estaba de una sesión previa.
+- Loader 4 (verificar/analizar legalidad): Pokédex escaneando, nuevo de punta a punta. Dos
+  bugs reales encontrados y corregidos en el camino — mostraba una silueta genérica en vez
+  del Pokémon real, y al exportar con varios Pokémon solo se veía el último (ráfaga de
+  cambios más rápida que un frame de UI).
+
+**3 diálogos de confirmación con Rotom** ("¿Cerrar sin exportar?", "¿Descartar ediciones?",
+"¿Abrir otro save?") — todos compartían antes el mismo texto plano sin ningún elemento
+visual. Rotom-Ventilador/Rotom-Lavadora, con sprites que no estaban embebidos y se
+agregaron a mano (más una extensión al script de descarga de sprites para que no se
+vuelvan a perder en una regeneración completa).
+
+**Pantalla de éxito de exportación — no existía ningún feedback visual de que exportar
+funcionó, antes de esta sesión.** Porygon evolucionando a Porygon2 vía el objeto Mejora,
+Rotom reaccionando. Corrección real tras feedback: la primera versión del objeto viajando
+por la tubería resultaba invisible casi todo el recorrido (se leyó el boceto CSS original
+demasiado literal) — corregido a un recorrido visible.
+
+**Idioma de la UI — primera vez que existe un selector real**
+- Decisión de producto confirmada: los nombres de especie/movimiento/ítem siempre se
+  muestran en el idioma de la UI, nunca en el idioma original del cartucho del save.
+- Pivot real durante la implementación: el plan original preveía pedir reiniciar la app para
+  aplicar un cambio de idioma: al implementar se encontró que ya había binding directo al
+  indexador de `LocalizationService` en el menú File, lo que permitió cambio EN CALIENTE sin
+  reiniciar con mucho menos costo del asumido — se armó la regla de usar ese patrón de
+  binding para toda UI nueva de acá en adelante.
+- Primera vez que el proyecto tiene preferencias de usuario persistentes
+  (`~/.config/exxeguttor/settings.json`, mismo patrón que ya usaba `recent.json`).
+- 3 lugares que hardcodeaban nombres de especie/ítem en inglés fijo, sin importar el idioma
+  de la UI, corregidos.
+- Módulo de Tips conectado al selector (ya no fijo en español) — pero sin contenido
+  traducido todavía (solo existe el archivo en español) y sin recarga en caliente si el
+  modal ya está abierto al cambiar de idioma (sí recarga bien si está cerrado).
+- Se armó un documento de plan dedicado y vivo, `docs/i18n_project/i18n-plan.md` — a
+  diferencia de este changelog, ESE se sigue actualizando en vivo durante la sesión, no se
+  reescribe por sesión. Ahí está el detalle de lo que falta (migrar ~135 strings
+  hardcodeados a `_loc[...]`, documentar paquetes lang para usuarios reales).
+
+**Pendiente para una sesión futura** (ver `docs/i18n_project/i18n-plan.md` para el plan
+completo de todo lo de idiomas, y `context.md` para el resto):
+- Migrar ~135 strings hardcodeados en `.axaml` a `{Binding Loc[Clave]}` — incluye TODO lo
+  que esta misma sesión agregó para los loaders/diálogos (Rotom, Pokédex, Porygon), ninguno
+  quedó conectado a `_loc` todavía.
+- Contenido traducido de Tips (solo existe en español) y recarga en caliente del modal si ya
+  está abierto al cambiar de idioma.
+- `PokemonEditorViewModel.GetPKHeXLang` quedó duplicado con la nueva
+  `LocalizationService.PKHeXLanguageCode` — no se unificó esta vuelta.
+- Documentar el mecanismo de paquetes lang para usuarios reales (README del repo de código).

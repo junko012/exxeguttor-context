@@ -1,0 +1,110 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Mockup — Tab IVs/EVs (radar fijo + barras integradas)</title>
+<style>
+:root{--g:#1D9E75;--g2:#86dcbd;--r:#D6455D;--ink:#1c1e21;--mut:#6b7078;--line:#e3e4e8;--bg:#F0F0F2}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:12px/1.3 system-ui,"Segoe UI",sans-serif;display:flex;gap:28px;justify-content:center;align-items:flex-start;padding:24px;flex-wrap:wrap}
+.panel{width:400px;background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.tabs{display:flex;gap:2px;padding:6px 8px 0;border-bottom:1px solid var(--line);color:var(--mut)}
+.tabs span{padding:6px 9px;border-radius:6px 6px 0 0}.tabs .on{color:var(--ink);font-weight:600;box-shadow:inset 0 -2px var(--g)}
+.hd{display:flex;flex-direction:column;align-items:center;gap:0;padding:5px 12px 3px;border-bottom:1px solid var(--line);background:#fbfbfc}
+.mid{display:flex;align-items:center;justify-content:space-between;width:100%}.hd svg{flex:none;width:208px;height:204px;display:block}.info{width:80px;display:flex;flex-direction:column;gap:2px}.info.r{text-align:right}.info span{color:var(--mut);font-size:10.5px}.info b{font-size:13px;font-weight:700}.info small{font-size:10px;color:var(--mut)}
+.leg{display:flex;justify-content:center;gap:14px;color:var(--mut);font-size:10.5px;white-space:nowrap}
+.leg i{display:inline-block;width:18px;height:0;border-top:2px solid;vertical-align:middle;margin-right:6px}
+.ft{border-top:1px solid var(--line)}.fr{display:flex;align-items:center;gap:10px;padding:5px 12px}.fr:nth-child(odd){background:#f6f6f8}.fr span{color:var(--mut)}.fr b{margin-left:auto;font-weight:600;font-variant-numeric:tabular-nums}.fr .meter{flex:1;max-width:150px}
+.meter{height:5px;background:#ececf0;border-radius:3px;overflow:hidden}.meter u{display:block;height:100%;background:var(--g);transition:width .15s}
+.warn{color:var(--r)}.warn+.meter u,.meter.warn u{background:var(--r)}
+.cols,.row .top{display:grid;grid-template-columns:34px 1fr 1fr 66px;align-items:center}
+.cols{padding:6px 12px 2px;font-size:10px;font-weight:600;color:var(--mut)}.cols span:nth-child(n+2){text-align:center}.cols span:last-child{text-align:right}
+.row{padding:3px 12px 4px;border-bottom:1px solid #f1f1f4;transition:background .12s}
+.row.on{background:#eefaf5}
+.lbl{color:var(--mut);font-size:11px}.row.on .lbl{color:var(--ink);font-weight:700}
+.st{display:flex;justify-content:center;align-items:center;gap:3px}
+.st div{display:flex;border:1px solid #d6d7dc;border-radius:6px;overflow:hidden}
+.st button{all:unset;width:18px;height:20px;text-align:center;cursor:pointer;font-size:10px}.st button:hover,.st button:focus-visible{background:#e8f6f0}
+.st input{width:28px;height:20px;border:0;text-align:center;font:inherit;font-size:11px;padding:0;background:transparent;font-variant-numeric:tabular-nums}
+.st a{font-size:8px;color:var(--g);cursor:pointer}
+.tot{text-align:right;font-weight:700;font-variant-numeric:tabular-nums;font-size:13px}
+.tot i{display:block;font-style:normal;font-size:9.5px;font-weight:600;height:11px}.up{color:var(--g)}.dn{color:var(--r)}
+.bar{position:relative;height:8px;margin-top:2px;background:#ececf0;border-radius:3px}
+.bar>*{position:absolute;top:0;height:100%}
+.bar .m{background:var(--g);left:0;border-radius:3px 0 0 3px}.bar .g{background:var(--g2)}
+.bar .l{background:repeating-linear-gradient(135deg,var(--r) 0 3px,#f3a3b0 3px 6px)}
+.bar2{height:6px;margin-top:2px;background:#ececf0;border-radius:3px}.bar2 .bs{display:block;height:100%;background:#7d848e;border-radius:3px 0 0 3px}
+.bar .t{top:-2px;height:12px;width:2px;background:var(--ink);opacity:.75}
+.note{max-width:340px;color:var(--mut);font-size:12px;line-height:1.5}.note h2{font-size:13px;color:var(--ink);margin:0 0 6px}.note p{margin:0 0 8px}
+.note button{font:inherit;padding:5px 10px;border:1px solid #d6d7dc;border-radius:6px;background:#fff;cursor:pointer}
+.note kbd{background:#fff;border:1px solid var(--line);border-radius:4px;padding:0 4px}
+svg text{font-size:9px;fill:var(--mut);transition:fill .12s}svg text.on{fill:var(--ink);font-weight:700}svg text.up{fill:var(--g);font-weight:700}svg text.dn{fill:var(--r);font-weight:700}
+.halo{fill:var(--g);opacity:0;transition:opacity .12s}.halo.on{opacity:.22}.ax{stroke:var(--line);stroke-width:.6}.ax.on{stroke:var(--g);stroke-width:1.2}
+</style></head><body>
+<div class="panel" aria-label="Tab IVs/EVs">
+ <div class="tabs"><span class="on">IVs / EVs</span><span>Moves</span><span>Learnsets</span><span>Sets</span><span>Ribbons</span></div>
+ <div class="hd">
+  <div class="leg"><span><i style="border-color:var(--g)"></i>Actual</span><span><i style="border-color:#555"></i>Original del save</span><span><i style="border-color:#9aa0a8;border-top-style:dashed"></i>Base de la especie</span></div>
+  <div class="mid">
+   <div class="info"><span>Poder Oculto</span><b id="hp"></b></div>
+   <svg id="rd" viewBox="6 6 184 180" role="img" aria-label="Radar de stats finales"></svg>
+   <div class="info r"><span>Naturaleza</span><b>Alegre</b><small>+Vel −AtqE</small></div>
+  </div>
+ </div>
+ <div class="cols"><span></span><span>IV</span><span>EV</span><span>Total</span></div>
+ <div id="rows"></div>
+ <div class="ft">
+  <div class="fr"><span>EVs totales</span><div class="meter" id="evm"><u></u></div><b id="evs"></b></div>
+ </div>
+</div>
+<div class="note">
+ <h2>Qué mirar en este mockup</h2>
+ <p>El radar queda fijo arriba y solo se mueve la lista. Cada fila lleva su propia barra: <b style="color:var(--g)">verde</b> = stat total, marca negra = valor original del save. Debajo de cada barra verde va una barra gris aparte (75% de su alto) con el stat base.</p>
+ <p>Si subes un stat, el tramo ganado se ve en verde claro; si lo bajas, en rojo rayado. Pasa el mouse o enfoca una fila y se ilumina su vértice en el radar (y al revés).</p>
+ <p>Usa <kbd>−</kbd> / <kbd>+</kbd> (con <kbd>Shift</kbd> ±10) o escribe el valor. Datos de ejemplo: Garchomp nivel 100.</p>
+ <button id="rs">Volver al original</button>
+</div>
+<script>
+const L=100,TY=['Lucha','Volador','Veneno','Tierra','Roca','Bicho','Fantasma','Acero','Fuego','Agua','Planta','Eléctrico','Psíquico','Hielo','Dragón','Siniestro'];
+// orden de filas del editor; a = posición en el radar (PS, Atq, Def, Vel, DefE, AtqE en sentido horario)
+const O=[{n:'PS',b:108,a:0,nat:1,hp:1,o:[31,4]},{n:'Atq',b:130,a:1,nat:1,o:[31,252]},{n:'Def',b:95,a:2,nat:1,o:[31,0]},{n:'AtqE',b:80,a:5,nat:.9,o:[31,0]},{n:'DefE',b:85,a:4,nat:1,o:[31,0]},{n:'Vel',b:102,a:3,nat:1.1,o:[31,252]}];
+const S=O.map(s=>({...s,iv:s.o[0],ev:s.o[1]}));
+S[1].ev=200;S[2].ev=52;S[5].iv=25; // ediciones de ejemplo para ver el delta
+const calc=(s,iv,ev)=>{const x=2*s.b+iv+(ev>>2);return s.hp?x+L+10:Math.floor((x+5)*s.nat)};
+const MAXV=500,C=95,R=68,pt=(a,v)=>{const t=(-90+a*60)*Math.PI/180,r=R*Math.min(v,1);return[C+r*Math.cos(t),C+r*Math.sin(t)]};
+const poly=f=>S.slice().sort((x,y)=>x.a-y.a).map(s=>pt(s.a,f(s)).map(n=>n.toFixed(1)).join(',')).join(' ');
+const rd=document.getElementById('rd');let h='',nb='';
+[.25,.5,.75,1].forEach(k=>h+=`<polygon points="${[0,1,2,3,4,5].map(a=>pt(a,k).join(',')).join(' ')}" fill="none" stroke="#e3e4e8" stroke-width=".7"/>`);
+S.forEach(s=>{const[x,y]=pt(s.a,1),[lx,ly]=pt(s.a,1.2);const k=s.nat>1?'up':s.nat<1?'dn':'';h+=`<line class="ax" id="ax${s.a}" x1="${C}" y1="${C}" x2="${x}" y2="${y}"/><text class="${k}" id="lb${s.a}" x="${lx}" y="${ly+3}" text-anchor="middle">${s.n}</text>`;});
+h+=`<polygon id="pb" fill="none" stroke="#9aa0a8" stroke-width="1.1" stroke-dasharray="3 2"/><polygon id="po" fill="none" stroke="#555" stroke-width="1.2"/><polygon id="pc" fill="rgba(29,158,117,.28)" stroke="#1D9E75" stroke-width="1.8" stroke-linejoin="round"/>`;
+S.forEach(s=>h+=`<g data-i="${S.indexOf(s)}"><circle class="halo" id="ha${s.a}" r="11"/><circle id="dt${s.a}" r="3" fill="#1D9E75"/><circle r="12" fill="transparent" class="hit"/></g>`);
+rd.innerHTML=h;
+// insignias de naturaleza: justo a la derecha del nombre del stat (posición medida con getBBox para no taparlo)
+S.forEach(s=>{if(s.nat==1)return;const up=s.nat>1,b=document.getElementById('lb'+s.a).getBBox(),cx=b.x+b.width+7,cy=b.y+b.height/2;
+ rd.insertAdjacentHTML('beforeend',`<g data-i="${S.indexOf(s)}"><circle cx="${cx}" cy="${cy}" r="5" fill="${up?'#1D9E75':'#D6455D'}"/><text x="${cx}" y="${cy+3.2}" text-anchor="middle" style="fill:#fff;font-size:9px;font-weight:700">${up?'+':'−'}</text><title>Naturaleza: ${s.n} ${up?'+10%':'−10%'}</title></g>`)});
+const rows=document.getElementById('rows');
+const stp=(i,k,mx)=>`<div class="st">${k=='iv'?`<a data-m="${i},iv,${mx}">max</a>`:''}<div><button data-s="${i},${k},-1,${mx}" aria-label="Bajar">−</button><input data-in="${i},${k},${mx}" value="0" inputmode="numeric" aria-label="${k.toUpperCase()}"><button data-s="${i},${k},1,${mx}" aria-label="Subir">+</button></div>${k=='ev'?`<a data-m="${i},ev,0">min</a>`:''}</div>`;
+rows.innerHTML=S.map((s,i)=>`<div class="row" data-i="${i}"><div class="top"><span class="lbl">${s.n}</span>${stp(i,'iv',31)}${stp(i,'ev',252)}<span class="tot"><span></span><i></i></span></div><div class="bar"><u class="m"></u><u class="g"></u><u class="l"></u><u class="t"></u></div><div class="bar2"><u class="bs"></u></div></div>`).join('');
+const pc=v=>(v/MAXV*100)+'%';
+function upd(){let sum=0,bits=0;const q=[0,1,2,5,3,4]; // HP,Atq,Def,Vel,AtqE,DefE → bits de Poder Oculto: HP,Atk,Def,Spe,SpA,SpD
+ S.forEach((s,i)=>{sum+=s.ev;const cur=calc(s,s.iv,s.ev),org=calc(s,s.o[0],s.o[1]),d=cur-org,r=rows.children[i];
+  r.querySelectorAll('input')[0].value=s.iv;r.querySelectorAll('input')[1].value=s.ev;
+  const t=r.querySelector('.tot');t.firstChild.textContent=cur;const e=t.querySelector('i');e.textContent=d?(d>0?'+':'−')+Math.abs(d):'';e.className=d>0?'up':d<0?'dn':'';
+  const $=c=>r.querySelector('.'+c),lo=Math.min(cur,org);
+  $('m').style.width=pc(lo);$('g').style.left=pc(lo);$('g').style.width=d>0?pc(d):0;$('l').style.left=pc(lo);$('l').style.width=d<0?pc(-d):0;$('t').style.left=`calc(${pc(org)} - 1px)`;$('bs').style.width=pc(s.b);
+  s.cur=cur;s.org=org;document.getElementById('dt'+s.a).setAttribute('fill',d>0?'#1D9E75':d<0?'#D6455D':'#1D9E75');
+  const[x,y]=pt(s.a,cur/MAXV);const hA=document.getElementById('ha'+s.a),dA=document.getElementById('dt'+s.a);hA.setAttribute('cx',x);hA.setAttribute('cy',y);dA.setAttribute('cx',x);dA.setAttribute('cy',y);
+  if(i!=3&&i!=4)bits|=(s.iv&1)<<[0,1,2,-1,-1,3][i];});
+ bits=(S[0].iv&1)|(S[1].iv&1)<<1|(S[2].iv&1)<<2|(S[5].iv&1)<<3|(S[3].iv&1)<<4|(S[4].iv&1)<<5;
+ document.getElementById('hp').textContent=TY[Math.floor(bits*15/63)];
+ document.getElementById('pb').setAttribute('points',poly(s=>s.b/255));document.getElementById('po').setAttribute('points',poly(s=>s.org/MAXV));document.getElementById('pc').setAttribute('points',poly(s=>s.cur/MAXV));
+ const ev=document.getElementById('evs');ev.textContent=sum+' / 510';ev.className=sum>510?'warn':'';const m=document.getElementById('evm');m.className='meter'+(sum>510?' warn':'');m.firstChild.style.width=Math.min(sum/510*100,100)+'%'}
+const set=(i,k,v,mx)=>{S[i][k]=Math.max(0,Math.min(mx,Math.round(+v)||0));upd()};
+document.addEventListener('click',e=>{const b=e.target.closest('[data-s]'),m=e.target.closest('[data-m]');
+ if(b){const[i,k,d,mx]=b.dataset.s.split(',');set(+i,k,S[i][k]+(+d)*(e.shiftKey?10:1),+mx)}
+ if(m){const[i,k,v]=m.dataset.m.split(',');set(+i,k,+v,k=='iv'?31:252)}});
+document.addEventListener('change',e=>{const n=e.target.dataset.in;if(n){const[i,k,mx]=n.split(',');set(+i,k,e.target.value,+mx)}});
+function hl(i,on){const s=S[i];rows.children[i].classList.toggle('on',on);['ha','ax','lb'].forEach(p=>document.getElementById(p+s.a).classList.toggle('on',on))}
+rows.addEventListener('mouseover',e=>{const r=e.target.closest('.row');if(r)hl(+r.dataset.i,true)});rows.addEventListener('mouseout',e=>{const r=e.target.closest('.row');if(r)hl(+r.dataset.i,false)});
+rows.addEventListener('focusin',e=>{const r=e.target.closest('.row');if(r)hl(+r.dataset.i,true)});rows.addEventListener('focusout',e=>{const r=e.target.closest('.row');if(r)hl(+r.dataset.i,false)});
+rd.addEventListener('mouseover',e=>{const g=e.target.closest('g[data-i]');if(g)hl(+g.dataset.i,true)});rd.addEventListener('mouseout',e=>{const g=e.target.closest('g[data-i]');if(g)hl(+g.dataset.i,false)});
+document.getElementById('rs').onclick=()=>{S.forEach(s=>{s.iv=s.o[0];s.ev=s.o[1]});upd()};
+upd();
+</script></body></html>

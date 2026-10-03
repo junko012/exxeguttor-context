@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Exxeguttor — Boceto: selector de idioma (menú File)</title>
+<style>
+  :root {
+    --bg-window: #ffffff;
+    --bg-surface: #f4f4f5;
+    --border: #dcdce0;
+    --border-strong: #b8b8bf;
+    --text-primary: #1c1c1f;
+    --text-secondary: #6b6b70;
+    --text-muted: #9a9aa0;
+    --accent: #3b82f6;
+    --coral: #d9584e;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, "Segoe UI", "Cantarell", "Ubuntu", sans-serif;
+    background: #e5e5e8;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 28px;
+  }
+  .note { font-size: 12px; color: #6b6b70; text-align: center; max-width: 520px; }
+  .window {
+    width: 460px;
+    background: var(--bg-window);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+    overflow: visible;
+    position: relative;
+  }
+  .titlebar {
+    height: 32px;
+    background: #f0f0f2;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    padding: 0 12px;
+    font-size: 12px;
+    color: var(--text-secondary);
+    border-radius: 8px 8px 0 0;
+  }
+  .menubar {
+    height: 34px;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    gap: 4px;
+    border-bottom: 1px solid var(--border);
+  }
+  .menubar span {
+    font-size: 13px;
+    color: var(--text-primary);
+    padding: 4px 10px;
+    border-radius: 5px;
+  }
+  .menubar span.open { background: var(--bg-surface); }
+  .body-fill { height: 140px; }
+
+  /* ===== Menú File abierto, con el submenú "Idioma" desplegado ===== */
+  .file-menu {
+    position: absolute;
+    top: 66px;
+    left: 8px;
+    width: 210px;
+    background: var(--bg-window);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    padding: 6px 0;
+    z-index: 5;
+  }
+  .file-menu .item {
+    font-size: 13px;
+    color: var(--text-primary);
+    padding: 7px 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .file-menu .item:hover, .file-menu .item.hover { background: var(--bg-surface); }
+  .file-menu .sep { height: 1px; background: var(--border); margin: 5px 0; }
+  .file-menu .item .arrow { color: var(--text-muted); font-size: 11px; }
+
+  /* ===== Submenú Idioma ===== */
+  .lang-submenu {
+    position: absolute;
+    top: 96px;
+    left: 216px;
+    width: 236px;
+    background: var(--bg-window);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    padding: 6px 0;
+    z-index: 6;
+  }
+  .lang-submenu .group-label {
+    font-size: 10.5px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--text-muted);
+    padding: 6px 14px 3px;
+  }
+  .lang-submenu .item {
+    font-size: 13px;
+    color: var(--text-primary);
+    padding: 7px 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .lang-submenu .item.active { color: var(--accent); font-weight: 600; }
+  .lang-submenu .item .check { width: 14px; text-align: center; color: var(--accent); }
+  .lang-submenu .item.installable .check { color: transparent; }
+  .lang-submenu .item.installable { color: var(--text-secondary); }
+  .lang-submenu .sep { height: 1px; background: var(--border); margin: 5px 0; }
+  .lang-submenu .item.action { color: var(--accent); }
+
+  /* ===== Diálogo de confirmación de reinicio (segunda escena, debajo) ===== */
+  .restart-card {
+    width: 360px;
+    background: var(--bg-window);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 22px 24px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .restart-card .title { font-size: 15px; font-weight: 600; color: var(--text-primary); margin: 0; }
+  .restart-card .body { font-size: 12.5px; color: var(--text-secondary); line-height: 1.5; margin: 0; }
+  .restart-card .row { display: flex; justify-content: flex-end; gap: 8px; }
+  .btn {
+    font-size: 13px;
+    padding: 7px 16px;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+    background: #fafafa;
+    color: var(--text-primary);
+    cursor: default;
+  }
+  .btn.primary { background: var(--coral); border-color: var(--coral); color: white; }
+</style>
+</head>
+<body>
+
+<div class="note">
+  Boceto estático — Selector de idioma en el menú File (submenú "Idioma"), y el diálogo de
+  confirmación de reinicio que aparece al elegir uno distinto al activo. Sin animación:
+  esta pantalla es de selección/confirmación puntual, no un loader — no hace falta.
+</div>
+
+<div class="window">
+  <div class="titlebar">Exxeguttor — Pokémon Save File Editor</div>
+  <div class="menubar">
+    <span class="open">File</span>
+    <span>Help</span>
+  </div>
+  <div class="body-fill"></div>
+
+  <div class="file-menu">
+    <div class="item">Abrir save…</div>
+    <div class="item">Guardar</div>
+    <div class="item">Exportar…</div>
+    <div class="sep"></div>
+    <div class="item hover">Idioma <span class="arrow">▶</span></div>
+    <div class="sep"></div>
+    <div class="item">Salir</div>
+  </div>
+
+  <div class="lang-submenu">
+    <div class="group-label">Incluidos</div>
+    <div class="item active"><span class="check">✓</span>Español</div>
+    <div class="item"><span class="check"></span>English</div>
+    <div class="group-label">Paquetes instalados</div>
+    <div class="item"><span class="check"></span>Français</div>
+    <div class="group-label">Disponibles para instalar</div>
+    <div class="item installable"><span class="check"></span>日本語 (paquete no instalado)</div>
+    <div class="item installable"><span class="check"></span>Deutsch (paquete no instalado)</div>
+    <div class="sep"></div>
+    <div class="item action">Abrir carpeta de paquetes de idioma…</div>
+  </div>
+</div>
+
+<div class="restart-card">
+  <p class="title">Reiniciar para aplicar el idioma</p>
+  <p class="body">
+    Exxeguttor va a cambiar a <strong>Français</strong> — hace falta reiniciar la app para
+    que se aplique en toda la interfaz. Las ediciones sin exportar de esta sesión NO se
+    pierden al reiniciar (mismo resguardo que "Cerrar sin exportar"): si hay cambios
+    pendientes, primero se muestra ese diálogo antes de reiniciar.
+  </p>
+  <div class="row">
+    <button class="btn">Más tarde</button>
+    <button class="btn primary">Reiniciar ahora</button>
+  </div>
+</div>
+
+</body>
+</html>

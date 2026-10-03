@@ -242,6 +242,27 @@ aunque el bug de producto que causaba ya no está.
   PKHeX.Core para poder aplicar las ediciones — es la pieza que puentea ambos mundos a
   propósito).
 
+### Idioma de la UI — regla para TODO texto nuevo que se agregue de acá en adelante
+
+Sesión de idiomas (`docs/i18n_project/i18n-plan.md`, documento vivo — leerlo si vas a tocar
+algo de esto) armó un selector real de idioma (`File → Idioma`) con cambio EN CALIENTE, sin
+reiniciar la app. Funciona porque `LocalizationService` implementa `INotifyPropertyChanged` y
+notifica su indexador (convención `"Item[]"`) al cambiar de idioma — **todo** binding XAML
+que use `{Binding Loc[Clave]}` directo (`Loc` siendo la instancia de `LocalizationService`
+expuesta en el ViewModel) se refresca solo, gratis, sin tocar nada más.
+
+**Por eso**: para texto nuevo en XAML, preferir `{Binding Loc[Clave]}` directo en vez de
+hardcodear el string en español — agregar la clave a `es.json`/`en.json` (estilo de nombres
+ya establecido: `Dialog_*`, `Status_*`, `Action_*`, `Menu_*`). Si hace falta una propiedad de
+C# que envuelva `_loc[...]` (porque hay lógica extra, no un passthrough simple), agregarla a
+la lista de `MainWindowViewModel.OnLocaleChanged` — si no, esa propiedad puntual queda
+pegada en el idioma anterior hasta que se dispare por otra razón.
+
+**Ojo**: a la fecha de escribir esto, ~135 strings hardcodeados todavía NO siguen esta regla
+(incluido TODO lo de loaders/diálogos de Rotom/Pokédex/Porygon de sesiones recientes, ver
+`context.md`) — es deuda conocida, no algo que haya que arreglar de una sola vez, pero el
+texto NUEVO que se agregue de acá en adelante no debería sumarse a esa pila.
+
 ### PKHeX.Core — reglas críticas confirmadas (por reflection y/o test real esta sesión)
 
 **Tipos y estructuras:**

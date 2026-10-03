@@ -1,17 +1,24 @@
 # context.md — Estado actual del proyecto Exxeguttor
 
-_Última actualización: sesión muy larga y densa, la más grande documentada hasta ahora (~50
-commits sobre `master`, mensajes de commit genéricos tipo "updating files" — no sirven como
-changelog, por eso esta reescritura salió de leer el código real, no del historial de git).
-Dos módulos nuevos completos — **Pokédex** (álbum de figuritas, revierte la decisión de scope-
-out documentada en la versión anterior de este archivo) y **Diagnosticador de legalidad**
-(tab "Diagnóstico" con arreglos automáticos accionables) — más una extensión grande de
-`PokemonService` (el "intercambio entre versiones hermanas" para construir especies exclusivas
-ahora cubre Gen3, no solo Gen1/2, con el caso especial de Feebas→Milotic por Belleza) y un lote
-de campos que quedaban "editables en la UI pero se perdían en silencio al exportar" (Shiny,
-Huevo, Amistad, Género del Pokémon, OT, TID propio, fechas) ahora sí cableados al pipeline de
-escritura real. `pokemon.db` creció de ~46 MB a ~51 MB (datos de Pokédex). Repo git ya
-inicializado del lado del usuario — 50 commits en `master`, sin ninguna rama aparte._
+_Última actualización: sesión de Claude Code aparte (no git — Juan trabaja en 2 sesiones de
+código en paralelo además de esta de mockups/contexto, así que el repo real puede haber
+avanzado más de lo que este documento todavía sabe — ver nota de "cómo arrancar" en
+`CLAUDE.md`). Esta vuelta fue casi toda de **pulido visual + UX de loaders/diálogos** más el
+arranque real de **idioma de la UI** (antes solo existía para nombres de especie/movimiento
+del save, nunca para el chrome de la app). Contenido nuevo de esta sesión, documentado en
+detalle en sus propias secciones más abajo:
+- **4 loaders temáticos completos** reemplazando la pokebola genérica: Loader 1 (abrir save,
+  con 2 bugs reales corregidos — ancho de la tarjeta y una regresión de `ClipToBounds` que
+  cortaba a Hitmonlee por la mitad), Loader 3 (crear Pokémon, huevo que eclosiona), Loader 4
+  (verificar/analizar legalidad, Pokédex escaneando — con el sprite real del Pokémon en vez de
+  una silueta genérica, corregido tras feedback).
+- **3 diálogos de confirmación con Rotom** (Ventilador/Lavadora) con animación de hojas de
+  papel/gotas de agua, reemplazando los diálogos genéricos de texto plano.
+- **Pantalla de éxito de exportación** (Porygon→Porygon2 vía objeto Mejora, Rotom reaccionando)
+  — no existía ningún feedback visual de que exportar había funcionado antes de esta sesión.
+- **Idioma de la UI — infraestructura real, primera vez que existe un selector funcional**
+  (ver sección dedicada "🌐 Idioma de la UI" más abajo) — cambio EN CALIENTE, sin reiniciar la
+  app, más preferencias persistentes (primera vez que el proyecto tiene esto en absoluto)._
 
 ---
 
@@ -429,6 +436,82 @@ queda sin actualizar todavía a propósito (ver `screen-pokedex-album.md`, a cre
   text/cadenas evolutivas que alimentan este módulo.
 
 ---
+## 🎬 Loaders temáticos, diálogos de Rotom y pantalla de éxito — todo nuevo esta sesión
+
+Antes de esta sesión solo existía un overlay genérico (pokebola girando, `BusyKind.Generic`)
+para TODA operación de espera, y los diálogos de confirmación eran texto plano sin ningún
+elemento visual. Patrón compartido en los 4 loaders: `BusyStateService` (singleton
+compartido entre `MainWindowViewModel`/`PokemonEditorViewModel`) con un `BusyKind` por
+loader, cada uno con su propio `Border` overlay en `MainWindow.axaml` y sus propios
+`Style.Animations` en `App.axaml`, activados por una clase que se bindea a un booleano que
+se togglea false→true en cada uso — eso es lo que reinicia la animación desde cue 0% cada
+vez, en vez de heredar el punto del ciclo anterior. Mockups completos en
+`mockups/loading_screens/`, `mockups/confirmation_dialogs/`, `mockups/legality_scan/`,
+`mockups/export_success/`.
+
+- **Loader 1 — abrir save** (`BusyKind.OpenSave`): Hitmonlee patea a Voltorb, que choca
+  contra Dugtrio. Dos bugs reales corregidos esta sesión: (1) la barra de progreso usaba una
+  clase (`l1-progress-fill`) cuyo `Style.Animation` se había sacado de `App.axaml` en una
+  sesión anterior sin actualizar el XAML — quedó huérfana, la barra nunca se movía; se
+  reemplazó por un `Grid` de columnas `Star` real bindeado a `BusyState.Progress`
+  (`StarWidthConverter`, mismo patrón que las barras de stats). (2) La tarjeta no tenía
+  `Width` fijo y terminaba mostrando solo la mitad de Hitmonlee, o directamente Hitmonlee
+  afuera de la tarjeta — pasó por dos vueltas de ajuste (`Width="352"` calculado justo, no
+  alcanzó; `Width="420"` con margen real + `ClipToBounds="True"` en el `Border` exterior sin
+  transforms, no en el `Canvas` con el mirror de Hitmonlee que había causado la regresión
+  anterior). También se sacó la espera artificial de hasta 2900ms que forzaba completar el
+  ciclo entero (decisión explícita: la animación es "tinte", no necesita verse completa) —
+  solo queda un piso chico de 650ms en paralelo con `OpenAsync`, pensado para cubrir nada más
+  la ventana de la patada (14%-22% del ciclo).
+- **Loader 3 — crear/elegir Pokémon** (`BusyKind.CreatePokemon`): huevo que tiembla, se
+  agrieta, y revela el sprite real de la especie elegida (`Loader3EggRevealSprite`,
+  resuelto dinámicamente). Mínimo artificial de 2.2s en paralelo con la construcción real —
+  coincide a propósito con la duración de un ciclo decorativo completo.
+- **Loader 4 — verificar/analizar legalidad** (`BusyKind.VerifyLegality`): Pokédex (primer
+  ícono de UI a color sólido del proyecto — todo lo demás es outline monocromático o sprites
+  reales) escaneando con un haz que recorre al Pokémon, más un checklist de 4 categorías
+  (mismas que agrupa `LegalityMessageMapper`) iluminándose una por una. Un mismo `BusyKind`
+  cubre DOS disparadores (`PokemonEditorViewModel.LoadLegalityAsync`, un Pokémon; y
+  `MainWindowViewModel.ConfirmExportAsync`, varios) — mismo criterio que Rotom reusado en
+  tres diálogos. **Bug real corregido tras feedback**: la primera versión mostraba una
+  silueta genérica fija sin importar la especie real — se corrigió a
+  `BusyState.CurrentScanSprite` (sprite real, con un blip de revelación de 320ms por cada
+  especie nueva, `BusyStateService.ReportScanSubject`/`PulseScanReveal`). **Segundo bug real
+  corregido**: al exportar con varios Pokémon, solo se veía el ÚLTIMO en pantalla — causa:
+  `BuildSummary` corre el loop entero en background en microsegundos (analizar legalidad es
+  casi instantáneo), así que los `ReportScanSubject`/`ReportProgress` se disparaban todos en
+  ráfaga más rápido de lo que la UI pinta un frame. Arreglado desacoplando el cómputo real
+  (sigue siendo rápido, sin pausas artificiales adentro — `BuildSummary` ganó un parámetro
+  `onScanSpecies` que solo JUNTA la lista, no reporta en vivo) de una "caminata visual"
+  posterior con delays reales entre paso y paso (400ms por Pokémon, tope ~3s total repartido
+  proporcional si son muchos) — ver `MainWindowViewModel.ConfirmExportAsync`.
+- **3 diálogos de confirmación con Rotom** (`mockups/confirmation_dialogs/`,
+  `mockups/open_other_savedialog/`): "¿Cerrar sin exportar?" (Rotom-Ventilador, hojas de
+  papel volando), "¿Descartar ediciones?" (Rotom-Lavadora, gotas de agua + hoja que se moja
+  y combarce), y "¿Abrir otro save?" (reusa EXACTAMENTE las mismas clases de Rotom-Ventilador
+  del primero — ningún Style nuevo, el mockup pedía a propósito no sumar una cuarta variante
+  visual). Sprites de Rotom-Ventilador (10011) y Rotom-Lavadora (10009) no estaban
+  embebidos — se agregaron a mano (`pokemon/normal/`, `pokemon/shiny/`; no existen variantes
+  `female`/`shiny-female`, Rotom no tiene género) y se extendió
+  `scripts/download-sprites.py` con una lista `EXTRA_FORM_IDS` para que una regeneración
+  completa desde cero no las vuelva a perder.
+- **Pantalla de éxito de exportación** (`mockups/export_success/`, `IsExportSuccessVisible`
+  en `MainWindowViewModel`): Porygon evolucionando a Porygon2 vía el objeto Mejora, con Rotom
+  (aproximado al Rotom base, 479 — no existe sprite oficial de "Rotom PC") reaccionando.
+  Única animación de UNA SOLA PASADA del proyecto (`IterationCount="1"`,
+  `FillMode="Forward"`, todo lo demás es loop infinito). Auto-cierre a los ~5.5s con un
+  token de generación para evitar que exportar dos veces seguido corte la segunda pantalla
+  antes de tiempo. **Corrección real tras feedback**: la primera versión del objeto Mejora
+  viajando por la tubería leía LITERALMENTE los keyTimes del `<animateMotion>` del boceto
+  CSS original (que deja el objeto con `Opacity:0` durante TODO el recorrido real) y
+  terminaba invisible casi todo el tiempo — fiel al boceto, pero no a lo que hacía falta ver
+  en la práctica; se corrigió a un recorrido visible con 6 puntos intermedios aproximando la
+  forma de herradura real de la tubería. El mensaje "Save exportado" ahora aparece recién
+  después de que Porygon2 termina de revelarse (antes aparecía junto con todo lo demás, a la
+  vez que la animación).
+
+---
+
 ## Stack técnico
 
 | Componente | Versión |
@@ -497,9 +580,11 @@ exxeguttor/
 │       │   ├── TrainerViewModel.cs      # Editable: Nombre/TID/SID/Género/Dinero/Monedas/BP
 │       │   ├── MoveSelectorViewModel.cs
 │       │   ├── RecommendedSetGroup.cs
-│       │   ├── BoxViewModel.cs
-│       │   ├── PartyViewModel.cs
-│       │   ├── PokemonSlotViewModel.cs
+│       │   ├── BoxViewModel.cs          # +LocalizationService en el ctor, recarga en
+│       │   │                              caliente al cambiar de idioma (sesión i18n)
+│       │   ├── PartyViewModel.cs        # ídem BoxViewModel
+│       │   ├── PokemonSlotViewModel.cs  # LoadFrom(pkm, pkhexLang) — ya no hardcodea "en"
+│       │   ├── LocaleMenuEntry.cs       # NUEVO — fila del submenú File→Idioma, Command propio
 │       │   ├── PokemonSlotKey.cs        # Clave de slot — ForBox/ForParty/ForTrainer/ForBag
 │       │   ├── LearnsetGroup.cs
 │       │   ├── TypeEffectivenessEntry.cs
@@ -615,6 +700,11 @@ Sin cambios: `/usr/share/exxeguttor/pokemon.db` → `{AppContext.BaseDirectory}/
 ---
 
 ## Estado actual de la UI
+
+**Overlays/diálogos globales** (pintan por encima de cualquier modo, en
+`MainWindow.axaml`): ver secciones "🎬 Loaders temáticos..." y "🌐 Idioma de la UI" más
+arriba para el detalle completo — 4 loaders (`BusyKind` en `BusyStateService`), 3 diálogos
+de confirmación con Rotom, pantalla de éxito de exportación, y el submenú `File → Idioma`.
 
 ### Selector de modo general
 `MainWindowViewModel.CurrentMode` (`AppMode` enum: `Pokemon`/`Bag`/`Pokedex`) controla qué se
@@ -779,7 +869,108 @@ nuevo esta sesión es un consumidor más de `LegalityMessageMapper.GetCategory` 
 categoría, sin cambios): `LegalityDiagnosticBuilder`, que arma el tab Diagnóstico entero — ver
 "🩺 Diagnosticador de legalidad" arriba para el detalle completo.
 
-## i18n — sin cambios esta sesión
+## 🌐 Idioma de la UI — infraestructura nueva esta sesión (primera vez que existe)
+
+Hay **tres sistemas de idioma separados** en el proyecto — no confundirlos (confusión real
+que motivó aclarar esto con Juan antes de tocar código):
+
+1. **`LocalizationService`** (`src/Exxeguttor.UI/i18n/`) — el chrome de la UI propia de
+   Exxeguttor (menús, botones, diálogos). Ya existía con bastante infraestructura real
+   (fallback chain, detección de idioma del SO, soporte RTL, mecanismo de paquetes lang
+   externos) pero **nada la exponía en la UI** — `Load()` nunca se llamaba después del
+   arranque. Esta sesión: ver abajo.
+2. **`GameInfo.GetStrings(lang)`** (PKHeX.Core) — nombres de especie/movimiento/ítem TAL COMO
+   LOS GUARDA EL SAVE. **Decisión de producto confirmada**: los nombres se muestran siempre
+   en el idioma de la UI, NUNCA en el idioma original del cartucho — si cargás un save
+   francés con la UI en español, ves "Bulbasaur" en español, no "Bulbizarre". Había **3
+   lugares hardcodeados a `"en"` fijo** ignorando esto — corregidos (ver Trampas conocidas).
+3. **`TrainerViewModel.Language`** — el idioma CON EL QUE SE JUGÓ el cartucho, dato de
+   lectura informativo nada más, sin relación con los otros dos. No se tocó.
+
+### Cambio en caliente, SIN reiniciar — pivot real durante la implementación
+
+El plan original (`docs/i18n_project/i18n-plan.md`, documento vivo de esta sesión) arrancó
+asumiendo que cambiar de idioma iba a necesitar reiniciar la app, porque todo el texto
+traducido parecía vivir en propiedades de ViewModel "asignadas una vez" (`Title =
+_loc["App_Title"];` en un constructor) — convertir eso a reactivo parecía costoso. Al
+implementar se encontró que el menú `File` YA usaba `{Binding Loc[Clave]}` (bindeando
+directo al indexador de `LocalizationService` desde XAML) — convertir
+`LocalizationService` a `INotifyPropertyChanged`, notificando el indexador (convención
+`"Item[]"`) y `CurrentLocale` cada vez que `Load()` cambia el idioma activo, hace que
+**todo** binding con ese patrón se refresque solo, gratis, sin reiniciar nada. Las pocas
+excepciones que hacían "asignado una vez" (`Title`, `ExportSuccessTitle`,
+`ExportSuccessDoneLabel` de `MainWindowViewModel`) se migraron a propiedades computadas +
+un handler centralizado, `MainWindowViewModel.OnLocaleChanged`, que las re-notifica.
+
+**Regla para toda UI nueva de acá en adelante**: usar `{Binding Loc[Clave]}` directo en XAML
+siempre que se pueda — sale gratis en cuanto a idioma. Si hace falta una propiedad de C# que
+envuelva `_loc[...]` (porque hay lógica extra, no un passthrough simple), agregarla a la
+lista de `OnLocaleChanged` en `MainWindowViewModel` — si no, esa propiedad puntual queda
+pegada en el idioma anterior hasta que se dispare por otra razón.
+
+### Preferencias persistentes — primera vez que el proyecto tiene esto
+
+`AppSettingsService` (nuevo, `src/Exxeguttor.App/Services/` — NO en `Exxeguttor.UI`, se
+encontró que `RecentSavesService` ya resolvía exactamente este mismo problema con
+`Environment.SpecialFolder.ApplicationData`, que en .NET sobre Linux ya resuelve a
+`$XDG_CONFIG_HOME` solo, sin leer la variable a mano — `AppSettingsService` sigue ese mismo
+patrón al pie de la letra, constructor interno para tests incluido). Persiste en
+`~/.config/exxeguttor/settings.json` — hoy solo `{ "locale": "..." }`, pensado para sumar
+más preferencias después sin romper compatibilidad (deserialización tolerante a claves
+desconocidas). `LocalizationService` consulta esto ANTES de `DetectSystemLocale()` — una
+preferencia guardada por el usuario gana siempre sobre la detección del SO, pero solo si ese
+locale sigue estando en `AvailableLocales` (por si se desinstaló un paquete lang entre
+sesiones).
+
+### Selector — `File → Idioma`
+
+`MainWindowViewModel.AvailableLocalesForMenu` (lista de `LocaleMenuEntry`, archivo nuevo
+`ViewModels/LocaleMenuEntry.cs`) — cada entrada trae su propio `Command` YA ARMADO con el
+código capturado (`new RelayCommand(() => SwitchLocale(code))`), así el `ItemsSource` del
+`MenuItem` en XAML solo necesita un `Style` local bindeando `Command="{Binding Command}"`
+sin tener que alcanzar el DataContext raíz con un binding relativo — más simple y menos
+frágil que la alternativa. Nombres de display son autoglotónimos ("Español", "English",
+"Français", nunca "Spanish"/"Inglés") vía `LocalizationService.DisplayName(locale)`, tabla
+estática con fallback al código crudo si no está contemplado. Sin la sección "Disponibles
+para instalar" del mockup original (`mockups/language_selector/` — boceto proponía mostrar
+idiomas conocidos pero no instalados; se sacó, no hay de dónde descargarlos todavía) y sin
+el diálogo de confirmación de reinicio que el mismo mockup proponía (ya no aplica, ver
+arriba — el mockup quedó como registro histórico de la primera propuesta, no como
+descripción del comportamiento actual).
+
+### Caja/Equipo — recarga en caliente agregada por consistencia
+
+No estaba en el plan original pero se volvió necesaria: `BoxViewModel`/`PartyViewModel`
+ahora reciben `LocalizationService` en el constructor y se suscriben a su
+`PropertyChanged` — si cambia `CurrentLocale` y la vista está visible, recargan toda la
+Caja/Equipo actual (`LoadCurrentBox()`/`Load()`) para que los nombres de especie se
+actualicen sin tener que renavegar. Sin esto, cambiar de idioma con una Caja ya abierta
+hubiera dejado los nombres "pegados" en el idioma anterior — justo el caso de uso
+(Bulbasaur/Bulbizarre) que motivó toda la sesión.
+
+`PokemonSlotViewModel.LoadFrom` pasó a recibir el código de idioma como parámetro
+(`LoadFrom(PKM pkm, string pkhexLang = "en")`) en vez de que esta ViewModel chica dependa de
+`LocalizationService` directo — evita sumarle una dependencia que no necesita para nada más.
+
+### Tips — mecanismo conectado, contenido todavía no
+
+`TipsService` ahora recibe `_loc.CurrentLocale` en vez de quedar fijo en `"es"`, con
+fallback real de dos pasos (locale pedido → `EN` → vacío). Dos cosas pendientes a
+propósito: (1) solo existe `tips_ES.json` — no se tradujo contenido, es trabajo de
+traducción real que no correspondía inventar en una sesión de código; (2) si el modal de
+Tips ya está abierto cuando cambia el idioma, no se recarga solo (a diferencia de
+Caja/Equipo) — `TipsViewModel` arma categorías/páginas una sola vez dentro del constructor,
+no en un método separado reusable, recargar en caliente necesitaría ese refactor. Cambiar
+de idioma con el modal cerrado funciona bien (carga correcto la próxima vez que se abre).
+
+### Qué falta — ver `docs/i18n_project/i18n-plan.md` para el plan completo y vivo
+
+Documento aparte (no este `context.md`) porque es un esfuerzo transversal que se está
+trabajando como hilo semi-independiente — **se actualiza en vivo, no se reescribe por
+sesión** como este archivo. Pendiente principal: migrar ~135 strings hardcodeados en
+`.axaml` (incluidos TODOS los que esta misma sesión agregó para los loaders/diálogos de
+arriba — Rotom, Pokédex, Porygon — ninguno pasa por `_loc` todavía, quedó explícitamente
+fuera de alcance al implementarlos) a `{Binding Loc[Clave]}`.
 
 ---
 
@@ -1034,3 +1225,35 @@ obsoleto en su redacción original.)_
     moviera esta capacidad del bloque `gen >= 2` al `gen >= 3` (bug real corregido esta sesión),
     el combo de Ball quedaba editable y aparentaba funcionar en Gen2, pero cualquier cambio se
     perdía en silencio al exportar porque `pkm.Ball` no tiene dónde persistir en un `PK2`.
+
+35. **Avalonia `Style.Animations` no soporta combinar dos tipos de `RenderTransform` en un
+    solo elemento** (ej. `TranslateTransform` + `RotateTransform` a la vez vía
+    `TransformGroup`) — riesgo real de "No animator registered" ya pisado más de una vez
+    esta sesión. Solución consistente en todos los loaders/diálogos nuevos: anidar DOS
+    elementos, cada uno con su propio transform simple (uno traslada, el hijo rota/escala),
+    en vez de un `TransformGroup` en uno solo. `Opacity` no cuenta como transform para esta
+    regla — combinar `Opacity` + UN transform en el mismo elemento siempre anduvo bien.
+
+36. **`ClipToBounds="True"` en un ancestro puede interactuar mal con un `ScaleTransform` de
+    espejo (mirror, `ScaleX="-1"`) en un descendiente** — causó una regresión real (Loader 1:
+    Hitmonlee se veía cortado a la mitad) al agregarlo como fix de un problema distinto
+    (desborde visual). No confirmado el mecanismo exacto sin poder correr Avalonia real, pero
+    el patrón que funcionó fue mover el `ClipToBounds` a un ancestro SIN ningún transform de
+    por medio (el `Border` blanco exterior de la tarjeta, no el `Canvas` con el mirror) en
+    vez de insistir en el mismo nivel.
+
+37. **Cambios de propiedad disparados en ráfaga desde un loop de background que corre más
+    rápido que un frame de UI terminan coalescidos al último valor** — no es un bug de
+    binding, es inherente a cómo funciona: si un `Task.Run` dispara 10 `OnPropertyChanged`
+    en microsegundos, la UI (cuando consigue pintar) solo ve el valor que estaba vigente en
+    ESE momento, nunca los intermedios. Afectó el Loader 4 (ráfaga de
+    `ReportScanSubject`/`ReportProgress` analizando varios Pokémon). Solución: separar el
+    cómputo real (rápido, sin pausas artificiales) de la reproducción visual (con
+    `await Task.Delay(...)` reales entre paso y paso) — no se puede resolver bajándole la
+    velocidad al cómputo en sí, hay que desacoplar ambas cosas.
+
+38. **Avalonia `Animation` con `Delay="..."` se comporta igual que `animation-delay` de CSS
+    para loops infinitos** — corre una sola vez antes de la primera iteración, después las
+    iteraciones siguen pegadas sin re-aplicar el delay — útil para escalonar elementos
+    idénticos (las 3 hojas voladas del diálogo de Rotom-Ventilador, las 3 gotas de agua del
+    de Rotom-Lavadora) sin tener que hacer matemática de wraparound de cues a mano.
