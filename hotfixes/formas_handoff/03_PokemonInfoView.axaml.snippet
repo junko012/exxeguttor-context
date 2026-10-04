@@ -1,0 +1,13 @@
+<!-- =============================================================================
+     FRAGMENTO para: src/Exxeguttor.UI/Views/PokemonInfoView.axaml
+     Qué reemplaza: el TextBlock de solo lectura que mostraba la Forma.
+     Patrón: igual que el combo de Habilidad ya existente (mismo estilo visual,
+     mismo borde rojo de "campo editado" cuando HighlightedFieldIds lo marca).
+     ============================================================================= -->
+
+                    <!-- Form (ComboBox, condicional — fase 1 de formas: ver fase-formas-handoff.md) -->
+                    <Grid ColumnDefinitions="62,*" Height="20">
+                        <TextBlock Grid.Column="0" Text="Form" FontSize="10" Opacity="0.6" VerticalAlignment="Center"/>
+                        <ComboBox Grid.Column="1" ItemsSource="{Binding AvailableForms}" SelectedItem="{Binding Form}" FontSize="10" Height="18" MinHeight="0" Padding="4,0" HorizontalContentAlignment="Stretch" IsEnabled="{Binding EnabledForm}" Opacity="{Binding EnabledForm, Converter={StaticResource BoolToOpacityConverter}}"/>
+                        <Border Grid.Column="1" Width="14" Height="14" CornerRadius="2" Background="#E30909" BorderBrush="#7A0000" BorderThickness="1.5" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,18,0" IsHitTestVisible="False" IsVisible="{Binding HighlightedFieldIds, Converter={StaticResource FieldHighlightConverter}, ConverterParameter='Form'}"><TextBlock Text="!" FontSize="11" FontWeight="Black" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" LineHeight="11"/></Border>
+                    </Grid>

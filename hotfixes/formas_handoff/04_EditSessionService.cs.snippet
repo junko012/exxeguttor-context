@@ -1,0 +1,22 @@
+// =============================================================================
+// FRAGMENTOS para: src/Exxeguttor.UI/Services/EditSessionService.cs
+// =============================================================================
+
+// ── 1) Entrada en CategoryMap ────────────────────────────────────────────────
+// Ubicación: justo después de la entrada ["Ability"] existente.
+
+            ["Form"] = ("Forma", null),
+
+// ── 2) Aplicación en el preview de la sesión de edición ──────────────────────
+// Ubicación: ANTES del bloque existente que aplica Ability. El orden importa:
+// el efecto secundario de Forma (que trae su propia habilidad/ítem por defecto)
+// debe aplicarse primero, para que si el usuario también edita Habilidad
+// manualmente en la misma sesión, su elección explícita gane.
+
+            if (edits.TryGetValue("Form", out var formVal) && formVal is string formName
+                && PokemonService.TryGetFormIndex(preview, GameInfo.Strings, formName, out var formIdx))
+            {
+                PokemonService.ApplyForm(preview, formIdx);
+            }
+
+            // ... (a partir de acá sigue el bloque existente que aplica Ability, sin cambios)

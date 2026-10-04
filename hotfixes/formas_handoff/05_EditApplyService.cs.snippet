@@ -1,0 +1,23 @@
+// =============================================================================
+// FRAGMENTO para: src/Exxeguttor.UI/Services/EditApplyService.cs
+// Dónde va: al PRINCIPIO del método ApplyFieldsToPkm, ANTES de la línea que
+// aplica Nickname (mismo orden-de-aplicación que en EditSessionService.cs:
+// la Forma debe aplicarse antes que cualquier edición explícita de Habilidad/Ítem).
+// =============================================================================
+
+    private void ApplyFieldsToPkm(PKM pkm, IReadOnlyDictionary<string, object?> edits)
+    {
+        // Forma — primero que todo: sus efectos secundarios (ítem, habilidad, tipo Tera,
+        // género) deben quedar aplicados antes de que cualquier edición explícita de
+        // Habilidad/Ítem en el mismo set de edits pueda sobreescribirlos a propósito.
+        if (edits.TryGetValue("Form", out var formVal) && formVal is string formName
+            && PokemonService.TryGetFormIndex(pkm, GameInfo.Strings, formName, out var formIdx))
+        {
+            PokemonService.ApplyForm(pkm, formIdx);
+        }
+
+        if (edits.TryGetValue("Nickname", out var nick) && nick is string nickStr)
+            pkm.Nickname = nickStr;
+
+        // ... (a partir de acá sigue el resto del método existente, sin cambios)
+    }

@@ -1,0 +1,148 @@
+// =============================================================================
+// FRAGMENTO para: src/Exxeguttor.App/Services/PokemonService.cs
+// Dónde va: agregar como métodos nuevos dentro de la clase estática PokemonService
+//           (al final de la clase, o junto a los demás helpers de evolución/forma)
+// Requiere: using PKHeX.Core; (ya debería estar en el archivo)
+// =============================================================================
+
+    // ── Formas (fase 1: formas de combate reversibles + cosméticas) ──────────────────────────
+    //
+    // Taxonomía de 4 casos (ver fase-formas-handoff.md para el detalle completo):
+    //   1. Forma de combate reversible con cambio de stats/tipo/habilidad
+    //      (Giratina, Arceus, Genesect, Tornadus/Thundurus/Landorus, Keldeo, Meowstic, Ogerpon, Silvally)
+    //      -> editable libremente desde el combo, con efectos secundarios en ApplyForm.
+    //   2. Forma regional/de origen (Marowak de Alola, etc.)
+    //      -> NO se excluye especialmente del combo. No es un toggle: está atada al origen
+    //         del encuentro/evolución. Si el usuario fuerza una forma incompatible con el
+    //         origen real del Pokémon, el Diagnóstico (LegalityAnalysis) la marcará ilegal
+    //         de forma natural, igual que lo hace PKHeX. Decisión deliberada.
+    //   3. Forma solo de batalla, nunca guardable (Mega, Primal, Castform, Cherrim, etc.)
+    //      -> excluida del combo vía FormInfo.IsBattleOnlyForm.
+    //   4. Forma cosmética sin impacto en stats/tipo/habilidad (Unown, Vivillon, Minior, etc.)
+    //      -> aparece en el combo igual que el caso 1, pero ApplyForm no necesita tocar nada
+    //         más allá de pkm.Form.
+    //
+    // Pendiente (fuera de esta fase, diferido explícitamente por el usuario):
+    //   BuildPokemon no permite pedir una forma != 0 al CREAR un Pokémon desde cero
+    //   (confirmado con Marowak/Exeggutor de Alola en un save de Gen7). Ver sección
+    //   "Fase 2" del handoff.
+    //
+    // Pendiente (deuda técnica relacionada, NO resuelta en esta fase):
+    //   PokemonDatabase.GetLearnsets(speciesId, gameId) no filtra por FormId -> mezcla
+    //   movesets de especies con formas múltiples que comparten SpeciesId (confirmado con
+    //   Vulpix/Ninetales Kanto vs Alola en Gen8a). Hoy compensado con un chequeo de
+    //   "no empeorar" en RefreshMovesetForRigidLevelUpGames. El fix correcto es agregar
+    //   un parámetro formId a GetLearnsets, filtrar por FormId en el SQL, y actualizar los
+    //   4 call sites (PokemonEditorViewModel.cs:2302, PokemonService.cs:516/1228/1372).
+
+    /// <summary>
+    /// Devuelve las formas seleccionables para el PKM actual (excluyendo las de solo batalla),
+    /// o null si la especie no tiene formas múltiples o solo tiene una elegible.
+    /// </summary>
+    public static List<(byte Index, string Name)>? GetSelectableForms(PKM pkm, GameStrings strings)
+    {
+        var names = FormConverter.GetFormList(
+            pkm.Species, strings.Types, strings.forms, GameInfo.GenderSymbolUnicode, pkm.Context);
+        if (names.Length <= 1) return null;
+
+        var result = new List<(byte, string)>();
+        for (byte f = 0; f < names.Length; f++)
+        {
+            if (FormInfo.IsBattleOnlyForm(pkm.Species, f, pkm.Format)) continue;
+            result.Add((f, names[f].Length > 0 ? names[f] : $"Forma {f}"));
+        }
+        return result.Count > 1 ? result : null;
+    }
+
+    /// <summary>
+    /// Traduce el nombre de forma elegido en el combo de vuelta a su índice numérico.
+    /// </summary>
+    public static bool TryGetFormIndex(PKM pkm, GameStrings strings, string formName, out byte index)
+    {
+        var forms = GetSelectableForms(pkm, strings);
+        if (forms != null)
+        {
+            foreach (var (i, name) in forms)
+            {
+                if (name != formName) continue;
+                index = i;
+                return true;
+            }
+        }
+        index = 0;
+        return false;
+    }
+
+    /// <summary>
+    /// Aplica un cambio de forma al PKM, incluyendo todos los efectos secundarios
+    /// necesarios para que PKHeX.Core lo considere legal (ítem, habilidad, tipo Tera, género, moveset).
+    /// Verificado contra PKHeX.Core 25.11.07 real en 10 casos reales con 0 alertas de forma.
+    /// </summary>
+    public static void ApplyForm(PKM pkm, byte form)
+    {
+        pkm.Form = form;
+
+        // Arceus Gen4 offset bug workaround — usar GetItemArceus, NO el genérico GetItem.
+        // (FormItem.GetItem despacha Arceus siempre vía formato 8 internamente, pero en Gen4
+        // el tipo "???" desplaza el índice de placa en 1 -> FormItemInvalid si se usa el genérico)
+        if (pkm.Species == (int)Species.Arceus)
+            pkm.HeldItem = FormItem.GetItemArceus(form, pkm.Format);
+        else if (pkm.Species is (int)Species.Silvally or (int)Species.Genesect or (int)Species.Ogerpon)
+            pkm.HeldItem = FormItem.GetItem(pkm.Species, form);
+
+        // Giratina: Orbe Place (112) — no está en la tabla FormItem (mecánica antigua, pre-formato 8)
+        if (pkm.Species == (int)Species.Giratina)
+        {
+            const int GriseousOrb = 112;
+            if (form == 1) pkm.HeldItem = GriseousOrb;
+            else if (pkm.HeldItem == GriseousOrb) pkm.HeldItem = 0;
+        }
+
+        // Ogerpon: el Tipo Tera está atado a la máscara (TeraTypeUtil.IsValidOgerpon lo exige)
+        if (pkm.Species == (int)Species.Ogerpon && pkm is ITeraType tera)
+        {
+            tera.TeraTypeOverride = (form & 3) switch
+            {
+                1 => MoveType.Water,
+                2 => MoveType.Fire,
+                3 => MoveType.Rock,
+                _ => (MoveType)TeraTypeUtil.OverrideNone,
+            };
+        }
+
+        // Refresco universal de habilidad — necesario no solo para el trío Therian,
+        // también para Giratina Origin y Ogerpon (confirmado contra PKHeX real: sin esto
+        // da AbilityUnexpected en ambos).
+        var slot = pkm.AbilityNumber switch { 4 => 2, 2 => 1, _ => 0 };
+        var pi = pkm.PersonalInfo;
+        pkm.RefreshAbility(Math.Min(slot, pi.AbilityCount - 1));
+
+        // Meowstic: la forma ES el género.
+        if (pkm.Species == (int)Species.Meowstic)
+            pkm.Gender = form;
+
+        // Keldeo Resolute requiere conocer Espada Sagrada (548).
+        if (pkm.Species == (int)Species.Keldeo && form == 1)
+        {
+            const ushort SecretSword = 548;
+            if (!pkm.HasMove(SecretSword))
+            {
+                Span<ushort> moves = [pkm.Move1, pkm.Move2, pkm.Move3, SecretSword];
+                pkm.SetMoves(moves);
+                pkm.HealPP();
+            }
+        }
+    }
+
+// =============================================================================
+// Bugs reales encontrados y corregidos durante la verificación contra PKHeX.Core real:
+//
+// 1. Arceus -> FormItemInvalid en Gen4: causa arriba, fix = GetItemArceus específico.
+// 2. Giratina/Ogerpon -> AbilityUnexpected: el refresco de habilidad se había escrito
+//    solo para el trío Therian; hubo que hacerlo incondicional para todas las especies.
+// 3. Ogerpon -> TeraTypeIncorrect: faltaba el TeraTypeOverride explícito según la máscara.
+//
+// Falso positivo descartado: TransferObedienceLevel aparecía en TODOS los casos de
+// prueba, incluso un Pikachu de control sin tocar forma — confirmado como artefacto del
+// arnés de prueba mínimo (ObedienceLevel nunca inicializado en el harness), no un bug real.
+// =============================================================================

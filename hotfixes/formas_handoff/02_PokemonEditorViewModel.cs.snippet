@@ -1,0 +1,40 @@
+// =============================================================================
+// FRAGMENTOS para: src/Exxeguttor.UI/ViewModels/PokemonEditorViewModel.cs
+// =============================================================================
+
+// ── 1) Campo nuevo ──────────────────────────────────────────────────────────
+// Ubicación: junto a los campos _form / _hasForm existentes (cerca de línea ~83)
+
+    private List<string> _availableForms = [];
+
+// ── 2) Propiedad nueva ──────────────────────────────────────────────────────
+// Ubicación: junto a las propiedades Form / HasForm existentes (cerca de línea ~761-763)
+
+    public List<string> AvailableForms { get => _availableForms; set => Set(ref _availableForms, value); }
+
+// ── 3) Reemplazo del bloque de cómputo de Form ──────────────────────────────
+// Ubicación: donde antes solo se activaba el campo Form cuando pkm.Form > 0.
+// Reemplazar ese bloque completo por:
+
+        // Form — editable desde esta sesión (fase 1 de formas: ver fase-formas-handoff.md)
+        var selectableForms = PokemonService.GetSelectableForms(pkm, strings);
+        if (selectableForms != null)
+        {
+            AvailableForms = selectableForms.Select(f => f.Name).ToList();
+            var current = selectableForms.FirstOrDefault(f => f.Index == pkm.Form);
+            Form    = current.Name ?? AvailableForms[0];
+            HasForm = true;
+        }
+        else { Form = string.Empty; HasForm = false; AvailableForms = []; }
+
+// ── 4) Reseteo de campos ─────────────────────────────────────────────────────
+// Ubicación: en el método que resetea los campos (junto a la línea donde se hace
+// "HasForm = HasTimeOfDay = ... = false;", cerca de línea ~2690). Agregar:
+
+        AvailableForms = [];
+
+// =============================================================================
+// NOTA: PokemonDatabase.GetLearnsets se llama desde este archivo en la línea ~2302
+// SIN pasar la forma (ver TRAMPA #30 en el .md de handoff) — no se tocó en esta fase,
+// queda como deuda técnica a decidir si se incluye o se difiere.
+// =============================================================================
