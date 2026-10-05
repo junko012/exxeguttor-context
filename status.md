@@ -434,3 +434,24 @@ completo de todo lo de idiomas, y `context.md` para el resto):
 - `PokemonEditorViewModel.GetPKHeXLang` quedó duplicado con la nueva
   `LocalizationService.PKHeXLanguageCode` — no se unificó esta vuelta.
 - Documentar el mecanismo de paquetes lang para usuarios reales (README del repo de código).
+
+## 2026-10-04 — Formas Fase 1 + Fase 2
+
+**Fase 1 (editar forma de un Pokémon existente):** combo "Forma" editable en PokemonInfoView, con
+casos especiales Arceus/Giratina/Ogerpon/Meowstic/Keldeo; se aplica ANTES de Ability. Validado
+contra PKHeX 25.11.07 real (14 casos, 8 idiomas, formas de solo batalla excluidas).
+
+**Fase 2 (crear con forma regional):** `RegionalFormCatalog` (57 formas Alola/Galar/Hisui/Paldea),
+una tarjeta por forma en el selector de especie, solo si el juego del save la tiene.
+`BuildPokemon(species, form)`, `TryEvolveForward` elige la rama de la forma pedida,
+`GetLearnsets(..., formId)` filtra por forma (solo formas regionales; TRAMPA #30 parcial).
+Sprites nuevos en `Assets/sprites/pokemon/forms/` (+ `shiny/`).
+Validación: 405 creaciones con PKHeX real, 0 formas equivocadas, 399 legales.
+
+**Limitaciones conocidas:**
+- Stunfisk de Galar y Avalugg de Hisui salen ilegales en Z-A (limitación previa de Z-A, afecta también a forma 0).
+- Etiquetas de región en inglés (nombres de forma de PKHeX), no localizadas.
+- Género/habilidad del fallback salen de datos por especie (sin forma).
+- UI Avalonia y tests nuevos no compilados con el SDK del proyecto en la sandbox (sin NuGet); la lógica sí corrió contra PKHeX con un shim.
+
+**Pendiente para una sesión futura:** localizar etiquetas de región; TRAMPA #30 para el resto de usos de `GetLearnsets`; Z-A.
