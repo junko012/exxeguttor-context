@@ -444,7 +444,7 @@ contra PKHeX 25.11.07 real (14 casos, 8 idiomas, formas de solo batalla excluida
 **Fase 2 (crear con forma regional):** `RegionalFormCatalog` (57 formas Alola/Galar/Hisui/Paldea),
 una tarjeta por forma en el selector de especie, solo si el juego del save la tiene.
 `BuildPokemon(species, form)`, `TryEvolveForward` elige la rama de la forma pedida,
-`GetLearnsets(..., formId)` filtra por forma (solo formas regionales; TRAMPA #30 parcial).
+`GetLearnsets(..., formId)` filtra por forma en todos sus usos (panel de movimientos del editor incluido), solo para formas regionales (TRAMPA #30 resuelta para ellas).
 Sprites nuevos en `Assets/sprites/pokemon/forms/` (+ `shiny/`).
 Validación: 405 creaciones con PKHeX real, 0 formas equivocadas, 399 legales.
 
@@ -454,4 +454,83 @@ Validación: 405 creaciones con PKHeX real, 0 formas equivocadas, 399 legales.
 - Género/habilidad del fallback salen de datos por especie (sin forma).
 - UI Avalonia y tests nuevos no compilados con el SDK del proyecto en la sandbox (sin NuGet); la lógica sí corrió contra PKHeX con un shim.
 
-**Pendiente para una sesión futura:** localizar etiquetas de región; TRAMPA #30 para el resto de usos de `GetLearnsets`; Z-A.
+**Pendiente para una sesión futura:** localizar etiquetas de región; Z-A.
+
+### Corrección posterior (misma fecha) — feedback tras compilar
+- Nuevo `SpeciesFormResolver` (App): (especie, forma) → fila de `Species` con id > 10000 (p. ej. 103/1 → 10114). El editor (`GetByForm`) lee tipos, stats base, habilidades y Effectiveness de la fila de la forma; antes leía la especie base.
+- Sets recomendados por clave Showdown de la forma ("Exeggutor-Alola"); sin entrada, el tab se oculta (sin respaldo a la base).
+- Combo "Forma": una forma regional es identidad, no un toggle. No se ofrece en un Pokémon regional ni se ofrecen las regionales en uno base.
+- Nombre distinguible ("Exeggutor de Alola" / "Alolan Exeggutor") en selector, caja/equipo, editor y mensajes (`FormNameFormatter` + claves `Form_Name_*` en i18n es/en).
+- Tipos de las tarjetas del selector ahora desde pokemon.db (ya no PersonalInfo). Test cruza DB vs PKHeX en las 57 formas.
+- Pendiente: evolución (Pokédex) por forma; sets para las 29 formas sin datos; copiar genus/grupos huevo a las filas de forma.
+
+### Ampliación: todas las formas guardables (no solo regionales)
+- `SpeciesFormResolver` ahora cubre también Giratina Origen, Deoxys, Rotom, Wormadam, Kyurem, formas Therian, Basculin, Meowstic/Indeedee/Basculegion/Oinkologne hembra, Toxtricity Low Key, Ogerpon, Calyrex, Urshifu, etc. (64 formas más). Por contenido: se compara tipos, habilidades y stats de la entrada de PKHeX contra las filas de forma de pokemon.db; si la forma no cambia datos (Unown, Vivillon...) queda la especie base.
+- Sprites de esas 64 formas (normal + shiny) en `Assets/sprites/pokemon/forms/`.
+- Al cambiar la forma en el combo del editor se actualizan al instante sprite, tipos, debilidades, stats base/radar, habilidades y, vía una copia del PKM con `ApplyForm`, objeto (Orbe Griseo, placas) y género de Meowstic, Tipo Tera de Ogerpon y movimientos que agrega la forma, p. ej. Keldeo (valores derivados, sin registrarlos como ediciones propias).
+- Pendiente: formas cosméticas sin fila en la DB siguen con el sprite de la especie base (Unown, Vivillon, Alcremie...).
+
+### Corrección: Meowstic hembra (Z-A) y combo de género
+- `ApplyForm` ahora reemplaza los movimientos que dejan de ser válidos al cambiar de forma (`FixMovesAfterFormChange`, con fuentes `MoveSourceType.Encounter`; con todas las fuentes PKHeX sugería TM/tutores inexistentes en Z-A). Barrido de 5 juegos: 835 cambios de forma sin movimientos inválidos; quedan Ursaluna Bloodmoon en Escarlata/Púrpura y Pikachu (formas con gorra) en Leyendas: Arceus.
+- Combo de Género: al cambiar de forma se recalcula la lista de géneros disponibles (cada forma de Meowstic tiene proporción de género fija) y el valor mostrado.
+
+## 2026-10-05 — Loader de abrir save (Pokédex escaneando) + IVs editables en Gen3/4 (paso 1)
+
+**Loader 1 (abrir save):** reemplaza la coreografía Hitmonlee/Voltorb/Dugtrio por la Pokédex
+roja (la de legalidad) escaneando en todas direcciones — tres anillos desde la lente, rayo
+giratorio 360° y dos líneas que cruzan el cuerpo — con la barra de progreso REAL debajo, la
+etapa actual a la izquierda y el porcentaje a la derecha. Boceto en
+`mockups/open_save_pokedex/` (aprobado). Etapas y título en `i18n` (`OpenSave_*`, es/en).
+- Piso de 1 s de visibilidad (antes 650 ms solo para la patada de Hitmonlee): con saves chicos
+  casi no se veía. Es un `await`, no bloquea la animación.
+- Cierre sin "modal pegado": primer frame pintado antes de trabajar y, al cerrar, un paso del
+  dispatcher en Render + otro en Background (se mantiene el repintado forzado que ya existía en
+  `MainWindow.axaml.cs`). Es una mitigación: el bug no se pudo reproducir en la sandbox.
+- Eliminado lo exclusivo del Loader 1 viejo (estilos `l1-*`, sprites, `GetHitmonleeGhostSprite`).
+  Los assets de `Assets/sprites/pokemon/ghost/` quedan huérfanos (borrado opcional).
+- Nota: `Box.Initialize` solo carga la caja actual, no todas.
+
+**Incidente:** el commit `0439bc5` ("adding hotfix forms") revirtió partes del loader en
+`MainWindowViewModel.cs`, `SpriteService.cs` e `i18n` (la vista nueva quedó con el código viejo
+detrás). Re-aplicado con merge de 3 vías sobre `bdb34fd`, sin conflictos.
+
+**IVs editables — diagnóstico (medido contra PKHeX 25.11.07 real):** editar IVs deja ilegal al
+Pokémon cuando el encuentro liga el PID/semilla a los IVs. No es solo "encuentros especiales":
+- Gen3 (Esmeralda) 118/299 y Gen4 (Platino) 122/377 — todo lo que no es huevo, incluidos los
+  salvajes (PID Method 1). Gen5: 7/520 (regalos con IVs fijos). Gen6/7: regla de mínimo de IVs
+  en 31. Gen8 (Espada) 332/639 (estáticos, raids, dens: semilla Xoroshiro). Gen9 (Escarlata)
+  145/667 (Tera raids 106/106 entre otros). Los huevos no se rompen: sus IVs son libres.
+- Dos causas por las que "Corregir automáticamente" no resolvía: (1) `ApplyAutoFix` calculaba
+  sobre el PKM original del save, no sobre el editado, así que armaba el PID para los IVs viejos;
+  (2) ofrecía el fix de Method 1 en cualquier generación (en Gen8 resolvió 0 de 261 casos).
+
+**Paso 1 implementado:**
+- `ApplyAutoFix` calcula sobre el Pokémon con las ediciones pendientes aplicadas
+  (`EditSessionService.TryBuildEditedPkm`); vale también para PID y tasa de captura.
+- `Method1Solver` (nuevo, `Exxeguttor.App/Services`): mantiene los IVs, enumera los ~4 PIDs del
+  LCRNG y verifica cada uno con `LegalityAnalysis` antes de aceptarlo. Prefiere tocar lo menos
+  posible (Naturaleza/Género/Habilidad intactos → Naturaleza → Género → Habilidad); el Brillante
+  nunca cambia. Clave de edición nueva `PIDAbilitySlot` (en Gen3 el bit de habilidad vive en el
+  IV32, setear `Ability` por id no alcanza). El preview ahora aplica también la edición de Género.
+- El botón solo se ofrece para PKM de formato 3/4; en el resto, `PIDTypeMismatch` muestra una
+  explicación sin botón.
+- Resultados medidos (IVs aleatorios): Gen3 salvajes 54/55, estáticos 9/9; Gen4 salvajes 84/95,
+  estáticos 22/22; Gen3 regalos 0/52.
+
+**Limitaciones conocidas:**
+- Gen4 salvajes: ~11/95 combinaciones de IVs no tienen ningún frame válido (`EncConditionBadRNGFrame`):
+  esos IVs no existen en ese slot.
+- Gen3 regalos (BACD/CXD) y Pokéwalker: sin solver todavía. Gen8/9: sin botón ni solver.
+- La UI no avisa cuando el solver cambia Naturaleza/Género/Habilidad como efecto secundario.
+- UI Avalonia y `PokemonEditorViewModel`/`EditSessionService` no compilados con el SDK del proyecto
+  en la sandbox (sin NuGet); el algoritmo sí se probó contra PKHeX real compilado (SDK .NET 10 por
+  `apt`, PKHeX 25.11.07 retargeteado a net10.0).
+
+**Pendiente para una sesión futura:**
+- Paso 2: boceto del modal solver (progreso + cancelar) para Gen3 regalos y búsqueda de semilla en
+  Gen8/9. Semillas de 32 bits; microbenchmark ~7 ns/semilla en 1 hilo (2^30 ≈ 7 s, 2^32 ≈ 30 s),
+  sin validar todavía contra `LegalityAnalysis` en Gen8/9.
+- Gen5–7 e IVs fijos: no hay semilla; el modal solo explicaría la regla (mínimo N IVs en 31 / IVs
+  fijos del evento).
+- Decidir si crear como huevo eclosionado es aceptable en especies con huevo (IVs libres).
+- Avisar en la UI de los campos que cambia el solver.
