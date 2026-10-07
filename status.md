@@ -534,3 +534,7 @@ Pokémon cuando el encuentro liga el PID/semilla a los IVs. No es solo "encuentr
   fijos del evento).
 - Decidir si crear como huevo eclosionado es aceptable en especies con huevo (IVs libres).
 - Avisar en la UI de los campos que cambia el solver.
+
+### Ajuste de formas: filtro por juego y Ursaluna Bloodmoon (sobre commit 50d7c52)
+- `GetSelectableForms` ya no ofrece formas que la tabla del juego del Pokémon no contempla (p. ej. gorras de Pikachu en Legends: Arceus, que quedaban sin movimientos).
+- Ursaluna Bloodmoon se agregó a `RegionalFormCatalog` (etiqueta "Bloodmoon", i18n `Form_Name_Bloodmoon`): tarjeta propia en el selector (solo en juegos donde existe) y ya no sale en el combo de forma, porque convertir un Ursaluna base daba "encuentro de origen no coincide".
