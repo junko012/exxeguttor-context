@@ -545,3 +545,57 @@ Pokémon cuando el encuentro liga el PID/semilla a los IVs. No es solo "encuentr
 - Código: `PokemonDatabase.GetFormEvolutionsFrom/Into` (devuelven lista vacía si la DB no tiene el hotfix) y `PokedexService.GetEvolutionFamily(species, form)`. La UI del Pokédex sigue siendo por especie: aún no muestra ramas por forma.
 - Docs: `pokemon-database/docs/SCHEMA_REFERENCE.md` y `CHANGELOG.md` actualizados.
 - Pendiente: genus/hábitat/flavor text por forma (sin fuente por forma), sprites de formas cosméticas, ocultar Stunfisk Galar y Avalugg Hisui en Z-A, pruebas con FluentAssertions.
+
+## 2026-10-07 — Fix de PP al cambiar movimientos + rediseño de tarjetas de Moves
+
+**Resumen**: sesión corta sobre el tab Moves. Un bug real de legalidad/escritura (PP actual
+de un slot no se actualizaba al cambiar su movimiento) y dos mejoras de UI pedidas por el
+usuario (tarjetas de movimiento y modal de selección). Código escrito sin compilar (sin SDK
+en el sandbox): pendiente de `dotnet build` y prueba manual del lado del usuario.
+
+**Bug real corregido — PP actual del slot conservaba el del movimiento anterior**
+- Síntoma: al reemplazar un movimiento en un slot que ya tenía uno, el diagnóstico de
+  legalidad marcaba error de PP aunque la UI mostraba los PP del movimiento nuevo. En slots
+  vacíos no pasaba (PP 0, nada que exceda el máximo).
+- Causa: `MoveN`/`MoveN_PPUps` se aplicaban al PKM, pero `MoveN_PP` (PP actual) nunca. En
+  `EditSessionService.AnalyzeLegality` el parámetro `setPP` estaba declarado y nunca se
+  llamaba; en `EditApplyService.ApplyFieldsToPkm` directamente no existía. Los PP que ve el
+  usuario (`MoveNPP` del ViewModel) son solo de presentación, no una edición registrada.
+- Alcance: afectaba tanto el preview de legalidad como la escritura real al exportar.
+  El movimiento nuevo SÍ se grababa bien; lo que quedaba mal era su PP actual.
+- Fix: si un slot tiene edición de movimiento o de PP Ups, se llama a
+  `pkm.HealPPIndex(slot)` después de setear ambos (en preview y en escritura). Los slots sin
+  edición conservan su PP actual. `HealPPIndex(int)` confirmado en el código fuente de
+  PKHeX.Core 25.11.07.
+
+**Tarjetas de movimiento rediseñadas (aprobado por mockup)**
+- Franja vertical y pill con el color del tipo, nombre más grande, chip de clase de daño con
+  texto (Physical/Special/Status), fila de stats con etiqueta chica (Power/Accuracy), barra de
+  PP, PP Ups como 3 puntos entre −/+, y descripción visible (hasta 2 líneas).
+- Barra de PP por segmentos: 5 segmentos (PP base) + 1 por cada PP Up, hasta 8; cada
+  segmento equivale a 1/5 de los PP base. Llenos = PP actual / PP máximo (`PpSegment`).
+- Fondo y borde de la tarjeta siguen coloreados por clase de daño (decisión explícita del
+  usuario: la clase es adicional, los colores de fondo anteriores se mantienen).
+- Nuevas propiedades `MoveNMaxPP` y `MoveNPpSegments` en `PokemonEditorViewModel`;
+  `CapitalizeConverter` y `PpUpPipBrushConverter` (nuevos, `MoveCardConverters.cs`).
+
+**Modal de selección de movimiento**
+- Se eliminó la columna ⓘ. La descripción (Acc/PP + efecto) ahora es el tooltip del nombre
+  del movimiento; ya no sale al pasar el mouse por cualquier parte de la fila.
+
+**Archivos**: nuevos `ViewModels/PpSegment.cs`, `Converters/MoveCardConverters.cs`;
+modificados `Services/EditSessionService.cs`, `Services/EditApplyService.cs`,
+`ViewModels/PokemonEditorViewModel.cs`, `Views/PokemonStatsView.axaml`, `App.axaml`
+(todos bajo `src/Exxeguttor.UI/`).
+
+**Nota de sincronización**: el commit `2023bc9` ("adding forms gen 8", 6 oct) no estaba
+documentado en este changelog: tocó `PokemonService.cs`, `RegionalFormCatalog.cs`, claves de
+i18n es/en y el sprite `games/w.png`.
+
+**Pendiente / sin verificar**:
+- Compilar y probar: cambiar un movimiento por otro de menos PP máximos y confirmar que el
+  tab Diagnóstico ya no marca error de PP; exportar y revisar el save en PKHeX; subir/bajar
+  PP Ups y ver los segmentos y puntos; slots con Sketch/Revival Blessing (sin PP Ups).
+- Sin test de round-trip dedicado para el recálculo de PP al cambiar movimiento.
+- Si el contraste de los segmentos vacíos (negro 18 %) no alcanza sobre los fondos
+  pastel, ajustar en `PpSegment.cs`.
