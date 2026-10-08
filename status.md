@@ -538,3 +538,10 @@ Pokémon cuando el encuentro liga el PID/semilla a los IVs. No es solo "encuentr
 ### Ajuste de formas: filtro por juego y Ursaluna Bloodmoon (sobre commit 50d7c52)
 - `GetSelectableForms` ya no ofrece formas que la tabla del juego del Pokémon no contempla (p. ej. gorras de Pikachu en Legends: Arceus, que quedaban sin movimientos).
 - Ursaluna Bloodmoon se agregó a `RegionalFormCatalog` (etiqueta "Bloodmoon", i18n `Form_Name_Bloodmoon`): tarjeta propia en el selector (solo en juegos donde existe) y ya no sale en el combo de forma, porque convertir un Ursaluna base daba "encuentro de origen no coincide".
+
+### Formas: tablas de evoluciones por forma y datos por forma (sobre commit 50d7c52)
+- Nuevo hotfix `hotfixes/fix_form_data/` (create_tables.py + load_data.py + JSON): tablas `FormEvolutionChains` (54) y `FormEvolutionConditions` (340), misma estructura que `EvolutionChains`/`EvolutionConditions` pero con ids de forma de `Species` (>10000). `EvolutionChains` no se toca.
+- `Species` (formas): `EggGroup1/2` completado en 132 formas; `GenderRate` corregido en 7 (Meowstic♀, Indeedee♀, Basculegion♀, Oinkologne♀, Ursaluna Bloodmoon, Greninja BB/Ash); Height/Weight de Ursaluna Bloodmoon. `Metadata.FormDataVersion = 2026.10`.
+- Código: `PokemonDatabase.GetFormEvolutionsFrom/Into` (devuelven lista vacía si la DB no tiene el hotfix) y `PokedexService.GetEvolutionFamily(species, form)`. La UI del Pokédex sigue siendo por especie: aún no muestra ramas por forma.
+- Docs: `pokemon-database/docs/SCHEMA_REFERENCE.md` y `CHANGELOG.md` actualizados.
+- Pendiente: genus/hábitat/flavor text por forma (sin fuente por forma), sprites de formas cosméticas, ocultar Stunfisk Galar y Avalugg Hisui en Z-A, pruebas con FluentAssertions.

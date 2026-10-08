@@ -1,0 +1,29 @@
+using System.Linq;
+using System.Text.Json;
+using PKHeX.Core;
+using Exxeguttor.App.Services;
+namespace Exxeguttor.Tests;
+public static class FormData {
+  static string Egg(int g) => g switch { 1=>"monster",2=>"water1",3=>"bug",4=>"flying",5=>"ground",6=>"fairy",7=>"plant",8=>"humanshape",9=>"water3",10=>"mineral",11=>"indeterminate",12=>"water2",13=>"ditto",14=>"dragon",15=>"no-eggs", _=>"?" };
+  static int Gr(int b) => b switch { 255=>-1, 254=>8, 0=>0, _=>(int)System.Math.Round(b*8/256.0) };
+  public static string Run(string outPath) {
+    IPersonalTable[] tables = [PersonalTable.ZA, PersonalTable.SV, PersonalTable.SWSH, PersonalTable.LA, PersonalTable.USUM, PersonalTable.BDSP, PersonalTable.SM, PersonalTable.AO, PersonalTable.XY, PersonalTable.B2W2, PersonalTable.BW];
+    var rows = new System.Collections.Generic.Dictionary<int, object>(); var seenIds = new System.Collections.Generic.HashSet<int>();
+    for (ushort sp = 1; sp <= 1025; sp++) for (byte f = 1; f < 40; f++) {
+      int id = SpeciesFormResolver.ResolveDbSpeciesId(sp, f);
+      if (id <= 10000 || !seenIds.Add(id)) continue;
+      foreach (var t in tables) {
+        try {
+          if (!t.IsPresentInGame(sp, f)) continue;
+          var p = t.GetFormEntry(sp, f); var ip = (IPersonalInfo)p;
+          string e1 = Egg(ip.EggGroup1), e2 = ip.EggGroup2 == ip.EggGroup1 ? "" : Egg(ip.EggGroup2);
+          double h = ((dynamic)p).Height / 100.0, w = ((dynamic)p).Weight / 10.0;
+          rows[id] = new { SpeciesId = id, Species = sp, Form = f, EggGroup1 = e1, EggGroup2 = e2, GenderRate = Gr(ip.Gender), Height = h, Weight = w, Source = t.GetType().Name };
+          break;
+        } catch { }
+      }
+    }
+    System.IO.File.WriteAllText(outPath, JsonSerializer.Serialize(rows.Values, new JsonSerializerOptions{WriteIndented=true}));
+    return $"rows={rows.Count}";
+  }
+}

@@ -1,0 +1,1074 @@
+[
+ {
+  "SpeciesId": 10001,
+  "Name": "deoxys-attack",
+  "EggGroup1": "no-eggs",
+  "EggGroup2": null,
+  "Corrections": {},
+  "Source": "PersonalTable9SV"
+ },
+ {
+  "SpeciesId": 10002,
+  "Name": "deoxys-defense",
+  "EggGroup1": "no-eggs",
+  "EggGroup2": null,
+  "Corrections": {},
+  "Source": "PersonalTable9SV"
+ },
+ {
+  "SpeciesId": 10003,
+  "Name": "deoxys-speed",
+  "EggGroup1": "no-eggs",
+  "EggGroup2": null,
+  "Corrections": {},
+  "Source": "PersonalTable9SV"
+ },
+ {
+  "SpeciesId": 10004,
+  "Name": "wormadam-sandy",
+  "EggGroup1": "bug",
+  "EggGroup2": null,
+  "Corrections": {},
+  "Source": "PersonalTable8LA"
+ },
+ {
+  "SpeciesId": 10005,
+  "Name": "wormadam-trash",
+  "EggGroup1": "bug",
+  "EggGroup2": null,
+  "Corrections": {},
+  "Source": "PersonalTable8LA"
+ },
+ {
+  "SpeciesId": 10006,
+  "Name": "shaymin-sky",
+  "EggGroup1": "no-eggs",
+  "EggGroup2": null,
+  "Corrections": {},
+  "Source": "PersonalTable9SV"
+ },
+ {
+  "SpeciesId": 10007,
+  "Name": "giratina-origin",
+  "EggGroup1": "no-eggs",
+  "EggGroup2": null,
+  "Corrections": {},
+  "Source": "PersonalTable9SV"
+ },
+ {
+  "SpeciesId": 10008,
+  "Name": "rotom-heat",
+  "EggGroup1": "indeterminate",
+  "EggGroup2": null,
+  "Corrections": {},
+  "Source": "PersonalTable9SV"
+ },
+ {
+  "SpeciesId": 10009,
+  "Name": "rotom-wash",
+  "EggGroup1": "indeterminate",
+  "EggGroup2": null,
+  "Corrections": {},
+  "Source": "PersonalTable9SV"
+ },
+ {
+  "SpeciesId": 10010,
+  "Name": "rotom-frost",
+  "EggGroup1": "indeterminate",
+  "EggGroup2": null,
+  "Corrections": {},
+  "Source": "PersonalTable9SV"
+ },
+ {
+  "SpeciesId": 10011,
+  "Name": "rotom-fan",
+  "EggGroup1": "indeterminate",
+  "EggGroup2": null,
+  "Corrections": {},
+  "Source": "PersonalTable9SV"
+ },
+ {
+  "SpeciesId": 10012,
+  "Name": "rotom-mow",
+  "EggGroup1": "indeterminate",
+  "EggGroup2": null,
+  "Corrections": {},
+  "Source": "PersonalTable9SV"
+ },
+ {
+  "SpeciesId": 10013,
+  "Name": "castform-sunny",
+  "EggGroup1": "fairy",
+  "EggGroup2": "indeterminate",
+  "Corrections": {},
+  "Source": "PersonalTable7"
+ },
+ {
+  "SpeciesId": 10014,
+  "Name": "castform-rainy",
+  "EggGroup1": "fairy",
+  "EggGroup2": "indeterminate",
+  "Corrections": {},
+  "Source": "PersonalTable7"
+ },
+ {
+  "SpeciesId": 10015,
+  "Name": "castform-snowy",
+  "EggGroup1": "fairy",
+  "EggGroup2": "indeterminate",
+  "Corrections": {},
+  "Source": "PersonalTable7"
+ },
+ {
+  "SpeciesId": 10016,
+  "Name": "basculin-blue-striped",
+  "EggGroup1": "water2",
+  "EggGroup2": null,
+  "Corrections": {},
+  "Source": "PersonalTable9SV"
+ },
+ {
+  "SpeciesId": 10017,
+  "Name": "darmanitan-zen",
+  "EggGroup1": "ground",
+  "EggGroup2": null,
+  "Corrections": {},
+  "Source": "PersonalTable8SWSH"
+ },
+ {
+  "SpeciesId": 10018,
+  "Name": "meloetta-pirouette",
+  "EggGroup1": "no-eggs",
+  "EggGroup2": null,
+  "Corrections": {},
+  "Source": "PersonalTable9SV"
+ },
+ {
+  "SpeciesId": 10019,
+  "Name": "tornadus-therian",
+  "EggGroup1": "no-eggs",
+  "EggGroup2": null,
+  "Corrections": {},
+  "Source": "PersonalTable9SV"
+ },
+ {
+  "SpeciesId": 10020,
+  "Name": "thundurus-therian",
+  "EggGroup1": "no-eggs",
+  "EggGroup2": null,
+  "Corrections": {},
+  "Source": "PersonalTable9SV"
+ },
+ {
+  "SpeciesId": 10021,
+  "Name": "landorus-therian",
+  "EggGroup1": "no-eggs",
+  "EggGroup2": null,
+  "Corrections": {},
+  "Source": "PersonalTable9SV"
+ },
+ {
+  "SpeciesId": 10022,
+  "Name": "kyurem-black",
+  "EggGroup1": "no-eggs",
+  "EggGroup2": null,
+  "Corrections": {},
+  "Source": "PersonalTable9SV"
+ },
+ {
+  "SpeciesId": 10023,
+  "Name": "kyurem-white",
+  "EggGroup1": "no-eggs",
+  "EggGroup2": null,
+  "Corrections": {},
+  "Source": "PersonalTable9SV"
+ },
+ {
+  "SpeciesId": 10025,
+  "Name": "meowstic-female",
+  "EggGroup1": "ground",
+  "EggGroup2": null,
+  "Corrections": {
+   "GenderRate": 8
+  },
+  "Source": "PersonalTable9ZA"
+ },
+ {
+  "SpeciesId": 10026,
+  "Name": "aegislash-blade",
+  "EggGroup1": "mineral",
+  "EggGroup2": null,
+  "Corrections": {},
+  "Source": "PersonalTable9ZA"
+ },
+ {
+  "SpeciesId": 10027,
+  "Name": "pumpkaboo-small",
+  "EggGroup1": "indeterminate",
+  "EggGroup2": null,
+  "Corrections": {},
+  "Source": "PersonalTable9ZA"
+ },
+ {
+  "SpeciesId": 10028,
+  "Name": "pumpkaboo-large",
+  "EggGroup1": "indeterminate",
+  "EggGroup2": null,
+  "Corrections": {},
+  "Source": "PersonalTable9ZA"
+ },
+ {
+  "SpeciesId": 10029,
+  "Name": "pumpkaboo-super",
+  "EggGroup1": "indeterminate",
+  "EggGroup2": null,
+  "Corrections": {},
+  "Source": "PersonalTable9ZA"
+ },
+ {
+  "SpeciesId": 10030,
+  "Name": "gourgeist-small",
+  "EggGroup1": "indeterminate",
+  "EggGroup2": null,
+  "Corrections": {},
+  "Source": "PersonalTable9ZA"
+ },
+ {
+  "SpeciesId": 10031,
+  "Name": "gourgeist-large",
+  "EggGroup1": "indeterminate",
+  "EggGroup2": null,
+  "Corrections": {},
+  "Source": "PersonalTable9ZA"
+ },
+ {
+  "SpeciesId": 10032,
+  "Name": "gourgeist-super",
+  "EggGroup1": "indeterminate",
+  "EggGroup2": null,
+  "Corrections": {},
+  "Source": "PersonalTable9ZA"
+ },
+ {
+  "SpeciesId": 10061,
+  "Name": "floette-eternal",
+  "EggGroup1": "no-eggs",
+  "EggGroup2": null,
+  "Corrections": {},
+  "Source": "PersonalTable9ZA"
+ },
+ {
+  "SpeciesId": 10086,
+  "Name": "hoopa-unbound",
+  "EggGroup1": "no-eggs",
+  "EggGroup2": null,
+  "Corrections": {},
+  "Source": "PersonalTable9ZA"
+ },
+ {
+  "SpeciesId": 10091,
+  "Name": "rattata-alola",
+  "EggGroup1": "ground",
+  "EggGroup2": null,
+  "Corrections": {},
+  "Source": "PersonalTable7"
+ },
+ {
+  "SpeciesId": 10092,
+  "Name": "raticate-alola",
+  "EggGroup1": "ground",
+  "EggGroup2": null,
+  "Corrections": {},
+  "Source": "PersonalTable7"
+ },
+ {
+  "SpeciesId": 10100,
+  "Name": "raichu-alola",
+  "EggGroup1": "ground",
+  "EggGroup2": "fairy",
+  "Corrections": {},
+  "Source": "PersonalTable9ZA"
+ },
+ {
+  "SpeciesId": 10101,
+  "Name": "sandshrew-alola",
+  "EggGroup1": "ground",
+  "EggGroup2": null,
+  "Corrections": {},
+  "Source": "PersonalTable9SV"
+ },
+ {
+  "SpeciesId": 10102,
+  "Name": "sandslash-alola",
+  "EggGroup1": "ground",
+  "EggGroup2": null,
+  "Corrections": {},
+  "Source": "PersonalTable9SV"
+ },
+ {
+  "SpeciesId": 10103,
+  "Name": "vulpix-alola",
+  "EggGroup1": "ground",
+  "EggGroup2": null,
+  "Corrections": {},
+  "Source": "PersonalTable9SV"
+ },
+ {
+  "SpeciesId": 10104,
+  "Name": "ninetales-alola",
+  "EggGroup1": "ground",
+  "EggGroup2": null,
+  "Corrections": {},
+  "Source": "PersonalTable9SV"
+ },
+ {
+  "SpeciesId": 10105,
+  "Name": "diglett-alola",
+  "EggGroup1": "ground",
+  "EggGroup2": null,
+  "Corrections": {},
+  "Source": "PersonalTable9SV"
+ },
+ {
+  "SpeciesId": 10106,
+  "Name": "dugtrio-alola",
+  "EggGroup1": "ground",
+  "EggGroup2": null,
+  "Corrections": {},
+  "Source": "PersonalTable9SV"
+ },
+ {
+  "SpeciesId": 10107,
+  "Name": "meowth-alola",
+  "EggGroup1": "ground",
+  "EggGroup2": null,
+  "Corrections": {},
+  "Source": "PersonalTable9SV"
+ },
+ {
+  "SpeciesId": 10108,
+  "Name": "persian-alola",
+  "EggGroup1": "ground",
+  "EggGroup2": null,
+  "Corrections": {},
+  "Source": "PersonalTable9SV"
+ },
+ {
+  "SpeciesId": 10109,
+  "Name": "geodude-alola",
+  "EggGroup1": "mineral",
+  "EggGroup2": null,
+  "Corrections": {},
+  "Source": "PersonalTable9SV"
+ },
+ {
+  "SpeciesId": 10110,
+  "Name": "graveler-alola",
+  "EggGroup1": "mineral",
+  "EggGroup2": null,
+  "Corrections": {},
+  "Source": "PersonalTable9SV"
+ },
+ {
+  "SpeciesId": 10111,
+  "Name": "golem-alola",
+  "EggGroup1": "mineral",
+  "EggGroup2": null,
+  "Corrections": {},
+  "Source": "PersonalTable9SV"
+ },
+ {
+  "SpeciesId": 10112,
+  "Name": "grimer-alola",
+  "EggGroup1": "indeterminate",
+  "EggGroup2": null,
+  "Corrections": {},
+  "Source": "PersonalTable9SV"
+ },
+ {
+  "SpeciesId": 10113,
+  "Name": "muk-alola",
+  "EggGroup1": "indeterminate",
+  "EggGroup2": null,
+  "Corrections": {},
+  "Source": "PersonalTable9SV"
+ },
+ {
+  "SpeciesId": 10114,
+  "Name": "exeggutor-alola",
+  "EggGroup1": "plant",
+  "EggGroup2": null,
+  "Corrections": {},
+  "Source": "PersonalTable9SV"
+ },
+ {
+  "SpeciesId": 10115,
+  "Name": "marowak-alola",
+  "EggGroup1": "monster",
+  "EggGroup2": null,
+  "Corrections": {},
+  "Source": "PersonalTable8SWSH"
+ },
+ {
+  "SpeciesId": 10116,
+  "Name": "greninja-battle-bond",
+  "EggGroup1": "no-eggs",
+  "EggGroup2": null,
+  "Corrections": {
+   "GenderRate": 0
+  },
+  "Source": "PersonalTable9ZA"
+ },
+ {
+  "SpeciesId": 10117,
+  "Name": "greninja-ash",
+  "EggGroup1": "no-eggs",
+  "EggGroup2": null,
+  "Corrections": {
+   "GenderRate": 0
+  },
+  "Source": "PersonalTable7"
+ },
+ {
+  "SpeciesId": 10118,
+  "Name": "zygarde-10-power-construct",
+  "EggGroup1": "no-eggs",
+  "EggGroup2": null,
+  "Corrections": {},
+  "Source": "PersonalTable9ZA"
+ },
+ {
+  "SpeciesId": 10119,
+  "Name": "zygarde-50-power-construct",
+  "EggGroup1": "no-eggs",
+  "EggGroup2": null,
+  "Corrections": {},
+  "Source": "PersonalTable9ZA"
+ },
+ {
+  "SpeciesId": 10120,
+  "Name": "zygarde-complete",
+  "EggGroup1": "no-eggs",
+  "EggGroup2": null,
+  "Corrections": {},
+  "Source": "PersonalTable9ZA"
+ },
+ {
+  "SpeciesId": 10123,
+  "Name": "oricorio-pom-pom",
+  "EggGroup1": "flying",
+  "EggGroup2": null,
+  "Corrections": {},
+  "Source": "PersonalTable9SV"
+ },
+ {
+  "SpeciesId": 10124,
+  "Name": "oricorio-pau",
+  "EggGroup1": "flying",
+  "EggGroup2": null,
+  "Corrections": {},
+  "Source": "PersonalTable9SV"
+ },
+ {
+  "SpeciesId": 10125,
+  "Name": "oricorio-sensu",
+  "EggGroup1": "flying",
+  "EggGroup2": null,
+  "Corrections": {},
+  "Source": "PersonalTable9SV"
+ },
+ {
+  "SpeciesId": 10126,
+  "Name": "lycanroc-midnight",
+  "EggGroup1": "ground",
+  "EggGroup2": null,
+  "Corrections": {},
+  "Source": "PersonalTable9SV"
+ },
+ {
+  "SpeciesId": 10127,
+  "Name": "wishiwashi-school",
+  "EggGroup1": "water2",
+  "EggGroup2": null,
+  "Corrections": {},
+  "Source": "PersonalTable8SWSH"
+ },
+ {
+  "SpeciesId": 10136,
+  "Name": "minior-red",
+  "EggGroup1": "mineral",
+  "EggGroup2": null,
+  "Corrections": {},
+  "Source": "PersonalTable9SV"
+ },
+ {
+  "SpeciesId": 10151,
+  "Name": "rockruff-own-tempo",
+  "EggGroup1": "ground",
+  "EggGroup2": null,
+  "Corrections": {},
+  "Source": "PersonalTable9SV"
+ },
+ {
+  "SpeciesId": 10152,
+  "Name": "lycanroc-dusk",
+  "EggGroup1": "ground",
+  "EggGroup2": null,
+  "Corrections": {},
+  "Source": "PersonalTable9SV"
+ },
+ {
+  "SpeciesId": 10155,
+  "Name": "necrozma-dusk",
+  "EggGroup1": "no-eggs",
+  "EggGroup2": null,
+  "Corrections": {},
+  "Source": "PersonalTable9SV"
+ },
+ {
+  "SpeciesId": 10156,
+  "Name": "necrozma-dawn",
+  "EggGroup1": "no-eggs",
+  "EggGroup2": null,
+  "Corrections": {},
+  "Source": "PersonalTable9SV"
+ },
+ {
+  "SpeciesId": 10157,
+  "Name": "necrozma-ultra",
+  "EggGroup1": "no-eggs",
+  "EggGroup2": null,
+  "Corrections": {},
+  "Source": "PersonalTable7"
+ },
+ {
+  "SpeciesId": 10161,
+  "Name": "meowth-galar",
+  "EggGroup1": "ground",
+  "EggGroup2": null,
+  "Corrections": {},
+  "Source": "PersonalTable9SV"
+ },
+ {
+  "SpeciesId": 10162,
+  "Name": "ponyta-galar",
+  "EggGroup1": "ground",
+  "EggGroup2": null,
+  "Corrections": {},
+  "Source": "PersonalTable8SWSH"
+ },
+ {
+  "SpeciesId": 10163,
+  "Name": "rapidash-galar",
+  "EggGroup1": "ground",
+  "EggGroup2": null,
+  "Corrections": {},
+  "Source": "PersonalTable8SWSH"
+ },
+ {
+  "SpeciesId": 10164,
+  "Name": "slowpoke-galar",
+  "EggGroup1": "monster",
+  "EggGroup2": "water1",
+  "Corrections": {},
+  "Source": "PersonalTable9ZA"
+ },
+ {
+  "SpeciesId": 10165,
+  "Name": "slowbro-galar",
+  "EggGroup1": "monster",
+  "EggGroup2": "water1",
+  "Corrections": {},
+  "Source": "PersonalTable9ZA"
+ },
+ {
+  "SpeciesId": 10166,
+  "Name": "farfetchd-galar",
+  "EggGroup1": "flying",
+  "EggGroup2": "ground",
+  "Corrections": {},
+  "Source": "PersonalTable8SWSH"
+ },
+ {
+  "SpeciesId": 10167,
+  "Name": "weezing-galar",
+  "EggGroup1": "indeterminate",
+  "EggGroup2": null,
+  "Corrections": {},
+  "Source": "PersonalTable9SV"
+ },
+ {
+  "SpeciesId": 10168,
+  "Name": "mr-mime-galar",
+  "EggGroup1": "humanshape",
+  "EggGroup2": null,
+  "Corrections": {},
+  "Source": "PersonalTable8SWSH"
+ },
+ {
+  "SpeciesId": 10169,
+  "Name": "articuno-galar",
+  "EggGroup1": "no-eggs",
+  "EggGroup2": null,
+  "Corrections": {},
+  "Source": "PersonalTable9SV"
+ },
+ {
+  "SpeciesId": 10170,
+  "Name": "zapdos-galar",
+  "EggGroup1": "no-eggs",
+  "EggGroup2": null,
+  "Corrections": {},
+  "Source": "PersonalTable9SV"
+ },
+ {
+  "SpeciesId": 10171,
+  "Name": "moltres-galar",
+  "EggGroup1": "no-eggs",
+  "EggGroup2": null,
+  "Corrections": {},
+  "Source": "PersonalTable9SV"
+ },
+ {
+  "SpeciesId": 10172,
+  "Name": "slowking-galar",
+  "EggGroup1": "monster",
+  "EggGroup2": "water1",
+  "Corrections": {},
+  "Source": "PersonalTable9ZA"
+ },
+ {
+  "SpeciesId": 10173,
+  "Name": "corsola-galar",
+  "EggGroup1": "water1",
+  "EggGroup2": "water3",
+  "Corrections": {},
+  "Source": "PersonalTable8SWSH"
+ },
+ {
+  "SpeciesId": 10174,
+  "Name": "zigzagoon-galar",
+  "EggGroup1": "ground",
+  "EggGroup2": null,
+  "Corrections": {},
+  "Source": "PersonalTable8SWSH"
+ },
+ {
+  "SpeciesId": 10175,
+  "Name": "linoone-galar",
+  "EggGroup1": "ground",
+  "EggGroup2": null,
+  "Corrections": {},
+  "Source": "PersonalTable8SWSH"
+ },
+ {
+  "SpeciesId": 10176,
+  "Name": "darumaka-galar",
+  "EggGroup1": "ground",
+  "EggGroup2": null,
+  "Corrections": {},
+  "Source": "PersonalTable8SWSH"
+ },
+ {
+  "SpeciesId": 10177,
+  "Name": "darmanitan-galar-standard",
+  "EggGroup1": "ground",
+  "EggGroup2": null,
+  "Corrections": {},
+  "Source": "PersonalTable8SWSH"
+ },
+ {
+  "SpeciesId": 10178,
+  "Name": "darmanitan-galar-zen",
+  "EggGroup1": "ground",
+  "EggGroup2": null,
+  "Corrections": {},
+  "Source": "PersonalTable8SWSH"
+ },
+ {
+  "SpeciesId": 10179,
+  "Name": "yamask-galar",
+  "EggGroup1": "mineral",
+  "EggGroup2": "indeterminate",
+  "Corrections": {},
+  "Source": "PersonalTable8SWSH"
+ },
+ {
+  "SpeciesId": 10180,
+  "Name": "stunfisk-galar",
+  "EggGroup1": "water1",
+  "EggGroup2": "indeterminate",
+  "Corrections": {},
+  "Source": "PersonalTable9ZA"
+ },
+ {
+  "SpeciesId": 10181,
+  "Name": "zygarde-10",
+  "EggGroup1": "no-eggs",
+  "EggGroup2": null,
+  "Corrections": {},
+  "Source": "PersonalTable9ZA"
+ },
+ {
+  "SpeciesId": 10184,
+  "Name": "toxtricity-low-key",
+  "EggGroup1": "humanshape",
+  "EggGroup2": null,
+  "Corrections": {},
+  "Source": "PersonalTable9SV"
+ },
+ {
+  "SpeciesId": 10185,
+  "Name": "eiscue-noice",
+  "EggGroup1": "water1",
+  "EggGroup2": "ground",
+  "Corrections": {},
+  "Source": "PersonalTable9SV"
+ },
+ {
+  "SpeciesId": 10186,
+  "Name": "indeedee-female",
+  "EggGroup1": "fairy",
+  "EggGroup2": null,
+  "Corrections": {
+   "GenderRate": 8
+  },
+  "Source": "PersonalTable9SV"
+ },
+ {
+  "SpeciesId": 10188,
+  "Name": "zacian-crowned",
+  "EggGroup1": "no-eggs",
+  "EggGroup2": null,
+  "Corrections": {},
+  "Source": "PersonalTable9SV"
+ },
+ {
+  "SpeciesId": 10189,
+  "Name": "zamazenta-crowned",
+  "EggGroup1": "no-eggs",
+  "EggGroup2": null,
+  "Corrections": {},
+  "Source": "PersonalTable9SV"
+ },
+ {
+  "SpeciesId": 10190,
+  "Name": "eternatus-eternamax",
+  "EggGroup1": "no-eggs",
+  "EggGroup2": null,
+  "Corrections": {},
+  "Source": "PersonalTable8SWSH"
+ },
+ {
+  "SpeciesId": 10191,
+  "Name": "urshifu-rapid-strike",
+  "EggGroup1": "no-eggs",
+  "EggGroup2": null,
+  "Corrections": {},
+  "Source": "PersonalTable9SV"
+ },
+ {
+  "SpeciesId": 10193,
+  "Name": "calyrex-ice",
+  "EggGroup1": "no-eggs",
+  "EggGroup2": null,
+  "Corrections": {},
+  "Source": "PersonalTable9SV"
+ },
+ {
+  "SpeciesId": 10194,
+  "Name": "calyrex-shadow",
+  "EggGroup1": "no-eggs",
+  "EggGroup2": null,
+  "Corrections": {},
+  "Source": "PersonalTable9SV"
+ },
+ {
+  "SpeciesId": 10229,
+  "Name": "growlithe-hisui",
+  "EggGroup1": "ground",
+  "EggGroup2": null,
+  "Corrections": {},
+  "Source": "PersonalTable9SV"
+ },
+ {
+  "SpeciesId": 10230,
+  "Name": "arcanine-hisui",
+  "EggGroup1": "ground",
+  "EggGroup2": null,
+  "Corrections": {},
+  "Source": "PersonalTable9SV"
+ },
+ {
+  "SpeciesId": 10231,
+  "Name": "voltorb-hisui",
+  "EggGroup1": "mineral",
+  "EggGroup2": null,
+  "Corrections": {},
+  "Source": "PersonalTable9SV"
+ },
+ {
+  "SpeciesId": 10232,
+  "Name": "electrode-hisui",
+  "EggGroup1": "mineral",
+  "EggGroup2": null,
+  "Corrections": {},
+  "Source": "PersonalTable9SV"
+ },
+ {
+  "SpeciesId": 10233,
+  "Name": "typhlosion-hisui",
+  "EggGroup1": "ground",
+  "EggGroup2": null,
+  "Corrections": {},
+  "Source": "PersonalTable9SV"
+ },
+ {
+  "SpeciesId": 10234,
+  "Name": "qwilfish-hisui",
+  "EggGroup1": "water2",
+  "EggGroup2": null,
+  "Corrections": {},
+  "Source": "PersonalTable9SV"
+ },
+ {
+  "SpeciesId": 10235,
+  "Name": "sneasel-hisui",
+  "EggGroup1": "ground",
+  "EggGroup2": null,
+  "Corrections": {},
+  "Source": "PersonalTable9SV"
+ },
+ {
+  "SpeciesId": 10236,
+  "Name": "samurott-hisui",
+  "EggGroup1": "ground",
+  "EggGroup2": null,
+  "Corrections": {},
+  "Source": "PersonalTable9SV"
+ },
+ {
+  "SpeciesId": 10237,
+  "Name": "lilligant-hisui",
+  "EggGroup1": "plant",
+  "EggGroup2": null,
+  "Corrections": {},
+  "Source": "PersonalTable9SV"
+ },
+ {
+  "SpeciesId": 10238,
+  "Name": "zorua-hisui",
+  "EggGroup1": "ground",
+  "EggGroup2": null,
+  "Corrections": {},
+  "Source": "PersonalTable9SV"
+ },
+ {
+  "SpeciesId": 10239,
+  "Name": "zoroark-hisui",
+  "EggGroup1": "ground",
+  "EggGroup2": null,
+  "Corrections": {},
+  "Source": "PersonalTable9SV"
+ },
+ {
+  "SpeciesId": 10240,
+  "Name": "braviary-hisui",
+  "EggGroup1": "flying",
+  "EggGroup2": null,
+  "Corrections": {},
+  "Source": "PersonalTable9SV"
+ },
+ {
+  "SpeciesId": 10241,
+  "Name": "sliggoo-hisui",
+  "EggGroup1": "dragon",
+  "EggGroup2": null,
+  "Corrections": {},
+  "Source": "PersonalTable9ZA"
+ },
+ {
+  "SpeciesId": 10242,
+  "Name": "goodra-hisui",
+  "EggGroup1": "dragon",
+  "EggGroup2": null,
+  "Corrections": {},
+  "Source": "PersonalTable9ZA"
+ },
+ {
+  "SpeciesId": 10243,
+  "Name": "avalugg-hisui",
+  "EggGroup1": "monster",
+  "EggGroup2": "mineral",
+  "Corrections": {},
+  "Source": "PersonalTable9ZA"
+ },
+ {
+  "SpeciesId": 10244,
+  "Name": "decidueye-hisui",
+  "EggGroup1": "flying",
+  "EggGroup2": null,
+  "Corrections": {},
+  "Source": "PersonalTable9SV"
+ },
+ {
+  "SpeciesId": 10245,
+  "Name": "dialga-origin",
+  "EggGroup1": "no-eggs",
+  "EggGroup2": null,
+  "Corrections": {},
+  "Source": "PersonalTable9SV"
+ },
+ {
+  "SpeciesId": 10246,
+  "Name": "palkia-origin",
+  "EggGroup1": "no-eggs",
+  "EggGroup2": null,
+  "Corrections": {},
+  "Source": "PersonalTable9SV"
+ },
+ {
+  "SpeciesId": 10247,
+  "Name": "basculin-white-striped",
+  "EggGroup1": "water2",
+  "EggGroup2": null,
+  "Corrections": {},
+  "Source": "PersonalTable9SV"
+ },
+ {
+  "SpeciesId": 10248,
+  "Name": "basculegion-female",
+  "EggGroup1": "water2",
+  "EggGroup2": null,
+  "Corrections": {
+   "GenderRate": 8
+  },
+  "Source": "PersonalTable9SV"
+ },
+ {
+  "SpeciesId": 10249,
+  "Name": "enamorus-therian",
+  "EggGroup1": "no-eggs",
+  "EggGroup2": null,
+  "Corrections": {},
+  "Source": "PersonalTable9SV"
+ },
+ {
+  "SpeciesId": 10250,
+  "Name": "tauros-paldea-combat-breed",
+  "EggGroup1": "ground",
+  "EggGroup2": null,
+  "Corrections": {},
+  "Source": "PersonalTable9SV"
+ },
+ {
+  "SpeciesId": 10251,
+  "Name": "tauros-paldea-blaze-breed",
+  "EggGroup1": "ground",
+  "EggGroup2": null,
+  "Corrections": {},
+  "Source": "PersonalTable9SV"
+ },
+ {
+  "SpeciesId": 10252,
+  "Name": "tauros-paldea-aqua-breed",
+  "EggGroup1": "ground",
+  "EggGroup2": null,
+  "Corrections": {},
+  "Source": "PersonalTable9SV"
+ },
+ {
+  "SpeciesId": 10253,
+  "Name": "wooper-paldea",
+  "EggGroup1": "water1",
+  "EggGroup2": "ground",
+  "Corrections": {},
+  "Source": "PersonalTable9SV"
+ },
+ {
+  "SpeciesId": 10254,
+  "Name": "oinkologne-female",
+  "EggGroup1": "ground",
+  "EggGroup2": null,
+  "Corrections": {
+   "GenderRate": 8
+  },
+  "Source": "PersonalTable9SV"
+ },
+ {
+  "SpeciesId": 10256,
+  "Name": "palafin-hero",
+  "EggGroup1": "ground",
+  "EggGroup2": "water2",
+  "Corrections": {},
+  "Source": "PersonalTable9SV"
+ },
+ {
+  "SpeciesId": 10261,
+  "Name": "squawkabilly-yellow-plumage",
+  "EggGroup1": "flying",
+  "EggGroup2": null,
+  "Corrections": {},
+  "Source": "PersonalTable9SV"
+ },
+ {
+  "SpeciesId": 10263,
+  "Name": "gimmighoul-roaming",
+  "EggGroup1": "no-eggs",
+  "EggGroup2": null,
+  "Corrections": {},
+  "Source": "PersonalTable9SV"
+ },
+ {
+  "SpeciesId": 10272,
+  "Name": "ursaluna-bloodmoon",
+  "EggGroup1": "ground",
+  "EggGroup2": null,
+  "Corrections": {
+   "GenderRate": 0,
+   "Height": 2.7,
+   "Weight": 333
+  },
+  "Source": "PersonalTable9SV"
+ },
+ {
+  "SpeciesId": 10273,
+  "Name": "ogerpon-wellspring-mask",
+  "EggGroup1": "no-eggs",
+  "EggGroup2": null,
+  "Corrections": {},
+  "Source": "PersonalTable9SV"
+ },
+ {
+  "SpeciesId": 10274,
+  "Name": "ogerpon-hearthflame-mask",
+  "EggGroup1": "no-eggs",
+  "EggGroup2": null,
+  "Corrections": {},
+  "Source": "PersonalTable9SV"
+ },
+ {
+  "SpeciesId": 10275,
+  "Name": "ogerpon-cornerstone-mask",
+  "EggGroup1": "no-eggs",
+  "EggGroup2": null,
+  "Corrections": {},
+  "Source": "PersonalTable9SV"
+ },
+ {
+  "SpeciesId": 10276,
+  "Name": "terapagos-terastal",
+  "EggGroup1": "no-eggs",
+  "EggGroup2": null,
+  "Corrections": {},
+  "Source": "PersonalTable9SV"
+ },
+ {
+  "SpeciesId": 10277,
+  "Name": "terapagos-stellar",
+  "EggGroup1": "no-eggs",
+  "EggGroup2": null,
+  "Corrections": {},
+  "Source": "PersonalTable9SV"
+ }
+]

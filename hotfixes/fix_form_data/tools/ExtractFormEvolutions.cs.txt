@@ -1,0 +1,109 @@
+using System.Linq;
+using System.Text;
+using System.Text.Json;
+using PKHeX.Core;
+using Exxeguttor.App.Services;
+namespace Exxeguttor.Tests;
+public static class EvoExtract {
+  static string Slug(string s) => new string(s.ToLowerInvariant().Replace(' ', '-').Replace("'", "").Replace("é","e").Replace(".", "").Where(c => char.IsLetterOrDigit(c) || c=='-').ToArray());
+  public static string Run(string outPath) {
+    var s = GameInfo.GetStrings("en");
+    var trees = new (string Name, EvolutionTree T, IPersonalTable P)[] {
+      ("USUM", EvolutionTree.Evolves7, PersonalTable.USUM), ("SWSH", EvolutionTree.Evolves8, PersonalTable.SWSH),
+      ("LA", EvolutionTree.Evolves8a, PersonalTable.LA), ("SV", EvolutionTree.Evolves9, PersonalTable.SV), ("ZA", EvolutionTree.Evolves9a, PersonalTable.ZA) };
+    var edges = new System.Collections.Generic.Dictionary<string, System.Collections.Generic.Dictionary<string,object>>();
+    var unmapped = new System.Collections.Generic.SortedSet<string>();
+    foreach (var (name, tree, pt) in trees) {
+      for (ushort sp = 1; sp <= 1025; sp++) {
+        for (byte f = 0; f < 40; f++) {
+          try { if (!pt.IsPresentInGame(sp, f)) { if (f>0) continue; } } catch { continue; }
+          System.ReadOnlyMemory<EvolutionMethod> ms;
+          try { ms = tree.Forward.GetForward(sp, f); } catch { continue; }
+          foreach (var m in ms.Span) {
+            if (m.Species == 0) continue;
+            byte tf = m.GetDestinationForm(f);
+            int fromId = SpeciesFormResolver.ResolveDbSpeciesId(sp, f), toId = SpeciesFormResolver.ResolveDbSpeciesId(m.Species, tf);
+            if (fromId <= 10000 && toId <= 10000) continue;
+            var c = Conds(m, s, unmapped);
+            if (c == null) continue;
+            var key = $"{fromId}>{toId}>{JsonSerializer.Serialize(c.OrderBy(k=>k.Key).ToDictionary(k=>k.Key,k=>k.Value))}";
+            if (!edges.TryGetValue(key, out var e)) {
+              e = new() { ["from"]=fromId, ["to"]=toId, ["fromName"]=$"{s.specieslist[sp]}#{f}", ["toName"]=$"{s.specieslist[m.Species]}#{tf}", ["conditions"]=c, ["sources"]=new System.Collections.Generic.List<string>() };
+              edges[key]=e;
+            }
+            ((System.Collections.Generic.List<string>)e["sources"]).Add(name);
+          }
+        }
+      }
+    }
+    System.IO.File.WriteAllText(outPath, JsonSerializer.Serialize(edges.Values.OrderBy(e=>(int)e["from"]).ThenBy(e=>(int)e["to"]), new JsonSerializerOptions{WriteIndented=true}));
+    return $"edges={edges.Count} unmapped=[{string.Join(", ", unmapped)}]";
+  }
+  static System.Collections.Generic.Dictionary<string,string>? Conds(EvolutionMethod m, GameStrings s, System.Collections.Generic.SortedSet<string> unmapped) {
+    var c = new System.Collections.Generic.Dictionary<string,string>();
+    string item(int i) => Slug(s.Item[i]); string move(int i) => Slug(s.Move[i]);
+    void lvl() { if (m.Level > 0) c["min_level"] = m.Level.ToString(); }
+    switch (m.Method) {
+      case EvolutionType.LevelUp: c["trigger"]="level-up"; lvl(); break;
+      case EvolutionType.LevelUpFriendship: c["trigger"]="level-up"; c["min_happiness"]="160"; lvl(); break;
+      case EvolutionType.LevelUpFriendshipMorning: c["trigger"]="level-up"; c["min_happiness"]="160"; c["time_of_day"]="day"; lvl(); break;
+      case EvolutionType.LevelUpFriendshipNight: c["trigger"]="level-up"; c["min_happiness"]="160"; c["time_of_day"]="night"; lvl(); break;
+      case EvolutionType.Trade: c["trigger"]="trade"; break;
+      case EvolutionType.TradeHeldItem: c["trigger"]="trade"; c["held_item"]=item(m.Argument); break;
+      case EvolutionType.TradeShelmetKarrablast: c["trigger"]="trade"; c["trade_species"]=Slug(s.specieslist[m.Argument]); break;
+      case EvolutionType.UseItem: c["trigger"]="use-item"; c["item"]=item(m.Argument); break;
+      case EvolutionType.UseItemMale: c["trigger"]="use-item"; c["item"]=item(m.Argument); c["gender"]="2"; break;
+      case EvolutionType.UseItemFemale: c["trigger"]="use-item"; c["item"]=item(m.Argument); c["gender"]="1"; break;
+      case EvolutionType.UseItemWormhole: c["trigger"]="use-item"; c["item"]=item(m.Argument); c["region"]="alola"; break;
+      case EvolutionType.LevelUpWormhole: c["trigger"]="level-up"; c["region"]="alola"; lvl(); break;
+      case EvolutionType.LevelUpATK: c["trigger"]="level-up"; c["relative_physical_stats"]="1"; lvl(); break;
+      case EvolutionType.LevelUpAeqD: c["trigger"]="level-up"; c["relative_physical_stats"]="0"; lvl(); break;
+      case EvolutionType.LevelUpDEF: c["trigger"]="level-up"; c["relative_physical_stats"]="-1"; lvl(); break;
+      case EvolutionType.LevelUpHeldItemDay: c["trigger"]="level-up"; c["held_item"]=item(m.Argument); c["time_of_day"]="day"; lvl(); break;
+      case EvolutionType.LevelUpHeldItemNight: c["trigger"]="level-up"; c["held_item"]=item(m.Argument); c["time_of_day"]="night"; lvl(); break;
+      case EvolutionType.LevelUpKnowMove: c["trigger"]="level-up"; c["known_move"]=move(m.Argument); lvl(); break;
+      case EvolutionType.LevelUpWithTeammate: c["trigger"]="level-up"; c["party_species"]=Slug(s.specieslist[m.Argument]); lvl(); break;
+      case EvolutionType.LevelUpMale: c["trigger"]="level-up"; c["gender"]="2"; lvl(); break;
+      case EvolutionType.LevelUpFemale: c["trigger"]="level-up"; c["gender"]="1"; lvl(); break;
+      case EvolutionType.LevelUpMorning: c["trigger"]="level-up"; c["time_of_day"]="day"; lvl(); break;
+      case EvolutionType.LevelUpNight: c["trigger"]="level-up"; c["time_of_day"]="night"; lvl(); break;
+      case EvolutionType.LevelUpDusk: c["trigger"]="level-up"; c["time_of_day"]="dusk"; lvl(); break;
+      case EvolutionType.LevelUpWeather: c["trigger"]="level-up"; c["needs_overworld_rain"]="True"; lvl(); break;
+      case EvolutionType.LevelUpInverted: c["trigger"]="level-up"; c["turn_upside_down"]="True"; lvl(); break;
+      case EvolutionType.LevelUpElectric: c["trigger"]="level-up"; c["location"]="magnetic-field"; break;
+      case EvolutionType.LevelUpForest: c["trigger"]="level-up"; c["location"]="moss-rock"; break;
+      case EvolutionType.LevelUpCold: c["trigger"]="level-up"; c["location"]="ice-rock"; break;
+      case EvolutionType.LevelUpSummit: c["trigger"]="level-up"; c["location"]="mount-lanakila"; break;
+      case EvolutionType.LevelUpMoveType: c["trigger"]="level-up"; c["known_move_type"]=Slug(s.Types[m.Argument]); lvl(); break;
+      case EvolutionType.LevelUpAffection50MoveType: c["trigger"]="level-up"; c["known_move_type"]=Slug(s.Types[m.Argument]); c["min_affection"]="2"; break;
+      case EvolutionType.LevelUpBeauty: c["trigger"]="level-up"; c["min_beauty"]=m.Argument.ToString(); break;
+      case EvolutionType.CriticalHitsInBattle: c["trigger"]="level-up"; c["min_critical_hits"]="3"; break;
+      case EvolutionType.HitPointsLostInBattle: c["trigger"]="level-up"; c["min_damage_taken"]="49"; break;
+      case EvolutionType.Spin: c["trigger"]="spin"; break;
+      case EvolutionType.TowerOfDarkness: c["trigger"]="use-item"; c["item"]="scroll-of-darkness"; break;
+      case EvolutionType.TowerOfWaters: c["trigger"]="use-item"; c["item"]="scroll-of-waters"; break;
+      case EvolutionType.LevelUpNatureAmped: c["trigger"]="level-up"; c["nature"]="amped"; lvl(); break;
+      case EvolutionType.LevelUpNatureLowKey: c["trigger"]="level-up"; c["nature"]="low-key"; lvl(); break;
+      case EvolutionType.LevelUpRecoilDamageMale: c["trigger"]="level-up"; c["gender"]="2"; c["min_damage_taken"]="294"; break;
+      case EvolutionType.LevelUpRecoilDamageFemale: c["trigger"]="level-up"; c["gender"]="1"; c["min_damage_taken"]="294"; break;
+      case EvolutionType.LevelUpWalkStepsWith: c["trigger"]="level-up"; c["min_steps"]="1000"; break;
+      case EvolutionType.UseItemFullMoon: c["trigger"]="use-item"; c["item"]="peat-block"; c["time_of_day"]="full-moon"; break;
+      case EvolutionType.UseMoveStrongStyle: c["trigger"]="use-move"; c["known_move"]="barb-barrage"; c["min_move_count"]="20"; break;
+      case EvolutionType.UseMoveAgileStyle: c["trigger"]="use-move"; c["known_move"]="psyshield-bash"; c["min_move_count"]="20"; break;
+      case EvolutionType.LevelUpUseMoveSpecial: c["trigger"]="level-up"; c["known_move"]="rage-fist"; c["min_move_count"]="20"; break;
+      case EvolutionType.LevelUpInBattleEC100: case EvolutionType.LevelUpInBattleECElse:
+      case EvolutionType.LevelUpKnowMoveEC100: case EvolutionType.LevelUpKnowMoveECElse:
+      case EvolutionType.LevelUpECl5: case EvolutionType.LevelUpECgeq5:
+        c["trigger"]="level-up"; lvl();
+        if (m.Method is EvolutionType.LevelUpKnowMoveEC100 or EvolutionType.LevelUpKnowMoveECElse) c["known_move"]=move(m.Argument);
+        break;
+      case EvolutionType.LevelUpCollect999: c["trigger"]="level-up"; c["min_coins"]="999"; break;
+      case EvolutionType.LevelUpFormFemale1: c["trigger"]="level-up"; c["gender"]="1"; lvl(); break;
+      case EvolutionType.Hisui: c["trigger"]="level-up"; c["region"]="hisui"; lvl(); break;
+      case EvolutionType.LevelUpVersion: case EvolutionType.LevelUpVersionDay: case EvolutionType.LevelUpVersionNight:
+      case EvolutionType.UNUSED: case EvolutionType.None: return null;
+      default: unmapped.Add(m.Method.ToString()); return null;
+    }
+    return c;
+  }
+}

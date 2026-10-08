@@ -1,0 +1,976 @@
+[
+ {
+  "FromSpeciesId": 25,
+  "ToSpeciesId": 10100,
+  "From": "pikachu",
+  "To": "raichu-alola",
+  "Conditions": {
+   "item": "thunder-stone",
+   "needs_multiplayer": "False",
+   "needs_overworld_rain": "False",
+   "region": "alola",
+   "time_of_day": "",
+   "trigger": "use-item",
+   "turn_upside_down": "False"
+  },
+  "Sources": [
+   "USUM"
+  ]
+ },
+ {
+  "FromSpeciesId": 102,
+  "ToSpeciesId": 10114,
+  "From": "exeggcute",
+  "To": "exeggutor-alola",
+  "Conditions": {
+   "item": "leaf-stone",
+   "needs_multiplayer": "False",
+   "needs_overworld_rain": "False",
+   "region": "alola",
+   "time_of_day": "",
+   "trigger": "use-item",
+   "turn_upside_down": "False"
+  },
+  "Sources": [
+   "USUM"
+  ]
+ },
+ {
+  "FromSpeciesId": 104,
+  "ToSpeciesId": 10115,
+  "From": "cubone",
+  "To": "marowak-alola",
+  "Conditions": {
+   "min_level": "28",
+   "needs_multiplayer": "False",
+   "needs_overworld_rain": "False",
+   "region": "alola",
+   "time_of_day": "night",
+   "trigger": "level-up",
+   "turn_upside_down": "False"
+  },
+  "Sources": [
+   "USUM"
+  ]
+ },
+ {
+  "FromSpeciesId": 109,
+  "ToSpeciesId": 10167,
+  "From": "koffing",
+  "To": "weezing-galar",
+  "Conditions": {
+   "min_level": "35",
+   "needs_multiplayer": "False",
+   "needs_overworld_rain": "False",
+   "region": "galar",
+   "time_of_day": "",
+   "trigger": "level-up",
+   "turn_upside_down": "False"
+  },
+  "Sources": [
+   "SWSH"
+  ]
+ },
+ {
+  "FromSpeciesId": 156,
+  "ToSpeciesId": 10233,
+  "From": "quilava",
+  "To": "typhlosion-hisui",
+  "Conditions": {
+   "min_level": "36",
+   "needs_multiplayer": "False",
+   "needs_overworld_rain": "False",
+   "region": "hisui",
+   "time_of_day": "",
+   "trigger": "level-up",
+   "turn_upside_down": "False"
+  },
+  "Sources": [
+   "LA"
+  ]
+ },
+ {
+  "FromSpeciesId": 412,
+  "ToSpeciesId": 10004,
+  "From": "burmy",
+  "To": "wormadam-sandy",
+  "Conditions": {
+   "gender": "1",
+   "min_level": "20",
+   "needs_multiplayer": "False",
+   "needs_overworld_rain": "False",
+   "time_of_day": "",
+   "trigger": "level-up",
+   "turn_upside_down": "False"
+  },
+  "Sources": [
+   "LA",
+   "USUM"
+  ]
+ },
+ {
+  "FromSpeciesId": 412,
+  "ToSpeciesId": 10005,
+  "From": "burmy",
+  "To": "wormadam-trash",
+  "Conditions": {
+   "gender": "1",
+   "min_level": "20",
+   "needs_multiplayer": "False",
+   "needs_overworld_rain": "False",
+   "time_of_day": "",
+   "trigger": "level-up",
+   "turn_upside_down": "False"
+  },
+  "Sources": [
+   "LA",
+   "USUM"
+  ]
+ },
+ {
+  "FromSpeciesId": 439,
+  "ToSpeciesId": 10168,
+  "From": "mime-jr",
+  "To": "mr-mime-galar",
+  "Conditions": {
+   "known_move": "mimic",
+   "needs_multiplayer": "False",
+   "needs_overworld_rain": "False",
+   "region": "galar",
+   "time_of_day": "",
+   "trigger": "level-up",
+   "turn_upside_down": "False"
+  },
+  "Sources": [
+   "SWSH"
+  ]
+ },
+ {
+  "FromSpeciesId": 502,
+  "ToSpeciesId": 10236,
+  "From": "dewott",
+  "To": "samurott-hisui",
+  "Conditions": {
+   "min_level": "36",
+   "needs_multiplayer": "False",
+   "needs_overworld_rain": "False",
+   "region": "hisui",
+   "time_of_day": "",
+   "trigger": "level-up",
+   "turn_upside_down": "False"
+  },
+  "Sources": [
+   "LA"
+  ]
+ },
+ {
+  "FromSpeciesId": 548,
+  "ToSpeciesId": 10237,
+  "From": "petilil",
+  "To": "lilligant-hisui",
+  "Conditions": {
+   "item": "sun-stone",
+   "needs_multiplayer": "False",
+   "needs_overworld_rain": "False",
+   "region": "hisui",
+   "time_of_day": "",
+   "trigger": "use-item",
+   "turn_upside_down": "False"
+  },
+  "Sources": [
+   "LA"
+  ]
+ },
+ {
+  "FromSpeciesId": 627,
+  "ToSpeciesId": 10240,
+  "From": "rufflet",
+  "To": "braviary-hisui",
+  "Conditions": {
+   "min_level": "54",
+   "needs_multiplayer": "False",
+   "needs_overworld_rain": "False",
+   "region": "hisui",
+   "time_of_day": "",
+   "trigger": "level-up",
+   "turn_upside_down": "False"
+  },
+  "Sources": [
+   "LA"
+  ]
+ },
+ {
+  "FromSpeciesId": 677,
+  "ToSpeciesId": 10025,
+  "From": "espurr",
+  "To": "meowstic-female",
+  "Conditions": {
+   "gender": "1",
+   "min_level": "25",
+   "needs_multiplayer": "False",
+   "needs_overworld_rain": "False",
+   "time_of_day": "",
+   "trigger": "level-up",
+   "turn_upside_down": "False"
+  },
+  "Sources": [
+   "SV",
+   "SWSH",
+   "USUM",
+   "ZA"
+  ]
+ },
+ {
+  "FromSpeciesId": 704,
+  "ToSpeciesId": 10241,
+  "From": "goomy",
+  "To": "sliggoo-hisui",
+  "Conditions": {
+   "min_level": "40",
+   "needs_multiplayer": "False",
+   "needs_overworld_rain": "False",
+   "region": "hisui",
+   "time_of_day": "",
+   "trigger": "level-up",
+   "turn_upside_down": "False"
+  },
+  "Sources": [
+   "LA"
+  ]
+ },
+ {
+  "FromSpeciesId": 712,
+  "ToSpeciesId": 10243,
+  "From": "bergmite",
+  "To": "avalugg-hisui",
+  "Conditions": {
+   "min_level": "37",
+   "needs_multiplayer": "False",
+   "needs_overworld_rain": "False",
+   "region": "hisui",
+   "time_of_day": "",
+   "trigger": "level-up",
+   "turn_upside_down": "False"
+  },
+  "Sources": [
+   "LA"
+  ]
+ },
+ {
+  "FromSpeciesId": 723,
+  "ToSpeciesId": 10244,
+  "From": "dartrix",
+  "To": "decidueye-hisui",
+  "Conditions": {
+   "min_level": "36",
+   "needs_multiplayer": "False",
+   "needs_overworld_rain": "False",
+   "region": "hisui",
+   "time_of_day": "",
+   "trigger": "level-up",
+   "turn_upside_down": "False"
+  },
+  "Sources": [
+   "LA"
+  ]
+ },
+ {
+  "FromSpeciesId": 744,
+  "ToSpeciesId": 10126,
+  "From": "rockruff",
+  "To": "lycanroc-midnight",
+  "Conditions": {
+   "min_level": "25",
+   "needs_multiplayer": "False",
+   "needs_overworld_rain": "False",
+   "time_of_day": "night",
+   "trigger": "level-up",
+   "turn_upside_down": "False"
+  },
+  "Sources": [
+   "SV",
+   "SWSH"
+  ]
+ },
+ {
+  "FromSpeciesId": 848,
+  "ToSpeciesId": 10184,
+  "From": "toxel",
+  "To": "toxtricity-low-key",
+  "Conditions": {
+   "min_level": "30",
+   "nature": "low-key",
+   "needs_multiplayer": "False",
+   "needs_overworld_rain": "False",
+   "time_of_day": "",
+   "trigger": "level-up",
+   "turn_upside_down": "False"
+  },
+  "Sources": [
+   "SV",
+   "SWSH"
+  ]
+ },
+ {
+  "FromSpeciesId": 891,
+  "ToSpeciesId": 10191,
+  "From": "kubfu",
+  "To": "urshifu-rapid-strike",
+  "Conditions": {
+   "item": "scroll-of-waters",
+   "needs_multiplayer": "False",
+   "needs_overworld_rain": "False",
+   "time_of_day": "",
+   "trigger": "use-item",
+   "turn_upside_down": "False"
+  },
+  "Sources": [
+   "SV",
+   "SWSH"
+  ]
+ },
+ {
+  "FromSpeciesId": 915,
+  "ToSpeciesId": 10254,
+  "From": "lechonk",
+  "To": "oinkologne-female",
+  "Conditions": {
+   "gender": "1",
+   "min_level": "18",
+   "needs_multiplayer": "False",
+   "needs_overworld_rain": "False",
+   "time_of_day": "",
+   "trigger": "level-up",
+   "turn_upside_down": "False"
+  },
+  "Sources": [
+   "SV"
+  ]
+ },
+ {
+  "FromSpeciesId": 10027,
+  "ToSpeciesId": 10030,
+  "From": "pumpkaboo-small",
+  "To": "gourgeist-small",
+  "Conditions": {
+   "needs_multiplayer": "False",
+   "needs_overworld_rain": "False",
+   "time_of_day": "",
+   "trigger": "trade",
+   "turn_upside_down": "False"
+  },
+  "Sources": [
+   "SWSH",
+   "USUM",
+   "ZA"
+  ]
+ },
+ {
+  "FromSpeciesId": 10028,
+  "ToSpeciesId": 10031,
+  "From": "pumpkaboo-large",
+  "To": "gourgeist-large",
+  "Conditions": {
+   "needs_multiplayer": "False",
+   "needs_overworld_rain": "False",
+   "time_of_day": "",
+   "trigger": "trade",
+   "turn_upside_down": "False"
+  },
+  "Sources": [
+   "SWSH",
+   "USUM",
+   "ZA"
+  ]
+ },
+ {
+  "FromSpeciesId": 10029,
+  "ToSpeciesId": 10032,
+  "From": "pumpkaboo-super",
+  "To": "gourgeist-super",
+  "Conditions": {
+   "needs_multiplayer": "False",
+   "needs_overworld_rain": "False",
+   "time_of_day": "",
+   "trigger": "trade",
+   "turn_upside_down": "False"
+  },
+  "Sources": [
+   "SWSH",
+   "USUM",
+   "ZA"
+  ]
+ },
+ {
+  "FromSpeciesId": 10091,
+  "ToSpeciesId": 10092,
+  "From": "rattata-alola",
+  "To": "raticate-alola",
+  "Conditions": {
+   "min_level": "20",
+   "needs_multiplayer": "False",
+   "needs_overworld_rain": "False",
+   "time_of_day": "night",
+   "trigger": "level-up",
+   "turn_upside_down": "False"
+  },
+  "Sources": [
+   "USUM"
+  ]
+ },
+ {
+  "FromSpeciesId": 10101,
+  "ToSpeciesId": 10102,
+  "From": "sandshrew-alola",
+  "To": "sandslash-alola",
+  "Conditions": {
+   "item": "ice-stone",
+   "needs_multiplayer": "False",
+   "needs_overworld_rain": "False",
+   "time_of_day": "",
+   "trigger": "use-item",
+   "turn_upside_down": "False"
+  },
+  "Sources": [
+   "SV",
+   "SWSH",
+   "USUM"
+  ]
+ },
+ {
+  "FromSpeciesId": 10103,
+  "ToSpeciesId": 10104,
+  "From": "vulpix-alola",
+  "To": "ninetales-alola",
+  "Conditions": {
+   "item": "ice-stone",
+   "needs_multiplayer": "False",
+   "needs_overworld_rain": "False",
+   "time_of_day": "",
+   "trigger": "use-item",
+   "turn_upside_down": "False"
+  },
+  "Sources": [
+   "LA",
+   "SV",
+   "SWSH",
+   "USUM"
+  ]
+ },
+ {
+  "FromSpeciesId": 10105,
+  "ToSpeciesId": 10106,
+  "From": "diglett-alola",
+  "To": "dugtrio-alola",
+  "Conditions": {
+   "min_level": "26",
+   "needs_multiplayer": "False",
+   "needs_overworld_rain": "False",
+   "time_of_day": "",
+   "trigger": "level-up",
+   "turn_upside_down": "False"
+  },
+  "Sources": [
+   "SV",
+   "SWSH",
+   "USUM"
+  ]
+ },
+ {
+  "FromSpeciesId": 10107,
+  "ToSpeciesId": 10108,
+  "From": "meowth-alola",
+  "To": "persian-alola",
+  "Conditions": {
+   "min_happiness": "160",
+   "needs_multiplayer": "False",
+   "needs_overworld_rain": "False",
+   "time_of_day": "",
+   "trigger": "level-up",
+   "turn_upside_down": "False"
+  },
+  "Sources": [
+   "SV",
+   "SWSH",
+   "USUM"
+  ]
+ },
+ {
+  "FromSpeciesId": 10109,
+  "ToSpeciesId": 10110,
+  "From": "geodude-alola",
+  "To": "graveler-alola",
+  "Conditions": {
+   "min_level": "25",
+   "needs_multiplayer": "False",
+   "needs_overworld_rain": "False",
+   "time_of_day": "",
+   "trigger": "level-up",
+   "turn_upside_down": "False"
+  },
+  "Sources": [
+   "SV",
+   "USUM"
+  ]
+ },
+ {
+  "FromSpeciesId": 10110,
+  "ToSpeciesId": 10111,
+  "From": "graveler-alola",
+  "To": "golem-alola",
+  "Conditions": {
+   "needs_multiplayer": "False",
+   "needs_overworld_rain": "False",
+   "time_of_day": "",
+   "trigger": "trade",
+   "turn_upside_down": "False"
+  },
+  "Sources": [
+   "SV",
+   "USUM"
+  ]
+ },
+ {
+  "FromSpeciesId": 10112,
+  "ToSpeciesId": 10113,
+  "From": "grimer-alola",
+  "To": "muk-alola",
+  "Conditions": {
+   "min_level": "38",
+   "needs_multiplayer": "False",
+   "needs_overworld_rain": "False",
+   "time_of_day": "",
+   "trigger": "level-up",
+   "turn_upside_down": "False"
+  },
+  "Sources": [
+   "SV",
+   "USUM"
+  ]
+ },
+ {
+  "FromSpeciesId": 10151,
+  "ToSpeciesId": 10152,
+  "From": "rockruff-own-tempo",
+  "To": "lycanroc-dusk",
+  "Conditions": {
+   "min_level": "25",
+   "needs_multiplayer": "False",
+   "needs_overworld_rain": "False",
+   "time_of_day": "dusk",
+   "trigger": "level-up",
+   "turn_upside_down": "False"
+  },
+  "Sources": [
+   "SV",
+   "SWSH",
+   "USUM"
+  ]
+ },
+ {
+  "FromSpeciesId": 10161,
+  "ToSpeciesId": 863,
+  "From": "meowth-galar",
+  "To": "perrserker",
+  "Conditions": {
+   "min_level": "28",
+   "needs_multiplayer": "False",
+   "needs_overworld_rain": "False",
+   "time_of_day": "",
+   "trigger": "level-up",
+   "turn_upside_down": "False"
+  },
+  "Sources": [
+   "SV",
+   "SWSH"
+  ]
+ },
+ {
+  "FromSpeciesId": 10162,
+  "ToSpeciesId": 10163,
+  "From": "ponyta-galar",
+  "To": "rapidash-galar",
+  "Conditions": {
+   "min_level": "40",
+   "needs_multiplayer": "False",
+   "needs_overworld_rain": "False",
+   "time_of_day": "",
+   "trigger": "level-up",
+   "turn_upside_down": "False"
+  },
+  "Sources": [
+   "SWSH"
+  ]
+ },
+ {
+  "FromSpeciesId": 10164,
+  "ToSpeciesId": 10165,
+  "From": "slowpoke-galar",
+  "To": "slowbro-galar",
+  "Conditions": {
+   "item": "galarica-cuff",
+   "needs_multiplayer": "False",
+   "needs_overworld_rain": "False",
+   "time_of_day": "",
+   "trigger": "use-item",
+   "turn_upside_down": "False"
+  },
+  "Sources": [
+   "SV",
+   "SWSH",
+   "ZA"
+  ]
+ },
+ {
+  "FromSpeciesId": 10164,
+  "ToSpeciesId": 10172,
+  "From": "slowpoke-galar",
+  "To": "slowking-galar",
+  "Conditions": {
+   "item": "galarica-wreath",
+   "needs_multiplayer": "False",
+   "needs_overworld_rain": "False",
+   "time_of_day": "",
+   "trigger": "use-item",
+   "turn_upside_down": "False"
+  },
+  "Sources": [
+   "SV",
+   "SWSH",
+   "ZA"
+  ]
+ },
+ {
+  "FromSpeciesId": 10166,
+  "ToSpeciesId": 865,
+  "From": "farfetchd-galar",
+  "To": "sirfetchd",
+  "Conditions": {
+   "min_critical_hits": "3",
+   "needs_multiplayer": "False",
+   "needs_overworld_rain": "False",
+   "time_of_day": "",
+   "trigger": "level-up",
+   "turn_upside_down": "False"
+  },
+  "Sources": [
+   "SWSH"
+  ]
+ },
+ {
+  "FromSpeciesId": 10168,
+  "ToSpeciesId": 866,
+  "From": "mr-mime-galar",
+  "To": "mr-rime",
+  "Conditions": {
+   "min_level": "42",
+   "needs_multiplayer": "False",
+   "needs_overworld_rain": "False",
+   "time_of_day": "",
+   "trigger": "level-up",
+   "turn_upside_down": "False"
+  },
+  "Sources": [
+   "SWSH"
+  ]
+ },
+ {
+  "FromSpeciesId": 10173,
+  "ToSpeciesId": 864,
+  "From": "corsola-galar",
+  "To": "cursola",
+  "Conditions": {
+   "min_level": "38",
+   "needs_multiplayer": "False",
+   "needs_overworld_rain": "False",
+   "time_of_day": "",
+   "trigger": "level-up",
+   "turn_upside_down": "False"
+  },
+  "Sources": [
+   "SWSH"
+  ]
+ },
+ {
+  "FromSpeciesId": 10174,
+  "ToSpeciesId": 10175,
+  "From": "zigzagoon-galar",
+  "To": "linoone-galar",
+  "Conditions": {
+   "min_level": "20",
+   "needs_multiplayer": "False",
+   "needs_overworld_rain": "False",
+   "time_of_day": "",
+   "trigger": "level-up",
+   "turn_upside_down": "False"
+  },
+  "Sources": [
+   "SWSH"
+  ]
+ },
+ {
+  "FromSpeciesId": 10175,
+  "ToSpeciesId": 862,
+  "From": "linoone-galar",
+  "To": "obstagoon",
+  "Conditions": {
+   "min_level": "35",
+   "needs_multiplayer": "False",
+   "needs_overworld_rain": "False",
+   "time_of_day": "night",
+   "trigger": "level-up",
+   "turn_upside_down": "False"
+  },
+  "Sources": [
+   "SWSH"
+  ]
+ },
+ {
+  "FromSpeciesId": 10176,
+  "ToSpeciesId": 10177,
+  "From": "darumaka-galar",
+  "To": "darmanitan-galar-standard",
+  "Conditions": {
+   "item": "ice-stone",
+   "needs_multiplayer": "False",
+   "needs_overworld_rain": "False",
+   "time_of_day": "",
+   "trigger": "use-item",
+   "turn_upside_down": "False"
+  },
+  "Sources": [
+   "SWSH"
+  ]
+ },
+ {
+  "FromSpeciesId": 10179,
+  "ToSpeciesId": 867,
+  "From": "yamask-galar",
+  "To": "runerigus",
+  "Conditions": {
+   "min_damage_taken": "49",
+   "needs_multiplayer": "False",
+   "needs_overworld_rain": "False",
+   "time_of_day": "",
+   "trigger": "level-up",
+   "turn_upside_down": "False"
+  },
+  "Sources": [
+   "SWSH"
+  ]
+ },
+ {
+  "FromSpeciesId": 10229,
+  "ToSpeciesId": 10230,
+  "From": "growlithe-hisui",
+  "To": "arcanine-hisui",
+  "Conditions": {
+   "item": "fire-stone",
+   "needs_multiplayer": "False",
+   "needs_overworld_rain": "False",
+   "time_of_day": "",
+   "trigger": "use-item",
+   "turn_upside_down": "False"
+  },
+  "Sources": [
+   "LA",
+   "SV"
+  ]
+ },
+ {
+  "FromSpeciesId": 10231,
+  "ToSpeciesId": 10232,
+  "From": "voltorb-hisui",
+  "To": "electrode-hisui",
+  "Conditions": {
+   "item": "leaf-stone",
+   "needs_multiplayer": "False",
+   "needs_overworld_rain": "False",
+   "time_of_day": "",
+   "trigger": "use-item",
+   "turn_upside_down": "False"
+  },
+  "Sources": [
+   "LA",
+   "SV"
+  ]
+ },
+ {
+  "FromSpeciesId": 10234,
+  "ToSpeciesId": 904,
+  "From": "qwilfish-hisui",
+  "To": "overqwil",
+  "Conditions": {
+   "known_move": "barb-barrage",
+   "min_move_count": "20",
+   "needs_multiplayer": "False",
+   "needs_overworld_rain": "False",
+   "time_of_day": "",
+   "trigger": "use-move",
+   "turn_upside_down": "False"
+  },
+  "Sources": [
+   "LA"
+  ]
+ },
+ {
+  "FromSpeciesId": 10234,
+  "ToSpeciesId": 904,
+  "From": "qwilfish-hisui",
+  "To": "overqwil",
+  "Conditions": {
+   "known_move": "barb-barrage",
+   "needs_multiplayer": "False",
+   "needs_overworld_rain": "False",
+   "time_of_day": "",
+   "trigger": "level-up",
+   "turn_upside_down": "False"
+  },
+  "Sources": [
+   "SV"
+  ]
+ },
+ {
+  "FromSpeciesId": 10235,
+  "ToSpeciesId": 903,
+  "From": "sneasel-hisui",
+  "To": "sneasler",
+  "Conditions": {
+   "held_item": "razor-claw",
+   "needs_multiplayer": "False",
+   "needs_overworld_rain": "False",
+   "time_of_day": "day",
+   "trigger": "level-up",
+   "turn_upside_down": "False"
+  },
+  "Sources": [
+   "SV"
+  ]
+ },
+ {
+  "FromSpeciesId": 10235,
+  "ToSpeciesId": 903,
+  "From": "sneasel-hisui",
+  "To": "sneasler",
+  "Conditions": {
+   "item": "scroll-of-darkness",
+   "needs_multiplayer": "False",
+   "needs_overworld_rain": "False",
+   "time_of_day": "",
+   "trigger": "use-item",
+   "turn_upside_down": "False"
+  },
+  "Sources": [
+   "LA"
+  ]
+ },
+ {
+  "FromSpeciesId": 10238,
+  "ToSpeciesId": 10239,
+  "From": "zorua-hisui",
+  "To": "zoroark-hisui",
+  "Conditions": {
+   "min_level": "30",
+   "needs_multiplayer": "False",
+   "needs_overworld_rain": "False",
+   "time_of_day": "",
+   "trigger": "level-up",
+   "turn_upside_down": "False"
+  },
+  "Sources": [
+   "LA",
+   "SV"
+  ]
+ },
+ {
+  "FromSpeciesId": 10241,
+  "ToSpeciesId": 10242,
+  "From": "sliggoo-hisui",
+  "To": "goodra-hisui",
+  "Conditions": {
+   "min_level": "50",
+   "needs_multiplayer": "False",
+   "needs_overworld_rain": "True",
+   "time_of_day": "",
+   "trigger": "level-up",
+   "turn_upside_down": "False"
+  },
+  "Sources": [
+   "LA",
+   "SV",
+   "ZA"
+  ]
+ },
+ {
+  "FromSpeciesId": 10247,
+  "ToSpeciesId": 902,
+  "From": "basculin-white-striped",
+  "To": "basculegion-male",
+  "Conditions": {
+   "gender": "2",
+   "min_damage_taken": "294",
+   "needs_multiplayer": "False",
+   "needs_overworld_rain": "False",
+   "time_of_day": "",
+   "trigger": "level-up",
+   "turn_upside_down": "False"
+  },
+  "Sources": [
+   "LA",
+   "SV"
+  ]
+ },
+ {
+  "FromSpeciesId": 10247,
+  "ToSpeciesId": 10248,
+  "From": "basculin-white-striped",
+  "To": "basculegion-female",
+  "Conditions": {
+   "gender": "1",
+   "min_damage_taken": "294",
+   "needs_multiplayer": "False",
+   "needs_overworld_rain": "False",
+   "time_of_day": "",
+   "trigger": "level-up",
+   "turn_upside_down": "False"
+  },
+  "Sources": [
+   "LA",
+   "SV"
+  ]
+ },
+ {
+  "FromSpeciesId": 10253,
+  "ToSpeciesId": 980,
+  "From": "wooper-paldea",
+  "To": "clodsire",
+  "Conditions": {
+   "min_level": "20",
+   "needs_multiplayer": "False",
+   "needs_overworld_rain": "False",
+   "time_of_day": "",
+   "trigger": "level-up",
+   "turn_upside_down": "False"
+  },
+  "Sources": [
+   "SV"
+  ]
+ },
+ {
+  "FromSpeciesId": 10263,
+  "ToSpeciesId": 1000,
+  "From": "gimmighoul-roaming",
+  "To": "gholdengo",
+  "Conditions": {
+   "min_coins": "999",
+   "needs_multiplayer": "False",
+   "needs_overworld_rain": "False",
+   "time_of_day": "",
+   "trigger": "level-up",
+   "turn_upside_down": "False"
+  },
+  "Sources": [
+   "SV"
+  ]
+ }
+]
