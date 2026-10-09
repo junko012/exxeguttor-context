@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Exxeguttor — Boceto: modal "Buscar IVs legales" — Rotom PC procesando (solver por semilla, paso 2)</title>
+<style>
+  :root{
+    --bg:#f4f4f5; --border:#dcdce0; --border-strong:#b8b8bf;
+    --text:#1c1c1f; --text-2:#6b6b70; --muted:#9a9aa0;
+    --accent:#3b82f6; --ok:#2f9e5b; --warn:#c2410c; --warn-bg:#fff4ec;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;min-height:100vh;font-family:-apple-system,"Segoe UI","Cantarell","Ubuntu",sans-serif;
+       background:#8d8d92;display:flex;flex-direction:column;align-items:center;gap:16px;padding:20px 12px 40px;color:var(--text)}
+  .note{font-size:12px;color:#f4f4f5;text-align:center;max-width:460px;line-height:1.5}
+  .note code{background:rgba(0,0,0,.25);padding:1px 5px;border-radius:4px}
+  .tabs{display:flex;flex-wrap:wrap;gap:6px;justify-content:center}
+  .tabs button{font:inherit;font-size:12px;padding:6px 10px;border-radius:8px;border:1px solid var(--border);background:#fff;color:var(--text);cursor:pointer}
+  .tabs button[aria-pressed="true"]{background:var(--text);color:#fff;border-color:var(--text)}
+  button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+  /* Punto de entrada: fila del tab Diagnóstico */
+  .entry{width:380px;background:#fff;border:1px solid var(--border);border-radius:10px;padding:10px 12px;display:flex;gap:10px;align-items:center;font-size:12px}
+  .entry .dot{width:18px;height:18px;border-radius:50%;background:var(--warn);color:#fff;font-weight:700;display:grid;place-items:center;flex:none;font-size:12px}
+  .entry .txt{flex:1;line-height:1.4}
+  .entry .txt b{display:block;font-size:12px}
+  .entry .txt span{color:var(--text-2)}
+
+  /* Maqueta del tab IVs / EVs con el aviso (visible SOLO si hay alerta de legalidad en los IVs) */
+  .ivtab{width:380px;background:#fff;border:1px solid var(--border);border-radius:10px;overflow:hidden;font-size:12px}
+  .ivtabs{display:flex;gap:14px;padding:8px 12px 0;border-bottom:1px solid var(--border);color:var(--text-2)}
+  .ivtabs span{padding-bottom:7px}
+  .ivtabs .cur{color:var(--text);font-weight:600;border-bottom:2px solid var(--text);display:flex;gap:5px;align-items:center}
+  .redbang{font-style:normal;width:14px;height:14px;border-radius:3px;background:#e30909;border:1.2px solid #7a0000;color:#fff;font-weight:900;font-size:10px;display:inline-grid;place-items:center;flex:none}
+  .ivbody{padding:8px 10px}
+  .ph{height:64px;border:1px dashed var(--border-strong);border-radius:8px;display:grid;place-items:center;color:var(--muted);font-size:11px}
+  .strip{margin-top:8px;display:flex;gap:8px;align-items:center;background:var(--warn-bg);border:1px solid #f1c7a8;border-radius:8px;padding:6px 8px;color:#7c2d05}
+  .strip span{flex:1;line-height:1.3}
+  .foot{margin-top:8px;display:flex;gap:8px;align-items:center;color:var(--text-2);font-size:11px}
+  .foot .meter{flex:1;height:5px;background:#e5e5ea;border-radius:3px}.foot .meter div{width:4%;height:100%;background:#1d9e75;border-radius:3px}
+  .sim{display:block;padding:6px 12px 8px;border-top:1px solid var(--border);color:var(--text-2);font-size:11px;cursor:pointer}
+  .ivtab.legal .strip,.ivtab.legal #tabbang{display:none}
+  .btn{font:inherit;font-size:13px;padding:6px 14px;border-radius:8px;border:1px solid var(--border);background:#fff;color:var(--text);cursor:pointer}
+  .btn.primary{background:var(--text);color:#fff;border-color:var(--text)}
+  .btn.small{font-size:12px;padding:5px 10px}
+
+  .card{width:380px;background:#fff;border:1px solid var(--border);border-radius:14px;padding:24px 24px 20px;
+        display:none;flex-direction:column;align-items:center;gap:14px;box-shadow:0 10px 24px rgba(0,0,0,.22)}
+  .card.on{display:flex}
+  .title{margin:0;font-size:16px;font-weight:600;text-align:center}
+  .text{margin:0;font-size:12px;color:var(--text-2);line-height:1.5;text-align:center}
+  .row{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
+
+  /* Chips de IVs */
+  .ivs{display:grid;grid-template-columns:repeat(6,1fr);gap:6px;width:100%}
+  .iv{background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:5px 0;text-align:center}
+  .iv small{display:block;font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.03em}
+  .iv b{font-size:14px;font-variant-numeric:tabular-nums}
+  .iv.perfect b{color:var(--ok)}
+  .iv.diff{border-color:var(--warn);background:var(--warn-bg)}
+  .iv.diff b{color:var(--warn)}
+
+  /* ---- Escena: Rotom PC procesando (misma PC estilizada del boceto de exportación) ---- */
+  .scene{position:relative;width:200px;height:150px;display:flex;justify-content:center}
+  .pc{display:flex;flex-direction:column;align-items:center}
+  .screen{position:relative;width:176px;height:104px;background:var(--bg);border:2px solid var(--border-strong);border-radius:10px;overflow:hidden;display:flex;align-items:center;justify-content:center}
+  /* Lluvia de código estilo Matrix detrás de Rotom: columnas de dígitos hex que caen sin parar
+     y cambian de valor, hasta que termina la búsqueda. Pantalla oscura SOLO mientras busca. */
+  .scene:not(.done) .screen{background:#0b1220;border-color:#1e3a5f}
+  .rain{position:absolute;inset:0;width:100%;height:100%}
+  .scene.done .rain{opacity:.22}
+  .seed{position:absolute;left:5px;bottom:4px;z-index:2;font:10px/12px ui-monospace,Menlo,Consolas,monospace;
+        color:#7dd3fc;background:rgba(11,18,32,.78);padding:1px 4px;border-radius:3px;letter-spacing:.04em}
+  .scene.done .seed{display:none}
+  .rotom{position:relative;z-index:1;width:64px;height:64px;image-rendering:pixelated;animation:bob 2.2s ease-in-out infinite,flicker 3.1s steps(1) infinite;filter:drop-shadow(0 0 6px rgba(125,211,252,.95)) drop-shadow(0 0 2px #fff)}
+  @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+  @keyframes flicker{0%,92%,100%{opacity:1}94%{opacity:.55}96%{opacity:1}98%{opacity:.7}}
+  .rotomcv{position:relative;z-index:1;width:88px;height:88px;image-rendering:pixelated;animation:bob 2.2s ease-in-out infinite;filter:drop-shadow(0 0 6px rgba(125,211,252,.95))}
+  .neck{width:22px;height:8px;background:var(--border-strong);margin-top:1px}
+  .kb{width:150px;height:18px;background:#fff;border:1.5px solid var(--border-strong);border-radius:4px;margin-top:2px;display:grid;grid-template-columns:repeat(12,1fr);gap:2px;padding:3px 4px;align-items:center}
+  .key{height:6px;background:var(--border);border-radius:1px;animation:key 1.2s steps(1) infinite;animation-delay:var(--d)}
+  @keyframes key{0%,55%,100%{background:var(--border)}60%,85%{background:var(--accent)}}
+  /* Estados finales: la PC se detiene */
+  .scene.done .rotom,.scene.done .key{animation:none}
+  .scene.ok .screen{border-color:var(--ok)} .scene.ok .rotom{animation:bob 2.2s ease-in-out infinite}
+  .scene.ok .key{background:var(--ok)}
+  .scene.no .screen{border-color:var(--warn);background:var(--warn-bg)} .scene.no .rotom{filter:grayscale(.6) drop-shadow(0 0 4px rgba(194,65,12,.5))}
+  .scene.rule .screen{border-color:var(--accent)}
+  .badge{position:absolute;right:6px;top:6px;z-index:2;width:24px;height:24px;border-radius:50%;display:grid;place-items:center;font-weight:700;color:#fff;font-size:14px}
+  .badge.ok{background:var(--ok)} .badge.no{background:var(--warn)} .badge.rule{background:var(--accent)}
+
+  /* Progreso REAL (mismo patrón que Loader 1/4) */
+  .progress{width:100%;display:flex;flex-direction:column;gap:7px}
+  .track{height:6px;background:#e5e5ea;border-radius:3px;overflow:hidden}
+  .fill{height:100%;width:0;background:var(--accent);border-radius:3px;transition:width .3s linear}
+  .meta{display:flex;justify-content:space-between;font-size:12px;color:var(--text-2);font-variant-numeric:tabular-nums}
+  .meta.sub{font-size:11px;color:var(--muted)}
+
+  /* Resultado: opciones y qué cambia */
+  .opt-nav{display:flex;align-items:center;justify-content:space-between;width:100%;font-size:12px;color:var(--text-2)}
+  .opt-nav .arrows{display:flex;gap:4px}
+  .opt-nav button{font:inherit;width:26px;height:26px;border-radius:6px;border:1px solid var(--border);background:#fff;cursor:pointer}
+  table.changes{width:100%;border-collapse:collapse;font-size:12px}
+  table.changes td{padding:5px 0;border-top:1px solid var(--border)}
+  table.changes td:last-child{text-align:right;color:var(--text-2)}
+  table.changes td.chg{color:var(--warn);font-weight:600}
+  .verified{font-size:11px;color:var(--ok);display:flex;gap:5px;align-items:center}
+
+</style>
+</head>
+<body>
+<div class="note">Boceto animado — el aviso del tab <b>IVs / EVs</b> (aparece solo cuando hay alerta de legalidad) abre este modal de búsqueda, que también se abre desde la fila del tab <b>Diagnóstico</b>. El progreso de la demo simula una búsqueda real sobre 2<sup>32</sup> semillas. Cambia de estado con los botones.</div>
+
+<div class="ivtab">
+  <div class="ivtabs"><span>Info</span><span class="cur">IVs / EVs <i class="redbang" id="tabbang">!</i></span><span>Movs</span><span>Diagnóstico</span></div>
+  <div class="ivbody">
+    <div class="ph">Radar + lista de IVs/EVs (sin cambios)</div>
+    <div class="strip" id="strip">
+      <i class="redbang">!</i>
+      <span>Con estos IVs el Pokémon deja de ser legal en este encuentro.</span>
+      <button class="btn small primary" id="open">Buscar IVs legales</button>
+    </div>
+    <div class="foot"><span>Total EVs</span><div class="meter"><div></div></div><b>0 / 510</b></div>
+  </div>
+  <label class="sim"><input type="checkbox" id="legal"> Simular IVs legales (sin alerta)</label>
+</div>
+
+<div class="tabs" role="group" aria-label="Estados del modal">
+  <button data-s="search" aria-pressed="true">1 · Buscando</button>
+  <button data-s="found" aria-pressed="false">2 · Encontrada</button>
+  <button data-s="none" aria-pressed="false">3 · Sin solución</button>
+</div>
+
+<!-- 1 · BUSCANDO -->
+<div class="card on" id="s-search" role="dialog" aria-live="polite" aria-label="Buscando una combinación legal">
+  <p class="title">Buscando una combinación legal…</p>
+  <div class="scene " aria-hidden="true">
+    <div class="pc">
+      <div class="screen"><canvas class="rain" width="172" height="100"></canvas><div class="seed">SEED 00000000</div><canvas class="rotomcv" width="96" height="96"></canvas></div>
+      <div class="neck"></div>
+      <div class="kb"><span class="key" style="--d:0ms"></span><span class="key" style="--d:97ms"></span><span class="key" style="--d:194ms"></span><span class="key" style="--d:291ms"></span><span class="key" style="--d:388ms"></span><span class="key" style="--d:485ms"></span><span class="key" style="--d:582ms"></span><span class="key" style="--d:679ms"></span><span class="key" style="--d:776ms"></span><span class="key" style="--d:873ms"></span><span class="key" style="--d:970ms"></span><span class="key" style="--d:1067ms"></span></div>
+    </div>
+  </div>
+  <div class="ivs" aria-label="IVs objetivo">
+    <div class="iv perfect"><small>PS</small><b>31</b></div><div class="iv perfect"><small>Atq</small><b>31</b></div>
+    <div class="iv perfect"><small>Def</small><b>31</b></div><div class="iv"><small>AtE</small><b>20</b></div>
+    <div class="iv"><small>DeE</small><b>12</b></div><div class="iv perfect"><small>Vel</small><b>31</b></div>
+  </div>
+  <div class="progress">
+    <div class="track"><div class="fill" id="fill"></div></div>
+    <div class="meta"><span id="checked">0 de 4 295 M semillas</span><span id="pct">0 %</span></div>
+    <div class="meta sub"><span id="time">Tiempo 0:00 · quedan ≈ 0:30</span><span id="hits">Coincidencias: 0</span></div>
+  </div>
+  <p class="text">Puedes cancelar cuando quieras: el Pokémon no cambia hasta que apliques un resultado.</p>
+  <button class="btn" id="cancel">Cancelar</button>
+</div>
+
+<!-- 2 · ENCONTRADA -->
+<div class="card" id="s-found" role="dialog" aria-label="Combinación legal encontrada">
+  <p class="title">Combinación legal encontrada</p>
+  <div class="scene done ok" aria-hidden="true">
+    <div class="pc">
+      <div class="screen"><canvas class="rain" width="172" height="100"></canvas><div class="seed">SEED 00000000</div><img class="rotom" alt="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABgBAMAAAAQtmoLAAAAJ1BMVEUAAAAIQawQEBAprL0xe+5axb17OSC9vb299u7FShjucyn/rIP////I9uJSAAAAAXRSTlMAQObYZgAAAadJREFUWMPtlrFKw1AUhgsXH6CdOwkVugUO5xm6uOj1lBQyCRXaBxAE12ydCo2kbh0KPfgE1cUhGOU+lCepUcQ2vXeoOtx/6vB/OX/+nOam0fDy8vL6G6mDAxgcGFCkDw3MHAFM/hugBsuDAys3AJ2BOZPLbigc8yxw8ZMADpmQUubEPpMq/MxD6xFHg6e1AAvrEXhv1nz3yh1bgG4emW971pnU2Snz6rnNS2ugNedFs80LW+CizfzQbM2ntkDUK4Dr1Brov0mpLyNroIGjMXev0nRoWStQNzlORVbPAQCIzgt7OiW9j1CAFMYa8ET8SQdQw74wE5PLZRVeSiAtW0gQ1K9pmJcxFI3K7YYwqx8CH7GxLx0VpWKU0x7iE+jo8r83MXEtgd8iFb/y2rIUxXozqUqC9X6MTOmUfoKPjFTrD43JC0d1nkjRdQtV+E1celFXD6ZmAoQk9s2zws29R8ZkevcNm0zs8HWIygttYnaOkMrjyl6d60JEO0dIfwA/15FCyoLtm7p9z0BmuL35AaMscCRC10MeyfXDAx1HSCP+i9PLy+u39A5y4KFt9QG+VAAAAABJRU5ErkJggg=="><div class="badge ok">✔</div></div>
+      <div class="neck"></div>
+      <div class="kb"><span class="key" style="--d:0ms"></span><span class="key" style="--d:97ms"></span><span class="key" style="--d:194ms"></span><span class="key" style="--d:291ms"></span><span class="key" style="--d:388ms"></span><span class="key" style="--d:485ms"></span><span class="key" style="--d:582ms"></span><span class="key" style="--d:679ms"></span><span class="key" style="--d:776ms"></span><span class="key" style="--d:873ms"></span><span class="key" style="--d:970ms"></span><span class="key" style="--d:1067ms"></span></div>
+    </div>
+  </div>
+  <div class="ivs">
+    <div class="iv perfect"><small>PS</small><b>31</b></div><div class="iv perfect"><small>Atq</small><b>31</b></div>
+    <div class="iv perfect"><small>Def</small><b>31</b></div><div class="iv"><small>AtE</small><b>20</b></div>
+    <div class="iv"><small>DeE</small><b>12</b></div><div class="iv perfect"><small>Vel</small><b>31</b></div>
+  </div>
+  <div class="opt-nav"><span id="optlabel">Opción 1 de 4 · mantiene todo</span>
+    <span class="arrows"><button id="prev" aria-label="Opción anterior">‹</button><button id="next" aria-label="Opción siguiente">›</button></span></div>
+  <table class="changes" id="changes"></table>
+  <div class="verified">✔ Verificada con el analizador de legalidad: sin errores</div>
+  <div class="row"><button class="btn" data-s="search">Descartar</button><button class="btn primary">Aplicar</button></div>
+</div>
+
+<!-- 3 · SIN SOLUCIÓN -->
+<div class="card" id="s-none" role="dialog" aria-label="Esa combinación no existe">
+  <p class="title">Esa combinación no existe en este encuentro</p>
+  <div class="scene done no" aria-hidden="true">
+    <div class="pc">
+      <div class="screen"><canvas class="rain" width="172" height="100"></canvas><div class="seed">SEED 00000000</div><img class="rotom" alt="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABgBAMAAAAQtmoLAAAAJ1BMVEUAAAAIQawQEBAprL0xe+5axb17OSC9vb299u7FShjucyn/rIP////I9uJSAAAAAXRSTlMAQObYZgAAAadJREFUWMPtlrFKw1AUhgsXH6CdOwkVugUO5xm6uOj1lBQyCRXaBxAE12ydCo2kbh0KPfgE1cUhGOU+lCepUcQ2vXeoOtx/6vB/OX/+nOam0fDy8vL6G6mDAxgcGFCkDw3MHAFM/hugBsuDAys3AJ2BOZPLbigc8yxw8ZMADpmQUubEPpMq/MxD6xFHg6e1AAvrEXhv1nz3yh1bgG4emW971pnU2Snz6rnNS2ugNedFs80LW+CizfzQbM2ntkDUK4Dr1Brov0mpLyNroIGjMXev0nRoWStQNzlORVbPAQCIzgt7OiW9j1CAFMYa8ET8SQdQw74wE5PLZRVeSiAtW0gQ1K9pmJcxFI3K7YYwqx8CH7GxLx0VpWKU0x7iE+jo8r83MXEtgd8iFb/y2rIUxXozqUqC9X6MTOmUfoKPjFTrD43JC0d1nkjRdQtV+E1celFXD6ZmAoQk9s2zws29R8ZkevcNm0zs8HWIygttYnaOkMrjyl6d60JEO0dIfwA/15FCyoLtm7p9z0BmuL35AaMscCRC10MeyfXDAx1HSCP+i9PLy+u39A5y4KFt9QG+VAAAAABJRU5ErkJggg=="><div class="badge no">?</div></div>
+      <div class="neck"></div>
+      <div class="kb"><span class="key" style="--d:0ms"></span><span class="key" style="--d:97ms"></span><span class="key" style="--d:194ms"></span><span class="key" style="--d:291ms"></span><span class="key" style="--d:388ms"></span><span class="key" style="--d:485ms"></span><span class="key" style="--d:582ms"></span><span class="key" style="--d:679ms"></span><span class="key" style="--d:776ms"></span><span class="key" style="--d:873ms"></span><span class="key" style="--d:970ms"></span><span class="key" style="--d:1067ms"></span></div>
+    </div>
+  </div>
+  <p class="text">Se revisaron las 4 295 M de semillas posibles (0:31) y ninguna produce esos IVs. La más cercana difiere en un solo IV:</p>
+  <div class="ivs">
+    <div class="iv perfect"><small>PS</small><b>31</b></div><div class="iv perfect"><small>Atq</small><b>31</b></div>
+    <div class="iv perfect"><small>Def</small><b>31</b></div><div class="iv"><small>AtE</small><b>20</b></div>
+    <div class="iv diff"><small>DeE</small><b>13</b></div><div class="iv perfect"><small>Vel</small><b>31</b></div>
+  </div>
+  <div class="row"><button class="btn" data-s="search">Volver a los IVs originales</button><button class="btn primary">Usar la más cercana</button></div>
+</div>
+
+<script>
+  // Lluvia de código (decorativa): columnas de dígitos hex que caen sin parar y mutan.
+  let PROG=0;  // avance de la búsqueda (0..1): en la implementación es el progreso REAL de la barra
+  let SURGE=0; // la lluvia se acelera mientras Rotom se disuelve / rematerializa
+  const HEX="0123456789ABCDEF", CW=11, LH=12;
+  const rains=[...document.querySelectorAll("canvas.rain")].map(cv=>{
+    const ctx=cv.getContext("2d"), cols=Math.floor(cv.width/CW);
+    const drops=Array.from({length:cols},()=>({y:Math.random()*-20,v:.35+Math.random()*.9}));
+    ctx.font="11px ui-monospace,Menlo,Consolas,monospace";
+    return {cv,ctx,cols,drops,seed:cv.parentElement.querySelector(".seed")};
+  });
+  function frame(r){
+    const {ctx,cv,cols,drops}=r;
+    ctx.fillStyle="rgba(11,18,32,0.16)"; ctx.fillRect(0,0,cv.width,cv.height);   // estela que se desvanece
+    for(let i=0;i<cols;i++){
+      const d=drops[i], y=d.y*LH, ch=HEX[Math.floor(Math.random()*16)];
+      ctx.fillStyle="#e0f2fe"; ctx.fillText(ch,i*CW+1,y);                       // cabeza brillante
+      ctx.fillStyle="rgba(56,189,248,.85)"; ctx.fillText(HEX[Math.floor(Math.random()*16)],i*CW+1,y-LH); // cuerpo
+      d.y+=d.v*(1+SURGE*2.5);
+      if(y>cv.height+LH && Math.random()>.97){d.y=Math.random()*-10;d.v=.35+Math.random()*.9}
+    }
+    r.seed.textContent="SEED "+Array.from({length:8},()=>HEX[Math.floor(Math.random()*16)]).join("");
+  }
+  // Pre-pintar un cuadro lleno en cada pantalla (los estados finales quedan "congelados" y tenues)
+  rains.forEach(r=>{for(let k=0;k<70;k++)frame(r)});
+
+  // ===== Rotom "hackeado" por la Matrix: cambia de forma disolviéndose en código =====
+// Motor del efecto "Rotom hackeado por la Matrix": el sprite se disuelve en código hexadecimal
+// (por bloques de 6 px, con barrido y desplazamiento de franjas + separación RGB) y se
+// rematerializa como otra forma.
+const ROTOM_HEX = "0123456789ABCDEF";
+function rotomMask(img, makeCanvas) {
+  const c = makeCanvas(96, 96), x = c.getContext("2d"); x.drawImage(img, 0, 0);
+  const d = x.getImageData(0, 0, 96, 96).data, m = new Array(256).fill(false);
+  for (let by = 0; by < 16; by++) for (let bx = 0; bx < 16; bx++) {
+    let on = false;
+    for (let y = 0; y < 6 && !on; y++) for (let xx = 0; xx < 6; xx++)
+      if (d[((by * 6 + y) * 96 + bx * 6 + xx) * 4 + 3] > 40) { on = true; break; }
+    m[by * 16 + bx] = on;
+  }
+  return m;
+}
+function rotomTint(img, color, makeCanvas) {
+  const c = makeCanvas(96, 96), x = c.getContext("2d"); x.drawImage(img, 0, 0);
+  x.globalCompositeOperation = "source-atop"; x.fillStyle = color; x.fillRect(0, 0, 96, 96); return c;
+}
+// dir = 'out' (se disuelve de arriba hacia abajo) | 'in' (se rematerializa de arriba hacia abajo)
+function rotomThresholds(dir, rnd) {
+  const t = new Array(256);
+  for (let by = 0; by < 16; by++) for (let bx = 0; bx < 16; bx++) {
+    const k = dir === "out" ? by / 15 : 1 - by / 15;
+    t[by * 16 + bx] = 0.08 + 0.92 * (0.65 * rnd() + 0.35 * k);
+  }
+  return t;
+}
+// I: intensidad 0 (sprite intacto) .. 1 (todo convertido en código)
+function drawRotom(ctx, img, mask, tR, tC, I, thr, rnd) {
+  ctx.clearRect(0, 0, 96, 96);
+  if (I > 0.04) {
+    const d = Math.round(1 + I * 7) * (rnd() < 0.5 ? -1 : 1);
+    ctx.globalAlpha = Math.min(0.65, 0.2 + I * 0.6) * (1 - 0.85 * Math.max(0, (I - 0.85) / 0.15));
+    ctx.drawImage(tR, -d, 0); ctx.drawImage(tC, d, 0);
+    ctx.globalAlpha = 1;
+  }
+  ctx.font = "9px ui-monospace,Menlo,Consolas,monospace";
+  for (let by = 0; by < 16; by++) {
+    const shift = I > 0.04 && rnd() < I * 0.55 ? Math.round((rnd() - 0.5) * I * 26) : 0;
+    for (let bx = 0; bx < 16; bx++) {
+      const b = by * 16 + bx; if (!mask[b]) continue;
+      const x = bx * 6, y = by * 6;
+      if (thr[b] > I) ctx.drawImage(img, x, y, 6, 6, x + shift, y, 6, 6);
+      else if (thr[b] > I - 0.35 && rnd() < 0.7) {
+        ctx.fillStyle = rnd() < 0.15 ? "#e0f2fe" : "rgba(56,189,248,.9)";
+        ctx.fillText(ROTOM_HEX[(rnd() * 16) | 0], x + 1, y + 8);
+      }
+    }
+  }
+}
+
+  const ROTOM_SRC=["data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABgBAMAAAAQtmoLAAAWfmNhQlgAABZ+anVtYgAAAB5qdW1kYzJwYQARABCAAACqADibcQNjMnBhAAAAFlhqdW1iAAAAR2p1bWRjMm1hABEAEIAAAKoAOJtxA3VybjpjMnBhOjk4NDg4NDYwLTQwNTItNDA2Yi04MjQ4LTczNDA4MmUwZDkwNwAAAAOTanVtYgAAAClqdW1kYzJhcwARABCAAACqADibcQNjMnBhLmFzc2VydGlvbnMAAAAAuGp1bWIAAABEanVtZGNib3IAEQAQgAAAqgA4m3ETYzJwYS5pbmdyZWRpZW50LnYzAAAAABhjMnNovv/qwgKfIh2S+wwzGh8CygAAAGxjYm9yo2lkYzpmb3JtYXRpaW1hZ2UvcG5namluc3RhbmNlSUR4LHhtcDppaWQ6NzFlYWM0NjMtZDI0OC00YjYwLTgwNWEtZTY1MmI4ZDNlN2VlbHJlbGF0aW9uc2hpcGhwYXJlbnRPZgAAAeJqdW1iAAAAQWp1bWRjYm9yABEAEIAAAKoAOJtxE2MycGEuYWN0aW9ucy52MgAAAAAYYzJzaBqii9phugr3uVEIp6B0vowAAAGZY2JvcqJnYWN0aW9uc4KiZmFjdGlvbmtjMnBhLm9wZW5lZGpwYXJhbWV0ZXJzoWtpbmdyZWRpZW50c4GiY3VybHgtc2VsZiNqdW1iZj1jMnBhLmFzc2VydGlvbnMvYzJwYS5pbmdyZWRpZW50LnYzZGhhc2hYILDp64S6G0645U0g6cs7gjt+/9fTTip0Ej9tcy+p8O5WpGZhY3Rpb254HWNvbS5hbnRocm9waWMuY2xhdWRlLnByb3ZpZGVkanBhcmFtZXRlcnOheB9jb20uYW50aHJvcGljLm9yaWdpbi1jb25maWRlbmNlZ3Vua25vd25rZGVzY3JpcHRpb254ZkNsYXVkZSBwcm92aWRlZCB0aGlzIGZpbGUgYXQgdGhlIHJlcXVlc3Qgb2YgYSB1c2VyIGFuZCBtYXkgaGF2ZSBjcmVhdGVkIG9yIG1vZGlmaWVkIHRoZSBmaWxlIGNvbnRlbnRzLm1zb2Z0d2FyZUFnZW50oWRuYW1lZkNsYXVkZXJhbGxBY3Rpb25zSW5jbHVkZWT1AAAAyGp1bWIAAABAanVtZGNib3IAEQAQgAAAqgA4m3ETYzJwYS5oYXNoLmRhdGEAAAAAGGMyc2g/1rfswVJwsE0Do6ZZioL9AAAAgGNib3KlY2FsZ2ZzaGEyNTZjcGFkTQAAAAAAAAAAAAAAAABkaGFzaFggzVIJA3CDrY1a+GrxmWJenNWfp3BOKWh01Ict8qCOmPpkbmFtZW5qdW1iZiBtYW5pZmVzdGpleGNsdXNpb25zgaJlc3RhcnQYIWZsZW5ndGgZFooAAAI+anVtYgAAACdqdW1kYzJjbAARABCAAACqADibcQNjMnBhLmNsYWltLnYyAAAAAg9jYm9ypWNhbGdmc2hhMjU2aXNpZ25hdHVyZXhNc2VsZiNqdW1iZj0vYzJwYS91cm46YzJwYTo5ODQ4ODQ2MC00MDUyLTQwNmItODI0OC03MzQwODJlMGQ5MDcvYzJwYS5zaWduYXR1cmVqaW5zdGFuY2VJRHgseG1wOmlpZDplZTY4Njk0My1hMTEzLTRmYTMtYjBjZi0yMmVlZjQxYWNlODVyY3JlYXRlZF9hc3NlcnRpb25zg6JjdXJseC1zZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmluZ3JlZGllbnQudjNkaGFzaFggsOnrhLobTrjlTSDpyzuCO37/19NOKnQSP21zL6nw7laiY3VybHgqc2VsZiNqdW1iZj1jMnBhLmFzc2VydGlvbnMvYzJwYS5hY3Rpb25zLnYyZGhhc2hYIIg5InBlZR0sP8BZiKHA25YugRYHsNF1/jeNvkLpXpeLomN1cmx4KXNlbGYjanVtYmY9YzJwYS5hc3NlcnRpb25zL2MycGEuaGFzaC5kYXRhZGhhc2hYIDj7Vu2tsrtarpm1CeEydOxP8OBAh6Tk2C4DTJeD/ZqpdGNsYWltX2dlbmVyYXRvcl9pbmZvo2RuYW1lb0FudGhyb3BpYyBGaWxlc2d2ZXJzaW9uZTEuMC4wa3NwZWNWZXJzaW9uZTIuNC4wAAAQOGp1bWIAAAAoanVtZGMyY3MAEQAQgAAAqgA4m3EDYzJwYS5zaWduYXR1cmUAAAAQCGNib3LShFkCEqIBJhghWQIKMIICBjCCAY2gAwIBAgIUQOWgCu7COdC+uIP6BkIFPWdVEwAwCgYIKoZIzj0EAwMwSTEXMBUGA1UEChMOQW50aHJvcGljLCBQQkMxLjAsBgNVBAMTJUFudGhyb3BpYyBDb250ZW50IENyZWRlbnRpYWxzIFJvb3QgQ0EwHhcNMjYwODA3MTg0MzU2WhcNMjgwODA2MTk0MzU2WjBEMRcwFQYDVQQKEw5BbnRocm9waWMsIFBCQzEpMCcGA1UEAxMgQW50aHJvcGljIENsYXVkZSBDb250ZW50IFNpZ25pbmcwWTATBgcqhkjOPQIBBggqhkjOPQMBBwNCAASYegpry1AYBRTVNL1CpTlbROnY3dey+UrsF9C3phYrATN3ZHf93Mo8RQN0KOUuOn19P4oWNFWe5n2/She9N7eTo1gwVjAOBgNVHQ8BAf8EBAMCB4AwFQYDVR0lBA4wDAYKKwYBBAGD6F4CATAMBgNVHRMBAf8EAjAAMB8GA1UdIwQYMBaAFM5R4gSBTmRbI/jjxM+aPpzB11zCMAoGCCqGSM49BAMDA2cAMGQCMDFzHRSeAXrSy1WOzkbhPZ6Km2wGTmZ/2gK18k8BQGXyqz88Rdrz6CTX9flAnYNVxgIwcF9c3fVhqmJKpi+UhasNUMko69cyX6STPfta3Q8EjyzDjzoyrol46FP6VFHhvUcJoWNwYWRZDZ4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD2WEDsoRbDlJuEqwfRRFMIN56sgY/etE2wVk+/kCgCE/es2Ei97xGy9Xp1JkM/Szl8WexTu370vTAY9UziAniiTtIMXKWmuwAAACdQTFRFAAAACEGsEBAQKay9MXvuWsW9ezkgvb29vfbuxUoY7nMp/6yD////yPbiUgAAAAF0Uk5TAEDm2GYAAAGnSURBVFjD7ZaxSsNQFIYLFx+gnTsJFboFDucZurjo9ZQUMgkV2gcQBNdsnQqNpG4dCj34BNXFIRjlPpQnqVHENr13qDrcf+rwfzl//pzmptHw8vLy+hupgwMYHBhQpA8NzBwBTP4boAbLgwMrNwCdgTmTy24oHPMscPGTAA6ZkFLmxD6TKvzMQ+sRR4OntQAL6xF4b9Z898odW4BuHplve9aZ1Nkp8+q5zUtroDXnRbPNC1vgos380GzNp7ZA1CuA69Qa6L9JqS8ja6CBozF3r9J0aFkrUDc5TkVWzwEAiM4LezolvY9QgBTGGvBE/EkHUMO+MBOTy2UVXkogLVtIENSvaZiXMRSNyu2GMKsfAh+xsS8dFaVilNMe4hPo6PK/NzFxLYHfIhW/8tqyFMV6M6lKgvV+jEzplH6Cj4xU6w+NyQtHdZ5I0XULVfhNXHpRVw+mZgKEJPbNs8LNvUfGZHr3DZtM7PB1iMoLbWJ2jpDK48penetCRDtHSH8AP9eRQsqC7Zu6fc9AZri9+QGjLHAkQtdDHsn1wwMdR0gj/ovTy8vrt/QOcuChbfUBvlQAAAAASUVORK5CYII=","data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABgBAMAAAAQtmoLAAAALVBMVEUAAAAQEBApKSlKSlJ7OSC9KSm9vb3FShjNMTnucyn/QTH/c3P/nJT/rIP///8azIqhAAAAAXRSTlMAQObYZgAAAnhJREFUWMPtlrGK20AQht3sA6wwOKcicHoFP4FAIM4QULPNdqncHRyILCrOkCYcBFKZmC1cBCQMi0mZMg9ggvsUbnPGZ/QMN7PS2QrsrqRegzvP55l/Zjw7o9Fggw02WGWEJf0Arop+AZRSSV+g6JeROYRVGt/ujCFAWmLOaH8yATrTxAiUJ1NOCBi1OQFj+fj+9MfwDdZibwa2p7KO3awLANtSmUXsaoA0cmYA7M3AiEFo/dv8mhkq2J4tI8DVz+obns6S/yTvbcC2BrJZ0YxQngvrMFXAY1o0NJflzjJjrOoQUY9pU0R5tk1xPTVksxYXEVAmawBS+7P8sJoVrNG4xAZof64QUFWFr8KMGSXaP80OqzSa1fGAZCMHAP7yAwByGVUEs/5v9UAQ8AdACillVNessEpQbMQ3UgOZ1ETiWiYojyn01N5ouuF2APqmMMDh7xuwLNzrijEE1ofDG4ANJ85txSGbwxXAhjsBorLF/AqsBIhwAxv5Uq4vGhAgvAU4/kbP+7nOKE0Vd+5PBD6D5/eXfzoAAO6FS3L57hu4Lp4QECJ+UIy7gbv7X1Coj0/P6J+Kh8L9zJB8/Ol5IebHrxPwFzEC7ici9+iNeH9z/JIBEAkRtgPeLRXQDJCcQgy/DVCeFwS3lFIhlzGI8NveMA4BgqBiJiCiCzClgOBnAlXqBEwBmWoA2tAKhHSqDYCqDW1AHnoXIE7bAZIvqRdUQAoptQPqbhmi6oCOY0H99oeex5mMAKERzEWXU4LnK2xahP5+wbocHKEKJ7DGROh3O1VwWeeUjiEh1sUfxp/hfvoh/B6XDTK03+3U+zrrf/8NNthgg1nsFSEDkg7Je7Z8AAAAAElFTkSuQmCC","data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABgBAMAAAAQtmoLAAAAKlBMVEUAAAAIQawISsUQEBAxe+5KSlJKe/97OSCLvfa9vb3FShjucyn/rIP////ZRByvAAAAAXRSTlMAQObYZgAAAy5JREFUWMPtljFr20AUx819g9K5IFRyHyAidknoB+gsjkKzneHJCDwZckTaOpgsGTp0CXQKrugpWzEGXTKWQOIOhSY4AX2XvtNJStRaUlQy+mE82O937/3vvXt3vd7GNraxZzdidQQo70YQgI6A/5V3BBbdAOpfdsuJxtcH3YCz/wB4RyDincqAQBfVxD9X8sC2nwzY/hIBgCchxLZt0IAQGnmCXgDwgqVKIhkhYrXrlZEXhuivlJJR++ZS/1qFKlbxMkQiad8rGl+cLJQyHyRaQ1D5+w4dw2/3KrO2+hE4/PUqRscv73KgOSdC/YsXLxFIDIa6G5uQUIi/v9Cu5rsNQH84u/qkXU0cjNQEaH///OrwPpEInJgAsm81+HPqo8xw/jlO7gIToB4g9HhqEU+73dycKBGbAFEdQOjolveIhwufS/nTKMbeCPq8zn+MO068RIjcOeuMQJ6uB+goHeE/WUoLIYQBFoGsBcapLqnRoAssRJj51wO3tARmjrOnA4VJE8BLYMYYc/fyXZWn608dHVkFkDDXQeIBWEtQ3iuAGesDZ2yvADhdR1BuFwBzjwBes/clQNbEwN8AuK4DZvQmnWIIt0zJouOp/c9JxvOOBAIL9jZdAeywsATIKP2LIBAvl5cCm89Tc3esgS0tQgMoqEePV9WsiJ+wMxUKzCucu7geDHdKgHPdB6vKUSXeD7aPs0VkAKBoLMWHHLBRBBynK14B5mxfYqOKiQagAmCBaLYnFSBhgQxinEUPwK4+DhnAcSrD0dR6LDpUcuLIWIXhnOn1UIMB9K7q7YP09rEI6jkDHMEyDqIEC43xd1hgAJSss6FVICscEjixFdvWAHPjvND4pwaOPlavEG3gTZyBmmkRdgH0CwDWtLmto8QJhuBbD5oNYK+9jXSUANt1e0sHqAD10zvAEHgcdstOagOGuLkzd9coMAeUNt2OBAZSFqct05xde7wBCCaytNOs5RoBrKF0gtw/mvBeK4AhoqGTM2ZOEmiW7R3oZsqYfBLbttX8QORYDxiKXEL7S0Ovh8igburVVqRu1Nem5nR8vFLo9hTFh1DXB/jGNraxZ7Y/AWA3i4CllroAAAAASUVORK5CYII=","data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABgBAMAAAAQtmoLAAAAJ1BMVEUAAAAQEBBKSlJqOax7OSCUg960Us29vb3FShjNc//ucyn/rIP///9+AjI8AAAAAXRSTlMAQObYZgAAAuhJREFUWMPt171r3DAUAPBM2kU75NKtY7YQumU5uMF3a9cOngT6Dzp0cTBE6LIUjLHGlBuEkqWQodhjKIE2f1T1nvwh2+dztLXl3pQL+p2+nqR3JyfHOMZfFYQFAq7iUJCHjUilgaB4DBsTL8p1GJDlIgxsy0UeNOdtuQ4CxX2ZzIC4P+fKJIeXieQDoNMxiKcA47LSYpEzxibbkOb7bCOmlDRCLJQNi/aDJtkYtFKFEKvVilK6sh9awfNxshFoa8NAwB9LumjFPsALabwQIo2SRd05UX0A/yZKVmVfRCKp95wof91qUNxX1YMjD79cF0LUO8J9QGBBYET3VfnzN4KnT3Z0GoBYTwNpwdMVzOPu41ULcEzQpA/sRy5N9ePNBYCHywsEiQVp3n1nA3gDjHY93F6+9AHvARQ5AvPlSu7OzO2H5xYkewAICzYW3DzLzZ25eflsfICD7mWoFTECLXbGnGncbTfpFrDh3YXAjw7wUft5MLw9eT2HQTI5QMbtIbd4UTfcUReRzSVc1n4itUeIfKWDOAUAFwgbXbYDsMKerIDUiPFoxaMpnJDMDWhJ68noDpBhFxYQhkCYJTVaulXywKALHtutA6CNtEBqDzCXGv0uOOMKe9iWekl1ZWQH4Lv5oAfYekYc2CHYeCAfv0m4MwgkTNoOyAO5ikdTILCTRG2g4fWS7ow+9+bA89EiuXcWcmOjEYgOrGOuJp5VAJEAIDqQ4oD23/4AduLcLmt03S4rXDNT7zam63vYuG/nzUWGYKoyqPPbgjq9m+Mw+Rj+DyALBCST7kRvvEsjPQjqE/rWA+vXgObWSJsDNwngi+86MQ9gDt9ty3c4pGT1KvDYArzH5kG1pLTswKHaDI+csU9pZVqQHixreNS/vKP21Q0AByutcJDJQeUwA0gmAoGKxODBmqlHeXZa10ta4IOVzlS8RGX4JriIRErninBbxPVSdv53AXN1XxP5K2pw5kfgL5VjHOOfjj/pcQC7FgRSvgAAAABJRU5ErkJggg==","data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABgBAMAAAAQtmoLAAAAKlBMVEUAAAAQEBBKSlJ7OSC9vb3FShjVrADmcxjucyn/rIP/3nP/5lr/7qT///9JoFwVAAAAAXRSTlMAQObYZgAAAtxJREFUWMPtljFr20AUxz1p6SSbgEGTDzp5MiJg0Nyxg1EPVLJouuXIkClThiAM16G7NXTL2sE2ukBf8glUbw0txPoufe/uFFpan+SlUPCbEng/v/e/9+5/GgxOcYpT/OsIhBBH5Ut4aI4hJADsavFbQR8fYD6WgNz9L+gHQOReQMhdrV0+2NC5B9D0o7rNrziPYx8hQQM0e9MT0stMYaSJ+4W/Ac2zhKapcwNzVZblyhCHSgS7RlPXORWoKL8sqcbBEsFD8yysBglZuUpn4Yi6OlxC4qEKYQt8WBUJhIYoDpeAh2dt/8hKzGfMEon2zdpKzlYJbBhjk3Cs1MVh2dJJqLAPLEARUk+5Z/9AmDNKWmAyVreHR2EJlKCiFojGPhGOgKwAFq0tsFYq0t5bhMqz2w2brMMhdgRbn2q315VCgI3Ugk2mAHOfanu6qJmx10otQ5TSD4gYw4ktzxcGuO0FjDjni5BN+wEzGhnnqJr1AHAOCzNkwti0P8CGZhDzrmMloKDciQFGHYOzIpaUG20ssOwBqNkQh2yAsecG/SpiPQQLzNXC62cOWNKMzRVStLked7I9bekGmQ03HaFt+gmJ04qJmIysa+AOe4kAtpmKLwDSeetL0q9cQop3OY5b50Prp8vr9X4+JxcrEudseA+98yb3TmcZCtC5ezuEvynzPsS4Fc7MUcPXjpuKwFbFzgoRgMtadzyqCBRJe0YSLve665Xkre2RaAGNv6eA8p2LGdX1Y+0FXlWf8AVy143e8D34Afm+Wal3Typy57RravCvxxO+WG/vnLPioe38ooP7z+hM329UoV8eeu+Hhby/Qr+4vnnxjKDj00V+uVHq4/XVfNHhGS/A4x0Bb3hvoPqBh/rtvDcQVLjgZzHniR70A+AsRXvlPOoJDOSa0nt3RCXI8ePeBWh/4vM06l2AXtQ1NnTMZ2MA4RENuY3LjwKCLk/9s4QYnOIUp/j/4ieGjck+YyjEBAAAAABJRU5ErkJggg==","data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABgBAMAAAAQtmoLAAAAKlBMVEUAAAAAnAAAzQAIe0EQEBAgtFJKSlJ7OSCL9qy9vb3FShjucyn/rIP///8eou3KAAAAAXRSTlMAQObYZgAAArxJREFUWMPtlr1q3EAQx2/fQNo30HD4jFunSZHmPChE58c4ZC5wjTERuevcuwrIHMGNERGsnM6JyU5Suzh1TowvRu+SGdnEIXDSqkkR7l/Pb2dnZ+ej19too42apXyW527va2AFvrM9gDEmAXD0oWDHfC2XlB8GboAeFFSWRHTlCsxJZEzmCiSmVjZ0BSCZsT0OnYPW0EeLAL572mBgh+5pqB/KDr0uX0PPc+gIuD7pPwTyToCCrsCAugDKlzQE7s/K5cYAF5zvGoAxuY0MF6lbYaudsrR2xPVwLpXd7kZflDSnrCCyNdLqRF8sYwZeG/OItIXPwEFBJoxjQYhjCdoBqgFGkmRuz5sAvrAuyhkDmQDji/IqsQ0/3ecL652S24Z9AErW8tBbnwK+sB5c1y8U1sCSw1hffHqLWwXkfCMGkIGR9LP11aogjBEM2Yc+hmG83wJs8SUiepQ1WYj70jHXBq37cYzzTyuxPuM4CONxY4vVfKOcbl6w0Zcf74k+s8MRUdYGPGPg4+490WU8xjYgmtOeeNgTgB0gtgLFOwFudvlodniJZNfPFY0M/Hx7L8DzwhZhPKqB9XlDjGZnBzN+oG+n5uy7vBGSaUh0H6MsvV3xcMjfVNURA7YRUH3E7ENa3aZVNZ2ushqwDW1ZAaKJFpPb1bSapqcCGDRZw+/mIBBfTSaLSbpYzBgwAjTUDweBwz5OFmm6SDIMx1EWmabRqHi4cUngH4pM4yjyZcPgmZjUEiA5ah5F0up4iv528DJxGdZSqbUQ+YrtgNKBhid57fbg1QuWbE0OLZztg6e9zOu52HvdxptDv/57/kCnNUPp7TuZPe4bJZxU1TEE7vbbVXXnvFDKZwI4cXcg9id34OxAPqvmAFwdKPkJ28fuDpT8bX5SCDrlzVedtjft91SnzUcy3OkrbbTRf6RfpTpizQ8y8GoAAAAASUVORK5CYII="];   // base, Calor, Lavadora, Frío, Ventilador, Corte
+  const rotomCv=document.querySelector("#s-search canvas.rotomcv"), rctx=rotomCv.getContext("2d");
+  const rImgs=ROTOM_SRC.map(src=>{const i=new Image();i.src=src;return i});
+  const mkc=(w,h)=>{const c=document.createElement("canvas");c.width=w;c.height=h;return c};
+  const rData=[];
+  function rGet(i){
+    if(!rData[i]){const im=rImgs[i]; if(!im.complete||!im.naturalWidth) return null;
+      rData[i]={mask:rotomMask(im,mkc),tR:rotomTint(im,"#ff3b3b",mkc),tC:rotomTint(im,"#00e5ff",mkc)};}
+    return rData[i];
+  }
+  const RG={cur:0,phase:"hold",t0:performance.now(),hold:600,micro:0,thr:rotomThresholds("out",Math.random)};
+  // Siguiente forma: al azar, sin repetir la actual; el Rotom original reaparece seguido
+  // (35 %) para que se note que es él mismo el que está siendo hackeado.
+  function nextForm(cur){
+    if(cur!==0&&Math.random()<.35) return 0;
+    let n; do{ n=Math.floor(Math.random()*ROTOM_SRC.length); }while(n===cur||n===0);
+    return n;
+  }
+  const OUT_MS=170, IN_MS=170;   // duración a 1× (al inicio); a 3× (al final) quedan ~57 ms por tramo
+  function rotomFrame(){
+    const now=performance.now(); let I=0;
+    const sp=1+2*PROG;   // increscendo: la velocidad de cambio sube de 1× a 3× a medida que avanza la búsqueda
+    if(RG.phase==="hold"){
+      if(now-RG.t0>RG.hold/sp){RG.phase="out";RG.t0=now;RG.thr=rotomThresholds("out",Math.random);}
+      else if(now<RG.micro) I=.14+Math.random()*.1;            // micro-fallo ocasional
+      else if(Math.random()<.04) RG.micro=now+70;
+    }
+    if(RG.phase==="out"){
+      const k=Math.min(1,(now-RG.t0)/(OUT_MS/sp)); I=k;
+      if(k>=1){RG.cur=nextForm(RG.cur);RG.phase="in";RG.t0=now;RG.thr=rotomThresholds("in",Math.random);}
+    } else if(RG.phase==="in"){
+      const k=Math.min(1,(now-RG.t0)/(IN_MS/sp)); I=1-k;
+      if(k>=1){RG.phase="hold";RG.t0=now;RG.hold=250+Math.random()*450;I=0;}
+    }
+    SURGE=I;
+    const d=rGet(RG.cur); if(!d) return;
+    drawRotom(rctx,rImgs[RG.cur],d.mask,d.tR,d.tC,I,RG.thr,Math.random);
+  }
+
+  // setInterval (no requestAnimationFrame): sigue corriendo aunque el visor throttlee los cuadros de animación
+  setInterval(()=>{
+    if(document.getElementById("s-search").classList.contains("on")) frame(rains[0]);
+  },55);
+  // Rotom va con su propio temporizador (~40 cuadros/s): a 3× cada tramo de disolución dura ~57 ms,
+  // y a 18 cuadros/s (el de la lluvia) quedaría en un solo cuadro y no se vería el efecto.
+  setInterval(()=>{
+    if(document.getElementById("s-search").classList.contains("on")) rotomFrame();
+  },25);
+
+  // Opciones de resultado (la 1 mantiene todo; el resto cambia algún atributo derivado de la semilla)
+  const options=[
+    {label:"mantiene todo",rows:[["Naturaleza","Audaz","se mantiene"],["Habilidad","Intimidación","se mantiene"],["Género","♂","se mantiene"],["Brillante","No","se mantiene"],["Tamaño","—","cambia"]]},
+    {label:"cambia la Naturaleza",rows:[["Naturaleza","Audaz → Alegre","chg"],["Habilidad","Intimidación","se mantiene"],["Género","♂","se mantiene"],["Brillante","No","se mantiene"],["Tamaño","—","cambia"]]},
+    {label:"cambia la Habilidad",rows:[["Naturaleza","Audaz","se mantiene"],["Habilidad","Intimidación → Cuerpo Puro","chg"],["Género","♂","se mantiene"],["Brillante","No","se mantiene"],["Tamaño","—","cambia"]]},
+    {label:"cambia Naturaleza y Género",rows:[["Naturaleza","Audaz → Firme","chg"],["Habilidad","Intimidación","se mantiene"],["Género","♂ → ♀","chg"],["Brillante","No","se mantiene"],["Tamaño","—","cambia"]]}
+  ];
+  let oi=0;
+  function renderOpt(){
+    const o=options[oi];
+    document.getElementById("optlabel").textContent="Opción "+(oi+1)+" de "+options.length+" · "+o.label;
+    document.getElementById("changes").innerHTML=o.rows.map(r=>"<tr><td>"+r[0]+"</td><td>"+r[1]+"</td><td class='"+(r[2]==="chg"?"chg":"")+"'>"+(r[2]==="chg"?"cambia":r[2])+"</td></tr>").join("");
+  }
+  document.getElementById("prev").onclick=()=>{oi=(oi+options.length-1)%options.length;renderOpt()};
+  document.getElementById("next").onclick=()=>{oi=(oi+1)%options.length;renderOpt()};
+  renderOpt();
+
+  // Cambio de estado
+  const tabs=[...document.querySelectorAll(".tabs button")];
+  function show(s){
+    document.querySelectorAll(".card").forEach(c=>c.classList.toggle("on",c.id==="s-"+s));
+    tabs.forEach(b=>b.setAttribute("aria-pressed",b.dataset.s===s?"true":"false"));
+    if(s==="search") run();
+  }
+  tabs.forEach(b=>b.onclick=()=>show(b.dataset.s));
+  document.querySelectorAll(".card [data-s]").forEach(b=>b.addEventListener("click",()=>show(b.dataset.s)));
+  document.getElementById("open").onclick=()=>show("search");
+  document.getElementById("legal").onchange=e=>document.querySelector(".ivtab").classList.toggle("legal",e.target.checked);
+  document.getElementById("cancel").onclick=()=>{clearInterval(t);document.getElementById("fill").style.width="0";show("none")};
+
+  // Búsqueda simulada: 2^32 semillas en ~8 s de demo (la real depende del equipo)
+  const TOTAL=4294967296; let t=null;
+  function run(){
+    clearInterval(t); PROG=0; const start=Date.now(); const DEMO=8000;
+    t=setInterval(()=>{
+      const f=Math.min(1,(Date.now()-start)/DEMO); PROG=f;
+      document.getElementById("fill").style.width=(f*100)+"%";
+      document.getElementById("pct").textContent=Math.round(f*100)+" %";
+      document.getElementById("checked").textContent=Math.round(f*TOTAL/1e6).toLocaleString("es").replace(/,/g," ")+" de 4 295 M semillas";
+      const real=f*30, left=Math.max(0,30-real);
+      const m=x=>Math.floor(x/60)+":"+String(Math.floor(x%60)).padStart(2,"0");
+      document.getElementById("time").textContent="Tiempo "+m(real)+" · quedan ≈ "+m(left);
+      document.getElementById("hits").textContent="Coincidencias: "+Math.floor(f*4);
+      if(f>=1){clearInterval(t);show("found")}
+    },120);
+  }
+  run();
+</script>
+</body>
+</html>
