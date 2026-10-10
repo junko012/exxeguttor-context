@@ -546,56 +546,151 @@ Pokémon cuando el encuentro liga el PID/semilla a los IVs. No es solo "encuentr
 - Docs: `pokemon-database/docs/SCHEMA_REFERENCE.md` y `CHANGELOG.md` actualizados.
 - Pendiente: genus/hábitat/flavor text por forma (sin fuente por forma), sprites de formas cosméticas, ocultar Stunfisk Galar y Avalugg Hisui en Z-A, pruebas con FluentAssertions.
 
-## 2026-10-07 — Fix de PP al cambiar movimientos + rediseño de tarjetas de Moves
+## 2026-10-09 — Tab Moves (PP, tarjetas), rediseño del tab Special y corrección de ids de Mega/Z
 
-**Resumen**: sesión corta sobre el tab Moves. Un bug real de legalidad/escritura (PP actual
-de un slot no se actualizaba al cambiar su movimiento) y dos mejoras de UI pedidas por el
-usuario (tarjetas de movimiento y modal de selección). Código escrito sin compilar (sin SDK
-en el sandbox): pendiente de `dotnet build` y prueba manual del lado del usuario.
-
-**Bug real corregido — PP actual del slot conservaba el del movimiento anterior**
-- Síntoma: al reemplazar un movimiento en un slot que ya tenía uno, el diagnóstico de
-  legalidad marcaba error de PP aunque la UI mostraba los PP del movimiento nuevo. En slots
-  vacíos no pasaba (PP 0, nada que exceda el máximo).
-- Causa: `MoveN`/`MoveN_PPUps` se aplicaban al PKM, pero `MoveN_PP` (PP actual) nunca. En
-  `EditSessionService.AnalyzeLegality` el parámetro `setPP` estaba declarado y nunca se
-  llamaba; en `EditApplyService.ApplyFieldsToPkm` directamente no existía. Los PP que ve el
-  usuario (`MoveNPP` del ViewModel) son solo de presentación, no una edición registrada.
-- Alcance: afectaba tanto el preview de legalidad como la escritura real al exportar.
-  El movimiento nuevo SÍ se grababa bien; lo que quedaba mal era su PP actual.
-- Fix: si un slot tiene edición de movimiento o de PP Ups, se llama a
-  `pkm.HealPPIndex(slot)` después de setear ambos (en preview y en escritura). Los slots sin
-  edición conservan su PP actual. `HealPPIndex(int)` confirmado en el código fuente de
-  PKHeX.Core 25.11.07.
-
-**Tarjetas de movimiento rediseñadas (aprobado por mockup)**
-- Franja vertical y pill con el color del tipo, nombre más grande, chip de clase de daño con
-  texto (Physical/Special/Status), fila de stats con etiqueta chica (Power/Accuracy), barra de
-  PP, PP Ups como 3 puntos entre −/+, y descripción visible (hasta 2 líneas).
-- Barra de PP por segmentos: 5 segmentos (PP base) + 1 por cada PP Up, hasta 8; cada
-  segmento equivale a 1/5 de los PP base. Llenos = PP actual / PP máximo (`PpSegment`).
-- Fondo y borde de la tarjeta siguen coloreados por clase de daño (decisión explícita del
-  usuario: la clase es adicional, los colores de fondo anteriores se mantienen).
-- Nuevas propiedades `MoveNMaxPP` y `MoveNPpSegments` en `PokemonEditorViewModel`;
-  `CapitalizeConverter` y `PpUpPipBrushConverter` (nuevos, `MoveCardConverters.cs`).
-
-**Modal de selección de movimiento**
-- Se eliminó la columna ⓘ. La descripción (Acc/PP + efecto) ahora es el tooltip del nombre
-  del movimiento; ya no sale al pasar el mouse por cualquier parte de la fila.
-
-**Archivos**: nuevos `ViewModels/PpSegment.cs`, `Converters/MoveCardConverters.cs`;
-modificados `Services/EditSessionService.cs`, `Services/EditApplyService.cs`,
-`ViewModels/PokemonEditorViewModel.cs`, `Views/PokemonStatsView.axaml`, `App.axaml`
-(todos bajo `src/Exxeguttor.UI/`).
+**Resumen**: sesión larga sobre los tabs Moves y Special. Dos bugs reales de datos/legalidad
+(PP de movimientos y ids de Mega Stones/Z-Crystals), un tercero de UI (combo pegado) y el
+rediseño visual de ambos tabs. **Todo el código se escribió sin compilar** (sin SDK en el
+sandbox): pendiente `dotnet build` y prueba manual de cada punto de "Pendiente / sin verificar".
+Base de trabajo: commit `d5fad73`.
 
 **Nota de sincronización**: el commit `2023bc9` ("adding forms gen 8", 6 oct) no estaba
-documentado en este changelog: tocó `PokemonService.cs`, `RegionalFormCatalog.cs`, claves de
-i18n es/en y el sprite `games/w.png`.
+documentado: tocó `PokemonService.cs`, `RegionalFormCatalog.cs`, claves de i18n es/en y el
+sprite `games/w.png`.
 
-**Pendiente / sin verificar**:
-- Compilar y probar: cambiar un movimiento por otro de menos PP máximos y confirmar que el
-  tab Diagnóstico ya no marca error de PP; exportar y revisar el save en PKHeX; subir/bajar
-  PP Ups y ver los segmentos y puntos; slots con Sketch/Revival Blessing (sin PP Ups).
-- Sin test de round-trip dedicado para el recálculo de PP al cambiar movimiento.
-- Si el contraste de los segmentos vacíos (negro 18 %) no alcanza sobre los fondos
-  pastel, ajustar en `PpSegment.cs`.
+### Bugs reales corregidos
+
+**1. PP actual del slot conservaba el del movimiento anterior** (`EditSessionService`, `EditApplyService`)
+- Síntoma: al reemplazar un movimiento en un slot ya ocupado, el diagnóstico marcaba "PP por
+  encima del máximo". En slots vacíos no pasaba (PP 0).
+- Causa: `MoveN`/`MoveN_PPUps` se aplicaban al PKM pero `MoveN_PP` nunca. En
+  `AnalyzeLegality` el parámetro `setPP` estaba declarado y no se usaba; en `ApplyFieldsToPkm`
+  no existía. Afectaba el preview Y el export. El movimiento nuevo SÍ se grababa bien.
+- Fix: si un slot tiene edición de movimiento o de PP Ups se llama `pkm.HealPPIndex(slot)`
+  después de setear ambos. Slots sin edición conservan su PP.
+
+**2. Ids de Mega Stones y Z-Crystals desalineados con la DB** (`MegaStoneDatabase`, `ZCrystalDatabase`)
+- Causa raíz: las tablas se escribieron con la numeración PokeAPI original de `Items.ItemId`.
+  El hotfix `fix_database` (26 ago) recargó la tabla con ids de PKHeX y las tablas nunca se
+  actualizaron. Resultado: el id 845 (Snorlium Z en la numeración vieja) es hoy "Sparkling
+  Stone"; el 695 (Gengarite) es "Power Plant Pass". Las opciones equipaban el objeto equivocado.
+- Mega Stones: remapeadas por nombre (47 entradas); `RawItemId == ItemId` en XY, ORAS, SM,
+  USUM y Z-A, así que la DB y PKHeX coinciden.
+- Z-Crystals: **en SM/USUM el id del cristal EQUIPADO difiere del `ItemId` de la DB**
+  (`RawItemId` 807-835 vs `ItemId` 776-806; PKHeX además trae cada cristal dos veces con el
+  mismo nombre: mochila 776-806 y equipado 807+). La tabla ahora usa el id crudo de PKHeX.
+  Se agregaron los 6 cristales exclusivos de USUM (ids crudos 927-932: Solganium, Lunalium,
+  Ultranecrozium, Mimikium, Lycanium, Kommonium). Total: 18 de tipo + 17 exclusivos.
+- Nuevo campo `HeldItemRawId` (VM): lo setean solo los selectores del tab Special; el export y
+  el preview de legalidad lo usan con prioridad sobre el nombre. Cualquier cambio de objeto
+  desde el combo del panel central lo vuelve a 0 (ahí se sigue resolviendo por nombre).
+- El filtro que oculta Mega/Z del combo general ahora aplica solo en juegos con esas
+  mecánicas (`capabilities.HasMega` / `HasZMoves`) y oculta por id Y por nombre.
+- Los nombres de las opciones Z salen de la lista de objetos del juego (idioma de la UI), no
+  de la DB en inglés.
+
+**3. Combo de selección rápida pegado y reselección que no hacía nada** (Mega y Z)
+- Causa (preexistente): el selector era un `SelectedItem` bindeado cuyo setter se reseteaba a
+  vacío él mismo; Avalonia no re-empuja un valor cambiado dentro del propio binding.
+- Fix: `SelectionChanged` en code-behind (`OnMegaOptionPicked`, `OnZCrystalOptionPicked`) →
+  `EquipMegaOption` / `EquipZCrystalOption` en el VM, y el combo se vacía con `Post`.
+  Se eliminaron las propiedades `SelectedMegaOption` / `SelectedZCrystalOption`.
+
+**4. El diagnóstico no se actualizaba al deshacer todas las ediciones** (`RunLegalityRecalcAsync`)
+- Causa: `if (edits == null || edits.Count == 0) return;` — al revertir al estado original
+  quedaba el resultado de la edición anterior. Ahora se analiza también el Pokémon sin ediciones.
+  Afectaba a cualquier edición deshecha, no solo a objetos.
+
+**5. El preview de legalidad ignoraba ediciones del tab Special**
+- `AnalyzeLegality` ahora aplica también `DynamaxLevel`, `CanGigantamax`, `IsAlpha`, `IsNoble`
+  y el Tera override, con el mismo mapeo que `ApplyFieldsToPkm`.
+
+### Tab Moves — tarjetas rediseñadas
+- Franja vertical + pill con el color del tipo, nombre, chip de clase de daño (Physical /
+  Special / Status), fila Power / Accuracy, PP Ups como 3 puntos entre −/+ y descripción
+  (hasta 2 líneas). Fondo y borde por clase de daño (decisión explícita: la clase es un dato
+  adicional, los colores de fondo anteriores se mantienen).
+- Barra de PP: 1 segmento por PP, 64 en total (máximo posible: PP base 40 con 3 PP Ups), 2
+  filas de 32, tamaño fijo. Lleno = PP actuales, tenue = hasta el máximo del movimiento, gris =
+  fuera del alcance. Color `#7D848E` (gris pizarra de la paleta de la app).
+- Tamaños de fuente alineados con la escala del resto de tabs (nombre 12, etiquetas 9, etc.);
+  no hay `FontFamily` propio en ningún tab, todo hereda.
+- Modal de selección: se eliminó la columna ⓘ; la descripción es ahora el tooltip del nombre.
+- Nuevas propiedades `MoveNMaxPP` y `MoveNPpSegments`; `PpSegment` (nuevo) y
+  `CapitalizeConverter` / `PpUpPipBrushConverter` (`MoveCardConverters.cs`, nuevo).
+
+### Tab Special — rediseño y funcionalidad
+- Convención de tarjetas con tipo (Mega, Z-Moves, Tera): franja izquierda del color del tipo +
+  fondo/borde suaves + pill con letra legible. `TypeTextColorConverter` (nuevo) elige letra
+  oscura sobre tipos claros (Electric, Ground, Ice, Steel, Fairy) y blanca sobre el resto; se
+  aplicó también a las pills de tipo de las tarjetas de Moves.
+- **Dynamax**: barra de 10 segmentos + botones 0 y 10. El checkbox de Gigantamax se deshabilita
+  si la especie no lo admite (`Gigantamax.CanToggle`), salvo que el Pokémon ya traiga el flag
+  (para poder destildarlo).
+- **Alpha/Noble**: "Es Noble" solo aparece en Legends Arceus (PA8); en Z-A solo Alpha.
+- **Tera Type (SV)**: el Override es editable (combo: sin override, 18 tipos, Stellar); el Original
+  queda de solo lectura. Bloqueado en Ogerpon, Terapagos y huevos (PKHeX exige un override
+  fijo en esos casos). Codificación en `TeraOverrideCodec` (nuevo): sin override = 19, Stellar = 99.
+  Nueva categoría "Tera Type" en el resumen de ediciones.
+- **Objeto equipado desde el tab**: las Mega Stones y Z-Crystals NO están en el combo de Held
+  Item del panel central (es a propósito: este tab es su único punto de entrada). Las tarjetas
+  Mega y Z muestran "Equipado: …" con botón **Quitar**, avisan "Reemplazó: X" al equipar sobre
+  otro objeto y avisan que Mega y Z comparten el slot de objeto.
+- **Z-Crystal exclusivo**: ahora se verifica que la especie coincida y que el Pokémon conozca el
+  movimiento requerido (compara por id vía `MoveDatabase.GetByName`). Antes la tarjeta decía
+  "✓" y "no verificado automáticamente". Si falta el movimiento: "✗ Equipado, pero no conoce X".
+  La tarjeta toma el color del tipo del movimiento.
+- **Aviso en el tab Diagnóstico** (`Severity.Fishy`, sin ficha roja): Z-Crystal exclusivo sin el
+  movimiento o de otra especie, Z-Crystal por tipo sin movimiento dañino de ese tipo, Mega
+  Stone que no corresponde a la especie. **PKHeX no valida nada de esto** (`ItemVerifier` solo
+  comprueba que el objeto se pueda llevar equipado en ese juego): el badge sigue en "Legal".
+
+### Archivos (todos bajo `src/Exxeguttor.UI/`)
+Nuevos: `ViewModels/PpSegment.cs`, `Converters/MoveCardConverters.cs`,
+`Converters/TypeTextColorConverter.cs`, `Services/TeraOverrideCodec.cs`.
+Modificados: `App.axaml`, `Views/PokemonStatsView.axaml`, `Views/PokemonStatsView.axaml.cs`,
+`ViewModels/PokemonEditorViewModel.cs`, `Services/EditApplyService.cs`,
+`Services/EditSessionService.cs`, `Services/MegaStoneDatabase.cs`, `Services/ZCrystalDatabase.cs`.
+
+### Pendiente / sin verificar
+- **Compilar y probar** (nada de esto se compiló). En Moon/USUM: equipar el cristal de un
+  Snorlax, exportar y abrir el save en PKHeX (debe llevar el id 832 equipado); Solganium Z con
+  Solgaleo en USUM; un cristal de tipo debe aparecer una sola vez en el combo.
+- En SV: cambiar el override de un Garchomp y revisar el diagnóstico (un Pokémon traído de HOME
+  exige un override distinto de "sin override"); Ogerpon debe quedar bloqueado.
+- **Riesgo conocido, no verificado — idioma y export de objetos normales**: `HeldItem` guarda el
+  nombre de PKHeX en el idioma de la UI, pero el export resuelve con `ItemDatabase.GetByName`
+  (`Items.Name` solo en inglés). Con la UI en otro idioma un objeto normal podría no resolverse
+  y perderse en silencio. Mega/Z ya no dependen de esto (`HeldItemRawId`). Probar con UI en
+  español: equipar un objeto cualquiera, exportar y revisar en PKHeX.
+- Posible desajuste más general: `ItemId` vs `RawItemId` por juego (en Gen 1-5 casi nunca
+  coinciden, ver sección de Mochila). El export de objetos normales equipados usa `ItemId`; no se revisó.
+- **Combo de Held Item del panel central**: se dejó como está a pedido. Siguen abiertos: el
+  combo probablemente queda en blanco con una Mega Stone/Z-Crystal equipada, y no se verificó si
+  Avalonia le empuja `null` a `HeldItem` en ese caso. Ideas descartadas por ahora: placeholder
+  con el objeto equipado, entrada fija "→ tab Special", botón Deshacer del aviso "Reemplazó".
+- Z-Crystals exclusivos de USUM y Mega Stones de Z-A: las de Z-A no están en la tabla de Mega.
+  Mega en Z-A no está habilitado en `SaveCapabilities` (solo Alpha).
+- **Tamaño** (`HeightScalar`, `WeightScalar`, `Scale` en PK8/PK9/PA8): no implementado; falta
+  confirmar qué propiedades tiene cada juego (y PA9).
+- Mega con habilidad y deltas de stats: requiere verificar que la DB tenga la habilidad por forma.
+- La categoría "Tera Type" podría no estar en el mapeo de colores del modal de exportación.
+- Sin test de round-trip para el recálculo de PP ni para el export de Mega/Z/Tera.
+
+### Formas: sprites cosméticos y Z-A (sobre commit 50d7c52)
+- 146 sprites nuevos en `pokemon/forms/` (+146 shiny), copiados de PokeAPI/sprites: Unown, Arceus/Silvally por tipo, Vivillon, Alcremie (con la decoración fresa), Furfrou, Flabébé/Floette/Florges, Deerling/Sawsbuck, Burmy, Shellos/Gastrodon, Genesect, gorras de Pikachu, Keldeo, Magearna, Zarude, Tatsugiri, Squawkabilly, Dudunsparce, Maushold, Sinistea/Polteageist/Poltchageist/Sinistcha. Total en la carpeta: 267.
+- Sin sprite propio (usan el de la especie): Scatterbug/Spewpa por patrón, Mothim por manto, Koraidon/Miraidon por modo (PokeAPI no los tiene). Las formas "Large" (tótem), "Lord/Lady" y Mega no se guardan.
+- Maushold: el sprite base de PokeAPI es la Familia de Cuatro y en PKHeX la forma 0 es la de Tres → `925_0.png` existe y `SpriteService` busca el archivo de forma también para la forma 0 de esa especie.
+- Z-A: `RegionalFormCatalog.AvailableIn` ya no ofrece Stunfisk de Galar ni Avalugg de Hisui (PKHeX no encuentra un origen legal para ellos en Z-A). Tests añadidos.
+- Portada `games/za.png` generada con `scripts/gen-game-cover-za.py`.
+
+### Selector de creación: especies inexistentes en el juego (sobre commit 171344b)
+- Bug: en un save de Z-A, crear Unown o Arceus daba un Pokémon sin movimientos y con varias alertas de ilegalidad (no existen en el juego; el selector listaba todo hasta `MaxSpeciesID`).
+- `CreatableSpecies` + `Assets/uncreatable_species.json` (recurso embebido): por juego, especies ausentes de la tabla de PKHeX y sin ninguna versión legal construible, menos las del `restricted_dex_availability.json`. `SpeciesPickerViewModel.SetHiddenSpecies` se llama desde `MainWindowViewModel` al cargar el save. Ocultas: ZA 211, PLA 663, SW/SH 234, SL/VL 292, LGPE 656; gens 1–7 y BD/SP, nada.
+- Siguen visibles: especies de DLC y las legales por transferencia (Sandshrew en Z-A). Pendiente: ~81 especies presentes en Z-A que `BuildPokemon` no logra legales (siguen saliendo con alertas).
+- Tests: `CreatableSpeciesTests`. Cómo regenerar el JSON: `scripts/README-uncreatable-species.md`.
+
+### Disponibilidad de especies por juego: tabla `SpeciesGameAvailability` (hotfix fix_species_availability)
+- Los datos de "especies ocultas" pasaron a la db: tabla `SpeciesGameAvailability` (SpeciesId, GameId, Status, Reason), 4507 filas, solo para los juegos que recortan su Pokédex (LGPE, SW/SH, PLA, SV, Z-A). Status: `native`, `present_illegal`, `transfer_only`, `dlc`, `uncreatable` (el selector oculta solo `uncreatable`). `Metadata.SpeciesAvailabilityVersion = 2026.10`.
+- Código: `PokemonDatabase.GetUncreatableSpecies(gameId)`, `GameVersionMappings.TryGetGameId`, `CreatableSpecies.HiddenIn` lee de la DB y usa `uncreatable_species.json` como respaldo (db sin hotfix). Cuando se valide en la app el JSON se puede retirar.
+- Pendiente: las 81 `present_illegal` de Z-A (37 en PLA) son especies que existen pero el constructor no deja legales.

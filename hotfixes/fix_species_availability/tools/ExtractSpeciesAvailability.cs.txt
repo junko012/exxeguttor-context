@@ -1,0 +1,45 @@
+using System.Linq;
+using System.Text.Json;
+using PKHeX.Core;
+using Exxeguttor.App.Services;
+namespace Exxeguttor.Tests;
+public static class AvailabilityGen {
+  public static string Run(string outPath, string dexJson) {
+    var dex = JsonSerializer.Deserialize<Dictionary<string, List<int>>>(System.IO.File.ReadAllText(dexJson))!;
+    var o = new System.Text.StringBuilder();
+    var rows = new List<object>();
+    var versions = new[]{ GameVersion.SW, GameVersion.SH, GameVersion.SL, GameVersion.VL, GameVersion.GP, GameVersion.GE, GameVersion.PLA, GameVersion.ZA };
+    var byVersion = new Dictionary<GameVersion, string[]>();
+    foreach (var v in versions) {
+      var save = BlankSaveFile.Get(v, "T", LanguageID.English); var svc = new SaveFileService(); svc.CurrentSave = save; var ps = new PokemonService(svc);
+      var key = GameVersionMappings.TryGetRestrictedDexKey(v);
+      var inDex = key != null && dex.TryGetValue(key, out var l) ? l.ToHashSet() : new HashSet<int>();
+      var st = new string[save.MaxSpeciesID + 1];
+      var counts = new SortedDictionary<string,int>();
+      for (int sp = 1; sp <= save.MaxSpeciesID; sp++) {
+        bool present = save.Personal.IsPresentInGame((ushort)sp, 0);
+        bool legal = false;
+        for (int rep = 0; rep < 4 && !legal; rep++) { try { legal = new LegalityAnalysis(ps.BuildPokemon(sp)).Valid; } catch { } }
+        string s = present ? (legal ? "native" : "present_illegal")
+                 : inDex.Contains(sp) ? "dlc"
+                 : legal ? "transfer_only" : "uncreatable";
+        st[sp] = s; counts[s] = counts.GetValueOrDefault(s) + 1;
+      }
+      byVersion[v] = st;
+      o.AppendLine($"{v}: max={save.MaxSpeciesID} " + string.Join(" ", counts.Select(kv => $"{kv.Key}={kv.Value}")));
+    }
+    // un set de filas por juego (par SW/SH, SL/VL, GP/GE deben coincidir)
+    foreach (var (a,b) in new[]{(GameVersion.SW,GameVersion.SH),(GameVersion.SL,GameVersion.VL),(GameVersion.GP,GameVersion.GE)}) {
+      var diff = Enumerable.Range(1, byVersion[a].Length-1).Where(i => byVersion[a][i] != byVersion[b][i]).ToList();
+      o.AppendLine($"par {a}/{b}: {diff.Count} diferencias " + string.Join(",", diff.Take(20).Select(i=>$"{i}:{byVersion[a][i]}/{byVersion[b][i]}")));
+    }
+    var repr = new[]{ (GameVersion.SW,"SW"),(GameVersion.SL,"SL"),(GameVersion.GP,"GP"),(GameVersion.PLA,"PLA"),(GameVersion.ZA,"ZA") };
+    foreach (var (v,code) in repr) {
+      var st = byVersion[v];
+      for (int sp = 1; sp < st.Length; sp++) rows.Add(new { SpeciesId = sp, Game = code, GameId = PokemonServiceIds.Get(v), Status = st[sp] });
+    }
+    System.IO.File.WriteAllText(outPath, JsonSerializer.Serialize(rows));
+    return o.ToString();
+  }
+}
+public static class PokemonServiceIds { public static int Get(GameVersion v) => v switch { GameVersion.SW=>20, GameVersion.SL=>18, GameVersion.GP=>13, GameVersion.PLA=>11, GameVersion.ZA=>12, _=>0 }; }
