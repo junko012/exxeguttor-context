@@ -718,30 +718,9 @@ reaccionaba a ellas**
   Stone que no corresponde a la especie. **PKHeX no valida nada de esto** (`ItemVerifier` solo
   comprueba que el objeto se pueda llevar equipado en ese juego): el badge sigue en "Legal".
 
-### Hueco de idioma en el export (confirmado con datos, pendiente de arreglo)
-- Decisión de producto vigente (ver sección "Idioma de la UI"): los nombres de especie,
-  movimiento e ítem van en el idioma de la UI. `HeldItem` y `Move1..4` guardan el nombre de
-  PKHeX en ese idioma (`strings.Item[i]`, `strings.Move[i]`).
-- Pero al exportar y en el preview de legalidad se resuelven con `ItemDatabase.GetByName` /
-  `MoveDatabase.GetByName` → `Items.Name` / `Moves.Name` de pokemon.db, que están **solo en
-  inglés** (la DB solo tiene idioma en `SpeciesFlavorText`). Con la UI en otro idioma el lookup
-  da `null` y la edición se omite sin avisar (`if (entry != null) ...`). Afecta a objetos
-  equipados y a movimientos (incluido el `HealPPIndex` del fix 1, que depende de ese lookup) y a
-  la verificación `IsSameMove` del Z-Crystal. No afecta a Mega/Z equipados (`HeldItemRawId`) ni a
-  ediciones por id/índice (Tera override, Dynamax, Alpha).
-- Medición replicando el SQL exacto contra pokemon.db con los nombres de PKHeX (objetos /
-  movimientos que resuelven): en 99 % / 95 %, es 0 % / 0 %, fr 2 % / 3 %, de 13 % / 2 %, it 7 % / 1 %.
-  Ejemplos con la UI en español: Restos, Gengarita, Snorlastal Z, Poción, Lanzallamas, Llamarada,
-  Doble Filo, Hiperrayo → `null` (en inglés: 234, 656, 804, 17, 53, 126, 38, 63). Incluso en
-  inglés, 46 de 892 objetos resuelven a un id distinto del índice de PKHeX (nombres repetidos).
-- **Arreglo acordado (Juan lo aprobó, aún no implementado)**: las ediciones de objeto equipado y
-  de los 4 movimientos llevan el id numérico (tomado del mismo índice de `strings` con el que se
-  arma el combo) y el nombre queda solo para mostrar; `EditApplyService` y `EditSessionService`
-  escriben por id; `IsSameMove` compara ids; tests de ida y vuelta en español.
-- Test de confirmación escrito, **todavía no incorporado al repo**:
-  `tests/Exxeguttor.Tests/LocalizedNameResolutionTests.cs` (control en inglés, hipótesis en
-  español y medición por idioma). Se valida solo del lado de los datos (Python); falta correrlo
-  con `dotnet test --filter LocalizedNameResolutionTests`.
+### Hueco de idioma en el export — RESUELTO el 11 oct
+Ver la entrada "2026-10-11 — Idioma: ediciones por id". El alcance real fue objeto equipado, habilidad
+y ball; los movimientos no estaban afectados (el modal los entrega con nombre inglés de pokemon.db).
 
 ### Archivos de esta sesión (todos bajo `src/Exxeguttor.UI/`)
 Nuevos: `ViewModels/PpSegment.cs`, `Converters/MoveCardConverters.cs`,
@@ -799,3 +778,101 @@ Modificados: `App.axaml`, `Views/PokemonStatsView.axaml`, `Views/PokemonStatsVie
 - Los datos de "especies ocultas" pasaron a la db: tabla `SpeciesGameAvailability` (SpeciesId, GameId, Status, Reason), 4507 filas, solo para los juegos que recortan su Pokédex (LGPE, SW/SH, PLA, SV, Z-A). Status: `native`, `present_illegal`, `transfer_only`, `dlc`, `uncreatable` (el selector oculta solo `uncreatable`). `Metadata.SpeciesAvailabilityVersion = 2026.10`.
 - Código: `PokemonDatabase.GetUncreatableSpecies(gameId)`, `GameVersionMappings.TryGetGameId`, `CreatableSpecies.HiddenIn` lee de la DB y usa `uncreatable_species.json` como respaldo (db sin hotfix). Cuando se valide en la app el JSON se puede retirar.
 - Pendiente: las 81 `present_illegal` de Z-A (37 en PLA) son especies que existen pero el constructor no deja legales.
+
+## 2026-10-11 — Idioma: ediciones por id (objeto equipado, habilidad, ball) + inventario de idiomas de la UI
+
+**Resumen**: se corrigió el hueco de idioma en el export. Juan aplicó el cambio sobre `2d31ebe`,
+**confirmó que compila y que todo funciona bien**; no se detalló qué pruebas específicas con la UI en
+español se hicieron (ver "Pendiente"). Commit: _(completar con el hash)_.
+
+### Causa y alcance real (corrige la versión del 9 oct)
+- `HeldItem`, `Ability` y `BallName` guardan el **nombre de PKHeX en el idioma de la UI**
+  (`strings.Item` / `strings.Ability`), pero `EditApplyService` y `EditSessionService` los resolvían con
+  `ItemDatabase.GetByName` / `AbilityDatabase.GetByName` → `Items.Name` / `Abilities.Name` de pokemon.db,
+  que están **solo en inglés**. Con la UI en otro idioma el lookup daba `null` y la edición se omitía en
+  silencio (`if (entry != null) ...`). Medición replicando el SQL exacto: nombres de PKHeX que resuelven en
+  la DB — en 99 %, es 0 %, fr 2 %, de 13 %, it 7 % (objetos).
+- **Los movimientos NO estaban afectados**: las ediciones de movimientos vienen del modal de selección
+  (`MoveSelector.Selected.MoveName`, nombre inglés de la DB), que sí resuelve en cualquier idioma. La versión
+  anterior de este documento los incluía por error.
+- Efecto colateral que también se corrigió: **quitar el objeto equipado nunca se exportaba** (el nombre
+  vacío no resolvía en la DB y no se escribía nada).
+- Efecto colateral: con la UI en español la **lista de balls** quedaba casi vacía (9 de 36; en alemán 0)
+  porque el filtro comparaba el nombre localizado contra los nombres ingleses de la DB.
+
+### Cambios (todos bajo `src/Exxeguttor.UI/`)
+- `ViewModels/PokemonEditorViewModel.cs`:
+  - Nuevos `HeldItemId`, `AbilityId`, `BallId` (`Set<T>`: se registran solos como ediciones). Se derivan del
+    mismo índice de `strings` con el que se arman los combos (`_itemNameToId`, `_abilityNameToId`) y al
+    cargar se toman directo del PKM (`pkm.HeldItem`, `pkm.Ability`, `pkm.Ball`) como estado original.
+    Reemplazan a `HeldItemRawId` (que solo cubría Mega/Z). Los selectores del tab Special fijan
+    `HeldItemId` ellos mismos (`_equippingFromSpecial`).
+  - `LegalityRelevantFields` incluye los tres ids.
+  - `IsSameMove` (verificación del Z-Crystal exclusivo) compara por id: resuelve el nombre del slot con
+    `MoveDatabase.GetByName` (nombre del modal) o con `_moveNameToId` (`strings.Move`, nombre del save).
+  - Descripciones de habilidad/objeto: se buscan por id y el nombre queda de respaldo.
+  - Lista de balls: filtra con el nombre **inglés del mismo índice** (`GameInfo.GetStrings("en").Item[i]`;
+    las listas de PKHeX están alineadas entre idiomas) y muestra el localizado → 36 en todos los idiomas.
+- `Services/EditApplyService.cs` y `Services/EditSessionService.cs` (preview): escriben por id
+  (`AbilityId`, `HeldItemId`, `BallId`) con prioridad sobre el nombre; `HeldItemId = 0` = sin objeto.
+- Los ids no tienen entrada en el mapa de categorías (ruido derivado, se ignora en el resumen de ediciones);
+  el nombre sigue siendo lo que se muestra en el resumen.
+
+### Tests (en `tests/Exxeguttor.Tests/`; escritos, aún no incorporados al repo salvo que Juan los haya subido)
+- `LocalizedNameResolutionTests.cs`: control en inglés, hipótesis en español (`GetItemByName` /
+  `GetMoveByName` devuelven `null`) y medición por idioma. Sigue siendo válido tal cual: documenta por qué
+  se usan ids.
+- `NameToIdIndexTests.cs`: nombre → id vuelve al mismo índice (habilidades ≥ 97 %, objetos ≥ 93 %) en
+  en/es/fr/de/it; Z-Crystal equipado y de mochila tienen nombre distinto (PKHeX agrega " [Z]"); la lista de
+  balls tiene la misma cantidad que en inglés.
+- Medición previa en Python con los textos de PKHeX: habilidades 306/310 y objetos ~850/896 por idioma
+  (los repetidos los desambigua `GameStrings`).
+
+### Inventario de idiomas con la UI en español (lectura de código, 11 oct; no probado en la app)
+- **En español (PKHeX, por id)**: especie, habilidad, objeto del combo, naturaleza, ball y ubicaciones del
+  panel Info; movimientos cargados del save; Tera Type; "Equipado: …" y opciones del combo de Z-Crystal.
+- **En inglés (pokemon.db)**: pastillas de tipo (`TypeName`), clase de daño (Physical/Special/Status),
+  nombres de movimientos elegidos en el modal, descripciones de efecto/habilidad/objeto, Learnsets y
+  métodos, Sets recomendados, Effectiveness, combo de Mega Stones, nombre de forma Mega, Z-Moves
+  resultantes (`ZCrystalDatabase`), hábitat de la Pokédex, y (por lectura) nombres de objetos de la Mochila.
+- **Localizado por idioma en la Pokédex**: `GetOriginInfo(…, lang)` → género (`GenusEs`/`GenusEn`) y flavor
+  text (`SpeciesFlavorText.Lang`), con `lang = _loc.CurrentLocale`.
+- **Nombres de especie en slots de box/equipo y mensaje de estado post-creación**: inglés fijo
+  (`GameInfo.GetStrings("en")` en `PokemonSlotViewModel` líneas ~167/186 y `MainWindowViewModel` ~768). Solo las
+  formas regionales se localizan (`FormNameFormatter` → claves `Form_Name_*`: "Exeggutor de Alola"); las
+  formas Mega no tienen sufijo.
+- **Texto de interfaz**: solo `MainWindow` (7) y `EmptyStateView` (3) usan `Loc[]`; el JSON tiene 118 claves
+  (IvSolver 36, Pokemon 15, SaveError 12, Menu 8, Form 8…). El resto son literales fijos: etiquetas del panel
+  Info y del panel Trainer, encabezados de tabs y títulos de las tarjetas Special/Moves en **inglés**;
+  modal de exportación, ventana principal, Pokédex, Mochila (nombres de bolsillos en `BagPouchDatabase`),
+  textos de las tarjetas Special y mensajes de Diagnóstico (`LegalityMessageMapper`, mapeador propio) en
+  **español**. Las cintas usan nombres ingleses fijos aunque PKHeX trae `text_Ribbons_es.txt`.
+- Conclusión: hoy no hay un idioma coherente; con la UI en inglés también quedan textos en español.
+- Regla propuesta (sin ratificar): **nombres por id desde PKHeX; números y estructura desde la DB; textos
+  de UI al JSON; descripciones largas en inglés** hasta decidir cómo traducirlas (la DB solo tiene idioma en
+  `SpeciesFlavorText`).
+  - **Selector de idioma**: todavía no existe (Juan lo deja como último paso, toca muchos archivos). Hoy el
+  idioma se decide al iniciar: `LocalizationService.DetectSystemLocale()` toma `CultureInfo.CurrentUICulture`
+  (en Linux, `LANG`/`LC_ALL`) con `AvailableLocales = es, en` y fallback a español. Para probar la UI en
+  español sin el selector: `LANG=es_ES.UTF-8 LC_ALL=es_ES.UTF-8 dotnet run --project src/Exxeguttor.UI`
+  (el menú debe decir "Archivo"/"Ayuda"). Al implementar el cambio en caliente hay que recargar el Pokémon
+  abierto: los diccionarios nombre→id de `PokemonEditorViewModel` se construyen en `LoadPokemon`.
+
+### Pendiente / sin verificar
+- Prueba explícita con la UI en español: equipar un objeto común, cambiar habilidad y ball, quitar el objeto,
+  exportar y abrir el save en PKHeX; confirmar que el combo de balls muestra ~36 y que en inglés no cambió.
+- Con la UI en español, un movimiento elegido en el modal se muestra con **nombre inglés** y uno cargado del
+  save con nombre español (viola la decisión de producto "nombres en el idioma de la UI").
+- Migrar a PKHeX por id los nombres que hoy salen de la DB (movimientos del modal y Learnsets/Sets, tipos,
+  Mega/Z, Mochila, cintas, especies de slots) y mover los literales a `Loc[]`; decidir qué hacer con las
+  descripciones. Armar la lista de lugares ordenada por impacto.
+- `ItemId` vs `RawItemId` por juego en Gen 1-5: el id de objeto/ball se toma del índice de `strings.Item`;
+  no se revisó la numeración de saves de generaciones viejas.
+- Pendientes de la entrada del 9 oct que siguen abiertos: combo de Held Item del panel central con una Mega
+  Stone/Z-Crystal equipada, Tamaño, Mega en Z-A, test de round-trip de export.
+  - **Selector de idioma**: todavía no existe (Juan lo deja como último paso, toca muchos archivos). Hoy el
+  idioma se decide al iniciar: `LocalizationService.DetectSystemLocale()` toma `CultureInfo.CurrentUICulture`
+  (en Linux, `LANG`/`LC_ALL`) con `AvailableLocales = es, en` y fallback a español. Para probar la UI en
+  español sin el selector: `LANG=es_ES.UTF-8 LC_ALL=es_ES.UTF-8 dotnet run --project src/Exxeguttor.UI`
+  (el menú debe decir "Archivo"/"Ayuda"). Al implementar el cambio en caliente hay que recargar el Pokémon
+  abierto: los diccionarios nombre→id de `PokemonEditorViewModel` se construyen en `LoadPokemon`.
