@@ -876,3 +876,43 @@ español se hicieron (ver "Pendiente"). Commit: _(completar con el hash)_.
   español sin el selector: `LANG=es_ES.UTF-8 LC_ALL=es_ES.UTF-8 dotnet run --project src/Exxeguttor.UI`
   (el menú debe decir "Archivo"/"Ayuda"). Al implementar el cambio en caliente hay que recargar el Pokémon
   abierto: los diccionarios nombre→id de `PokemonEditorViewModel` se construyen en `LoadPokemon`.
+  
+### Formas: sprites cosméticos y Z-A (sobre commit 50d7c52)
+- 146 sprites nuevos en `pokemon/forms/` (+146 shiny), copiados de PokeAPI/sprites: Unown, Arceus/Silvally por tipo, Vivillon, Alcremie (con la decoración fresa), Furfrou, Flabébé/Floette/Florges, Deerling/Sawsbuck, Burmy, Shellos/Gastrodon, Genesect, gorras de Pikachu, Keldeo, Magearna, Zarude, Tatsugiri, Squawkabilly, Dudunsparce, Maushold, Sinistea/Polteageist/Poltchageist/Sinistcha. Total en la carpeta: 267.
+- Sin sprite propio (usan el de la especie): Scatterbug/Spewpa por patrón, Mothim por manto, Koraidon/Miraidon por modo (PokeAPI no los tiene). Las formas "Large" (tótem), "Lord/Lady" y Mega no se guardan.
+- Maushold: el sprite base de PokeAPI es la Familia de Cuatro y en PKHeX la forma 0 es la de Tres → `925_0.png` existe y `SpriteService` busca el archivo de forma también para la forma 0 de esa especie.
+- Z-A: `RegionalFormCatalog.AvailableIn` ya no ofrece Stunfisk de Galar ni Avalugg de Hisui (PKHeX no encuentra un origen legal para ellos en Z-A). Tests añadidos.
+- Portada `games/za.png` generada con `scripts/gen-game-cover-za.py`.
+
+### Selector de creación: especies inexistentes en el juego (sobre commit 171344b)
+- Bug: en un save de Z-A, crear Unown o Arceus daba un Pokémon sin movimientos y con varias alertas de ilegalidad (no existen en el juego; el selector listaba todo hasta `MaxSpeciesID`).
+- `CreatableSpecies` + `Assets/uncreatable_species.json` (recurso embebido): por juego, especies ausentes de la tabla de PKHeX y sin ninguna versión legal construible, menos las del `restricted_dex_availability.json`. `SpeciesPickerViewModel.SetHiddenSpecies` se llama desde `MainWindowViewModel` al cargar el save. Ocultas: ZA 211, PLA 663, SW/SH 234, SL/VL 292, LGPE 656; gens 1–7 y BD/SP, nada.
+- Siguen visibles: especies de DLC y las legales por transferencia (Sandshrew en Z-A). Pendiente: ~81 especies presentes en Z-A que `BuildPokemon` no logra legales (siguen saliendo con alertas).
+- Tests: `CreatableSpeciesTests`. Cómo regenerar el JSON: `scripts/README-uncreatable-species.md`.
+
+### Disponibilidad de especies por juego: tabla `SpeciesGameAvailability` (hotfix fix_species_availability)
+- Los datos de "especies ocultas" pasaron a la db: tabla `SpeciesGameAvailability` (SpeciesId, GameId, Status, Reason), 4507 filas, solo para los juegos que recortan su Pokédex (LGPE, SW/SH, PLA, SV, Z-A). Status: `native`, `present_illegal`, `transfer_only`, `dlc`, `uncreatable` (el selector oculta solo `uncreatable`). `Metadata.SpeciesAvailabilityVersion = 2026.10`.
+- Código: `PokemonDatabase.GetUncreatableSpecies(gameId)`, `GameVersionMappings.TryGetGameId`, `CreatableSpecies.HiddenIn` lee de la DB y usa `uncreatable_species.json` como respaldo (db sin hotfix). Cuando se valide en la app el JSON se puede retirar.
+- Pendiente: `present_illegal` = especies que existen en el juego pero el constructor no deja legales (Z-A 2: Hoopa y Volcanion, sin encuentro en PKHeX 25.11.07; PLA 37; SW/SH 5; SV 3).
+
+### Z-A: constructor para Legends: Z-A y Zygarde (sobre commit 6c9f6bd)
+- `PokemonService.BuildPokemon` no tenía soporte propio para Z-A (buscaba solo en Escarlata/Púrpura): 81 especies del Pokédex de Kalos salían con alertas. Cambios: conjunto de versiones `ZA` primero y SL/VL de respaldo; en Z-A se prueban primero los encuentros de la propia especie y los Alfa al final; el presupuesto de análisis (80) es por conjunto de versiones, no global. Resultado: 78 de las 81 salen legales.
+- Zygarde: en Z-A solo es legal la forma 2 (jefe de misión). Si la forma 0 sale ilegal, `BuildPokemon` prueba las otras formas presentes (`TryBuildOtherLegalForm`); la forma sigue editable en el combo.
+- Sin solución (PKHeX 25.11.07 no tiene encuentro): Hoopa y Volcanion en Z-A siguen con alertas; revisar al actualizar PKHeX.Core.
+- `SpeciesGameAvailability` regenerada con ese constructor: Z-A `native` 232, `present_illegal` 2, `transfer_only` 331, `dlc` 94, `uncreatable` 211; SV `native` 730, `present_illegal` 3. Quedan `present_illegal` en PLA 37, SW/SH 5.
+- Verificado en los 8 juegos con restricción: aparte de Z-A, no cambia ningún estado. Tests: `ZaCreationLegalityTests`.
+
+### Combo Forma: formas que rompen el origen + portada Recientes
+- `PokemonService.GetSelectableFormsCore` oculta una forma solo si está en `UncreatableForms` (JSON embebido `Assets/uncreatable_forms.json`, ZA/SL/SW/PLA, generado con PKHeX.Core 25.11.07) Y `FormBreaksOrigin` confirma que el cambio añade EncInvalid/TransferBad/FormInvalid*. Z-A: Zygarde solo ofrece 10%-C y 50%-C (Aura Break 10%/50% ocultas); Greninja no muestra combo (Ash/Battle Bond ocultas). SV: Koraidon/Miraidon formas de montura ocultas. Se regenera si se actualiza PKHeX.
+- Portada del panel Recientes (`EmptyStateView.axaml`) al doble: 52×68 (antes 26×34). Pendiente validar visualmente.
+- Tests 102/102 en arnés (incluye `ComboForma_Zygarde_*` y `ComboForma_Greninja_*`).
+- Pendiente: Hoopa/Volcanion Z-A sin encuentro legal (limitación PKHeX); present_illegal PLA 37/SW 5/SV 3 sin analizar.
+
+- La lista de formas ahora vive en la tabla `FormGameAvailability` de pokemon.db (234 filas, hotfix `fix_form_availability`); `UncreatableForms` la consulta vía `PokemonDatabase.GetUncreatableForms` y cae al JSON embebido si la tabla no existe. Docs: SCHEMA_REFERENCE y CHANGELOG actualizados.
+
+### Combo Forma: filtro general por generación
+- El combo Forma oculta ahora, en TODOS los juegos, las formas que al elegirlas dejan el Pokémon ilegal sin arreglo: problemas de origen (EncInvalid/EncGiftNotFound/TransferBad/FormInvalid*) y formas de solo batalla que PKHeX no marca (`FormBattle`, p. ej. Ash-Greninja Gen 7). Gen 7 (Sol/Luna/USUM): Zygarde sin 10% ni Complete; Greninja sin combo; Totem/Large, Pikachu gorras, Floette Eterna, Vivillon Fancy/Poké Ball ocultas.
+- Juegos con lista (Z-A, Arceus, Espada/Escudo, Escarlata/Púrpura) siguen exigiendo además que la forma figure en `FormGameAvailability`/`uncreatable_forms.json`, para no esconder formas cosméticas legítimas (Flabébé, Gourgeist...). `UncreatableForms.HasList`.
+- Unown se excluye del filtro de origen (letra cosmética; en Gen 3-4 sale del PID).
+- Limitación: formas que sí tienen un encuentro legal propio pero requieren otro encuentro (Zygarde 10% Gen 7, Lycanroc Midnight) tampoco se ofrecen; idea futura: al elegirlas, reconstruir el Pokémon desde ese encuentro.
+- Tests `FormComboLegalityTests` (Gen 7 Zygarde/Greninja, Unown Gen 3); arnés 107/107.

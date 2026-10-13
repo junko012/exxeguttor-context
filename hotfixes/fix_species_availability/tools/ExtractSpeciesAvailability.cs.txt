@@ -33,13 +33,20 @@ public static class AvailabilityGen {
       var diff = Enumerable.Range(1, byVersion[a].Length-1).Where(i => byVersion[a][i] != byVersion[b][i]).ToList();
       o.AppendLine($"par {a}/{b}: {diff.Count} diferencias " + string.Join(",", diff.Take(20).Select(i=>$"{i}:{byVersion[a][i]}/{byVersion[b][i]}")));
     }
-    var repr = new[]{ (GameVersion.SW,"SW"),(GameVersion.SL,"SL"),(GameVersion.GP,"GP"),(GameVersion.PLA,"PLA"),(GameVersion.ZA,"ZA") };
-    foreach (var (v,code) in repr) {
+    var order = new[]{"native","transfer_only","dlc","present_illegal","uncreatable"};
+    var pairs = new[]{ (GameVersion.SW,GameVersion.SH,20), (GameVersion.SL,GameVersion.VL,18), (GameVersion.GP,GameVersion.GE,13) };
+    foreach (var (a,b,gid) in pairs) {
+      for (int sp = 1; sp < byVersion[a].Length; sp++) {
+        var best = new[]{byVersion[a][sp], byVersion[b][sp]}.OrderBy(x => System.Array.IndexOf(order, x)).First();
+        rows.Add(new { SpeciesId = sp, Game = a.ToString(), GameId = gid, Status = best });
+      }
+    }
+    foreach (var (v,gid) in new[]{ (GameVersion.PLA,11), (GameVersion.ZA,12) }) {
       var st = byVersion[v];
-      for (int sp = 1; sp < st.Length; sp++) rows.Add(new { SpeciesId = sp, Game = code, GameId = PokemonServiceIds.Get(v), Status = st[sp] });
+      for (int sp = 1; sp < st.Length; sp++) rows.Add(new { SpeciesId = sp, Game = v.ToString(), GameId = gid, Status = st[sp] });
     }
     System.IO.File.WriteAllText(outPath, JsonSerializer.Serialize(rows));
     return o.ToString();
   }
 }
-public static class PokemonServiceIds { public static int Get(GameVersion v) => v switch { GameVersion.SW=>20, GameVersion.SL=>18, GameVersion.GP=>13, GameVersion.PLA=>11, GameVersion.ZA=>12, _=>0 }; }
+
