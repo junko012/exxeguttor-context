@@ -916,3 +916,10 @@ español se hicieron (ver "Pendiente"). Commit: _(completar con el hash)_.
 - Unown se excluye del filtro de origen (letra cosmética; en Gen 3-4 sale del PID).
 - Limitación: formas que sí tienen un encuentro legal propio pero requieren otro encuentro (Zygarde 10% Gen 7, Lycanroc Midnight) tampoco se ofrecen; idea futura: al elegirlas, reconstruir el Pokémon desde ese encuentro.
 - Tests `FormComboLegalityTests` (Gen 7 Zygarde/Greninja, Unown Gen 3); arnés 107/107.
+
+### Legends: Arceus — los 37 casos present_illegal resueltos
+- Causa: en Gen8a el moveset de especies evolucionadas/de huevo quedaba con slots vacíos (UnobtainableExpect) porque nuestra tabla `Learnsets` no coincide con la de PKHeX (o no tiene filas y el recálculo no corría). Nuevo `FallbackToSuggestedMoveset` (usa `PKM.SetMoveset` de PKHeX.Core como último recurso; solo se adopta si deja menos movimientos inválidos). También corre en Espada/Escudo (huevos evolucionados).
+- Basculegion, Wyrdeer, Overqwil: `TryEvolveForward` ahora fija `FormArgument` (294 / 20 / 20) y Wyrdeer sube a Nv.31 mínimo.
+- Resultado: PLA present_illegal 37 → 0; Espada/Escudo 5 → 0 (463, 473 estables; Tangrowth/Tsareena/Grapploct ~50% por intento, el constructor reintenta); Escarlata/Púrpura 3 → 2 (quedan Yanmega y Dudunsparce); Z-A sin cambios (Hoopa y Volcanion).
+- Hotfix `fix_species_availability` revisión 2026.10.1 (43 especies a `native`; ningún cambio en `uncreatable`, el JSON embebido de especies no cambia). `pokemon.db` actualizada.
+- Tests `LegendsArceusCreationTests`; arnés 123/123.

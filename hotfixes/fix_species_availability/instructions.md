@@ -17,3 +17,6 @@ mismas filas en todas las tablas existentes; solo cambia `Metadata` (+2 claves).
 - Los conteos `uncreatable` coinciden exactamente con `Assets/uncreatable_species.json` (respaldo en el código).
 - `species_game_availability.json` es el dato; `tools/ExtractSpeciesAvailability.cs.txt` es el programa de
   PKHeX.Core que lo generó (trazabilidad; no hace falta correrlo). Regenerar al actualizar PKHeX.Core.
+
+## Revisión 2026.10.1
+- Tras mejorar `BuildPokemon` (moveset sugerido por PKHeX como último recurso, FormArgument de Basculegion/Wyrdeer/Overqwil), 43 especies pasaron de `present_illegal` a `native`: 37 en Legends: Arceus, 5 en Espada/Escudo y 1 en Escarlata/Púrpura. Quedan `present_illegal`: Hoopa y Volcanion en Z-A (sin encuentro legal con PKHeX 25.11.07) y 6 en Escarlata/Púrpura. No cambia ninguna especie `uncreatable`, así que `Assets/uncreatable_species.json` sigue igual.

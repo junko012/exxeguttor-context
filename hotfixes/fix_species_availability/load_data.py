@@ -18,7 +18,7 @@ from collections import Counter
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
-VERSION = "2026.10"
+VERSION = "2026.10.1"
 SOURCE = "PKHeX.Core 25.11.07"
 STATUSES = {"native", "present_illegal", "transfer_only", "dlc", "uncreatable"}
 
