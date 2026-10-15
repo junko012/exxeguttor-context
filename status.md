@@ -923,3 +923,128 @@ español se hicieron (ver "Pendiente"). Commit: _(completar con el hash)_.
 - Resultado: PLA present_illegal 37 → 0; Espada/Escudo 5 → 0 (463, 473 estables; Tangrowth/Tsareena/Grapploct ~50% por intento, el constructor reintenta); Escarlata/Púrpura 3 → 2 (quedan Yanmega y Dudunsparce); Z-A sin cambios (Hoopa y Volcanion).
 - Hotfix `fix_species_availability` revisión 2026.10.1 (43 especies a `native`; ningún cambio en `uncreatable`, el JSON embebido de especies no cambia). `pokemon.db` actualizada.
 - Tests `LegendsArceusCreationTests`; arnés 123/123.
+
+### Escarlata/Púrpura — Yanmega y Dudunsparce resueltos
+- Causa: huevos evolucionados (Yanma→Yanmega, Dunsparce→Dudunsparce) salían a Nv.5 con slots vacíos y el movimiento de evolución (Ancient Power / Hyper Drill) inválido. `IsFreeOfInvalidChecks` no mira movimientos, y la sonda de nivel solo corría si el único problema era `MoveEvoFCombination_0`.
+- Fix en `TryBuildFromLegitEncounter` (solo Gen9, especie evolucionada): si hay movimientos inválidos no se devuelve el candidato; la sonda de nivel regenera el moveset (`SetMoveset` + `HealPP`) en cada nivel y exige `LegalityAnalysis.Valid` completo (Yanmega Nv.33, Dudunsparce Nv.32); si no resuelve, restaura el candidato.
+- Resultado: Escarlata/Púrpura 733/733 legales (present_illegal 2 → 0). Solo quedan Hoopa y Volcanion en Z-A (límite de PKHeX 25.11.07).
+- Hotfix `fix_species_availability` revisión 2026.10.2, `pokemon.db` y CHANGELOG actualizados. Test nuevo `EscarlataPurpura_EvolucionPorMovimiento_SaleLegal`; arnés 125/125.
+
+### Espada/Escudo — Tangrowth, Tsareena y Grapploct legales en el primer intento
+- Causa: en Gen8 `SetMoveset` de PKHeX elige al azar y no siempre cae en un conjunto legal para huevos evolucionados (~50% por intento); además el candidato con slots vacíos se devolvía sin revisar movimientos.
+- Fix en `TryBuildFromLegitEncounter` (Gen8+, especie evolucionada con movimientos inválidos): la sonda de nivel ahora reintenta `SetMoveset` hasta 6 veces por nivel (1 en Gen9) y exige `LegalityAnalysis.Valid` completo. Presupuesto total de 300 análisis por creación para no ralentizar especies que no existen en el juego (sin él, 5 s en vez de 1 s).
+- Resultado: 465/763/853 legales 12/12; Escarlata/Púrpura 733/733 y Espada/Escudo 664/664 en el escaneo completo; Legends: Arceus sin cambios. Tests: los 3 pasan a `EspadaEscudo_HuevosEvolucionados_SalenLegales` con 5 creaciones sin reintentos; arnés 128/128. No cambia la DB.
+
+## 2026-10-12 — Pokédex con formas regionales, cadena evolutiva con todas las ramas y disponibilidad por juego
+
+**Resumen**: se implementaron las tres decisiones de diseño del 11 oct (tarjeta con la forma de la generación,
+cadena con todas las ramas, condiciones en el idioma de la UI) y se cambió la fuente de disponibilidad del
+álbum. Base: `4bf2bad`. Commit: _(completar con el hash)_. Juan aplicó la tanda de formas/evolución y respondió
+"todo ok" (no se detalló qué pruebas hizo). **La tanda de disponibilidad (último punto) todavía no se compiló ni
+se probó. Los tests nuevos no se han corrido.**
+
+### 1. Tarjeta: la forma de la generación (`PokedexService.GetAlbumEntries`)
+- Sigue siendo una tarjeta por especie (así guarda el save la Pokédex: un registro por especie con banderas por
+  forma; `Zukan7` no tiene "forma mostrada", `Zukan8` sí). Si la especie tiene una forma regional presente en el
+  juego cargado (`RegionalFormCatalog.AvailableIn` → `IsPresentInGame` de PKHeX), la tarjeta es la de esa forma
+  (Gen 7: Exeggutor de Alola). La posesión sigue siendo por especie (cualquier forma en caja o equipo).
+- `PokedexAlbumEntry` suma `Form` y `DbSpeciesId` (fila de `Species`, > 10000 para formas). Los tipos salen de la
+  fila de la forma. El sprite usa `GetPokemonSprite(species, form: Form)`.
+- **Nombres por id desde PKHeX** (`PokedexNames.Display`): nombre de PKHeX en el idioma de la UI más la etiqueta de
+  forma de `FormNameFormatter` ("Exeggutor de Alola" / "Alolan Exeggutor"). Antes la tarjeta mostraba el
+  `Species.Name` crudo de la DB (inglés, en minúscula). Cambia el nombre de TODAS las tarjetas, no solo las de formas.
+- Dato de partida: la "posesión" del álbum nunca salió de las banderas de la Pokédex del save sino de caja + equipo.
+
+### 2. Cadena de evolución con todas las ramas (`GetAlbumEvolutionFamily`)
+- Mezcla `EvolutionChains` (base) y `FormEvolutionChains` (formas). Una especie base tiene sus aristas más las que
+  van de ella a una forma (Exeggcute → Exeggutor de Alola); una forma solo tiene aristas de forma. La previa de una
+  especie base sale de `EvolutionChains` y, si ahí no figura (Perrserker), de `FormEvolutionChains`.
+- `PokedexEvolutionFamily.Siblings`: otras ramas de la misma previa (Exeggutor de Alola muestra Exeggcute y,
+  como alternativa, el Exeggutor de Kanto). En la UI las alternativas se separan con "/" (`PokedexEvolutionFlowAlt`)
+  y no con flecha; las evoluciones múltiples de una especie (Eevee) también usan "/" después de la primera.
+- Filtros por juego: un nodo de forma solo aparece si esa forma existe en el juego; un nodo base se oculta si la
+  especie tiene forma regional en el juego pero la base no (Typhlosion en Legends Arceus).
+- `PokedexEvolutionNode` suma `NationalId` y `Form` (opcionales: la API antigua `GetEvolutionFamily` no cambia).
+
+### 3. Condiciones de evolución en el idioma de la UI
+- `EvolutionConditionFormatter` pasó de español fijo a es/en (cualquier otro idioma cae a inglés), con tres modos:
+  `Format` (histórico), `FormatBase` (ignora `region`) y `FormatForm` (agrega la región: "Piedra Hoja · en Alola" /
+  "Leaf Stone · in Alola").
+- Nombres de objetos, movimientos y especies de las condiciones: `EvolutionNameLocalizer` los toma de PKHeX por
+  índice (busca el índice por el nombre inglés normalizado y devuelve el del mismo índice en el idioma pedido);
+  la tabla `ItemNamesEs` queda como respaldo. Los textos de las condiciones viven en la capa App (no hay
+  `LocalizationService` ahí), con el mismo contrato que `GetOriginInfo(lang)`.
+
+### 4. Corrección de datos: condiciones apiladas en `EvolutionChains` (`PokemonDatabase`)
+- **Causa**: una arista base puede traer VARIOS conjuntos de condiciones apilados (los `evolution_details` de
+  PokeAPI): el de la especie base y los de sus variantes regionales. Al colapsarlos en un diccionario el último
+  pisaba al primero: Sandslash base mostraba Piedra Hielo (de Alola) en vez de Nivel 22; Ninetales base, Piedra
+  Hielo en vez de Piedra Fuego; Exeggutor base arrastraba `region=alola`.
+- **Fix** (`DropVariantSets`, solo para `EvolutionConditions`): se separan los conjuntos (cada uno lista sus
+  tipos en orden alfabético, uno nuevo empieza cuando el orden se reinicia) y se descartan los que traen
+  `base_form` o `region`, porque las variantes tienen su fila en `FormEvolutionChains`. Si TODOS son de variante
+  (Qwilfish → Overqwil) se conservan. Verificado en las 484 aristas: 42 con más de un conjunto, 31 con conjunto de
+  variante, 0 divisiones falsas y 0 omitidas. La consulta ahora ordena por `ConditionId`.
+
+### 5. Disponibilidad del álbum: una sola fuente
+- **Antes**: Espada/Escudo, Escarlata/Púrpura, Legends Arceus y Z-A usaban la lista embebida
+  `restricted_dex_availability.json`; el resto, `1..MaxSpeciesID`. El filtro `uncreatable` de
+  `SpeciesGameAvailability` (hotfix `fix_species_availability`) solo lo usaba el selector de crear Pokémon.
+- **Ahora**: `1..MaxSpeciesID` menos `CreatableSpecies.HiddenIn(save.Version)` (tabla de la DB, con respaldo en
+  `uncreatable_species.json`). Se muestran `native`, `present_illegal`, `dlc` y `transfer_only` (estas últimas como
+  tarjetas sin poseer). La lista embebida solo queda como respaldo si un juego restringido no tiene ningún dato.
+- **Efecto esperado**: Let's Go 153 (antes 809, por usar `MaxSpeciesID`); SwSh 664 (antes 584; entran Mewtwo, Mew,
+  Ho-Oh…); SV 733 (antes 664); Z-A 659 (antes 364; +331, la mayoría `transfer_only`); PLA 242 (sin cambio);
+  Gen 1-7 y BDSP sin cambio. Las dos fuentes diferían solo por exceso del lado de la DB: ninguna especie de la lista
+  embebida figuraba como `uncreatable`.
+
+### Archivos
+Nuevos: `src/Exxeguttor.App/Services/EvolutionNameLocalizer.cs`, `tests/Exxeguttor.Tests/PokedexFormsTests.cs`,
+`tests/Exxeguttor.Tests/PokedexAvailabilityTests.cs`.
+Modificados: `src/Exxeguttor.App/Services/PokedexService.cs`, `EvolutionConditionFormatter.cs`,
+`PokemonDatabase.cs`, `src/Exxeguttor.UI/ViewModels/PokedexViewModel.cs`, `src/Exxeguttor.UI/Views/PokedexView.axaml`.
+
+### Tests (escritos, sin correr)
+- `PokedexFormsTests` (12): Gen 7 muestra Exeggutor de Alola (Form 1, fila 10114); Gen 4 la base; Exeggcute en Gen 7
+  evoluciona a ambas ramas con la región solo en la de Alola; Exeggutor de Alola muestra la previa y la otra rama;
+  Quilava en Legends Arceus oculta el Typhlosion base; Growlithe de Hisui → Arcanine de Hisui; aristas base sin la
+  condición de la variante (Sandslash Nivel 22, Ninetales Piedra Fuego); condiciones en es/en.
+- `PokedexAvailabilityTests`: el álbum no incluye especies ocultas en 6 juegos; Let's Go da 153; Z-A incluye
+  Sandshrew; SwSh incluye Mewtwo; Gen 7 muestra todas hasta el máximo.
+
+### Pendiente / casos por decidir (provisorios hasta que Juan los resuelva)
+1. **Varias formas regionales disponibles en el mismo juego** (Tauros de Paldea, 3 razas): se muestra la primera del
+   catálogo. Falta decidir si se muestran todas, un selector, y qué gana si hay una regional de otra generación.
+2. **Datos que no existen por forma** (genus, hábitat, flavor text): la tarjeta usa los de la especie base.
+3. **Especie sin forma base en el juego**: resuelto por la regla (queda la regional).
+4. **Formas no regionales** (cosméticas, Mega, Large): se mantiene la base.
+5. **Ramas por formas con fila propia que no son regionales** (Wormadam arena/basura): no se muestran todavía.
+6. **Métodos de evolución alternativos** (Magneton, Eevee, Cyndaquil, Feebas, Charjabug, Crabrawler, Rockruff,
+   Kubfu, Poltchageist y otras ~12 aristas): son varios métodos válidos apilados en la misma arista y se muestra solo el
+   último (no son variantes regionales).
+7. **Sin layout de árbol**: de las ramas hermanas no se muestran sus propias evoluciones.
+8. Nombres de especie en slots de box/equipo y mensaje post-creación: siguen con `GameInfo.GetStrings("en")` (no
+   se tocó); solo cambió el álbum.
+9. Falta **compilar y probar**: Gen 7 (Exeggutor de Alola, cadena de Exeggcute y de Sandshrew), Legends Arceus
+   (Quilava), el álbum de Z-A (cambia el denominador: 364 → 659; revisar contadores y encabezados) y Let's Go.
+10. El JSON `restricted_dex_availability.json` queda solo como respaldo; evaluar eliminarlo cuando se confirme la
+    nueva fuente. `README-uncreatable-species.md` lo menciona (post-filtro 3).
+    
+### Legends: Arceus — especies base que cambiaban de forma al crear
+- Bug (reportado con Goodra/Sliggoo): el selector ofrecía la especie base, pero en Legends: Arceus solo existe su forma de Hisui; `BuildPokemon` (vía `TryBuildOtherLegalForm`) la cambiaba en silencio y el sprite cambiaba al crear. Mi escaneo anterior las contó como "legales" por especie sin mirar la forma — mi error. Afecta a 17 especies: Growlithe, Arcanine, Voltorb, Electrode, Typhlosion, Qwilfish, Samurott, Lilligant, Basculin, Zorua, Zoroark, Braviary, Sliggoo, Goodra, Avalugg, Decidueye y Giratina (solo Origen).
+- Fix (solo datos): `fix_species_availability` 2026.10.3 las pasa a `uncreatable` en PLA (la base se oculta; las formas de Hisui siguen como tarjetas del catálogo regional) y `fix_form_availability` 2026.10.1 añade `own_encounter` para Giratina Origen (487:1) y Basculin Rayas Blancas (550:2). JSON embebidos actualizados (`uncreatable_species.json` PLA 663→680, `creatable_forms.json` GameId 11). Tests nuevos en `CreatableSpeciesTests`; arnés 135/135.
+- Pendiente de revisar (mismo patrón, otros juegos): Z-A (Zygarde, Oricorio, Minior) y Escarlata/Púrpura (Scatterbug/Spewpa/Vivillon, Minior, Maushold) construyen solo una forma distinta de la base; falta confirmar cuáles son cosméticas.
+
+### Forma base al crear — corrección general (todos los juegos)
+- Bug (Goodra/Sliggoo en Legends: Arceus, y mismo patrón en otros juegos): `BuildPokemon` devolvía el primer encuentro legal aunque fuera de otra forma que la pedida, y el sprite cambiaba al crear.
+- Fix en el constructor: al pedir la forma base (0), `TryBuildFromLegitEncounter` hace primero una pasada que acepta solo candidatos de forma 0; si ninguno sirve, repite como antes (cualquier forma). Corrige Deoxys en HeartGold, Giratina en HeartGold/X (salían Ataque/Origen) y Landorus en Negro 2/Blanco 2 (salía Tótem/Therian): ahora salen en forma base y legales.
+- Casos donde la base de verdad no existe (solo datos, hotfixes `fix_species_availability` 2026.10.3–4 y `fix_form_availability` 2026.10.1–2): 17 especies de Legends: Arceus (Growlithe, Arcanine, Voltorb, Electrode, Typhlosion, Qwilfish, Samurott, Lilligant, Basculin, Zorua, Zoroark, Braviary, Sliggoo, Goodra, Avalugg, Decidueye, Giratina) y Zygarde en Z-A: la base se oculta y se ofrece la forma que sí existe (Hisui por el catálogo regional; Giratina Origen, Basculin Rayas Blancas y Zygarde forma 2 como `own_encounter`). JSON embebidos actualizados.
+- Escaneadas 21 versiones; quedan sin tocar (cosméticas/aleatorias): Unown, Scatterbug/Spewpa/Vivillon (patrón según región del save) y Minior (color del núcleo).
+- Resultado: Escarlata/Púrpura 733/733, Espada/Escudo 664/664, Z-A sin cambios (Hoopa y Volcanion). Tests nuevos `BaseFormCreationTests`; arnés 140/140.
+
+### Pokédex vs modal de creación — por qué los conteos difieren, y bug corregido
+- Diferencias esperadas (no son bugs): el modal suma una tarjeta por cada forma regional/alternativa (Alola, Galar, Hisui, Paldea, Pichu orejas puntiagudas...), la Pokédex una por especie. Moon 802→831 (+29 formas), Platinum 493→494 (+1), Z-A y Legends: Arceus igual. Escarlata/Púrpura (718/763) y Espada/Escudo (656/686) salen 15 y 8 por debajo de 733/664 porque el save abierto no tiene DLC (MaxSpeciesID 1010 y 890): la lista se acota al máximo del save, igual en ambas.
+- Bug mío (entregas 26/27): al ocultar la base de 17 especies de Legends: Arceus y Zygarde en Z-A, la Pokédex las perdió aunque existen en el juego como forma. Corregido en `PokedexService.GetAlbumEntries`: una especie oculta se mantiene si el juego tiene una forma suya (regional o con encuentro propio) y se muestra con esa forma. Test nuevo y `Album_NoMuestraLasEspeciesNoCreables` ajustado.
+- Pendiente: en la UI, Pokédex de Legends: Arceus debería volver a 242 entradas y Z-A a 659.
+
+    

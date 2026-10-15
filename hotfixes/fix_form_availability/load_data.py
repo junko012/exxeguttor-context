@@ -2,7 +2,8 @@
 """Carga FormGameAvailability en pokemon.db desde form_game_availability.json.
 Idempotente: la tabla se repuebla entera. Correr antes create_tables.py.
 
-Status: 'uncreatable' = BuildPokemon no logra esa forma legal en ese juego.
+Status: 'uncreatable' = BuildPokemon no logra esa forma legal en ese juego (el combo la oculta si cambiarla rompe el origen);
+        'own_encounter' = la forma se oculta del combo pero tiene encuentro legal propio: el selector de creación la ofrece.
 
 Uso: python3 load_data.py /ruta/a/pokemon.db [--dry-run]
 """
@@ -11,9 +12,9 @@ from collections import Counter
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
-VERSION = "2026.10"
+VERSION = "2026.10.1"
 SOURCE = "PKHeX.Core 25.11.07"
-STATUSES = {"uncreatable"}
+STATUSES = {"uncreatable", "own_encounter"}
 
 def main(path, dry):
     rows = json.loads((HERE / "form_game_availability.json").read_text(encoding="utf-8"))

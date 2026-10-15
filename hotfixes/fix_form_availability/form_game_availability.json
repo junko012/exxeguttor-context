@@ -1,5 +1,19 @@
 [
  {
+  "SpeciesId": 172,
+  "FormId": 1,
+  "GameId": 5,
+  "Status": "own_encounter",
+  "Reason": "Oculta en el combo Forma (cambiarla rompe el origen) pero tiene encuentro legal propio: se ofrece al crear"
+ },
+ {
+  "SpeciesId": 172,
+  "FormId": 1,
+  "GameId": 10,
+  "Status": "own_encounter",
+  "Reason": "Oculta en el combo Forma (cambiarla rompe el origen) pero tiene encuentro legal propio: se ofrece al crear"
+ },
+ {
   "SpeciesId": 59,
   "FormId": 2,
   "GameId": 11,
@@ -756,6 +770,83 @@
   "Reason": "Sin construcción legal con PKHeX.Core 25.11.07 (forma de combate/no obtenible o limitación del constructor)"
  },
  {
+  "SpeciesId": 25,
+  "FormId": 8,
+  "GameId": 13,
+  "Status": "own_encounter",
+  "Reason": "Oculta en el combo Forma (cambiarla rompe el origen) pero tiene encuentro legal propio: se ofrece al crear"
+ },
+ {
+  "SpeciesId": 133,
+  "FormId": 1,
+  "GameId": 13,
+  "Status": "own_encounter",
+  "Reason": "Oculta en el combo Forma (cambiarla rompe el origen) pero tiene encuentro legal propio: se ofrece al crear"
+ },
+ {
+  "SpeciesId": 25,
+  "FormId": 1,
+  "GameId": 14,
+  "Status": "own_encounter",
+  "Reason": "Oculta en el combo Forma (cambiarla rompe el origen) pero tiene encuentro legal propio: se ofrece al crear"
+ },
+ {
+  "SpeciesId": 25,
+  "FormId": 2,
+  "GameId": 14,
+  "Status": "own_encounter",
+  "Reason": "Oculta en el combo Forma (cambiarla rompe el origen) pero tiene encuentro legal propio: se ofrece al crear"
+ },
+ {
+  "SpeciesId": 25,
+  "FormId": 3,
+  "GameId": 14,
+  "Status": "own_encounter",
+  "Reason": "Oculta en el combo Forma (cambiarla rompe el origen) pero tiene encuentro legal propio: se ofrece al crear"
+ },
+ {
+  "SpeciesId": 25,
+  "FormId": 4,
+  "GameId": 14,
+  "Status": "own_encounter",
+  "Reason": "Oculta en el combo Forma (cambiarla rompe el origen) pero tiene encuentro legal propio: se ofrece al crear"
+ },
+ {
+  "SpeciesId": 25,
+  "FormId": 5,
+  "GameId": 14,
+  "Status": "own_encounter",
+  "Reason": "Oculta en el combo Forma (cambiarla rompe el origen) pero tiene encuentro legal propio: se ofrece al crear"
+ },
+ {
+  "SpeciesId": 25,
+  "FormId": 6,
+  "GameId": 14,
+  "Status": "own_encounter",
+  "Reason": "Oculta en el combo Forma (cambiarla rompe el origen) pero tiene encuentro legal propio: se ofrece al crear"
+ },
+ {
+  "SpeciesId": 666,
+  "FormId": 18,
+  "GameId": 14,
+  "Status": "own_encounter",
+  "Reason": "Oculta en el combo Forma (cambiarla rompe el origen) pero tiene encuentro legal propio: se ofrece al crear"
+ },
+ {
+  "SpeciesId": 666,
+  "FormId": 19,
+  "GameId": 14,
+  "Status": "own_encounter",
+  "Reason": "Oculta en el combo Forma (cambiarla rompe el origen) pero tiene encuentro legal propio: se ofrece al crear"
+ },
+ {
+  "SpeciesId": 172,
+  "FormId": 1,
+  "GameId": 15,
+  "Status": "own_encounter",
+  "Reason": "Oculta en el combo Forma (cambiarla rompe el origen) pero tiene encuentro legal propio: se ofrece al crear"
+ },
+ {
   "SpeciesId": 483,
   "FormId": 1,
   "GameId": 18,
@@ -1309,6 +1400,13 @@
   "Reason": "Sin construcción legal con PKHeX.Core 25.11.07 (forma de combate/no obtenible o limitación del constructor)"
  },
  {
+  "SpeciesId": 801,
+  "FormId": 1,
+  "GameId": 18,
+  "Status": "own_encounter",
+  "Reason": "Oculta en el combo Forma (cambiarla rompe el origen) pero tiene encuentro legal propio: se ofrece al crear"
+ },
+ {
   "SpeciesId": 898,
   "FormId": 1,
   "GameId": 18,
@@ -1405,6 +1503,83 @@
   "GameId": 18,
   "Status": "uncreatable",
   "Reason": "Sin construcción legal con PKHeX.Core 25.11.07 (forma de combate/no obtenible o limitación del constructor)"
+ },
+ {
+  "SpeciesId": 25,
+  "FormId": 1,
+  "GameId": 19,
+  "Status": "own_encounter",
+  "Reason": "Oculta en el combo Forma (cambiarla rompe el origen) pero tiene encuentro legal propio: se ofrece al crear"
+ },
+ {
+  "SpeciesId": 25,
+  "FormId": 2,
+  "GameId": 19,
+  "Status": "own_encounter",
+  "Reason": "Oculta en el combo Forma (cambiarla rompe el origen) pero tiene encuentro legal propio: se ofrece al crear"
+ },
+ {
+  "SpeciesId": 25,
+  "FormId": 3,
+  "GameId": 19,
+  "Status": "own_encounter",
+  "Reason": "Oculta en el combo Forma (cambiarla rompe el origen) pero tiene encuentro legal propio: se ofrece al crear"
+ },
+ {
+  "SpeciesId": 25,
+  "FormId": 4,
+  "GameId": 19,
+  "Status": "own_encounter",
+  "Reason": "Oculta en el combo Forma (cambiarla rompe el origen) pero tiene encuentro legal propio: se ofrece al crear"
+ },
+ {
+  "SpeciesId": 25,
+  "FormId": 5,
+  "GameId": 19,
+  "Status": "own_encounter",
+  "Reason": "Oculta en el combo Forma (cambiarla rompe el origen) pero tiene encuentro legal propio: se ofrece al crear"
+ },
+ {
+  "SpeciesId": 25,
+  "FormId": 6,
+  "GameId": 19,
+  "Status": "own_encounter",
+  "Reason": "Oculta en el combo Forma (cambiarla rompe el origen) pero tiene encuentro legal propio: se ofrece al crear"
+ },
+ {
+  "SpeciesId": 658,
+  "FormId": 1,
+  "GameId": 19,
+  "Status": "own_encounter",
+  "Reason": "Oculta en el combo Forma (cambiarla rompe el origen) pero tiene encuentro legal propio: se ofrece al crear"
+ },
+ {
+  "SpeciesId": 666,
+  "FormId": 18,
+  "GameId": 19,
+  "Status": "own_encounter",
+  "Reason": "Oculta en el combo Forma (cambiarla rompe el origen) pero tiene encuentro legal propio: se ofrece al crear"
+ },
+ {
+  "SpeciesId": 666,
+  "FormId": 19,
+  "GameId": 19,
+  "Status": "own_encounter",
+  "Reason": "Oculta en el combo Forma (cambiarla rompe el origen) pero tiene encuentro legal propio: se ofrece al crear"
+ },
+ {
+  "SpeciesId": 718,
+  "FormId": 1,
+  "GameId": 19,
+  "Status": "own_encounter",
+  "Reason": "Oculta en el combo Forma (cambiarla rompe el origen) pero tiene encuentro legal propio: se ofrece al crear"
+ },
+ {
+  "SpeciesId": 745,
+  "FormId": 1,
+  "GameId": 19,
+  "Status": "own_encounter",
+  "Reason": "Oculta en el combo Forma (cambiarla rompe el origen) pero tiene encuentro legal propio: se ofrece al crear"
  },
  {
   "SpeciesId": 110,
@@ -1636,5 +1811,117 @@
   "GameId": 20,
   "Status": "uncreatable",
   "Reason": "Sin construcción legal con PKHeX.Core 25.11.07 (forma de combate/no obtenible o limitación del constructor)"
+ },
+ {
+  "SpeciesId": 25,
+  "FormId": 1,
+  "GameId": 21,
+  "Status": "own_encounter",
+  "Reason": "Oculta en el combo Forma (cambiarla rompe el origen) pero tiene encuentro legal propio: se ofrece al crear"
+ },
+ {
+  "SpeciesId": 25,
+  "FormId": 2,
+  "GameId": 21,
+  "Status": "own_encounter",
+  "Reason": "Oculta en el combo Forma (cambiarla rompe el origen) pero tiene encuentro legal propio: se ofrece al crear"
+ },
+ {
+  "SpeciesId": 25,
+  "FormId": 3,
+  "GameId": 21,
+  "Status": "own_encounter",
+  "Reason": "Oculta en el combo Forma (cambiarla rompe el origen) pero tiene encuentro legal propio: se ofrece al crear"
+ },
+ {
+  "SpeciesId": 25,
+  "FormId": 4,
+  "GameId": 21,
+  "Status": "own_encounter",
+  "Reason": "Oculta en el combo Forma (cambiarla rompe el origen) pero tiene encuentro legal propio: se ofrece al crear"
+ },
+ {
+  "SpeciesId": 25,
+  "FormId": 5,
+  "GameId": 21,
+  "Status": "own_encounter",
+  "Reason": "Oculta en el combo Forma (cambiarla rompe el origen) pero tiene encuentro legal propio: se ofrece al crear"
+ },
+ {
+  "SpeciesId": 25,
+  "FormId": 6,
+  "GameId": 21,
+  "Status": "own_encounter",
+  "Reason": "Oculta en el combo Forma (cambiarla rompe el origen) pero tiene encuentro legal propio: se ofrece al crear"
+ },
+ {
+  "SpeciesId": 25,
+  "FormId": 7,
+  "GameId": 21,
+  "Status": "own_encounter",
+  "Reason": "Oculta en el combo Forma (cambiarla rompe el origen) pero tiene encuentro legal propio: se ofrece al crear"
+ },
+ {
+  "SpeciesId": 658,
+  "FormId": 1,
+  "GameId": 21,
+  "Status": "own_encounter",
+  "Reason": "Oculta en el combo Forma (cambiarla rompe el origen) pero tiene encuentro legal propio: se ofrece al crear"
+ },
+ {
+  "SpeciesId": 666,
+  "FormId": 18,
+  "GameId": 21,
+  "Status": "own_encounter",
+  "Reason": "Oculta en el combo Forma (cambiarla rompe el origen) pero tiene encuentro legal propio: se ofrece al crear"
+ },
+ {
+  "SpeciesId": 666,
+  "FormId": 19,
+  "GameId": 21,
+  "Status": "own_encounter",
+  "Reason": "Oculta en el combo Forma (cambiarla rompe el origen) pero tiene encuentro legal propio: se ofrece al crear"
+ },
+ {
+  "SpeciesId": 718,
+  "FormId": 1,
+  "GameId": 21,
+  "Status": "own_encounter",
+  "Reason": "Oculta en el combo Forma (cambiarla rompe el origen) pero tiene encuentro legal propio: se ofrece al crear"
+ },
+ {
+  "SpeciesId": 745,
+  "FormId": 1,
+  "GameId": 21,
+  "Status": "own_encounter",
+  "Reason": "Oculta en el combo Forma (cambiarla rompe el origen) pero tiene encuentro legal propio: se ofrece al crear"
+ },
+ {
+  "SpeciesId": 666,
+  "FormId": 18,
+  "GameId": 22,
+  "Status": "own_encounter",
+  "Reason": "Oculta en el combo Forma (cambiarla rompe el origen) pero tiene encuentro legal propio: se ofrece al crear"
+ },
+ {
+  "SpeciesId": 666,
+  "FormId": 19,
+  "GameId": 22,
+  "Status": "own_encounter",
+  "Reason": "Oculta en el combo Forma (cambiarla rompe el origen) pero tiene encuentro legal propio: se ofrece al crear"
+ },
+ {
+  "SpeciesId": 487,
+  "FormId": 1,
+  "GameId": 11,
+  "Status": "own_encounter",
+  "Reason": "Oculta en el combo Forma (cambiarla rompe el origen) pero tiene encuentro legal propio: se ofrece al crear"
+ },
+ {
+  "SpeciesId": 550,
+  "FormId": 2,
+  "GameId": 11,
+  "Status": "own_encounter",
+  "Reason": "Oculta en el combo Forma (cambiarla rompe el origen) pero tiene encuentro legal propio: se ofrece al crear"
  }
 ]
