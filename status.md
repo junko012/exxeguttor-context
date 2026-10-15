@@ -548,65 +548,6 @@ Pokémon cuando el encuentro liga el PID/semilla a los IVs. No es solo "encuentr
 
 ## 2026-10-09 — Tab Moves (PP, tarjetas), rediseño del tab Special y corrección de ids de Mega/Z
 
-**Resumen**: sesión larga sobre los tabs Moves y Special. Dos bugs reales de datos/legalidad
-(PP de movimientos y ids de Mega Stones/Z-Crystals), un tercero de UI (combo pegado) y el
-rediseño visual de ambos tabs. **Todo el código se escribió sin compilar** (sin SDK en el
-sandbox): pendiente `dotnet build` y prueba manual de cada punto de "Pendiente / sin verificar".
-Base de trabajo: commit `d5fad73`.
-
-**Nota de sincronización**: el commit `2023bc9` ("adding forms gen 8", 6 oct) no estaba
-documentado: tocó `PokemonService.cs`, `RegionalFormCatalog.cs`, claves de i18n es/en y el
-sprite `games/w.png`.
-
-### Bugs reales corregidos
-
-**1. PP actual del slot conservaba el del movimiento anterior** (`EditSessionService`, `EditApplyService`)
-- Síntoma: al reemplazar un movimiento en un slot ya ocupado, el diagnóstico marcaba "PP por
-  encima del máximo". En slots vacíos no pasaba (PP 0).
-- Causa: `MoveN`/`MoveN_PPUps` se aplicaban al PKM pero `MoveN_PP` nunca. En
-  `AnalyzeLegality` el parámetro `setPP` estaba declarado y no se usaba; en `ApplyFieldsToPkm`
-  no existía. Afectaba el preview Y el export. El movimiento nuevo SÍ se grababa bien.
-- Fix: si un slot tiene edición de movimiento o de PP Ups se llama `pkm.HealPPIndex(slot)`
-  después de setear ambos. Slots sin edición conservan su PP.
-
-**2. Ids de Mega Stones y Z-Crystals desalineados con la DB** (`MegaStoneDatabase`, `ZCrystalDatabase`)
-- Causa raíz: las tablas se escribieron con la numeración PokeAPI original de `Items.ItemId`.
-  El hotfix `fix_database` (26 ago) recargó la tabla con ids de PKHeX y las tablas nunca se
-  actualizaron. Resultado: el id 845 (Snorlium Z en la numeración vieja) es hoy "Sparkling
-  Stone"; el 695 (Gengarite) es "Power Plant Pass". Las opciones equipaban el objeto equivocado.
-- Mega Stones: remapeadas por nombre (47 entradas); `RawItemId == ItemId` en XY, ORAS, SM,
-  USUM y Z-A, así que la DB y PKHeX coinciden.
-- Z-Crystals: **en SM/USUM el id del cristal EQUIPADO difiere del `ItemId` de la DB**
-  (`RawItemId` 807-835 vs `ItemId` 776-806; PKHeX además trae cada cristal dos veces con el
-  mismo nombre: mochila 776-806 y equipado 807+). La tabla ahora usa el id crudo de PKHeX.
-  Se agregaron los 6 cristales exclusivos de USUM (ids crudos 927-932: Solganium, Lunalium,
-  Ultranecrozium, Mimikium, Lycanium, Kommonium). Total: 18 de tipo + 17 exclusivos.
-- Nuevo campo `HeldItemRawId` (VM): lo setean solo los selectores del tab Special; el export y
-  el preview de legalidad lo usan con prioridad sobre el nombre. Cualquier cambio de objeto
-  desde el combo del panel central lo vuelve a 0 (ahí se sigue resolviendo por nombre).
-- El filtro que oculta Mega/Z del combo general ahora aplica solo en juegos con esas
-  mecánicas (`capabilities.HasMega` / `HasZMoves`) y oculta por id Y por nombre.
-- Los nombres de las opciones Z salen de la lista de objetos del juego (idioma de la UI), no
-  de la DB en inglés.
-
-**3. Combo de selección rápida pegado y reselección que no hacía nada** (Mega y Z)
-- Causa (preexistente): el selector era un `SelectedItem` bindeado cuyo setter se reseteaba a
-  vacío él mismo; Avalonia no re-empuja un valor cambiado dentro del propio binding.
-- Fix: `SelectionChanged` en code-behind (`OnMegaOptionPicked`, `OnZCrystalOptionPicked`) →
-  `EquipMegaOption` / `EquipZCrystalOption` en el VM, y el combo se vacía con `Post`.
-  Se eliminaron las propiedades `SelectedMegaOption` / `SelectedZCrystalOption`.
-
-**4. El diagnóstico no se actualizaba al deshacer todas las ediciones** (`RunLegalityRecalcAsync`)
-- Causa: `if (edits == null || edits.Count == 0) return;` — al revertir al estado original
-  quedaba el resultado de la edición anterior. Ahora se analiza también el Pokémon sin ediciones.
-  Afectaba a cualquier edición deshecha, no solo a objetos.
-
-**5. El preview de legalidad ignoraba ediciones del tab Special**
-- `AnalyzeLegality` ahora aplica también `DynamaxLevel`, `CanGigantamax`, `IsAlpha`, `IsNoble`
-  y el Tera override, con el mismo mapeo que `ApplyFieldsToPkm`.
-
-## 2026-10-09 — Tab Moves (PP, tarjetas), rediseño del tab Special y corrección de ids de Mega/Z
-
 **Resumen**: sesión larga sobre los tabs Moves y Special (actualizada el 11 oct con las
 correcciones posteriores). Dos bugs reales de datos/legalidad (PP de movimientos e ids de
 Mega Stones/Z-Crystals), uno de UI (combo pegado), uno de legalidad en vivo y el rediseño
