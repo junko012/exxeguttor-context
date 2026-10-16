@@ -1,0 +1,757 @@
+[
+ {
+  "SpeciesId": 1,
+  "Name": "bulbasaur",
+  "BaseSpecialGen1": 65
+ },
+ {
+  "SpeciesId": 2,
+  "Name": "ivysaur",
+  "BaseSpecialGen1": 80
+ },
+ {
+  "SpeciesId": 3,
+  "Name": "venusaur",
+  "BaseSpecialGen1": 100
+ },
+ {
+  "SpeciesId": 4,
+  "Name": "charmander",
+  "BaseSpecialGen1": 50
+ },
+ {
+  "SpeciesId": 5,
+  "Name": "charmeleon",
+  "BaseSpecialGen1": 65
+ },
+ {
+  "SpeciesId": 6,
+  "Name": "charizard",
+  "BaseSpecialGen1": 85
+ },
+ {
+  "SpeciesId": 7,
+  "Name": "squirtle",
+  "BaseSpecialGen1": 50
+ },
+ {
+  "SpeciesId": 8,
+  "Name": "wartortle",
+  "BaseSpecialGen1": 65
+ },
+ {
+  "SpeciesId": 9,
+  "Name": "blastoise",
+  "BaseSpecialGen1": 85
+ },
+ {
+  "SpeciesId": 10,
+  "Name": "caterpie",
+  "BaseSpecialGen1": 20
+ },
+ {
+  "SpeciesId": 11,
+  "Name": "metapod",
+  "BaseSpecialGen1": 25
+ },
+ {
+  "SpeciesId": 12,
+  "Name": "butterfree",
+  "BaseSpecialGen1": 80
+ },
+ {
+  "SpeciesId": 13,
+  "Name": "weedle",
+  "BaseSpecialGen1": 20
+ },
+ {
+  "SpeciesId": 14,
+  "Name": "kakuna",
+  "BaseSpecialGen1": 25
+ },
+ {
+  "SpeciesId": 15,
+  "Name": "beedrill",
+  "BaseSpecialGen1": 45
+ },
+ {
+  "SpeciesId": 16,
+  "Name": "pidgey",
+  "BaseSpecialGen1": 35
+ },
+ {
+  "SpeciesId": 17,
+  "Name": "pidgeotto",
+  "BaseSpecialGen1": 50
+ },
+ {
+  "SpeciesId": 18,
+  "Name": "pidgeot",
+  "BaseSpecialGen1": 70
+ },
+ {
+  "SpeciesId": 19,
+  "Name": "rattata",
+  "BaseSpecialGen1": 25
+ },
+ {
+  "SpeciesId": 20,
+  "Name": "raticate",
+  "BaseSpecialGen1": 50
+ },
+ {
+  "SpeciesId": 21,
+  "Name": "spearow",
+  "BaseSpecialGen1": 31
+ },
+ {
+  "SpeciesId": 22,
+  "Name": "fearow",
+  "BaseSpecialGen1": 61
+ },
+ {
+  "SpeciesId": 23,
+  "Name": "ekans",
+  "BaseSpecialGen1": 40
+ },
+ {
+  "SpeciesId": 24,
+  "Name": "arbok",
+  "BaseSpecialGen1": 65
+ },
+ {
+  "SpeciesId": 25,
+  "Name": "pikachu",
+  "BaseSpecialGen1": 50
+ },
+ {
+  "SpeciesId": 26,
+  "Name": "raichu",
+  "BaseSpecialGen1": 90
+ },
+ {
+  "SpeciesId": 27,
+  "Name": "sandshrew",
+  "BaseSpecialGen1": 30
+ },
+ {
+  "SpeciesId": 28,
+  "Name": "sandslash",
+  "BaseSpecialGen1": 55
+ },
+ {
+  "SpeciesId": 29,
+  "Name": "nidoran-f",
+  "BaseSpecialGen1": 40
+ },
+ {
+  "SpeciesId": 30,
+  "Name": "nidorina",
+  "BaseSpecialGen1": 55
+ },
+ {
+  "SpeciesId": 31,
+  "Name": "nidoqueen",
+  "BaseSpecialGen1": 75
+ },
+ {
+  "SpeciesId": 32,
+  "Name": "nidoran-m",
+  "BaseSpecialGen1": 40
+ },
+ {
+  "SpeciesId": 33,
+  "Name": "nidorino",
+  "BaseSpecialGen1": 55
+ },
+ {
+  "SpeciesId": 34,
+  "Name": "nidoking",
+  "BaseSpecialGen1": 75
+ },
+ {
+  "SpeciesId": 35,
+  "Name": "clefairy",
+  "BaseSpecialGen1": 60
+ },
+ {
+  "SpeciesId": 36,
+  "Name": "clefable",
+  "BaseSpecialGen1": 85
+ },
+ {
+  "SpeciesId": 37,
+  "Name": "vulpix",
+  "BaseSpecialGen1": 65
+ },
+ {
+  "SpeciesId": 38,
+  "Name": "ninetales",
+  "BaseSpecialGen1": 100
+ },
+ {
+  "SpeciesId": 39,
+  "Name": "jigglypuff",
+  "BaseSpecialGen1": 25
+ },
+ {
+  "SpeciesId": 40,
+  "Name": "wigglytuff",
+  "BaseSpecialGen1": 50
+ },
+ {
+  "SpeciesId": 41,
+  "Name": "zubat",
+  "BaseSpecialGen1": 40
+ },
+ {
+  "SpeciesId": 42,
+  "Name": "golbat",
+  "BaseSpecialGen1": 75
+ },
+ {
+  "SpeciesId": 43,
+  "Name": "oddish",
+  "BaseSpecialGen1": 75
+ },
+ {
+  "SpeciesId": 44,
+  "Name": "gloom",
+  "BaseSpecialGen1": 85
+ },
+ {
+  "SpeciesId": 45,
+  "Name": "vileplume",
+  "BaseSpecialGen1": 100
+ },
+ {
+  "SpeciesId": 46,
+  "Name": "paras",
+  "BaseSpecialGen1": 55
+ },
+ {
+  "SpeciesId": 47,
+  "Name": "parasect",
+  "BaseSpecialGen1": 80
+ },
+ {
+  "SpeciesId": 48,
+  "Name": "venonat",
+  "BaseSpecialGen1": 40
+ },
+ {
+  "SpeciesId": 49,
+  "Name": "venomoth",
+  "BaseSpecialGen1": 90
+ },
+ {
+  "SpeciesId": 50,
+  "Name": "diglett",
+  "BaseSpecialGen1": 45
+ },
+ {
+  "SpeciesId": 51,
+  "Name": "dugtrio",
+  "BaseSpecialGen1": 70
+ },
+ {
+  "SpeciesId": 52,
+  "Name": "meowth",
+  "BaseSpecialGen1": 40
+ },
+ {
+  "SpeciesId": 53,
+  "Name": "persian",
+  "BaseSpecialGen1": 65
+ },
+ {
+  "SpeciesId": 54,
+  "Name": "psyduck",
+  "BaseSpecialGen1": 50
+ },
+ {
+  "SpeciesId": 55,
+  "Name": "golduck",
+  "BaseSpecialGen1": 80
+ },
+ {
+  "SpeciesId": 56,
+  "Name": "mankey",
+  "BaseSpecialGen1": 35
+ },
+ {
+  "SpeciesId": 57,
+  "Name": "primeape",
+  "BaseSpecialGen1": 60
+ },
+ {
+  "SpeciesId": 58,
+  "Name": "growlithe",
+  "BaseSpecialGen1": 50
+ },
+ {
+  "SpeciesId": 59,
+  "Name": "arcanine",
+  "BaseSpecialGen1": 80
+ },
+ {
+  "SpeciesId": 60,
+  "Name": "poliwag",
+  "BaseSpecialGen1": 40
+ },
+ {
+  "SpeciesId": 61,
+  "Name": "poliwhirl",
+  "BaseSpecialGen1": 50
+ },
+ {
+  "SpeciesId": 62,
+  "Name": "poliwrath",
+  "BaseSpecialGen1": 70
+ },
+ {
+  "SpeciesId": 63,
+  "Name": "abra",
+  "BaseSpecialGen1": 105
+ },
+ {
+  "SpeciesId": 64,
+  "Name": "kadabra",
+  "BaseSpecialGen1": 120
+ },
+ {
+  "SpeciesId": 65,
+  "Name": "alakazam",
+  "BaseSpecialGen1": 135
+ },
+ {
+  "SpeciesId": 66,
+  "Name": "machop",
+  "BaseSpecialGen1": 35
+ },
+ {
+  "SpeciesId": 67,
+  "Name": "machoke",
+  "BaseSpecialGen1": 50
+ },
+ {
+  "SpeciesId": 68,
+  "Name": "machamp",
+  "BaseSpecialGen1": 65
+ },
+ {
+  "SpeciesId": 69,
+  "Name": "bellsprout",
+  "BaseSpecialGen1": 70
+ },
+ {
+  "SpeciesId": 70,
+  "Name": "weepinbell",
+  "BaseSpecialGen1": 85
+ },
+ {
+  "SpeciesId": 71,
+  "Name": "victreebel",
+  "BaseSpecialGen1": 100
+ },
+ {
+  "SpeciesId": 72,
+  "Name": "tentacool",
+  "BaseSpecialGen1": 100
+ },
+ {
+  "SpeciesId": 73,
+  "Name": "tentacruel",
+  "BaseSpecialGen1": 120
+ },
+ {
+  "SpeciesId": 74,
+  "Name": "geodude",
+  "BaseSpecialGen1": 30
+ },
+ {
+  "SpeciesId": 75,
+  "Name": "graveler",
+  "BaseSpecialGen1": 45
+ },
+ {
+  "SpeciesId": 76,
+  "Name": "golem",
+  "BaseSpecialGen1": 55
+ },
+ {
+  "SpeciesId": 77,
+  "Name": "ponyta",
+  "BaseSpecialGen1": 65
+ },
+ {
+  "SpeciesId": 78,
+  "Name": "rapidash",
+  "BaseSpecialGen1": 80
+ },
+ {
+  "SpeciesId": 79,
+  "Name": "slowpoke",
+  "BaseSpecialGen1": 40
+ },
+ {
+  "SpeciesId": 80,
+  "Name": "slowbro",
+  "BaseSpecialGen1": 80
+ },
+ {
+  "SpeciesId": 81,
+  "Name": "magnemite",
+  "BaseSpecialGen1": 95
+ },
+ {
+  "SpeciesId": 82,
+  "Name": "magneton",
+  "BaseSpecialGen1": 120
+ },
+ {
+  "SpeciesId": 83,
+  "Name": "farfetchd",
+  "BaseSpecialGen1": 58
+ },
+ {
+  "SpeciesId": 84,
+  "Name": "doduo",
+  "BaseSpecialGen1": 35
+ },
+ {
+  "SpeciesId": 85,
+  "Name": "dodrio",
+  "BaseSpecialGen1": 60
+ },
+ {
+  "SpeciesId": 86,
+  "Name": "seel",
+  "BaseSpecialGen1": 70
+ },
+ {
+  "SpeciesId": 87,
+  "Name": "dewgong",
+  "BaseSpecialGen1": 95
+ },
+ {
+  "SpeciesId": 88,
+  "Name": "grimer",
+  "BaseSpecialGen1": 40
+ },
+ {
+  "SpeciesId": 89,
+  "Name": "muk",
+  "BaseSpecialGen1": 65
+ },
+ {
+  "SpeciesId": 90,
+  "Name": "shellder",
+  "BaseSpecialGen1": 45
+ },
+ {
+  "SpeciesId": 91,
+  "Name": "cloyster",
+  "BaseSpecialGen1": 85
+ },
+ {
+  "SpeciesId": 92,
+  "Name": "gastly",
+  "BaseSpecialGen1": 100
+ },
+ {
+  "SpeciesId": 93,
+  "Name": "haunter",
+  "BaseSpecialGen1": 115
+ },
+ {
+  "SpeciesId": 94,
+  "Name": "gengar",
+  "BaseSpecialGen1": 130
+ },
+ {
+  "SpeciesId": 95,
+  "Name": "onix",
+  "BaseSpecialGen1": 30
+ },
+ {
+  "SpeciesId": 96,
+  "Name": "drowzee",
+  "BaseSpecialGen1": 90
+ },
+ {
+  "SpeciesId": 97,
+  "Name": "hypno",
+  "BaseSpecialGen1": 115
+ },
+ {
+  "SpeciesId": 98,
+  "Name": "krabby",
+  "BaseSpecialGen1": 25
+ },
+ {
+  "SpeciesId": 99,
+  "Name": "kingler",
+  "BaseSpecialGen1": 50
+ },
+ {
+  "SpeciesId": 100,
+  "Name": "voltorb",
+  "BaseSpecialGen1": 55
+ },
+ {
+  "SpeciesId": 101,
+  "Name": "electrode",
+  "BaseSpecialGen1": 80
+ },
+ {
+  "SpeciesId": 102,
+  "Name": "exeggcute",
+  "BaseSpecialGen1": 60
+ },
+ {
+  "SpeciesId": 103,
+  "Name": "exeggutor",
+  "BaseSpecialGen1": 125
+ },
+ {
+  "SpeciesId": 104,
+  "Name": "cubone",
+  "BaseSpecialGen1": 40
+ },
+ {
+  "SpeciesId": 105,
+  "Name": "marowak",
+  "BaseSpecialGen1": 50
+ },
+ {
+  "SpeciesId": 106,
+  "Name": "hitmonlee",
+  "BaseSpecialGen1": 35
+ },
+ {
+  "SpeciesId": 107,
+  "Name": "hitmonchan",
+  "BaseSpecialGen1": 35
+ },
+ {
+  "SpeciesId": 108,
+  "Name": "lickitung",
+  "BaseSpecialGen1": 60
+ },
+ {
+  "SpeciesId": 109,
+  "Name": "koffing",
+  "BaseSpecialGen1": 60
+ },
+ {
+  "SpeciesId": 110,
+  "Name": "weezing",
+  "BaseSpecialGen1": 85
+ },
+ {
+  "SpeciesId": 111,
+  "Name": "rhyhorn",
+  "BaseSpecialGen1": 30
+ },
+ {
+  "SpeciesId": 112,
+  "Name": "rhydon",
+  "BaseSpecialGen1": 45
+ },
+ {
+  "SpeciesId": 113,
+  "Name": "chansey",
+  "BaseSpecialGen1": 105
+ },
+ {
+  "SpeciesId": 114,
+  "Name": "tangela",
+  "BaseSpecialGen1": 100
+ },
+ {
+  "SpeciesId": 115,
+  "Name": "kangaskhan",
+  "BaseSpecialGen1": 40
+ },
+ {
+  "SpeciesId": 116,
+  "Name": "horsea",
+  "BaseSpecialGen1": 70
+ },
+ {
+  "SpeciesId": 117,
+  "Name": "seadra",
+  "BaseSpecialGen1": 95
+ },
+ {
+  "SpeciesId": 118,
+  "Name": "goldeen",
+  "BaseSpecialGen1": 50
+ },
+ {
+  "SpeciesId": 119,
+  "Name": "seaking",
+  "BaseSpecialGen1": 80
+ },
+ {
+  "SpeciesId": 120,
+  "Name": "staryu",
+  "BaseSpecialGen1": 70
+ },
+ {
+  "SpeciesId": 121,
+  "Name": "starmie",
+  "BaseSpecialGen1": 100
+ },
+ {
+  "SpeciesId": 122,
+  "Name": "mr-mime",
+  "BaseSpecialGen1": 100
+ },
+ {
+  "SpeciesId": 123,
+  "Name": "scyther",
+  "BaseSpecialGen1": 55
+ },
+ {
+  "SpeciesId": 124,
+  "Name": "jynx",
+  "BaseSpecialGen1": 95
+ },
+ {
+  "SpeciesId": 125,
+  "Name": "electabuzz",
+  "BaseSpecialGen1": 85
+ },
+ {
+  "SpeciesId": 126,
+  "Name": "magmar",
+  "BaseSpecialGen1": 85
+ },
+ {
+  "SpeciesId": 127,
+  "Name": "pinsir",
+  "BaseSpecialGen1": 55
+ },
+ {
+  "SpeciesId": 128,
+  "Name": "tauros",
+  "BaseSpecialGen1": 70
+ },
+ {
+  "SpeciesId": 129,
+  "Name": "magikarp",
+  "BaseSpecialGen1": 20
+ },
+ {
+  "SpeciesId": 130,
+  "Name": "gyarados",
+  "BaseSpecialGen1": 100
+ },
+ {
+  "SpeciesId": 131,
+  "Name": "lapras",
+  "BaseSpecialGen1": 95
+ },
+ {
+  "SpeciesId": 132,
+  "Name": "ditto",
+  "BaseSpecialGen1": 48
+ },
+ {
+  "SpeciesId": 133,
+  "Name": "eevee",
+  "BaseSpecialGen1": 65
+ },
+ {
+  "SpeciesId": 134,
+  "Name": "vaporeon",
+  "BaseSpecialGen1": 110
+ },
+ {
+  "SpeciesId": 135,
+  "Name": "jolteon",
+  "BaseSpecialGen1": 110
+ },
+ {
+  "SpeciesId": 136,
+  "Name": "flareon",
+  "BaseSpecialGen1": 110
+ },
+ {
+  "SpeciesId": 137,
+  "Name": "porygon",
+  "BaseSpecialGen1": 75
+ },
+ {
+  "SpeciesId": 138,
+  "Name": "omanyte",
+  "BaseSpecialGen1": 90
+ },
+ {
+  "SpeciesId": 139,
+  "Name": "omastar",
+  "BaseSpecialGen1": 115
+ },
+ {
+  "SpeciesId": 140,
+  "Name": "kabuto",
+  "BaseSpecialGen1": 45
+ },
+ {
+  "SpeciesId": 141,
+  "Name": "kabutops",
+  "BaseSpecialGen1": 70
+ },
+ {
+  "SpeciesId": 142,
+  "Name": "aerodactyl",
+  "BaseSpecialGen1": 60
+ },
+ {
+  "SpeciesId": 143,
+  "Name": "snorlax",
+  "BaseSpecialGen1": 65
+ },
+ {
+  "SpeciesId": 144,
+  "Name": "articuno",
+  "BaseSpecialGen1": 125
+ },
+ {
+  "SpeciesId": 145,
+  "Name": "zapdos",
+  "BaseSpecialGen1": 125
+ },
+ {
+  "SpeciesId": 146,
+  "Name": "moltres",
+  "BaseSpecialGen1": 125
+ },
+ {
+  "SpeciesId": 147,
+  "Name": "dratini",
+  "BaseSpecialGen1": 50
+ },
+ {
+  "SpeciesId": 148,
+  "Name": "dragonair",
+  "BaseSpecialGen1": 70
+ },
+ {
+  "SpeciesId": 149,
+  "Name": "dragonite",
+  "BaseSpecialGen1": 100
+ },
+ {
+  "SpeciesId": 150,
+  "Name": "mewtwo",
+  "BaseSpecialGen1": 154
+ },
+ {
+  "SpeciesId": 151,
+  "Name": "mew",
+  "BaseSpecialGen1": 100
+ }
+]
