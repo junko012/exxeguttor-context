@@ -1028,3 +1028,39 @@ Modificados: `src/Exxeguttor.App/Services/PokedexService.cs`, `EvolutionConditio
 - Overlay de legalidad ya no se congela; modales/rails/estados vacíos se ven bien; filas de IDENTITY/STATUS/ORIGIN alineadas; Hyper Beam en Gen 1 sale Normal/Physical.
 - Seguridad: revocar los GitHub PAT pegados en el chat.
 
+## 2026-10-16 — Entregas 31–43 (UI, Gen 1–3) y plan de renombre MaxPotion
+
+### Corrección a la entrada de `fix_gen1_special`
+- La entrada anterior decía "sin cambios de código": era incorrecto. La lectura de `Species.BaseSpecialGen1` (`DbSpeciesEntry.BaseSpecialGen1` → `BaseStats.Gen1Special` → `BaseStatTotalGen1` → `PokemonEditorViewModel.ApplyGen1Special`) se entregó recién en la entrega 32 (`PokemonDatabase.cs`, `SpeciesDatabase.cs`, `PokemonEditorViewModel.cs`). Pendiente de verificar en PC: Charizard en Gen 1 = 85 en ambos ejes, total 425.
+
+### UI — overlay de legalidad "pegado" (entrega 31)
+- Síntoma: al cargar un save y clickear el primer Pokémon, el modal de la Pokédex roja quedaba congelado hasta minimizar/maximizar o sacar una captura. El estado era correcto (`IsBusy == false`); es un frame sin presentar en Linux.
+- Mitigación (causa raíz no confirmada, sin entorno gráfico en el sandbox): `MainWindow.axaml.cs` repinta con `RequestAnimationFrame` además del cambio de opacidad, desde el hilo de UI, y también al cambiar `IsVerifyLegalityLoaderActive`; reintentos a 16/80/250/600/1500 ms. `BusyStateService.Start/Stop` se redirigen al hilo de UI si se llaman desde otro. `PokemonEditorViewModel`: contador `_legalityScansInFlight`; el overlay se cierra solo cuando termina la última verificación en vuelo.
+- Pendiente de verificar en PC; si reaparece, anotar entorno gráfico (X11/Wayland, escritorio, GPU).
+
+### UI — Learnsets / Sets (entregas 33, 34)
+- Tab Learnsets: tooltip con la descripción del movimiento en su nombre (`LearnsetEntry.Tooltip`, misma lógica que el selector: `Acc · PP` + efecto).
+- Learnsets y Sets: columnas compactadas (Type 58, Pwr 34, punto de clase 22 px) y margen derecho de 14 px para que la barra de scroll no tape el punto de clase.
+
+### UI — modales y rails (entregas 35–37)
+- Modales de Tips y de exportación con la paleta real de la app. Auditoría de colores: dominan verde `#1D9E75`, azules (`#3B82F6`, `#2860B0`, `#E6F1FB`, `#0C447C`) y grises; el rojo `#D9584E` solo estaba en el rail y algunos botones. Tips en azul, exportación en verde; botón Done en verde.
+- Rails (principal y de Tips): el ítem activo se marca con un subrayado verde `#1D9E75` bajo el label (`rail-underline` / `cat-underline`); se eliminó la barra vertical y el rojo; el texto/ícono activo pasa a `#1F2937`.
+- Quedan usos de `#D9584E` en otros botones de modales (no tocados).
+
+### UI — estados vacíos y títulos (entregas 38, 40)
+- Sin Pokémon seleccionado (`Editor.IsVisible == false`): panel central inferior muestra ícono + "Selecciona un Pokémon" + guía; panel derecho muestra "Datos del Pokémon" y tarjetas informativas (no clickeables) de IVs/EVs, Moves, Learnsets, Effectiveness, Sets, Ribbons, Special y Diagnóstico.
+- Títulos IDENTITY/STATUS/ORIGIN: 10 px, negrita, espaciado, tinta `#1F2937`, con línea gris y tramo verde corto debajo. Verificar alineación de filas entre las 3 columnas.
+
+### UI — tab Moves (entregas 39, 41)
+- Tarjetas con color por secciones: fondo blanco, franja izquierda de 8 px con el color del tipo, banda de cabecera con el tinte de la clase de daño, cuerpo blanco (los 4 slots).
+- Se quitó la leyenda Physical/Special/Status del tab Moves (cada tarjeta ya muestra su clase). Learnsets y Sets conservan la suya.
+
+### Gen 1–3 — clase de daño por tipo (entregas 42, 43)
+- En Gen 1–3 la clase depende del tipo, no del movimiento (Hyper Beam: Special en la DB, pero Normal → Physical en Gen 1). Helper `Exxeguttor.App/Services/LegacyDamageClass.cs` (movido desde UI en la entrega 43 porque el proyecto de tests solo referencia App). Físicos = Normal, Lucha, Volador, Veneno, Tierra, Roca, Bicho, Fantasma, Acero; Especiales = Fuego, Agua, Planta, Eléctrico, Psíquico, Hielo, Dragón, Siniestro; Estado no cambia. Gen 4+ usa la clase de la DB.
+- Se aplica en: carga de movimientos (tab Moves), lista de Learnsets (y con ella el selector de movimientos) y movimientos de Sets (`MovesetDatabase`). La generación se fija en `LoadPokemon` (`LegacyDamageClass.Generation`). Test nuevo `LegacyDamageClassTests` (no ejecutado).
+- Borrar a mano `src/Exxeguttor.UI/Services/LegacyDamageClass.cs` si quedó de la entrega 42.
+
+### Plan de renombre MaxPotion (decidido, aún no aplicado)
+- Plan en `hotfixes/change_name_exec/PLAN_MAXPOTION.md`. Producto = **MaxPotion** (ejecutable `maxpotion`, rutas instaladas, UI); nombre interno = **Exxeguttor** (namespaces, carpetas, `.sln`, tests, repos, DB). No se renombran carpetas.
+- Se aplicará en dos partes, después de terminar el modal de legalidad/PID, hacer commit y con árbol limpio: (1) proyecto: ~27 archivos (csproj, manifest, LICENSE, `en/es.json` + 10 `lang/*.json`, `MainWindow.axaml`, `SplashWindow.axaml`, `PokemonDatabase`, `RecentSavesService` con migración de Recientes, `LocalizationService`, `SoundService`, `Perf`, `MainWindowViewModel`, `PokemonEditorViewModel`, `PokedexService`, icono `maxpotion.ico/.png`); borrar a mano `Assets/exxeguttor.ico`; (2) repo de contexto: `CLAUDE.md`, `context.md`,
+
