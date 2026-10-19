@@ -1,5 +1,7 @@
 # PLAN — Producto **MaxPotion**, proyecto interno **Exxeguttor** (con instaladores Linux y Windows)
 
+> **Si vas a ejecutar este plan, lee primero la sección «LEER PRIMERO — Contrato de ejecución».**
+>
 > Generado en una sesión de análisis (2026-10-16) sobre `junko012/exxeguttor@af2bc6e` y `junko012/exxeguttor-context@99e2f4d`.
 > **Reemplaza** al plan anterior (renombre total). Nada de esto se aplicó todavía. Incluye las decisiones que Juan confirmó el 2026-10-16 (sección 0-bis).
 >
@@ -7,6 +9,82 @@
 > cantidad exacta, y los chequeos de la sección 7), el armado de los dos `.deb` (con un ejecutable ficticio, inspeccionados con `dpkg-deb`), el generador de iconos y el icono provisional (poción).
 > **NO probado** (el sandbox no tiene dotnet, rpmbuild, Inno Setup ni Wine): compilación de la solución, `dotnet publish`, el `.spec` de RPM,
 > el instalador de Windows y el comportamiento en ejecución (splash, `WM_CLASS`, sonido). Esos puntos están marcados 🧪 para que los verifique Juan.
+
+## ⚠️ LEER PRIMERO — Contrato de ejecución (para la sesión de Claude que aplique este plan)
+
+Este plan vive en `hotfixes/change_name_exec/` del repo **público** `junko012/exxeguttor-context` junto con `maxpotion.png` y `maxpotion.ico`.
+Si Juan te pidió "aplicar el hotfix `change_name_exec`", **este es el procedimiento completo**: síguelo tal cual, sin improvisar ni ampliar el alcance.
+Las decisiones D1–D13 de la sección 3 están cerradas; no las vuelvas a preguntar salvo que algo del código contradiga el plan.
+
+### Preparación (en este orden)
+1. Clonar el repo de contexto (público, **sin token**): `git clone https://github.com/junko012/exxeguttor-context.git`. Confirmar que existen `hotfixes/change_name_exec/{PLAN_MAXPOTION.md,maxpotion.png,maxpotion.ico}` y leer este plan completo antes de tocar nada.
+2. Pedir a Juan el PAT del repo de código y clonarlo: `git clone https://TOKEN@github.com/junko012/exxeguttor.git`. **Inmediatamente después**: `git remote set-url origin https://github.com/junko012/exxeguttor.git` (el token no debe quedar en `.git/config`, ni en archivos, ni en commits).
+3. En **cada** clon: `git config user.name "Claude (sandbox)"` y `git config user.email "noreply@example.invalid"`. Anotar `git rev-parse HEAD` de ambos (hash base del parche).
+4. Extraer los scripts de los anexos con este código (probado: reproduce los anexos byte a byte). Ejecutarlo desde la carpeta del hotfix y apuntar a una carpeta de trabajo **fuera** de los dos clones:
+
+```python
+# extract_annexes.py   →   python3 extract_annexes.py PLAN_MAXPOTION.md /tmp/maxpotion_work
+import re, sys, os
+FENCE = chr(96) * 3   # tres backticks, armados así para no romper el bloque de código de este plan
+plan, out = sys.argv[1], sys.argv[2]
+s = open(plan, encoding="utf-8").read()
+def blocks(heading):
+    # el título del anexo es una línea que EMPIEZA con "## Anexo N —" (así no se confunde con el texto de este snippet)
+    m = re.search("^" + re.escape(heading) + " —", s, re.M); assert m, heading
+    n = re.search("^## Anexo ", s[m.end():], re.M)
+    sec = s[m.start(): m.end() + n.start()] if n else s[m.start():]
+    return re.findall(FENCE + r"[a-z]*\n(.*?)\n" + FENCE, sec, re.S)
+plan_map = {
+  "## Anexo 1": ["brand_maxpotion.sh"],
+  "## Anexo 2": ["packaging/windows/maxpotion.iss"],
+  "## Anexo 3": ["packaging/build-deb.sh", "packaging/debian/maxpotion.control", "packaging/debian/maxpotion-lang.control"],
+  "## Anexo 4": ["scripts/make-icons.py"],
+  "## Anexo 5": ["scripts/gen-placeholder-icon.py"],
+}
+for head, names in plan_map.items():
+    bl = blocks(head); assert len(bl) == len(names), (head, len(bl))
+    for name, body in zip(names, bl):
+        p = os.path.join(out, name); os.makedirs(os.path.dirname(p) or out, exist_ok=True)
+        open(p, "w", encoding="utf-8").write(body + "\n"); print("escrito", p)
+```
+
+   Luego `chmod +x` a los `.sh`. Los archivos `packaging/**` y `scripts/**` extraídos se **copian** al clon de código en esas mismas rutas relativas; `brand_maxpotion.sh` se ejecuta desde fuera del repo (el script exige árbol limpio, así que no debe estar dentro).
+5. Comprobar `command -v dotnet`. Si no hay dotnet, **nada de lo que sigue se compila**: no afirmes que compila (ver "Reporte").
+
+### Qué ejecutas tú y qué NO
+- **Ejecutas:** Fases **A, B, C (C1–C6), D1–D3, E1–E4** (en el repo de código) y **F0–F4** (en el repo de contexto, solo texto).
+- **No son tuyos** (los hace Juan en su máquina; solo los listas en el reporte): D4 (comandos de empaquetado manual), D5, E5–E9, la sección 6 (publish) y todo lo marcado 🧪 de runtime. **Excepción:** si tu sandbox tiene dotnet, corre `dotnet build` y `dotnet test` sobre la solución y reporta el resultado literal; igual quedan pendientes los 🧪 de ejecución real (splash, `WM_CLASS`, sonido, instaladores).
+- El archivo `.iss` y los controls/`build-deb.sh` se crean tal cual los anexos; el `.spec` se edita siguiendo D3 (no tienes rpmbuild: dilo).
+
+### Cuándo detenerte y preguntar a Juan
+- El script de marca aborta con `ASSERT … esperado=N encontrado=M` → **para**, muestra esa línea y `git diff af2bc6e HEAD -- <archivo>`, y espera instrucciones. No fuerces ni cambies el número esperado por tu cuenta.
+- `HEAD` del repo de código ≠ `af2bc6e` **no es un error**: revisa `git log af2bc6e..HEAD --stat`, infórmalo y continúa; el `ASSERT` detecta si algo relevante cambió.
+- Algún chequeo de la sección 7 (V1, V2, V4, V5, V6) devuelve algo fuera de lo permitido, o V3 devuelve algo distinto de las 2 excepciones documentadas → para y muéstralo.
+- Cualquier decisión que el plan no cubra → pregunta.
+
+### Prohibido
+Hacer push; usar Git LFS; reemplazos globales (`sed -i`, `perl -pi` sobre todo el árbol); tocar namespaces, carpetas `src/Exxeguttor.*`, `tests/Exxeguttor.Tests`, `exxeguttor.sln`, nombres de repos o la base de datos; editar `PLAN_MAXPOTION.md` o los adjuntos dentro de `hotfixes/change_name_exec/` (se **copian** de ahí); escribir el token en cualquier archivo.
+
+### Entrega (formato obligatorio)
+1. **Un commit local por repo** (código y contexto). Mensaje del repo de código: `rebrand: user-facing name MaxPotion (internal name stays Exxeguttor)`; del repo de contexto: `docs: MaxPotion branding rules, status entry and hotfix change_name_exec applied`.
+2. **Un parche por repo**, generado con `git format-patch -1 --binary -o /mnt/user-data/outputs/patches/<codigo|contexto>/` y entregado con `present_files` (los dos `.patch`). `--binary` es imprescindible: el parche incluye `maxpotion.ico` y `maxpotion.png`. No entregues archivos sueltos ni el árbol modificado.
+3. **Reporte en el chat** con: hash base de cada clon; tabla de pasos ejecutados / omitidos / desviaciones (con el motivo); la **salida literal** de los chequeos V1–V6 y del script; si se compiló o no; y la lista de pasos 🧪 que quedan para Juan.
+4. **Cómo aplicar (para Juan)** — incluir este bloque en el reporte, con las rutas reales:
+
+```bash
+cd ~/exxeguttor && git status              # debe estar limpio y en master
+git am --3way /ruta/al/parche-codigo.patch
+git log -1 --stat                           # revisar
+cd ~/exxeguttor-context && git am --3way /ruta/al/parche-contexto.patch
+# si algo sale mal:  git am --abort   (o  git reset --hard ORIG_HEAD)
+# luego, el push lo haces tú:  git push
+```
+
+   Si el `master` de Juan ya avanzó respecto del hash base, `--3way` suele resolverlo; si hay conflicto, que lo pegue en el chat. Nota: `git am` deja como autor a "Claude (sandbox)"; Juan puede cambiarlo con `git commit --amend --reset-author`.
+   *Probado en el sandbox:* `format-patch --binary` + `git am` reproducen un árbol idéntico al de origen (incluye renombres y los dos iconos).
+
+### Reporte honesto
+Marca cada afirmación como **probado** (lo corriste y viste la salida) o **no probado** (compilación sin dotnet, `rpmbuild`, Inno Setup, Windows, ejecución de la app). Esta sesión de análisis no pudo compilar nada; si tú tampoco puedes, dilo.
 
 ## 0. Alcance en una frase
 
@@ -26,7 +104,7 @@ Solo cambia el nombre del *ensamblado* de la UI (`exxeguttor` → `maxpotion`), 
 
 ## 1. Reglas para quien ejecute este plan
 
-1. **Nunca hacer push.** Entregar con `present_files`; Juan sube desde su terminal, directo a `master`. Sin Git LFS (incluido `pokemon.db`). El token se pide al empezar y no persiste.
+1. **Nunca hacer push.** La entrega es un **parche por repo** (ver «Contrato de ejecución → Entrega»); Juan lo aplica y sube desde su terminal, directo a `master`. Sin Git LFS (incluido `pokemon.db`). El token se pide al empezar y no persiste.
 2. Clon fresco de `junko012/exxeguttor` (privado, con token) y `junko012/exxeguttor-context` (público). Comparar `git log -1` con `af2bc6e` / `99e2f4d`; si hay commits nuevos, leer el diff antes.
 3. **No hacer reemplazos globales.** Este plan es *selectivo por diseño*: cambiar `Exxeguttor` globalmente rompería namespaces y rutas internas. El script ya está acotado archivo por archivo y **aborta** si una sustitución no encuentra exactamente las apariciones esperadas (señal de que el código cambió desde este análisis).
 4. Un commit lógico por repo. Mensaje sugerido: `rebrand: user-facing name MaxPotion (internal name stays Exxeguttor); win installer`.
@@ -177,9 +255,10 @@ Convención: ✅ lo hace un script · ✋ manual · 🧪 verificación (la hace 
 - [ ] **E9** 🧪 Riesgos Windows aún no cubiertos por pruebas: nombres de backup de saves (`SaveFileService` usa `ː` en lugar de `:`, ya contemplado), rutas largas, antivirus/SmartScreen con ejecutables *self-extract* sin firma. Firmar (`signtool`) queda fuera de este plan (D8).
 
 ### FASE F — Repo de contexto
+- [ ] **F0** ✋ Borrar `docs/rename/RENAME_PLAN.md`: es la **primera versión** del plan (renombre total, ya reemplazada) y una sesión futura podría ejecutarlo por error. Va dentro del parche de contexto; Juan puede descartar solo esa parte si prefiere conservarlo.
 - [ ] **F1** ✋ Agregar a `CLAUDE.md` (sección de reglas) y a `context.md` (sección "Nombre del proyecto"): *"Nombre interno: Exxeguttor (código, namespaces, carpetas, repos, DB, documentación). Nombre de producto: MaxPotion (ejecutable `maxpotion`, paquetes, rutas instaladas, UI, instaladores). **Regla: nada visible al usuario dice Exxeguttor.** Al agregar texto de UI, rutas de ejecución o nombres de paquetes usar MaxPotion/maxpotion; al agregar namespaces/carpetas/tests seguir usando Exxeguttor."*
 - [ ] **F2** ✋ `status.md`: **entrada nueva** (no reescribir las viejas): fecha, alcance (producto MaxPotion / interno Exxeguttor), commits de ambos repos, decisiones D1–D13 (con las 4 confirmadas), y pendientes (arte final del icono, rpm probado, instalador probado en VM, firma, página pública, email del Maintainer definitivo).
-- [ ] **F3** ✋ Guardar este archivo como `docs/branding/PLAN_MAXPOTION.md`.
+- [ ] **F3** ✋ **No duplicar** este archivo: ya vive en `hotfixes/change_name_exec/`. En la entrada de `status.md` (F2) anotar que el hotfix `change_name_exec` fue aplicado, con la fecha y el hash base de cada repo.
 - [ ] **F4** ✋ Opcional: `mockups/splash_screen/splash_screen_boceto.html` (líneas 328, 380, 540) muestran el wordmark `EXXEGUTTOR`; actualizarlas a `MAXPOTION` si Juan quiere que el boceto refleje lo implementado.
 - [ ] **F5** **Nada que cambiar** en las instrucciones del Project de Claude.ai, URLs raw ni `git clone`: los repos conservan su nombre. Solo revocar el PAT que se pegó en el chat.
 
