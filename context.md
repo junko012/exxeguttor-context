@@ -1,6 +1,8 @@
 # context.md — Estado actual del proyecto Exxeguttor
 
-_Última actualización: sesión de Claude Code aparte (no git — Juan trabaja en 2 sesiones de
+_Actualizado el 2026-10-20 (entrega 48): se agregó la sección "🔄 Actualización de octubre 2026" con los módulos construidos después de las secciones originales (formas, Pokédex, Gen 1–3, recrear con encuentro válido, rediseño visual) y la regla de nombres MaxPotion/Exxeguttor. Las secciones más antiguas conservan su redacción original y pueden estar parcialmente desfasadas: gana la sección de octubre y `status.md`._
+
+_Texto previo — última actualización: sesión de Claude Code aparte (no git — Juan trabaja en 2 sesiones de
 código en paralelo además de esta de mockups/contexto, así que el repo real puede haber
 avanzado más de lo que este documento todavía sabe — ver nota de "cómo arrancar" en
 `CLAUDE.md`). Esta vuelta fue casi toda de **pulido visual + UX de loaders/diálogos** más el
@@ -19,6 +21,18 @@ detalle en sus propias secciones más abajo:
 - **Idioma de la UI — infraestructura real, primera vez que existe un selector funcional**
   (ver sección dedicada "🌐 Idioma de la UI" más abajo) — cambio EN CALIENTE, sin reiniciar la
   app, más preferencias persistentes (primera vez que el proyecto tiene esto en absoluto)._
+
+---
+
+## 🏷️ Nombre del proyecto — producto MaxPotion, interno Exxeguttor
+
+- **Nombre interno: Exxeguttor** — código, namespaces (`Exxeguttor.App`/`Exxeguttor.UI`), carpetas `src/Exxeguttor.*`, `tests/Exxeguttor.Tests`, `exxeguttor.sln`, repos (`exxeguttor`, `exxeguttor-context`), base de datos y documentación de contexto.
+- **Nombre de producto: MaxPotion** — ejecutable/ensamblado `maxpotion`, paquetes, rutas instaladas (`/usr/share/maxpotion`, `~/.config/maxpotion`), UI (ventana, splash `MAXPOTION`, *Acerca de* en los 12 idiomas), `.desktop`, instaladores y variable `MAXPOTION_PROFILE`.
+- **Regla: nada visible al usuario dice Exxeguttor.** Al agregar texto de UI, rutas de ejecución o nombres de paquetes, usar MaxPotion/maxpotion; al agregar namespaces, carpetas o tests, seguir usando Exxeguttor. No hacer reemplazos globales (rompen namespaces y rutas internas).
+- Única aparición legítima de `"exxeguttor"` en strings de C#: la ruta legacy de migración en `RecentSavesService`.
+- Plan completo: `hotfixes/change_name_exec/PLAN_MAXPOTION.md`. Pendiente: renombrar `packaging/` (deb/rpm/Windows) y el README de uso.
+- Estado: Parte 1 (proyecto, ~27 archivos, icono provisional de poción) aplicada en la entrega 48; Parte 2 (documentación) en esta actualización. El título de ventana, el splash y el *Acerca de* ya dicen MaxPotion.
+- Nota: el tab "Diagnóstico" se renombró a **"Legal"** (entrega 47), es el penúltimo (Ribbons quedó al final) y su barra inferior es verde (todo en orden) o roja (hay alertas); el resto de tabs lleva un separador vertical plomo. Las secciones de abajo que dicen "Diagnóstico" se refieren a ese mismo tab.
 
 ---
 
@@ -298,7 +312,7 @@ persiste tras un `dotnet clean` + rebuild, retomar con diagnóstico real en vez 
 
 ---
 
-## 🩺 Diagnosticador de legalidad — módulo nuevo esta sesión (tab "Diagnóstico")
+## 🩺 Diagnosticador de legalidad — módulo nuevo esta sesión (tab "Legal", antes "Diagnóstico")
 
 Reemplaza la idea original de un simple resumen de legalidad por un tab dedicado que, por cada
 problema detectado, muestra categoría + explicación + (cuando hay un valor concreto que
@@ -344,7 +358,7 @@ a v2 (aplicar arreglos con un click) sin rediseñar nada — v1 (esta sesión) s
     el estándar HP/Atk/Def/SpA/SpD/Spe — usan la misma convención "Speed en el índice 3" que
     `IndividualValueSet` (confirmado leyendo `PKM.cs` línea por línea, no asumido).
 
-### Botones "Corregir automáticamente" — `FieldFixAction` (v1: 3 acciones)
+### Botones "Corregir automáticamente" — `FieldFixAction` (v1: 3 acciones; hoy 8, ver sección de octubre)
 
 `PokemonEditorViewModel.ApplyAutoFix(FieldFix fix)` despacha por `FieldFixAction`:
 
@@ -362,7 +376,7 @@ a v2 (aplicar arreglos con un click) sin rediseñar nada — v1 (esta sesión) s
   newCatchRate)`. Devuelve `false` si el PKM no es un `PK1` (no debería llegar a ofrecerse el
   botón en ese caso desde la UI, pero el método es defensivo igual).
 
-### UI — tab "Diagnóstico" (`PokemonStatsView.axaml`, después de "Special")
+### UI — tab "Legal" (antes "Diagnóstico"; `PokemonStatsView.axaml`, penúltimo, antes de "Ribbons")
 
 - `DiagnosticSteps` (`ObservableCollection<DiagnosticStep>`) — la lista completa (Invalid +
   Fishy), con un `Expander "Detalle técnico"` colapsado por paso para el texto crudo.
@@ -509,6 +523,55 @@ vez, en vez de heredar el punto del ciclo anterior. Mockups completos en
   forma de herradura real de la tubería. El mensaje "Save exportado" ahora aparece recién
   después de que Porygon2 termina de revelarse (antes aparecía junto con todo lo demás, a la
   vez que la animación).
+
+---
+
+## 🔄 Actualización de octubre 2026 — módulos agregados después de las secciones de arriba (entregas 26–48)
+
+_Esta sección resume lo que se construyó después de que se escribieron las secciones anteriores; el detalle cronológico, las medidas y los pendientes viven en `status.md` (entradas 2026-10-04 a 2026-10-20)._
+
+### Formas (`RegionalFormCatalog`, `AlternateFormCatalog`, `SpeciesFormResolver`, `UncreatableForms`)
+- **Combo "Forma" editable** (Fase 1, 4 oct): se aplica antes de Ability; casos especiales Arceus/Giratina/Ogerpon/Meowstic/Keldeo. `ApplyForm` reemplaza los movimientos que dejan de ser válidos (`FixMovesAfterFormChange`) y recalcula géneros disponibles.
+- **Crear con forma regional** (Fase 2): `RegionalFormCatalog` (57 formas Alola/Galar/Hisui/Paldea), una tarjeta por forma en el selector, solo si el juego la tiene. `BuildPokemon(species, form)` elige el encuentro de esa forma; `GetLearnsets(..., formId)` filtra por forma.
+- **`SpeciesFormResolver`**: (especie, forma) → fila de `Species` con id > 10000 (p. ej. 103/1 → 10114); el editor lee tipos, stats base, habilidades y Effectiveness de esa fila. Cubre regionales y ~64 formas más (Giratina Origen, Deoxys, Rotom, Therian, Urshifu…); por contenido, si la forma no cambia datos (Unown, Vivillon) queda la base.
+- **`AlternateFormCatalog`** (formas con encuentro propio que el combo no alcanza: Zygarde 10 %, Ash-Greninja, gorros de Pikachu…) y **`UncreatableForms`** (formas que `BuildPokemon` no logra dejar legales): fuente principal las tablas `FormGameAvailability` de pokemon.db (hotfix `fix_form_availability`), respaldo en JSON embebido (`creatable_forms.json`, `uncreatable_forms.json`).
+- **`CreatableSpecies` / `SpeciesGameAvailability`** (hotfix `fix_species_availability`): especies `native`, `present_illegal`, `dlc`, `transfer_only` o `uncreatable` por juego; el selector de crear oculta las `uncreatable` (respaldo `uncreatable_species.json`). Al pedir forma base, el constructor acepta primero candidatos de forma 0 (Deoxys en HG, Giratina, Landorus B2W2).
+- Nombres con forma ("Exeggutor de Alola") vía `FormNameFormatter` + claves `Form_Name_*` (es/en); las etiquetas de región de PKHeX siguen en inglés.
+- Pendiente: formas cosméticas sin fila en la DB (Unown, Vivillon, Alcremie…) usan el sprite base; Stunfisk de Galar y Avalugg de Hisui salen ilegales en Z-A.
+
+### Pokédex — actualización del 12 oct
+- Una tarjeta por especie; si el juego tiene una forma regional presente, la tarjeta es la de esa forma (`PokedexAlbumEntry.Form`/`DbSpeciesId`). Nombres por id desde PKHeX (`PokedexNames.Display`) en el idioma de la UI.
+- Cadena de evolución con todas las ramas (`GetAlbumEvolutionFamily`): mezcla `EvolutionChains` y `FormEvolutionChains`; hermanas (`Siblings`) separadas con "/" en la UI.
+- Condiciones de evolución: `EvolutionConditionFormatter` (es/en; otros idiomas caen a inglés) y `EvolutionNameLocalizer` (nombres por índice de PKHeX). `PokemonDatabase.DropVariantSets` corrige las condiciones apiladas de `EvolutionChains` (Sandslash base = Nivel 22).
+- Disponibilidad: `1..MaxSpeciesID` menos `CreatableSpecies.HiddenIn(version)`; una especie oculta se mantiene si el juego tiene una forma suya (Legends: Arceus, Z-A). `restricted_dex_availability.json` queda solo como respaldo.
+- Pendiente (ver `status.md` 12 oct): varias regionales en el mismo juego, ramas no regionales (Wormadam), métodos de evolución apilados (Eevee…), layout de árbol.
+
+### Base de datos — columnas y tablas nuevas
+- `Species.BaseSpecialGen1` (151 de Kanto; hotfix `fix_gen1_special`): en Gen 1 el Especial es un solo stat; `PokemonDatabase.GetSpecies` → `ApplyGen1Special`. Charizard Gen 1 = 85/85, total 425.
+- `SpeciesGameAvailability`, `FormGameAvailability`, `FormEvolutionChains` (ver arriba). Cada hotfix que toque una tabla estática con ids (`Items`…) obliga a revalidar `MegaStoneDatabase`/`ZCrystalDatabase` (se desalinearon una vez).
+
+### Idioma — ediciones por id
+- `HeldItemId`, `AbilityId`, `BallId` en `PokemonEditorViewModel` (se registran como ediciones); `EditSessionService`/`EditApplyService` escriben por id, no por nombre (los nombres de PKHeX están en el idioma de la UI y `Items.Name`/`Abilities.Name` de la DB solo en inglés). Los movimientos vienen del modal (nombre inglés de la DB) y no estaban afectados. La lista de balls se filtra por el nombre inglés del mismo índice. Todo campo nuevo que `AnalyzeLegality` aplique debe sumarse a `LegalityRelevantFields`.
+
+### Gen 1–3 — clase de daño por tipo (`LegacyDamageClass`, en `Exxeguttor.App`)
+- En Gen 1–3 la clase depende del tipo (Físicos: Normal, Lucha, Volador, Veneno, Tierra, Roca, Bicho, Fantasma, Acero; Especiales: Fuego, Agua, Planta, Eléctrico, Psíquico, Hielo, Dragón, Siniestro). Se aplica en el tab Moves, Learnsets/selector y Sets; la generación se fija en `LoadPokemon`. Gen 4+ usa la clase de la DB.
+
+### Diagnóstico v2 — "Recrear con un encuentro válido" (entregas 44–46)
+- `FieldFixAction` ahora tiene: `None`, `RegeneratePid`, `RegeneratePidMethod1`, `SearchIvSeed`, `RecalculateCatchRate`, `RecreateEncounter`, `RaiseLevel`, `GoToMoves`. `FieldFix` suma `Note`, `ButtonLabel` y `ButtonText`.
+- **`EncounterRecreationService`** (UI/Services; Gen 2–4, más Gen 1 por modales aparte). Es **generate-and-verify**: `EncounterMovesetGenerator.GenerateEncounters` + `ConvertToPKM(save)`, trasplanta los datos del Pokémon (especie/forma, OT/TID/SID/género, idioma, apodo, objeto, EXP/nivel, movimientos con PP y PP Ups, EVs, IVs, Pokérus, habilidad, stats de equipo) y acepta una opción solo si `LegalityAnalysis` no tiene error de Encounter/SlotType/Fateful ni errores nuevos. Orden: mismo lugar primero (etiqueta verde), otros salvajes/estáticos, huevo al final (etiqueta naranja). Se deduplica por lugar|nivel de captura|ball|naturaleza|género|huevo|IVs.
+- **Edición compuesta `EncounterRecreation(PKM Result, bool CopyIvs)`**: `ApplyTo` copia los campos de origen; se aplica en el preview (`EditSessionService`) y en el export (`EditApplyService`); se descarta si el usuario edita a mano lugar, nivel de captura, fecha, ball, naturaleza, género, habilidad, PID, huevo (o IVs si `CopyIvs`). Categoría en el resumen: "Ubicación". `CatchRate` cuenta como "Datos internos".
+- **Gen 3/4**: la Naturaleza sale del PID y el PID va atado a los IVs por el LCRNG Method 1. `Method1Solver` da los ≈4 PIDs de unos IVs fijos; `Method1IvSearch` enumera IVs cercanos (HP/Atq/Def y las 2^17 semillas de cada uno, niveles progresivos de 1 a 3 IVs cambiados) filtrando habilidad, brillante, género y, opcionalmente, Naturaleza; `FindIvOptions` verifica cada candidato con `LegalityAnalysis`. Casilla "Conservar la Naturaleza" en el modal; el modal "Elegir IVs con un PID válido" aparece cuando ningún PID calza con los IVs actuales.
+- **Gen 1**: sin datos de captura; modal de catch rate (propuesto 0, otros valores plegados vía `CatchRateSolver.GetValidCandidates`) y "Subir al nivel mínimo" (`TryRaiseLevel`, sondea niveles con `LegalityAnalysis`).
+- UI: `RecreateView`/`RecreateViewModel` (tarjeta de 440 px, lista con "qué cambia", panel ámbar con barra de progreso mientras busca), feedback con `AutoFixViewModel.RunQuietAsync`.
+- Pendiente: no se conservan las cintas del Pokémon original al recrear.
+
+### UI — rediseño visual (entregas 31–47)
+- **Orden de tabs** del editor: IVs/EVs, Moves, Learnsets, Effectiveness, Sets, Special, **Legal**, Ribbons. "Legal" (antes "Diagnóstico") lleva una barra inferior verde (todo en orden) o roja con sombra (hay alertas) según `DiagnosticTabOk`/`HasDiagnosticIssue`; los demás tabs se separan con una línea vertical plomo `#D5D8DE`. La tira de tabs es desplazable con flechas ◀ ▶.
+- **Estados vacíos**: sin Pokémon seleccionado, panel central "Selecciona un Pokémon" y panel derecho con tarjetas informativas de cada tab (incluida "Legal").
+- **Tab Moves**: tarjetas con franja de 8 px del color del tipo y banda de cabecera con el tinte de la clase de daño; sin leyenda. Learnsets y Sets: tooltip con la descripción y columnas compactadas.
+- **Paleta real**: verde `#1D9E75`, azules (`#3B82F6`, `#2860B0`, `#E6F1FB`, `#0C447C`), grises, tinta `#1F2937`. Rails con subrayado verde en el ítem activo. Tips en azul, exportación en verde.
+- **Overlay de legalidad "pegado"** (frame sin presentar en Linux): mitigado con repintado por `RequestAnimationFrame` y contador `_legalityScansInFlight`; causa raíz sin confirmar.
+- **Diálogos de archivo**: los filtros incluyen `.dsv`, `.gci`, `.sa1`, `.srm`, `.dat`… también en mayúsculas (el portal GTK distingue mayúsculas).
 
 ---
 
@@ -871,6 +934,8 @@ categoría, sin cambios): `LegalityDiagnosticBuilder`, que arma el tab Diagnóst
 
 ## 🌐 Idioma de la UI — infraestructura nueva esta sesión (primera vez que existe)
 
+> ⚠️ **Aviso (2026-10-20):** esta sección describe un trabajo de otra sesión (AppSettingsService, LocalizationService reactivo, selector `File → Idioma`, recarga en caliente de Caja/Equipo) que **no está en el `master` verificado** (`c92d486` + entregas 47/48): hoy `LocalizationService` no notifica cambios, no hay selector ni preferencias persistentes y solo `MainWindow` y `EmptyStateView` usan `Loc[...]`. Léela como **diseño**, no como código existente. El plan vigente (idioma de la UI e idioma de los datos separados, "Igual que la UI", descripciones largas en inglés, fases 0–5) está en `docs/i18n_project/i18n-plan.md`.
+
 Hay **tres sistemas de idioma separados** en el proyecto — no confundirlos (confusión real
 que motivó aclarar esto con Juan antes de tocar código):
 
@@ -963,7 +1028,7 @@ Caja/Equipo) — `TipsViewModel` arma categorías/páginas una sola vez dentro d
 no en un método separado reusable, recargar en caliente necesitaría ese refactor. Cambiar
 de idioma con el modal cerrado funciona bien (carga correcto la próxima vez que se abre).
 
-### Qué falta — ver `docs/i18n_project/i18n-plan.md` para el plan completo y vivo
+### Qué falta — ver `docs/i18n_project/i18n-plan.md` (v2, 2026-10-20) para el plan completo y vivo
 
 Documento aparte (no este `context.md`) porque es un esfuerzo transversal que se está
 trabajando como hilo semi-independiente — **se actualiza en vivo, no se reescribe por
@@ -993,6 +1058,7 @@ fuera de alcance al implementarlos) a `{Binding Loc[Clave]}`.
 - **`MaxItemIdDiagnosticTests.cs`** (nuevo) — pendiente de correr, iba a dar `MaxItemID` real
   por generación pero quedó superado por el hallazgo del bug de TMs en la DB (bloqueante
   distinto, ver sección Mochila).
+- Tests agregados en octubre (muchos escritos sin correr en el sandbox): `IvSeedSolverTests`, `CatchRateSolverTests`, `Gen1SpecialTests`, `LegacyDamageClassTests`, `PokedexFormsTests`, `PokedexAvailabilityTests`, `RegionalFormCreationTests`, `BaseFormCreationTests`, `FormComboLegalityTests`, `CreatableSpeciesTests`, `LegendsArceusCreationTests`, `ZaCreationLegalityTests`, `LocalizedNameResolutionTests`, `NameToIdIndexTests`. Sin test dedicado: `EncounterRecreationService`/`Method1IvSearch` (se probaron con un arnés aparte contra PKHeX real, 2026-10-19).
 - **Gap de testing que sigue abierto**: Habilidad/HeldItem/Dynamax/Alpha/Noble y creación de
   Pokémon nuevo compilan y están cableados al pipeline de escritura, pero sin test de
   round-trip dedicado todavía — prioridad para la próxima sesión de testing. Shiny salió de esta
@@ -1068,6 +1134,8 @@ el juego real, donde el intercambio simple entre cartuchos hermanos era mecánic
   `PK2`.
 
 ## Empaquetado y distribución — sin cambios esta sesión
+
+_Actualización 2026-10-20: el producto pasa a llamarse MaxPotion (ver "Nombre del proyecto"). `packaging/` aún conserva los nombres viejos; se renombra junto con los instaladores deb/rpm/Windows (plan en `hotfixes/change_name_exec/PLAN_MAXPOTION.md`), después de la función de idiomas._
 
 ---
 

@@ -1062,5 +1062,50 @@ Modificados: `src/Exxeguttor.App/Services/PokedexService.cs`, `EvolutionConditio
 
 ### Plan de renombre MaxPotion (decidido, aún no aplicado)
 - Plan en `hotfixes/change_name_exec/PLAN_MAXPOTION.md`. Producto = **MaxPotion** (ejecutable `maxpotion`, rutas instaladas, UI); nombre interno = **Exxeguttor** (namespaces, carpetas, `.sln`, tests, repos, DB). No se renombran carpetas.
-- Se aplicará en dos partes, después de terminar el modal de legalidad/PID, hacer commit y con árbol limpio: (1) proyecto: ~27 archivos (csproj, manifest, LICENSE, `en/es.json` + 10 `lang/*.json`, `MainWindow.axaml`, `SplashWindow.axaml`, `PokemonDatabase`, `RecentSavesService` con migración de Recientes, `LocalizationService`, `SoundService`, `Perf`, `MainWindowViewModel`, `PokemonEditorViewModel`, `PokedexService`, icono `maxpotion.ico/.png`); borrar a mano `Assets/exxeguttor.ico`; (2) repo de contexto: `CLAUDE.md`, `context.md`,
+- Se aplicará en dos partes, después de terminar el modal de legalidad/PID, hacer commit y con árbol limpio: (1) proyecto: ~27 archivos (csproj, manifest, LICENSE, `en/es.json` + 10 `lang/*.json`, `MainWindow.axaml`, `SplashWindow.axaml`, `PokemonDatabase`, `RecentSavesService` con migración de Recientes, `LocalizationService`, `SoundService`, `Perf`, `MainWindowViewModel`, `PokemonEditorViewModel`, `PokedexService`, icono `maxpotion.ico/.png`); borrar a mano `Assets/exxeguttor.ico`; (2) repo de contexto: `CLAUDE.md`, `context.md`, `status.md`. (Línea completada el 2026-10-20; ver entrada siguiente.)
 
+## 2026-10-20 — Entregas 44–48 (recrear con encuentro válido, pulido UI) y rebrand MaxPotion
+
+### Recrear con un encuentro válido (Gen2–4) + modales Gen1 (catch rate / nivel) — entrega 44
+- Estado: implementado, **sin compilar el proyecto completo** (solo el servicio se compiló y probó contra PKHeX real en un harness aparte; el resto pasó chequeo de sintaxis).
+- Nuevo: `EncounterRecreationService` (UI/Services): genera encuentros compatibles, trasplanta datos (PP/PP Ups incluidos) y verifica con LegalityAnalysis (sin error de encuentro y sin errores nuevos). Gen3/4 usa `Method1Solver` para conservar IVs; en Gen4 conserva la fecha de captura si sigue legal.
+- Edición compuesta `EncounterRecreation` (preview + exportación; se descarta si se editan a mano lugar/nivel/bola/PID/etc.).
+- Diagnóstico: fila "Origen del encuentro" con botón (opciones), o aviso "sin corrección" con movimientos ilegales + "Ir a Moves". Gen1: botón "Subir al nivel mínimo" y el botón de catch rate ahora abre modal (propuesto 0, otros valores plegados).
+- Modal `RecreateView/RecreateViewModel`; feedback con el modal de AutoFix. Textos es/en (`Recreate_*`).
+- Decisiones: huevo al final (etiqueta naranja), preselección solo si mantiene el lugar, Gen3 incluido, "Ver N opciones más" tras 6.
+- Medido (blank saves, un Pokémon legal por especie con captura inventada): Crystal 155/155, Esmeralda 146/146, Platino 270/282 (los 12 fallos: IVs sin PID Method 1 válido), Gen1 nivel: 7/7.
+- Pendiente de verificar en tu PC: compilar, probar con tus saves (Drapion Platino, Corsola Crystal, Magmar Yellow). No se conservan cintas del Pokémon original al recrear.
+
+### Correcciones sobre la entrega 44 — entrega 45
+- Gen1, catch rate: la edición `CatchRate` no estaba en el mapa de categorías de `EditSessionService`, así que se tomaba por "ruido derivado": no aparecía en la libreta, Guardar no hacía nada y Exportar salía directo sin el cambio. Ahora cuenta como "Datos internos".
+- Gen3/4, "Datos internos" (PID Method 1): cuando NINGÚN PID calza con los IVs actuales (esa combinación no puede existir en el encuentro) el botón antes fallaba sin explicar. Ahora abre un modal "Elegir IVs con un PID válido": `Method1IvSearch` recorre las 2^32 semillas en paralelo, conserva brillante/habilidad/género (y la Naturaleza si puede) y propone los IVs más parecidos, cada uno verificado con LegalityAnalysis. Elegir uno cambia esos IVs + PID como ediciones normales (libreta).
+- Recrear (Gen3/4): casilla "Conservar la Naturaleza (puede cambiar IVs)" en el modal; recalcula las opciones con IVs cambiados mínimos (la tabla "qué cambia" muestra los IVs). La edición compuesta copia esos IVs y se descarta si los editas a mano.
+- Medido (Platino, 2 núcleos): búsqueda ≈4–5 s. Combinación sin PID → 12 opciones con la misma Naturaleza cambiando 1 IV; Drapion con Naturaleza distinta → opciones que la conservan.
+- Pendiente de verificar en tu PC: compilar; Magmar de Yellow (Guardar/Exportar); el Vespiquen de Platino (debería abrir el modal de IVs); Drapion con la casilla.
+
+### Corrección de rendimiento y modal de IVs — entrega 46 (acumulada sobre 44/45)
+- Causa del 100 % de CPU: `Method1IvSearch` recorría las 2^32 semillas. Ahora recorre solo IVs cercanos a los originales (PS/Atq/Def primero) y, para cada uno, las 2^17 semillas que los producen; por niveles (1, 2 y recién al final 3 IVs distintos). En Platino: de 4–9 s a 0,05–1,1 s (2 núcleos). Deja un núcleo libre y tiene tope de tiempo (25 s) en la recreación.
+- Modal Recrear: la casilla "Conservar la Naturaleza" ya no se deshabilita (desmarcar cancela la búsqueda), la lista vieja se deselecciona y Aplicar queda apagado mientras busca; cerrar el modal cancela la búsqueda.
+- IV search (Vespiquen): si no hay resultado, el modal de feedback muestra un texto propio (posible encuentro sin PID Method 1) y se anota en el recuadro de diagnóstico con qué encuentro lo emparejó PKHeX.
+- Sin verificar con tus saves: el caso del Vespiquen (no pude reproducirlo con datos sintéticos). Si sigue sin encontrar nada, pásame la línea "búsqueda de IVs sin resultado: …" del recuadro de diagnóstico.
+
+### Entrega 47 — pulido UI (2026-10-20)
+- RecreateView: el aviso "Buscando combinaciones…" ahora es un panel ámbar con texto en negrita y barra de progreso indeterminada.
+- FileDialogService: filtros de abrir/guardar incluyen *.dsv, *.gci y más extensiones (sa1, srm, dat…) con variantes en MAYÚSCULAS (el portal GTK distingue mayúsculas).
+- PokemonStatsView: tab "Diagnóstico" → "Legal", ahora penúltimo; "Ribbons" queda al final. Barra inferior verde (todo OK) / roja (alertas) con sombra; nueva propiedad `DiagnosticTabOk` en PokemonEditorViewModel.
+- Pendiente: idioma, rebrand MaxPotion, empaquetado.
+- MainWindow (panel derecho sin Pokémon): tarjeta "Diagnóstico" → "Legal" y Ribbons al final; textos i18n que mencionaban "Diagnóstico" apuntan a la pestaña Legal.
+- Tabs: separador vertical plomo (#D5D8DE) a la derecha de cada pestaña; Legal conserva su barra inferior verde/roja.
+
+### Rebrand MaxPotion — aplicado (entrega 48 + documentación)
+- Hotfix `change_name_exec` aplicado. Base: código `c92d486` (master del 2026-10-20, ya con la entrega 47) y contexto `4d786ba`; el plan se escribió sobre `af2bc6e` / `99e2f4d` y el script no abortó por ningún ASSERT.
+- Parte 1 (código, entrega 48): script de marca recortado (sin `packaging/` ni README), icono provisional `maxpotion.ico/.png`, migración de Recientes, mensaje interno de `PokedexService`. Borrar a mano `Assets/exxeguttor.ico`.
+- Parte 2 (contexto): regla "Nombre del producto vs. interno" en `CLAUDE.md` y `context.md`; tab Diagnóstico → Legal en la documentación; `docs/rename/RENAME_PLAN.md` (primera versión del plan, reemplazada) se borra para que nadie lo ejecute por error.
+- Decisiones D1–D13 del plan: se mantienen las recomendadas; confirmadas por Juan el 2026-10-16: D3 Maintainer `MaxPotion contributors <junkoemc@proton.me>`, D4 LICENSE `MaxPotion contributors`, D5 sin `Replaces/Conflicts` (nunca hubo paquete `exxeguttor`), D7 icono provisional.
+- Compilación de la solución: pendiente de verificar en tu PC (el sandbox no llega a NuGet).
+- Pendiente: packaging deb/rpm/Windows y README de uso con los nuevos nombres (después de idiomas), arte final del icono, rpm/instalador probados, firma de código, página pública, email definitivo del Maintainer, `status.md` con bloques duplicados del 11 oct (limpiar).
+
+### Plan de idiomas v2 acordado (2026-10-20, sin código)
+- `docs/i18n_project/i18n-plan.md` nuevo (reemplaza al de `mockups/language_selector/`, ahora un puntero): idioma de la UI e idioma de los datos separados, cambio en caliente, "Igual que la UI", datos en inglés si PKHeX no tiene el idioma, descripciones largas en inglés, fases 0–5.
+- Hallazgos: la infraestructura de idioma descrita en `context.md` no está en `master`; bug `zh` → debe ser `zh-Hans`/`zh-Hant` (PKHeX).
+- Boceto visual del selector de idioma v2 (menú Preferencias, submenús, indicador `UI ES · PK ES` en la barra de estado): `mockups/language_selector/language-selector-v2-boceto.html` + `language-selector-v2.md`. Sin banderas; menú propio entre File y Help.

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MaxPotion — Boceto v2: menú Preferencias e idioma (UI + datos)</title>
+<style>
+  :root{
+    --bg:#f4f4f5; --panel:#fff; --border:#dcdce0; --rule:#d5d8de; --ink:#1f2937; --text-2:#6b6b70; --muted:#9a9aa0;
+    --green:#1d9e75; --green-soft:#e6f6f0; --green-line:#b5e3d3; --blue:#3b82f6; --blue-soft:#eef4ff; --blue-line:#c7d9f8; --blue-ink:#1e3a8a;
+    --amber-soft:#fff4cc; --amber-line:#e0a800; --amber-ink:#7a4b00;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;min-height:100vh;font-family:-apple-system,"Segoe UI","Cantarell","Ubuntu",sans-serif;background:#8d8d92;color:var(--ink);
+       display:flex;flex-direction:column;align-items:center;gap:14px;padding:18px 12px 60px}
+  .note{font-size:12px;color:#f4f4f5;text-align:center;max-width:640px;line-height:1.5}
+  .scenes{display:flex;flex-wrap:wrap;gap:6px;justify-content:center}
+  .scenes button{font:inherit;font-size:12px;padding:6px 10px;border-radius:8px;border:1px solid var(--border);background:#fff;cursor:pointer}
+  .scenes button[aria-pressed="true"]{background:var(--ink);color:#fff;border-color:var(--ink)}
+  button:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+
+  /* ── Ventana de la app (recorte) ── */
+  .win{position:relative;width:760px;max-width:100%;height:520px;background:#fff;border:1px solid var(--border);border-radius:10px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 10px 24px rgba(0,0,0,.25)}
+  .menubar{display:flex;gap:2px;padding:4px 8px;border-bottom:1px solid var(--border);font-size:13px;background:#fff;position:relative;z-index:5}
+  .mi{padding:4px 10px;border-radius:6px;cursor:default;user-select:none}
+  .mi:hover,.mi.open{background:#eceef2}
+  .content{flex:1;display:grid;grid-template-columns:56px 1fr;min-height:0}
+  .rail{background:#eef0f3;border-right:1px solid var(--border);display:flex;flex-direction:column;align-items:center;gap:18px;padding-top:16px;font-size:9px;color:var(--text-2)}
+  .rail i{display:block;width:22px;height:22px;border:2px solid #4b5563;border-radius:50%;margin:0 auto 2px}
+  .rail .on{color:var(--ink);font-weight:600;border-bottom:2px solid var(--green);padding-bottom:3px}
+  .stage{padding:18px;color:var(--muted);font-size:12px;display:flex;align-items:center;justify-content:center}
+  .statusbar{display:flex;align-items:center;justify-content:space-between;gap:10px;border-top:1px solid var(--border);padding:4px 10px;font-size:12px;color:var(--text-2);background:#fafafb;position:relative}
+
+  /* ── Indicador de idioma (barra de estado) ── */
+  .lang-chip{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--border);background:#fff;border-radius:999px;padding:2px 10px 2px 6px;font-size:11px;color:var(--ink);cursor:pointer;font-family:inherit}
+  .lang-chip:hover{border-color:var(--green);box-shadow:0 0 0 3px var(--green-soft)}
+  .lang-chip .dot{min-width:20px;height:16px;padding:0 4px;border-radius:8px;background:var(--green);color:#fff;display:grid;place-items:center;font-size:8px;font-weight:700;letter-spacing:.03em}
+  .lang-chip .sep{width:1px;height:12px;background:var(--rule)}
+  .lang-chip.warn{border-color:var(--amber-line);background:var(--amber-soft);color:var(--amber-ink)}
+  .lang-chip.warn .dot.d2{background:var(--amber-line)}
+
+  /* ── Menús desplegables ── */
+  .drop{position:absolute;top:30px;background:#fff;border:1px solid var(--border);border-radius:10px;box-shadow:0 10px 24px rgba(0,0,0,.22);padding:6px;z-index:9;font-size:13px;display:none}
+  .drop.on{display:block}
+  .drop.prefs{left:84px;width:236px}
+  .drop.sub{left:326px;width:320px;top:30px}
+  .drop .row{display:flex;align-items:center;gap:8px;padding:7px 10px;border-radius:7px;cursor:default}
+  .drop .row:hover,.drop .row.hl{background:#eceef2}
+  .drop .row .chev{margin-left:auto;color:var(--muted)}
+  .drop .hr{height:1px;background:var(--rule);margin:5px 6px}
+  .drop .grp{font-size:10px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);padding:6px 10px 2px}
+  .lrow{display:grid;grid-template-columns:18px 1fr auto;align-items:center;gap:8px;padding:7px 10px;border-radius:7px;cursor:pointer}
+  .lrow:hover{background:#eceef2}
+  .lrow .chk{color:var(--green);font-weight:900;visibility:hidden}
+  .lrow.sel{background:var(--green-soft)}
+  .lrow.sel .chk{visibility:visible}
+  .lrow .nm{font-size:13px}
+  .lrow .nm small{display:block;color:var(--text-2);font-size:10.5px}
+  .code{font-size:10px;letter-spacing:.05em;color:var(--text-2);border:1px solid var(--rule);border-radius:5px;padding:0 5px;background:#fafafb}
+  .lrow.sel .code{border-color:var(--green-line);color:#0f6a4f;background:#fff}
+  .auto{border:1px dashed var(--green-line);background:var(--green-soft);border-radius:8px;margin:2px 2px 4px}
+  .hint{display:flex;gap:8px;align-items:flex-start;margin:6px 4px 2px;padding:8px 10px;border-radius:8px;background:var(--blue-soft);border:1px solid var(--blue-line);color:var(--blue-ink);font-size:11px;line-height:1.4}
+  .hint.amber{background:var(--amber-soft);border-color:var(--amber-line);color:var(--amber-ink)}
+  .hint b{font-weight:700}
+
+  /* ── Popover del indicador ── */
+  .pop{position:absolute;right:8px;bottom:34px;width:300px;background:#fff;border:1px solid var(--border);border-radius:12px;box-shadow:0 10px 24px rgba(0,0,0,.22);padding:12px;display:none;z-index:9;font-size:12px}
+  .pop.on{display:block}
+  .pop h4{margin:0 0 8px;font-size:12px}
+  .pop .line{display:flex;justify-content:space-between;align-items:center;padding:6px 0;border-bottom:1px solid var(--rule)}
+  .pop .line:last-of-type{border-bottom:0}
+  .pop .btnrow{display:flex;gap:6px;margin-top:8px}
+  .btn{font:inherit;font-size:11px;padding:5px 10px;border-radius:8px;border:1px solid var(--border);background:#fff;cursor:pointer}
+  .btn.primary{background:var(--green);border-color:var(--green);color:#fff}
+  .legend{width:760px;max-width:100%;color:#f4f4f5;font-size:12px;line-height:1.55}
+  .legend code{background:rgba(0,0,0,.25);padding:0 4px;border-radius:4px}
+
+  /* ── Escenas sin JavaScript (radios + :checked) ── */
+  .scenes label{font:inherit;font-size:12px;padding:6px 10px;border-radius:8px;border:1px solid var(--border);background:#fff;cursor:pointer}
+  #s1:checked~.scenes label[for=s1],#s2:checked~.scenes label[for=s2],#s3:checked~.scenes label[for=s3],#s4:checked~.scenes label[for=s4]{background:var(--ink);color:#fff;border-color:var(--ink)}
+  .drop,.pop,.chip-ru{display:none}
+  .chip-es{display:inline-flex}
+  #s1:checked~.win .drop.prefs,#s2:checked~.win .drop.prefs,#s3:checked~.win .drop.prefs{display:block}
+  #s1:checked~.win #d-ui,#s3:checked~.win #d-ui{display:block}
+  #s2:checked~.win #d-data{display:block}
+  #s4:checked~.win .pop{display:block}
+  #s3:checked~.win .chip-es,#s4:checked~.win .chip-es{display:none}
+  #s3:checked~.win .chip-ru,#s4:checked~.win .chip-ru{display:inline-flex}
+  #s1:checked~.win #m-prefs,#s2:checked~.win #m-prefs,#s3:checked~.win #m-prefs{background:#eceef2}
+  #s2:checked~.win #r-data{background:#eceef2}
+  #s2:checked~.win #r-ui{background:transparent}
+  #s3:checked~.win #es-row{background:transparent}
+  #s3:checked~.win #es-row .chk{visibility:hidden}
+  #s3:checked~.win #ru-row,#s4:checked~.win #ru-row{background:var(--green-soft)}
+  #s3:checked~.win #ru-row .chk,#s4:checked~.win #ru-row .chk{visibility:visible}
+</style>
+</head>
+<body>
+<p class="note"><b>Boceto v2 — idioma de la interfaz e idioma de los datos.</b> Menú propio «Preferencias» (entre File y Help), autoglotónimos con código corto, sin banderas, e indicador clicable en la barra de estado. Elige una escena.</p>
+<input type="radio" name="scene" id="s1" checked hidden>
+<input type="radio" name="scene" id="s2" hidden>
+<input type="radio" name="scene" id="s3" hidden>
+<input type="radio" name="scene" id="s4" hidden>
+<div class="scenes" role="group" aria-label="Escenas">
+  <label for="s1">1 · Idioma de la interfaz</label>
+  <label for="s2">2 · Idioma de los datos</label>
+  <label for="s3">3 · UI en un idioma sin datos (ruso)</label>
+  <label for="s4">4 · Indicador con aviso (datos en inglés)</label>
+</div>
+
+<div class="win" id="win">
+  <div class="menubar">
+    <span class="mi">File</span>
+    <span class="mi" id="m-prefs">Preferencias</span>
+    <span class="mi">Help</span>
+  </div>
+
+  <div class="drop prefs" id="d-prefs">
+    <div class="row hl" id="r-ui">Idioma de la interfaz <span class="chev">▸</span></div>
+    <div class="row" id="r-data">Idioma de los datos <span class="chev">▸</span></div>
+  </div>
+
+  <!-- Submenú: interfaz -->
+  <div class="drop sub" id="d-ui">
+    <div class="grp">Interfaz · menús y alertas</div>
+    <div class="lrow sel" id="es-row"><span class="chk">✓</span><span class="nm">Español</span><span class="code">ES</span></div>
+    <div class="lrow"><span class="chk">✓</span><span class="nm">English</span><span class="code">EN</span></div>
+    <div class="lrow"><span class="chk">✓</span><span class="nm">Français</span><span class="code">FR</span></div>
+    <div class="lrow"><span class="chk">✓</span><span class="nm">Deutsch</span><span class="code">DE</span></div>
+    <div class="lrow"><span class="chk">✓</span><span class="nm">日本語</span><span class="code">JA</span></div>
+    <div class="lrow"><span class="chk">✓</span><span class="nm">한국어</span><span class="code">KO</span></div>
+    <div class="lrow"><span class="chk">✓</span><span class="nm">中文（简体）</span><span class="code">ZH</span></div>
+    <div class="lrow" id="ru-row"><span class="chk">✓</span><span class="nm">Русский<small>Datos del juego en inglés</small></span><span class="code">RU</span></div>
+    <div class="hr"></div>
+    <div class="row">📁 Abrir carpeta de paquetes de idioma…</div>
+  </div>
+
+  <!-- Submenú: datos -->
+  <div class="drop sub" id="d-data">
+    <div class="grp">Datos del juego · nombres</div>
+    <div class="lrow auto sel"><span class="chk">✓</span><span class="nm">Igual que la interfaz<small>Sigue a la interfaz (hoy: Español)</small></span><span class="code">AUTO</span></div>
+    <div class="hr"></div>
+    <div class="lrow"><span class="chk">✓</span><span class="nm">English</span><span class="code">EN</span></div>
+    <div class="lrow"><span class="chk">✓</span><span class="nm">Español</span><span class="code">ES</span></div>
+    <div class="lrow"><span class="chk">✓</span><span class="nm">Français</span><span class="code">FR</span></div>
+    <div class="lrow"><span class="chk">✓</span><span class="nm">Deutsch</span><span class="code">DE</span></div>
+    <div class="lrow"><span class="chk">✓</span><span class="nm">日本語</span><span class="code">JA</span></div>
+    <div class="lrow"><span class="chk">✓</span><span class="nm">한국어</span><span class="code">KO</span></div>
+    <div class="lrow"><span class="chk">✓</span><span class="nm">中文（简体）</span><span class="code">ZH</span></div>
+    <div class="lrow"><span class="chk">✓</span><span class="nm">中文（繁體）</span><span class="code">ZH</span></div>
+    <div class="hint"><span>ℹ️</span><span>Estos nombres vienen del propio juego. Las descripciones largas de movimientos, habilidades y objetos siempre se muestran en inglés.</span></div>
+  </div>
+
+  <div class="content">
+    <div class="rail"><div class="on"><i></i>Pokémon</div><div>Mochila</div><div>Pokédex</div></div>
+    <div class="stage" id="stage">Vista de la app (recortada)</div>
+  </div>
+
+  <div class="pop" id="pop">
+    <h4>Idiomas activos</h4>
+    <div class="line"><span>Interfaz</span><b>Русский</b></div>
+    <div class="line"><span>Datos del juego</span><b>English (automático)</b></div>
+    <div class="hint amber" id="p-warn"><span>⚠️</span><span><b>Datos en inglés.</b> El idioma de la interfaz no existe en el juego, así que los nombres se muestran en inglés. Puedes elegir otro idioma de datos.</span></div>
+    <div class="btnrow"><button class="btn primary">Cambiar interfaz…</button><button class="btn">Cambiar datos…</button></div>
+  </div>
+
+  <div class="statusbar">
+    <span>File loaded: Pokemon - Edicion Platino.dsv</span>
+    <button class="lang-chip chip-es" aria-label="Idiomas activos: interfaz español, datos español"><span class="dot">UI</span><span>ES</span><span class="sep"></span><span class="dot">PK</span><span>ES</span></button><button class="lang-chip warn chip-ru" aria-label="Idiomas activos: interfaz ruso, datos inglés"><span class="dot">UI</span><span>RU</span><span class="sep"></span><span class="dot d2">PK</span><span>EN</span></button>
+  </div>
+</div>
+
+<div class="legend">
+  <b>Notas de diseño.</b> <code>✓</code> verde + fondo <code>#E6F6F0</code> marca la opción activa (misma familia que el subrayado verde <code>#1D9E75</code> de los rails). Sin banderas: un idioma no es un país y las banderas emoji no se ven en Windows. El indicador es un «píldora» discreta: <b>UI = interfaz</b>, <b>PK = datos del juego</b>; se vuelve ámbar solo cuando los datos caen a inglés por falta de idioma en PKHeX. Un clic abre el popover; desde ahí se saltan los mismos submenús.
+</div>
+
+</body>
+</html>

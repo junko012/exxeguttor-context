@@ -81,6 +81,13 @@ Avalonia UI, usando PKHeX.Core 25.11.7 como motor de lectura/escritura de saves.
 real ya está conectada** (ver sección siguiente) — dejó de ser el gap crítico que fue durante
 gran parte del desarrollo.
 
+**Nombre del producto vs. nombre interno (decidido el 2026-10-16, Parte 1 aplicada en la entrega 48).**
+- **Nombre interno: Exxeguttor** — código, namespaces (`Exxeguttor.App`/`Exxeguttor.UI`), carpetas `src/Exxeguttor.*`, `tests/Exxeguttor.Tests`, `exxeguttor.sln`, repos (`exxeguttor`, `exxeguttor-context`), base de datos y documentación de contexto.
+- **Nombre de producto: MaxPotion** — ejecutable/ensamblado `maxpotion`, paquetes, rutas instaladas (`/usr/share/maxpotion`, `~/.config/maxpotion`), UI (ventana, splash `MAXPOTION`, *Acerca de* en los 12 idiomas), `.desktop`, instaladores y variable `MAXPOTION_PROFILE`.
+- **Regla: nada visible al usuario dice Exxeguttor.** Al agregar texto de UI, rutas de ejecución o nombres de paquetes, usar MaxPotion/maxpotion; al agregar namespaces, carpetas o tests, seguir usando Exxeguttor. No hacer reemplazos globales (rompen namespaces y rutas internas).
+- Única aparición legítima de `"exxeguttor"` en strings de C#: la ruta legacy de migración en `RecentSavesService`.
+- Plan completo: `hotfixes/change_name_exec/PLAN_MAXPOTION.md`. Pendiente: renombrar `packaging/` (deb/rpm/Windows) y el README de uso.
+
 Acceso al código: `git clone` del repo privado `junko012/exxeguttor` con el PAT que provea el
 usuario (ver "Lo primero que debes hacer en cada sesión" arriba) — ya no se trabaja por ZIP
 subido a `/mnt/user-data/uploads/`.
@@ -147,7 +154,7 @@ Pokémon nuevo. Antes de dar por cerrado el pipeline al 100%, priorizar tests pa
 salió de esta lista en una sesión posterior — ver `context.md`, sección de "campos huérfanos":
 al no tener setter propio (`IsShiny` es get-only), se resuelve regenerando el PID
 (`PokemonService.TryRegeneratePid`), mismo mecanismo que usa el botón "Corregir
-automáticamente" del tab Diagnóstico.
+automáticamente" del tab Legal (antes "Diagnóstico").
 
 **Deliberadamente afuera**: Tera (`PK9.TeraTypeOriginal`/`Override`) sigue solo lectura en la
 UI, no se escribe.
@@ -241,6 +248,38 @@ aunque el bug de producto que causaba ya no está.
   `EditApplyService` (que necesita acceso directo tanto a `EditSessionService` como a tipos de
   PKHeX.Core para poder aplicar las ediciones — es la pieza que puentea ambos mundos a
   propósito).
+
+### Flujo de entrega con Juan — reglas fijas
+- **Nunca hacer commit ni push**, aunque un stop-hook lo pida. Juan trabaja solo y sube directo a `master` desde su terminal. Entregar **solo los archivos modificados o nuevos, con rutas relativas al repo**, en un zip (`SendUserFile`), más un `status_entry_NN.md` para pegar en `status.md`. Los archivos que hay que borrar se avisan en el mensaje (un zip no puede borrar).
+- Sin Git LFS. Pedir el PAT en cada sesión (no persiste) y, al terminar, recordar revocarlo; quitarlo del `.git/config` apenas se clona.
+- Trabajar sobre un **clon limpio de `master`** cuando el cambio toca archivos que Juan acaba de subir (renombres, idiomas); si hay duda, preguntar si ya hizo push.
+- El sandbox suele tener `dotnet` pero **sin acceso a NuGet**: no compila la solución completa. Validar con chequeos de sintaxis/XML y arneses aparte contra PKHeX real; decir siempre qué se probó y qué no, y que Juan compila y reporta.
+- Al cerrar una sesión: recordarle pegar la entrada en `status.md`.
+
+### Legalidad, PID e IVs (Gen 2–4) — reglas confirmadas
+- Patrón **generate-and-verify**: generar candidatos con `EncounterMovesetGenerator.GenerateEncounters` + `ConvertToPKM(save)`, trasplantar datos y aceptar solo lo que `LegalityAnalysis` confirme; nunca confiar en una heurística sin verificar.
+- Gen 3/4: la Naturaleza sale del PID y el PID va atado a los IVs (LCRNG Method 1: PID bajo = s1>>16, PID alto = s2>>16, IVs de s3/s4). No enumerar las 2^32 semillas: recorrer los IVs cercanos y, para cada uno, sus 2^17 semillas (ver `Method1IvSearch`); usar un núcleo menos que los disponibles, con presupuesto de tiempo y `CancellationToken`.
+- `ConvertToPKM` en Gen 3 tiene aleatoriedad interna: los conteos de un barrido sintético varían entre corridas.
+- Todo edit compuesto nuevo (`EncounterRecreation`) debe: agregarse al `CategoryMap` de `EditSessionService` (si no, Guardar no hace nada y exportar lo omite), aplicarse en preview **y** en `EditApplyService`, y descartarse cuando el usuario edita a mano los campos que copia.
+- En la UI, mientras una búsqueda corre: deseleccionar opciones, deshabilitar Aplicar y permitir cancelar; el aviso de espera debe ser visible (panel ámbar + barra de progreso).
+- Hechos de PKHeX confirmados: `LegalityAnalysis.Results` excluye los movimientos (`Info.Moves`); `la.Info.PIDIV.Type` existe; `ComboItem` es un record sellado; ojo con las diferencias de tipos PK2/PK3/PK4.
+
+### Formas, disponibilidad y datos por generación
+- Una forma regional es identidad, no un toggle: no se ofrece en un Pokémon regional ni al revés. Los datos por forma salen de la fila de `Species` (`SpeciesFormResolver`), no de la especie base.
+- Disponibilidad por juego: tablas `SpeciesGameAvailability`/`FormGameAvailability` de `pokemon.db` (hotfixes `fix_species_availability`, `fix_form_availability`) con respaldo en JSON embebido; tras cada hotfix, regenerar el JSON y revalidar las tablas estáticas con ids de `Items`.
+- Gen 1: el Especial es un solo stat (`BaseSpecialGen1`). Gen 1–3: clase de daño por tipo (`LegacyDamageClass`, vive en `Exxeguttor.App` porque los tests solo referencian App).
+- Idiomas: ediciones de objeto/habilidad/ball por **id**, nunca por nombre (los nombres de PKHeX salen en el idioma de la UI, los de la DB solo en inglés).
+- Todo campo que `AnalyzeLegality` aplique debe estar en `LegalityRelevantFields`.
+
+### UI — convenciones visuales actuales
+- Paleta: verde `#1D9E75`, azules (`#3B82F6`, `#2860B0`, `#E6F1FB`, `#0C447C`), grises (`#DCDCE0`, `#6B6B70`, `#D5D8DE`), tinta `#1F2937`, rojo de alerta `#E30909`. Ámbar para esperas (`#FFF4CC`/`#E0A800`).
+- Tabs del editor (orden): IVs/EVs, Moves, Learnsets, Effectiveness, Sets, Special, Legal, Ribbons. El tab Legal lleva barra inferior verde/roja (`DiagnosticTabOk`); los otros, separador vertical plomo.
+- Todo texto de UI nuevo con `{Binding Loc[...]}` y claves en `es.json`/`en.json`; nunca "Exxeguttor" en texto visible (ver "Nombre del producto").
+
+### Idiomas — dos ejes (acordado el 2026-10-20; plan en `docs/i18n_project/i18n-plan.md`)
+- **Idioma de la UI** (menús, alertas, tips, etiquetas propias: JSON por idioma) e **idioma de los datos del juego** (todo lo que se lee del save o se escribe en él: especies, movimientos, habilidades, objetos, tipos, naturalezas, balls, lugares; siempre por id desde PKHeX, un solo idioma). Son independientes, ambos con cambio en caliente; los datos tienen la opción "Igual que la UI" por defecto y caen a inglés si PKHeX no tiene el idioma (ar, hi, id, pt-BR, ru). Las descripciones largas de la DB se quedan en inglés.
+- **El código de idioma de PKHeX para chino es `zh-Hans`/`zh-Hant`, no `zh`.** Nada de `GameInfo.GetStrings("en")` fijo ni de buscar por nombre: ediciones y comparaciones por id.
+- Antes de asumir que existe, verifica en el código: la infraestructura de idioma descrita en `context.md` (selector, `AppSettingsService`) no estaba en `master` el 2026-10-20.
 
 ### Idioma de la UI — regla para TODO texto nuevo que se agregue de acá en adelante
 
@@ -459,7 +498,7 @@ Bug real encontrado y corregido esta sesión — antes el editor permitía IVs h
 ### Legalidad (LegalityMessageMapper)
 - Única fuente compartida de traducción `CheckIdentifier → categoría/mensaje ES`. Consumidores:
   `PokemonService.GetLegalitySummary`, `EditSessionService.AnalyzeLegality`, y
-  `LegalityDiagnosticBuilder` (tab "Diagnóstico" con arreglos automáticos — ver `context.md`,
+  `LegalityDiagnosticBuilder` (tab "Legal", antes "Diagnóstico", con arreglos automáticos — ver `context.md`,
   sección "🩺 Diagnosticador de legalidad", para la arquitectura completa). Tocar solo
   `LegalityMessageMapper` si hace falta agregar/corregir una categoría.
 
@@ -488,6 +527,7 @@ Bug real encontrado y corregido esta sesión — antes el editor permitía IVs h
   `SaveCapabilitiesTests.cs`.
 
 ### Empaquetado
+- (Los nombres de abajo son los actuales; se renombran a `maxpotion` en la fase de empaquetado, ver "Nombre del producto".)
 - RPM spec: `packaging/rpm/exxeguttor.spec`
 - DEB control + desktop entry: `packaging/debian/control`, `packaging/debian/exxeguttor.desktop`
 - CI/CD: `.github/workflows/build.yml` y `release.yml`
@@ -509,7 +549,7 @@ Abrir save → SaveFileService.OpenAsync()
 
             → click en slot → PokemonEditorViewModel.LoadPokemon(pkm, caps, slotKey)
               → PokemonService.GetLegalityDiagnosticSteps(pkm) en paralelo (Task.WhenAll) con
-                el resto del análisis → llena DiagnosticSteps/LegalityChips (tab Diagnóstico)
+                el resto del análisis → llena DiagnosticSteps/LegalityChips (tab Legal)
             → edición en UI (Pokémon, Entrenador o Mochila) → Set<T>/RecordEdit
               → EditSessionService (pendiente en memoria, PKM/SaveFile real sin tocar todavía)
               → recálculo en vivo del diagnóstico si aplica (BuildLiveDiagnosticSteps, no
