@@ -1109,3 +1109,74 @@ Modificados: `src/Exxeguttor.App/Services/PokedexService.cs`, `EvolutionConditio
 - `docs/i18n_project/i18n-plan.md` nuevo (reemplaza al de `mockups/language_selector/`, ahora un puntero): idioma de la UI e idioma de los datos separados, cambio en caliente, "Igual que la UI", datos en inglés si PKHeX no tiene el idioma, descripciones largas en inglés, fases 0–5.
 - Hallazgos: la infraestructura de idioma descrita en `context.md` no está en `master`; bug `zh` → debe ser `zh-Hans`/`zh-Hant` (PKHeX).
 - Boceto visual del selector de idioma v2 (menú Preferencias, submenús, indicador `UI ES · PK ES` en la barra de estado): `mockups/language_selector/language-selector-v2-boceto.html` + `language-selector-v2.md`. Sin banderas; menú propio entre File y Help.
+
+## 2026-10-21 — Entrega 49: plan de idiomas, Fases 0–2 (+ Fase 3 tanda 1 parcial)
+
+- Estado: implementado, **sin compilar ni correr tests** (el sandbox no tiene dotnet). XAML verificado solo como XML bien formado; JSON `es/en` validados.
+- Nuevo (App): `AppSettingsService` (`~/.config/maxpotion/settings.json`: `uiLocale`, `dataLocale`), `DataLanguageService` (idioma de los datos separado del de la UI: `auto`/explícito, tabla UI→PKHeX única, evento `Changed`).
+- `LocalizationService`: ahora `INotifyPropertyChanged`, lee la preferencia guardada, `SetLocale()` en caliente. **Cambio de comportamiento**: sin idioma de sistema disponible cae a **inglés** (antes español).
+- UI: menú **Preferencias** (idioma de la interfaz / de los datos), píldora `UI ES · PK ES` en la barra de estado con popover (ámbar si los datos caen a inglés), recarga en caliente de Caja/Equipo/Pokémon abierto (conserva ediciones pendientes)/Pokédex.
+- Bug corregido: `zh-CN`/`zh-TW` se mapeaban a `"zh"` (inexistente en PKHeX → nombres en inglés); ahora `zh-Hans`/`zh-Hant`, en un solo lugar.
+- Casillas de Caja/Equipo y mensaje de creación usan el idioma de los datos. `Exxeguttor.App.csproj`: `InternalsVisibleTo Exxeguttor.Tests`. Claves nuevas `Menu_Preferences`, `Menu_Prefs_*`, `Lang_*` en es/en (los demás idiomas caen a inglés).
+- Pendiente de verificar en tu PC: compilar; que el `ControlTheme`/`ItemContainerTheme` de los submenús renderice el Header y el comando; el Flyout de la píldora; `dotnet test --filter "DataLanguageServiceTests|AppSettingsServiceTests"`; cambio en caliente con un Pokémon abierto y ediciones pendientes; con `LANG=ru_RU.UTF-8` (datos en inglés, píldora ámbar).
+- Pendiente (ver `docs/i18n_project/i18n-plan.md`, "Estado de avance"): Fase 3 tandas 2–6, Fase 4 (textos a `Loc[...]`), Fase 5, medición de `GetStrings` por idioma, y los faltantes de la Fase 2 (botones del popover, carpeta de paquetes, ✓ verde).
+
+## 2026-10-21 — Entrega 50: plan de idiomas, Fase 3 tanda 2 (movimientos por id)
+
+- Estado: implementado, **sin compilar ni correr tests** (la entrega 49 sí compiló en tu PC).
+- `GetLearnsets` trae `MoveId`; selector y learnsets agrupan/comparan por id y muestran el nombre en el idioma de los datos (`GameStrings.Move`).
+- Editor: `Move1Id…Move4Id` (edición por id, entran a la legalidad en vivo). `EditApplyService.ApplyFieldsToPkm` y `EditSessionService.AnalyzeLegality` aplican el id y caen al nombre solo si falta. Al restaurar ediciones pendientes los nombres se re-derivan de los ids.
+- Nuevo test: `LearnsetMoveIdTests`. Archivos: PokemonDatabase.cs, MoveSelectorViewModel.cs, PokemonEditorViewModel.cs, EditApplyService.cs, EditSessionService.cs (+ test).
+- Probar: abrir un Pokémon, cambiar el idioma de los datos a ja/fr (los 4 movimientos deben cambiar de nombre); elegir un movimiento nuevo desde el selector y exportar (debe quedar el movimiento elegido, con PP máximo); cambiarlo y volver al original (no debe figurar como cambio); Z-Cristal con un movimiento del tipo correcto en idioma ≠ inglés; `dotnet test --filter LearnsetMoveIdTests`.
+- Pendiente: Sets recomendados por id, tipos (hay que separar llave de texto en converters), Fase 3 tandas 4–6, Fase 4, Fase 5.
+
+## 2026-10-21 — Entrega 51: plan de idiomas, Fase 3 tanda 3 (tipos)
+
+- Estado: implementado, **sin compilar** (la 50 compiló en tu PC).
+- Nuevo `TypeNames` (App) y `TypeNameConverter` (UI): la llave del tipo sigue en inglés (colores, efectividad, filtro) y solo el texto pasa al idioma de los datos. 21 bindings de texto en `PokemonInfoView`, `PokemonStatsView` y `SpeciesPickerView`.
+- `TypeColorConverter` normaliza cualquier idioma (arregla el color de Tera/Poder Oculto con datos ≠ en/es). Tabla de debilidades del editor con llaves inglesas.
+- El editor refresca todos sus bindings tras cambiar el idioma de los datos (`OnPropertyChanged(string.Empty)`).
+- Tests nuevos: `TypeNamesTests`. Archivos: TypeNames.cs, TypeNameConverter.cs, TypeColorConverter.cs, App.axaml, PokemonInfoView/PokemonStatsView/SpeciesPickerView.axaml, PokemonEditorViewModel.cs.
+- Probar: abrir un Pokémon y poner los datos en ja/fr/de: badges de tipo, Poder Oculto, tipo de cada movimiento, debilidades y Tera Type deben verse traducidos **con el color correcto**; filtro por tipo en «Crear Pokémon» (la selección debe seguir filtrando); `dotnet test --filter TypeNamesTests`.
+- Pendiente: Sets recomendados por id, Fase 3 tandas 4–6 (objetos/habilidades/lugares/naturalezas/balls), Fase 4, Fase 5.
+
+## 2026-10-21 — Entrega 52: plan de idiomas, Fase 3 tanda 4 (Mega Stones / Z-Crystals / Z-Moves)
+
+- Estado: implementado, **sin compilar** (la 51 compiló en tu PC).
+- Nuevo `MoveNames` (App): nombre inglés de una tabla de dominio → id de PKHeX → nombre en el idioma de los datos.
+- Editor: Mega Stones con nombre de objeto de PKHeX, forma Mega con la especie localizada (`Form_Name_Mega`), y Z-Moves/cristales exclusivos con movimientos, Z-Move y tipos localizados. `IsSameMove` resuelve el requerido por id.
+- `ZCrystalDatabase`/`MegaStoneDatabase` sin cambios (siguen con `ItemId` equipado como llave).
+- Claves nuevas: `Form_Name_Mega` (es/en). Tests nuevos: `MoveNamesTests`. Archivos: MoveNames.cs, PokemonEditorViewModel.cs, es.json, en.json, MoveNamesTests.cs.
+- Probar: Pokémon con Mega disponible (Charizard) con datos en fr/ja: nombres de las piedras y de la forma Mega; Pokémon Gen 7 con Z-Crystal (Pikachu + Pikashunium Z / Snorlax + Snorlium Z): nombre del Z-Move, movimiento requerido y el aviso de diagnóstico; que equipar desde el selector siga funcionando tras cambiar de idioma; `dotnet test --filter MoveNamesTests`.
+- Pendiente: Fase 3 tanda 5 (Mochila y cintas), tanda 6 (resumen de `EditSessionService` y formatters de legalidad), Sets recomendados por id, Fase 4, Fase 5.
+
+## 2026-10-21 — Entrega 53: plan de idiomas, Fase 3 tanda 5 (parcial: ítems de la Mochila)
+
+- Estado: implementado, **sin compilar** (la 52 compiló en tu PC).
+- Mochila: el nombre de cada ítem sale de `GameStrings.GetItemStrings(save.Context, save.Version)` (idioma de los datos, indexado por `RawItemId`); pokemon.db queda como respaldo y como llave del sprite. Cambiar el idioma reconstruye la categoría visible.
+- `BagItemEditValue` compara solo la cantidad (el nombre es solo texto): cambiar de idioma no deja ediciones revertidas como cambios.
+- Tests nuevos: `BagItemNamesTests`. Archivos: ItemInventoryService.cs, BagItemRowViewModel.cs, BagViewModel.cs, EditSessionService.cs, MainWindowViewModel.cs, BagItemNamesTests.cs.
+- Probar: abrir Mochila de un save Gen 3 y otro Gen 7/9 con datos en fr/ja/de (MTs/MOs, bayas, objetos: nombre correcto y sprite correcto); editar una cantidad, cambiar el idioma y verificar que la cantidad sigue y que el modal de exportación muestra los nombres del idioma actual; volver al valor original no debe contar como cambio; ítems de Colosseum/XD (nombre de pokemon.db, sin romper); `dotnet test --filter BagItemNamesTests`.
+- Pendiente: **cintas** (verificar `RibbonStrings` de PKHeX), categorías de la Mochila (Fase 4), tanda 6 (resumen de `EditSessionService` y formatters de legalidad), Sets recomendados por id, Fase 4, Fase 5.
+
+## 2026-10-21 — Entrega 54: correcciones de pruebas reales (Platino, datos en ES)
+
+- Estado: implementado, **sin compilar** (la 53 compiló en tu PC).
+- Bug 1: combo de Naturaleza vacío al cargar un Pokémon y texto en inglés. Causa: lista en inglés vs nombre localizado cargado; además las ediciones de naturaleza con nombre localizado se descartaban al exportar (`Enum.TryParse`). Arreglo: `Nature` = llave inglesa, texto de `GameStrings.Natures`; Hardy ya no queda vacío.
+- Bug 2: tipos de las listas de Efectividad (y badges de la Pokédex) en inglés: bindings `{Binding}` sin propiedad no cubiertos en la tanda 3.
+- Bug 3 (de la captura): sprite del objeto equipado ausente con datos ≠ EN.
+- Claves nuevas es/en: `Nature_Neutral`, `Stat_Short_Atk/Def/SpA/SpD/Spe`. Test nuevo: `NatureNamesTests`.
+- Archivos: NatureDatabase.cs, NatureNameConverter.cs, ItemNameToSpriteConverter.cs, App.axaml, PokemonEditorViewModel.cs, MainWindowViewModel.cs, PokemonStatsView.axaml, PokedexView.axaml, es.json, en.json, NatureNamesTests.cs.
+- Probar: Platino con datos en ES: combo de Naturaleza lleno y con la del Pokémon seleccionada (incluye uno Hardy); cambiar la naturaleza, exportar y reabrir (debe quedar la elegida); chips de Efectividad en español; badges de la Pokédex; sprite del objeto equipado; repetir con datos en JA y EN; `dotnet test --filter NatureNamesTests`.
+
+## 2026-10-21 — Entrega 55: Sets recomendados en el idioma de los datos
+
+- Estado: implementado, **sin compilar** (la 54 compiló en tu PC).
+- Bug de fondo corregido: con datos ≠ EN la pestaña Sets salía vacía (se buscaba por el nombre de especie localizado; el JSON de Showdown/Smogon está indexado en inglés).
+- `GameNames` (App): habilidad/objeto inglés → id → idioma de los datos, normalización sin acentos/signos (compartida con `MoveNames`).
+- Sets: movimientos, habilidad, objeto y Tera Types localizados al leer (sin cache); sprite del objeto por llave inglesa.
+- Archivos: GameNames.cs, MoveNames.cs, MovesetDatabase.cs, PokemonEditorViewModel.cs, PokemonStatsView.axaml, GameNamesTests.cs.
+- Probar: Platino (o cualquier save Gen 4) con datos en ES y luego JA: pestaña Sets con sets visibles (antes vacía), movimientos/habilidad/objeto traducidos, sprite del objeto, naturaleza y Tera Type; cambiar el idioma con la pestaña abierta; `dotnet test --filter GameNamesTests`.
+- Pendiente: cintas (verificar `RibbonStrings`), tanda 6 (resumen de `EditSessionService`, formatters de legalidad), Fase 4, Fase 5.
+
+
