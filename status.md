@@ -1179,4 +1179,23 @@ Modificados: `src/Exxeguttor.App/Services/PokedexService.cs`, `EvolutionConditio
 - Probar: Platino (o cualquier save Gen 4) con datos en ES y luego JA: pestaña Sets con sets visibles (antes vacía), movimientos/habilidad/objeto traducidos, sprite del objeto, naturaleza y Tera Type; cambiar el idioma con la pestaña abierta; `dotnet test --filter GameNamesTests`.
 - Pendiente: cintas (verificar `RibbonStrings`), tanda 6 (resumen de `EditSessionService`, formatters de legalidad), Fase 4, Fase 5.
 
+## 2026-10-21 — Entrega 56: plan de idiomas, Fase 3 tanda 6 (idioma global de PKHeX, ubicaciones, legalidad)
+
+- Estado: implementado, **sin compilar** (la 55 compiló en tu PC).
+- Causa de «Route 217» en inglés: el proyecto nunca fijaba `GameInfo.Strings` (global de PKHeX). Nuevo `DataLanguageService.ApplyToPkhexGlobals()`: se llama al arrancar y al cambiar el idioma de los datos, antes de recargar. Efecto: ubicaciones de captura/huevo, `GetEncounterLocation` y nombres de habilidad del formatter de legalidad.
+- Legalidad: movimientos y especies por id en el idioma de los datos (respaldo: pokemon.db). Mensajes todavía en español fijo (Fase 4).
+- `EditSessionService` revisado: sin cambios necesarios.
+- Archivos: DataLanguageService.cs, GameNames.cs, LegalityMoveFormatter.cs, LegalityArgumentFormatter.cs, MainWindowViewModel.cs, DataLanguageServiceTests.cs, GameNamesTests.cs.
+- Probar: Platino con datos en ES: combo «Location» y «Egg loc.» en español («Ruta 217»), cambiar a JA/EN con un Pokémon abierto (la ubicación seleccionada debe seguir siendo la misma, solo cambia el texto); una pestaña Legal con errores de movimiento/especie/habilidad: nombres en español; tiempo percibido al cambiar de idioma (nota: reconstruye `GameInfo.Sources`); `dotnet test --filter "DataLanguagePkhexGlobalsTests|GameNamesByIdTests"`.
+- Pendiente: cintas (verificar `RibbonStrings`), Fase 4 (textos de UI), Fase 5.
+
+## 2026-10-21 — Entrega 57: plan de idiomas, Fase 4 pantalla 1 (`MainWindow`)
+
+- Estado: implementado, **sin compilar** (la 56 compiló en tu PC).
+- `MainWindow.axaml`: 64 literales a `{Binding Loc[...]}` (4 dentro de `DataTemplate` con `ReflectionBinding $parent[Window]…`). Sin texto fijo restante (verificado por barrido).
+- `MainWindowViewModel`: mensajes de estado y de ocupado a `Status_*`/`Busy_*`; título del diálogo de exportar a `Toolbar_Export_Tip`. Los 3 mensajes del splash (`onProgress`) quedan para la pantalla del splash.
+- Claves nuevas es/en: 64 por idioma. Archivos: MainWindow.axaml, MainWindowViewModel.cs, es.json, en.json.
+- Probar: cambiar es ↔ en con el menú Preferencias: barra lateral, tooltips de la barra de herramientas, libreta («N cambios»), panel vacío y vista previa de pestañas, modal de revisión antes de exportar (incluye «N a revisar» y «Ver detalle técnico» dentro de las tarjetas: los 4 `ReflectionBinding` de plantillas), los tres diálogos (cerrar sin exportar, descartar, abrir otro save), tips vacíos, loader «Analizando legalidad», mensajes de estado al crear un Pokémon y al descartar ediciones.
+- Si alguna etiqueta dentro de una tarjeta de revisión sale vacía o con la clave: el `ReflectionBinding $parent[Window].DataContext.Loc[...]` no resolvió — avisarme y lo paso a una propiedad del ViewModel de la tarjeta.
+- Pendiente de Fase 4: `PokemonStatsView` (todas las pestañas), `PokemonInfoView`/`TrainerView`, `BoxView`/`PartyView`/Mochila/`PokedexView`/`SpeciesPickerView`, modales (exportación, `RecreateView`, `AutoFixView`, IV solver), mensajes del diagnóstico, tips; splash. Y las cintas de la Fase 3 (no olvidar).
 
