@@ -1224,4 +1224,81 @@ Modificados: `src/Exxeguttor.App/Services/PokedexService.cs`, `EvolutionConditio
 - Si algún texto dentro de una fila de Mochila sale vacío: avisarme y lo paso a una propiedad de `BagItemRowViewModel`.
 - Pendiente de la Fase 4: `TrainerView` (3 literales sueltos), modales (exportación/revisión, `RecreateView`, `AutoFixView`, IV solver: confirmar cuánto queda), mensajes del diagnóstico (+ `LegalityArgumentFormatter.LanguageName`), splash (3 mensajes de `onProgress`), tips. Después Fase 5.
 
+## 2026-10-23 — Entrega 60: plan de idiomas, Fase 4 (resumen de ediciones/modales, Entrenador, estado vacío)
+
+- Estado: implementado, **sin compilar** (la 59 compiló en tu PC y la pegaste en `status.md`). Validado: JSON es/en (50 claves nuevas, mismas claves y placeholders), XML de la vista, llaves de los `.cs`, toda clave usada existe.
+- **Resumen de ediciones (modal de revisión y libreta):** las categorías que `EditSessionService` mostraba en español fijo («Nivel», «Apodo», «Objeto equipado», «IVs/EVs», «Cintas»…) y las sub-etiquetas («Ataque (IV)», «Movimiento 2») salen ahora de claves `Review_Cat_*`, `Review_Stat_*`, `Review_Sub_*`. Las categorías del `CategoryMap` siguen siendo **llaves internas en español** (las usan `LegalityMessageMapper` para correlacionar `HasIssue`/mensaje amigable y `CategoryOrder` para ordenar); solo se traducen al mostrar (`CatLabel`/`SubLabelText`). No renombrarlas. Libreta: «🎓 Entrenador» y el prefijo «PC —». Título de la tarjeta de Mochila/PC por clave.
+- **Entrenador:** `TrainerViewModel` ya no tiene la tabla de idiomas en español; el idioma del save sale de `Trainer_Lang_<id>` y se refresca al cambiar el idioma de la UI. `TrainerView.axaml` no tenía literales (solo emojis y « / »).
+- **Estado vacío:** «Recientes», «No hay ninguna partida cargada», «Formatos soportados». **Recientes:** «Hoy · HH:mm», «Ayer» y la fecha corta salen de `Recent_Today`/`Recent_Yesterday`/`Format_Culture` (cultura es-ES / en-US); `OnLocaleChanged` reconstruye la lista (`RecentSaves.Refresh()`).
+- Modales `RecreateView`, `AutoFixView`, IV solver, errores de apertura/exportación: revisados, sin literales pendientes (ya usaban `_loc[...]`; lo que queda son símbolos «≈», «—», «%», «IVs»).
+- Tests nuevos: `LocalizationDynamicKeysTests` (familias `Bag_Pouch_*`, `Trainer_Lang_*`, `Review_Stat_*`).
+- Archivos: EditSessionService.cs, TrainerViewModel.cs, RecentSaveRowViewModel.cs, MainWindowViewModel.cs, EmptyStateView.axaml, es.json, en.json, LocalizationDynamicKeysTests.cs.
+- Probar: con ediciones pendientes (apodo, nivel, un IV, un movimiento, una cinta, dinero del entrenador, una cantidad de Mochila y otra de PC), abrir el modal de revisión en es y en en: nombres de categoría y sub-etiquetas («Attack (IV)», «Move 2»), título «Bag»/«PC», la tarjeta de Entrenador y el popup de la libreta; que el color verde/rojo de cada categoría siga igual (la correlación con legalidad); panel de Entrenador con un save de cada idioma de juego (campo Idioma) y cambiar el idioma de la UI con el save abierto; pantalla sin save: textos, y «Hoy · hh:mm»/«Today · hh:mm», «Ayer»/«Yesterday» y fechas viejas en la lista de Recientes (cambiar idioma sin reiniciar); `dotnet test --filter "LocalizationDynamicKeysTests|LocalizationKeysTests"`.
+- Pendiente de la Fase 4: mensajes del diagnóstico de legalidad (`LegalityMessageMapper`/formatters en español fijo, incl. `LegalityArgumentFormatter.LanguageName`; hay que decidir clave propia vs. textos de PKHeX por idioma), splash (3 mensajes de `onProgress`) y tips (`tips_ES.json`). Después Fase 5.
+
+### Entrega 61 — i18n Fase 4: mensajes de diagnóstico de legalidad
+- Nuevo `AppText` (App) como `UiText` pero para el proyecto App; `MainWindowViewModel` lo conecta a `_loc`.
+- Nuevo `LegalityHumanizer`: texto técnico vía `LegalityLocalizationContext.Humanize` de PKHeX (idioma de la UI; fallback en → `ToString()`), con lock sobre la caché estática de PKHeX.
+- `LegalityMessageMapper`: categorías internas siguen en español (correlación HasIssue); nombre visible y frase amigable por claves `Legality_Cat_*` / `Legality_Friendly_*`; `GetFieldLabel` para `FieldId`.
+- `DiagnosticStep.CategoryLabel`, `FieldFix.FieldLabel`; vistas Stats/Info los usan. `SeverityLabelConverter` y botón "Corregir automáticamente" localizados.
+- Formatters (Argument/Encounter/Move/Ev): textos fijos → claves `Legality_Fix_*`, `Legality_Cur_*`, `Legality_Unknown_*`, `Legality_Move_*`; nombres de cintas vía `GameInfo.Strings.Ribbons`.
+- es.json / en.json: +113 claves cada uno (613 en total, paridad y placeholders verificados).
+- Test nuevo `LegalityKeysTests` (categorías de CheckIdentifier, claves AppText literales, placeholders, Humanize es/en). Sin compilar en el sandbox.
+- Pendiente Fase 4: splash (3 mensajes onProgress) y tips_ES.json. Luego Fase 5.
+
+### Entrega 62 — i18n Fase 4: splash y tips (cierra la Fase 4)
+- Splash: wordmark "MAX POTION" (separado); subtítulo y 5 mensajes de etapa ahora por claves `Splash_*` (es/en). El splash lee el idioma guardado/del sistema con su propio `LocalizationService`.
+- `MainWindowViewModel`: `_loc` se crea antes del primer mensaje; `Tips` es propiedad notificable y se recrea en `OnLocaleChanged`.
+- Tips: nuevo `Assets/Tips/tips_EN.json`; `TipsService(locale)` normaliza el código ("es-419"→ES) y cae a EN si no hay archivo; `TipIconCatalog` reconoce las categorías en inglés.
+- es/en.json: +6 claves (619). Tests nuevos `TipsLocalizationTests`. Sin compilar en el sandbox.
+- Nota: los textos "MaxPotion" de `App_Title`, "Acerca de…" y `Special_TechPrefix` siguen sin espacio (solo se pidió el splash).
+- Pendiente: Fase 5 (README de lang packs, it/es-419 opcionales, pase final de pruebas, medición de rendimiento).
+
+### Entrega 63 — renombre visible a «Max Potion» + Fase 5 (README)
+- Nombre visible «MaxPotion» → «Max Potion» en: `es.json`/`en.json` (`App_Title`, `Menu_Help_About`, `Dialog_About_Title`, `Special_TechPrefix`), los 10 paquetes `lang/*.json`, título de `SplashWindow` y metadatos del `.csproj` (Product, AssemblyTitle, Company, Authors, Copyright). **Sin tocar** identificadores: `AssemblyName maxpotion`, `avares://maxpotion/…`, `FlatpakAppId`, `MAXPOTION_PROFILE`, rutas `/usr/share/maxpotion`. README sigue titulado «Exxeguttor» (lo decide el plan de renombre).
+- README: sección «Idiomas» reescrita (dos ejes UI/datos, orden de arranque, rutas `/usr/share/maxpotion/lang` y `./lang`, formato, claves faltantes → inglés, cómo añadir un idioma; corregida la base `src/Exxeguttor.UI/i18n/en.json`, antes decía `lang/en.json`, que no existe).
+- Fase 5, lo que queda para correr en tu PC: `LANG=es_ES.UTF-8 LC_ALL=es_ES.UTF-8 dotnet run --project src/Exxeguttor.UI`; cambio en caliente con Pokémon abierto y ediciones pendientes; idioma sin PKHeX (ru) con datos en inglés; medir `ApplyToPkhexGlobals`/`GetStrings`.
+- `it` y `es-419` de UI: no se agregaron (es-419 ya cae a `es` por idioma base; `it` requiere traducir 619 claves). Los paquetes `lang` actuales solo traducen ~50 claves.
+
+### Entrega 64 — fix: el modal de creación conservaba el idioma anterior
+- Causa: `SpeciesPickerViewModel._allSpecies` (catálogo del cover flow) se arma una sola vez por sesión con los textos ya resueltos (nombres de forma, texto de búsqueda) y `OnLocaleChanged` solo refrescaba conteo y chips. Además el nombre de la especie salía de pokemon.db (inglés), no del idioma de los datos.
+- Fix: el catálogo guarda una «firma» (idioma UI|idioma datos); `OnLocaleChanged` lo invalida si cambió (generación para descartar un prefetch en curso con el idioma viejo, `_lastRenderedList = null`, cierra el modal si estaba abierto) y `MainWindowViewModel` relanza `PreloadInBackground()` si hay save cargado.
+- Los nombres de especie del modal salen ahora de `DataLanguageService.Instance.Strings.Species` (pokemon.db solo de respaldo); el buscador acepta nombre mostrado y nombre inglés.
+- Sin compilar. Probar: abrir «+» (es), cambiar a en (y a un idioma de datos distinto), reabrir: nombres, formas regionales ("de Alola"/"Alolan"), contador y búsqueda en el idioma nuevo.
+
+### Entrega 65 — auditoría de modales ante cambio de idioma
+Revisados: selector de especie, Buscar IVs, Recrear, AutoFix, revisión de exportación, confirmaciones (cerrar/limpiar/abrir otro), Tips, éxito de exportación, error al abrir save, selector de movimientos, loaders (BusyState), menú Acerca de.
+- Ya estaban bien: confirmaciones y éxito de exportación (bindings `Loc[...]`/propiedades notificadas), Tips (entrega 62). XAML sin textos fijos.
+- Selector de especie: arreglado en entrega 64.
+- Buscar IVs / Recrear / AutoFix: reabrir ya salía en el idioma nuevo (el texto se arma en `Open`); con el modal ABIERTO al cambiar de idioma quedaba viejo → nuevo `OnLocaleChanged()` en cada VM (IvSolver re-arma opción/chips/«ninguno»; Recrear se reabre conservando opción elegida y «ver más», salvo con «mantener naturaleza» activo donde solo refresca etiquetas; AutoFix notifica sus getters). Llamados desde `MainWindowViewModel.RefreshOpenModals()`.
+- Revisión de exportación abierta: se cierra al cambiar de idioma (trae filas ya resueltas y las casillas «incluir» del usuario; las ediciones siguen pendientes, se reabre con Exportar).
+- Modal de error al abrir save: se recrea con el mismo tipo/ruta en el idioma nuevo.
+- Selector de movimientos abierto: se cierra al recargar el editor por idioma.
+- Bug aparte: la nota de Z-Move «Reemplazó: {previous}» estaba fija en español → `Special_Replaced`.
+- Sin tocar (decisión): mensaje de `AutoFix` pasado por el llamador (`workingTitle`) y etapas de loaders son transitorios; `HabitatDatabase` solo tiene es/en; `MoveDatabase.DamageClassEs` sin uso en vistas; textos de depuración del editor en español (no son UI de usuario).
+- Sin compilar. Probar con cada modal abierto: cambiar idioma desde Preferencias y volver a mirarlo.
+
+### Entrega 66 — italiano (`it`) completo
+- `lang/it.json`: traducción completa de la UI (619 claves = `en.json`; mismos marcadores `{n}` y espacios inicial/final verificados por script). Terminología Pokémon italiana oficial (Strumenti, Squadra, Zaino, Cromatico, Mosse Z, Teratipo, Megapietra…); `Format_Culture = it-IT`.
+- Registrado en `KnownLangPackLocales` (`LocalizationService`) y en la lista del paquete Debian (`packaging/debian/control`).
+- Datos de PKHeX en italiano ofrecidos en el menú: `it` añadido a `DataLanguageService.SelectableCodes` (el mapeo UI→PKHeX ya existía). Con la UI en italiano los datos salen en italiano (sin píldora ámbar).
+- README actualizado. Tests nuevos `LangPacksTests`: todos los `lang/*.json` usan solo claves de `en.json` con los mismos marcadores, y `it.json` debe estar completo.
+- Pendiente de revisión humana: la traducción es mía y no la revisó un hablante nativo; conviene que alguien la lea (sobre todo los mensajes largos de Recrear/IvSolver).
+- Nota: `packaging/rpm/exxeguttor.spec` solo instala `zh-CN.json` (ya estaba así); no se tocó.
+- Sin compilar. Probar: `LANG=it_IT.UTF-8`, o Preferencias → Lingua dell'interfaccia → Italiano (requiere `lang/it.json` junto al ejecutable o en `/usr/share/maxpotion/lang`).
+
+### Entrega 67 — paquetes de idioma completos (11 idiomas)
+- `lang/{ar,de,fr,hi,id,ja,ko,pt-BR,ru,zh-CN}.json` ahora traducen las 619 claves de `en.json` (antes ~50), igual que `it.json` de la entrega 66. Se conservaron las ~50 traducciones previas de cada paquete (incluido su estilo de atajos `Menú(_M)`); `ar.json` mantiene sus 2 claves de metadatos (`_rtl`, `_note`).
+- Validado por script independiente: mismas claves y orden que `en.json`, mismos `{n}`, mismos espacios inicial/final, sin valores vacíos, sin «MaxPotion» (todo «Max Potion»). Claves iguales al inglés: ru 3, ko 11, ja/hi/zh-CN/ar 13, it 35, fr/pt-BR 47, id 73, de 75 (siglas y préstamos: HP, IV, EV, PP, TM/TR, PID, PC, Shiny, Box…).
+- Traducción hecha por IA con terminología oficial de los juegos cuando existe; **ninguna revisada por hablantes nativos**. Dudas señaladas por los traductores: de «Besitzer» (Handler) y «Attacken-Erinnerer»; fr mantiene «Capacité spéciale» (el término oficial es «Talent») por coherencia con el paquete previo; ja Hyper Training («ネットワークきたえ»), pt-BR MT/DR (TM/TR) y nombres de formas de Paldea sin traducir; ar «شرعي» para «legal» (heredado; alternativa «قانوني»); id abreviaturas «Krt.»/«Akr»; hi «मूव्स»/«क्षमता».
+- README: sección de paquetes actualizada (ya no son parciales).
+- Sin compilar. Probar: cambiar la UI a cada idioma y revisar anchos de botones/etiquetas largas (ru, de, id suelen ser las más largas) y el espejo RTL en ar.
+
+### Entrega 68 — Idiomas visibles en el menú + legalidad tras cambio de idioma
+- `Exxeguttor.UI.csproj`: `lang/*.json` se copia al output/publish (`CopyToOutputDirectory`), así el menú de UI lista los 11 packs además de ES/EN.
+- `PokemonEditorViewModel.LoadLegalityAsync`: si el slot tiene ediciones pendientes relevantes a legalidad, descarta el análisis del PKM original y dispara `ScheduleLegalityRecalc` (antes, cambiar de idioma/reseleccionar mostraba de nuevo ilegalidades ya corregidas).
+- Pendiente: packaging (deb/rpm) usa `/usr/share/exxeguttor/lang` pero el código busca `/usr/share/maxpotion/lang`; rpm solo instala zh-CN.
+- Sin compilar (sandbox sin dotnet).
+
+
 
