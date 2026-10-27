@@ -1,0 +1,814 @@
+db_item_id,lang,text,source,source_url,verified
+482,en,"A strange, silver-colored feather.",research,https://www.serebii.net/itemdex/silverwing.shtml,1
+483,en,A mystical feather of rainbow colors.,research,https://serebii.net/itemdex/rainbowwing.shtml,1
+1608,en,A mysterious balm that somehow has the power to calm Dialga in its frenzy.,research,https://www.serebii.net/legendsarceus/items.shtml,1
+1609,en,A mysterious balm that somehow has the power to calm Palkia in its frenzy.,research,https://www.serebii.net/legendsarceus/items.shtml,1
+1610,en,A mysterious balm to be used when battling Arceus.,research,https://www.serebii.net/legendsarceus/items.shtml,1
+1611,en,A string exuding a mysterious energy that makes you feel a strange sense of connection. It's loved by certain Pokémon.,research,https://www.serebii.net/legendsarceus/items.shtml,1
+1612,en,"A baked treat made from Berries and other ingredients, which is often eaten in regions such as Galar. It is beloved by a surprising number of Pokémon.",research,https://www.serebii.net/legendsarceus/items.shtml,1
+1613,en,A fruit whose shell can be used to form the capsules of all manner of Poké Balls when crafting them from scratch. Its proper name is actually “Brown Apricorn.”,research,https://www.serebii.net/legendsarceus/items.shtml,1
+1614,en,A hidden gem gaining popularity in Jubilife Village and beloved by Pokémon. This sweet treat can be fed to a Pokémon to cure any status conditions it may have.,research,https://www.serebii.net/legendsarceus/items.shtml,1
+1615,en,An item that sharply boosts the offensive and defensive stats of a Pokémon during a battle. These effects disappear if the Pokémon leaves the battle.,research,https://www.serebii.net/legendsarceus/items.shtml,1
+1617,en,A dumpling that will make a Pokémon become fixated on a move in battle. The Pokémon will deal more damage when using that move but will take more damage as well.,research,https://www.serebii.net/legendsarceus/items.shtml,1
+1618,en,"These pickled vegetables prime a Pokémon for battle. The Pokémon takes a hard-hitting stance, which boosts the power of the Pokémon's moves by 50 percent.",research,https://www.serebii.net/legendsarceus/items.shtml,1
+1619,en,"When eaten, this curious snack temporarily swaps a Pokémon's offensive stats with its defensive stats.",research,https://www.serebii.net/legendsarceus/items.shtml,1
+1621,en,A rare seed that can be given to the captain of the Security Corps to have a Pokémon master a move so it can be used in the agile style or strong style.,research,https://www.serebii.net/legendsarceus/items.shtml,1
+1624,en,"A type of ice beloved by the Lord of the Tundra, Avalugg. This ice is said to be fragments of ancient Avalugg that lived long ago.",research,https://www.serebii.net/legendsarceus/items.shtml,1
+1625,en,"Proof that you have completed the trial set by Uxie, the Being of Knowledge that lives in Lake Acuity. This item is needed to forge the Red Chain.",research,https://www.serebii.net/legendsarceus/items.shtml,1
+1626,en,"Proof that you have completed the trial set by Azelf, the Being of Willpower that lives at Lake Valor. This item is needed to forge the Red Chain.",research,https://www.serebii.net/legendsarceus/items.shtml,1
+1627,en,"Proof that you have completed the trial set by Mesprit, the Being of Emotion that lives at Lake Verity. This item is needed to forge the Red Chain.",research,https://www.serebii.net/legendsarceus/items.shtml,1
+1628,en,"When combined with an Apricorn, this mysterious, tumbled stone can draw out the properties required to forge a Poké Ball.",research,https://www.serebii.net/legendsarceus/items.shtml,1
+1629,en,A flute that can be used to call special Pokémon that are willing to bear you around the region. Its timbre is eerie and mysterious.,research,https://www.serebii.net/legendsarceus/items.shtml,1
+1630,en,"An herbal medicine that can restore 60 HP to a Pokémon, just as a Potion does. Yet the bitter taste will make the Pokémon less friendly toward you.",research,https://www.serebii.net/legendsarceus/items.shtml,1
+1631,en,"An herbal medicine that can restore 100 HP to a Pokémon, just as a Super Potion does. Yet the bitter taste will make the Pokémon less friendly toward you.",research,https://www.serebii.net/legendsarceus/items.shtml,1
+1637,en,"A handy log of wood that can be used for anything, from crafting common goods needed for daily living to producing works of art.",research,https://www.serebii.net/legendsarceus/items.shtml,1
+1638,en,"The king of herbs, glittering and brilliant. Combining this herb with other materials needed to make medicines will boost their efficacy.",research,https://www.serebii.net/legendsarceus/items.shtml,1
+1639,en,"A mysterious balm that gives off a soothing scent. It can be used to help calm the frenzy of the Lady of the Ridge, Lilligant.",research,https://www.serebii.net/legendsarceus/items.shtml,1
+1644,en,A wooden toy carved in the image of a Pokémon. It can be sold to the general store.,research,https://www.serebii.net/legendsarceus/items.shtml,1
+1646,en,"When thrown at the ground, these balls produce a cloud of fine powder that will reduce visibility in the area and keep wild Pokémon from noticing you.",research,https://www.serebii.net/legendsarceus/items.shtml,1
+1647,en,"When thrown at the ground, these balls produce a loud noise and scare off weak Pokémon in the area, sending them running.",research,https://www.serebii.net/legendsarceus/items.shtml,1
+1648,en,"A ball of some kind of sticky substance. Hitting a Pokémon with one may stun the Pokémon, creating an opening for you to act.",research,https://www.serebii.net/legendsarceus/items.shtml,1
+1650,en,"A cake made by combining mushrooms with a Cake-Lure Base. These cakes are potently effective at attracting the more monstrous Pokémon, as well as dragon Pokémon.",research,https://www.serebii.net/legendsarceus/items.shtml,1
+1651,en,"A wildflower that can be found growing across the Hisui region. It does have medicinal properties, but it is so bitter that no wild Pokémon will eat it.",research,https://www.serebii.net/legendsarceus/items.shtml,1
+1652,en,A cake made by combining honey with a Cake-Lure Base. These cakes are potently effective at attracting bug Pokémon and also those with fairylike charms.,research,https://www.serebii.net/legendsarceus/items.shtml,1
+1653,en,A cake made by combining grains with a Cake-Lure Base. These cakes are potently effective at attracting Pokémon that dwell and wander among the fields.,research,https://www.serebii.net/legendsarceus/items.shtml,1
+1654,en,"A cake made by combining beans with a Cake-Lure Base. These cakes are potently effective at attracting fish Pokémon, as well as bird Pokémon and their flying ilk.",research,https://www.serebii.net/legendsarceus/items.shtml,1
+1663,en,"An herbal medicine that can restore 150 HP to a Pokémon, just as a Hyper Potion does. Yet the bitter taste will make the Pokémon less friendly toward you.",research,https://www.serebii.net/legendsarceus/items.shtml,1
+1671,en,"When used in the field, this spray muffles the sound of your footsteps and makes wild Pokémon less likely to notice you for a short time.",research,https://www.serebii.net/legendsarceus/items.shtml,1
+1673,en,An item that sharply boosts the offensive stats of a Pokémon during a battle. These effects disappear if the Pokémon leaves the battle.,research,https://www.serebii.net/legendsarceus/items.shtml,1
+1674,en,An item that sharply boosts the defensive stats of a Pokémon during a battle. These effects disappear if the Pokémon leaves the battle.,research,https://www.serebii.net/legendsarceus/items.shtml,1
+1676,en,An item that makes moves less likely to strike a Pokémon during a battle. This effect disappears if the Pokémon leaves the battle.,research,https://www.serebii.net/legendsarceus/items.shtml,1
+1678,en,"A mysterious balm that gives off a soothing scent. It can be used to help calm the frenzy of the Lord of the Woods, Kleavor.",research,https://www.serebii.net/legendsarceus/items.shtml,1
+1679,en,"A naturally occurring hunk of iron. Such ore is needed to make the requisite parts of numerous Poké Ball varieties, such as the clasp that holds the ball shut.",research,https://www.serebii.net/legendsarceus/items.shtml,1
+1681,en,"When combined with an Apricorn, this mysterious black stone can draw out the properties required to forge a Heavy Ball.",research,https://www.serebii.net/legendsarceus/items.shtml,1
+1682,en,"When combined with an Apricorn, this mysterious sky-blue stone can draw out the properties required to forge a Feather Ball.",research,https://www.serebii.net/legendsarceus/items.shtml,1
+1684,en,"A ball of mud that has become stiff and hard. Hitting a Pokémon with one may stun the Pokémon, creating an opening for you to act.",research,https://www.serebii.net/legendsarceus/items.shtml,1
+1686,en,"A sea vegetable used for crafting Scatter Bangs. If you wrap it up so that the air has no way to escape, then deal it a sharp blow, it produces a loud popping noise.",research,https://www.serebii.net/legendsarceus/items.shtml,1
+1687,en,"A tuber used for crafting Smoke Bombs. It can be mashed for use in cooking, but it can also be dried and ground to produce a fine powder.",research,https://www.serebii.net/legendsarceus/items.shtml,1
+1688,en,"An Apricorn that's had its insides eaten. Hitting a Pokémon with one may stun the Pokémon, creating an opening for you to act.",research,https://www.serebii.net/legendsarceus/items.shtml,1
+1691,en,A glassy black stone that produces a sharp cutting edge when split. It's loved by a certain Pokémon.,research,https://www.serebii.net/legendsarceus/items.shtml,1
+1692,en,A block of muddy material that can be used as fuel for burning when it is dried. It's loved by a certain Pokémon.,research,https://www.serebii.net/legendsarceus/items.shtml,1
+1694,en,Required for crafting medicinal compounds. This vegetable is found growing across the Hisui region and is also known as the wayfarer's friend.,research,https://www.serebii.net/legendsarceus/items.shtml,1
+1695,en,Also called a morning-dew bud. It is used as a material for crafting items that can restore vitality to a Pokémon that has fainted.,research,https://www.serebii.net/legendsarceus/items.shtml,1
+1696,en,Extremely spicy but also highly nutritious. This herb is used as a material for crafting items that can restore PP to Pokémon or boost their stats.,research,https://www.serebii.net/legendsarceus/items.shtml,1
+1699,en,A mysterious charm that tends to be lost before any other item when you faint in the field. This type of charm comes in five different colors.,research,https://www.serebii.net/legendsarceus/items.shtml,1
+1700,en,A mysterious charm that tends to be lost before any other item when you faint in the field. This type of charm comes in five different colors.,research,https://www.serebii.net/legendsarceus/items.shtml,1
+1701,en,"Mushrooms that, when consumed, cause the muscles to swell. They imbue the eater with strength and are one of the materials needed for crafting Aux Powers.",research,https://www.serebii.net/legendsarceus/items.shtml,1
+1702,en,"Mushrooms that, when consumed, make the body of the eater grow tougher. They boost endurance and are one of the materials needed for crafting Aux Guards.",research,https://www.serebii.net/legendsarceus/items.shtml,1
+1703,en,"Mushrooms that, when consumed, make the eater feel nimble and agile as a fleeting shadow. They are one of the materials needed for crafting Aux Evasions.",research,https://www.serebii.net/legendsarceus/items.shtml,1
+1704,en,"Mushrooms that, when consumed, sharpen the eater's focus. They make it easier to land critical hits and are one of the materials needed for crafting Dire Hits.",research,https://www.serebii.net/legendsarceus/items.shtml,1
+1705,en,"This bitter root, originally native to sandy beaches, can now be raised even in frozen soil. It is pickled to make a sweet and spicy treat known as Twice-Spiced Radishes.",research,https://www.serebii.net/legendsarceus/items.shtml,1
+1706,en,A mysterious charm that tends to be lost before any other item when you faint in the field. This type of charm comes in five different colors.,research,https://www.serebii.net/legendsarceus/items.shtml,1
+1707,en,A mysterious charm that tends to be lost before any other item when you faint in the field. This type of charm comes in five different colors.,research,https://www.serebii.net/legendsarceus/items.shtml,1
+1721,en,"A mysterious balm that gives off a soothing scent. It can be used to help calm the frenzy of the Lord of the Isles, Arcanine.",research,https://www.serebii.net/legendsarceus/items.shtml,1
+1722,en,"A mysterious balm that gives off a soothing scent. It can be used to help calm the frenzy of the Lord of the Hollow, Electrode.",research,https://www.serebii.net/legendsarceus/items.shtml,1
+1723,en,"A mysterious balm that gives off a soothing scent. It can be used to help calm the frenzy of the Lord of the Tundra, Avalugg.",research,https://www.serebii.net/legendsarceus/items.shtml,1
+1732,en,A mysterious charm that holds the power to protect a person from fainting while out in the field. This type of charm comes in five different colors.,research,https://www.serebii.net/legendsarceus/items.shtml,1
+1733,en,A mysterious charm that holds the power to protect a person from fainting while out in the field. This type of charm comes in five different colors.,research,https://www.serebii.net/legendsarceus/items.shtml,1
+1734,en,A mysterious charm that holds the power to protect a person from fainting while out in the field. This type of charm comes in five different colors.,research,https://www.serebii.net/legendsarceus/items.shtml,1
+1735,en,A mysterious charm that holds the power to protect a person from fainting while out in the field. This type of charm comes in five different colors.,research,https://www.serebii.net/legendsarceus/items.shtml,1
+1736,en,A mysterious charm that holds the power to protect a person from fainting while out in the field. This type of charm comes in five different colors.,research,https://www.serebii.net/legendsarceus/items.shtml,1
+1737,en,"An old, stab-bound diary in a traditional style. It has been torn and is missing the latter half of its pages.",research,https://www.serebii.net/legendsarceus/items.shtml,1
+1738,en,A mysterious charm that holds the power to protect a person from being afflicted with status conditions. This type of charm comes in five different colors.,research,https://www.serebii.net/legendsarceus/items.shtml,1
+1739,en,A mysterious charm that holds the power to protect a person from being afflicted with status conditions. This type of charm comes in five different colors.,research,https://www.serebii.net/legendsarceus/items.shtml,1
+1740,en,A mysterious charm that holds the power to protect a person from being afflicted with status conditions. This type of charm comes in five different colors.,research,https://www.serebii.net/legendsarceus/items.shtml,1
+1741,en,A mysterious charm that holds the power to protect a person from being afflicted with status conditions. This type of charm comes in five different colors.,research,https://www.serebii.net/legendsarceus/items.shtml,1
+1742,en,A mysterious charm that holds the power to protect a person from being afflicted with status conditions. This type of charm comes in five different colors.,research,https://www.serebii.net/legendsarceus/items.shtml,1
+1743,en,A fragment that was once part of a stone panel in the Solaceon Ruins. It has markings carved on it that appear to be some kind of writing.,research,https://www.serebii.net/legendsarceus/items.shtml,1
+1744,en,"A favored food of Basculegion, a Pokémon that will bear you on its back. This food is crafted in an unusual way, from ingredients gathered via equally unusual methods.",research,https://www.serebii.net/legendsarceus/items.shtml,1
+1745,en,A stab-bound journal that once had pages torn from it. All the pages have been collected and restored.,research,https://www.serebii.net/legendsarceus/items.shtml,1
+1754,en,"A Berry that can be fed to a Pokémon to restore its PP. If a wild Pokémon eats one of these Berries, that Pokémon's reactions will be dulled.",research,https://www.serebii.net/legendsarceus/items.shtml,1
+1759,en,"Mysterious dust that can raise the effort level for one of a Pokémon's stats. It can be used to raise effort levels only up to level three, however.",research,https://www.serebii.net/legendsarceus/items.shtml,1
+1760,en,Mysterious gravel that can raise the effort level for one of a Pokémon's stats. It can be used only if the effort level is at least level three and no greater than level five.,research,https://www.serebii.net/legendsarceus/items.shtml,1
+1761,en,A mysterious pebble that can raise the effort level for one of a Pokémon's stats. It can be used only if the effort level is at least level six and no greater than level eight.,research,https://www.serebii.net/legendsarceus/items.shtml,1
+1762,en,A mysterious rock that can raise the effort level for one of a Pokémon's stats. It can be used only if the effort level has already reached level nine.,research,https://www.serebii.net/legendsarceus/items.shtml,1
+1764,en,A mysterious charm that tends to be lost before any other item when you faint in the field. This type of charm comes in five different colors.,research,https://www.serebii.net/legendsarceus/items.shtml,1
+1765,en,A satchel that someone dropped.,research,https://www.serebii.net/legendsarceus/items.shtml,1
+1771,en,A singular and irreplicable Poké Ball that can be used to catch the frenzied Pokémon raging at the Temple of Sinnoh.,research,https://www.serebii.net/legendsarceus/items.shtml,1
+1776,en,"An ore of mysterious power, spoken of in ancient myths and said to contain the power of almighty Sinnoh itself.",research,https://www.serebii.net/legendsarceus/items.shtml,1
+1777,en,"When used on Dialga, this large, glowing gem wells with power and allows the Pokémon to change form.",research,https://www.serebii.net/legendsarceus/items.shtml,1
+1778,en,"When used on Palkia, this large, glowing orb wells with power and allows the Pokémon to change form.",research,https://www.serebii.net/legendsarceus/items.shtml,1
+1779,en,"When used on Giratina, this large, glowing gem wells with power and allows the Pokémon to change form.",research,https://www.serebii.net/legendsarceus/items.shtml,1
+1780,en,"A stone tablet imbued with the essence of normalcy. When used on a certain Pokémon, it allows that Pokémon to gain the power of the Normal type.",research,https://www.serebii.net/legendsarceus/items.shtml,1
+1782,en,"A kit containing everything you might need for crafting, even when there is no workbench around. However, you can only use the materials you have in your satchel.",research,https://www.serebii.net/legendsarceus/items.shtml,1
+1787,en,"Part of a series of old poems that have been unearthed around the Hisui region. Judging from the handwriting, it appears they were all written by the same person.",research,https://www.serebii.net/legendsarceus/items.shtml,1
+1788,en,"Part of a series of old poems that have been unearthed around the Hisui region. Judging from the handwriting, it appears they were all written by the same person.",research,https://www.serebii.net/legendsarceus/oldverse.shtml,1
+1789,en,"Part of a series of old poems that have been unearthed around the Hisui region. Judging from the handwriting, it appears they were all written by the same person.",research,https://www.serebii.net/legendsarceus/oldverse.shtml,1
+1790,en,"Part of a series of old poems that have been unearthed around the Hisui region. Judging from the handwriting, it appears they were all written by the same person.",research,https://www.serebii.net/legendsarceus/oldverse.shtml,1
+1792,en,"Part of a series of old poems that have been unearthed around the Hisui region. Judging from the handwriting, it appears they were all written by the same person.",research,https://www.serebii.net/legendsarceus/oldverse.shtml,1
+1793,en,"Part of a series of old poems that have been unearthed around the Hisui region. Judging from the handwriting, it appears they were all written by the same person.",research,https://www.serebii.net/legendsarceus/oldverse.shtml,1
+1794,en,"Part of a series of old poems that have been unearthed around the Hisui region. Judging from the handwriting, it appears they were all written by the same person.",research,https://www.serebii.net/legendsarceus/oldverse.shtml,1
+1795,en,"Part of a series of old poems that have been unearthed around the Hisui region. Judging from the handwriting, it appears they were all written by the same person.",research,https://www.serebii.net/legendsarceus/oldverse.shtml,1
+1796,en,"Part of a series of old poems that have been unearthed around the Hisui region. Judging from the handwriting, it appears they were all written by the same person.",research,https://www.serebii.net/legendsarceus/oldverse.shtml,1
+1797,en,"Part of a series of old poems that have been unearthed around the Hisui region. Judging from the handwriting, it appears they were all written by the same person.",research,https://www.serebii.net/legendsarceus/items.shtml,1
+1798,en,"Part of a series of old poems that have been unearthed around the Hisui region. Judging from the handwriting, it appears they were all written by the same person.",research,https://www.serebii.net/legendsarceus/oldverse.shtml,1
+1799,en,"Part of a series of old poems that have been unearthed around the Hisui region. Judging from the handwriting, it appears they were all written by the same person.",research,https://www.serebii.net/legendsarceus/oldverse.shtml,1
+1800,en,"Part of a series of old poems that have been unearthed around the Hisui region. Judging from the handwriting, it appears they were all written by the same person.",research,https://www.serebii.net/legendsarceus/oldverse.shtml,1
+1801,en,"Part of a series of old poems that have been unearthed around the Hisui region. Judging from the handwriting, it appears they were all written by the same person.",research,https://www.serebii.net/legendsarceus/oldverse.shtml,1
+1802,en,"Part of a series of old poems that have been unearthed around the Hisui region. Judging from the handwriting, it appears they were all written by the same person.",research,https://www.serebii.net/legendsarceus/oldverse.shtml,1
+1803,en,"Part of a series of old poems that have been unearthed around the Hisui region. Judging from the handwriting, it appears they were all written by the same person.",research,https://www.serebii.net/legendsarceus/oldverse.shtml,1
+1804,en,"Part of a series of old poems that have been unearthed around the Hisui region. Judging from the handwriting, it appears they were all written by the same person.",research,https://www.serebii.net/legendsarceus/oldverse.shtml,1
+1805,en,"Part of a series of old poems that have been unearthed around the Hisui region. Judging from the handwriting, it appears they were all written by the same person.",research,https://www.serebii.net/legendsarceus/oldverse.shtml,1
+1806,en,"Part of a series of old poems that have been unearthed around the Hisui region. Judging from the handwriting, it appears they were all written by the same person.",research,https://www.serebii.net/legendsarceus/oldverse.shtml,1
+1807,en,"Part of a series of old poems that have been unearthed around the Hisui region. Judging from the handwriting, it appears they were all written by the same person.",research,https://www.serebii.net/legendsarceus/oldverse.shtml,1
+1808,en,"A small shard that emanates an enigmatic power. Inside the shard, you can see a pattern that looks like Ramanas roses.",research,https://www.serebii.net/brilliantdiamondshiningpearl/items.shtml,1
+1809,en,"A large shard that emanates an enigmatic power. Inside the shard, you can see a pattern that looks like Ramanas roses.",research,https://www.serebii.net/brilliantdiamondshiningpearl/items.shtml,1
+1810,en,A single-use drill to bore a hole in the wall for your Secret Base.,research,https://www.serebii.net/itemdex/diggerdrill.shtml,1
+1813,en,A slate overflowing with enigmatic energy. You can feel a strong connection between it and the Soul Room at Ramanas Park.,research,https://www.serebii.net/itemdex/soulslate.shtml,1
+1815,en,A slate overflowing with enigmatic energy. You can feel a strong connection between it and the Squall Room at Ramanas Park.,research,https://www.serebii.net/itemdex/squallslate.shtml,1
+1816,en,A slate overflowing with enigmatic energy. You can feel a strong connection between it and the Oceanic Room at Ramanas Park.,research,https://www.serebii.net/brilliantdiamondshiningpearl/items.shtml,1
+1817,en,A slate overflowing with enigmatic energy. You can feel a strong connection between it and the Tectonic Room at Ramanas Park.,research,https://www.serebii.net/brilliantdiamondshiningpearl/items.shtml,1
+1818,en,A slate overflowing with enigmatic energy. You can feel a strong connection between it and the Stratospheric Room at Ramanas Park.,research,https://www.serebii.net/brilliantdiamondshiningpearl/items.shtml,1
+1819,en,A slate overflowing with enigmatic energy. You can feel a strong connection between it and the Genome Room at Ramanas Park.,research,https://www.serebii.net/itemdex/genomeslate.shtml,1
+1820,en,A slate overflowing with enigmatic energy. You can feel a strong connection between it and the Discovery Room at Ramanas Park.,research,https://www.serebii.net/itemdex/discoveryslate.shtml,1
+1821,en,A slate overflowing with enigmatic energy. You can feel a strong connection between it and the Distortion Room at Ramanas Park.,research,https://www.serebii.net/itemdex/distortionslate.shtml,1
+1822,en,A music player that allows you to listen to nostalgic songs. It's operated with the flip of a single switch.,research,https://www.serebii.net/itemdex/dssounds.shtml,1
+1828,en,"A stone tablet imbued with the essence of all creation. When used on a certain Pokémon, it allows that Pokémon to gain the power of every type there is.",research,https://www.serebii.net/legendsarceus/items.shtml,1
+1829,en,"The latest model of smartphone. A Pokémon called Rotom lives within it, and it can be used to run all sorts of handy apps.",research,https://www.serebii.net/scarletviolet/items.shtml,1
+1830,en,"A dish made by sandwiching vegetables, meat, or other ingredients between two pieces of bread. It makes a fantastic meal when out on a picnic.",research,https://www.serebii.net/scarletviolet/items.shtml,1
+1831,en,A Poké Ball that can hold the mysterious Pokémon known as Koraidon. A boy named Arven gave it to you.,research,https://www.serebii.net/scarletviolet/items.shtml,1
+1832,en,A Poke Ball that can hold the mysterious Pokémon known as Miraidon. A boy named Arven gave it to you.,research,https://www.serebii.net/scarletviolet/items.shtml,1
+1833,en,"An orb that holds within it the power to crystallize. When it is charged with energy, it can be used to cause Pokémon to Terastallize.",research,https://www.serebii.net/itemdex/teraorb.shtml,1
+1834,en,"A record of the expedition that the author, Heath, went on within the Great Crater of Paldea. The book has the name “Sada” written on it in clumsy handwriting.",research,https://www.serebii.net/scarletviolet/items.shtml,1
+1835,en,"A record of the expedition that the author, Heath, went on within the Great Crater of Paldea. The book has the name “Turo” written on it in clumsy handwriting.",research,https://www.serebii.net/scarletviolet/items.shtml,1
+1836,en,"A wallet that was left behind by Kofu, the Gym Leader at the Cascarrafa Gym. You're to deliver it to him at the market in Porto Marinada.",research,https://www.serebii.net/scarletviolet/items.shtml,1
+1842,en,A small and rare bamboo shoot. It's quite popular with a certain class of gourmands.,research,https://www.serebii.net/scarletviolet/items.shtml,1
+1843,en,A large and rare bamboo shoot. It's extremely popular with a certain class of gourmands.,research,https://www.serebii.net/scarletviolet/items.shtml,1
+1857,en,A peculiar scroll that can make a certain species of Pokémon evolve. Written upon it are the true secrets of the path of darkness.,research,https://www.serebii.net/scarletviolet/items.shtml,1
+1858,en,A peculiar scroll that can make a certain species of Pokémon evolve. Written upon it are the true secrets of the path of water.,research,https://www.serebii.net/scarletviolet/items.shtml,1
+1862,en,"On rare occasions, these shards form when a Tera Pokémon falls in battle and its Tera Jewel shatters.",research,https://www.serebii.net/scarletviolet/items.shtml,1
+1863,en,"On rare occasions, these shards form when a Tera Pokémon falls in battle and its Tera Jewel shatters.",research,https://www.serebii.net/itemdex/fireterashard.shtml,1
+1864,en,"On rare occasions, these shards form when a Tera Pokémon falls in battle and its Tera Jewel shatters.",research,https://www.serebii.net/scarletviolet/items.shtml,1
+1865,en,"On rare occasions, these shards form when a Tera Pokémon falls in battle and its Tera Jewel shatters.",research,https://www.serebii.net/itemdex/electricterashard.shtml,1
+1866,en,"On rare occasions, these shards form when a Tera Pokémon falls in battle and its Tera Jewel shatters.",research,https://www.serebii.net/scarletviolet/items.shtml,1
+1867,en,"On rare occasions, these shards form when a Tera Pokémon falls in battle and its Tera Jewel shatters.",research,https://www.serebii.net/scarletviolet/items.shtml,1
+1868,en,"On rare occasions, these shards form when a Tera Pokémon falls in battle and its Tera Jewel shatters.",research,https://www.serebii.net/itemdex/fightingterashard.shtml,1
+1869,en,"On rare occasions, these shards form when a Tera Pokémon falls in battle and its Tera Jewel shatters.",research,https://bulbapedia.bulbagarden.net/wiki/Poison_Tera_Shard,1
+1870,en,"On rare occasions, these shards form when a Tera Pokémon falls in battle and its Tera Jewel shatters.",research,https://www.serebii.net/scarletviolet/items.shtml,1
+1871,en,"On rare occasions, these shards form when a Tera Pokémon falls in battle and its Tera Jewel shatters.",research,https://www.serebii.net/itemdex/flyingterashard.shtml,1
+1872,en,"On rare occasions, these shards form when a Tera Pokémon falls in battle and its Tera Jewel shatters.",research,https://bulbapedia.bulbagarden.net/wiki/Tera_Shard,1
+1873,en,"On rare occasions, these shards form when a Tera Pokémon falls in battle and its Tera Jewel shatters.",research,https://www.serebii.net/scarletviolet/items.shtml,1
+1875,en,"On rare occasions, these shards form when a Tera Pokémon falls in battle and its Tera Jewel shatters.",research,https://www.serebii.net/itemdex/ghostterashard.shtml,1
+1876,en,"On rare occasions, these shards form when a Tera Pokémon falls in battle and its Tera Jewel shatters.",research,https://www.serebii.net/itemdex/dragonterashard.shtml,1
+1877,en,"On rare occasions, these shards form when a Tera Pokémon falls in battle and its Tera Jewel shatters.",research,https://www.serebii.net/itemdex/darkterashard.shtml,1
+1878,en,"On rare occasions, these shards form when a Tera Pokémon falls in battle and its Tera Jewel shatters.",research,https://www.serebii.net/scarletviolet/items.shtml,1
+1879,en,"On rare occasions, these shards form when a Tera Pokémon falls in battle and its Tera Jewel shatters.",research,https://www.serebii.net/itemdex/fairyterashard.shtml,1
+1880,en,An item to be held by Pokémon with certain Abilities. The energy that fills this capsule boosts the strength of the Pokémon.,research,https://www.serebii.net/scarletviolet/items.shtml,1
+1881,en,An item to be held by a Pokémon. This cute and rather unique-looking shield protects the holder from having its Ability changed by others.,research,https://www.serebii.net/scarletviolet/items.shtml,1
+1882,en,"An item to be held by a Pokémon. This clear, sparkling amulet protects the holder from having its stats lowered by moves used against it or by other Pokémon's Abilities.",research,https://www.serebii.net/scarletviolet/items.shtml,1
+1883,en,An item to be held by a Pokémon. This herb will allow the holder to mirror an opponent's stat increases to boost its own stats—but only once.,research,https://www.serebii.net/scarletviolet/items.shtml,1
+1884,en,An item to be held by a Pokémon. This protective glove boosts the power of the holder's punching moves and prevents direct contact with targets.,research,https://www.serebii.net/scarletviolet/newitems.shtml,1
+1885,en,"An item to be held by a Pokémon. This hooded cloak conceals the holder, tricking the eyes of its enemies and protecting it from the additional effects of moves.",research,https://www.serebii.net/scarletviolet/items.shtml,1
+1886,en,"An item to be held by a Pokémon. This loaded dice always rolls a good number, and holding one can ensure that the holder's multistrike moves hit more times.",research,https://www.serebii.net/scarletviolet/items.shtml,1
+1888,en,"A long loaf sliced into top and bottom halves. Its aroma of wheat and its straightforward, salty flavor make it pair well with all kinds of sandwich ingredients.",research,https://www.serebii.net/itemdex/list/ingredient.shtml,1
+1889,en,A condiment that packs a very tart punch yet pairs well with various ingredients.,research,https://www.serebii.net/scarletviolet/items.shtml,1
+1890,en,"A condiment with very salty and tart flavor. While a number of other ingredients go into its signature flavor, the noble tomato is its heart and soul.",research,https://www.serebii.net/itemdex/list/ingredient.shtml,1
+1891,en,A very spicy condiment that's indispensable when bread is on the table. It pairs tremendously with ketchup.,research,https://www.serebii.net/scarletviolet/items.shtml,1
+1892,en,A condiment that unites salty and sweet and also packs a richness that makes bread a delight to eat. The finest butter products are made of 100 percent Moomoo Milk.,research,https://www.serebii.net/scarletviolet/items.shtml,1
+1893,en,A very sweet condiment. People in Paldea seem to favor the sweet varieties over the unsweetened.,research,https://www.serebii.net/scarletviolet/items.shtml,1
+1894,en,A condiment with a very spicy kick. It's thanks to Scovillain that this sauce gets its signature mouth- tingling burn.,research,https://www.serebii.net/scarletviolet/items.shtml,1
+1895,en,A seasoning that adds saltiness to sandwiches.,research,https://www.serebii.net/scarletviolet/items.shtml,1
+1896,en,A seasoning packing very spicy flavor. It goes nicely with oilier foods and works especially well when you add just a pinch for a hint of flavor.,research,https://www.serebii.net/scarletviolet/items.shtml,1
+1897,en,A condiment that's very sweet and very sour. It goes especially well with fruit and is easy to incorporate into a sandwich.,research,https://www.serebii.net/itemdex/yogurt.shtml,1
+1898,en,A very sweet condiment. Folks in Paldea seem to love the varieties that really let the sweetness sing.,research,https://www.serebii.net/scarletviolet/items.shtml,1
+1899,en,"A condiment offering very sweet and very tart flavor. It goes well with more ingredients than you’d expect, making it a convenient go-to.",research,https://www.serebii.net/scarletviolet/items.shtml,1
+1900,en,"A condiment that's very sweet and likewise very sour. Take care when adding it to sandwiches, as the sweet side can overwhelm.",research,https://www.serebii.net/itemdex/list/ingredient.shtml,1
+1901,en,"A condiment with sour and bitter notes. It's surprisingly useful, as it makes a nice counterpoint to oilier foods.",research,https://www.serebii.net/scarletviolet/items.shtml,1
+1902,en,A condiment offering faint notes of sour and bitter flavors. The most prized varieties are the ones Smoliv love the smell of—such oils' quality is assured.,research,https://www.serebii.net/scarletviolet/items.shtml,1
+1903,en,A very sour condiment. Vinegars derived from grapes are popular in Paldea. Highly effective when used to add just a light note of flavor.,research,https://www.serebii.net/scarletviolet/items.shtml,1
+1904,en,A legendary condiment told of only in books. Word has it that one taste of its sweet flavor stimulates the digestive system and cures a lack of appetite.,research,https://www.serebii.net/itemdex/sweetherbamystica.shtml,1
+1905,en,A legendary condiment told of only in books. Word has it that one taste of its salty flavor stimulates the digestive system and cures a lack of appetite.,research,https://www.serebii.net/scarletviolet/items.shtml,1
+1907,en,"A legendary condiment with a deeply bitter taste. It's said to dramatically bolster a body's immune defenses, though that hasn't been proven.",research,https://www.serebii.net/scarletviolet/items.shtml,1
+1909,en,This bitter-tasting ingredient is simple and straightforward—just add it to all kinds of other ingredients for a delightfully crunchy time.,research,https://www.serebii.net/itemdex/list/ingredient.shtml,1
+1910,en,"This very tart ingredient has a lot of savory elements to it, making it popular with many Pokémon.",research,https://www.serebii.net/scarletviolet/items.shtml,1
+1911,en,"A very tart ingredient. Some varieties are also very sweet, and these are prized above all others by the people of Paldea.",research,https://www.serebii.net/scarletviolet/items.shtml,1
+1912,en,A tart and bitter ingredient. Using it together with rich-tasting ingredients in a sandwich will really make the most of a cucumber’s fresh-veggie aroma.,research,https://www.serebii.net/scarletviolet/items.shtml,1
+1913,en,This very sour ingredient is made by pickling veggies in a flavorful brine made from spices and vinegar.,research,https://www.serebii.net/scarletviolet/items.shtml,1
+1914,en,This spicy veggie is indispensable to many sandwiches. It goes well with rich ingredients.,research,https://www.serebii.net/scarletviolet/items.shtml,1
+1915,en,"An ingredient with some sweetness to it. Its spiciness and fragrance are milder than those of other onions, making it a pleasant bite.",research,https://www.serebii.net/itemdex/list/ingredient.shtml,1
+1916,en,"An ingredient with some bitterness. When sliced, it adds a nice accent to a sandwich.",research,https://www.serebii.net/scarletviolet/items.shtml,1
+1917,en,An ingredient with some bitterness—but its bitter notes and overall flavor are pleasantly mild compared to its green cousin.,research,https://www.serebii.net/itemdex/list/ingredient.shtml,1
+1918,en,"An ingredient with some bitterness. It's not much different from its red counterpart in flavor, but mixing the colors makes a feast for the eyes.",research,https://www.serebii.net/scarletviolet/items.shtml,1
+1919,en,"An ingredient with sweet notes—though its flavor is very mild. The avocado's richness, however, makes it satisfying to eat.",research,https://www.serebii.net/scarletviolet/items.shtml,1
+1920,en,"This very salty ingredient has been cooked just shy of charred, making it burst with fragrance and tasty flavor.",research,https://www.serebii.net/scarletviolet/items.shtml,1
+1921,en,A very salty ingredient—and that very saltiness is what makes it such a nice companion to veggies.,research,https://www.serebii.net/scarletviolet/items.shtml,1
+1922,en,"This ingredient is very salty like regular ham, but the difference is prosciutto is not cooked after it is cured, giving it a fun freshness.",research,https://www.serebii.net/itemdex/list/ingredient.shtml,1
+1923,en,"A very salty and spicy ingredient. This type of sausage has particularly robust salty flavor, and the spicier varieties are extra popular.",research,https://www.serebii.net/scarletviolet/items.shtml,1
+1924,en,A very salty and bitter ingredient. The balance between the potent saltiness and the herbs' bitterness make this sausage a pleasure.,research,https://www.serebii.net/itemdex/list/ingredient.shtml,1
+1925,en,This very salty ingredient is the thing to add if you want to make your sandwich truly filling.,research,https://www.serebii.net/itemdex/list/ingredient.shtml,1
+1926,en,A very sweet and salty ingredient. It's a nutritious processed food made with a concentrate derived from shed Klawf shells.,research,https://www.serebii.net/itemdex/list/ingredient.shtml,1
+1927,en,A very salty and bitter ingredient with that unmistakable smoky flavor. It pairs exceptionally well with veggies.,research,https://www.serebii.net/itemdex/list/ingredient.shtml,1
+1928,en,"When used in a sandwich, this very salty and bitter ingredient is at its best paired with sour seasonings.",research,https://www.serebii.net/itemdex/friedfillet.shtml,1
+1929,en,An ingredient with a touch of saltiness. It's full of nutrients and can be enjoyed with all sorts of seasonings.,research,https://www.serebii.net/itemdex/egg.shtml,1
+1930,en,A very salty ingredient and a popular dish in Paldea. It's undeniably filling.,research,https://www.serebii.net/itemdex/list/ingredient.shtml,1
+1931,en,An ingredient with a touch of sweetness. It's unclear how well this raw block of tofu will serve as a sandwich filling.,research,https://www.serebii.net/scarletviolet/items.shtml,1
+1932,en,A nice salty ingredient. It’s unclear how well these boiled grains will serve as a sandwich filling.,research,https://www.serebii.net/scarletviolet/items.shtml,1
+1933,en,A nice salty ingredient. It's unclear how well these boiled noodles will serve as a sandwich filling.,research,https://www.serebii.net/scarletviolet/items.shtml,1
+1934,en,This very tart ingredient—a soft salad that's all about potatoes—pairs tremendously well with bread.,research,https://www.serebii.net/itemdex/list/ingredient.shtml,1
+1935,en,A very salty ingredient. This thinly sliced cheese is perfect for adding to a sandwich.,research,https://www.serebii.net/scarletviolet/items.shtml,1
+1936,en,"A very sweet ingredient. This go-to fruit is sweet and rich, and it's beloved by many Pokémon.",research,https://www.serebii.net/scarletviolet/items.shtml,1
+1937,en,"A very tart and sweet ingredient, popular for its ability to make a sandwich visually striking.",research,https://www.serebii.net/itemdex/strawberry.shtml,1
+1938,en,This very sweet ingredient is sliced thin to make it easy to add into a sandwich.,research,https://www.serebii.net/scarletviolet/items.shtml,1
+1939,en,A very tart ingredient that has a light touch of sweetness as well. It goes well with rich ingredients.,research,https://www.serebii.net/itemdex/list/ingredient.shtml,1
+1940,en,"This very tart ingredient is a fruit of southern lands, and its color and texture are a thrill. It's been cut into chunks to be easily manageable.",research,https://www.serebii.net/itemdex/list/ingredient.shtml,1
+1941,en,A very spicy ingredient—so spicy as to leave no room for ambivalence about it. You either like it or you don't.,research,https://www.serebii.net/itemdex/list/ingredient.shtml,1
+1942,en,A very spicy condiment. Its distinctive sharp sizzle in your sinuses makes it a good match for rich fillings.,research,https://www.serebii.net/itemdex/list/ingredient.shtml,1
+1943,en,"A very spicy condiment. Just watch out—use too much of this potent seasoning, and it’ll cancel out the other flavors.",research,https://www.serebii.net/scarletviolet/items.shtml,1
+1944,en,"This very spicy condiment seems close to horseradish at first, but you'll find that it has a superb flavor all its own.",research,https://www.serebii.net/scarletviolet/items.shtml,1
+1945,en,A very bitter ingredient that stands out among veggies for its quirky flavor. People tend to either like it or not like it—they rarely sit on the fence.,research,https://www.serebii.net/scarletviolet/items.shtml,1
+1946,en,"A very bitter ingredient that's quite versatile, as herbs go. It's fragrant and goes well with tomatoes.",research,https://www.serebii.net/scarletviolet/items.shtml,1
+1956,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+1957,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/diglettdirt.shtml,1
+1958,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+1959,en,A material obtained from a Pokémon. It can be used to make TMs.,research,https://bulbapedia.bulbagarden.net/wiki/List_of_TMs_in_Pok%C3%A9mon_Scarlet_and_Violet,1
+1960,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+1961,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+1962,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+1963,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+1964,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+1965,en,A material obtained from a Pokémon. It can be used to make TMs.,research,https://bulbapedia.bulbagarden.net/wiki/List_of_TMs_in_Pok%C3%A9mon_Scarlet_and_Violet,1
+1966,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/gastlygas.shtml,1
+1967,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/drowzeefur.shtml,1
+1968,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+1969,en,A material obtained from a Pokémon. It can be used to make TMs.,research,https://bulbapedia.bulbagarden.net/wiki/List_of_TMs_in_Pok%C3%A9mon_Scarlet_and_Violet,1
+1970,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+1971,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+1972,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/dittogoo.shtml,1
+1973,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/eeveefur.shtml,1
+1974,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/dratiniscales.shtml,1
+1975,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+1976,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/scarletviolet/items.shtml,1
+1977,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+1978,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+1979,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+1980,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+1981,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+1982,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/girafarigfur.shtml,1
+1983,en,A material obtained from a Pokémon. It can be used to make TMs.,research,https://bulbapedia.bulbagarden.net/wiki/List_of_TMs_in_Pok%C3%A9mon_Scarlet_and_Violet,1
+1984,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/dunsparcescales.shtml,1
+1985,en,A material obtained from a Pokémon. It can be used to make TMs.,research,https://bulbapedia.bulbagarden.net/wiki/List_of_TMs_in_Pok%C3%A9mon_Scarlet_and_Violet,1
+1986,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+1987,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+1988,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+1989,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/delibirdparcel.shtml,1
+1990,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+1991,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+1992,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+1993,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+1994,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+1995,en,A material obtained from a Pokémon. It can be used to make TMs.,research,https://bulbapedia.bulbagarden.net/wiki/List_of_TMs_in_Pok%C3%A9mon_Scarlet_and_Violet,1
+1996,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+1997,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+1998,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+1999,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+2000,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+2001,en,A material obtained from a Pokémon. It can be used to make TMs.,research,https://bulbapedia.bulbagarden.net/wiki/List_of_TMs_in_Pok%C3%A9mon_Scarlet_and_Violet,1
+2002,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+2003,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+2004,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+2005,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+2006,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+2007,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+2008,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+2009,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/zangooseclaw.shtml,1
+2010,en,A material obtained from a Pokémon. It can be used to make TMs.,research,https://bulbapedia.bulbagarden.net/wiki/List_of_TMs_in_Pok%C3%A9mon_Scarlet_and_Violet,1
+2011,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+2012,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+2013,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+2014,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+2015,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+2016,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+2017,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+2018,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+2019,en,A material obtained from a Pokémon. It can be used to make TMs.,research,https://bulbapedia.bulbagarden.net/wiki/List_of_TMs_in_Pok%C3%A9mon_Scarlet_and_Violet,1
+2020,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+2021,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+2022,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+2023,en,A material obtained from a Pokémon. It can be used to make TMs.,research,https://bulbapedia.bulbagarden.net/wiki/List_of_TMs_in_Pok%C3%A9mon_Scarlet_and_Violet,1
+2024,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/drifloongas.shtml,1
+2025,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+2026,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+2027,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+2028,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+2029,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+2030,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/giblescales.shtml,1
+2031,en,A material obtained from a Pokémon. It can be used to make TMs.,research,https://bulbapedia.bulbagarden.net/wiki/List_of_TMs_in_Pok%C3%A9mon_Scarlet_and_Violet,1
+2032,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+2033,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/croagunkpoison.shtml,1
+2034,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/finneonscales.shtml,1
+2035,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+2036,en,A material obtained from a Pokémon. It can be used to make TMs.,research,https://bulbapedia.bulbagarden.net/wiki/List_of_TMs_in_Pok%C3%A9mon_Scarlet_and_Violet,1
+2037,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+2038,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+2039,en,A material obtained from a Pokémon. It can be used to make TMs.,research,https://bulbapedia.bulbagarden.net/wiki/List_of_TMs_in_Pok%C3%A9mon_Scarlet_and_Violet,1
+2040,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/zoruafur.shtml,1
+2041,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+2042,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/deerlinghair.shtml,1
+2043,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/foongusspores.shtml,1
+2044,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+2045,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+2046,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+2047,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/cubchoofur.shtml,1
+2048,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/cryogonalice.shtml,1
+2049,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+2050,en,A material obtained from a Pokémon. It can be used to make TMs.,research,https://bulbapedia.bulbagarden.net/wiki/List_of_TMs_in_Pok%C3%A9mon_Scarlet_and_Violet,1
+2051,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/deinoscales.shtml,1
+2052,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+2053,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/fletchlingfeather.shtml,1
+2054,en,A material obtained from a Pokémon. It can be used to make TMs.,research,https://bulbapedia.bulbagarden.net/wiki/List_of_TMs_in_Pok%C3%A9mon_Scarlet_and_Violet,1
+2055,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+2056,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/flabebepollen.shtml,1
+2057,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+2058,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+2059,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+2060,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+2061,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/dedennefur.shtml,1
+2062,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+2063,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+2064,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+2065,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+2066,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/yungoosfur.shtml,1
+2067,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+2068,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+2069,en,A material obtained from a Pokémon. It can be used to make TMs.,research,https://bulbapedia.bulbagarden.net/wiki/List_of_TMs_in_Pok%C3%A9mon_Scarlet_and_Violet,1
+2070,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+2071,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+2072,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/fomantisleaf.shtml,1
+2073,en,A material obtained from a Pokémon. It can be used to make TMs.,research,https://bulbapedia.bulbagarden.net/wiki/List_of_TMs_in_Pok%C3%A9mon_Scarlet_and_Violet,1
+2074,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+2075,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+2076,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+2077,en,A material obtained from a Pokémon. It can be used to make TMs.,research,https://bulbapedia.bulbagarden.net/wiki/List_of_TMs_in_Pok%C3%A9mon_Scarlet_and_Violet,1
+2078,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+2079,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+2080,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+2081,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+2082,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+2083,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+2084,en,A material obtained from a Pokémon. It can be used to make TMs.,research,https://bulbapedia.bulbagarden.net/wiki/List_of_TMs_in_Pok%C3%A9mon_Scarlet_and_Violet,1
+2085,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+2086,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/falinkssweat.shtml,1
+2087,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+2088,en,A material obtained from a Pokémon. It can be used to make TMs.,research,https://bulbapedia.bulbagarden.net/wiki/List_of_TMs_in_Pok%C3%A9mon_Scarlet_and_Violet,1
+2089,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+2090,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+2091,en,A material obtained from a Pokémon. It can be used to make TMs.,research,https://bulbapedia.bulbagarden.net/wiki/List_of_TMs_in_Pok%C3%A9mon_Scarlet_and_Violet,1
+2092,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+2093,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+2094,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+2095,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+2096,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+2097,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+2098,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/eiscuedown.shtml,1
+2099,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/dreepypowder.shtml,1
+2103,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+2104,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+2105,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+2106,en,A material obtained from a Pokémon. It can be used to make TMs.,research,https://bulbapedia.bulbagarden.net/wiki/List_of_TMs_in_Pok%C3%A9mon_Scarlet_and_Violet,1
+2107,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+2108,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/flittledown.shtml,1
+2109,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+2110,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/dondozowhisker.shtml,1
+2111,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+2112,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/finizenmucus.shtml,1
+2113,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+2114,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+2115,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+2116,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+2117,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+2118,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+2119,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+2120,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/frigibaxscales.shtml,1
+2121,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+2122,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/cyclizarscales.shtml,1
+2123,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+2126,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+2127,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+2128,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+2129,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/flamigodown.shtml,1
+2130,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+2131,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+2132,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+2133,en,A material obtained from a Pokémon. It can be used to make TMs.,research,https://bulbapedia.bulbagarden.net/wiki/List_of_TMs_in_Pok%C3%A9mon_Scarlet_and_Violet,1
+2134,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/fidoughfur.shtml,1
+2135,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+2136,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+2137,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+2156,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+2157,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+2158,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+2159,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+2313,en,"A bottle emblazoned with the academy's emblem. It's light, sturdy, and vacuum insulated, so it'll keep your hots hot and your colds cold.",research,https://www.serebii.net/scarletviolet/picnic.shtml,1
+2315,en,"A polka-dot-patterned bottle that’s small, light, and even comes with a cup. The detachable strap makes it handy for walking around with.",research,https://www.gamerguides.com/pokemon-scarlet-and-violet/database/picnic-items/picnics,0
+2316,en,"A striped bottle that's small, light, and even comes with a cup. The detachable strap makes it handy for walking around with.",research,https://www.serebii.net/scarletviolet/picnic.shtml,1
+2317,en,"A diamond-patterned bottle that's small, light, and even comes with a cup. The detachable strap makes it handy for walking around with.",research,https://www.serebii.net/scarletviolet/picnic.shtml,1
+2318,en,The academy's standard-issue cup for picnicking. The careful design of its mouth makes it popular both inside and outside the academy.,research,https://www.serebii.net/scarletviolet/picnic.shtml,1
+2321,en,"A cup for kids to use at picnics. It’s made of light but strong material. It’s stackable, which makes it handy for carrying around.",research,https://www.gamerguides.com/pokemon-scarlet-and-violet/database/picnic-items/picnics,0
+2322,en,"A cup that's as good for using at home as on a picnic. It's light, sturdy, and stacks well, so it's a cinch to pack up and carry around.",research,https://www.serebii.net/scarletviolet/picnic.shtml,1
+2323,en,The academy's standard-issue tablecloth. It's made with the latest fiber-processing technology and is so tough that not even a Razor Claw can tear it.,research,https://www.serebii.net/scarletviolet/picnic.shtml,1
+2325,en,A tablecloth made in collaboration with a popular picture-book author. The gently drawn Pokémon make even the loveliest picnic table more charming.,research,https://www.serebii.net/scarletviolet/picnic.shtml,1
+2326,en,A botanically themed tablecloth featuring Grass-type Pokémon. Can you find the Pokémon that doesn't quite fit in?,research,https://www.serebii.net/scarletviolet/picnic.shtml,1
+2327,en,A pop-art-style tablecloth with Pokémon faces floating up from the deep nighttime blue. This is a must-have for fans of Ghost types.,research,https://www.serebii.net/scarletviolet/picnic.shtml,1
+2329,en,"The academy's standard-issue ball in a regulation size. Lots of students believe that if you kick it right on the academy emblem, it'll fly in a straight line.",research,https://www.serebii.net/scarletviolet/picnic.shtml,1
+2331,en,A Marill-themed ball. It's soft and springy. Make sure you haven't mistaken a real Marill for this ball before throwing.,research,https://www.serebii.net/scarletviolet/picnic.shtml,1
+2332,en,"A small ball of yarn. It's woven tight so as not to unravel, but even if it were to come undone, at least you could still use the yarn for something.",research,https://www.serebii.net/scarletviolet/picnic.shtml,1
+2333,en,"A ball themed after hardcore gaming PCs. It may not light up like its inspiration, but it still stands out.",research,https://www.serebii.net/itemdex/cyberball.shtml,1
+2344,en,A peculiar set of armor that can make a certain species of Pokémon evolve. Auspicious wishes live within it.,research,https://www.serebii.net/legendsz-a/items.shtml,1
+2348,en,A go-to bottle widely used for drinks at picnics. Its simple design and portability make it popular among all sorts of people.,research,https://www.gamerguides.com/pokemon-scarlet-and-violet/database/picnic-items/picnics,0
+2349,en,A go-to bottle widely used for drinks at picnics. Its simple design and portability make it popular among all sorts of people.,research,https://www.serebii.net/scarletviolet/picnic.shtml,1
+2350,en,A go-to bottle widely used for drinks at picnics. Its simple design and portability make it popular among all sorts of people.,research,https://www.serebii.net/scarletviolet/picnic.shtml,1
+2351,en,"A go-to bottle sometimes used while camping. The stainless steel keeps the temperature inside steady, making it great for keeping drinks hot or cold.",research,https://www.serebii.net/scarletviolet/picnic.shtml,1
+2352,en,"A go-to bottle sometimes used while camping. The stainless steel keeps the temperature inside steady, making it great for keeping drinks hot or cold.",research,https://www.serebii.net/scarletviolet/picnic.shtml,1
+2353,en,"A go-to bottle sometimes used while camping. The stainless steel keeps the temperature inside steady, making it great for keeping drinks hot or cold.",research,https://www.serebii.net/scarletviolet/picnic.shtml,1
+2354,en,"A popular option among hikers. It's made with titanium, so it doesn't rust even if it's used to hold drinks with high sodium content.",research,https://www.serebii.net/scarletviolet/picnic.shtml,1
+2357,en,"A cup that's as good for using at home as on a picnic. It's light, sturdy, and stacks well, so it's a cinch to pack up and carry around.",research,https://www.serebii.net/scarletviolet/picnic.shtml,1
+2358,en,"A cup sold with the Pink Bottle. The two don’t stack, so they’re tough to pack—but they look good, so they’re popular with those who like to post picnic photos.",research,https://www.gamerguides.com/pokemon-scarlet-and-violet/database/picnic-items/picnics,0
+2360,en,"A cup sold with the Yellow Bottle. The two don’t stack, so they’re tough to pack—but they look good, so they’re popular with those who like to post picnic photos.",research,https://www.gamerguides.com/pokemon-scarlet-and-violet/database/picnic-items/picnics,0
+2361,en,"A cup for big-time Pokémon fans. Kids will happily drink out of it, making it a boon to parents.",research,https://bulbapedia.bulbagarden.net/wiki/Pikachu_Cup,1
+2362,en,"A cup for big-time Pokémon fans. Kids will happily drink out of it, making it a boon to parents.",research,https://www.serebii.net/itemdex/eeveecup.shtml,1
+2363,en,"A cup for big-time Pokémon fans. Kids will happily drink out of it, making it a boon to parents.",research,https://www.serebii.net/scarletviolet/picnic.shtml,1
+2364,en,"A popular option among hikers. It's made with titanium, so it doesn't rust even if it's used to hold drinks with high sodium content.",research,https://www.serebii.net/scarletviolet/picnic.shtml,1
+2365,en,"A big ball designed for exercising. It can work as a seat if you get tired, too.",research,https://www.serebii.net/itemdex/exerciseball.shtml,1
+2366,en,A sturdy tablecloth made of thick fabric. The cheery yellow plaid brightens up a table.,research,https://www.serebii.net/scarletviolet/picnic.shtml,1
+2367,en,A sturdy tablecloth made of thick fabric. The gentle blue plaid gives a table a crisp look.,research,https://www.serebii.net/scarletviolet/picnic.shtml,1
+2368,en,A sturdy tablecloth made of thick fabric. The quietly composed red plaid gives the table some flair.,research,https://www.serebii.net/scarletviolet/picnic.shtml,1
+2369,en,"A tablecloth with a fun, trendy black-and-white design featuring Pokémon that seem poised to leap from the tall grass at any moment.",research,https://www.serebii.net/scarletviolet/picnic.shtml,1
+2370,en,"A garish, eye-catching tablecloth. Putting this on your picnic table will inspire any person or Pokémon who eats there to do their best.",research,https://www.serebii.net/scarletviolet/picnic.shtml,1
+2371,en,A tablecloth designed by the Pewter Museum of Science. The academic air of the pattern is a big hit with kids and adults alike.,research,https://www.serebii.net/scarletviolet/picnic.shtml,1
+2372,en,"A tablecloth with a fashionable striped pattern. It's great at repelling water and mold, and stains and smudges wipe right off.",research,https://www.serebii.net/scarletviolet/picnic.shtml,1
+2373,en,"A tablecloth with a fashionable diamond pattern. It's great at repelling water and mold, and stains and smudges wipe right off.",research,https://www.serebii.net/scarletviolet/picnic.shtml,1
+2374,en,"A tablecloth with a fashionable polka-dot pattern. It’s great at repelling water and mold, and stains and smudges wipe right off.",research,https://www.gamerguides.com/pokemon-scarlet-and-violet/database/picnic-items/picnics,0
+2375,en,"A light purple tablecloth. It's smooth and pleasant to the touch, and dishes can be placed on it with hardly a sound.",research,https://www.serebii.net/scarletviolet/picnic.shtml,1
+2376,en,"A light mint-colored tablecloth. It's smooth and pleasant to the touch, and dishes can be placed on it with hardly a sound.",research,https://www.serebii.net/scarletviolet/picnic.shtml,1
+2377,en,"A light peach-colored tablecloth. It's smooth and pleasant to the touch, and dishes can be placed on it with hardly a sound.",research,https://www.serebii.net/scarletviolet/picnic.shtml,1
+2378,en,"A simple yellow tablecloth. It’s smooth and pleasant to the touch, and dishes can be placed on it with hardly a sound.",research,https://www.serebii.net/scarletviolet/picnic.shtml,1
+2379,en,"A simple blue tablecloth. It's smooth and pleasant to the touch, and dishes can be placed on it with hardly a sound.",research,https://www.serebii.net/scarletviolet/picnic.shtml,1
+2380,en,"A simple pink tablecloth. It’s smooth and pleasant to the touch, and dishes can be placed on it with hardly a sound.",research,https://www.gamerguides.com/pokemon-scarlet-and-violet/database/picnic-items/picnics,0
+2398,en,A dish for picnics. Comes in plenty of colors to choose from based on the food or the mood. The red variety never fails to sell well.,research,https://www.gamerguides.com/pokemon-scarlet-and-violet/database/picnic-items/picnics,0
+2400,en,A dish for picnics. Comes in plenty of colors to choose from based on the food or the mood. The yellow variety is impossible to go wrong with.,research,https://www.gamerguides.com/pokemon-scarlet-and-violet/database/picnic-items/picnics,0
+2401,en,"An item to be held by a Pokémon. This feather, which gleams faintly when hit by light, boosts the power of the holder's Fairy-type moves.",research,https://www.serebii.net/legendsz-a/items.shtml,1
+2402,en,A peculiar apple that can make a certain species of Pokémon evolve. It's exceptionally syrupy.,research,https://www.serebii.net/itemdex/syrupyapple.shtml,1
+2403,en,"A peculiar teacup that can make a certain species of Pokémon evolve. It may be cracked, but tea drunk from it is delicious.",research,https://www.serebii.net/scarletviolet/items.shtml,1
+2404,en,"A peculiar teacup that can make a certain species of Pokémon evolve. It may be chipped, but tea drunk from it is delicious.",research,https://www.serebii.net/scarletviolet/items.shtml,1
+2405,en,A teal mask patterned after the face of an ogre. Ogerpon dropped it while fleeing up the stairs after visiting the Festival of Masks.,research,https://www.serebii.net/scarletviolet/items.shtml,1
+2406,en,An item to be held by Ogerpon. This carved wooden mask is adorned with crystals and allows Ogerpon to wield the Rock type during battle.,research,https://www.serebii.net/scarletviolet/items.shtml,1
+2407,en,An item to be held by Ogerpon. This carved wooden mask is adorned with crystals and allows Ogerpon to wield the Water type during battle.,research,https://www.serebii.net/scarletviolet/items.shtml,1
+2408,en,An item to be held by Ogerpon. This carved wooden mask is adorned with crystals and allows Ogerpon to wield the Fire type during battle.,research,https://www.serebii.net/scarletviolet/items.shtml,1
+2409,en,Having one of these cards increases the selection available to you in boutiques and hair salons.,research,https://www.serebii.net/scarletviolet/items.shtml,1
+2410,en,A cluster of the crystals found within the Crystal Pool. They sparkle brilliantly and are apparently necessary to repair a certain mask.,research,https://www.serebii.net/itemdex/crystalcluster.shtml,1
+2411,en,A mochi cake with Berries kneaded into its dough. It increases base points for a Pokémon's HP stat.,research,https://www.serebii.net/scarletviolet/items.shtml,1
+2412,en,A mochi cake with Berries kneaded into its dough. It increases base points for a Pokémon's Attack stat.,research,https://www.serebii.net/scarletviolet/items.shtml,1
+2413,en,A mochi that boosts a Pokémon’s Defense base points.,research,https://www.serebii.net/scarletviolet/items.shtml,1
+2414,en,A mochi cake with Berries kneaded into its dough. It increases base points for a Pokémon’s Sp. Atk stat.,research,https://www.serebii.net/itemdex/geniusmochi.shtml,1
+2415,en,A mochi cake with Berries kneaded into its dough. It increases base points for a Pokémon's Sp. Def stat.,research,https://www.serebii.net/scarletviolet/items.shtml,1
+2416,en,A mochi cake with Berries kneaded into its dough. It increases base points for a Pokémon’s Speed stat.,research,https://www.serebii.net/scarletviolet/items.shtml,1
+2417,en,A set of chairs that are ideal for picnicking. They have a simple design that can stand up to both dirt and physical impacts.,research,https://www.serebii.net/scarletviolet/picnic.shtml,1
+2418,en,A set of chairs that are ideal for picnicking. Their design was inspired by the Academy Tablecloth.,research,https://www.serebii.net/scarletviolet/picnic.shtml,1
+2420,en,A set of chairs that are ideal for picnicking. Their design was inspired by the Whimsical Tablecloth.,research,https://www.serebii.net/scarletviolet/picnic.shtml,1
+2421,en,A set of chairs that are ideal for picnicking. Their design was inspired by the Leafy Tablecloth.,research,https://www.serebii.net/scarletviolet/picnic.shtml,1
+2422,en,A set of chairs that are ideal for picnicking. Their design was inspired by the Spooky Tablecloth.,research,https://www.serebii.net/scarletviolet/picnic.shtml,1
+2423,en,A set of chairs that are ideal for picnicking. Their design was inspired by the yellow Plaid Tablecloth.,research,https://www.serebii.net/scarletviolet/picnic.shtml,1
+2424,en,A set of chairs that are ideal for picnicking. Their design was inspired by the blue Plaid Tablecloth.,research,https://bulbapedia.bulbagarden.net/wiki/Plaid_Chairs_(B),1
+2425,en,A set of chairs that are ideal for picnicking. Their design was inspired by the red Plaid Tablecloth.,research,https://www.serebii.net/scarletviolet/picnic.shtml,1
+2426,en,A set of chairs that are ideal for picnicking. Their design was inspired by the B&W Grass Tablecloth.,research,https://www.serebii.net/scarletviolet/picnic.shtml,1
+2427,en,A set of chairs that are ideal for picnicking. Their design was inspired by the Battle Tablecloth.,research,https://www.serebii.net/scarletviolet/picnic.shtml,1
+2428,en,A set of chairs that are ideal for picnicking. Their design was inspired by the Monstrous Tablecloth.,research,https://www.serebii.net/scarletviolet/picnic.shtml,1
+2429,en,A set of chairs that are ideal for picnicking. Their design was inspired by the Striped Tablecloth.,research,https://www.serebii.net/scarletviolet/picnic.shtml,1
+2430,en,A set of chairs that are ideal for picnicking. Their design was inspired by the Diamond Tablecloth.,research,https://www.serebii.net/scarletviolet/picnic.shtml,1
+2431,en,A set of chairs that are ideal for picnicking. Their design was inspired by the Polka-Dot Tablecloth.,research,https://www.serebii.net/scarletviolet/picnic.shtml,1
+2432,en,A set of chairs that are ideal for picnicking. Their design was inspired by the Lilac Tablecloth.,research,https://www.serebii.net/scarletviolet/picnic.shtml,1
+2433,en,A set of chairs that are ideal for picnicking. Their design was inspired by the Mint Tablecloth.,research,https://www.serebii.net/scarletviolet/picnic.shtml,1
+2434,en,A set of chairs that are ideal for picnicking. Their design was inspired by the Peach Tablecloth.,research,https://www.serebii.net/scarletviolet/picnic.shtml,1
+2435,en,A set of chairs that are ideal for picnicking. Their design was inspired by the Yellow Tablecloth.,research,https://www.serebii.net/scarletviolet/picnic.shtml,1
+2436,en,A set of chairs that are ideal for picnicking. Their design was inspired by the Blue Tablecloth.,research,https://www.serebii.net/scarletviolet/picnic.shtml,1
+2437,en,A set of chairs that are ideal for picnicking. Their design was inspired by the Pink Tablecloth.,research,https://bulbapedia.bulbagarden.net/wiki/Pink_Chairs,1
+2438,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/ekansfang.shtml,1
+2439,en,A material obtained from a Pokémon. It can be used to make TMs.,research,https://bulbapedia.bulbagarden.net/wiki/List_of_TMs_in_Pok%C3%A9mon_Scarlet_and_Violet,1
+2440,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+2441,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+2442,en,A material obtained from a Pokémon. It can be used to make TMs.,research,https://bulbapedia.bulbagarden.net/wiki/List_of_TMs_in_Pok%C3%A9mon_Scarlet_and_Violet,1
+2443,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+2444,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/geodudefragment.shtml,1
+2445,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+2446,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+2447,en,A material obtained from a Pokémon. It can be used to make TMs.,research,https://bulbapedia.bulbagarden.net/wiki/List_of_TMs_in_Pok%C3%A9mon_Scarlet_and_Violet,1
+2448,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+2449,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+2450,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+2451,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+2452,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+2453,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+2454,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+2455,en,A material obtained from a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/scarletviolet/items.shtml,1
+2456,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+2457,en,A material obtained from a Pokémon. It can be used to make TMs.,research,https://bulbapedia.bulbagarden.net/wiki/List_of_TMs_in_Pok%C3%A9mon_Scarlet_and_Violet,1
+2458,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+2459,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+2460,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+2461,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+2462,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/feebasscales.shtml,1
+2463,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/duskullfragment.shtml,1
+2464,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+2465,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+2466,en,A material obtained from a Pokémon. It can be used to make TMs.,research,https://bulbapedia.bulbagarden.net/wiki/List_of_TMs_in_Pok%C3%A9mon_Scarlet_and_Violet,1
+2467,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/ducklettfeather.shtml,1
+2468,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+2469,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+2470,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+2472,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+2473,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+2474,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/cutieflypowder.shtml,1
+2475,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+2476,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/cramorantdown.shtml,1
+2477,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+2478,en,A material obtained from a Pokémon. It can be used to make TMs.,research,https://bulbapedia.bulbagarden.net/wiki/List_of_TMs_in_Pok%C3%A9mon_Scarlet_and_Violet,1
+2479,en,A mochi cake with Berries kneaded into its dough. It causes a Pokémon to lose all its base points.,research,https://www.serebii.net/itemdex/fresh-startmochi.shtml,1
+2480,en,A stick to rest a Rotom Phone on. It allows you to take selfies from a little bit farther away than you could on your own.,research,https://www.serebii.net/scarletviolet/items.shtml,1
+2481,en,Having one of these mysterious glimmering charms increases the number of Tera Shards you receive from Tera Raid Battles.,research,https://www.serebii.net/scarletviolet/items.shtml,1
+2482,en,A peculiar metal that can make certain species of Pokémon evolve. It is composed of many layers.,research,https://www.serebii.net/scarletviolet/items.shtml,1
+2483,en,Having one of these cards increases the selection available to you in boutiques and hair salons.,research,https://www.serebii.net/scarletviolet/items.shtml,1
+2484,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+2485,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+2486,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/doduodown.shtml,1
+2487,en,A material obtained from a Pokémon. It can be used to make TMs.,research,https://bulbapedia.bulbagarden.net/wiki/List_of_TMs_in_Pok%C3%A9mon_Scarlet_and_Violet,1
+2488,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/exeggcuteshell.shtml,1
+2489,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+2490,en,A material obtained from a Pokémon. It can be used to make TMs.,research,https://bulbapedia.bulbagarden.net/wiki/List_of_TMs_in_Pok%C3%A9mon_Scarlet_and_Violet,1
+2491,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+2492,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/elekidfur.shtml,1
+2493,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+2494,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+2495,en,A material obtained from a Pokémon. It can be used to make TMs.,research,https://bulbapedia.bulbagarden.net/wiki/List_of_TMs_in_Pok%C3%A9mon_Scarlet_and_Violet,1
+2496,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+2497,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+2498,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+2499,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+2500,en,A material obtained from a Pokémon. It can be used to make TMs.,research,https://bulbapedia.bulbagarden.net/wiki/List_of_TMs_in_Pok%C3%A9mon_Scarlet_and_Violet,1
+2501,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+2502,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+2503,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+2504,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/cranidosspike.shtml,1
+2505,en,A material obtained from a Pokémon. It can be used to make TMs.,research,https://bulbapedia.bulbagarden.net/wiki/List_of_TMs_in_Pok%C3%A9mon_Scarlet_and_Violet,1
+2506,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+2507,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/drilburclaw.shtml,1
+2508,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+2509,en,A material obtained from a Pokémon. It can be used to make TMs.,research,https://bulbapedia.bulbagarden.net/wiki/List_of_TMs_in_Pok%C3%A9mon_Scarlet_and_Violet,1
+2510,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+2511,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+2512,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+2513,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+2514,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/espurrfur.shtml,1
+2515,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+2516,en,A material obtained from a Pokémon. It can be used to make TMs.,research,https://bulbapedia.bulbagarden.net/wiki/List_of_TMs_in_Pok%C3%A9mon_Scarlet_and_Violet,1
+2517,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/dewpiderthread.shtml,1
+2518,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+2519,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+2520,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/list/material.shtml,1
+2521,en,Material accidentally dropped by a Pokémon. It can be used to make TMs.,research,https://www.serebii.net/itemdex/duraludontarnish.shtml,1
+2522,en,A snack made from ingredients favored by the Legendary Pokémon Articuno.,research,https://www.serebii.net/scarletviolet/items.shtml,1
+2523,en,A snack made from ingredients favored by the Legendary Pokémon Zapdos.,research,https://www.serebii.net/scarletviolet/items.shtml,1
+2524,en,A snack made from ingredients favored by the Legendary Pokémon Moltres.,research,https://www.serebii.net/scarletviolet/newitems.shtml,1
+2526,en,A snack made from ingredients favored by the Legendary Pokémon Entei.,research,https://www.serebii.net/itemdex/enteitreat.shtml,1
+2527,en,A snack made from ingredients favored by the Legendary Pokémon Suicune.,research,https://bulbapedia.bulbagarden.net/wiki/Suicune_Treat,1
+2528,en,A snack made from ingredients favored by the Legendary Pokémon Lugia.,research,https://www.serebii.net/scarletviolet/newitems.shtml,1
+2529,en,A snack made from ingredients favored by the Legendary Pokémon Ho-Oh.,research,https://www.serebii.net/scarletviolet/items.shtml,1
+2530,en,A snack made from ingredients favored by the Legendary Pokémon Latias.,research,https://www.serebii.net/scarletviolet/items.shtml,1
+2531,en,A snack made from ingredients favored by the Legendary Pokémon Latios.,research,https://www.serebii.net/scarletviolet/items.shtml,1
+2532,en,A snack made from ingredients favored by the Legendary Pokémon Kyogre.,research,https://www.serebii.net/scarletviolet/items.shtml,1
+2533,en,A snack made from ingredients favored by the Legendary Pokémon Groudon.,research,https://www.serebii.net/scarletviolet/items.shtml,1
+2535,en,A snack made from ingredients favored by the Legendary Pokémon Cobalion.,research,https://www.serebii.net/scarletviolet/items.shtml,1
+2536,en,A snack made from ingredients favored by the Legendary Pokémon Terrakion.,research,https://www.serebii.net/scarletviolet/items.shtml,1
+2537,en,A snack made from ingredients favored by the Legendary Pokémon Virizion.,research,https://www.serebii.net/scarletviolet/items.shtml,1
+2538,en,A snack made from ingredients favored by the Legendary Pokémon Reshiram.,research,https://www.serebii.net/scarletviolet/items.shtml,1
+2539,en,A snack made from ingredients favored by the Legendary Pokémon Zekrom.,research,https://www.serebii.net/scarletviolet/newitems.shtml,1
+2540,en,A snack made from ingredients favored by the Legendary Pokémon Kyurem.,research,https://www.serebii.net/scarletviolet/items.shtml,1
+2542,en,A snack made from ingredients favored by the Legendary Pokémon Lunala.,research,https://www.serebii.net/scarletviolet/newitems.shtml,1
+2543,en,A snack made from ingredients favored by the Legendary Pokémon Necrozma.,research,https://www.serebii.net/itemdex/necrozmatreat.shtml,1
+2544,en,A snack made from ingredients favored by the Legendary Pokémon Kubfu.,research,https://www.serebii.net/scarletviolet/items.shtml,1
+2545,en,A snack made from ingredients favored by the Legendary Pokémon Glastrier.,research,https://www.serebii.net/scarletviolet/items.shtml,1
+2547,en,"A mysterious disk with an indigo shine to it, given to you by the Top Champion. It seems to be tied to Area Zero.",research,https://www.serebii.net/scarletviolet/items.shtml,1
+2548,en,A pick designed after Magmortar. It's said that using this pick makes any sandwich look like it's fresh out of the oven.,research,https://www.serebii.net/itemdex/fierypick.shtml,1
+2549,en,"On rare occasions, these shards form when a Tera Pokémon falls in battle and its Tera Jewel shatters.",research,https://www.serebii.net/scarletviolet/items.shtml,1
+2550,en,A Pecha Berry of the highest quality. It's said that a Pecha Berry tree carefully tended by an expert gardener will produce just one of these Berries every few years.,research,https://www.serebii.net/itemdex/mythicalpechaberry.shtml,1
+2551,en,"Blueberry Academy's standard issue tablecloth, made with the latest fiber-processing technology. It's heat-resistant and so tough even a Razor Claw can't tear it.",research,https://www.serebii.net/scarletviolet/picnic.shtml,1
+2552,en,A set of chairs that are ideal for picnicking. Their design was inspired by the Blueberry Tablecloth.,research,https://www.serebii.net/scarletviolet/picnic.shtml,1
+2553,en,A device that synchronizes your mind and feelings with your Pokémon’s so that you can work as one. It’s still a prototype—hence its unrefined appearance.,research,https://www.serebii.net/scarletviolet/synchromachine.shtml,1
+2557,en,"A proof copy of the exploration notes covering the Area Zero Underdepths. It's filled with long paragraphs describing what happened, along with Briar's thoughts.",research,https://www.serebii.net/scarletviolet/items.shtml,1
+2559,en,One of a variety of mysterious Mega Stones. A Clefable holding this stone will be able to Mega Evolve during battle.,research,https://www.serebii.net/legendsz-a/megastones.shtml,1
+2560,en,One of a variety of mysterious Mega Stones. A Victreebel holding this stone will be able to Mega Evolve during battle.,research,https://www.serebii.net/legendsz-a/megastones.shtml,1
+2561,en,One of a variety of mysterious Mega Stones. A Starmie holding this stone will be able to Mega Evolve during battle.,research,https://www.serebii.net/legendsz-a/megastones.shtml,1
+2562,en,One of a variety of mysterious Mega Stones. A Dragonite holding this stone will be able to Mega Evolve during battle.,research,https://www.serebii.net/legendsz-a/megastones.shtml,1
+2563,en,One of a variety of mysterious Mega Stones. A Meganium holding this stone will be able to Mega Evolve during battle.,research,https://www.serebii.net/legendsz-a/megastones.shtml,1
+2564,en,One of a variety of mysterious Mega Stones. A Feraligatr holding this stone will be able to Mega Evolve during battle.,research,https://www.serebii.net/legendsz-a/megastones.shtml,1
+2565,en,One of a variety of mysterious Mega Stones. A Skarmory holding this stone will be able to Mega Evolve during battle.,research,https://www.serebii.net/legendsz-a/megastones.shtml,1
+2566,en,One of a variety of mysterious Mega Stones. A Froslass holding this stone will be able to Mega Evolve during battle.,research,https://www.serebii.net/legendsz-a/megastones.shtml,1
+2567,en,One of a variety of mysterious Mega Stones. A Heatran holding this stone will be able to Mega Evolve during battle.,research,https://www.serebii.net/legendsz-a/megastones.shtml,1
+2568,en,One of a variety of mysterious Mega Stones. A Darkrai holding this stone will be able to Mega Evolve during battle.,research,https://www.serebii.net/legendsz-a/megastones.shtml,1
+2569,en,One of a variety of mysterious Mega Stones. An Emboar holding this stone will be able to Mega Evolve during battle.,research,https://www.serebii.net/legendsz-a/megastones.shtml,1
+2570,en,One of a variety of mysterious Mega Stones. An Excadrill holding this stone will be able to Mega Evolve during battle.,research,https://www.serebii.net/legendsz-a/megastones.shtml,1
+2571,en,One of a variety of mysterious Mega Stones. A Scolipede holding this stone will be able to Mega Evolve during battle.,research,https://www.serebii.net/legendsz-a/megastones.shtml,1
+2572,en,One of a variety of mysterious Mega Stones. A Scrafty holding this stone will be able to Mega Evolve during battle.,research,https://www.serebii.net/legendsz-a/megastones.shtml,1
+2573,en,One of a variety of mysterious Mega Stones. An Eelektross holding this stone will be able to Mega Evolve during battle.,research,https://www.serebii.net/legendsz-a/megastones.shtml,1
+2574,en,One of a variety of mysterious Mega Stones. A Chandelure holding this stone will be able to Mega Evolve during battle.,research,https://www.serebii.net/legendsz-a/megastones.shtml,1
+2575,en,One of a variety of mysterious Mega Stones. A Chesnaught holding this stone will be able to Mega Evolve during battle.,research,https://www.serebii.net/legendsz-a/megastones.shtml,1
+2576,en,One of a variety of mysterious Mega Stones. A Delphox holding this stone will be able to Mega Evolve during battle.,research,https://www.serebii.net/legendsz-a/megastones.shtml,1
+2577,en,One of a variety of mysterious Mega Stones. A Greninja holding this stone will be able to Mega Evolve during battle.,research,https://www.serebii.net/legendsz-a/megastones.shtml,1
+2578,en,One of a variety of mysterious Mega Stones. A Pyroar holding this stone will be able to Mega Evolve during battle.,research,https://www.serebii.net/legendsz-a/megastones.shtml,1
+2579,en,One of a variety of mysterious Mega Stones. A special Floette holding this stone will be able to Mega Evolve during battle.,research,https://www.serebii.net/legendsz-a/megastones.shtml,1
+2580,en,One of a variety of mysterious Mega Stones. A Malamar holding this stone will be able to Mega Evolve during battle.,research,https://www.serebii.net/legendsz-a/megastones.shtml,1
+2581,en,One of a variety of mysterious Mega Stones. A Barbaracle holding this stone will be able to Mega Evolve during battle.,research,https://www.serebii.net/legendsz-a/megastones.shtml,1
+2582,en,One of a variety of mysterious Mega Stones. A Dragalge holding this stone will be able to Mega Evolve during battle.,research,https://www.serebii.net/legendsz-a/megastones.shtml,1
+2583,en,One of a variety of mysterious Mega Stones. A Hawlucha holding this stone will be able to Mega Evolve during battle.,research,https://www.serebii.net/legendsz-a/megastones.shtml,1
+2584,en,"One of a variety of mysterious Mega Stones. When in Complete Forme and holding this stone, Zygarde will be able to Mega Evolve during battle.",research,https://www.serebii.net/legendsz-a/megastones.shtml,1
+2585,en,One of a variety of mysterious Mega Stones. A Drampa holding this stone will be able to Mega Evolve during battle.,research,https://www.serebii.net/legendsz-a/megastones.shtml,1
+2586,en,One of a variety of mysterious Mega Stones. A Zeraora holding this stone will be able to Mega Evolve during battle.,research,https://www.serebii.net/legendsz-a/megastones.shtml,1
+2587,en,One of a variety of mysterious Mega Stones. A Falinks holding this stone will be able to Mega Evolve during battle.,research,https://www.serebii.net/legendsz-a/megastones.shtml,1
+2588,en,A key for room 202 at Hotel Z.,research,https://www.serebii.net/legendsz-a/items.shtml,1
+2589,en,A popular treat among certain residents of Lumiose City. This variety is baked to be incredibly firm so that one can savor the crunch.,research,https://www.serebii.net/legendsz-a/items.shtml,1
+2590,en,"A key card that can be used in Lysandre Labs. The locks were each programmed to take different keys for security purposes, but mostly it's just an inconvenience.",research,https://www.serebii.net/legendsz-a/items.shtml,1
+2591,en,"A key card that can be used in Lysandre Labs. The locks were each programmed to take different keys for security purposes, but mostly it's just an inconvenience.",research,https://www.serebii.net/legendsz-a/items.shtml,1
+2592,en,"A key card that can be used in Lysandre Labs. The locks were each programmed to take different keys for security purposes, but mostly it's just an inconvenience.",research,https://www.serebii.net/legendsz-a/items.shtml,1
+2595,en,An ordinary pebble entrusted to you by the Pokémon known as Zygarde. It is completely unremarkable.,research,https://www.serebii.net/legendsz-a/items.shtml,1
+2596,en,A ring that an old woman asked you to retrieve. It seems to hold some value to her.,research,https://www.serebii.net/legendsz-a/items.shtml,1
+2597,en,A plush doll that has been autographed by Canari. Just having one puts you in a good mood.,research,https://www.serebii.net/legendsz-a/items.shtml,1
+2598,en,"Food waste made up of cooking ingredients. Although they were thrown away after the best parts were used, some edible bits still remain.",research,https://www.serebii.net/legendsz-a/items.shtml,1
+2599,en,A small twig that is beloved by Fennekin. It's said that chewing on one of these twigs can be both soothing and cheering.,research,https://www.serebii.net/legendsz-a/items.shtml,1
+2600,en,Lida's accessories and other items that she uses when practicing dance. They're kept in a small pouch that was handmade by Naveen.,research,https://www.serebii.net/legendsz-a/items.shtml,1
+2601,en,"Some of the absolute best butter produced in the Kalos region. Highly sought after by the cooks of Lumiose—if you know, you know. Makes for great donuts.",research,https://www.serebii.net/legendsz-a/items.shtml,1
+2602,en,"A nice pack of butter found in Hyperspace Lumiose. With it, you should be able to make even higher quality donuts than before.",research,https://www.serebii.net/legendsz-a/items.shtml,1
+2603,en,"A great pack of butter found in Hyperspace Lumiose. With it, you should be able to make even higher quality donuts than before.",research,https://www.serebii.net/legendsz-a/items.shtml,1
+2604,en,"An amazing pack of butter found in Hyperspace Lumiose. With it, you should be able to make even higher quality donuts than before.",research,https://www.serebii.net/legendsz-a/items.shtml,1
+2605,en,"A supreme pack of butter found in Hyperspace Lumiose. With it, you should be able to make even higher quality donuts than before.",research,https://www.serebii.net/legendsz-a/items.shtml,1
+2606,en,"The absolute ultimate in butter, found in Hyperspace Lumiose. With it, you should be able to make even higher quality donuts than before.",research,https://www.serebii.net/legendsz-a/items.shtml,1
+2607,en,A coarse salt that can only be harvested in small amounts in the Hoenn region. A tiny pinch will impart a wondrous depth of flavor.,research,https://www.serebii.net/legendsz-a/items.shtml,1
+2608,en,A mysterious spice that is highly valued among members of the Rust Syndicate. A sprinkle of it elevates the flavor of any dish so sublimely you’ll feel as if you’re dreaming.,research,https://www.serebii.net/legendsz-a/newitems.shtml,1
+2609,en,The oil produced by Paldea's Arboliva is said to be so delicious you'll feel as if you've gone to heaven after tasting it. How Corbeau got some is best left a mystery.,research,https://www.serebii.net/legendsz-a/items.shtml,1
+2610,en,"A popular candy among the children of Lumiose. It pops in your mouth as if it's exploding, so you can enjoy a shocking experience while eating it.",research,https://www.serebii.net/legendsz-a/items.shtml,1
+2611,en,A letter that you were asked to deliver to the director of Académie étoile by a somewhat peculiar character.,research,https://www.serebii.net/legendsz-a/items.shtml,1
+2613,en,A scarf that has grown quite shabby. It's easy to imagine that it must have once felt quite luxurious.,research,https://www.serebii.net/legendsz-a/items.shtml,1
+2618,en,A mysterious shard that can be found after smashing Mega Crystals using Pokémon moves. It seems that some people collect these shards.,research,https://www.serebii.net/legendsz-a/items.shtml,1
+2619,en,"A colorful screw. These screws have been left here and there around Lumiose City, and the staff at Racine Construction will trade you goods in exchange for them.",research,https://www.serebii.net/legendsz-a/items.shtml,1
+2623,en,A plush doll of Canari that holds a gold charm. Having one of these increases the prize money you receive from battles by a little.,research,https://www.serebii.net/legendsz-a/items.shtml,1
+2626,en,A plush doll of Canari that holds a pink charm. Having one of these increases the number of Mega Shards you'll find after smashing Mega Crystals by a little.,research,https://www.serebii.net/legendsz-a/items.shtml,1
+2632,en,A plush doll of Canari that holds a blue charm. Having one of these makes it a little more likely that you'll succeed at catching Pokémon.,research,https://www.serebii.net/legendsz-a/items.shtml,1
+2635,en,One of a variety of mysterious Mega Stones. A Raichu holding this stone will be able to Mega Evolve during battle.,research,https://www.serebii.net/legendsz-a/megastones.shtml,1
+2636,en,One of a variety of mysterious Mega Stones. A Raichu holding this stone will be able to Mega Evolve during battle.,research,https://www.serebii.net/legendsz-a/megastones.shtml,1
+2637,en,One of a variety of mysterious Mega Stones. A Chimecho holding this stone will be able to Mega Evolve during battle.,research,https://www.serebii.net/legendsz-a/megastones.shtml,1
+2638,en,One of a variety of mysterious Mega Stones. An Absol holding this stone will be able to Mega Evolve during battle.,research,https://www.serebii.net/legendsz-a/megastones.shtml,1
+2639,en,One of a variety of mysterious Mega Stones. A Staraptor holding this stone will be able to Mega Evolve during battle.,research,https://www.serebii.net/legendsz-a/megastones.shtml,1
+2640,en,One of a variety of mysterious Mega Stones. A Garchomp holding this stone will be able to Mega Evolve during battle.,research,https://www.serebii.net/legendsz-a/megastones.shtml,1
+2641,en,One of a variety of mysterious Mega Stones. A Lucario holding this stone will be able to Mega Evolve during battle.,research,https://www.serebii.net/legendsz-a/megastones.shtml,1
+2642,en,One of a variety of mysterious Mega Stones. A Golurk holding this stone will be able to Mega Evolve during battle.,research,https://www.serebii.net/legendsz-a/megastones.shtml,1
+2643,en,One of a variety of mysterious Mega Stones. A Meowstic holding this stone will be able to Mega Evolve during battle.,research,https://www.serebii.net/legendsz-a/megastones.shtml,1
+2644,en,One of a variety of mysterious Mega Stones. A Crabominable holding this stone will be able to Mega Evolve during battle.,research,https://www.serebii.net/legendsz-a/megastones.shtml,1
+2645,en,One of a variety of mysterious Mega Stones. A Golisopod holding this stone will be able to Mega Evolve during battle.,research,https://www.serebii.net/legendsz-a/megastones.shtml,1
+2646,en,One of a variety of mysterious Mega Stones. A Magearna holding this stone will be able to Mega Evolve during battle.,research,https://www.serebii.net/legendsz-a/megastones.shtml,1
+2647,en,One of a variety of mysterious Mega Stones. A Scovillain holding this stone will be able to Mega Evolve during battle.,research,https://www.serebii.net/legendsz-a/megastones.shtml,1
+2648,en,One of a variety of mysterious Mega Stones. A Baxcalibur holding this stone will be able to Mega Evolve during battle.,research,https://www.serebii.net/legendsz-a/megastones.shtml,1
+2649,en,One of a variety of mysterious Mega Stones. A Tatsugiri holding this stone will be able to Mega Evolve during battle.,research,https://www.serebii.net/legendsz-a/megastones.shtml,1
+2650,en,One of a variety of mysterious Mega Stones. A Glimmora holding this stone will be able to Mega Evolve during battle.,research,https://www.serebii.net/legendsz-a/megastones.shtml,1
+2651,en,A mysterious Berry found in Hyperspace Lumiose that's ideal for making donuts. Its spicy kick is great when added to curries.,research,https://www.serebii.net/legendsz-a/newitems.shtml,1
+2652,en,A mysterious Berry found in Hyperspace Lumiose that's ideal for making donuts. Its dry flavor offers a good balance when used in sweet cream.,research,https://www.serebii.net/legendsz-a/newitems.shtml,1
+2653,en,A mysterious Berry found in Hyperspace Lumiose that's ideal for making donuts. Its sweet flavor makes it a great ingredient for meringue.,research,https://www.serebii.net/legendsz-a/newitems.shtml,1
+2654,en,A mysterious Berry found in Hyperspace Lumiose that's ideal for making donuts. Its bitter bite works beautifully in chocolate.,research,https://www.serebii.net/legendsz-a/newitems.shtml,1
+2655,en,A mysterious Berry found in Hyperspace Lumiose that's ideal for making donuts. Its sour bite makes it perfect for stewing into a confiture.,research,https://www.serebii.net/legendsz-a/newitems.shtml,1
+2656,en,"A mysterious Berry found in Hyperspace Lumiose that's ideal for making donuts. It goes well in curries, meringue, chocolate, and confitures.",research,https://www.serebii.net/legendsz-a/newitems.shtml,1
+2657,en,"A mysterious Berry found in Hyperspace Lumiose that's ideal for making donuts. It goes well in curries, cream, chocolate, and confitures.",research,https://www.serebii.net/legendsz-a/newitems.shtml,1
+2658,en,"A mysterious Berry found in Hyperspace Lumiose that's ideal for making donuts. It goes well in curries, cream, meringue, and confitures.",research,https://www.serebii.net/legendsz-a/newitems.shtml,1
+2659,en,"A mysterious Berry found in Hyperspace Lumiose that's ideal for making donuts. It goes well in curries, cream, meringue, and chocolate.",research,https://www.serebii.net/legendsz-a/newitems.shtml,1
+2660,en,A mysterious Berry found in Hyperspace Lumiose that's ideal for making donuts. It goes well in curries and meringue.,research,https://www.serebii.net/legendsz-a/newitems.shtml,1
+2661,en,A mysterious Berry found in Hyperspace Lumiose that's ideal for making donuts. It goes well in cream and chocolate.,research,https://www.serebii.net/legendsz-a/newitems.shtml,1
+2662,en,A mysterious Berry found in Hyperspace Lumiose that's ideal for making donuts. It goes well in meringue and confitures.,research,https://www.serebii.net/legendsz-a/newitems.shtml,1
+2663,en,A mysterious Berry found in Hyperspace Lumiose that's ideal for making donuts. It goes well in cream and confitures.,research,https://www.serebii.net/legendsz-a/newitems.shtml,1
+2664,en,A mysterious Berry found in Hyperspace Lumiose that's ideal for making donuts. It goes well in curries.,research,https://www.serebii.net/legendsz-a/newitems.shtml,1
+2665,en,A mysterious Berry found in Hyperspace Lumiose that's ideal for making donuts. It goes well in cream.,research,https://www.serebii.net/legendsz-a/newitems.shtml,1
+2666,en,A mysterious Berry found in Hyperspace Lumiose that's ideal for making donuts. It goes well in meringue.,research,https://www.serebii.net/legendsz-a/newitems.shtml,1
+2667,en,A mysterious Berry found in Hyperspace Lumiose that's ideal for making donuts. It goes well in chocolate.,research,https://www.serebii.net/legendsz-a/newitems.shtml,1
+2668,en,A mysterious Berry found in Hyperspace Lumiose that's ideal for making donuts. It goes well in confitures.,research,https://www.serebii.net/legendsz-a/newitems.shtml,1
+2669,en,A mysterious Berry found in Hyperspace Lumiose that's ideal for making donuts. It goes well in curries.,research,https://www.serebii.net/legendsz-a/newitems.shtml,1
+2670,en,A mysterious Berry found in Hyperspace Lumiose that's ideal for making donuts. It goes well in cream.,research,https://www.serebii.net/legendsz-a/newitems.shtml,1
+2671,en,A mysterious Berry found in Hyperspace Lumiose that's ideal for making donuts. It goes well in meringue.,research,https://www.serebii.net/legendsz-a/newitems.shtml,1
+2672,en,A mysterious Berry found in Hyperspace Lumiose that's ideal for making donuts. It goes well in chocolate.,research,https://www.serebii.net/legendsz-a/newitems.shtml,1
+2673,en,A mysterious Berry found in Hyperspace Lumiose that's ideal for making donuts. It goes well in confitures.,research,https://www.serebii.net/legendsz-a/newitems.shtml,1
+2674,en,A mysterious Berry found in Hyperspace Lumiose that's ideal for making donuts. It goes well in curries.,research,https://www.serebii.net/legendsz-a/newitems.shtml,1
+2675,en,A mysterious Berry found in Hyperspace Lumiose that's ideal for making donuts. It goes well in cream.,research,https://www.serebii.net/legendsz-a/newitems.shtml,1
+2676,en,A mysterious Berry found in Hyperspace Lumiose that's ideal for making donuts. It goes well in meringue.,research,https://www.serebii.net/legendsz-a/newitems.shtml,1
+2677,en,A mysterious Berry found in Hyperspace Lumiose that's ideal for making donuts. It goes well in chocolate.,research,https://www.serebii.net/legendsz-a/newitems.shtml,1
+2678,en,A mysterious Berry found in Hyperspace Lumiose that's ideal for making donuts. It goes well in confitures.,research,https://www.serebii.net/legendsz-a/newitems.shtml,1
+2679,en,A mysterious Berry found in Hyperspace Lumiose that's ideal for making donuts. It goes well in cream and meringue.,research,https://www.serebii.net/legendsz-a/newitems.shtml,1
+2680,en,A mysterious Berry found in Hyperspace Lumiose that's ideal for making donuts. It goes well in cream and confitures.,research,https://www.serebii.net/legendsz-a/newitems.shtml,1
+2681,en,A mysterious Berry found in Hyperspace Lumiose that's ideal for making donuts. It goes well in chocolate and confitures.,research,https://www.serebii.net/legendsz-a/newitems.shtml,1
+2682,en,A mysterious Berry found in Hyperspace Lumiose that's ideal for making donuts. It goes well in curries and chocolate.,research,https://www.serebii.net/legendsz-a/newitems.shtml,1
+2683,en,A mysterious Berry found in Hyperspace Lumiose that's ideal for making donuts. It goes well in curries and confitures.,research,https://www.serebii.net/legendsz-a/newitems.shtml,1
+2684,en,A bun made to look like Canari's face. It can be used to restore 100 HP to a Pokémon.,research,https://www.serebii.net/legendsz-a/items.shtml,1
+90000,en,The key to the jail in Pyrite Town's Police Station.,research,https://bulbapedia.bulbagarden.net/wiki/List_of_key_items_in_Pok%C3%A9mon_Colosseum,1
+90001,en,A small stone tablet with inscriptions on the Relic Stone.,research,https://bulbapedia.bulbagarden.net/wiki/List_of_key_items_in_Pok%C3%A9mon_Colosseum,1
+90002,en,The Disk for moving the UFO forward.,research,https://bulbapedia.bulbagarden.net/wiki/List_of_key_items_in_Pok%C3%A9mon_Colosseum,1
+90003,en,The Disk for moving the UFO to the right.,research,https://bulbapedia.bulbagarden.net/wiki/List_of_key_items_in_Pok%C3%A9mon_Colosseum,1
+90004,en,The Disk for moving the UFO to the left.,research,https://bulbapedia.bulbagarden.net/wiki/List_of_key_items_in_Pok%C3%A9mon_Colosseum,1
+90005,en,The Disk for moving the UFO down.,research,https://bulbapedia.bulbagarden.net/wiki/List_of_key_items_in_Pok%C3%A9mon_Colosseum,1
+90006,en,The Disk for moving the UFO up.,research,https://bulbapedia.bulbagarden.net/wiki/List_of_key_items_in_Pok%C3%A9mon_Colosseum,1
+90007,en,The operating key for The Under's subway.,research,https://bulbapedia.bulbagarden.net/wiki/List_of_key_items_in_Pok%C3%A9mon_Colosseum,1
+90008,en,The key for opening the Lab's main gate.,research,https://bulbapedia.bulbagarden.net/wiki/List_of_key_items_in_Pok%C3%A9mon_Colosseum,1
+90009,en,The key for opening the Lab's underground door.,research,https://bulbapedia.bulbagarden.net/wiki/List_of_key_items_in_Pok%C3%A9mon_Colosseum,1
+90010,en,A DNA sample of some sort.,research,https://bulbapedia.bulbagarden.net/wiki/List_of_key_items_in_Pok%C3%A9mon_Colosseum,1
+90012,en,An extremely tough set of false teeth made of steel.,research,https://bulbapedia.bulbagarden.net/wiki/List_of_key_items_in_Pok%C3%A9mon_Colosseum,1
+90013,en,A part from the Windmill.,research,https://bulbapedia.bulbagarden.net/wiki/List_of_key_items_in_Pok%C3%A9mon_Colosseum,1
+90014,en,The red badge that Miror B. had.,research,https://bulbapedia.bulbagarden.net/wiki/List_of_key_items_in_Pok%C3%A9mon_Colosseum,1
+90015,en,The green badge that Dakim had.,research,https://bulbapedia.bulbagarden.net/wiki/List_of_key_items_in_Pok%C3%A9mon_Colosseum,1
+90016,en,The blue badge that Venus had.,research,https://bulbapedia.bulbagarden.net/wiki/List_of_key_items_in_Pok%C3%A9mon_Colosseum,1
+90017,en,The yellow badge that Ein had.,research,https://bulbapedia.bulbagarden.net/wiki/List_of_key_items_in_Pok%C3%A9mon_Colosseum,1
+90018,en,Calls Celebi to fully Purify a Shadow Pokémon.,research,https://bulbapedia.bulbagarden.net/wiki/List_of_Key_Items_in_Pok%C3%A9mon_Colosseum_and_Pok%C3%A9mon_XD,1
+90019,en,A report on Shadow Pokémon.,research,https://bulbapedia.bulbagarden.net/wiki/List_of_key_items_in_Pok%C3%A9mon_Colosseum,1
+90020,en,A report on Hyper Mode.,research,https://bulbapedia.bulbagarden.net/wiki/List_of_key_items_in_Pok%C3%A9mon_Colosseum,1
+90021,en,A report on Celebi.,research,https://bulbapedia.bulbagarden.net/wiki/List_of_key_items_in_Pok%C3%A9mon_Colosseum,1
+90022,en,A report on purifying Pokémon.,research,https://bulbapedia.bulbagarden.net/wiki/List_of_key_items_in_Pok%C3%A9mon_Colosseum,1
+90023,en,A case for carrying Scents that appeal to Pokémon.,research,https://bulbapedia.bulbagarden.net/wiki/List_of_key_items_in_Pok%C3%A9mon_Colosseum,1
+90024,en,A Scent that slightly pleases Pokémon.,research,https://bulbapedia.bulbagarden.net/wiki/Joy_Scent,1
+90025,en,Purifies Shadow Pokémon to a good extent.,research,https://www.serebii.net/colosseum/items.shtml,1
+90026,en,A Scent that greatly pleases Pokémon.,research,https://bulbapedia.bulbagarden.net/wiki/Vivid_Scent,1
+90027,en,A part to be delivered to Nett from Perr.,research,https://bulbapedia.bulbagarden.net/wiki/List_of_key_items_in_Pok%C3%A9mon_Colosseum,1
+90028,en,The final report on purifying Pokémon by Ein.,research,https://bulbapedia.bulbagarden.net/wiki/List_of_key_items_in_Pok%C3%A9mon_Colosseum,1
+90030,en,Take this to the receptionist to battle with Bonsly.,research,https://bulbapedia.bulbagarden.net/wiki/List_of_key_items_in_Pok%C3%A9mon_Colosseum,1
+90031,en,A key obtained from Gonzap to open a treasure chest.,research,https://bulbapedia.bulbagarden.net/wiki/List_of_key_items_in_Pok%C3%A9mon_Colosseum,1
+90032,en,An item used for security checks at Cipher buildings.,research,https://bulbapedia.bulbagarden.net/wiki/List_of_key_items_in_Pok%C3%A9mon_XD:_Gale_of_Darkness,1
+90033,en,A plaintive love song by a pop star. It is a big seller.,research,https://bulbapedia.bulbagarden.net/wiki/List_of_key_items_in_Pok%C3%A9mon_XD:_Gale_of_Darkness,1
+90034,en,A handle-shaped lever that controls a machine.,research,https://bulbapedia.bulbagarden.net/wiki/List_of_key_items_in_Pok%C3%A9mon_XD:_Gale_of_Darkness,1
+90035,en,An important letter from the Mayor to Justy.,research,https://bulbapedia.bulbagarden.net/wiki/List_of_key_items_in_Pok%C3%A9mon_XD:_Gale_of_Darkness,1
+90036,en,A found device that senses Miror B.'s presence.,research,https://bulbapedia.bulbagarden.net/wiki/List_of_key_items_in_Pok%C3%A9mon_XD:_Gale_of_Darkness,1
+90037,en,Used to attract Pokémon to Poké Spots.,research,https://www.serebii.net/xd/items.shtml,1
+90038,en,An odd shard that makes Eevee evolve into Espeon.,research,https://bulbapedia.bulbagarden.net/wiki/List_of_key_items_in_Pok%C3%A9mon_XD:_Gale_of_Darkness,1
+90039,en,An odd shard that makes Eevee evolve into Umbreon.,research,https://bulbapedia.bulbagarden.net/wiki/List_of_key_items_in_Pok%C3%A9mon_XD:_Gale_of_Darkness,1
+90040,en,The Bingo prize for winning using the Bonsly Card.,research,https://bulbapedia.bulbagarden.net/wiki/List_of_key_items_in_Pok%C3%A9mon_Colosseum,1
+90041,en,A device that analyzes the cries of Pokémon.,research,https://bulbapedia.bulbagarden.net/wiki/List_of_key_items_in_Pok%C3%A9mon_Colosseum,1
+90042,en,A memo written by Krane about the Snag System.,research,https://bulbapedia.bulbagarden.net/wiki/List_of_key_items_in_Pok%C3%A9mon_XD:_Gale_of_Darkness,1
+90043,en,A memo written by Krane about the Aura Reader.,research,https://bulbapedia.bulbagarden.net/wiki/List_of_key_items_in_Pok%C3%A9mon_XD:_Gale_of_Darkness,1
+90044,en,A memo written by Krane about the Snag Machine.,research,https://bulbapedia.bulbagarden.net/wiki/List_of_key_items_in_Pok%C3%A9mon_XD:_Gale_of_Darkness,1
+90045,en,A memo written by Krane on purifying Shadow Pokémon.,research,https://bulbapedia.bulbagarden.net/wiki/List_of_key_items_in_Pok%C3%A9mon_XD:_Gale_of_Darkness,1
+90046,en,A memo written by Krane about the Purify Chamber.,research,https://bulbapedia.bulbagarden.net/wiki/List_of_key_items_in_Pok%C3%A9mon_XD:_Gale_of_Darkness,1
+90047,en,A special case that contains the cry of a Pokémon.,research,https://bulbapedia.bulbagarden.net/wiki/List_of_key_items_in_Pok%C3%A9mon_XD:_Gale_of_Darkness,1
+90048,en,A special case that contains the cry of a Pokémon.,research,https://bulbapedia.bulbagarden.net/wiki/List_of_key_items_in_Pok%C3%A9mon_XD:_Gale_of_Darkness,1
+90049,en,A special case that contains the cry of a Pokémon.,research,https://bulbapedia.bulbagarden.net/wiki/List_of_key_items_in_Pok%C3%A9mon_XD:_Gale_of_Darkness,1
+90050,en,A special case that contains the cry of a Pokémon.,research,https://bulbapedia.bulbagarden.net/wiki/List_of_key_items_in_Pok%C3%A9mon_XD:_Gale_of_Darkness,1
+90051,en,A special case that contains the cry of a Pokémon.,research,https://bulbapedia.bulbagarden.net/wiki/List_of_key_items_in_Pok%C3%A9mon_XD:_Gale_of_Darkness,1
+90052,en,A case for storing Battle CDs.,research,https://bulbapedia.bulbagarden.net/wiki/List_of_key_items_in_Pok%C3%A9mon_Colosseum,1
+90053,en,A CD used at the Realgam Tower for Battle Sims.,research,https://bulbapedia.bulbagarden.net/wiki/Battle_CD,1
+90054,en,A CD used at the Realgam Tower for Battle Sims.,research,https://bulbapedia.bulbagarden.net/wiki/Battle_CD,1
+90055,en,A CD used at the Realgam Tower for Battle Sims.,research,https://bulbapedia.bulbagarden.net/wiki/Battle_CD,1
+90056,en,A CD used at the Realgam Tower for Battle Sims.,research,https://bulbapedia.bulbagarden.net/wiki/Battle_CD,1
+90057,en,A CD used at the Realgam Tower for Battle Sims.,research,https://bulbapedia.bulbagarden.net/wiki/Battle_CD,1
+90058,en,A CD used at the Realgam Tower for Battle Sims.,research,https://bulbapedia.bulbagarden.net/wiki/Battle_CD,1
+90059,en,A CD used at the Realgam Tower for Battle Sims.,research,https://bulbapedia.bulbagarden.net/wiki/Battle_CD,1
+90060,en,A CD used at the Realgam Tower for Battle Sims.,research,https://bulbapedia.bulbagarden.net/wiki/Battle_CD,1
+90061,en,A CD used at the Realgam Tower for Battle Sims.,research,https://bulbapedia.bulbagarden.net/wiki/Battle_CD,1
+90062,en,A CD used at the Realgam Tower for Battle Sims.,research,https://bulbapedia.bulbagarden.net/wiki/Battle_CD,1
+90063,en,A CD used at the Realgam Tower for Battle Sims.,research,https://bulbapedia.bulbagarden.net/wiki/Battle_CD,1
+90064,en,A CD used at the Realgam Tower for Battle Sims.,research,https://bulbapedia.bulbagarden.net/wiki/Battle_CD,1
+90065,en,A CD used at the Realgam Tower for Battle Sims.,research,https://bulbapedia.bulbagarden.net/wiki/Battle_CD,1
+90066,en,A CD used at the Realgam Tower for Battle Sims.,research,https://bulbapedia.bulbagarden.net/wiki/Battle_CD,1
+90067,en,A CD used at the Realgam Tower for Battle Sims.,research,https://bulbapedia.bulbagarden.net/wiki/Battle_CD,1
+90068,en,A CD used at the Realgam Tower for Battle Sims.,research,https://bulbapedia.bulbagarden.net/wiki/Battle_CD,1
+90069,en,A CD used at the Realgam Tower for Battle Sims.,research,https://bulbapedia.bulbagarden.net/wiki/Battle_CD,1
+90070,en,A CD used at the Realgam Tower for Battle Sims.,research,https://bulbapedia.bulbagarden.net/wiki/Battle_CD,1
+90071,en,A CD used at the Realgam Tower for Battle Sims.,research,https://bulbapedia.bulbagarden.net/wiki/Battle_CD,1
+90072,en,A CD used at the Realgam Tower for Battle Sims.,research,https://bulbapedia.bulbagarden.net/wiki/Battle_CD,1
+90073,en,A CD used at the Realgam Tower for Battle Sims.,research,https://bulbapedia.bulbagarden.net/wiki/Battle_CD,1
+90074,en,A CD used at the Realgam Tower for Battle Sims.,research,https://bulbapedia.bulbagarden.net/wiki/Battle_CD,1
+90075,en,A CD used at the Realgam Tower for Battle Sims.,research,https://bulbapedia.bulbagarden.net/wiki/Battle_CD,1
+90076,en,A CD used at the Realgam Tower for Battle Sims.,research,https://bulbapedia.bulbagarden.net/wiki/Battle_CD,1
+90077,en,A CD used at the Realgam Tower for Battle Sims.,research,https://bulbapedia.bulbagarden.net/wiki/Battle_CD,1
+90078,en,A CD used at the Realgam Tower for Battle Sims.,research,https://bulbapedia.bulbagarden.net/wiki/Battle_CD,1
+90079,en,A CD used at the Realgam Tower for Battle Sims.,research,https://bulbapedia.bulbagarden.net/wiki/Battle_CD,1
+90080,en,A CD used at the Realgam Tower for Battle Sims.,research,https://bulbapedia.bulbagarden.net/wiki/Battle_CD,1
+90081,en,A CD used at the Realgam Tower for Battle Sims.,research,https://bulbapedia.bulbagarden.net/wiki/Battle_CD,1
+90082,en,A CD used at the Realgam Tower for Battle Sims.,research,https://bulbapedia.bulbagarden.net/wiki/Battle_CD,1
+90083,en,A CD used at the Realgam Tower for Battle Sims.,research,https://bulbapedia.bulbagarden.net/wiki/Battle_CD,1
+90084,en,A CD used at the Realgam Tower for Battle Sims.,research,https://bulbapedia.bulbagarden.net/wiki/Battle_CD,1
+90085,en,A CD used at the Realgam Tower for Battle Sims.,research,https://bulbapedia.bulbagarden.net/wiki/Battle_CD,1
+90086,en,A CD used at the Realgam Tower for Battle Sims.,research,https://bulbapedia.bulbagarden.net/wiki/Battle_CD,1
+90087,en,A CD used at the Realgam Tower for Battle Sims.,research,https://bulbapedia.bulbagarden.net/wiki/Battle_CD,1
+90088,en,A CD used at the Realgam Tower for Battle Sims.,research,https://bulbapedia.bulbagarden.net/wiki/Battle_CD,1
+90089,en,A CD used at the Realgam Tower for Battle Sims.,research,https://bulbapedia.bulbagarden.net/wiki/Battle_CD,1
+90090,en,A CD used at the Realgam Tower for Battle Sims.,research,https://bulbapedia.bulbagarden.net/wiki/Battle_CD,1
+90091,en,A CD used at the Realgam Tower for Battle Sims.,research,https://bulbapedia.bulbagarden.net/wiki/Battle_CD,1
+90092,en,A CD used at the Realgam Tower for Battle Sims.,research,https://bulbapedia.bulbagarden.net/wiki/Battle_CD,1
+90093,en,A CD used at the Realgam Tower for Battle Sims.,research,https://bulbapedia.bulbagarden.net/wiki/Battle_CD,1
+90094,en,A CD used at the Realgam Tower for Battle Sims.,research,https://bulbapedia.bulbagarden.net/wiki/Battle_CD,1
+90095,en,A CD used at the Realgam Tower for Battle Sims.,research,https://bulbapedia.bulbagarden.net/wiki/Battle_CD,1
+90096,en,A CD used at the Realgam Tower for Battle Sims.,research,https://bulbapedia.bulbagarden.net/wiki/Battle_CD,1
+90097,en,A CD used at the Realgam Tower for Battle Sims.,research,https://bulbapedia.bulbagarden.net/wiki/Battle_CD,1
+90098,en,A CD used at the Realgam Tower for Battle Sims.,research,https://bulbapedia.bulbagarden.net/wiki/Battle_CD,1
+90099,en,A CD used at the Realgam Tower for Battle Sims.,research,https://bulbapedia.bulbagarden.net/wiki/Battle_CD,1
+90100,en,A CD used at the Realgam Tower for Battle Sims.,research,https://bulbapedia.bulbagarden.net/wiki/Battle_CD,1
+90101,en,A CD used at the Realgam Tower for Battle Sims.,research,https://bulbapedia.bulbagarden.net/wiki/Battle_CD,1
+90102,en,A CD used at the Realgam Tower for Battle Sims.,research,https://bulbapedia.bulbagarden.net/wiki/Battle_CD,1
+90103,en,A CD used at the Realgam Tower for Battle Sims.,research,https://bulbapedia.bulbagarden.net/wiki/Battle_CD,1
+90104,en,A CD used at the Realgam Tower for Battle Sims.,research,https://bulbapedia.bulbagarden.net/wiki/Battle_CD,1
+90105,en,A CD used at the Realgam Tower for Battle Sims.,research,https://bulbapedia.bulbagarden.net/wiki/Battle_CD,1
+90106,en,A CD used at the Realgam Tower for Battle Sims.,research,https://bulbapedia.bulbagarden.net/wiki/Battle_CD,1
+90107,en,A CD used at the Realgam Tower for Battle Sims.,research,https://bulbapedia.bulbagarden.net/wiki/Battle_CD,1
+90108,en,A CD used at the Realgam Tower for Battle Sims.,research,https://bulbapedia.bulbagarden.net/wiki/Battle_CD,1
+90109,en,A CD used at the Realgam Tower for Battle Sims.,research,https://bulbapedia.bulbagarden.net/wiki/Battle_CD,1
+90110,en,A CD used at the Realgam Tower for Battle Sims.,research,https://bulbapedia.bulbagarden.net/wiki/Battle_CD,1
+90111,en,A CD used at the Realgam Tower for Battle Sims.,research,https://bulbapedia.bulbagarden.net/wiki/Battle_CD,1
+90112,en,A CD used at the Realgam Tower for Battle Sims.,research,https://bulbapedia.bulbagarden.net/wiki/Battle_CD,1

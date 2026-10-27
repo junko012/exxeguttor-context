@@ -1,0 +1,814 @@
+[
+  {
+    "db_item_id": 1687,
+    "name_en": "Sootfoot Root",
+    "description": {
+      "en": "A tuber used for crafting Smoke Bombs. It can be mashed for use in cooking, but it can also be dried and ground to produce a fine powder.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsarceus/items.shtml"
+    ],
+    "notes": "Texto tomado de la columna de efecto/descripción de Serebii; no se ha verificado como transcripción literal de la mochila dentro del juego. Los demás idiomas quedan null al no haberse verificado el texto oficial."
+  },
+  {
+    "db_item_id": 1609,
+    "name_en": "Space Balm",
+    "description": {
+      "en": "A mysterious balm that somehow has the power to calm Palkia in its frenzy.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsarceus/items.shtml"
+    ],
+    "notes": "Texto tomado de la columna de efecto/descripción de Serebii; no se ha verificado como transcripción literal de la mochila dentro del juego. Los demás idiomas quedan null al no haberse verificado el texto oficial."
+  },
+  {
+    "db_item_id": 1688,
+    "name_en": "Spoiled Apricorn",
+    "description": {
+      "en": "An Apricorn that's had its insides eaten. Hitting a Pokémon with one may stun the Pokémon, creating an opening for you to act.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsarceus/items.shtml"
+    ],
+    "notes": "Texto tomado de la columna de efecto/descripción de Serebii; no se ha verificado como transcripción literal de la mochila dentro del juego. Los demás idiomas quedan null al no haberse verificado el texto oficial."
+  },
+  {
+    "db_item_id": 1635,
+    "name_en": "Springy Mushroom",
+    "description": null,
+    "text_kind": null,
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción textual verificable en las fuentes consultadas; se deja null para no inventar texto."
+  },
+  {
+    "db_item_id": 1671,
+    "name_en": "Stealth Spray",
+    "description": {
+      "en": "When used in the field, this spray muffles the sound of your footsteps and makes wild Pokémon less likely to notice you for a short time.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsarceus/items.shtml"
+    ],
+    "notes": "Texto tomado de la columna de efecto/descripción de Serebii; no se ha verificado como transcripción literal de la mochila dentro del juego. Los demás idiomas quedan null al no haberse verificado el texto oficial."
+  },
+  {
+    "db_item_id": 1648,
+    "name_en": "Sticky Glob",
+    "description": {
+      "en": "A ball of some kind of sticky substance. Hitting a Pokémon with one may stun the Pokémon, creating an opening for you to act.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsarceus/items.shtml"
+    ],
+    "notes": "Texto tomado de la columna de efecto/descripción de Serebii; no se ha verificado como transcripción literal de la mochila dentro del juego. Los demás idiomas quedan null al no haberse verificado el texto oficial."
+  },
+  {
+    "db_item_id": 1785,
+    "name_en": "Strange Ball",
+    "description": null,
+    "text_kind": null,
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción textual verificable en las fuentes consultadas; se deja null para no inventar texto."
+  },
+  {
+    "db_item_id": 2589,
+    "name_en": "Super Lumiose Galette",
+    "description": {
+      "en": "A popular treat among certain residents of Lumiose City. This variety is baked to be incredibly firm so that one can savor the crunch.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsz-a/items.shtml"
+    ],
+    "notes": "Texto tomado de la columna de efecto/descripción de Serebii; no se ha verificado como transcripción literal de la mochila dentro del juego. Los demás idiomas quedan null al no haberse verificado el texto oficial."
+  },
+  {
+    "db_item_id": 1663,
+    "name_en": "Superb Remedy",
+    "description": {
+      "en": "An herbal medicine that can restore 150 HP to a Pokémon, just as a Hyper Potion does. Yet the bitter taste will make the Pokémon less friendly toward you.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsarceus/items.shtml"
+    ],
+    "notes": "Texto tomado de la columna de efecto/descripción de Serebii; no se ha verificado como transcripción literal de la mochila dentro del juego. Los demás idiomas quedan null al no haberse verificado el texto oficial."
+  },
+  {
+    "db_item_id": 2605,
+    "name_en": "Supreme Butter",
+    "description": {
+      "en": "A supreme pack of butter found in Hyperspace Lumiose. With it, you should be able to make even higher quality donuts than before.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsz-a/items.shtml"
+    ],
+    "notes": "Texto tomado de la columna de efecto/descripción de Serebii; no se ha verificado como transcripción literal de la mochila dentro del juego. Los demás idiomas quedan null al no haberse verificado el texto oficial."
+  },
+  {
+    "db_item_id": 1733,
+    "name_en": "Survival Charm B",
+    "description": {
+      "en": "A mysterious charm that holds the power to protect a person from fainting while out in the field. This type of charm comes in five different colors.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsarceus/items.shtml"
+    ],
+    "notes": "Texto tomado de la columna de efecto/descripción de Serebii; no se ha verificado como transcripción literal de la mochila dentro del juego. Los demás idiomas quedan null al no haberse verificado el texto oficial."
+  },
+  {
+    "db_item_id": 1734,
+    "name_en": "Survival Charm P",
+    "description": {
+      "en": "A mysterious charm that holds the power to protect a person from fainting while out in the field. This type of charm comes in five different colors.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsarceus/items.shtml"
+    ],
+    "notes": "Texto tomado de la columna de efecto/descripción de Serebii; no se ha verificado como transcripción literal de la mochila dentro del juego. Los demás idiomas quedan null al no haberse verificado el texto oficial."
+  },
+  {
+    "db_item_id": 1732,
+    "name_en": "Survival Charm R",
+    "description": {
+      "en": "A mysterious charm that holds the power to protect a person from fainting while out in the field. This type of charm comes in five different colors.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsarceus/items.shtml"
+    ],
+    "notes": "Texto tomado de la columna de efecto/descripción de Serebii; no se ha verificado como transcripción literal de la mochila dentro del juego. Los demás idiomas quedan null al no haberse verificado el texto oficial."
+  },
+  {
+    "db_item_id": 1735,
+    "name_en": "Survival Charm T",
+    "description": {
+      "en": "A mysterious charm that holds the power to protect a person from fainting while out in the field. This type of charm comes in five different colors.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsarceus/items.shtml"
+    ],
+    "notes": "Texto tomado de la columna de efecto/descripción de Serebii; no se ha verificado como transcripción literal de la mochila dentro del juego. Los demás idiomas quedan null al no haberse verificado el texto oficial."
+  },
+  {
+    "db_item_id": 1736,
+    "name_en": "Survival Charm Y",
+    "description": {
+      "en": "A mysterious charm that holds the power to protect a person from fainting while out in the field. This type of charm comes in five different colors.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsarceus/items.shtml"
+    ],
+    "notes": "Texto tomado de la columna de efecto/descripción de Serebii; no se ha verificado como transcripción literal de la mochila dentro del juego. Los demás idiomas quedan null al no haberse verificado el texto oficial."
+  },
+  {
+    "db_item_id": 1619,
+    "name_en": "Swap Snack",
+    "description": {
+      "en": "When eaten, this curious snack temporarily swaps a Pokémon's offensive stats with its defensive stats.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsarceus/items.shtml"
+    ],
+    "notes": "Texto tomado de la columna de efecto/descripción de Serebii; no se ha verificado como transcripción literal de la mochila dentro del juego. Los demás idiomas quedan null al no haberse verificado el texto oficial."
+  },
+  {
+    "db_item_id": 1701,
+    "name_en": "Swordcap",
+    "description": {
+      "en": "Mushrooms that, when consumed, cause the muscles to swell. They imbue the eater with strength and are one of the materials needed for crafting Aux Powers.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsarceus/items.shtml"
+    ],
+    "notes": "Texto tomado de la columna de efecto/descripción de Serebii; no se ha verificado como transcripción literal de la mochila dentro del juego. Los demás idiomas quedan null al no haberse verificado el texto oficial."
+  },
+  {
+    "db_item_id": 2598,
+    "name_en": "Tasty Trash",
+    "description": {
+      "en": "Food waste made up of cooking ingredients. Although they were thrown away after the best parts were used, some edible bits still remain.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsz-a/items.shtml"
+    ],
+    "notes": "Texto tomado de la columna de efecto/descripción de Serebii; no se ha verificado como transcripción literal de la mochila dentro del juego. Los demás idiomas quedan null al no haberse verificado el texto oficial."
+  },
+  {
+    "db_item_id": 1699,
+    "name_en": "Tempting Charm B",
+    "description": {
+      "en": "A mysterious charm that tends to be lost before any other item when you faint in the field. This type of charm comes in five different colors.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsarceus/items.shtml"
+    ],
+    "notes": "Texto tomado de la columna de efecto/descripción de Serebii; no se ha verificado como transcripción literal de la mochila dentro del juego. Los demás idiomas quedan null al no haberse verificado el texto oficial."
+  },
+  {
+    "db_item_id": 1700,
+    "name_en": "Tempting Charm P",
+    "description": {
+      "en": "A mysterious charm that tends to be lost before any other item when you faint in the field. This type of charm comes in five different colors.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsarceus/items.shtml"
+    ],
+    "notes": "Texto tomado de la columna de efecto/descripción de Serebii; no se ha verificado como transcripción literal de la mochila dentro del juego. Los demás idiomas quedan null al no haberse verificado el texto oficial."
+  },
+  {
+    "db_item_id": 1764,
+    "name_en": "Tempting Charm R",
+    "description": {
+      "en": "A mysterious charm that tends to be lost before any other item when you faint in the field. This type of charm comes in five different colors.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsarceus/items.shtml"
+    ],
+    "notes": "Texto tomado de la columna de efecto/descripción de Serebii; no se ha verificado como transcripción literal de la mochila dentro del juego. Los demás idiomas quedan null al no haberse verificado el texto oficial."
+  },
+  {
+    "db_item_id": 1706,
+    "name_en": "Tempting Charm T",
+    "description": {
+      "en": "A mysterious charm that tends to be lost before any other item when you faint in the field. This type of charm comes in five different colors.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsarceus/items.shtml"
+    ],
+    "notes": "Texto tomado de la columna de efecto/descripción de Serebii; no se ha verificado como transcripción literal de la mochila dentro del juego. Los demás idiomas quedan null al no haberse verificado el texto oficial."
+  },
+  {
+    "db_item_id": 1707,
+    "name_en": "Tempting Charm Y",
+    "description": {
+      "en": "A mysterious charm that tends to be lost before any other item when you faint in the field. This type of charm comes in five different colors.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsarceus/items.shtml"
+    ],
+    "notes": "Texto tomado de la columna de efecto/descripción de Serebii; no se ha verificado como transcripción literal de la mochila dentro del juego. Los demás idiomas quedan null al no haberse verificado el texto oficial."
+  },
+  {
+    "db_item_id": 1608,
+    "name_en": "Time Balm",
+    "description": {
+      "en": "A mysterious balm that somehow has the power to calm Dialga in its frenzy.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsarceus/items.shtml"
+    ],
+    "notes": "Texto tomado de la columna de efecto/descripción de Serebii; no se ha verificado como transcripción literal de la mochila dentro del juego. Los demás idiomas quedan null al no haberse verificado el texto oficial."
+  },
+  {
+    "db_item_id": 1737,
+    "name_en": "Torn Journal",
+    "description": {
+      "en": "An old, stab-bound diary in a traditional style. It has been torn and is missing the latter half of its pages.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsarceus/items.shtml"
+    ],
+    "notes": "Texto tomado de la columna de efecto/descripción de Serebii; no se ha verificado como transcripción literal de la mochila dentro del juego. Los demás idiomas quedan null al no haberse verificado el texto oficial."
+  },
+  {
+    "db_item_id": 1628,
+    "name_en": "Tumblestone",
+    "description": {
+      "en": "When combined with an Apricorn, this mysterious, tumbled stone can draw out the properties required to forge a Poké Ball.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsarceus/items.shtml"
+    ],
+    "notes": "Texto tomado de la columna de efecto/descripción de Serebii; no se ha verificado como transcripción literal de la mochila dentro del juego. Los demás idiomas quedan null al no haberse verificado el texto oficial."
+  },
+  {
+    "db_item_id": 1618,
+    "name_en": "Twice-Spiced Radish",
+    "description": {
+      "en": "These pickled vegetables prime a Pokémon for battle. The Pokémon takes a hard-hitting stance, which boosts the power of the Pokémon's moves by 50 percent.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsarceus/items.shtml"
+    ],
+    "notes": "Texto tomado de la columna de efecto/descripción de Serebii; no se ha verificado como transcripción literal de la mochila dentro del juego. Los demás idiomas quedan null al no haberse verificado el texto oficial."
+  },
+  {
+    "db_item_id": 1625,
+    "name_en": "Uxie’s Claw",
+    "description": {
+      "en": "Proof that you have completed the trial set by Uxie, the Being of Knowledge that lives in Lake Acuity. This item is needed to forge the Red Chain.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsarceus/items.shtml"
+    ],
+    "notes": "Texto tomado de la columna de efecto/descripción de Serebii; no se ha verificado como transcripción literal de la mochila dentro del juego. Los demás idiomas quedan null al no haberse verificado el texto oficial."
+  },
+  {
+    "db_item_id": 1695,
+    "name_en": "Vivichoke",
+    "description": {
+      "en": "Also called a morning-dew bud. It is used as a material for crafting items that can restore vitality to a Pokémon that has fainted.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsarceus/items.shtml"
+    ],
+    "notes": "Texto tomado de la columna de efecto/descripción de Serebii; no se ha verificado como transcripción literal de la mochila dentro del juego. Los demás idiomas quedan null al no haberse verificado el texto oficial."
+  },
+  {
+    "db_item_id": 1721,
+    "name_en": "Volcano Balm",
+    "description": {
+      "en": "A mysterious balm that gives off a soothing scent. It can be used to help calm the frenzy of the Lord of the Isles, Arcanine.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsarceus/items.shtml"
+    ],
+    "notes": "Texto tomado de la columna de efecto/descripción de Serebii; no se ha verificado como transcripción literal de la mochila dentro del juego. Los demás idiomas quedan null al no haberse verificado el texto oficial."
+  },
+  {
+    "db_item_id": 1743,
+    "name_en": "Wall Fragment",
+    "description": {
+      "en": "A fragment that was once part of a stone panel in the Solaceon Ruins. It has markings carved on it that appear to be some kind of writing.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsarceus/items.shtml"
+    ],
+    "notes": "Texto tomado de la columna de efecto/descripción de Serebii; no se ha verificado como transcripción literal de la mochila dentro del juego. Los demás idiomas quedan null al no haberse verificado el texto oficial."
+  },
+  {
+    "db_item_id": 1739,
+    "name_en": "Warding Charm B",
+    "description": {
+      "en": "A mysterious charm that holds the power to protect a person from being afflicted with status conditions. This type of charm comes in five different colors.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsarceus/items.shtml"
+    ],
+    "notes": "Texto tomado de la columna de efecto/descripción de Serebii; no se ha verificado como transcripción literal de la mochila dentro del juego. Los demás idiomas quedan null al no haberse verificado el texto oficial."
+  },
+  {
+    "db_item_id": 1740,
+    "name_en": "Warding Charm P",
+    "description": {
+      "en": "A mysterious charm that holds the power to protect a person from being afflicted with status conditions. This type of charm comes in five different colors.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsarceus/items.shtml"
+    ],
+    "notes": "Texto tomado de la columna de efecto/descripción de Serebii; no se ha verificado como transcripción literal de la mochila dentro del juego. Los demás idiomas quedan null al no haberse verificado el texto oficial."
+  },
+  {
+    "db_item_id": 1738,
+    "name_en": "Warding Charm R",
+    "description": {
+      "en": "A mysterious charm that holds the power to protect a person from being afflicted with status conditions. This type of charm comes in five different colors.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsarceus/items.shtml"
+    ],
+    "notes": "Texto tomado de la columna de efecto/descripción de Serebii; no se ha verificado como transcripción literal de la mochila dentro del juego. Los demás idiomas quedan null al no haberse verificado el texto oficial."
+  },
+  {
+    "db_item_id": 1741,
+    "name_en": "Warding Charm T",
+    "description": {
+      "en": "A mysterious charm that holds the power to protect a person from being afflicted with status conditions. This type of charm comes in five different colors.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsarceus/items.shtml"
+    ],
+    "notes": "Texto tomado de la columna de efecto/descripción de Serebii; no se ha verificado como transcripción literal de la mochila dentro del juego. Los demás idiomas quedan null al no haberse verificado el texto oficial."
+  },
+  {
+    "db_item_id": 1742,
+    "name_en": "Warding Charm Y",
+    "description": {
+      "en": "A mysterious charm that holds the power to protect a person from being afflicted with status conditions. This type of charm comes in five different colors.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsarceus/items.shtml"
+    ],
+    "notes": "Texto tomado de la columna de efecto/descripción de Serebii; no se ha verificado como transcripción literal de la mochila dentro del juego. Los demás idiomas quedan null al no haberse verificado el texto oficial."
+  },
+  {
+    "db_item_id": 1637,
+    "name_en": "Wood",
+    "description": {
+      "en": "A handy log of wood that can be used for anything, from crafting common goods needed for daily living to producing works of art.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsarceus/items.shtml"
+    ],
+    "notes": "Texto tomado de la columna de efecto/descripción de Serebii; no se ha verificado como transcripción literal de la mochila dentro del juego. Los demás idiomas quedan null al no haberse verificado el texto oficial."
+  },
+  {
+    "db_item_id": 2608,
+    "name_en": "Épice Noire",
+    "description": {
+      "en": "A mysterious spice that is highly valued among members of the Rust Syndicate. A sprinkle of it elevates the flavor of any dish so sublimely you’ll feel as if you’re dreaming.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsz-a/newitems.shtml"
+    ],
+    "notes": "Texto tomado de la columna de efecto/descripción de Serebii; no se ha verificado como transcripción literal de la mochila dentro del juego. Los demás idiomas quedan null al no haberse verificado el texto oficial."
+  }
+]

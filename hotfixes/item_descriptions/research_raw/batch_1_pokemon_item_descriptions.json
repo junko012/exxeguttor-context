@@ -1,0 +1,882 @@
+[
+  {
+    "db_item_id": 2638,
+    "name_en": "Absolite Z",
+    "description": {
+      "en": "One of a variety of mysterious Mega Stones. An Absol holding this stone will be able to Mega Evolve during battle.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsz-a/megastones.shtml"
+    ],
+    "notes": "Serebii presenta este texto en la columna Effect; no se ha verificado como transcripción literal de la mochila del juego."
+  },
+  {
+    "db_item_id": 2581,
+    "name_en": "Barbaracite",
+    "description": {
+      "en": "One of a variety of mysterious Mega Stones. A Barbaracle holding this stone will be able to Mega Evolve during battle.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsz-a/megastones.shtml"
+    ],
+    "notes": "Serebii presenta este texto en la columna Effect; no se ha verificado como transcripción literal de la mochila del juego."
+  },
+  {
+    "db_item_id": 2648,
+    "name_en": "Baxcalibrite",
+    "description": {
+      "en": "One of a variety of mysterious Mega Stones. A Baxcalibur holding this stone will be able to Mega Evolve during battle.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsz-a/megastones.shtml"
+    ],
+    "notes": "Serebii presenta este texto en la columna Effect; no se ha verificado como transcripción literal de la mochila del juego."
+  },
+  {
+    "db_item_id": 2574,
+    "name_en": "Chandelurite",
+    "description": {
+      "en": "One of a variety of mysterious Mega Stones. A Chandelure holding this stone will be able to Mega Evolve during battle.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsz-a/megastones.shtml"
+    ],
+    "notes": "Serebii presenta este texto en la columna Effect; no se ha verificado como transcripción literal de la mochila del juego."
+  },
+  {
+    "db_item_id": 2575,
+    "name_en": "Chesnaughtite",
+    "description": {
+      "en": "One of a variety of mysterious Mega Stones. A Chesnaught holding this stone will be able to Mega Evolve during battle.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsz-a/megastones.shtml"
+    ],
+    "notes": "Serebii presenta este texto en la columna Effect; no se ha verificado como transcripción literal de la mochila del juego."
+  },
+  {
+    "db_item_id": 2637,
+    "name_en": "Chimechite",
+    "description": {
+      "en": "One of a variety of mysterious Mega Stones. A Chimecho holding this stone will be able to Mega Evolve during battle.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsz-a/megastones.shtml"
+    ],
+    "notes": "Serebii presenta este texto en la columna Effect; no se ha verificado como transcripción literal de la mochila del juego."
+  },
+  {
+    "db_item_id": 2559,
+    "name_en": "Clefablite",
+    "description": {
+      "en": "One of a variety of mysterious Mega Stones. A Clefable holding this stone will be able to Mega Evolve during battle.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsz-a/megastones.shtml"
+    ],
+    "notes": "Serebii presenta este texto en la columna Effect; no se ha verificado como transcripción literal de la mochila del juego."
+  },
+  {
+    "db_item_id": 2644,
+    "name_en": "Crabominite",
+    "description": {
+      "en": "One of a variety of mysterious Mega Stones. A Crabominable holding this stone will be able to Mega Evolve during battle.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsz-a/megastones.shtml"
+    ],
+    "notes": "Serebii presenta este texto en la columna Effect; no se ha verificado como transcripción literal de la mochila del juego."
+  },
+  {
+    "db_item_id": 2568,
+    "name_en": "Darkranite",
+    "description": {
+      "en": "One of a variety of mysterious Mega Stones. A Darkrai holding this stone will be able to Mega Evolve during battle.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsz-a/megastones.shtml"
+    ],
+    "notes": "Serebii presenta este texto en la columna Effect; no se ha verificado como transcripción literal de la mochila del juego."
+  },
+  {
+    "db_item_id": 2576,
+    "name_en": "Delphoxite",
+    "description": {
+      "en": "One of a variety of mysterious Mega Stones. A Delphox holding this stone will be able to Mega Evolve during battle.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsz-a/megastones.shtml"
+    ],
+    "notes": "Serebii presenta este texto en la columna Effect; no se ha verificado como transcripción literal de la mochila del juego."
+  },
+  {
+    "db_item_id": 2582,
+    "name_en": "Dragalgite",
+    "description": {
+      "en": "One of a variety of mysterious Mega Stones. A Dragalge holding this stone will be able to Mega Evolve during battle.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsz-a/megastones.shtml"
+    ],
+    "notes": "Serebii presenta este texto en la columna Effect; no se ha verificado como transcripción literal de la mochila del juego."
+  },
+  {
+    "db_item_id": 2562,
+    "name_en": "Dragoninite",
+    "description": {
+      "en": "One of a variety of mysterious Mega Stones. A Dragonite holding this stone will be able to Mega Evolve during battle.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsz-a/megastones.shtml"
+    ],
+    "notes": "Serebii presenta este texto en la columna Effect; no se ha verificado como transcripción literal de la mochila del juego."
+  },
+  {
+    "db_item_id": 2585,
+    "name_en": "Drampanite",
+    "description": {
+      "en": "One of a variety of mysterious Mega Stones. A Drampa holding this stone will be able to Mega Evolve during battle.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsz-a/megastones.shtml"
+    ],
+    "notes": "Serebii presenta este texto en la columna Effect; no se ha verificado como transcripción literal de la mochila del juego."
+  },
+  {
+    "db_item_id": 2573,
+    "name_en": "Eelektrossite",
+    "description": {
+      "en": "One of a variety of mysterious Mega Stones. An Eelektross holding this stone will be able to Mega Evolve during battle.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsz-a/megastones.shtml"
+    ],
+    "notes": "Serebii presenta este texto en la columna Effect; no se ha verificado como transcripción literal de la mochila del juego."
+  },
+  {
+    "db_item_id": 2569,
+    "name_en": "Emboarite",
+    "description": {
+      "en": "One of a variety of mysterious Mega Stones. An Emboar holding this stone will be able to Mega Evolve during battle.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsz-a/megastones.shtml"
+    ],
+    "notes": "Serebii presenta este texto en la columna Effect; no se ha verificado como transcripción literal de la mochila del juego."
+  },
+  {
+    "db_item_id": 2570,
+    "name_en": "Excadrite",
+    "description": {
+      "en": "One of a variety of mysterious Mega Stones. An Excadrill holding this stone will be able to Mega Evolve during battle.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsz-a/megastones.shtml"
+    ],
+    "notes": "Serebii presenta este texto en la columna Effect; no se ha verificado como transcripción literal de la mochila del juego."
+  },
+  {
+    "db_item_id": 2587,
+    "name_en": "Falinksite",
+    "description": {
+      "en": "One of a variety of mysterious Mega Stones. A Falinks holding this stone will be able to Mega Evolve during battle.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsz-a/megastones.shtml"
+    ],
+    "notes": "Serebii presenta este texto en la columna Effect; no se ha verificado como transcripción literal de la mochila del juego."
+  },
+  {
+    "db_item_id": 2564,
+    "name_en": "Feraligite",
+    "description": {
+      "en": "One of a variety of mysterious Mega Stones. A Feraligatr holding this stone will be able to Mega Evolve during battle.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsz-a/megastones.shtml"
+    ],
+    "notes": "Serebii presenta este texto en la columna Effect; no se ha verificado como transcripción literal de la mochila del juego."
+  },
+  {
+    "db_item_id": 2579,
+    "name_en": "Floettite",
+    "description": {
+      "en": "One of a variety of mysterious Mega Stones. A special Floette holding this stone will be able to Mega Evolve during battle.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsz-a/megastones.shtml"
+    ],
+    "notes": "Serebii presenta este texto en la columna Effect; no se ha verificado como transcripción literal de la mochila del juego."
+  },
+  {
+    "db_item_id": 2566,
+    "name_en": "Froslassite",
+    "description": {
+      "en": "One of a variety of mysterious Mega Stones. A Froslass holding this stone will be able to Mega Evolve during battle.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsz-a/megastones.shtml"
+    ],
+    "notes": "Serebii presenta este texto en la columna Effect; no se ha verificado como transcripción literal de la mochila del juego."
+  },
+  {
+    "db_item_id": 2640,
+    "name_en": "Garchompite Z",
+    "description": {
+      "en": "One of a variety of mysterious Mega Stones. A Garchomp holding this stone will be able to Mega Evolve during battle.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsz-a/megastones.shtml"
+    ],
+    "notes": "Serebii presenta este texto en la columna Effect; no se ha verificado como transcripción literal de la mochila del juego."
+  },
+  {
+    "db_item_id": 2650,
+    "name_en": "Glimmoranite",
+    "description": {
+      "en": "One of a variety of mysterious Mega Stones. A Glimmora holding this stone will be able to Mega Evolve during battle.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsz-a/megastones.shtml"
+    ],
+    "notes": "Serebii presenta este texto en la columna Effect; no se ha verificado como transcripción literal de la mochila del juego."
+  },
+  {
+    "db_item_id": 2645,
+    "name_en": "Golisopite",
+    "description": {
+      "en": "One of a variety of mysterious Mega Stones. A Golisopod holding this stone will be able to Mega Evolve during battle.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsz-a/megastones.shtml"
+    ],
+    "notes": "Serebii presenta este texto en la columna Effect; no se ha verificado como transcripción literal de la mochila del juego."
+  },
+  {
+    "db_item_id": 2642,
+    "name_en": "Golurkite",
+    "description": {
+      "en": "One of a variety of mysterious Mega Stones. A Golurk holding this stone will be able to Mega Evolve during battle.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsz-a/megastones.shtml"
+    ],
+    "notes": "Serebii presenta este texto en la columna Effect; no se ha verificado como transcripción literal de la mochila del juego."
+  },
+  {
+    "db_item_id": 2577,
+    "name_en": "Greninjite",
+    "description": {
+      "en": "One of a variety of mysterious Mega Stones. A Greninja holding this stone will be able to Mega Evolve during battle.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsz-a/megastones.shtml"
+    ],
+    "notes": "Serebii presenta este texto en la columna Effect; no se ha verificado como transcripción literal de la mochila del juego."
+  },
+  {
+    "db_item_id": 2583,
+    "name_en": "Hawluchanite",
+    "description": {
+      "en": "One of a variety of mysterious Mega Stones. A Hawlucha holding this stone will be able to Mega Evolve during battle.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsz-a/megastones.shtml"
+    ],
+    "notes": "Serebii presenta este texto en la columna Effect; no se ha verificado como transcripción literal de la mochila del juego."
+  },
+  {
+    "db_item_id": 2567,
+    "name_en": "Heatranite",
+    "description": {
+      "en": "One of a variety of mysterious Mega Stones. A Heatran holding this stone will be able to Mega Evolve during battle.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsz-a/megastones.shtml"
+    ],
+    "notes": "Serebii presenta este texto en la columna Effect; no se ha verificado como transcripción literal de la mochila del juego."
+  },
+  {
+    "db_item_id": 2641,
+    "name_en": "Lucarionite Z",
+    "description": {
+      "en": "One of a variety of mysterious Mega Stones. A Lucario holding this stone will be able to Mega Evolve during battle.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsz-a/megastones.shtml"
+    ],
+    "notes": "Serebii presenta este texto en la columna Effect; no se ha verificado como transcripción literal de la mochila del juego."
+  },
+  {
+    "db_item_id": 2646,
+    "name_en": "Magearnite",
+    "description": {
+      "en": "One of a variety of mysterious Mega Stones. A Magearna holding this stone will be able to Mega Evolve during battle.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsz-a/megastones.shtml"
+    ],
+    "notes": "Serebii presenta este texto en la columna Effect; no se ha verificado como transcripción literal de la mochila del juego."
+  },
+  {
+    "db_item_id": 2580,
+    "name_en": "Malamarite",
+    "description": {
+      "en": "One of a variety of mysterious Mega Stones. A Malamar holding this stone will be able to Mega Evolve during battle.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsz-a/megastones.shtml"
+    ],
+    "notes": "Serebii presenta este texto en la columna Effect; no se ha verificado como transcripción literal de la mochila del juego."
+  },
+  {
+    "db_item_id": 2563,
+    "name_en": "Meganiumite",
+    "description": {
+      "en": "One of a variety of mysterious Mega Stones. A Meganium holding this stone will be able to Mega Evolve during battle.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsz-a/megastones.shtml"
+    ],
+    "notes": "Serebii presenta este texto en la columna Effect; no se ha verificado como transcripción literal de la mochila del juego."
+  },
+  {
+    "db_item_id": 2643,
+    "name_en": "Meowsticite",
+    "description": {
+      "en": "One of a variety of mysterious Mega Stones. A Meowstic holding this stone will be able to Mega Evolve during battle.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsz-a/megastones.shtml"
+    ],
+    "notes": "Serebii presenta este texto en la columna Effect; no se ha verificado como transcripción literal de la mochila del juego."
+  },
+  {
+    "db_item_id": 2578,
+    "name_en": "Pyroarite",
+    "description": {
+      "en": "One of a variety of mysterious Mega Stones. A Pyroar holding this stone will be able to Mega Evolve during battle.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsz-a/megastones.shtml"
+    ],
+    "notes": "Serebii presenta este texto en la columna Effect; no se ha verificado como transcripción literal de la mochila del juego."
+  },
+  {
+    "db_item_id": 2635,
+    "name_en": "Raichunite X",
+    "description": {
+      "en": "One of a variety of mysterious Mega Stones. A Raichu holding this stone will be able to Mega Evolve during battle.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsz-a/megastones.shtml"
+    ],
+    "notes": "Serebii presenta este texto en la columna Effect; no se ha verificado como transcripción literal de la mochila del juego."
+  },
+  {
+    "db_item_id": 2636,
+    "name_en": "Raichunite Y",
+    "description": {
+      "en": "One of a variety of mysterious Mega Stones. A Raichu holding this stone will be able to Mega Evolve during battle.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsz-a/megastones.shtml"
+    ],
+    "notes": "Serebii presenta este texto en la columna Effect; no se ha verificado como transcripción literal de la mochila del juego."
+  },
+  {
+    "db_item_id": 2571,
+    "name_en": "Scolipite",
+    "description": {
+      "en": "One of a variety of mysterious Mega Stones. A Scolipede holding this stone will be able to Mega Evolve during battle.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsz-a/megastones.shtml"
+    ],
+    "notes": "Serebii presenta este texto en la columna Effect; no se ha verificado como transcripción literal de la mochila del juego."
+  },
+  {
+    "db_item_id": 2647,
+    "name_en": "Scovillainite",
+    "description": {
+      "en": "One of a variety of mysterious Mega Stones. A Scovillain holding this stone will be able to Mega Evolve during battle.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsz-a/megastones.shtml"
+    ],
+    "notes": "Serebii presenta este texto en la columna Effect; no se ha verificado como transcripción literal de la mochila del juego."
+  },
+  {
+    "db_item_id": 2572,
+    "name_en": "Scraftinite",
+    "description": {
+      "en": "One of a variety of mysterious Mega Stones. A Scrafty holding this stone will be able to Mega Evolve during battle.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsz-a/megastones.shtml"
+    ],
+    "notes": "Serebii presenta este texto en la columna Effect; no se ha verificado como transcripción literal de la mochila del juego."
+  },
+  {
+    "db_item_id": 2565,
+    "name_en": "Skarmorite",
+    "description": {
+      "en": "One of a variety of mysterious Mega Stones. A Skarmory holding this stone will be able to Mega Evolve during battle.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsz-a/megastones.shtml"
+    ],
+    "notes": "Serebii presenta este texto en la columna Effect; no se ha verificado como transcripción literal de la mochila del juego."
+  },
+  {
+    "db_item_id": 2639,
+    "name_en": "Staraptite",
+    "description": {
+      "en": "One of a variety of mysterious Mega Stones. A Staraptor holding this stone will be able to Mega Evolve during battle.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsz-a/megastones.shtml"
+    ],
+    "notes": "Serebii presenta este texto en la columna Effect; no se ha verificado como transcripción literal de la mochila del juego."
+  }
+]

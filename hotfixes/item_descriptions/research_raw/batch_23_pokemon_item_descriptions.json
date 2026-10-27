@@ -1,0 +1,222 @@
+[
+  {
+    "db_item_id": 2435,
+    "name_en": "Yellow Chairs",
+    "description": {
+      "en": "A set of chairs that are ideal for picnicking. Their design was inspired by the Yellow Tablecloth.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/scarletviolet/picnic.shtml"
+    ],
+    "notes": "Descripción recopilada de una página de referencia; no se verificó con captura directa del texto de la mochila en el juego."
+  },
+  {
+    "db_item_id": 2360,
+    "name_en": "Yellow Cup",
+    "description": {
+      "en": "A cup sold with the Yellow Bottle. The two don’t stack, so they’re tough to pack—but they look good, so they’re popular with those who like to post picnic photos.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.gamerguides.com/pokemon-scarlet-and-violet/database/picnic-items/picnics"
+    ],
+    "notes": "Descripción recopilada de una página de referencia; no se verificó con captura directa del texto de la mochila en el juego."
+  },
+  {
+    "db_item_id": 2400,
+    "name_en": "Yellow Dish",
+    "description": {
+      "en": "A dish for picnics. Comes in plenty of colors to choose from based on the food or the mood. The yellow variety is impossible to go wrong with.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.gamerguides.com/pokemon-scarlet-and-violet/database/picnic-items/picnics"
+    ],
+    "notes": "Descripción recopilada de una página de referencia; no se verificó con captura directa del texto de la mochila en el juego."
+  },
+  {
+    "db_item_id": 2378,
+    "name_en": "Yellow Tablecloth",
+    "description": {
+      "en": "A simple yellow tablecloth. It’s smooth and pleasant to the touch, and dishes can be placed on it with hardly a sound.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/scarletviolet/picnic.shtml"
+    ],
+    "notes": "Descripción recopilada de una página de referencia; no se verificó con captura directa del texto de la mochila en el juego."
+  },
+  {
+    "db_item_id": 1897,
+    "name_en": "Yogurt",
+    "description": {
+      "en": "A condiment that's very sweet and very sour. It goes especially well with fruit and is easy to incorporate into a sandwich.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/itemdex/yogurt.shtml"
+    ],
+    "notes": "Descripción recopilada de una página de referencia; no se verificó con captura directa del texto de la mochila en el juego."
+  },
+  {
+    "db_item_id": 2066,
+    "name_en": "Yungoos Fur",
+    "description": {
+      "en": "Material accidentally dropped by a Pokémon. It can be used to make TMs.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/itemdex/yungoosfur.shtml"
+    ],
+    "notes": "Descripción recopilada de una página de referencia; no se verificó con captura directa del texto de la mochila en el juego."
+  },
+  {
+    "db_item_id": 2009,
+    "name_en": "Zangoose Claw",
+    "description": {
+      "en": "Material accidentally dropped by a Pokémon. It can be used to make TMs.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/itemdex/zangooseclaw.shtml"
+    ],
+    "notes": "Descripción recopilada de una página de referencia; no se verificó con captura directa del texto de la mochila en el juego."
+  },
+  {
+    "db_item_id": 2523,
+    "name_en": "Zapdos Treat",
+    "description": {
+      "en": "A snack made from ingredients favored by the Legendary Pokémon Zapdos.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/scarletviolet/items.shtml"
+    ],
+    "notes": "Descripción recopilada de una página de referencia; no se verificó con captura directa del texto de la mochila en el juego."
+  },
+  {
+    "db_item_id": 2539,
+    "name_en": "Zekrom Treat",
+    "description": {
+      "en": "A snack made from ingredients favored by the Legendary Pokémon Zekrom.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/scarletviolet/newitems.shtml"
+    ],
+    "notes": "Descripción recopilada de una página de referencia; no se verificó con captura directa del texto de la mochila en el juego."
+  },
+  {
+    "db_item_id": 2040,
+    "name_en": "Zorua Fur",
+    "description": {
+      "en": "Material accidentally dropped by a Pokémon. It can be used to make TMs.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/itemdex/zoruafur.shtml"
+    ],
+    "notes": "Descripción recopilada de una página de referencia; no se verificó con captura directa del texto de la mochila en el juego."
+  }
+]

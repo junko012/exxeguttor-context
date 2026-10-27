@@ -1,0 +1,808 @@
+[
+  {
+    "db_item_id": 1997,
+    "name_en": "Shroomish Spores",
+    "description": {
+      "en": null,
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable en las fuentes consultadas."
+  },
+  {
+    "db_item_id": 2012,
+    "name_en": "Shuppet Scrap",
+    "description": {
+      "en": null,
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable en las fuentes consultadas."
+  },
+  {
+    "db_item_id": 2089,
+    "name_en": "Silicobra Sand",
+    "description": {
+      "en": null,
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable en las fuentes consultadas."
+  },
+  {
+    "db_item_id": 2354,
+    "name_en": "Silver Bottle",
+    "description": {
+      "en": null,
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable en las fuentes consultadas."
+  },
+  {
+    "db_item_id": 2364,
+    "name_en": "Silver Cup",
+    "description": {
+      "en": null,
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable en las fuentes consultadas."
+  },
+  {
+    "db_item_id": 482,
+    "name_en": "Silver Feather",
+    "description": {
+      "en": "A strange, silver-colored feather.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/itemdex/silverwing.shtml"
+    ],
+    "notes": "Descripción documentada para Gold, Silver y Crystal; se conservó la variante correspondiente a esos juegos."
+  },
+  {
+    "db_item_id": 2335,
+    "name_en": "Silver Pick",
+    "description": {
+      "en": null,
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable en las fuentes consultadas."
+  },
+  {
+    "db_item_id": 2417,
+    "name_en": "Simple Chairs",
+    "description": {
+      "en": null,
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable en las fuentes consultadas."
+  },
+  {
+    "db_item_id": 2095,
+    "name_en": "Sinistea Chip",
+    "description": {
+      "en": null,
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable en las fuentes consultadas."
+  },
+  {
+    "db_item_id": 2498,
+    "name_en": "Skarmory Feather",
+    "description": {
+      "en": null,
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable en las fuentes consultadas."
+  },
+  {
+    "db_item_id": 2057,
+    "name_en": "Skiddo Leaf",
+    "description": {
+      "en": null,
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable en las fuentes consultadas."
+  },
+  {
+    "db_item_id": 2058,
+    "name_en": "Skrelp Kelp",
+    "description": {
+      "en": null,
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable en las fuentes consultadas."
+  },
+  {
+    "db_item_id": 2082,
+    "name_en": "Skwovet Fur",
+    "description": {
+      "en": null,
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable en las fuentes consultadas."
+  },
+  {
+    "db_item_id": 1998,
+    "name_en": "Slakoth Fur",
+    "description": {
+      "en": null,
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable en las fuentes consultadas."
+  },
+  {
+    "db_item_id": 1962,
+    "name_en": "Slowpoke Claw",
+    "description": {
+      "en": null,
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable en las fuentes consultadas."
+  },
+  {
+    "db_item_id": 2363,
+    "name_en": "Slowpoke Cup",
+    "description": {
+      "en": null,
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable en las fuentes consultadas."
+  },
+  {
+    "db_item_id": 2453,
+    "name_en": "Slugma Lava",
+    "description": {
+      "en": null,
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable en las fuentes consultadas."
+  },
+  {
+    "db_item_id": 2499,
+    "name_en": "Smeargle Paint",
+    "description": {
+      "en": null,
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable en las fuentes consultadas."
+  },
+  {
+    "db_item_id": 2341,
+    "name_en": "Smiling Vee Pick",
+    "description": {
+      "en": null,
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable en las fuentes consultadas."
+  },
+  {
+    "db_item_id": 1927,
+    "name_en": "Smoked Fillet",
+    "description": {
+      "en": null,
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable en las fuentes consultadas."
+  },
+  {
+    "db_item_id": 2113,
+    "name_en": "Smoliv Oil",
+    "description": {
+      "en": null,
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable en las fuentes consultadas."
+  },
+  {
+    "db_item_id": 1987,
+    "name_en": "Sneasel Claw",
+    "description": {
+      "en": null,
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable en las fuentes consultadas."
+  },
+  {
+    "db_item_id": 2092,
+    "name_en": "Snom Thread",
+    "description": {
+      "en": null,
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable en las fuentes consultadas."
+  },
+  {
+    "db_item_id": 2014,
+    "name_en": "Snorunt Fur",
+    "description": {
+      "en": null,
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable en las fuentes consultadas."
+  },
+  {
+    "db_item_id": 2035,
+    "name_en": "Snover Berries",
+    "description": {
+      "en": null,
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable en las fuentes consultadas."
+  },
+  {
+    "db_item_id": 2497,
+    "name_en": "Snubbull Hair",
+    "description": {
+      "en": null,
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable en las fuentes consultadas."
+  },
+  {
+    "db_item_id": 2541,
+    "name_en": "Solgaleo Treat",
+    "description": {
+      "en": null,
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable en las fuentes consultadas."
+  },
+  {
+    "db_item_id": 2511,
+    "name_en": "Solosis Gel",
+    "description": {
+      "en": null,
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable en las fuentes consultadas."
+  },
+  {
+    "db_item_id": 1813,
+    "name_en": "Soul Slate",
+    "description": {
+      "en": "A slate overflowing with enigmatic energy. You can feel a strong connection between it and the Soul Room at Ramanas Park.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/itemdex/soulslate.shtml"
+    ],
+    "notes": "Descripción de wiki para Brilliant Diamond/Shining Pearl; no se verificó mediante captura directa del juego."
+  },
+  {
+    "db_item_id": 1906,
+    "name_en": "Sour Herba Mystica",
+    "description": {
+      "en": null,
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable en las fuentes consultadas."
+  },
+  {
+    "db_item_id": 2546,
+    "name_en": "Spectrier Treat",
+    "description": {
+      "en": null,
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable en las fuentes consultadas."
+  },
+  {
+    "db_item_id": 1908,
+    "name_en": "Spicy Herba Mystica",
+    "description": {
+      "en": null,
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable en las fuentes consultadas."
+  },
+  {
+    "db_item_id": 2449,
+    "name_en": "Spinarak Thread",
+    "description": {
+      "en": null,
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable en las fuentes consultadas."
+  },
+  {
+    "db_item_id": 2029,
+    "name_en": "Spiritomb Fragment",
+    "description": {
+      "en": null,
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable en las fuentes consultadas."
+  },
+  {
+    "db_item_id": 2006,
+    "name_en": "Spoink Pearl",
+    "description": {
+      "en": null,
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable en las fuentes consultadas."
+  },
+  {
+    "db_item_id": 2422,
+    "name_en": "Spooky Chairs",
+    "description": {
+      "en": null,
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable en las fuentes consultadas."
+  },
+  {
+    "db_item_id": 2327,
+    "name_en": "Spooky Tablecloth",
+    "description": {
+      "en": null,
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable en las fuentes consultadas."
+  },
+  {
+    "db_item_id": 1815,
+    "name_en": "Squall Slate",
+    "description": {
+      "en": "A slate overflowing with enigmatic energy. You can feel a strong connection between it and the Squall Room at Ramanas Park.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/itemdex/squallslate.shtml"
+    ],
+    "notes": "Descripción de wiki para Brilliant Diamond/Shining Pearl; no se verificó mediante captura directa del juego."
+  },
+  {
+    "db_item_id": 2128,
+    "name_en": "Squawkabilly Feather",
+    "description": {
+      "en": null,
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable en las fuentes consultadas."
+  },
+  {
+    "db_item_id": 1992,
+    "name_en": "Stantler Hair",
+    "description": {
+      "en": null,
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable en las fuentes consultadas."
+  }
+]

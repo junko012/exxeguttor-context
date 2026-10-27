@@ -1,0 +1,822 @@
+[
+  {
+    "db_item_id": 1976,
+    "name_en": "Igglybuff Fluff",
+    "description": {
+      "en": "Material accidentally dropped by a Pokémon. It can be used to make TMs.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/scarletviolet/items.shtml"
+    ],
+    "notes": "Descripción tomada de la tabla de objetos de Serebii para Pokémon Scarlet/Violet; no verificada mediante captura independiente del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 947,
+    "name_en": "Ilima’s Normalium Z",
+    "description": {
+      "en": null,
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable en las fuentes consultadas para este lote; no se infiere ni se traduce texto."
+  },
+  {
+    "db_item_id": 2460,
+    "name_en": "Illumise Fluid",
+    "description": {
+      "en": null,
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable en las fuentes consultadas para este lote; no se infiere ni se traduce texto."
+  },
+  {
+    "db_item_id": 2093,
+    "name_en": "Impidimp Hair",
+    "description": {
+      "en": null,
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable en las fuentes consultadas para este lote; no se infiere ni se traduce texto."
+  },
+  {
+    "db_item_id": 2090,
+    "name_en": "Indeedee Fur",
+    "description": {
+      "en": null,
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable en las fuentes consultadas para este lote; no se infiere ni se traduce texto."
+  },
+  {
+    "db_item_id": 2547,
+    "name_en": "Indigo Disk",
+    "description": {
+      "en": "A mysterious disk with an indigo shine to it, given to you by the Top Champion. It seems to be tied to Area Zero.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/scarletviolet/items.shtml"
+    ],
+    "notes": "Descripción tomada de la tabla de objetos de Serebii para Pokémon Scarlet/Violet; no verificada mediante captura independiente del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 2483,
+    "name_en": "Indigo Style Card",
+    "description": {
+      "en": "Having one of these cards increases the selection available to you in boutiques and hair salons.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/scarletviolet/items.shtml"
+    ],
+    "notes": "Descripción tomada de la tabla de objetos de Serebii para Pokémon Scarlet/Violet; no verificada mediante captura independiente del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 2515,
+    "name_en": "Inkay Ink",
+    "description": {
+      "en": null,
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable en las fuentes consultadas para este lote; no se infiere ni se traduce texto."
+  },
+  {
+    "db_item_id": 1941,
+    "name_en": "Jalapeño",
+    "description": {
+      "en": null,
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable en las fuentes consultadas para este lote; no se infiere ni se traduce texto."
+  },
+  {
+    "db_item_id": 1900,
+    "name_en": "Jam",
+    "description": {
+      "en": null,
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable en las fuentes consultadas para este lote; no se infiere ni se traduce texto."
+  },
+  {
+    "db_item_id": 2475,
+    "name_en": "Jangmo-o Scales",
+    "description": {
+      "en": null,
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable en las fuentes consultadas para este lote; no se infiere ni se traduce texto."
+  },
+  {
+    "db_item_id": 1812,
+    "name_en": "Johto Slate",
+    "description": {
+      "en": null,
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable en las fuentes consultadas para este lote; no se infiere ni se traduce texto."
+  },
+  {
+    "db_item_id": 2512,
+    "name_en": "Joltik Thread",
+    "description": {
+      "en": null,
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable en las fuentes consultadas para este lote; no se infiere ni se traduce texto."
+  },
+  {
+    "db_item_id": 1811,
+    "name_en": "Kanto Slate",
+    "description": {
+      "en": null,
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable en las fuentes consultadas para este lote; no se infiere ni se traduce texto."
+  },
+  {
+    "db_item_id": 1890,
+    "name_en": "Ketchup",
+    "description": {
+      "en": null,
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable en las fuentes consultadas para este lote; no se infiere ni se traduce texto."
+  },
+  {
+    "db_item_id": 1939,
+    "name_en": "Kiwi",
+    "description": {
+      "en": null,
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable en las fuentes consultadas para este lote; no se infiere ni se traduce texto."
+  },
+  {
+    "db_item_id": 2130,
+    "name_en": "Klawf Claw",
+    "description": {
+      "en": null,
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable en las fuentes consultadas para este lote; no se infiere ni se traduce texto."
+  },
+  {
+    "db_item_id": 1926,
+    "name_en": "Klawf Stick",
+    "description": {
+      "en": null,
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable en las fuentes consultadas para este lote; no se infiere ni se traduce texto."
+  },
+  {
+    "db_item_id": 2063,
+    "name_en": "Klefki Key",
+    "description": {
+      "en": null,
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable en las fuentes consultadas para este lote; no se infiere ni se traduce texto."
+  },
+  {
+    "db_item_id": 2445,
+    "name_en": "Koffing Gas",
+    "description": {
+      "en": null,
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable en las fuentes consultadas para este lote; no se infiere ni se traduce texto."
+  },
+  {
+    "db_item_id": 1836,
+    "name_en": "Kofu’s Wallet",
+    "description": {
+      "en": "A wallet that was left behind by Kofu, the Gym Leader at the Cascarrafa Gym. You're to deliver it to him at the market in Porto Marinada.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/scarletviolet/items.shtml"
+    ],
+    "notes": "Descripción tomada de la tabla de objetos de Serebii para Pokémon Scarlet/Violet; no verificada mediante captura independiente del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 2078,
+    "name_en": "Komala Claw",
+    "description": {
+      "en": null,
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable en las fuentes consultadas para este lote; no se infiere ni se traduce texto."
+  },
+  {
+    "db_item_id": 1831,
+    "name_en": "Koraidon’s Poké Ball",
+    "description": {
+      "en": "A Poké Ball that can hold the mysterious Pokémon known as Koraidon. A boy named Arven gave it to you.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/scarletviolet/items.shtml"
+    ],
+    "notes": "Descripción tomada de la tabla de objetos de Serebii para Pokémon Scarlet/Violet; no verificada mediante captura independiente del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 2018,
+    "name_en": "Kricketot Shell",
+    "description": {
+      "en": null,
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable en las fuentes consultadas para este lote; no se infiere ni se traduce texto."
+  },
+  {
+    "db_item_id": 2544,
+    "name_en": "Kubfu Treat",
+    "description": {
+      "en": "A snack made from ingredients favored by the Legendary Pokémon Kubfu.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/scarletviolet/items.shtml"
+    ],
+    "notes": "Descripción tomada de la tabla de objetos de Serebii para Pokémon Scarlet/Violet; no verificada mediante captura independiente del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 2532,
+    "name_en": "Kyogre Treat",
+    "description": {
+      "en": "A snack made from ingredients favored by the Legendary Pokémon Kyogre.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/scarletviolet/items.shtml"
+    ],
+    "notes": "Descripción tomada de la tabla de objetos de Serebii para Pokémon Scarlet/Violet; no verificada mediante captura independiente del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 2540,
+    "name_en": "Kyurem Treat",
+    "description": {
+      "en": "A snack made from ingredients favored by the Legendary Pokémon Kyurem.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/scarletviolet/items.shtml"
+    ],
+    "notes": "Descripción tomada de la tabla de objetos de Serebii para Pokémon Scarlet/Violet; no verificada mediante captura independiente del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 2494,
+    "name_en": "Lapras Teardrop",
+    "description": {
+      "en": null,
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable en las fuentes consultadas para este lote; no se infiere ni se traduce texto."
+  },
+  {
+    "db_item_id": 2052,
+    "name_en": "Larvesta Fuzz",
+    "description": {
+      "en": null,
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable en las fuentes consultadas para este lote; no se infiere ni se traduce texto."
+  },
+  {
+    "db_item_id": 1993,
+    "name_en": "Larvitar Claw",
+    "description": {
+      "en": null,
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable en las fuentes consultadas para este lote; no se infiere ni se traduce texto."
+  },
+  {
+    "db_item_id": 2530,
+    "name_en": "Latias Treat",
+    "description": {
+      "en": "A snack made from ingredients favored by the Legendary Pokémon Latias.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/scarletviolet/items.shtml"
+    ],
+    "notes": "Descripción tomada de la tabla de objetos de Serebii para Pokémon Scarlet/Violet; no verificada mediante captura independiente del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 2531,
+    "name_en": "Latios Treat",
+    "description": {
+      "en": "A snack made from ingredients favored by the Legendary Pokémon Latios.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/scarletviolet/items.shtml"
+    ],
+    "notes": "Descripción tomada de la tabla de objetos de Serebii para Pokémon Scarlet/Violet; no verificada mediante captura independiente del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 2345,
+    "name_en": "Leader’s Crest",
+    "description": {
+      "en": null,
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable en las fuentes consultadas para este lote; no se infiere ni se traduce texto."
+  },
+  {
+    "db_item_id": 2421,
+    "name_en": "Leafy Chairs",
+    "description": {
+      "en": null,
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable en las fuentes consultadas para este lote; no se infiere ni se traduce texto."
+  },
+  {
+    "db_item_id": 2326,
+    "name_en": "Leafy Tablecloth",
+    "description": {
+      "en": null,
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable en las fuentes consultadas para este lote; no se infiere ni se traduce texto."
+  },
+  {
+    "db_item_id": 2103,
+    "name_en": "Lechonk Hair",
+    "description": {
+      "en": null,
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable en las fuentes consultadas para este lote; no se infiere ni se traduce texto."
+  },
+  {
+    "db_item_id": 1909,
+    "name_en": "Lettuce",
+    "description": {
+      "en": null,
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable en las fuentes consultadas para este lote; no se infiere ni se traduce texto."
+  },
+  {
+    "db_item_id": 2432,
+    "name_en": "Lilac Chairs",
+    "description": {
+      "en": null,
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable en las fuentes consultadas para este lote; no se infiere ni se traduce texto."
+  },
+  {
+    "db_item_id": 2375,
+    "name_en": "Lilac Tablecloth",
+    "description": {
+      "en": null,
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable en las fuentes consultadas para este lote; no se infiere ni se traduce texto."
+  },
+  {
+    "db_item_id": 2055,
+    "name_en": "Litleo Tuft",
+    "description": {
+      "en": null,
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable en las fuentes consultadas para este lote; no se infiere ni se traduce texto."
+  }
+]

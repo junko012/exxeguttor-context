@@ -1,0 +1,868 @@
+[
+  {
+    "db_item_id": 2446,
+    "name_en": "Munchlax Fang",
+    "description": {
+      "en": "Material accidentally dropped by a Pokémon. It can be used to make TMs.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/itemdex/list/material.shtml"
+    ],
+    "notes": "Descripción de la lista de materiales de Serebii; no verificada como transcripción literal de la mochila del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 1980,
+    "name_en": "Murkrow Bauble",
+    "description": {
+      "en": "Material accidentally dropped by a Pokémon. It can be used to make TMs.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/itemdex/list/material.shtml"
+    ],
+    "notes": "Descripción de la lista de materiales de Serebii; no verificada como transcripción literal de la mochila del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 2412,
+    "name_en": "Muscle Mochi",
+    "description": {
+      "en": "A mochi cake with Berries kneaded into its dough. It increases base points for a Pokémon's Attack stat.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/scarletviolet/items.shtml"
+    ],
+    "notes": "Descripción tomada de la ficha/lista de objetos de Serebii; no verificada como transcripción literal mediante captura del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 1891,
+    "name_en": "Mustard",
+    "description": {
+      "en": "A very spicy condiment that's indispensable when bread is on the table. It pairs tremendously with ketchup.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/scarletviolet/items.shtml"
+    ],
+    "notes": "Descripción tomada de la ficha/lista de objetos de Serebii; no verificada como transcripción literal mediante captura del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 1809,
+    "name_en": "Mysterious Shard L",
+    "description": {
+      "en": "A large shard that emanates an enigmatic power. Inside the shard, you can see a pattern that looks like Ramanas roses.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/brilliantdiamondshiningpearl/items.shtml"
+    ],
+    "notes": "Descripción tomada de la ficha/lista de objetos de Serebii; no verificada como transcripción literal mediante captura del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 1808,
+    "name_en": "Mysterious Shard S",
+    "description": {
+      "en": "A small shard that emanates an enigmatic power. Inside the shard, you can see a pattern that looks like Ramanas roses.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/brilliantdiamondshiningpearl/items.shtml"
+    ],
+    "notes": "Descripción tomada de la ficha/lista de objetos de Serebii; no verificada como transcripción literal mediante captura del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 2550,
+    "name_en": "Mythical Pecha Berry",
+    "description": {
+      "en": "A Pecha Berry of the highest quality. It's said that a Pecha Berry tree carefully tended by an expert gardener will produce just one of these Berries every few years.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/itemdex/mythicalpechaberry.shtml"
+    ],
+    "notes": "Descripción tomada de la ficha/lista de objetos de Serebii; no verificada como transcripción literal mediante captura del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 2131,
+    "name_en": "Nacli Salt",
+    "description": {
+      "en": "Material accidentally dropped by a Pokémon. It can be used to make TMs.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/itemdex/list/material.shtml"
+    ],
+    "notes": "Descripción de la lista de materiales de Serebii; no verificada como transcripción literal de la mochila del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 2543,
+    "name_en": "Necrozma Treat",
+    "description": {
+      "en": "A snack made from ingredients favored by the Legendary Pokémon Necrozma.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/itemdex/necrozmatreat.shtml"
+    ],
+    "notes": "Descripción tomada de la ficha/lista de objetos de Serebii; no verificada como transcripción literal mediante captura del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 2065,
+    "name_en": "Noibat Fur",
+    "description": {
+      "en": "Material accidentally dropped by a Pokémon. It can be used to make TMs.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/itemdex/list/material.shtml"
+    ],
+    "notes": "Descripción de la lista de materiales de Serebii; no verificada como transcripción literal de la mochila del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 1933,
+    "name_en": "Noodles",
+    "description": {
+      "en": "A nice salty ingredient. It's unclear how well these boiled noodles will serve as a sandwich filling.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/scarletviolet/items.shtml"
+    ],
+    "notes": "Descripción tomada de la ficha/lista de objetos de Serebii; no verificada como transcripción literal mediante captura del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 1862,
+    "name_en": "Normal Tera Shard",
+    "description": {
+      "en": "On rare occasions, these shards form when a Tera Pokémon falls in battle and its Tera Jewel shatters.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/scarletviolet/items.shtml"
+    ],
+    "notes": "Descripción tomada de la ficha/lista de objetos de Serebii; no verificada como transcripción literal mediante captura del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 2458,
+    "name_en": "Nosepass Fragment",
+    "description": {
+      "en": "Material accidentally dropped by a Pokémon. It can be used to make TMs.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/itemdex/list/material.shtml"
+    ],
+    "notes": "Descripción de la lista de materiales de Serebii; no verificada como transcripción literal de la mochila del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 2004,
+    "name_en": "Numel Lava",
+    "description": {
+      "en": "Material accidentally dropped by a Pokémon. It can be used to make TMs.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/itemdex/list/material.shtml"
+    ],
+    "notes": "Descripción de la lista de materiales de Serebii; no verificada como transcripción literal de la mochila del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 2105,
+    "name_en": "Nymble Claw",
+    "description": {
+      "en": "Material accidentally dropped by a Pokémon. It can be used to make TMs.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/itemdex/list/material.shtml"
+    ],
+    "notes": "Descripción de la lista de materiales de Serebii; no verificada como transcripción literal de la mochila del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 1816,
+    "name_en": "Oceanic Slate",
+    "description": {
+      "en": "A slate overflowing with enigmatic energy. You can feel a strong connection between it and the Oceanic Room at Ramanas Park.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/brilliantdiamondshiningpearl/items.shtml"
+    ],
+    "notes": "Descripción tomada de la ficha/lista de objetos de Serebii; no verificada como transcripción literal mediante captura del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 2484,
+    "name_en": "Oddish Leaf",
+    "description": {
+      "en": "Material accidentally dropped by a Pokémon. It can be used to make TMs.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/itemdex/list/material.shtml"
+    ],
+    "notes": "Descripción de la lista de materiales de Serebii; no verificada como transcripción literal de la mochila del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 1902,
+    "name_en": "Olive Oil",
+    "description": {
+      "en": "A condiment offering faint notes of sour and bitter flavors. The most prized varieties are the ones Smoliv love the smell of—such oils' quality is assured.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/scarletviolet/items.shtml"
+    ],
+    "notes": "Descripción tomada de la ficha/lista de objetos de Serebii; no verificada como transcripción literal mediante captura del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 1914,
+    "name_en": "Onion",
+    "description": {
+      "en": "This spicy veggie is indispensable to many sandwiches. It goes well with rich ingredients.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/scarletviolet/items.shtml"
+    ],
+    "notes": "Descripción tomada de la ficha/lista de objetos de Serebii; no verificada como transcripción literal mediante captura del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 2397,
+    "name_en": "Orange Dish",
+    "description": {
+      "en": null,
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable en las fuentes consultadas para este objeto; no se infiere ni se traduce texto."
+  },
+  {
+    "db_item_id": 2075,
+    "name_en": "Oranguru Fur",
+    "description": {
+      "en": "Material accidentally dropped by a Pokémon. It can be used to make TMs.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/itemdex/list/material.shtml"
+    ],
+    "notes": "Descripción de la lista de materiales de Serebii; no verificada como transcripción literal de la mochila del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 2068,
+    "name_en": "Oricorio Feather",
+    "description": {
+      "en": "Material accidentally dropped by a Pokémon. It can be used to make TMs.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/itemdex/list/material.shtml"
+    ],
+    "notes": "Descripción de la lista de materiales de Serebii; no verificada como transcripción literal de la mochila del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 2117,
+    "name_en": "Orthworm Tarnish",
+    "description": {
+      "en": "Material accidentally dropped by a Pokémon. It can be used to make TMs.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/itemdex/list/material.shtml"
+    ],
+    "notes": "Descripción de la lista de materiales de Serebii; no verificada como transcripción literal de la mochila del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 2021,
+    "name_en": "Pachirisu Fur",
+    "description": {
+      "en": "Material accidentally dropped by a Pokémon. It can be used to make TMs.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/itemdex/list/material.shtml"
+    ],
+    "notes": "Descripción de la lista de materiales de Serebii; no verificada como transcripción literal de la mochila del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 2391,
+    "name_en": "Parasol Pick",
+    "description": {
+      "en": null,
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable en las fuentes consultadas para este objeto; no se infiere ni se traduce texto."
+  },
+  {
+    "db_item_id": 2387,
+    "name_en": "Party Sparkler Pick",
+    "description": {
+      "en": null,
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable en las fuentes consultadas para este objeto; no se infiere ni se traduce texto."
+  },
+  {
+    "db_item_id": 2076,
+    "name_en": "Passimian Fur",
+    "description": {
+      "en": "Material accidentally dropped by a Pokémon. It can be used to make TMs.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/itemdex/list/material.shtml"
+    ],
+    "notes": "Descripción de la lista de materiales de Serebii; no verificada como transcripción literal de la mochila del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 2123,
+    "name_en": "Pawmi Fur",
+    "description": {
+      "en": "Material accidentally dropped by a Pokémon. It can be used to make TMs.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/itemdex/list/material.shtml"
+    ],
+    "notes": "Descripción de la lista de materiales de Serebii; no verificada como transcripción literal de la mochila del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 2049,
+    "name_en": "Pawniard Blade",
+    "description": {
+      "en": "Material accidentally dropped by a Pokémon. It can be used to make TMs.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/itemdex/list/material.shtml"
+    ],
+    "notes": "Descripción de la lista de materiales de Serebii; no verificada como transcripción literal de la mochila del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 2434,
+    "name_en": "Peach Chairs",
+    "description": {
+      "en": null,
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable en las fuentes consultadas para este objeto; no se infiere ni se traduce texto."
+  },
+  {
+    "db_item_id": 2377,
+    "name_en": "Peach Tablecloth",
+    "description": {
+      "en": null,
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable en las fuentes consultadas para este objeto; no se infiere ni se traduce texto."
+  },
+  {
+    "db_item_id": 1893,
+    "name_en": "Peanut Butter",
+    "description": {
+      "en": "A very sweet condiment. People in Paldea seem to favor the sweet varieties over the unsweetened.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/scarletviolet/items.shtml"
+    ],
+    "notes": "Descripción tomada de la ficha/lista de objetos de Serebii; no verificada como transcripción literal mediante captura del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 1896,
+    "name_en": "Pepper",
+    "description": {
+      "en": "A seasoning packing very spicy flavor. It goes nicely with oilier foods and works especially well when you add just a pinch for a hint of flavor.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/scarletviolet/items.shtml"
+    ],
+    "notes": "Descripción tomada de la ficha/lista de objetos de Serebii; no verificada como transcripción literal mediante captura del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 2037,
+    "name_en": "Petilil Leaf",
+    "description": {
+      "en": "Material accidentally dropped by a Pokémon. It can be used to make TMs.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/itemdex/list/material.shtml"
+    ],
+    "notes": "Descripción de la lista de materiales de Serebii; no verificada como transcripción literal de la mochila del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 1991,
+    "name_en": "Phanpy Nail",
+    "description": {
+      "en": "Material accidentally dropped by a Pokémon. It can be used to make TMs.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/itemdex/list/material.shtml"
+    ],
+    "notes": "Descripción de la lista de materiales de Serebii; no verificada como transcripción literal de la mochila del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 2472,
+    "name_en": "Phantump Twig",
+    "description": {
+      "en": "Material accidentally dropped by a Pokémon. It can be used to make TMs.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/itemdex/list/material.shtml"
+    ],
+    "notes": "Descripción de la lista de materiales de Serebii; no verificada como transcripción literal de la mochila del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 1975,
+    "name_en": "Pichu Fur",
+    "description": {
+      "en": "Material accidentally dropped by a Pokémon. It can be used to make TMs.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/itemdex/list/material.shtml"
+    ],
+    "notes": "Descripción de la lista de materiales de Serebii; no verificada como transcripción literal de la mochila del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 1913,
+    "name_en": "Pickle",
+    "description": {
+      "en": "This very sour ingredient is made by pickling veggies in a flavorful brine made from spices and vinegar.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/scarletviolet/items.shtml"
+    ],
+    "notes": "Descripción tomada de la ficha/lista de objetos de Serebii; no verificada como transcripción literal mediante captura del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 2311,
+    "name_en": "Picnic Set",
+    "description": {
+      "en": null,
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable en las fuentes consultadas para este objeto; no se infiere ni se traduce texto."
+  },
+  {
+    "db_item_id": 2338,
+    "name_en": "Pika-Pika Pick",
+    "description": {
+      "en": null,
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable en las fuentes consultadas para este objeto; no se infiere ni se traduce texto."
+  }
+]

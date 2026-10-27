@@ -1,0 +1,822 @@
+[
+  {
+    "db_item_id": 2476,
+    "name_en": "Cramorant Down",
+    "description": {
+      "en": "Material accidentally dropped by a Pokémon. It can be used to make TMs.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/itemdex/cramorantdown.shtml"
+    ],
+    "notes": "Texto de la sección Flavour Text de la ficha de Serebii; no verificado mediante captura independiente del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 2504,
+    "name_en": "Cranidos Spike",
+    "description": {
+      "en": "Material accidentally dropped by a Pokémon. It can be used to make TMs.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/itemdex/cranidosspike.shtml"
+    ],
+    "notes": "Texto de la sección Flavour Text de la ficha de Serebii; no verificado mediante captura independiente del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 1899,
+    "name_en": "Cream Cheese",
+    "description": {
+      "en": "A condiment offering very sweet and very tart flavor. It goes well with more ingredients than you’d expect, making it a convenient go-to.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/scarletviolet/items.shtml"
+    ],
+    "notes": "Resumen de la ficha de Serebii para el objeto; no verificado directamente mediante captura del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 2033,
+    "name_en": "Croagunk Poison",
+    "description": {
+      "en": "Material accidentally dropped by a Pokémon. It can be used to make TMs.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/itemdex/croagunkpoison.shtml"
+    ],
+    "notes": "Texto de la sección Flavour Text de la ficha de Serebii; no verificado mediante captura independiente del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 2048,
+    "name_en": "Cryogonal Ice",
+    "description": {
+      "en": "Material accidentally dropped by a Pokémon. It can be used to make TMs.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/itemdex/cryogonalice.shtml"
+    ],
+    "notes": "Texto de la sección Flavour Text de la ficha de Serebii; no verificado mediante captura independiente del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 2410,
+    "name_en": "Crystal Cluster",
+    "description": {
+      "en": "A cluster of the crystals found within the Crystal Pool. They sparkle brilliantly and are apparently necessary to repair a certain mask.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/itemdex/crystalcluster.shtml"
+    ],
+    "notes": "Texto de la sección Flavour Text de la ficha de Serebii; no verificado mediante captura independiente del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 2047,
+    "name_en": "Cubchoo Fur",
+    "description": {
+      "en": "Material accidentally dropped by a Pokémon. It can be used to make TMs.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/itemdex/cubchoofur.shtml"
+    ],
+    "notes": "Resumen de la ficha de Serebii para el objeto; no verificado directamente mediante captura del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 1912,
+    "name_en": "Cucumber",
+    "description": {
+      "en": "A tart and bitter ingredient. Using it together with rich-tasting ingredients in a sandwich will really make the most of a cucumber’s fresh-veggie aroma.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/scarletviolet/items.shtml"
+    ],
+    "notes": "Resumen de la ficha de Serebii para el objeto; no verificado directamente mediante captura del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 2087,
+    "name_en": "Cufant Tarnish",
+    "description": null,
+    "text_kind": null,
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable para este objeto en las fuentes consultadas. No se inventa texto; los demás idiomas quedan null."
+  },
+  {
+    "db_item_id": 1943,
+    "name_en": "Curry Powder",
+    "description": {
+      "en": "A very spicy condiment. Just watch out—use too much of this potent seasoning, and it’ll cancel out the other flavors.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/scarletviolet/items.shtml"
+    ],
+    "notes": "Resumen de la ficha de Serebii para el objeto; no verificado directamente mediante captura del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 2474,
+    "name_en": "Cutiefly Powder",
+    "description": {
+      "en": "Material accidentally dropped by a Pokémon. It can be used to make TMs.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/itemdex/cutieflypowder.shtml"
+    ],
+    "notes": "Resumen de la ficha de Serebii para el objeto; no verificado directamente mediante captura del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 2333,
+    "name_en": "Cyber Ball",
+    "description": {
+      "en": "A ball themed after hardcore gaming PCs. It may not light up like its inspiration, but it still stands out.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/itemdex/cyberball.shtml"
+    ],
+    "notes": "Texto de la sección Flavour Text de la ficha de Serebii; no verificado mediante captura independiente del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 2122,
+    "name_en": "Cyclizar Scales",
+    "description": {
+      "en": "Material accidentally dropped by a Pokémon. It can be used to make TMs.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/itemdex/cyclizarscales.shtml"
+    ],
+    "notes": "Resumen de la ficha de Serebii para el objeto; no verificado directamente mediante captura del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 1822,
+    "name_en": "DS Sounds",
+    "description": {
+      "en": "A music player that allows you to listen to nostalgic songs. It's operated with the flip of a single switch.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/itemdex/dssounds.shtml"
+    ],
+    "notes": "Resumen de la ficha de Serebii para el objeto; no verificado directamente mediante captura del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 1877,
+    "name_en": "Dark Tera Shard",
+    "description": {
+      "en": "On rare occasions, these shards form when a Tera Pokémon falls in battle and its Tera Jewel shatters.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/itemdex/darkterashard.shtml"
+    ],
+    "notes": "Texto de la sección Flavour Text de la ficha de Serebii; no verificado mediante captura independiente del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 2061,
+    "name_en": "Dedenne Fur",
+    "description": {
+      "en": "Material accidentally dropped by a Pokémon. It can be used to make TMs.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/itemdex/dedennefur.shtml"
+    ],
+    "notes": "Resumen de la ficha de Serebii para el objeto; no verificado directamente mediante captura del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 2042,
+    "name_en": "Deerling Hair",
+    "description": {
+      "en": "Material accidentally dropped by a Pokémon. It can be used to make TMs.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/itemdex/deerlinghair.shtml"
+    ],
+    "notes": "Resumen de la ficha de Serebii para el objeto; no verificado directamente mediante captura del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 2051,
+    "name_en": "Deino Scales",
+    "description": {
+      "en": "Material accidentally dropped by a Pokémon. It can be used to make TMs.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/itemdex/deinoscales.shtml"
+    ],
+    "notes": "Resumen de la ficha de Serebii para el objeto; no verificado directamente mediante captura del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 1989,
+    "name_en": "Delibird Parcel",
+    "description": {
+      "en": "Material accidentally dropped by a Pokémon. It can be used to make TMs.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/itemdex/delibirdparcel.shtml"
+    ],
+    "notes": "Resumen de la ficha de Serebii para el objeto; no verificado directamente mediante captura del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 2517,
+    "name_en": "Dewpider Thread",
+    "description": {
+      "en": "Material accidentally dropped by a Pokémon. It can be used to make TMs.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/itemdex/dewpiderthread.shtml"
+    ],
+    "notes": "Resumen de la ficha de Serebii para el objeto; no verificado directamente mediante captura del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 2317,
+    "name_en": "Diamond Bottle",
+    "description": null,
+    "text_kind": null,
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable para este objeto en las fuentes consultadas. No se inventa texto; los demás idiomas quedan null."
+  },
+  {
+    "db_item_id": 2430,
+    "name_en": "Diamond Chairs",
+    "description": null,
+    "text_kind": null,
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable para este objeto en las fuentes consultadas. No se inventa texto; los demás idiomas quedan null."
+  },
+  {
+    "db_item_id": 2356,
+    "name_en": "Diamond Pattern Cup",
+    "description": null,
+    "text_kind": null,
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable para este objeto en las fuentes consultadas. No se inventa texto; los demás idiomas quedan null."
+  },
+  {
+    "db_item_id": 2373,
+    "name_en": "Diamond Tablecloth",
+    "description": null,
+    "text_kind": null,
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable para este objeto en las fuentes consultadas. No se inventa texto; los demás idiomas quedan null."
+  },
+  {
+    "db_item_id": 1810,
+    "name_en": "Digger Drill",
+    "description": {
+      "en": "A single-use drill to bore a hole in the wall for your Secret Base.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/itemdex/diggerdrill.shtml"
+    ],
+    "notes": "Texto de la sección Flavour Text de la ficha de Serebii; no verificado mediante captura independiente del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 1957,
+    "name_en": "Diglett Dirt",
+    "description": {
+      "en": "Material accidentally dropped by a Pokémon. It can be used to make TMs.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/itemdex/diglettdirt.shtml"
+    ],
+    "notes": "Resumen de la ficha de Serebii para el objeto; no verificado directamente mediante captura del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 1820,
+    "name_en": "Discovery Slate",
+    "description": {
+      "en": "A slate overflowing with enigmatic energy. You can feel a strong connection between it and the Discovery Room at Ramanas Park.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/itemdex/discoveryslate.shtml"
+    ],
+    "notes": "Texto de la sección Flavour Text de la ficha de Serebii; no verificado mediante captura independiente del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 1821,
+    "name_en": "Distortion Slate",
+    "description": {
+      "en": "A slate overflowing with enigmatic energy. You can feel a strong connection between it and the Distortion Room at Ramanas Park.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/itemdex/distortionslate.shtml"
+    ],
+    "notes": "Texto de la sección Flavour Text de la ficha de Serebii; no verificado mediante captura independiente del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 1972,
+    "name_en": "Ditto Goo",
+    "description": {
+      "en": "Material accidentally dropped by a Pokémon. It can be used to make TMs.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/itemdex/dittogoo.shtml"
+    ],
+    "notes": "Resumen de la ficha de Serebii para el objeto; no verificado directamente mediante captura del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 2486,
+    "name_en": "Doduo Down",
+    "description": {
+      "en": "Material accidentally dropped by a Pokémon. It can be used to make TMs.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/itemdex/doduodown.shtml"
+    ],
+    "notes": "Resumen de la ficha de Serebii para el objeto; no verificado directamente mediante captura del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 2110,
+    "name_en": "Dondozo Whisker",
+    "description": {
+      "en": "Material accidentally dropped by a Pokémon. It can be used to make TMs.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/itemdex/dondozowhisker.shtml"
+    ],
+    "notes": "Resumen de la ficha de Serebii para el objeto; no verificado directamente mediante captura del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 1876,
+    "name_en": "Dragon Tera Shard",
+    "description": {
+      "en": "On rare occasions, these shards form when a Tera Pokémon falls in battle and its Tera Jewel shatters.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/itemdex/dragonterashard.shtml"
+    ],
+    "notes": "Resumen de la ficha de Serebii para el objeto; no verificado directamente mediante captura del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 1974,
+    "name_en": "Dratini Scales",
+    "description": {
+      "en": "Material accidentally dropped by a Pokémon. It can be used to make TMs.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/itemdex/dratiniscales.shtml"
+    ],
+    "notes": "Resumen de la ficha de Serebii para el objeto; no verificado directamente mediante captura del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 2099,
+    "name_en": "Dreepy Powder",
+    "description": {
+      "en": "Material accidentally dropped by a Pokémon. It can be used to make TMs.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/itemdex/dreepypowder.shtml"
+    ],
+    "notes": "Resumen de la ficha de Serebii para el objeto; no verificado directamente mediante captura del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 2024,
+    "name_en": "Drifloon Gas",
+    "description": {
+      "en": "Material accidentally dropped by a Pokémon. It can be used to make TMs.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/itemdex/drifloongas.shtml"
+    ],
+    "notes": "Resumen de la ficha de Serebii para el objeto; no verificado directamente mediante captura del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 2507,
+    "name_en": "Drilbur Claw",
+    "description": {
+      "en": "Material accidentally dropped by a Pokémon. It can be used to make TMs.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/itemdex/drilburclaw.shtml"
+    ],
+    "notes": "Resumen de la ficha de Serebii para el objeto; no verificado directamente mediante captura del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 1967,
+    "name_en": "Drowzee Fur",
+    "description": {
+      "en": "Material accidentally dropped by a Pokémon. It can be used to make TMs.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/itemdex/drowzeefur.shtml"
+    ],
+    "notes": "Resumen de la ficha de Serebii para el objeto; no verificado directamente mediante captura del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 2467,
+    "name_en": "Ducklett Feather",
+    "description": {
+      "en": "Material accidentally dropped by a Pokémon. It can be used to make TMs.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/itemdex/ducklettfeather.shtml"
+    ],
+    "notes": "Resumen de la ficha de Serebii para el objeto; no verificado directamente mediante captura del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 1984,
+    "name_en": "Dunsparce Scales",
+    "description": {
+      "en": "Material accidentally dropped by a Pokémon. It can be used to make TMs.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/itemdex/dunsparcescales.shtml"
+    ],
+    "notes": "Resumen de la ficha de Serebii para el objeto; no verificado directamente mediante captura del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 2521,
+    "name_en": "Duraludon Tarnish",
+    "description": {
+      "en": "Material accidentally dropped by a Pokémon. It can be used to make TMs.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/itemdex/duraludontarnish.shtml"
+    ],
+    "notes": "Resumen de la ficha de Serebii para el objeto; no verificado directamente mediante captura del juego. Los demás idiomas quedan null al no haberse verificado."
+  }
+]

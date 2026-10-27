@@ -2,7 +2,8 @@
 """Carga ItemDescriptions y MachineMoves en pokemon.db desde los CSV de data/. Idempotente.
 
 Uso:
-  python3 load_data.py /ruta/a/pokemon.db [--dry-run] [--research items_text_research.csv] [--vacuum]
+  python3 load_data.py /ruta/a/pokemon.db [--dry-run] [--research otro_items_text_research.csv] [--vacuum]
+  (data/items_text_research.csv se carga solo si existe)
 
 - Crea las tablas si faltan. No borra ni cambia Items, ItemGameCodes ni Games.
 - ItemDescriptions y MachineMoves son tablas DERIVADAS: cada ejecución las reconstruye completas en una transacción.
@@ -80,8 +81,11 @@ def main():
         if os.path.exists(p):
             for r in read_csv(p):
                 offer(int(r["db_item_id"]), r["lang"], r["text"], r["source"], "", 1)
-    if a.research:
-        for r in read_csv(a.research):
+    research_files = [os.path.join(a.data_dir, "items_text_research.csv")] + ([a.research] if a.research else [])
+    for rf in research_files:
+        if not os.path.exists(rf):
+            continue
+        for r in read_csv(rf):
             offer(int(r["db_item_id"]), r["lang"], r["text"], "research", r.get("source_url", ""), int(r.get("verified", 0)))
 
     # ---------- movimientos de MT/MO/DT ----------

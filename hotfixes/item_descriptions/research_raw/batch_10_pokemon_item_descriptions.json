@@ -1,0 +1,510 @@
+[
+  {
+    "db_item_id": 1881,
+    "name_en": "Ability Shield",
+    "description": {
+      "en": "An item to be held by a Pokémon. This cute and rather unique-looking shield protects the holder from having its Ability changed by others.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/scarletviolet/items.shtml"
+    ],
+    "notes": "Resumen de la tabla de objetos de Serebii para Pokémon Scarlet/Violet; no verificado directamente mediante captura o volcado del texto del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 2329,
+    "name_en": "Academy Ball",
+    "description": null,
+    "text_kind": null,
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable en la fuente consultada. No se inventa texto; los demás idiomas quedan null."
+  },
+  {
+    "db_item_id": 2313,
+    "name_en": "Academy Bottle",
+    "description": null,
+    "text_kind": null,
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable en la fuente consultada. No se inventa texto; los demás idiomas quedan null."
+  },
+  {
+    "db_item_id": 2418,
+    "name_en": "Academy Chairs",
+    "description": null,
+    "text_kind": null,
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable en la fuente consultada. No se inventa texto; los demás idiomas quedan null."
+  },
+  {
+    "db_item_id": 2318,
+    "name_en": "Academy Cup",
+    "description": null,
+    "text_kind": null,
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable en la fuente consultada. No se inventa texto; los demás idiomas quedan null."
+  },
+  {
+    "db_item_id": 2323,
+    "name_en": "Academy Tablecloth",
+    "description": null,
+    "text_kind": null,
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable en la fuente consultada. No se inventa texto; los demás idiomas quedan null."
+  },
+  {
+    "db_item_id": 2450,
+    "name_en": "Aipom Hair",
+    "description": null,
+    "text_kind": null,
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable en la fuente consultada. No se inventa texto; los demás idiomas quedan null."
+  },
+  {
+    "db_item_id": 2044,
+    "name_en": "Alomomola Mucus",
+    "description": null,
+    "text_kind": null,
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable en la fuente consultada. No se inventa texto; los demás idiomas quedan null."
+  },
+  {
+    "db_item_id": 1938,
+    "name_en": "Apple",
+    "description": {
+      "en": "This very sweet ingredient is sliced thin to make it easy to add into a sandwich.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/scarletviolet/items.shtml"
+    ],
+    "notes": "Resumen de la tabla de objetos de Serebii para Pokémon Scarlet/Violet; no verificado directamente mediante captura o volcado del texto del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 2094,
+    "name_en": "Applin Juice",
+    "description": null,
+    "text_kind": null,
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable en la fuente consultada. No se inventa texto; los demás idiomas quedan null."
+  },
+  {
+    "db_item_id": 2083,
+    "name_en": "Arrokuda Scales",
+    "description": null,
+    "text_kind": null,
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable en la fuente consultada. No se inventa texto; los demás idiomas quedan null."
+  },
+  {
+    "db_item_id": 2522,
+    "name_en": "Articuno Treat",
+    "description": {
+      "en": "A snack made from ingredients favored by the Legendary Pokémon Articuno.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/scarletviolet/items.shtml"
+    ],
+    "notes": "Resumen de la tabla de objetos de Serebii para Pokémon Scarlet/Violet; no verificado directamente mediante captura o volcado del texto del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 1919,
+    "name_en": "Avocado",
+    "description": {
+      "en": "An ingredient with sweet notes—though its flavor is very mild. The avocado's richness, however, makes it satisfying to eat.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/scarletviolet/items.shtml"
+    ],
+    "notes": "Resumen de la tabla de objetos de Serebii para Pokémon Scarlet/Violet; no verificado directamente mediante captura o volcado del texto del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 2046,
+    "name_en": "Axew Scales",
+    "description": null,
+    "text_kind": null,
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable en la fuente consultada. No se inventa texto; los demás idiomas quedan null."
+  },
+  {
+    "db_item_id": 2000,
+    "name_en": "Azurill Fur",
+    "description": null,
+    "text_kind": null,
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable en la fuente consultada. No se inventa texto; los demás idiomas quedan null."
+  },
+  {
+    "db_item_id": 2426,
+    "name_en": "B&W Grass Chairs",
+    "description": null,
+    "text_kind": null,
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable en la fuente consultada. No se inventa texto; los demás idiomas quedan null."
+  },
+  {
+    "db_item_id": 2369,
+    "name_en": "B&W Grass Tablecloth",
+    "description": null,
+    "text_kind": null,
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable en la fuente consultada. No se inventa texto; los demás idiomas quedan null."
+  },
+  {
+    "db_item_id": 1920,
+    "name_en": "Bacon",
+    "description": {
+      "en": "This very salty ingredient has been cooked just shy of charred, making it burst with fragrance and tasty flavor.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/scarletviolet/items.shtml"
+    ],
+    "notes": "Resumen de la tabla de objetos de Serebii para Pokémon Scarlet/Violet; no verificado directamente mediante captura o volcado del texto del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 2016,
+    "name_en": "Bagon Scales",
+    "description": null,
+    "text_kind": null,
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable en la fuente consultada. No se inventa texto; los demás idiomas quedan null."
+  },
+  {
+    "db_item_id": 1888,
+    "name_en": "Baguette",
+    "description": null,
+    "text_kind": null,
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable en la fuente consultada. No se inventa texto; los demás idiomas quedan null."
+  },
+  {
+    "db_item_id": 1936,
+    "name_en": "Banana",
+    "description": {
+      "en": "A very sweet ingredient. This go-to fruit is sweet and rich, and it's beloved by many Pokémon.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/scarletviolet/items.shtml"
+    ],
+    "notes": "Resumen de la tabla de objetos de Serebii para Pokémon Scarlet/Violet; no verificado directamente mediante captura o volcado del texto del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 2011,
+    "name_en": "Barboach Slime",
+    "description": null,
+    "text_kind": null,
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable en la fuente consultada. No se inventa texto; los demás idiomas quedan null."
+  },
+  {
+    "db_item_id": 2355,
+    "name_en": "Barred Cup",
+    "description": null,
+    "text_kind": null,
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable en la fuente consultada. No se inventa texto; los demás idiomas quedan null."
+  },
+  {
+    "db_item_id": 2038,
+    "name_en": "Basculin Fang",
+    "description": null,
+    "text_kind": null,
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable en la fuente consultada. No se inventa texto; los demás idiomas quedan null."
+  },
+  {
+    "db_item_id": 1946,
+    "name_en": "Basil",
+    "description": {
+      "en": "A very bitter ingredient that's quite versatile, as herbs go. It's fragrant and goes well with tomatoes.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/scarletviolet/items.shtml"
+    ],
+    "notes": "Resumen de la tabla de objetos de Serebii para Pokémon Scarlet/Violet; no verificado directamente mediante captura o volcado del texto del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 2427,
+    "name_en": "Battle Chairs",
+    "description": null,
+    "text_kind": null,
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable en la fuente consultada. No se inventa texto; los demás idiomas quedan null."
+  },
+  {
+    "db_item_id": 2370,
+    "name_en": "Battle Tablecloth",
+    "description": null,
+    "text_kind": null,
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable en la fuente consultada. No se inventa texto; los demás idiomas quedan null."
+  },
+  {
+    "db_item_id": 2503,
+    "name_en": "Beldum Claw",
+    "description": null,
+    "text_kind": null,
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable en la fuente consultada. No se inventa texto; los demás idiomas quedan null."
+  },
+  {
+    "db_item_id": 2443,
+    "name_en": "Bellsprout Vine",
+    "description": null,
+    "text_kind": null,
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable en la fuente consultada. No se inventa texto; los demás idiomas quedan null."
+  },
+  {
+    "db_item_id": 2064,
+    "name_en": "Bergmite Ice",
+    "description": null,
+    "text_kind": null,
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable en la fuente consultada. No se inventa texto; los demás idiomas quedan null."
+  },
+  {
+    "db_item_id": 1843,
+    "name_en": "Big Bamboo Shoot",
+    "description": {
+      "en": "A large and rare bamboo shoot. It's extremely popular with a certain class of gourmands.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/scarletviolet/items.shtml"
+    ],
+    "notes": "Resumen de la tabla de objetos de Serebii para Pokémon Scarlet/Violet; no verificado directamente mediante captura o volcado del texto del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 1907,
+    "name_en": "Bitter Herba Mystica",
+    "description": {
+      "en": "A legendary condiment with a deeply bitter taste. It's said to dramatically bolster a body's immune defenses, though that hasn't been proven.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/scarletviolet/items.shtml"
+    ],
+    "notes": "Resumen de la tabla de objetos de Serebii para Pokémon Scarlet/Violet; no verificado directamente mediante captura o volcado del texto del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 2506,
+    "name_en": "Blitzle Mane Hair",
+    "description": null,
+    "text_kind": null,
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable en la fuente consultada. No se inventa texto; los demás idiomas quedan null."
+  },
+  {
+    "db_item_id": 2349,
+    "name_en": "Blue Bottle",
+    "description": null,
+    "text_kind": null,
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable en la fuente consultada. No se inventa texto; los demás idiomas quedan null."
+  },
+  {
+    "db_item_id": 2436,
+    "name_en": "Blue Chairs",
+    "description": null,
+    "text_kind": null,
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable en la fuente consultada. No se inventa texto; los demás idiomas quedan null."
+  },
+  {
+    "db_item_id": 2359,
+    "name_en": "Blue Cup",
+    "description": null,
+    "text_kind": null,
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable en la fuente consultada. No se inventa texto; los demás idiomas quedan null."
+  },
+  {
+    "db_item_id": 2395,
+    "name_en": "Blue Dish",
+    "description": null,
+    "text_kind": null,
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable en la fuente consultada. No se inventa texto; los demás idiomas quedan null."
+  },
+  {
+    "db_item_id": 2342,
+    "name_en": "Blue Poké Ball Pick",
+    "description": null,
+    "text_kind": null,
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable en la fuente consultada. No se inventa texto; los demás idiomas quedan null."
+  },
+  {
+    "db_item_id": 2379,
+    "name_en": "Blue Tablecloth",
+    "description": null,
+    "text_kind": null,
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable en la fuente consultada. No se inventa texto; los demás idiomas quedan null."
+  },
+  {
+    "db_item_id": 2337,
+    "name_en": "Blue-Flag Pick",
+    "description": null,
+    "text_kind": null,
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable en la fuente consultada. No se inventa texto; los demás idiomas quedan null."
+  }
+]

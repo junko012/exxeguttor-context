@@ -1,0 +1,882 @@
+[
+  {
+    "db_item_id": 2463,
+    "name_en": "Duskull Fragment",
+    "description": {
+      "en": "Material accidentally dropped by a Pokémon. It can be used to make TMs.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/itemdex/duskullfragment.shtml"
+    ],
+    "notes": "Texto de la sección Flavour Text de Serebii; no verificado mediante captura independiente del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 2362,
+    "name_en": "Eevee Cup",
+    "description": {
+      "en": "A cup for big-time Pokémon fans. Kids will happily drink out of it, making it a boon to parents.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/itemdex/eeveecup.shtml"
+    ],
+    "notes": "Texto de la sección Flavour Text de Serebii; no verificado mediante captura independiente del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 1973,
+    "name_en": "Eevee Fur",
+    "description": {
+      "en": "Material accidentally dropped by a Pokémon. It can be used to make TMs.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/itemdex/eeveefur.shtml"
+    ],
+    "notes": "Texto de la sección Flavour Text de Serebii; no verificado mediante captura independiente del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 1929,
+    "name_en": "Egg",
+    "description": {
+      "en": "An ingredient with a touch of saltiness. It's full of nutrients and can be enjoyed with all sorts of seasonings.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/itemdex/egg.shtml"
+    ],
+    "notes": "Texto de la sección Flavour Text de Serebii; no verificado mediante captura independiente del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 2098,
+    "name_en": "Eiscue Down",
+    "description": {
+      "en": "Material accidentally dropped by a Pokémon. It can be used to make TMs.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/itemdex/eiscuedown.shtml"
+    ],
+    "notes": "Texto de la sección Flavour Text de Serebii; no verificado mediante captura independiente del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 2438,
+    "name_en": "Ekans Fang",
+    "description": {
+      "en": "Material accidentally dropped by a Pokémon. It can be used to make TMs.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/itemdex/ekansfang.shtml"
+    ],
+    "notes": "Texto de la sección Flavour Text de Serebii; no verificado mediante captura independiente del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 1865,
+    "name_en": "Electric Tera Shard",
+    "description": {
+      "en": "On rare occasions, these shards form when a Tera Pokémon falls in battle and its Tera Jewel shatters.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/itemdex/electricterashard.shtml"
+    ],
+    "notes": "Texto de la sección Flavour Text de Serebii; no verificado mediante captura independiente del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 2492,
+    "name_en": "Elekid Fur",
+    "description": {
+      "en": "Material accidentally dropped by a Pokémon. It can be used to make TMs.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/itemdex/elekidfur.shtml"
+    ],
+    "notes": "Texto de la sección Flavour Text de Serebii; no verificado mediante captura independiente del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 2526,
+    "name_en": "Entei Treat",
+    "description": {
+      "en": "A snack made from ingredients favored by the Legendary Pokémon Entei.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/itemdex/enteitreat.shtml"
+    ],
+    "notes": "Texto de la sección Flavour Text de Serebii; no verificado mediante captura independiente del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 2514,
+    "name_en": "Espurr Fur",
+    "description": {
+      "en": "Material accidentally dropped by a Pokémon. It can be used to make TMs.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/itemdex/espurrfur.shtml"
+    ],
+    "notes": "Texto de la sección Flavour Text de Serebii; no verificado mediante captura independiente del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 2488,
+    "name_en": "Exeggcute Shell",
+    "description": {
+      "en": "Material accidentally dropped by a Pokémon. It can be used to make TMs.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/itemdex/exeggcuteshell.shtml"
+    ],
+    "notes": "Texto de la sección Flavour Text de Serebii; no verificado mediante captura independiente del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 2365,
+    "name_en": "Exercise Ball",
+    "description": {
+      "en": "A big ball designed for exercising. It can work as a seat if you get tired, too.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/itemdex/exerciseball.shtml"
+    ],
+    "notes": "Texto de la sección Flavour Text de Serebii; no verificado mediante captura independiente del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 1879,
+    "name_en": "Fairy Tera Shard",
+    "description": {
+      "en": "On rare occasions, these shards form when a Tera Pokémon falls in battle and its Tera Jewel shatters.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/itemdex/fairyterashard.shtml"
+    ],
+    "notes": "Texto de la sección Flavour Text de Serebii; no verificado mediante captura independiente del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 2086,
+    "name_en": "Falinks Sweat",
+    "description": {
+      "en": "Material accidentally dropped by a Pokémon. It can be used to make TMs.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/itemdex/falinkssweat.shtml"
+    ],
+    "notes": "Texto de la sección Flavour Text de Serebii; no verificado mediante captura independiente del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 2462,
+    "name_en": "Feebas Scales",
+    "description": {
+      "en": "Material accidentally dropped by a Pokémon. It can be used to make TMs.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/itemdex/feebasscales.shtml"
+    ],
+    "notes": "Texto de la sección Flavour Text de Serebii; no verificado mediante captura independiente del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 2134,
+    "name_en": "Fidough Fur",
+    "description": {
+      "en": "Material accidentally dropped by a Pokémon. It can be used to make TMs.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/itemdex/fidoughfur.shtml"
+    ],
+    "notes": "Texto de la sección Flavour Text de Serebii; no verificado mediante captura independiente del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 2548,
+    "name_en": "Fiery Pick",
+    "description": {
+      "en": "A pick designed after Magmortar. It's said that using this pick makes any sandwich look like it's fresh out of the oven.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/itemdex/fierypick.shtml"
+    ],
+    "notes": "Texto de la sección Flavour Text de Serebii; no verificado mediante captura independiente del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 1868,
+    "name_en": "Fighting Tera Shard",
+    "description": {
+      "en": "On rare occasions, these shards form when a Tera Pokémon falls in battle and its Tera Jewel shatters.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/itemdex/fightingterashard.shtml"
+    ],
+    "notes": "Texto de la sección Flavour Text de Serebii; no verificado mediante captura independiente del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 2112,
+    "name_en": "Finizen Mucus",
+    "description": {
+      "en": "Material accidentally dropped by a Pokémon. It can be used to make TMs.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/itemdex/finizenmucus.shtml"
+    ],
+    "notes": "Texto de la sección Flavour Text de Serebii; no verificado mediante captura independiente del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 2034,
+    "name_en": "Finneon Scales",
+    "description": {
+      "en": "Material accidentally dropped by a Pokémon. It can be used to make TMs.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/itemdex/finneonscales.shtml"
+    ],
+    "notes": "Texto de la sección Flavour Text de Serebii; no verificado mediante captura independiente del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 2357,
+    "name_en": "Fire Pattern Cup",
+    "description": {
+      "en": "A cup that's as good for using at home as on a picnic. It's light, sturdy, and stacks well, so it's a cinch to pack up and carry around.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/scarletviolet/picnic.shtml"
+    ],
+    "notes": "Texto de la sección Flavour Text de Serebii; no verificado mediante captura independiente del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 1863,
+    "name_en": "Fire Tera Shard",
+    "description": {
+      "en": "On rare occasions, these shards form when a Tera Pokémon falls in battle and its Tera Jewel shatters.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/itemdex/fireterashard.shtml"
+    ],
+    "notes": "Texto de la sección Flavour Text de Serebii; no verificado mediante captura independiente del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 2056,
+    "name_en": "Flabébé Pollen",
+    "description": {
+      "en": "Material accidentally dropped by a Pokémon. It can be used to make TMs.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/itemdex/flabebepollen.shtml"
+    ],
+    "notes": "Texto de la sección Flavour Text de Serebii; no verificado mediante captura independiente del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 2129,
+    "name_en": "Flamigo Down",
+    "description": {
+      "en": "Material accidentally dropped by a Pokémon. It can be used to make TMs.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/itemdex/flamigodown.shtml"
+    ],
+    "notes": "Texto de la sección Flavour Text de Serebii; no verificado mediante captura independiente del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 2053,
+    "name_en": "Fletchling Feather",
+    "description": {
+      "en": "Material accidentally dropped by a Pokémon. It can be used to make TMs.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/itemdex/fletchlingfeather.shtml"
+    ],
+    "notes": "Texto de la sección Flavour Text de Serebii; no verificado mediante captura independiente del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 2108,
+    "name_en": "Flittle Down",
+    "description": {
+      "en": "Material accidentally dropped by a Pokémon. It can be used to make TMs.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/itemdex/flittledown.shtml"
+    ],
+    "notes": "Texto de la sección Flavour Text de Serebii; no verificado mediante captura independiente del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 2322,
+    "name_en": "Flower Pattern Cup",
+    "description": {
+      "en": "A cup that's as good for using at home as on a picnic. It's light, sturdy, and stacks well, so it's a cinch to pack up and carry around.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/scarletviolet/picnic.shtml"
+    ],
+    "notes": "Texto de la sección Flavour Text de Serebii; no verificado mediante captura independiente del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 1871,
+    "name_en": "Flying Tera Shard",
+    "description": {
+      "en": "On rare occasions, these shards form when a Tera Pokémon falls in battle and its Tera Jewel shatters.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/itemdex/flyingterashard.shtml"
+    ],
+    "notes": "Texto de la sección Flavour Text de Serebii; no verificado mediante captura independiente del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 2072,
+    "name_en": "Fomantis Leaf",
+    "description": {
+      "en": "Material accidentally dropped by a Pokémon. It can be used to make TMs.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/itemdex/fomantisleaf.shtml"
+    ],
+    "notes": "Texto de la sección Flavour Text de Serebii; no verificado mediante captura independiente del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 2043,
+    "name_en": "Foongus Spores",
+    "description": {
+      "en": "Material accidentally dropped by a Pokémon. It can be used to make TMs.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/itemdex/foongusspores.shtml"
+    ],
+    "notes": "Texto de la sección Flavour Text de Serebii; no verificado mediante captura independiente del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 2479,
+    "name_en": "Fresh-Start Mochi",
+    "description": {
+      "en": "A mochi cake with Berries kneaded into its dough. It causes a Pokémon to lose all its base points.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/itemdex/fresh-startmochi.shtml"
+    ],
+    "notes": "Texto de la sección Flavour Text de Serebii; no verificado mediante captura independiente del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 1928,
+    "name_en": "Fried Fillet",
+    "description": {
+      "en": "When used in a sandwich, this very salty and bitter ingredient is at its best paired with sour seasonings.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/itemdex/friedfillet.shtml"
+    ],
+    "notes": "Texto de la sección Flavour Text de Serebii; no verificado mediante captura independiente del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 2120,
+    "name_en": "Frigibax Scales",
+    "description": {
+      "en": "Material accidentally dropped by a Pokémon. It can be used to make TMs.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/itemdex/frigibaxscales.shtml"
+    ],
+    "notes": "Texto de la sección Flavour Text de Serebii; no verificado mediante captura independiente del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 1966,
+    "name_en": "Gastly Gas",
+    "description": {
+      "en": "Material accidentally dropped by a Pokémon. It can be used to make TMs.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/itemdex/gastlygas.shtml"
+    ],
+    "notes": "Texto de la sección Flavour Text de Serebii; no verificado mediante captura independiente del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 2414,
+    "name_en": "Genius Mochi",
+    "description": {
+      "en": "A mochi cake with Berries kneaded into its dough. It increases base points for a Pokémon’s Sp. Atk stat.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/itemdex/geniusmochi.shtml"
+    ],
+    "notes": "Texto de la sección Flavour Text de Serebii; no verificado mediante captura independiente del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 1819,
+    "name_en": "Genome Slate",
+    "description": {
+      "en": "A slate overflowing with enigmatic energy. You can feel a strong connection between it and the Genome Room at Ramanas Park.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/itemdex/genomeslate.shtml"
+    ],
+    "notes": "Texto de la sección Flavour Text de Serebii; no verificado mediante captura independiente del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 2444,
+    "name_en": "Geodude Fragment",
+    "description": {
+      "en": "Material accidentally dropped by a Pokémon. It can be used to make TMs.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/itemdex/geodudefragment.shtml"
+    ],
+    "notes": "Texto de la sección Flavour Text de Serebii; no verificado mediante captura independiente del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 1875,
+    "name_en": "Ghost Tera Shard",
+    "description": {
+      "en": "On rare occasions, these shards form when a Tera Pokémon falls in battle and its Tera Jewel shatters.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/itemdex/ghostterashard.shtml"
+    ],
+    "notes": "Texto de la sección Flavour Text de Serebii; no verificado mediante captura independiente del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 2030,
+    "name_en": "Gible Scales",
+    "description": {
+      "en": "Material accidentally dropped by a Pokémon. It can be used to make TMs.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/itemdex/giblescales.shtml"
+    ],
+    "notes": "Texto de la sección Flavour Text de Serebii; no verificado mediante captura independiente del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 1982,
+    "name_en": "Girafarig Fur",
+    "description": {
+      "en": "Material accidentally dropped by a Pokémon. It can be used to make TMs.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/itemdex/girafarigfur.shtml"
+    ],
+    "notes": "Texto de la sección Flavour Text de Serebii; no verificado mediante captura independiente del juego. Los demás idiomas quedan null al no haberse verificado."
+  }
+]

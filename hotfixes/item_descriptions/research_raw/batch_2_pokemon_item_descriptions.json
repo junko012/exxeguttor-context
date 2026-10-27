@@ -1,0 +1,838 @@
+[
+  {
+    "db_item_id": 2561,
+    "name_en": "Starminite",
+    "description": {
+      "en": "One of a variety of mysterious Mega Stones. A Starmie holding this stone will be able to Mega Evolve during battle.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsz-a/megastones.shtml"
+    ],
+    "notes": "Texto publicado en la tabla de Serebii; no se ha verificado como transcripción literal de la mochila del juego. Los demás idiomas quedan null porque no se halló texto oficial verificable en esta fuente."
+  },
+  {
+    "db_item_id": 2649,
+    "name_en": "Tatsugirinite",
+    "description": {
+      "en": "One of a variety of mysterious Mega Stones. A Tatsugiri holding this stone will be able to Mega Evolve during battle.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsz-a/megastones.shtml"
+    ],
+    "notes": "Texto publicado en la tabla de Serebii; no se ha verificado como transcripción literal de la mochila del juego. Los demás idiomas quedan null porque no se halló texto oficial verificable en esta fuente."
+  },
+  {
+    "db_item_id": 2560,
+    "name_en": "Victreebelite",
+    "description": {
+      "en": "One of a variety of mysterious Mega Stones. A Victreebel holding this stone will be able to Mega Evolve during battle.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsz-a/megastones.shtml"
+    ],
+    "notes": "Texto publicado en la tabla de Serebii; no se ha verificado como transcripción literal de la mochila del juego. Los demás idiomas quedan null porque no se halló texto oficial verificable en esta fuente."
+  },
+  {
+    "db_item_id": 2586,
+    "name_en": "Zeraorite",
+    "description": {
+      "en": "One of a variety of mysterious Mega Stones. A Zeraora holding this stone will be able to Mega Evolve during battle.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsz-a/megastones.shtml"
+    ],
+    "notes": "Texto publicado en la tabla de Serebii; no se ha verificado como transcripción literal de la mochila del juego. Los demás idiomas quedan null porque no se halló texto oficial verificable en esta fuente."
+  },
+  {
+    "db_item_id": 2584,
+    "name_en": "Zygardite",
+    "description": {
+      "en": "One of a variety of mysterious Mega Stones. When in Complete Forme and holding this stone, Zygarde will be able to Mega Evolve during battle.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsz-a/megastones.shtml"
+    ],
+    "notes": "Texto publicado en la tabla de Serebii; no se ha verificado como transcripción literal de la mochila del juego. Los demás idiomas quedan null porque no se halló texto oficial verificable en esta fuente."
+  },
+  {
+    "db_item_id": 2655,
+    "name_en": "Hyper Aspear Berry",
+    "description": {
+      "en": "A mysterious Berry found in Hyperspace Lumiose that's ideal for making donuts. Its sour bite makes it perfect for stewing into a confiture.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsz-a/newitems.shtml"
+    ],
+    "notes": "Texto publicado en la tabla de Serebii; no se ha verificado como transcripción literal de la mochila del juego. Los demás idiomas quedan null porque no se halló texto oficial verificable en esta fuente."
+  },
+  {
+    "db_item_id": 2681,
+    "name_en": "Hyper Babiri Berry",
+    "description": {
+      "en": "A mysterious Berry found in Hyperspace Lumiose that's ideal for making donuts. It goes well in chocolate and confitures.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsz-a/newitems.shtml"
+    ],
+    "notes": "Texto publicado en la tabla de Serebii; no se ha verificado como transcripción literal de la mochila del juego. Los demás idiomas quedan null porque no se halló texto oficial verificable en esta fuente."
+  },
+  {
+    "db_item_id": 2677,
+    "name_en": "Hyper Charti Berry",
+    "description": {
+      "en": "A mysterious Berry found in Hyperspace Lumiose that's ideal for making donuts. It goes well in chocolate.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsz-a/newitems.shtml"
+    ],
+    "notes": "Texto publicado en la tabla de Serebii; no se ha verificado como transcripción literal de la mochila del juego. Los demás idiomas quedan null porque no se halló texto oficial verificable en esta fuente."
+  },
+  {
+    "db_item_id": 2651,
+    "name_en": "Hyper Cheri Berry",
+    "description": {
+      "en": "A mysterious Berry found in Hyperspace Lumiose that's ideal for making donuts. Its spicy kick is great when added to curries.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsz-a/newitems.shtml"
+    ],
+    "notes": "Texto publicado en la tabla de Serebii; no se ha verificado como transcripción literal de la mochila del juego. Los demás idiomas quedan null porque no se halló texto oficial verificable en esta fuente."
+  },
+  {
+    "db_item_id": 2652,
+    "name_en": "Hyper Chesto Berry",
+    "description": {
+      "en": "A mysterious Berry found in Hyperspace Lumiose that's ideal for making donuts. Its dry flavor offers a good balance when used in sweet cream.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsz-a/newitems.shtml"
+    ],
+    "notes": "Texto publicado en la tabla de Serebii; no se ha verificado como transcripción literal de la mochila del juego. Los demás idiomas quedan null porque no se halló texto oficial verificable en esta fuente."
+  },
+  {
+    "db_item_id": 2682,
+    "name_en": "Hyper Chilan Berry",
+    "description": {
+      "en": "A mysterious Berry found in Hyperspace Lumiose that's ideal for making donuts. It goes well in curries and chocolate.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsz-a/newitems.shtml"
+    ],
+    "notes": "Texto publicado en la tabla de Serebii; no se ha verificado como transcripción literal de la mochila del juego. Los demás idiomas quedan null porque no se halló texto oficial verificable en esta fuente."
+  },
+  {
+    "db_item_id": 2671,
+    "name_en": "Hyper Chople Berry",
+    "description": {
+      "en": "A mysterious Berry found in Hyperspace Lumiose that's ideal for making donuts. It goes well in meringue.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsz-a/newitems.shtml"
+    ],
+    "notes": "Texto publicado en la tabla de Serebii; no se ha verificado como transcripción literal de la mochila del juego. Los demás idiomas quedan null porque no se halló texto oficial verificable en esta fuente."
+  },
+  {
+    "db_item_id": 2674,
+    "name_en": "Hyper Coba Berry",
+    "description": {
+      "en": "A mysterious Berry found in Hyperspace Lumiose that's ideal for making donuts. It goes well in curries.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsz-a/newitems.shtml"
+    ],
+    "notes": "Texto publicado en la tabla de Serebii; no se ha verificado como transcripción literal de la mochila del juego. Los demás idiomas quedan null porque no se halló texto oficial verificable en esta fuente."
+  },
+  {
+    "db_item_id": 2680,
+    "name_en": "Hyper Colbur Berry",
+    "description": {
+      "en": "A mysterious Berry found in Hyperspace Lumiose that's ideal for making donuts. It goes well in cream and confitures.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsz-a/newitems.shtml"
+    ],
+    "notes": "Texto publicado en la tabla de Serebii; no se ha verificado como transcripción literal de la mochila del juego. Los demás idiomas quedan null porque no se halló texto oficial verificable en esta fuente."
+  },
+  {
+    "db_item_id": 2664,
+    "name_en": "Hyper Grepa Berry",
+    "description": {
+      "en": "A mysterious Berry found in Hyperspace Lumiose that's ideal for making donuts. It goes well in curries.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsz-a/newitems.shtml"
+    ],
+    "notes": "Texto publicado en la tabla de Serebii; no se ha verificado como transcripción literal de la mochila del juego. Los demás idiomas quedan null porque no se halló texto oficial verificable en esta fuente."
+  },
+  {
+    "db_item_id": 2679,
+    "name_en": "Hyper Haban Berry",
+    "description": {
+      "en": "A mysterious Berry found in Hyperspace Lumiose that's ideal for making donuts. It goes well in cream and meringue.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsz-a/newitems.shtml"
+    ],
+    "notes": "Texto publicado en la tabla de Serebii; no se ha verificado como transcripción literal de la mochila del juego. Los demás idiomas quedan null porque no se halló texto oficial verificable en esta fuente."
+  },
+  {
+    "db_item_id": 2663,
+    "name_en": "Hyper Hondew Berry",
+    "description": {
+      "en": "A mysterious Berry found in Hyperspace Lumiose that's ideal for making donuts. It goes well in cream and confitures.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsz-a/newitems.shtml"
+    ],
+    "notes": "Texto publicado en la tabla de Serebii; no se ha verificado como transcripción literal de la mochila del juego. Los demás idiomas quedan null porque no se halló texto oficial verificable en esta fuente."
+  },
+  {
+    "db_item_id": 2678,
+    "name_en": "Hyper Kasib Berry",
+    "description": {
+      "en": "A mysterious Berry found in Hyperspace Lumiose that's ideal for making donuts. It goes well in confitures.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsz-a/newitems.shtml"
+    ],
+    "notes": "Texto publicado en la tabla de Serebii; no se ha verificado como transcripción literal de la mochila del juego. Los demás idiomas quedan null porque no se halló texto oficial verificable en esta fuente."
+  },
+  {
+    "db_item_id": 2672,
+    "name_en": "Hyper Kebia Berry",
+    "description": {
+      "en": "A mysterious Berry found in Hyperspace Lumiose that's ideal for making donuts. It goes well in chocolate.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsz-a/newitems.shtml"
+    ],
+    "notes": "Texto publicado en la tabla de Serebii; no se ha verificado como transcripción literal de la mochila del juego. Los demás idiomas quedan null porque no se halló texto oficial verificable en esta fuente."
+  },
+  {
+    "db_item_id": 2661,
+    "name_en": "Hyper Kelpsy Berry",
+    "description": {
+      "en": "A mysterious Berry found in Hyperspace Lumiose that's ideal for making donuts. It goes well in cream and chocolate.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsz-a/newitems.shtml"
+    ],
+    "notes": "Texto publicado en la tabla de Serebii; no se ha verificado como transcripción literal de la mochila del juego. Los demás idiomas quedan null porque no se halló texto oficial verificable en esta fuente."
+  },
+  {
+    "db_item_id": 2658,
+    "name_en": "Hyper Lum Berry",
+    "description": {
+      "en": "A mysterious Berry found in Hyperspace Lumiose that's ideal for making donuts. It goes well in curries, cream, meringue, and confitures.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsz-a/newitems.shtml"
+    ],
+    "notes": "Texto publicado en la tabla de Serebii; no se ha verificado como transcripción literal de la mochila del juego. Los demás idiomas quedan null porque no se halló texto oficial verificable en esta fuente."
+  },
+  {
+    "db_item_id": 2666,
+    "name_en": "Hyper Occa Berry",
+    "description": {
+      "en": "A mysterious Berry found in Hyperspace Lumiose that's ideal for making donuts. It goes well in meringue.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsz-a/newitems.shtml"
+    ],
+    "notes": "Texto publicado en la tabla de Serebii; no se ha verificado como transcripción literal de la mochila del juego. Los demás idiomas quedan null porque no se halló texto oficial verificable en esta fuente."
+  },
+  {
+    "db_item_id": 2656,
+    "name_en": "Hyper Oran Berry",
+    "description": {
+      "en": "A mysterious Berry found in Hyperspace Lumiose that's ideal for making donuts. It goes well in curries, meringue, chocolate, and confitures.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsz-a/newitems.shtml"
+    ],
+    "notes": "Texto publicado en la tabla de Serebii; no se ha verificado como transcripción literal de la mochila del juego. Los demás idiomas quedan null porque no se halló texto oficial verificable en esta fuente."
+  },
+  {
+    "db_item_id": 2667,
+    "name_en": "Hyper Passho Berry",
+    "description": {
+      "en": "A mysterious Berry found in Hyperspace Lumiose that's ideal for making donuts. It goes well in chocolate.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsz-a/newitems.shtml"
+    ],
+    "notes": "Texto publicado en la tabla de Serebii; no se ha verificado como transcripción literal de la mochila del juego. Los demás idiomas quedan null porque no se halló texto oficial verificable en esta fuente."
+  },
+  {
+    "db_item_id": 2675,
+    "name_en": "Hyper Payapa Berry",
+    "description": {
+      "en": "A mysterious Berry found in Hyperspace Lumiose that's ideal for making donuts. It goes well in cream.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsz-a/newitems.shtml"
+    ],
+    "notes": "Texto publicado en la tabla de Serebii; no se ha verificado como transcripción literal de la mochila del juego. Los demás idiomas quedan null porque no se halló texto oficial verificable en esta fuente."
+  },
+  {
+    "db_item_id": 2653,
+    "name_en": "Hyper Pecha Berry",
+    "description": {
+      "en": "A mysterious Berry found in Hyperspace Lumiose that's ideal for making donuts. Its sweet flavor makes it a great ingredient for meringue.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsz-a/newitems.shtml"
+    ],
+    "notes": "Texto publicado en la tabla de Serebii; no se ha verificado como transcripción literal de la mochila del juego. Los demás idiomas quedan null porque no se halló texto oficial verificable en esta fuente."
+  },
+  {
+    "db_item_id": 2657,
+    "name_en": "Hyper Persim Berry",
+    "description": {
+      "en": "A mysterious Berry found in Hyperspace Lumiose that's ideal for making donuts. It goes well in curries, cream, chocolate, and confitures.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsz-a/newitems.shtml"
+    ],
+    "notes": "Texto publicado en la tabla de Serebii; no se ha verificado como transcripción literal de la mochila del juego. Los demás idiomas quedan null porque no se halló texto oficial verificable en esta fuente."
+  },
+  {
+    "db_item_id": 2660,
+    "name_en": "Hyper Pomeg Berry",
+    "description": {
+      "en": "A mysterious Berry found in Hyperspace Lumiose that's ideal for making donuts. It goes well in curries and meringue.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsz-a/newitems.shtml"
+    ],
+    "notes": "Texto publicado en la tabla de Serebii; no se ha verificado como transcripción literal de la mochila del juego. Los demás idiomas quedan null porque no se halló texto oficial verificable en esta fuente."
+  },
+  {
+    "db_item_id": 2662,
+    "name_en": "Hyper Qualot Berry",
+    "description": {
+      "en": "A mysterious Berry found in Hyperspace Lumiose that's ideal for making donuts. It goes well in meringue and confitures.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsz-a/newitems.shtml"
+    ],
+    "notes": "Texto publicado en la tabla de Serebii; no se ha verificado como transcripción literal de la mochila del juego. Los demás idiomas quedan null porque no se halló texto oficial verificable en esta fuente."
+  },
+  {
+    "db_item_id": 2654,
+    "name_en": "Hyper Rawst Berry",
+    "description": {
+      "en": "A mysterious Berry found in Hyperspace Lumiose that's ideal for making donuts. Its bitter bite works beautifully in chocolate.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsz-a/newitems.shtml"
+    ],
+    "notes": "Texto publicado en la tabla de Serebii; no se ha verificado como transcripción literal de la mochila del juego. Los demás idiomas quedan null porque no se halló texto oficial verificable en esta fuente."
+  },
+  {
+    "db_item_id": 2669,
+    "name_en": "Hyper Rindo Berry",
+    "description": {
+      "en": "A mysterious Berry found in Hyperspace Lumiose that's ideal for making donuts. It goes well in curries.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsz-a/newitems.shtml"
+    ],
+    "notes": "Texto publicado en la tabla de Serebii; no se ha verificado como transcripción literal de la mochila del juego. Los demás idiomas quedan null porque no se halló texto oficial verificable en esta fuente."
+  },
+  {
+    "db_item_id": 2683,
+    "name_en": "Hyper Roseli Berry",
+    "description": {
+      "en": "A mysterious Berry found in Hyperspace Lumiose that's ideal for making donuts. It goes well in curries and confitures.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsz-a/newitems.shtml"
+    ],
+    "notes": "Texto publicado en la tabla de Serebii; no se ha verificado como transcripción literal de la mochila del juego. Los demás idiomas quedan null porque no se halló texto oficial verificable en esta fuente."
+  },
+  {
+    "db_item_id": 2673,
+    "name_en": "Hyper Shuca Berry",
+    "description": {
+      "en": "A mysterious Berry found in Hyperspace Lumiose that's ideal for making donuts. It goes well in confitures.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsz-a/newitems.shtml"
+    ],
+    "notes": "Texto publicado en la tabla de Serebii; no se ha verificado como transcripción literal de la mochila del juego. Los demás idiomas quedan null porque no se halló texto oficial verificable en esta fuente."
+  },
+  {
+    "db_item_id": 2659,
+    "name_en": "Hyper Sitrus Berry",
+    "description": {
+      "en": "A mysterious Berry found in Hyperspace Lumiose that's ideal for making donuts. It goes well in curries, cream, meringue, and chocolate.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsz-a/newitems.shtml"
+    ],
+    "notes": "Texto publicado en la tabla de Serebii; no se ha verificado como transcripción literal de la mochila del juego. Los demás idiomas quedan null porque no se halló texto oficial verificable en esta fuente."
+  },
+  {
+    "db_item_id": 2665,
+    "name_en": "Hyper Tamato Berry",
+    "description": {
+      "en": "A mysterious Berry found in Hyperspace Lumiose that's ideal for making donuts. It goes well in cream.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsz-a/newitems.shtml"
+    ],
+    "notes": "Texto publicado en la tabla de Serebii; no se ha verificado como transcripción literal de la mochila del juego. Los demás idiomas quedan null porque no se halló texto oficial verificable en esta fuente."
+  },
+  {
+    "db_item_id": 2676,
+    "name_en": "Hyper Tanga Berry",
+    "description": {
+      "en": "A mysterious Berry found in Hyperspace Lumiose that's ideal for making donuts. It goes well in meringue.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsz-a/newitems.shtml"
+    ],
+    "notes": "Texto publicado en la tabla de Serebii; no se ha verificado como transcripción literal de la mochila del juego. Los demás idiomas quedan null porque no se halló texto oficial verificable en esta fuente."
+  },
+  {
+    "db_item_id": 2668,
+    "name_en": "Hyper Wacan Berry",
+    "description": {
+      "en": "A mysterious Berry found in Hyperspace Lumiose that's ideal for making donuts. It goes well in confitures.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsz-a/newitems.shtml"
+    ],
+    "notes": "Texto publicado en la tabla de Serebii; no se ha verificado como transcripción literal de la mochila del juego. Los demás idiomas quedan null porque no se halló texto oficial verificable en esta fuente."
+  },
+  {
+    "db_item_id": 2670,
+    "name_en": "Hyper Yache Berry",
+    "description": {
+      "en": "A mysterious Berry found in Hyperspace Lumiose that's ideal for making donuts. It goes well in cream.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsz-a/newitems.shtml"
+    ],
+    "notes": "Texto publicado en la tabla de Serebii; no se ha verificado como transcripción literal de la mochila del juego. Los demás idiomas quedan null porque no se halló texto oficial verificable en esta fuente."
+  }
+]

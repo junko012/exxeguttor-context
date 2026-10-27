@@ -1,0 +1,882 @@
+[
+  {
+    "db_item_id": 90053,
+    "name_en": "Battle CD 01",
+    "description": {
+      "en": "A CD used at the Realgam Tower for Battle Sims.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://bulbapedia.bulbagarden.net/wiki/Battle_CD"
+    ],
+    "notes": "Bulbapedia incluye esta descripción en la tabla de descripciones del objeto Battle CD para Pokémon XD; no se ha verificado directamente mediante captura o volcado del texto dentro del juego. Los otros idiomas quedan null al no verificarse el texto oficial."
+  },
+  {
+    "db_item_id": 90054,
+    "name_en": "Battle CD 02",
+    "description": {
+      "en": "A CD used at the Realgam Tower for Battle Sims.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://bulbapedia.bulbagarden.net/wiki/Battle_CD"
+    ],
+    "notes": "Bulbapedia incluye esta descripción en la tabla de descripciones del objeto Battle CD para Pokémon XD; no se ha verificado directamente mediante captura o volcado del texto dentro del juego. Los otros idiomas quedan null al no verificarse el texto oficial."
+  },
+  {
+    "db_item_id": 90055,
+    "name_en": "Battle CD 03",
+    "description": {
+      "en": "A CD used at the Realgam Tower for Battle Sims.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://bulbapedia.bulbagarden.net/wiki/Battle_CD"
+    ],
+    "notes": "Bulbapedia incluye esta descripción en la tabla de descripciones del objeto Battle CD para Pokémon XD; no se ha verificado directamente mediante captura o volcado del texto dentro del juego. Los otros idiomas quedan null al no verificarse el texto oficial."
+  },
+  {
+    "db_item_id": 90056,
+    "name_en": "Battle CD 04",
+    "description": {
+      "en": "A CD used at the Realgam Tower for Battle Sims.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://bulbapedia.bulbagarden.net/wiki/Battle_CD"
+    ],
+    "notes": "Bulbapedia incluye esta descripción en la tabla de descripciones del objeto Battle CD para Pokémon XD; no se ha verificado directamente mediante captura o volcado del texto dentro del juego. Los otros idiomas quedan null al no verificarse el texto oficial."
+  },
+  {
+    "db_item_id": 90057,
+    "name_en": "Battle CD 05",
+    "description": {
+      "en": "A CD used at the Realgam Tower for Battle Sims.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://bulbapedia.bulbagarden.net/wiki/Battle_CD"
+    ],
+    "notes": "Bulbapedia incluye esta descripción en la tabla de descripciones del objeto Battle CD para Pokémon XD; no se ha verificado directamente mediante captura o volcado del texto dentro del juego. Los otros idiomas quedan null al no verificarse el texto oficial."
+  },
+  {
+    "db_item_id": 90058,
+    "name_en": "Battle CD 06",
+    "description": {
+      "en": "A CD used at the Realgam Tower for Battle Sims.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://bulbapedia.bulbagarden.net/wiki/Battle_CD"
+    ],
+    "notes": "Bulbapedia incluye esta descripción en la tabla de descripciones del objeto Battle CD para Pokémon XD; no se ha verificado directamente mediante captura o volcado del texto dentro del juego. Los otros idiomas quedan null al no verificarse el texto oficial."
+  },
+  {
+    "db_item_id": 90059,
+    "name_en": "Battle CD 07",
+    "description": {
+      "en": "A CD used at the Realgam Tower for Battle Sims.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://bulbapedia.bulbagarden.net/wiki/Battle_CD"
+    ],
+    "notes": "Bulbapedia incluye esta descripción en la tabla de descripciones del objeto Battle CD para Pokémon XD; no se ha verificado directamente mediante captura o volcado del texto dentro del juego. Los otros idiomas quedan null al no verificarse el texto oficial."
+  },
+  {
+    "db_item_id": 90060,
+    "name_en": "Battle CD 08",
+    "description": {
+      "en": "A CD used at the Realgam Tower for Battle Sims.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://bulbapedia.bulbagarden.net/wiki/Battle_CD"
+    ],
+    "notes": "Bulbapedia incluye esta descripción en la tabla de descripciones del objeto Battle CD para Pokémon XD; no se ha verificado directamente mediante captura o volcado del texto dentro del juego. Los otros idiomas quedan null al no verificarse el texto oficial."
+  },
+  {
+    "db_item_id": 90061,
+    "name_en": "Battle CD 09",
+    "description": {
+      "en": "A CD used at the Realgam Tower for Battle Sims.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://bulbapedia.bulbagarden.net/wiki/Battle_CD"
+    ],
+    "notes": "Bulbapedia incluye esta descripción en la tabla de descripciones del objeto Battle CD para Pokémon XD; no se ha verificado directamente mediante captura o volcado del texto dentro del juego. Los otros idiomas quedan null al no verificarse el texto oficial."
+  },
+  {
+    "db_item_id": 90062,
+    "name_en": "Battle CD 10",
+    "description": {
+      "en": "A CD used at the Realgam Tower for Battle Sims.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://bulbapedia.bulbagarden.net/wiki/Battle_CD"
+    ],
+    "notes": "Bulbapedia incluye esta descripción en la tabla de descripciones del objeto Battle CD para Pokémon XD; no se ha verificado directamente mediante captura o volcado del texto dentro del juego. Los otros idiomas quedan null al no verificarse el texto oficial."
+  },
+  {
+    "db_item_id": 90063,
+    "name_en": "Battle CD 11",
+    "description": {
+      "en": "A CD used at the Realgam Tower for Battle Sims.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://bulbapedia.bulbagarden.net/wiki/Battle_CD"
+    ],
+    "notes": "Bulbapedia incluye esta descripción en la tabla de descripciones del objeto Battle CD para Pokémon XD; no se ha verificado directamente mediante captura o volcado del texto dentro del juego. Los otros idiomas quedan null al no verificarse el texto oficial."
+  },
+  {
+    "db_item_id": 90064,
+    "name_en": "Battle CD 12",
+    "description": {
+      "en": "A CD used at the Realgam Tower for Battle Sims.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://bulbapedia.bulbagarden.net/wiki/Battle_CD"
+    ],
+    "notes": "Bulbapedia incluye esta descripción en la tabla de descripciones del objeto Battle CD para Pokémon XD; no se ha verificado directamente mediante captura o volcado del texto dentro del juego. Los otros idiomas quedan null al no verificarse el texto oficial."
+  },
+  {
+    "db_item_id": 90065,
+    "name_en": "Battle CD 13",
+    "description": {
+      "en": "A CD used at the Realgam Tower for Battle Sims.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://bulbapedia.bulbagarden.net/wiki/Battle_CD"
+    ],
+    "notes": "Bulbapedia incluye esta descripción en la tabla de descripciones del objeto Battle CD para Pokémon XD; no se ha verificado directamente mediante captura o volcado del texto dentro del juego. Los otros idiomas quedan null al no verificarse el texto oficial."
+  },
+  {
+    "db_item_id": 90066,
+    "name_en": "Battle CD 14",
+    "description": {
+      "en": "A CD used at the Realgam Tower for Battle Sims.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://bulbapedia.bulbagarden.net/wiki/Battle_CD"
+    ],
+    "notes": "Bulbapedia incluye esta descripción en la tabla de descripciones del objeto Battle CD para Pokémon XD; no se ha verificado directamente mediante captura o volcado del texto dentro del juego. Los otros idiomas quedan null al no verificarse el texto oficial."
+  },
+  {
+    "db_item_id": 90067,
+    "name_en": "Battle CD 15",
+    "description": {
+      "en": "A CD used at the Realgam Tower for Battle Sims.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://bulbapedia.bulbagarden.net/wiki/Battle_CD"
+    ],
+    "notes": "Bulbapedia incluye esta descripción en la tabla de descripciones del objeto Battle CD para Pokémon XD; no se ha verificado directamente mediante captura o volcado del texto dentro del juego. Los otros idiomas quedan null al no verificarse el texto oficial."
+  },
+  {
+    "db_item_id": 90068,
+    "name_en": "Battle CD 16",
+    "description": {
+      "en": "A CD used at the Realgam Tower for Battle Sims.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://bulbapedia.bulbagarden.net/wiki/Battle_CD"
+    ],
+    "notes": "Bulbapedia incluye esta descripción en la tabla de descripciones del objeto Battle CD para Pokémon XD; no se ha verificado directamente mediante captura o volcado del texto dentro del juego. Los otros idiomas quedan null al no verificarse el texto oficial."
+  },
+  {
+    "db_item_id": 90069,
+    "name_en": "Battle CD 17",
+    "description": {
+      "en": "A CD used at the Realgam Tower for Battle Sims.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://bulbapedia.bulbagarden.net/wiki/Battle_CD"
+    ],
+    "notes": "Bulbapedia incluye esta descripción en la tabla de descripciones del objeto Battle CD para Pokémon XD; no se ha verificado directamente mediante captura o volcado del texto dentro del juego. Los otros idiomas quedan null al no verificarse el texto oficial."
+  },
+  {
+    "db_item_id": 90070,
+    "name_en": "Battle CD 18",
+    "description": {
+      "en": "A CD used at the Realgam Tower for Battle Sims.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://bulbapedia.bulbagarden.net/wiki/Battle_CD"
+    ],
+    "notes": "Bulbapedia incluye esta descripción en la tabla de descripciones del objeto Battle CD para Pokémon XD; no se ha verificado directamente mediante captura o volcado del texto dentro del juego. Los otros idiomas quedan null al no verificarse el texto oficial."
+  },
+  {
+    "db_item_id": 90071,
+    "name_en": "Battle CD 19",
+    "description": {
+      "en": "A CD used at the Realgam Tower for Battle Sims.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://bulbapedia.bulbagarden.net/wiki/Battle_CD"
+    ],
+    "notes": "Bulbapedia incluye esta descripción en la tabla de descripciones del objeto Battle CD para Pokémon XD; no se ha verificado directamente mediante captura o volcado del texto dentro del juego. Los otros idiomas quedan null al no verificarse el texto oficial."
+  },
+  {
+    "db_item_id": 90072,
+    "name_en": "Battle CD 20",
+    "description": {
+      "en": "A CD used at the Realgam Tower for Battle Sims.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://bulbapedia.bulbagarden.net/wiki/Battle_CD"
+    ],
+    "notes": "Bulbapedia incluye esta descripción en la tabla de descripciones del objeto Battle CD para Pokémon XD; no se ha verificado directamente mediante captura o volcado del texto dentro del juego. Los otros idiomas quedan null al no verificarse el texto oficial."
+  },
+  {
+    "db_item_id": 90073,
+    "name_en": "Battle CD 21",
+    "description": {
+      "en": "A CD used at the Realgam Tower for Battle Sims.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://bulbapedia.bulbagarden.net/wiki/Battle_CD"
+    ],
+    "notes": "Bulbapedia incluye esta descripción en la tabla de descripciones del objeto Battle CD para Pokémon XD; no se ha verificado directamente mediante captura o volcado del texto dentro del juego. Los otros idiomas quedan null al no verificarse el texto oficial."
+  },
+  {
+    "db_item_id": 90074,
+    "name_en": "Battle CD 22",
+    "description": {
+      "en": "A CD used at the Realgam Tower for Battle Sims.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://bulbapedia.bulbagarden.net/wiki/Battle_CD"
+    ],
+    "notes": "Bulbapedia incluye esta descripción en la tabla de descripciones del objeto Battle CD para Pokémon XD; no se ha verificado directamente mediante captura o volcado del texto dentro del juego. Los otros idiomas quedan null al no verificarse el texto oficial."
+  },
+  {
+    "db_item_id": 90075,
+    "name_en": "Battle CD 23",
+    "description": {
+      "en": "A CD used at the Realgam Tower for Battle Sims.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://bulbapedia.bulbagarden.net/wiki/Battle_CD"
+    ],
+    "notes": "Bulbapedia incluye esta descripción en la tabla de descripciones del objeto Battle CD para Pokémon XD; no se ha verificado directamente mediante captura o volcado del texto dentro del juego. Los otros idiomas quedan null al no verificarse el texto oficial."
+  },
+  {
+    "db_item_id": 90076,
+    "name_en": "Battle CD 24",
+    "description": {
+      "en": "A CD used at the Realgam Tower for Battle Sims.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://bulbapedia.bulbagarden.net/wiki/Battle_CD"
+    ],
+    "notes": "Bulbapedia incluye esta descripción en la tabla de descripciones del objeto Battle CD para Pokémon XD; no se ha verificado directamente mediante captura o volcado del texto dentro del juego. Los otros idiomas quedan null al no verificarse el texto oficial."
+  },
+  {
+    "db_item_id": 90077,
+    "name_en": "Battle CD 25",
+    "description": {
+      "en": "A CD used at the Realgam Tower for Battle Sims.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://bulbapedia.bulbagarden.net/wiki/Battle_CD"
+    ],
+    "notes": "Bulbapedia incluye esta descripción en la tabla de descripciones del objeto Battle CD para Pokémon XD; no se ha verificado directamente mediante captura o volcado del texto dentro del juego. Los otros idiomas quedan null al no verificarse el texto oficial."
+  },
+  {
+    "db_item_id": 90078,
+    "name_en": "Battle CD 26",
+    "description": {
+      "en": "A CD used at the Realgam Tower for Battle Sims.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://bulbapedia.bulbagarden.net/wiki/Battle_CD"
+    ],
+    "notes": "Bulbapedia incluye esta descripción en la tabla de descripciones del objeto Battle CD para Pokémon XD; no se ha verificado directamente mediante captura o volcado del texto dentro del juego. Los otros idiomas quedan null al no verificarse el texto oficial."
+  },
+  {
+    "db_item_id": 90079,
+    "name_en": "Battle CD 27",
+    "description": {
+      "en": "A CD used at the Realgam Tower for Battle Sims.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://bulbapedia.bulbagarden.net/wiki/Battle_CD"
+    ],
+    "notes": "Bulbapedia incluye esta descripción en la tabla de descripciones del objeto Battle CD para Pokémon XD; no se ha verificado directamente mediante captura o volcado del texto dentro del juego. Los otros idiomas quedan null al no verificarse el texto oficial."
+  },
+  {
+    "db_item_id": 90080,
+    "name_en": "Battle CD 28",
+    "description": {
+      "en": "A CD used at the Realgam Tower for Battle Sims.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://bulbapedia.bulbagarden.net/wiki/Battle_CD"
+    ],
+    "notes": "Bulbapedia incluye esta descripción en la tabla de descripciones del objeto Battle CD para Pokémon XD; no se ha verificado directamente mediante captura o volcado del texto dentro del juego. Los otros idiomas quedan null al no verificarse el texto oficial."
+  },
+  {
+    "db_item_id": 90081,
+    "name_en": "Battle CD 29",
+    "description": {
+      "en": "A CD used at the Realgam Tower for Battle Sims.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://bulbapedia.bulbagarden.net/wiki/Battle_CD"
+    ],
+    "notes": "Bulbapedia incluye esta descripción en la tabla de descripciones del objeto Battle CD para Pokémon XD; no se ha verificado directamente mediante captura o volcado del texto dentro del juego. Los otros idiomas quedan null al no verificarse el texto oficial."
+  },
+  {
+    "db_item_id": 90082,
+    "name_en": "Battle CD 30",
+    "description": {
+      "en": "A CD used at the Realgam Tower for Battle Sims.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://bulbapedia.bulbagarden.net/wiki/Battle_CD"
+    ],
+    "notes": "Bulbapedia incluye esta descripción en la tabla de descripciones del objeto Battle CD para Pokémon XD; no se ha verificado directamente mediante captura o volcado del texto dentro del juego. Los otros idiomas quedan null al no verificarse el texto oficial."
+  },
+  {
+    "db_item_id": 90083,
+    "name_en": "Battle CD 31",
+    "description": {
+      "en": "A CD used at the Realgam Tower for Battle Sims.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://bulbapedia.bulbagarden.net/wiki/Battle_CD"
+    ],
+    "notes": "Bulbapedia incluye esta descripción en la tabla de descripciones del objeto Battle CD para Pokémon XD; no se ha verificado directamente mediante captura o volcado del texto dentro del juego. Los otros idiomas quedan null al no verificarse el texto oficial."
+  },
+  {
+    "db_item_id": 90084,
+    "name_en": "Battle CD 32",
+    "description": {
+      "en": "A CD used at the Realgam Tower for Battle Sims.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://bulbapedia.bulbagarden.net/wiki/Battle_CD"
+    ],
+    "notes": "Bulbapedia incluye esta descripción en la tabla de descripciones del objeto Battle CD para Pokémon XD; no se ha verificado directamente mediante captura o volcado del texto dentro del juego. Los otros idiomas quedan null al no verificarse el texto oficial."
+  },
+  {
+    "db_item_id": 90085,
+    "name_en": "Battle CD 33",
+    "description": {
+      "en": "A CD used at the Realgam Tower for Battle Sims.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://bulbapedia.bulbagarden.net/wiki/Battle_CD"
+    ],
+    "notes": "Bulbapedia incluye esta descripción en la tabla de descripciones del objeto Battle CD para Pokémon XD; no se ha verificado directamente mediante captura o volcado del texto dentro del juego. Los otros idiomas quedan null al no verificarse el texto oficial."
+  },
+  {
+    "db_item_id": 90086,
+    "name_en": "Battle CD 34",
+    "description": {
+      "en": "A CD used at the Realgam Tower for Battle Sims.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://bulbapedia.bulbagarden.net/wiki/Battle_CD"
+    ],
+    "notes": "Bulbapedia incluye esta descripción en la tabla de descripciones del objeto Battle CD para Pokémon XD; no se ha verificado directamente mediante captura o volcado del texto dentro del juego. Los otros idiomas quedan null al no verificarse el texto oficial."
+  },
+  {
+    "db_item_id": 90087,
+    "name_en": "Battle CD 35",
+    "description": {
+      "en": "A CD used at the Realgam Tower for Battle Sims.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://bulbapedia.bulbagarden.net/wiki/Battle_CD"
+    ],
+    "notes": "Bulbapedia incluye esta descripción en la tabla de descripciones del objeto Battle CD para Pokémon XD; no se ha verificado directamente mediante captura o volcado del texto dentro del juego. Los otros idiomas quedan null al no verificarse el texto oficial."
+  },
+  {
+    "db_item_id": 90088,
+    "name_en": "Battle CD 36",
+    "description": {
+      "en": "A CD used at the Realgam Tower for Battle Sims.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://bulbapedia.bulbagarden.net/wiki/Battle_CD"
+    ],
+    "notes": "Bulbapedia incluye esta descripción en la tabla de descripciones del objeto Battle CD para Pokémon XD; no se ha verificado directamente mediante captura o volcado del texto dentro del juego. Los otros idiomas quedan null al no verificarse el texto oficial."
+  },
+  {
+    "db_item_id": 90089,
+    "name_en": "Battle CD 37",
+    "description": {
+      "en": "A CD used at the Realgam Tower for Battle Sims.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://bulbapedia.bulbagarden.net/wiki/Battle_CD"
+    ],
+    "notes": "Bulbapedia incluye esta descripción en la tabla de descripciones del objeto Battle CD para Pokémon XD; no se ha verificado directamente mediante captura o volcado del texto dentro del juego. Los otros idiomas quedan null al no verificarse el texto oficial."
+  },
+  {
+    "db_item_id": 90090,
+    "name_en": "Battle CD 38",
+    "description": {
+      "en": "A CD used at the Realgam Tower for Battle Sims.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://bulbapedia.bulbagarden.net/wiki/Battle_CD"
+    ],
+    "notes": "Bulbapedia incluye esta descripción en la tabla de descripciones del objeto Battle CD para Pokémon XD; no se ha verificado directamente mediante captura o volcado del texto dentro del juego. Los otros idiomas quedan null al no verificarse el texto oficial."
+  },
+  {
+    "db_item_id": 90091,
+    "name_en": "Battle CD 39",
+    "description": {
+      "en": "A CD used at the Realgam Tower for Battle Sims.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://bulbapedia.bulbagarden.net/wiki/Battle_CD"
+    ],
+    "notes": "Bulbapedia incluye esta descripción en la tabla de descripciones del objeto Battle CD para Pokémon XD; no se ha verificado directamente mediante captura o volcado del texto dentro del juego. Los otros idiomas quedan null al no verificarse el texto oficial."
+  },
+  {
+    "db_item_id": 90092,
+    "name_en": "Battle CD 40",
+    "description": {
+      "en": "A CD used at the Realgam Tower for Battle Sims.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://bulbapedia.bulbagarden.net/wiki/Battle_CD"
+    ],
+    "notes": "Bulbapedia incluye esta descripción en la tabla de descripciones del objeto Battle CD para Pokémon XD; no se ha verificado directamente mediante captura o volcado del texto dentro del juego. Los otros idiomas quedan null al no verificarse el texto oficial."
+  }
+]

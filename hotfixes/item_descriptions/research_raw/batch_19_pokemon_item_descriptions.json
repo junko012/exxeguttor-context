@@ -1,0 +1,876 @@
+[
+  {
+    "db_item_id": 2386,
+    "name_en": "Red Poké Ball Pick",
+    "description": {
+      "en": null,
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable en las fuentes consultadas."
+  },
+  {
+    "db_item_id": 2336,
+    "name_en": "Red-Flag Pick",
+    "description": {
+      "en": null,
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable en las fuentes consultadas."
+  },
+  {
+    "db_item_id": 2106,
+    "name_en": "Rellor Mud",
+    "description": {
+      "en": "A material obtained from a Pokémon. It can be used to make TMs.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://bulbapedia.bulbagarden.net/wiki/List_of_TMs_in_Pok%C3%A9mon_Scarlet_and_Violet"
+    ],
+    "notes": "Descripción en inglés tomada de una fuente secundaria; no se verificó con captura directa de la mochila."
+  },
+  {
+    "db_item_id": 2538,
+    "name_en": "Reshiram Treat",
+    "description": {
+      "en": "A snack made from ingredients favored by the Legendary Pokémon Reshiram.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/scarletviolet/items.shtml"
+    ],
+    "notes": "Descripción en inglés tomada de una fuente secundaria; no se verificó con captura directa de la mochila."
+  },
+  {
+    "db_item_id": 2413,
+    "name_en": "Resist Mochi",
+    "description": {
+      "en": "A mochi that boosts a Pokémon’s Defense base points.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/scarletviolet/items.shtml"
+    ],
+    "notes": "Descripción en inglés tomada de una fuente secundaria; no se verificó con captura directa de la mochila."
+  },
+  {
+    "db_item_id": 2490,
+    "name_en": "Rhyhorn Fang",
+    "description": {
+      "en": "A material obtained from a Pokémon. It can be used to make TMs.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://bulbapedia.bulbagarden.net/wiki/List_of_TMs_in_Pok%C3%A9mon_Scarlet_and_Violet"
+    ],
+    "notes": "Descripción en inglés tomada de una fuente secundaria; no se verificó con captura directa de la mochila."
+  },
+  {
+    "db_item_id": 1932,
+    "name_en": "Rice",
+    "description": {
+      "en": "A nice salty ingredient. It’s unclear how well these boiled grains will serve as a sandwich filling.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/scarletviolet/items.shtml"
+    ],
+    "notes": "Descripción en inglés tomada de una fuente secundaria; no se verificó con captura directa de la mochila."
+  },
+  {
+    "db_item_id": 2031,
+    "name_en": "Riolu Fur",
+    "description": {
+      "en": "A material obtained from a Pokémon. It can be used to make TMs.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://bulbapedia.bulbagarden.net/wiki/List_of_TMs_in_Pok%C3%A9mon_Scarlet_and_Violet"
+    ],
+    "notes": "Descripción en inglés tomada de una fuente secundaria; no se verificó con captura directa de la mochila."
+  },
+  {
+    "db_item_id": 1874,
+    "name_en": "Rock Tera Shard",
+    "description": {
+      "en": null,
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable en las fuentes consultadas."
+  },
+  {
+    "db_item_id": 2069,
+    "name_en": "Rockruff Rock",
+    "description": {
+      "en": "A material obtained from a Pokémon. It can be used to make TMs.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://bulbapedia.bulbagarden.net/wiki/List_of_TMs_in_Pok%C3%A9mon_Scarlet_and_Violet"
+    ],
+    "notes": "Descripción en inglés tomada de una fuente secundaria; no se verificó con captura directa de la mochila."
+  },
+  {
+    "db_item_id": 2088,
+    "name_en": "Rolycoly Coal",
+    "description": {
+      "en": "A material obtained from a Pokémon. It can be used to make TMs.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://bulbapedia.bulbagarden.net/wiki/List_of_TMs_in_Pok%C3%A9mon_Scarlet_and_Violet"
+    ],
+    "notes": "Descripción en inglés tomada de una fuente secundaria; no se verificó con captura directa de la mochila."
+  },
+  {
+    "db_item_id": 2084,
+    "name_en": "Rookidee Feather",
+    "description": {
+      "en": "A material obtained from a Pokémon. It can be used to make TMs.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://bulbapedia.bulbagarden.net/wiki/List_of_TMs_in_Pok%C3%A9mon_Scarlet_and_Violet"
+    ],
+    "notes": "Descripción en inglés tomada de una fuente secundaria; no se verificó con captura directa de la mochila."
+  },
+  {
+    "db_item_id": 2480,
+    "name_en": "Roto-Stick",
+    "description": {
+      "en": "A stick to rest a Rotom Phone on. It allows you to take selfies from a little bit farther away than you could on your own.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/scarletviolet/items.shtml"
+    ],
+    "notes": "Descripción en inglés tomada de una fuente secundaria; no se verificó con captura directa de la mochila."
+  },
+  {
+    "db_item_id": 1829,
+    "name_en": "Rotom Phone",
+    "description": {
+      "en": "The latest model of smartphone. A Pokémon called Rotom lives within it, and it can be used to run all sorts of handy apps.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/scarletviolet/items.shtml"
+    ],
+    "notes": "Descripción en inglés tomada de una fuente secundaria; no se verificó con captura directa de la mochila."
+  },
+  {
+    "db_item_id": 2036,
+    "name_en": "Rotom Sparks",
+    "description": {
+      "en": "A material obtained from a Pokémon. It can be used to make TMs.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://bulbapedia.bulbagarden.net/wiki/List_of_TMs_in_Pok%C3%A9mon_Scarlet_and_Violet"
+    ],
+    "notes": "Descripción en inglés tomada de una fuente secundaria; no se verificó con captura directa de la mochila."
+  },
+  {
+    "db_item_id": 2050,
+    "name_en": "Rufflet Feather",
+    "description": {
+      "en": "A material obtained from a Pokémon. It can be used to make TMs.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://bulbapedia.bulbagarden.net/wiki/List_of_TMs_in_Pok%C3%A9mon_Scarlet_and_Violet"
+    ],
+    "notes": "Descripción en inglés tomada de una fuente secundaria; no se verificó con captura directa de la mochila."
+  },
+  {
+    "db_item_id": 2001,
+    "name_en": "Sableye Gem",
+    "description": {
+      "en": "A material obtained from a Pokémon. It can be used to make TMs.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://bulbapedia.bulbagarden.net/wiki/List_of_TMs_in_Pok%C3%A9mon_Scarlet_and_Violet"
+    ],
+    "notes": "Descripción en inglés tomada de una fuente secundaria; no se verificó con captura directa de la mochila."
+  },
+  {
+    "db_item_id": 2073,
+    "name_en": "Salandit Gas",
+    "description": {
+      "en": "A material obtained from a Pokémon. It can be used to make TMs.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://bulbapedia.bulbagarden.net/wiki/List_of_TMs_in_Pok%C3%A9mon_Scarlet_and_Violet"
+    ],
+    "notes": "Descripción en inglés tomada de una fuente secundaria; no se verificó con captura directa de la mochila."
+  },
+  {
+    "db_item_id": 1895,
+    "name_en": "Salt",
+    "description": {
+      "en": "A seasoning that adds saltiness to sandwiches.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/scarletviolet/items.shtml"
+    ],
+    "notes": "Descripción en inglés tomada de una fuente secundaria; no se verificó con captura directa de la mochila."
+  },
+  {
+    "db_item_id": 1905,
+    "name_en": "Salty Herba Mystica",
+    "description": {
+      "en": "A legendary condiment told of only in books. Word has it that one taste of its salty flavor stimulates the digestive system and cures a lack of appetite.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/scarletviolet/items.shtml"
+    ],
+    "notes": "Descripción en inglés tomada de una fuente secundaria; no se verificó con captura directa de la mochila."
+  },
+  {
+    "db_item_id": 2039,
+    "name_en": "Sandile Claw",
+    "description": {
+      "en": "A material obtained from a Pokémon. It can be used to make TMs.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://bulbapedia.bulbagarden.net/wiki/List_of_TMs_in_Pok%C3%A9mon_Scarlet_and_Violet"
+    ],
+    "notes": "Descripción en inglés tomada de una fuente secundaria; no se verificó con captura directa de la mochila."
+  },
+  {
+    "db_item_id": 2439,
+    "name_en": "Sandshrew Claw",
+    "description": {
+      "en": "A material obtained from a Pokémon. It can be used to make TMs.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://bulbapedia.bulbagarden.net/wiki/List_of_TMs_in_Pok%C3%A9mon_Scarlet_and_Violet"
+    ],
+    "notes": "Descripción en inglés tomada de una fuente secundaria; no se verificó con captura directa de la mochila."
+  },
+  {
+    "db_item_id": 1830,
+    "name_en": "Sandwich",
+    "description": {
+      "en": "A dish made by sandwiching vegetables, meat, or other ingredients between two pieces of bread. It makes a fantastic meal when out on a picnic.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/scarletviolet/items.shtml"
+    ],
+    "notes": "Descripción en inglés tomada de una fuente secundaria; no se verificó con captura directa de la mochila."
+  },
+  {
+    "db_item_id": 2077,
+    "name_en": "Sandygast Sand",
+    "description": {
+      "en": "A material obtained from a Pokémon. It can be used to make TMs.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://bulbapedia.bulbagarden.net/wiki/List_of_TMs_in_Pok%C3%A9mon_Scarlet_and_Violet"
+    ],
+    "notes": "Descripción en inglés tomada de una fuente secundaria; no se verificó con captura directa de la mochila."
+  },
+  {
+    "db_item_id": 1834,
+    "name_en": "Scarlet Book",
+    "description": {
+      "en": "A record of the expedition that the author, Heath, went on within the Great Crater of Paldea. The book has the name “Sada” written on it in clumsy handwriting.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/scarletviolet/items.shtml"
+    ],
+    "notes": "Descripción en inglés tomada de una fuente secundaria; no se verificó con captura directa de la mochila."
+  },
+  {
+    "db_item_id": 2054,
+    "name_en": "Scatterbug Powder",
+    "description": {
+      "en": "A material obtained from a Pokémon. It can be used to make TMs.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://bulbapedia.bulbagarden.net/wiki/List_of_TMs_in_Pok%C3%A9mon_Scarlet_and_Violet"
+    ],
+    "notes": "Descripción en inglés tomada de una fuente secundaria; no se verificó con captura directa de la mochila."
+  },
+  {
+    "db_item_id": 2509,
+    "name_en": "Scraggy Sweat",
+    "description": {
+      "en": "A material obtained from a Pokémon. It can be used to make TMs.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://bulbapedia.bulbagarden.net/wiki/List_of_TMs_in_Pok%C3%A9mon_Scarlet_and_Violet"
+    ],
+    "notes": "Descripción en inglés tomada de una fuente secundaria; no se verificó con captura directa de la mochila."
+  },
+  {
+    "db_item_id": 1857,
+    "name_en": "Scroll of Darkness",
+    "description": {
+      "en": "A peculiar scroll that can make a certain species of Pokémon evolve. Written upon it are the true secrets of the path of darkness.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/scarletviolet/items.shtml"
+    ],
+    "notes": "Descripción en inglés tomada de una fuente secundaria; no se verificó con captura directa de la mochila."
+  },
+  {
+    "db_item_id": 1858,
+    "name_en": "Scroll of Waters",
+    "description": {
+      "en": "A peculiar scroll that can make a certain species of Pokémon evolve. Written upon it are the true secrets of the path of water.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/scarletviolet/items.shtml"
+    ],
+    "notes": "Descripción en inglés tomada de una fuente secundaria; no se verificó con captura directa de la mochila."
+  },
+  {
+    "db_item_id": 1969,
+    "name_en": "Scyther Claw",
+    "description": {
+      "en": "A material obtained from a Pokémon. It can be used to make TMs.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://bulbapedia.bulbagarden.net/wiki/List_of_TMs_in_Pok%C3%A9mon_Scarlet_and_Violet"
+    ],
+    "notes": "Descripción en inglés tomada de una fuente secundaria; no se verificó con captura directa de la mochila."
+  },
+  {
+    "db_item_id": 2457,
+    "name_en": "Seedot Stem",
+    "description": {
+      "en": "A material obtained from a Pokémon. It can be used to make TMs.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://bulbapedia.bulbagarden.net/wiki/List_of_TMs_in_Pok%C3%A9mon_Scarlet_and_Violet"
+    ],
+    "notes": "Descripción en inglés tomada de una fuente secundaria; no se verificó con captura directa de la mochila."
+  },
+  {
+    "db_item_id": 2487,
+    "name_en": "Seel Fur",
+    "description": {
+      "en": "A material obtained from a Pokémon. It can be used to make TMs.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://bulbapedia.bulbagarden.net/wiki/List_of_TMs_in_Pok%C3%A9mon_Scarlet_and_Violet"
+    ],
+    "notes": "Descripción en inglés tomada de una fuente secundaria; no se verificó con captura directa de la mochila."
+  },
+  {
+    "db_item_id": 2447,
+    "name_en": "Sentret Fur",
+    "description": {
+      "en": "A material obtained from a Pokémon. It can be used to make TMs.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://bulbapedia.bulbagarden.net/wiki/List_of_TMs_in_Pok%C3%A9mon_Scarlet_and_Violet"
+    ],
+    "notes": "Descripción en inglés tomada de una fuente secundaria; no se verificó con captura directa de la mochila."
+  },
+  {
+    "db_item_id": 2010,
+    "name_en": "Seviper Fang",
+    "description": {
+      "en": "A material obtained from a Pokémon. It can be used to make TMs.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://bulbapedia.bulbagarden.net/wiki/List_of_TMs_in_Pok%C3%A9mon_Scarlet_and_Violet"
+    ],
+    "notes": "Descripción en inglés tomada de una fuente secundaria; no se verificó con captura directa de la mochila."
+  },
+  {
+    "db_item_id": 2466,
+    "name_en": "Sewaddle Leaf",
+    "description": {
+      "en": "A material obtained from a Pokémon. It can be used to make TMs.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://bulbapedia.bulbagarden.net/wiki/List_of_TMs_in_Pok%C3%A9mon_Scarlet_and_Violet"
+    ],
+    "notes": "Descripción en inglés tomada de una fuente secundaria; no se verificó con captura directa de la mochila."
+  },
+  {
+    "db_item_id": 1965,
+    "name_en": "Shellder Pearl",
+    "description": {
+      "en": "A material obtained from a Pokémon. It can be used to make TMs.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://bulbapedia.bulbagarden.net/wiki/List_of_TMs_in_Pok%C3%A9mon_Scarlet_and_Violet"
+    ],
+    "notes": "Descripción en inglés tomada de una fuente secundaria; no se verificó con captura directa de la mochila."
+  },
+  {
+    "db_item_id": 2023,
+    "name_en": "Shellos Mucus",
+    "description": {
+      "en": "A material obtained from a Pokémon. It can be used to make TMs.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://bulbapedia.bulbagarden.net/wiki/List_of_TMs_in_Pok%C3%A9mon_Scarlet_and_Violet"
+    ],
+    "notes": "Descripción en inglés tomada de una fuente secundaria; no se verificó con captura directa de la mochila."
+  },
+  {
+    "db_item_id": 2505,
+    "name_en": "Shieldon Claw",
+    "description": {
+      "en": "A material obtained from a Pokémon. It can be used to make TMs.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://bulbapedia.bulbagarden.net/wiki/List_of_TMs_in_Pok%C3%A9mon_Scarlet_and_Violet"
+    ],
+    "notes": "Descripción en inglés tomada de una fuente secundaria; no se verificó con captura directa de la mochila."
+  },
+  {
+    "db_item_id": 2019,
+    "name_en": "Shinx Fang",
+    "description": {
+      "en": "A material obtained from a Pokémon. It can be used to make TMs.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://bulbapedia.bulbagarden.net/wiki/List_of_TMs_in_Pok%C3%A9mon_Scarlet_and_Violet"
+    ],
+    "notes": "Descripción en inglés tomada de una fuente secundaria; no se verificó con captura directa de la mochila."
+  },
+  {
+    "db_item_id": 2133,
+    "name_en": "Shroodle Ink",
+    "description": {
+      "en": "A material obtained from a Pokémon. It can be used to make TMs.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://bulbapedia.bulbagarden.net/wiki/List_of_TMs_in_Pok%C3%A9mon_Scarlet_and_Violet"
+    ],
+    "notes": "Descripción en inglés tomada de una fuente secundaria; no se verificó con captura directa de la mochila."
+  }
+]

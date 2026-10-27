@@ -1,0 +1,774 @@
+[
+  {
+    "db_item_id": 1777,
+    "name_en": "Adamant Crystal",
+    "description": {
+      "en": "When used on Dialga, this large, glowing gem wells with power and allows the Pokémon to change form.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsarceus/items.shtml"
+    ],
+    "notes": "Texto de una tabla de Serebii; no está verificado como transcripción literal de la descripción dentro de la mochila. Otros idiomas quedan null al no haberse verificado texto oficial localizado."
+  },
+  {
+    "db_item_id": 2604,
+    "name_en": "Amazing Butter",
+    "description": {
+      "en": "An amazing pack of butter found in Hyperspace Lumiose. With it, you should be able to make even higher quality donuts than before.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsz-a/items.shtml"
+    ],
+    "notes": "Texto de una tabla de Serebii; no está verificado como transcripción literal de la descripción dentro de la mochila. Otros idiomas quedan null al no haberse verificado texto oficial localizado."
+  },
+  {
+    "db_item_id": 1613,
+    "name_en": "Apricorn",
+    "description": null,
+    "text_kind": null,
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción textual coincidente en las páginas consultadas; se deja null para no inventar texto."
+  },
+  {
+    "db_item_id": 2609,
+    "name_en": "Arboliva Oil",
+    "description": {
+      "en": "The oil produced by Paldea's Arboliva is said to be so delicious you'll feel as if you've gone to heaven after tasting it. How Corbeau got some is best left a mystery.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsz-a/items.shtml"
+    ],
+    "notes": "Texto de una tabla de Serebii; no está verificado como transcripción literal de la descripción dentro de la mochila. Otros idiomas quedan null al no haberse verificado texto oficial localizado."
+  },
+  {
+    "db_item_id": 2344,
+    "name_en": "Auspicious Armor",
+    "description": {
+      "en": "A peculiar set of armor that can make a certain species of Pokémon evolve. Auspicious wishes live within it.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsz-a/items.shtml"
+    ],
+    "notes": "Texto de una tabla de Serebii; no está verificado como transcripción literal de la descripción dentro de la mochila. Otros idiomas quedan null al no haberse verificado texto oficial localizado."
+  },
+  {
+    "db_item_id": 2597,
+    "name_en": "Autographed Plush",
+    "description": {
+      "en": "A plush doll that has been autographed by Canari. Just having one puts you in a good mood.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsz-a/items.shtml"
+    ],
+    "notes": "Texto de una tabla de Serebii; no está verificado como transcripción literal de la descripción dentro de la mochila. Otros idiomas quedan null al no haberse verificado texto oficial localizado."
+  },
+  {
+    "db_item_id": 1676,
+    "name_en": "Aux Evasion",
+    "description": {
+      "en": "An item that makes moves less likely to strike a Pokémon during a battle. This effect disappears if the Pokémon leaves the battle.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsarceus/items.shtml"
+    ],
+    "notes": "Texto de una tabla de Serebii; no está verificado como transcripción literal de la descripción dentro de la mochila. Otros idiomas quedan null al no haberse verificado texto oficial localizado."
+  },
+  {
+    "db_item_id": 1674,
+    "name_en": "Aux Guard",
+    "description": {
+      "en": "An item that sharply boosts the defensive stats of a Pokémon during a battle. These effects disappear if the Pokémon leaves the battle.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsarceus/items.shtml"
+    ],
+    "notes": "Texto de una tabla de Serebii; no está verificado como transcripción literal de la descripción dentro de la mochila. Otros idiomas quedan null al no haberse verificado texto oficial localizado."
+  },
+  {
+    "db_item_id": 1673,
+    "name_en": "Aux Power",
+    "description": {
+      "en": "An item that sharply boosts the offensive stats of a Pokémon during a battle. These effects disappear if the Pokémon leaves the battle.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsarceus/items.shtml"
+    ],
+    "notes": "Texto de una tabla de Serebii; no está verificado como transcripción literal de la descripción dentro de la mochila. Otros idiomas quedan null al no haberse verificado texto oficial localizado."
+  },
+  {
+    "db_item_id": 1615,
+    "name_en": "Aux Powerguard",
+    "description": {
+      "en": "An item that sharply boosts the offensive and defensive stats of a Pokémon during a battle. These effects disappear if the Pokémon leaves the battle.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsarceus/items.shtml"
+    ],
+    "notes": "Texto de una tabla de Serebii; no está verificado como transcripción literal de la descripción dentro de la mochila. Otros idiomas quedan null al no haberse verificado texto oficial localizado."
+  },
+  {
+    "db_item_id": 1626,
+    "name_en": "Azelf’s Fang",
+    "description": {
+      "en": "Proof that you have completed the trial set by Azelf, the Being of Willpower that lives at Lake Valor. This item is needed to forge the Red Chain.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsarceus/items.shtml"
+    ],
+    "notes": "Texto de una tabla de Serebii; no está verificado como transcripción literal de la descripción dentro de la mochila. Otros idiomas quedan null al no haberse verificado texto oficial localizado."
+  },
+  {
+    "db_item_id": 1684,
+    "name_en": "Ball of Mud",
+    "description": {
+      "en": "A ball of mud that has become stiff and hard. Hitting a Pokémon with one may stun the Pokémon, creating an opening for you to act.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsarceus/items.shtml"
+    ],
+    "notes": "Texto de una tabla de Serebii; no está verificado como transcripción literal de la descripción dentro de la mochila. Otros idiomas quedan null al no haberse verificado texto oficial localizado."
+  },
+  {
+    "db_item_id": 1744,
+    "name_en": "Basculegion Food",
+    "description": {
+      "en": "A favored food of Basculegion, a Pokémon that will bear you on its back. This food is crafted in an unusual way, from ingredients gathered via equally unusual methods.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsarceus/items.shtml"
+    ],
+    "notes": "Texto de una tabla de Serebii; no está verificado como transcripción literal de la descripción dentro de la mochila. Otros idiomas quedan null al no haberse verificado texto oficial localizado."
+  },
+  {
+    "db_item_id": 1654,
+    "name_en": "Bean Cake",
+    "description": {
+      "en": "A cake made by combining beans with a Cake-Lure Base. These cakes are potently effective at attracting fish Pokémon, as well as bird Pokémon and their flying ilk.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsarceus/items.shtml"
+    ],
+    "notes": "Texto de una tabla de Serebii; no está verificado como transcripción literal de la descripción dentro de la mochila. Otros idiomas quedan null al no haberse verificado texto oficial localizado."
+  },
+  {
+    "db_item_id": 1691,
+    "name_en": "Black Augurite",
+    "description": {
+      "en": "A glassy black stone that produces a sharp cutting edge when split. It's loved by a certain Pokémon.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsarceus/items.shtml"
+    ],
+    "notes": "Texto de una tabla de Serebii; no está verificado como transcripción literal de la descripción dentro de la mochila. Otros idiomas quedan null al no haberse verificado texto oficial localizado."
+  },
+  {
+    "db_item_id": 1681,
+    "name_en": "Black Tumblestone",
+    "description": null,
+    "text_kind": null,
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción textual coincidente en las páginas consultadas; se deja null para no inventar texto."
+  },
+  {
+    "db_item_id": 1780,
+    "name_en": "Blank Plate",
+    "description": {
+      "en": "A stone tablet imbued with the essence of normalcy. When used on a certain Pokémon, it allows that Pokémon to gain the power of the Normal type.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsarceus/items.shtml"
+    ],
+    "notes": "Texto de una tabla de Serebii; no está verificado como transcripción literal de la descripción dentro de la mochila. Otros idiomas quedan null al no haberse verificado texto oficial localizado."
+  },
+  {
+    "db_item_id": 2632,
+    "name_en": "Blue Canari Plush",
+    "description": {
+      "en": "A plush doll of Canari that holds a blue charm. Having one of these makes it a little more likely that you'll succeed at catching Pokémon.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsz-a/items.shtml"
+    ],
+    "notes": "Texto de una tabla de Serebii; no está verificado como transcripción literal de la descripción dentro de la mochila. Otros idiomas quedan null al no haberse verificado texto oficial localizado. El nombre de la tabla de Serebii es “Blue Canari Plush Lv. 1”; se ha asociado al nombre base del CSV."
+  },
+  {
+    "db_item_id": 1651,
+    "name_en": "Bugwort",
+    "description": null,
+    "text_kind": null,
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción textual coincidente en las páginas consultadas; se deja null para no inventar texto."
+  },
+  {
+    "db_item_id": 1709,
+    "name_en": "Cake-Lure Base",
+    "description": null,
+    "text_kind": null,
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción textual coincidente en las páginas consultadas; se deja null para no inventar texto."
+  },
+  {
+    "db_item_id": 2684,
+    "name_en": "Canari Bread",
+    "description": {
+      "en": "A bun made to look like Canari's face. It can be used to restore 100 HP to a Pokémon.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsz-a/items.shtml"
+    ],
+    "notes": "Texto de una tabla de Serebii; no está verificado como transcripción literal de la descripción dentro de la mochila. Otros idiomas quedan null al no haberse verificado texto oficial localizado."
+  },
+  {
+    "db_item_id": 1708,
+    "name_en": "Candy Truffle",
+    "description": null,
+    "text_kind": null,
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción textual coincidente en las páginas consultadas; se deja null para no inventar texto."
+  },
+  {
+    "db_item_id": 1620,
+    "name_en": "Caster Fern",
+    "description": null,
+    "text_kind": null,
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción textual coincidente en las páginas consultadas; se deja null para no inventar texto."
+  },
+  {
+    "db_item_id": 1629,
+    "name_en": "Celestica Flute",
+    "description": {
+      "en": "A flute that can be used to call special Pokémon that are willing to bear you around the region. Its timbre is eerie and mysterious.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsarceus/items.shtml"
+    ],
+    "notes": "Texto de una tabla de Serebii; no está verificado como transcripción literal de la descripción dentro de la mochila. Otros idiomas quedan null al no haberse verificado texto oficial localizado."
+  },
+  {
+    "db_item_id": 2596,
+    "name_en": "Cherished Ring",
+    "description": {
+      "en": "A ring that an old woman asked you to retrieve. It seems to hold some value to her.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsz-a/items.shtml"
+    ],
+    "notes": "Texto de una tabla de Serebii; no está verificado como transcripción literal de la descripción dentro de la mochila. Otros idiomas quedan null al no haberse verificado texto oficial localizado. Serebii muestra también otra variante del mismo nombre con texto distinto; esta entrada corresponde a la descripción de la mujer que pide recuperarlo."
+  },
+  {
+    "db_item_id": 1617,
+    "name_en": "Choice Dumpling",
+    "description": {
+      "en": "A dumpling that will make a Pokémon become fixated on a move in battle. The Pokémon will deal more damage when using that move but will take more damage as well.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsarceus/items.shtml"
+    ],
+    "notes": "Texto de una tabla de Serebii; no está verificado como transcripción literal de la descripción dentro de la mochila. Otros idiomas quedan null al no haberse verificado texto oficial localizado."
+  },
+  {
+    "db_item_id": 2619,
+    "name_en": "Colorful Screw",
+    "description": {
+      "en": "A colorful screw. These screws have been left here and there around Lumiose City, and the staff at Racine Construction will trade you goods in exchange for them.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsz-a/items.shtml"
+    ],
+    "notes": "Texto de una tabla de Serebii; no está verificado como transcripción literal de la descripción dentro de la mochila. Otros idiomas quedan null al no haberse verificado texto oficial localizado."
+  },
+  {
+    "db_item_id": 1782,
+    "name_en": "Crafting Kit",
+    "description": {
+      "en": "A kit containing everything you might need for crafting, even when there is no workbench around. However, you can only use the materials you have in your satchel.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsarceus/items.shtml"
+    ],
+    "notes": "Texto de una tabla de Serebii; no está verificado como transcripción literal de la descripción dentro de la mochila. Otros idiomas quedan null al no haberse verificado texto oficial localizado."
+  },
+  {
+    "db_item_id": 1636,
+    "name_en": "Crunchy Salt",
+    "description": null,
+    "text_kind": null,
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción textual coincidente en las páginas consultadas; se deja null para no inventar texto."
+  },
+  {
+    "db_item_id": 1632,
+    "name_en": "Dazzling Honey",
+    "description": null,
+    "text_kind": null,
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción textual coincidente en las páginas consultadas; se deja null para no inventar texto."
+  },
+  {
+    "db_item_id": 1704,
+    "name_en": "Direshroom",
+    "description": {
+      "en": "Mushrooms that, when consumed, sharpen the eater's focus. They make it easier to land critical hits and are one of the materials needed for crafting Dire Hits.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsarceus/items.shtml"
+    ],
+    "notes": "Texto de una tabla de Serebii; no está verificado como transcripción literal de la descripción dentro de la mochila. Otros idiomas quedan null al no haberse verificado texto oficial localizado."
+  },
+  {
+    "db_item_id": 2613,
+    "name_en": "Dirty Scarf",
+    "description": {
+      "en": "A scarf that has grown quite shabby. It's easy to imagine that it must have once felt quite luxurious.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsz-a/items.shtml"
+    ],
+    "notes": "Texto de una tabla de Serebii; no está verificado como transcripción literal de la descripción dentro de la mochila. Otros idiomas quedan null al no haberse verificado texto oficial localizado."
+  },
+  {
+    "db_item_id": 1703,
+    "name_en": "Doppel Bonnets",
+    "description": {
+      "en": "Mushrooms that, when consumed, make the eater feel nimble and agile as a fleeting shadow. They are one of the materials needed for crafting Aux Evasions.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsarceus/items.shtml"
+    ],
+    "notes": "Texto de una tabla de Serebii; no está verificado como transcripción literal de la descripción dentro de la mochila. Otros idiomas quedan null al no haberse verificado texto oficial localizado."
+  },
+  {
+    "db_item_id": 1624,
+    "name_en": "Eternal Ice",
+    "description": {
+      "en": "A type of ice beloved by the Lord of the Tundra, Avalugg. This ice is said to be fragments of ancient Avalugg that lived long ago.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsarceus/items.shtml"
+    ],
+    "notes": "Texto de una tabla de Serebii; no está verificado como transcripción literal de la descripción dentro de la mochila. Otros idiomas quedan null al no haberse verificado texto oficial localizado."
+  },
+  {
+    "db_item_id": 2401,
+    "name_en": "Fairy Feather",
+    "description": {
+      "en": "An item to be held by a Pokémon. This feather, which gleams faintly when hit by light, boosts the power of the holder's Fairy-type moves.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsz-a/items.shtml"
+    ],
+    "notes": "Texto de una tabla de Serebii; no está verificado como transcripción literal de la descripción dentro de la mochila. Otros idiomas quedan null al no haberse verificado texto oficial localizado."
+  },
+  {
+    "db_item_id": 1631,
+    "name_en": "Fine Remedy",
+    "description": {
+      "en": "An herbal medicine that can restore 100 HP to a Pokémon, just as a Super Potion does. Yet the bitter taste will make the Pokémon less friendly toward you.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsarceus/items.shtml"
+    ],
+    "notes": "Texto de una tabla de Serebii; no está verificado como transcripción literal de la descripción dentro de la mochila. Otros idiomas quedan null al no haberse verificado texto oficial localizado."
+  },
+  {
+    "db_item_id": 1678,
+    "name_en": "Forest Balm",
+    "description": {
+      "en": "A mysterious balm that gives off a soothing scent. It can be used to help calm the frenzy of the Lord of the Woods, Kleavor.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsarceus/items.shtml"
+    ],
+    "notes": "Texto de una tabla de Serebii; no está verificado como transcripción literal de la descripción dentro de la mochila. Otros idiomas quedan null al no haberse verificado texto oficial localizado."
+  },
+  {
+    "db_item_id": 2137,
+    "name_en": "Gimmighoul Coin",
+    "description": null,
+    "text_kind": null,
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción textual coincidente en las páginas consultadas; se deja null para no inventar texto."
+  },
+  {
+    "db_item_id": 2623,
+    "name_en": "Gold Canari Plush",
+    "description": {
+      "en": "A plush doll of Canari that holds a gold charm. Having one of these increases the prize money you receive from battles by a little.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsz-a/items.shtml"
+    ],
+    "notes": "Texto de una tabla de Serebii; no está verificado como transcripción literal de la descripción dentro de la mochila. Otros idiomas quedan null al no haberse verificado texto oficial localizado. El nombre de la tabla de Serebii es “Gold Canari Plush Lv. 1”; se ha asociado al nombre base del CSV."
+  },
+  {
+    "db_item_id": 1653,
+    "name_en": "Grain Cake",
+    "description": {
+      "en": "A cake made by combining grains with a Cake-Lure Base. These cakes are potently effective at attracting Pokémon that dwell and wander among the fields.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsarceus/items.shtml"
+    ],
+    "notes": "Texto de una tabla de Serebii; no está verificado como transcripción literal de la descripción dentro de la mochila. Otros idiomas quedan null al no haberse verificado texto oficial localizado."
+  }
+]

@@ -1,0 +1,558 @@
+[
+  {
+    "db_item_id": 2392,
+    "name_en": "Blue-Sky Flower Pick",
+    "description": null,
+    "text_kind": null,
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable para este objeto en la fuente consultada. No se inventa texto; los demás idiomas quedan null."
+  },
+  {
+    "db_item_id": 2552,
+    "name_en": "Blueberry Chairs",
+    "description": null,
+    "text_kind": null,
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable para este objeto en la fuente consultada. No se inventa texto; los demás idiomas quedan null."
+  },
+  {
+    "db_item_id": 2551,
+    "name_en": "Blueberry Tablecloth",
+    "description": null,
+    "text_kind": null,
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable para este objeto en la fuente consultada. No se inventa texto; los demás idiomas quedan null."
+  },
+  {
+    "db_item_id": 2127,
+    "name_en": "Bombirdier Feather",
+    "description": null,
+    "text_kind": null,
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable para este objeto en la fuente consultada. No se inventa texto; los demás idiomas quedan null."
+  },
+  {
+    "db_item_id": 2027,
+    "name_en": "Bonsly Tears",
+    "description": null,
+    "text_kind": null,
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable para este objeto en la fuente consultada. No se inventa texto; los demás idiomas quedan null."
+  },
+  {
+    "db_item_id": 1880,
+    "name_en": "Booster Energy",
+    "description": {
+      "en": "An item to be held by Pokémon with certain Abilities. The energy that fills this capsule boosts the strength of the Pokémon.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/scarletviolet/items.shtml"
+    ],
+    "notes": "Resumen en inglés de la tabla de objetos de Serebii para Pokémon Scarlet/Violet; no verificado directamente mediante captura o volcado del texto del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 2074,
+    "name_en": "Bounsweet Sweat",
+    "description": null,
+    "text_kind": null,
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable para este objeto en la fuente consultada. No se inventa texto; los demás idiomas quedan null."
+  },
+  {
+    "db_item_id": 2136,
+    "name_en": "Bramblin Twig",
+    "description": null,
+    "text_kind": null,
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable para este objeto en la fuente consultada. No se inventa texto; los demás idiomas quedan null."
+  },
+  {
+    "db_item_id": 2557,
+    "name_en": "Briar’s Book",
+    "description": {
+      "en": "A proof copy of the exploration notes covering the Area Zero Underdepths. It's filled with long paragraphs describing what happened, along with Briar's thoughts.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/scarletviolet/items.shtml"
+    ],
+    "notes": "Resumen en inglés de la tabla de objetos de Serebii para Pokémon Scarlet/Violet; no verificado directamente mediante captura o volcado del texto del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 2382,
+    "name_en": "Bronze Bottle",
+    "description": null,
+    "text_kind": null,
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable para este objeto en la fuente consultada. No se inventa texto; los demás idiomas quedan null."
+  },
+  {
+    "db_item_id": 2384,
+    "name_en": "Bronze Cup",
+    "description": null,
+    "text_kind": null,
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable para este objeto en la fuente consultada. No se inventa texto; los demás idiomas quedan null."
+  },
+  {
+    "db_item_id": 2026,
+    "name_en": "Bronzor Fragment",
+    "description": null,
+    "text_kind": null,
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable para este objeto en la fuente consultada. No se inventa texto; los demás idiomas quedan null."
+  },
+  {
+    "db_item_id": 2080,
+    "name_en": "Bruxish Tooth",
+    "description": null,
+    "text_kind": null,
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable para este objeto en la fuente consultada. No se inventa texto; los demás idiomas quedan null."
+  },
+  {
+    "db_item_id": 1873,
+    "name_en": "Bug Tera Shard",
+    "description": {
+      "en": "On rare occasions, these shards form when a Tera Pokémon falls in battle and its Tera Jewel shatters.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/scarletviolet/items.shtml"
+    ],
+    "notes": "Resumen en inglés de la tabla de objetos de Serebii para Pokémon Scarlet/Violet; no verificado directamente mediante captura o volcado del texto del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 2022,
+    "name_en": "Buizel Fur",
+    "description": null,
+    "text_kind": null,
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable para este objeto en la fuente consultada. No se inventa texto; los demás idiomas quedan null."
+  },
+  {
+    "db_item_id": 1892,
+    "name_en": "Butter",
+    "description": {
+      "en": "A condiment that unites salty and sweet and also packs a richness that makes bread a delight to eat. The finest butter products are made of 100 percent Moomoo Milk.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/scarletviolet/items.shtml"
+    ],
+    "notes": "Resumen en inglés de la tabla de objetos de Serebii para Pokémon Scarlet/Violet; no verificado directamente mediante captura o volcado del texto del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 2007,
+    "name_en": "Cacnea Needle",
+    "description": null,
+    "text_kind": null,
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable para este objeto en la fuente consultada. No se inventa texto; los demás idiomas quedan null."
+  },
+  {
+    "db_item_id": 2114,
+    "name_en": "Capsakid Seed",
+    "description": null,
+    "text_kind": null,
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable para este objeto en la fuente consultada. No se inventa texto; los demás idiomas quedan null."
+  },
+  {
+    "db_item_id": 2471,
+    "name_en": "Carbink Jewel",
+    "description": null,
+    "text_kind": null,
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable para este objeto en la fuente consultada. No se inventa texto; los demás idiomas quedan null."
+  },
+  {
+    "db_item_id": 2119,
+    "name_en": "Cetoddle Grease",
+    "description": null,
+    "text_kind": null,
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable para este objeto en la fuente consultada. No se inventa texto; los demás idiomas quedan null."
+  },
+  {
+    "db_item_id": 2157,
+    "name_en": "Charcadet Soot",
+    "description": null,
+    "text_kind": null,
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable para este objeto en la fuente consultada. No se inventa texto; los demás idiomas quedan null."
+  },
+  {
+    "db_item_id": 1935,
+    "name_en": "Cheese",
+    "description": {
+      "en": "A very salty ingredient. This thinly sliced cheese is perfect for adding to a sandwich.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/scarletviolet/items.shtml"
+    ],
+    "notes": "Resumen en inglés de la tabla de objetos de Serebii para Pokémon Scarlet/Violet; no verificado directamente mediante captura o volcado del texto del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 1911,
+    "name_en": "Cherry Tomatoes",
+    "description": {
+      "en": "A very tart ingredient. Some varieties are also very sweet, and these are prized above all others by the people of Paldea.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/scarletviolet/items.shtml"
+    ],
+    "notes": "Resumen en inglés de la tabla de objetos de Serebii para Pokémon Scarlet/Violet; no verificado directamente mediante captura o volcado del texto del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 2081,
+    "name_en": "Chewtle Claw",
+    "description": null,
+    "text_kind": null,
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable para este objeto en la fuente consultada. No se inventa texto; los demás idiomas quedan null."
+  },
+  {
+    "db_item_id": 1894,
+    "name_en": "Chili Sauce",
+    "description": {
+      "en": "A condiment with a very spicy kick. It's thanks to Scovillain that this sauce gets its signature mouth- tingling burn.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/scarletviolet/items.shtml"
+    ],
+    "notes": "Resumen en inglés de la tabla de objetos de Serebii para Pokémon Scarlet/Violet; no verificado directamente mediante captura o volcado del texto del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 2496,
+    "name_en": "Chinchou Sparks",
+    "description": null,
+    "text_kind": null,
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable para este objeto en la fuente consultada. No se inventa texto; los demás idiomas quedan null."
+  },
+  {
+    "db_item_id": 2464,
+    "name_en": "Chingling Fragment",
+    "description": null,
+    "text_kind": null,
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable para este objeto en la fuente consultada. No se inventa texto; los demás idiomas quedan null."
+  },
+  {
+    "db_item_id": 1923,
+    "name_en": "Chorizo",
+    "description": {
+      "en": "A very salty and spicy ingredient. This type of sausage has particularly robust salty flavor, and the spicier varieties are extra popular.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/scarletviolet/items.shtml"
+    ],
+    "notes": "Resumen en inglés de la tabla de objetos de Serebii para Pokémon Scarlet/Violet; no verificado directamente mediante captura o volcado del texto del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 2059,
+    "name_en": "Clauncher Claw",
+    "description": null,
+    "text_kind": null,
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable para este objeto en la fuente consultada. No se inventa texto; los demás idiomas quedan null."
+  },
+  {
+    "db_item_id": 1882,
+    "name_en": "Clear Amulet",
+    "description": {
+      "en": "An item to be held by a Pokémon. This clear, sparkling amulet protects the holder from having its stats lowered by moves used against it or by other Pokémon's Abilities.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/scarletviolet/items.shtml"
+    ],
+    "notes": "Resumen en inglés de la tabla de objetos de Serebii para Pokémon Scarlet/Violet; no verificado directamente mediante captura o volcado del texto del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 2440,
+    "name_en": "Cleffa Fur",
+    "description": null,
+    "text_kind": null,
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable para este objeto en la fuente consultada. No se inventa texto; los demás idiomas quedan null."
+  },
+  {
+    "db_item_id": 2415,
+    "name_en": "Clever Mochi",
+    "description": {
+      "en": "A mochi cake with Berries kneaded into its dough. It increases base points for a Pokémon's Sp. Def stat.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/scarletviolet/items.shtml"
+    ],
+    "notes": "Resumen en inglés de la tabla de objetos de Serebii para Pokémon Scarlet/Violet; no verificado directamente mediante captura o volcado del texto del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 2535,
+    "name_en": "Cobalion Treat",
+    "description": {
+      "en": "A snack made from ingredients favored by the Legendary Pokémon Cobalion.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/scarletviolet/items.shtml"
+    ],
+    "notes": "Resumen en inglés de la tabla de objetos de Serebii para Pokémon Scarlet/Violet; no verificado directamente mediante captura o volcado del texto del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 2020,
+    "name_en": "Combee Honey",
+    "description": null,
+    "text_kind": null,
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable para este objeto en la fuente consultada. No se inventa texto; los demás idiomas quedan null."
+  },
+  {
+    "db_item_id": 2518,
+    "name_en": "Comfey Flower",
+    "description": null,
+    "text_kind": null,
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable para este objeto en la fuente consultada. No se inventa texto; los demás idiomas quedan null."
+  },
+  {
+    "db_item_id": 2406,
+    "name_en": "Cornerstone Mask",
+    "description": {
+      "en": "An item to be held by Ogerpon. This carved wooden mask is adorned with crystals and allows Ogerpon to wield the Rock type during battle.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/scarletviolet/items.shtml"
+    ],
+    "notes": "Resumen en inglés de la tabla de objetos de Serebii para Pokémon Scarlet/Violet; no verificado directamente mediante captura o volcado del texto del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 2461,
+    "name_en": "Corphish Shell",
+    "description": null,
+    "text_kind": null,
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable para este objeto en la fuente consultada. No se inventa texto; los demás idiomas quedan null."
+  },
+  {
+    "db_item_id": 2508,
+    "name_en": "Cottonee Fluff",
+    "description": null,
+    "text_kind": null,
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable para este objeto en la fuente consultada. No se inventa texto; los demás idiomas quedan null."
+  },
+  {
+    "db_item_id": 1885,
+    "name_en": "Covert Cloak",
+    "description": {
+      "en": "An item to be held by a Pokémon. This hooded cloak conceals the holder, tricking the eyes of its enemies and protecting it from the additional effects of moves.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/scarletviolet/items.shtml"
+    ],
+    "notes": "Resumen en inglés de la tabla de objetos de Serebii para Pokémon Scarlet/Violet; no verificado directamente mediante captura o volcado del texto del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 2067,
+    "name_en": "Crabrawler Shell",
+    "description": null,
+    "text_kind": null,
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable para este objeto en la fuente consultada. No se inventa texto; los demás idiomas quedan null."
+  }
+]

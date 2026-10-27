@@ -1,0 +1,862 @@
+[
+  {
+    "db_item_id": 2361,
+    "name_en": "Pikachu Cup",
+    "description": {
+      "en": "A cup for big-time Pokémon fans. Kids will happily drink out of it, making it a boon to parents.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://bulbapedia.bulbagarden.net/wiki/Pikachu_Cup"
+    ],
+    "notes": "Descripción en inglés tomada de una fuente secundaria que enumera el texto del juego; no se verificó con captura directa de la mochila."
+  },
+  {
+    "db_item_id": 2516,
+    "name_en": "Pikipek Feather",
+    "description": {
+      "en": "A material obtained from a Pokémon. It can be used to make TMs.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://bulbapedia.bulbagarden.net/wiki/List_of_TMs_in_Pok%C3%A9mon_Scarlet_and_Violet"
+    ],
+    "notes": "Descripción en inglés tomada de una fuente secundaria que enumera el texto del juego; no se verificó con captura directa de la mochila."
+  },
+  {
+    "db_item_id": 2091,
+    "name_en": "Pincurchin Spines",
+    "description": {
+      "en": "A material obtained from a Pokémon. It can be used to make TMs.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://bulbapedia.bulbagarden.net/wiki/List_of_TMs_in_Pok%C3%A9mon_Scarlet_and_Violet"
+    ],
+    "notes": "Descripción en inglés tomada de una fuente secundaria que enumera el texto del juego; no se verificó con captura directa de la mochila."
+  },
+  {
+    "db_item_id": 1940,
+    "name_en": "Pineapple",
+    "description": {
+      "en": null,
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción de mochila verificable para este objeto en las fuentes consultadas."
+  },
+  {
+    "db_item_id": 1983,
+    "name_en": "Pineco Husk",
+    "description": {
+      "en": "A material obtained from a Pokémon. It can be used to make TMs.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://bulbapedia.bulbagarden.net/wiki/List_of_TMs_in_Pok%C3%A9mon_Scarlet_and_Violet"
+    ],
+    "notes": "Descripción en inglés tomada de una fuente secundaria que enumera el texto del juego; no se verificó con captura directa de la mochila."
+  },
+  {
+    "db_item_id": 2348,
+    "name_en": "Pink Bottle",
+    "description": {
+      "en": "A go-to bottle widely used for drinks at picnics. Its simple design and portability make it popular among all sorts of people.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.gamerguides.com/pokemon-scarlet-and-violet/database/picnic-items/picnics"
+    ],
+    "notes": "Descripción en inglés tomada de una fuente secundaria que enumera el texto del juego; no se verificó con captura directa de la mochila."
+  },
+  {
+    "db_item_id": 2437,
+    "name_en": "Pink Chairs",
+    "description": {
+      "en": "A set of chairs that are ideal for picnicking. Their design was inspired by the Pink Tablecloth.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://bulbapedia.bulbagarden.net/wiki/Pink_Chairs"
+    ],
+    "notes": "Descripción en inglés tomada de una fuente secundaria que enumera el texto del juego; no se verificó con captura directa de la mochila."
+  },
+  {
+    "db_item_id": 2358,
+    "name_en": "Pink Cup",
+    "description": {
+      "en": "A cup sold with the Pink Bottle. The two don’t stack, so they’re tough to pack—but they look good, so they’re popular with those who like to post picnic photos.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.gamerguides.com/pokemon-scarlet-and-violet/database/picnic-items/picnics"
+    ],
+    "notes": "Descripción en inglés tomada de una fuente secundaria que enumera el texto del juego; no se verificó con captura directa de la mochila."
+  },
+  {
+    "db_item_id": 2380,
+    "name_en": "Pink Tablecloth",
+    "description": {
+      "en": "A simple pink tablecloth. It’s smooth and pleasant to the touch, and dishes can be placed on it with hardly a sound.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.gamerguides.com/pokemon-scarlet-and-violet/database/picnic-items/picnics"
+    ],
+    "notes": "Descripción en inglés tomada de una fuente secundaria que enumera el texto del juego; no se verificó con captura directa de la mochila."
+  },
+  {
+    "db_item_id": 2424,
+    "name_en": "Plaid Chairs (B)",
+    "description": {
+      "en": "A set of chairs that are ideal for picnicking. Their design was inspired by the blue Plaid Tablecloth.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://bulbapedia.bulbagarden.net/wiki/Plaid_Chairs_(B)"
+    ],
+    "notes": "Descripción en inglés tomada de una fuente secundaria que enumera el texto del juego; no se verificó con captura directa de la mochila."
+  },
+  {
+    "db_item_id": 2425,
+    "name_en": "Plaid Chairs (R)",
+    "description": {
+      "en": "A set of chairs that are ideal for picnicking. Their design was inspired by the red Plaid Tablecloth.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/scarletviolet/picnic.shtml"
+    ],
+    "notes": "Descripción en inglés tomada de una fuente secundaria que enumera el texto del juego; no se verificó con captura directa de la mochila."
+  },
+  {
+    "db_item_id": 2423,
+    "name_en": "Plaid Chairs (Y)",
+    "description": {
+      "en": "A set of chairs that are ideal for picnicking. Their design was inspired by the yellow Plaid Tablecloth.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/scarletviolet/picnic.shtml"
+    ],
+    "notes": "Descripción en inglés tomada de una fuente secundaria que enumera el texto del juego; no se verificó con captura directa de la mochila."
+  },
+  {
+    "db_item_id": 2367,
+    "name_en": "Plaid Tablecloth (B)",
+    "description": {
+      "en": "A sturdy tablecloth made of thick fabric. The gentle blue plaid gives a table a crisp look.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/scarletviolet/picnic.shtml"
+    ],
+    "notes": "Descripción en inglés tomada de una fuente secundaria que enumera el texto del juego; no se verificó con captura directa de la mochila."
+  },
+  {
+    "db_item_id": 2368,
+    "name_en": "Plaid Tablecloth (R)",
+    "description": {
+      "en": "A sturdy tablecloth made of thick fabric. The quietly composed red plaid gives the table some flair.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/scarletviolet/picnic.shtml"
+    ],
+    "notes": "Descripción en inglés tomada de una fuente secundaria que enumera el texto del juego; no se verificó con captura directa de la mochila."
+  },
+  {
+    "db_item_id": 2366,
+    "name_en": "Plaid Tablecloth (Y)",
+    "description": {
+      "en": "A sturdy tablecloth made of thick fabric. The cheery yellow plaid brightens up a table.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/scarletviolet/picnic.shtml"
+    ],
+    "notes": "Descripción en inglés tomada de una fuente secundaria que enumera el texto del juego; no se verificó con captura directa de la mochila."
+  },
+  {
+    "db_item_id": 2500,
+    "name_en": "Plusle Fur",
+    "description": {
+      "en": "A material obtained from a Pokémon. It can be used to make TMs.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://bulbapedia.bulbagarden.net/wiki/List_of_TMs_in_Pok%C3%A9mon_Scarlet_and_Violet"
+    ],
+    "notes": "Descripción en inglés tomada de una fuente secundaria que enumera el texto del juego; no se verificó con captura directa de la mochila."
+  },
+  {
+    "db_item_id": 1869,
+    "name_en": "Poison Tera Shard",
+    "description": {
+      "en": "On rare occasions, these shards form when a Tera Pokémon falls in battle and its Tera Jewel shatters.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://bulbapedia.bulbagarden.net/wiki/Poison_Tera_Shard"
+    ],
+    "notes": "Descripción en inglés tomada de una fuente secundaria que enumera el texto del juego; no se verificó con captura directa de la mochila."
+  },
+  {
+    "db_item_id": 2442,
+    "name_en": "Poliwag Slime",
+    "description": {
+      "en": "A material obtained from a Pokémon. It can be used to make TMs.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://bulbapedia.bulbagarden.net/wiki/List_of_TMs_in_Pok%C3%A9mon_Scarlet_and_Violet"
+    ],
+    "notes": "Descripción en inglés tomada de una fuente secundaria que enumera el texto del juego; no se verificó con captura directa de la mochila."
+  },
+  {
+    "db_item_id": 2315,
+    "name_en": "Polka-Dot Bottle",
+    "description": {
+      "en": "A polka-dot-patterned bottle that’s small, light, and even comes with a cup. The detachable strap makes it handy for walking around with.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.gamerguides.com/pokemon-scarlet-and-violet/database/picnic-items/picnics"
+    ],
+    "notes": "Descripción en inglés tomada de una fuente secundaria que enumera el texto del juego; no se verificó con captura directa de la mochila."
+  },
+  {
+    "db_item_id": 2431,
+    "name_en": "Polka-Dot Chairs",
+    "description": {
+      "en": "A set of chairs that are ideal for picnicking. Their design was inspired by the Polka-Dot Tablecloth.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/scarletviolet/picnic.shtml"
+    ],
+    "notes": "Descripción en inglés tomada de una fuente secundaria que enumera el texto del juego; no se verificó con captura directa de la mochila."
+  },
+  {
+    "db_item_id": 2321,
+    "name_en": "Polka-Dot Cup",
+    "description": {
+      "en": "A cup for kids to use at picnics. It’s made of light but strong material. It’s stackable, which makes it handy for carrying around.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.gamerguides.com/pokemon-scarlet-and-violet/database/picnic-items/picnics"
+    ],
+    "notes": "Descripción en inglés tomada de una fuente secundaria que enumera el texto del juego; no se verificó con captura directa de la mochila."
+  },
+  {
+    "db_item_id": 2374,
+    "name_en": "Polka-Dot Tablecloth",
+    "description": {
+      "en": "A tablecloth with a fashionable polka-dot pattern. It’s great at repelling water and mold, and stains and smudges wipe right off.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.gamerguides.com/pokemon-scarlet-and-violet/database/picnic-items/picnics"
+    ],
+    "notes": "Descripción en inglés tomada de una fuente secundaria que enumera el texto del juego; no se verificó con captura directa de la mochila."
+  },
+  {
+    "db_item_id": 2478,
+    "name_en": "Poltchageist Powder",
+    "description": {
+      "en": "A material obtained from a Pokémon. It can be used to make TMs.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://bulbapedia.bulbagarden.net/wiki/List_of_TMs_in_Pok%C3%A9mon_Scarlet_and_Violet"
+    ],
+    "notes": "Descripción en inglés tomada de una fuente secundaria que enumera el texto del juego; no se verificó con captura directa de la mochila."
+  },
+  {
+    "db_item_id": 2455,
+    "name_en": "Poochyena Fang",
+    "description": {
+      "en": "A material obtained from a Pokémon. It can be used to make TMs.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/scarletviolet/items.shtml"
+    ],
+    "notes": "Descripción en inglés tomada de una fuente secundaria que enumera el texto del juego; no se verificó con captura directa de la mochila."
+  },
+  {
+    "db_item_id": 2495,
+    "name_en": "Porygon Fragment",
+    "description": {
+      "en": "A material obtained from a Pokémon. It can be used to make TMs.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://bulbapedia.bulbagarden.net/wiki/List_of_TMs_in_Pok%C3%A9mon_Scarlet_and_Violet"
+    ],
+    "notes": "Descripción en inglés tomada de una fuente secundaria que enumera el texto del juego; no se verificó con captura directa de la mochila."
+  },
+  {
+    "db_item_id": 1934,
+    "name_en": "Potato Salad",
+    "description": {
+      "en": null,
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción de mochila verificable para este objeto en las fuentes consultadas."
+  },
+  {
+    "db_item_id": 1930,
+    "name_en": "Potato Tortilla",
+    "description": {
+      "en": null,
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción de mochila verificable para este objeto en las fuentes consultadas."
+  },
+  {
+    "db_item_id": 1922,
+    "name_en": "Prosciutto",
+    "description": {
+      "en": null,
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción de mochila verificable para este objeto en las fuentes consultadas."
+  },
+  {
+    "db_item_id": 1872,
+    "name_en": "Psychic Tera Shard",
+    "description": {
+      "en": "On rare occasions, these shards form when a Tera Pokémon falls in battle and its Tera Jewel shatters.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://bulbapedia.bulbagarden.net/wiki/Tera_Shard"
+    ],
+    "notes": "Descripción en inglés tomada de una fuente secundaria que enumera el texto del juego; no se verificó con captura directa de la mochila."
+  },
+  {
+    "db_item_id": 1959,
+    "name_en": "Psyduck Down",
+    "description": {
+      "en": "A material obtained from a Pokémon. It can be used to make TMs.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://bulbapedia.bulbagarden.net/wiki/List_of_TMs_in_Pok%C3%A9mon_Scarlet_and_Violet"
+    ],
+    "notes": "Descripción en inglés tomada de una fuente secundaria que enumera el texto del juego; no se verificó con captura directa de la mochila."
+  },
+  {
+    "db_item_id": 1884,
+    "name_en": "Punching Glove",
+    "description": {
+      "en": null,
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción de mochila verificable para este objeto en las fuentes consultadas."
+  },
+  {
+    "db_item_id": 1985,
+    "name_en": "Qwilfish Spines",
+    "description": {
+      "en": "A material obtained from a Pokémon. It can be used to make TMs.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://bulbapedia.bulbagarden.net/wiki/List_of_TMs_in_Pok%C3%A9mon_Scarlet_and_Violet"
+    ],
+    "notes": "Descripción en inglés tomada de una fuente secundaria que enumera el texto del juego; no se verificó con captura directa de la mochila."
+  },
+  {
+    "db_item_id": 2525,
+    "name_en": "Raikou Treat",
+    "description": {
+      "en": null,
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción de mochila verificable para este objeto en las fuentes consultadas."
+  },
+  {
+    "db_item_id": 483,
+    "name_en": "Rainbow Feather",
+    "description": {
+      "en": "A mystical feather of rainbow colors.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://serebii.net/itemdex/rainbowwing.shtml"
+    ],
+    "notes": "Descripción en inglés tomada de una fuente secundaria que enumera el texto del juego; no se verificó con captura directa de la mochila."
+  },
+  {
+    "db_item_id": 1814,
+    "name_en": "Rainbow Slate",
+    "description": {
+      "en": null,
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción de mochila verificable para este objeto en las fuentes consultadas."
+  },
+  {
+    "db_item_id": 1995,
+    "name_en": "Ralts Dust",
+    "description": {
+      "en": "A material obtained from a Pokémon. It can be used to make TMs.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://bulbapedia.bulbagarden.net/wiki/List_of_TMs_in_Pok%C3%A9mon_Scarlet_and_Violet"
+    ],
+    "notes": "Descripción en inglés tomada de una fuente secundaria que enumera el texto del juego; no se verificó con captura directa de la mochila."
+  },
+  {
+    "db_item_id": 2534,
+    "name_en": "Rayquaza Treat",
+    "description": {
+      "en": null,
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción de mochila verificable para este objeto en las fuentes consultadas."
+  },
+  {
+    "db_item_id": 1917,
+    "name_en": "Red Bell Pepper",
+    "description": {
+      "en": null,
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción de mochila verificable para este objeto en las fuentes consultadas."
+  },
+  {
+    "db_item_id": 2398,
+    "name_en": "Red Dish",
+    "description": {
+      "en": "A dish for picnics. Comes in plenty of colors to choose from based on the food or the mood. The red variety never fails to sell well.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.gamerguides.com/pokemon-scarlet-and-violet/database/picnic-items/picnics"
+    ],
+    "notes": "Descripción en inglés tomada de una fuente secundaria que enumera el texto del juego; no se verificó con captura directa de la mochila."
+  },
+  {
+    "db_item_id": 1915,
+    "name_en": "Red Onion",
+    "description": {
+      "en": null,
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción de mochila verificable para este objeto en las fuentes consultadas."
+  }
+]

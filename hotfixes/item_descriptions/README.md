@@ -22,3 +22,10 @@ Notas:
   `out/items_text_research.csv` (aceptadas, con `verified`), `out/review_queue.csv`, `out/validation_report.md`.
   `tests/sample_research.json` es un ejemplo con casos buenos y malos.
 - `missing_item_descriptions.csv`: lista de objetos a investigar (entrada del prompt y del validador).
+
+## Datos de investigación recibidos
+- `research_raw/`: los 23 lotes JSON y el CSV de la segunda pasada, tal como llegaron.
+- `import_second_round.py` convierte el CSV a JSON; luego
+  `python3 validate_research.py research_raw/batch_*.json <segunda_pasada.json> --trust-wiki --out out_research`
+  genera `out_research/items_text_research.csv` (ya copiado a `../fix_item_descriptions/data/`).
+- Revisión detallada: `research_review.md`.

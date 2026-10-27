@@ -1,0 +1,762 @@
+[
+  {
+    "db_item_id": 2603,
+    "name_en": "Great Butter",
+    "description": {
+      "en": "A great pack of butter found in Hyperspace Lumiose. With it, you should be able to make even higher quality donuts than before.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsz-a/items.shtml"
+    ],
+    "notes": "Texto de tabla de efectos de Serebii; no se ha verificado como transcripción literal de la mochila del juego. Idiomas adicionales no verificados."
+  },
+  {
+    "db_item_id": 2629,
+    "name_en": "Green Canari Plush",
+    "description": null,
+    "text_kind": "wiki_summary",
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsz-a/items.shtml"
+    ],
+    "notes": "No se encontró una descripción verificable para este objeto en la fuente consultada; no se rellena con una paráfrasis inventada."
+  },
+  {
+    "db_item_id": 1779,
+    "name_en": "Griseous Core",
+    "description": {
+      "en": "When used on Giratina, this large, glowing gem wells with power and allows the Pokémon to change form.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsarceus/items.shtml"
+    ],
+    "notes": "Texto de tabla de efectos de Serebii; no se ha verificado como transcripción literal de la mochila del juego. Idiomas adicionales no verificados."
+  },
+  {
+    "db_item_id": 1759,
+    "name_en": "Grit Dust",
+    "description": {
+      "en": "Mysterious dust that can raise the effort level for one of a Pokémon's stats. It can be used to raise effort levels only up to level three, however.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsarceus/items.shtml"
+    ],
+    "notes": "Texto de tabla de efectos de Serebii; no se ha verificado como transcripción literal de la mochila del juego. Idiomas adicionales no verificados."
+  },
+  {
+    "db_item_id": 1760,
+    "name_en": "Grit Gravel",
+    "description": {
+      "en": "Mysterious gravel that can raise the effort level for one of a Pokémon's stats. It can be used only if the effort level is at least level three and no greater than level five.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsarceus/items.shtml"
+    ],
+    "notes": "Texto de tabla de efectos de Serebii; no se ha verificado como transcripción literal de la mochila del juego. Idiomas adicionales no verificados."
+  },
+  {
+    "db_item_id": 1761,
+    "name_en": "Grit Pebble",
+    "description": {
+      "en": "A mysterious pebble that can raise the effort level for one of a Pokémon's stats. It can be used only if the effort level is at least level six and no greater than level eight.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsarceus/items.shtml"
+    ],
+    "notes": "Texto de tabla de efectos de Serebii; no se ha verificado como transcripción literal de la mochila del juego. Idiomas adicionales no verificados."
+  },
+  {
+    "db_item_id": 1762,
+    "name_en": "Grit Rock",
+    "description": {
+      "en": "A mysterious rock that can raise the effort level for one of a Pokémon's stats. It can be used only if the effort level has already reached level nine.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsarceus/items.shtml"
+    ],
+    "notes": "Texto de tabla de efectos de Serebii; no se ha verificado como transcripción literal de la mochila del juego. Idiomas adicionales no verificados."
+  },
+  {
+    "db_item_id": 1633,
+    "name_en": "Hearty Grains",
+    "description": null,
+    "text_kind": "wiki_summary",
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsarceus/items.shtml"
+    ],
+    "notes": "No se encontró una descripción verificable para este objeto en la fuente consultada; no se rellena con una paráfrasis inventada."
+  },
+  {
+    "db_item_id": 2607,
+    "name_en": "Hoennian Salt",
+    "description": {
+      "en": "A coarse salt that can only be harvested in small amounts in the Hoenn region. A tiny pinch will impart a wondrous depth of flavor.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsz-a/items.shtml"
+    ],
+    "notes": "Texto de tabla de efectos de Serebii; no se ha verificado como transcripción literal de la mochila del juego. Idiomas adicionales no verificados."
+  },
+  {
+    "db_item_id": 1612,
+    "name_en": "Hometown Muffin",
+    "description": {
+      "en": "A baked treat made from Berries and other ingredients, which is often eaten in regions such as Galar. It is beloved by a surprising number of Pokémon.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsarceus/items.shtml"
+    ],
+    "notes": "Texto de tabla de efectos de Serebii; no se ha verificado como transcripción literal de la mochila del juego. Idiomas adicionales no verificados."
+  },
+  {
+    "db_item_id": 1652,
+    "name_en": "Honey Cake",
+    "description": {
+      "en": "A cake made by combining honey with a Cake-Lure Base. These cakes are potently effective at attracting bug Pokémon and also those with fairylike charms.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsarceus/items.shtml"
+    ],
+    "notes": "Texto de tabla de efectos de Serebii; no se ha verificado como transcripción literal de la mochila del juego. Idiomas adicionales no verificados."
+  },
+  {
+    "db_item_id": 1754,
+    "name_en": "Hopo Berry",
+    "description": null,
+    "text_kind": "wiki_summary",
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsarceus/items.shtml"
+    ],
+    "notes": "No se encontró una descripción verificable para este objeto en la fuente consultada; no se rellena con una paráfrasis inventada."
+  },
+  {
+    "db_item_id": 2606,
+    "name_en": "Hyperspace Butter",
+    "description": {
+      "en": "The absolute ultimate in butter, found in Hyperspace Lumiose. With it, you should be able to make even higher quality donuts than before.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsz-a/items.shtml"
+    ],
+    "notes": "Texto de tabla de efectos de Serebii; no se ha verificado como transcripción literal de la mochila del juego. Idiomas adicionales no verificados."
+  },
+  {
+    "db_item_id": 2611,
+    "name_en": "Important Letter",
+    "description": {
+      "en": "A letter that you were asked to deliver to the director of Académie étoile by a somewhat peculiar character.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsz-a/items.shtml"
+    ],
+    "notes": "Texto de tabla de efectos de Serebii; no se ha verificado como transcripción literal de la mochila del juego. Idiomas adicionales no verificados."
+  },
+  {
+    "db_item_id": 1702,
+    "name_en": "Iron Barktongue",
+    "description": null,
+    "text_kind": "wiki_summary",
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsarceus/items.shtml"
+    ],
+    "notes": "No se encontró una descripción verificable para este objeto en la fuente consultada; no se rellena con una paráfrasis inventada."
+  },
+  {
+    "db_item_id": 1679,
+    "name_en": "Iron Chunk",
+    "description": null,
+    "text_kind": "wiki_summary",
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsarceus/items.shtml"
+    ],
+    "notes": "No se encontró una descripción verificable para este objeto en la fuente consultada; no se rellena con una paráfrasis inventada."
+  },
+  {
+    "db_item_id": 1614,
+    "name_en": "Jubilife Muffin",
+    "description": null,
+    "text_kind": "wiki_summary",
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsarceus/items.shtml"
+    ],
+    "notes": "No se encontró una descripción verificable para este objeto en la fuente consultada; no se rellena con una paráfrasis inventada."
+  },
+  {
+    "db_item_id": 2588,
+    "name_en": "Key to Room 202",
+    "description": {
+      "en": "A key for room 202 at Hotel Z.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsz-a/items.shtml"
+    ],
+    "notes": "Texto de tabla de efectos de Serebii; no se ha verificado como transcripción literal de la mochila del juego. Idiomas adicionales no verificados."
+  },
+  {
+    "db_item_id": 1638,
+    "name_en": "King’s Leaf",
+    "description": null,
+    "text_kind": "wiki_summary",
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsarceus/items.shtml"
+    ],
+    "notes": "No se encontró una descripción verificable para este objeto en la fuente consultada; no se rellena con una paráfrasis inventada."
+  },
+  {
+    "db_item_id": 2590,
+    "name_en": "Lab Key Card A",
+    "description": {
+      "en": "A key card that can be used in Lysandre Labs. The locks were each programmed to take different keys for security purposes, but mostly it's just an inconvenience.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsz-a/items.shtml"
+    ],
+    "notes": "Texto de tabla de efectos de Serebii; no se ha verificado como transcripción literal de la mochila del juego. Idiomas adicionales no verificados."
+  },
+  {
+    "db_item_id": 2591,
+    "name_en": "Lab Key Card B",
+    "description": {
+      "en": "A key card that can be used in Lysandre Labs. The locks were each programmed to take different keys for security purposes, but mostly it's just an inconvenience.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsz-a/items.shtml"
+    ],
+    "notes": "Texto de tabla de efectos de Serebii; no se ha verificado como transcripción literal de la mochila del juego. Idiomas adicionales no verificados."
+  },
+  {
+    "db_item_id": 2592,
+    "name_en": "Lab Key Card C",
+    "description": {
+      "en": "A key card that can be used in Lysandre Labs. The locks were each programmed to take different keys for security purposes, but mostly it's just an inconvenience.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsz-a/items.shtml"
+    ],
+    "notes": "Texto de tabla de efectos de Serebii; no se ha verificado como transcripción literal de la mochila del juego. Idiomas adicionales no verificados."
+  },
+  {
+    "db_item_id": 1828,
+    "name_en": "Legend Plate",
+    "description": {
+      "en": "A stone tablet imbued with the essence of all creation. When used on a certain Pokémon, it allows that Pokémon to gain the power of every type there is.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsarceus/items.shtml"
+    ],
+    "notes": "Texto de tabla de efectos de Serebii; no se ha verificado como transcripción literal de la mochila del juego. Idiomas adicionales no verificados."
+  },
+  {
+    "db_item_id": 2600,
+    "name_en": "Lida’s Things",
+    "description": {
+      "en": "Lida's accessories and other items that she uses when practicing dance. They're kept in a small pouch that was handmade by Naveen.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsz-a/items.shtml"
+    ],
+    "notes": "Texto de tabla de efectos de Serebii; no se ha verificado como transcripción literal de la mochila del juego. Idiomas adicionales no verificados."
+  },
+  {
+    "db_item_id": 1611,
+    "name_en": "Linking Cord",
+    "description": null,
+    "text_kind": "wiki_summary",
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsarceus/items.shtml"
+    ],
+    "notes": "No se encontró una descripción verificable para este objeto en la fuente consultada; no se rellena con una paráfrasis inventada."
+  },
+  {
+    "db_item_id": 1765,
+    "name_en": "Lost Satchel",
+    "description": {
+      "en": "A satchel that someone dropped.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsarceus/items.shtml"
+    ],
+    "notes": "Texto de tabla de efectos de Serebii; no se ha verificado como transcripción literal de la mochila del juego. Idiomas adicionales no verificados."
+  },
+  {
+    "db_item_id": 2601,
+    "name_en": "Lumiosian Butter",
+    "description": {
+      "en": "Some of the absolute best butter produced in the Kalos region. Highly sought after by the cooks of Lumiose—if you know, you know. Makes for great donuts.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsz-a/items.shtml"
+    ],
+    "notes": "Texto de tabla de efectos de Serebii; no se ha verificado como transcripción literal de la mochila del juego. Idiomas adicionales no verificados."
+  },
+  {
+    "db_item_id": 1778,
+    "name_en": "Lustrous Globe",
+    "description": {
+      "en": "When used on Palkia, this large, glowing orb wells with power and allows the Pokémon to change form.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsarceus/items.shtml"
+    ],
+    "notes": "Texto de tabla de efectos de Serebii; no se ha verificado como transcripción literal de la mochila del juego. Idiomas adicionales no verificados."
+  },
+  {
+    "db_item_id": 1861,
+    "name_en": "Malicious Armor",
+    "description": null,
+    "text_kind": "wiki_summary",
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsz-a/items.shtml"
+    ],
+    "notes": "No se encontró una descripción verificable para este objeto en la fuente consultada; no se rellena con una paráfrasis inventada."
+  },
+  {
+    "db_item_id": 1639,
+    "name_en": "Marsh Balm",
+    "description": null,
+    "text_kind": "wiki_summary",
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsarceus/items.shtml"
+    ],
+    "notes": "No se encontró una descripción verificable para este objeto en la fuente consultada; no se rellena con una paráfrasis inventada."
+  },
+  {
+    "db_item_id": 1694,
+    "name_en": "Medicinal Leek",
+    "description": {
+      "en": "Required for crafting medicinal compounds. This vegetable is found growing across the Hisui region and is also known as the wayfarer's friend.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsarceus/items.shtml"
+    ],
+    "notes": "Texto de tabla de efectos de Serebii; no se ha verificado como transcripción literal de la mochila del juego. Idiomas adicionales no verificados."
+  },
+  {
+    "db_item_id": 2618,
+    "name_en": "Mega Shard",
+    "description": {
+      "en": "A mysterious shard that can be found after smashing Mega Crystals using Pokémon moves. It seems that some people collect these shards.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsz-a/items.shtml"
+    ],
+    "notes": "Texto de tabla de efectos de Serebii; no se ha verificado como transcripción literal de la mochila del juego. Idiomas adicionales no verificados."
+  },
+  {
+    "db_item_id": 1627,
+    "name_en": "Mesprit’s Plume",
+    "description": {
+      "en": "Proof that you have completed the trial set by Mesprit, the Being of Emotion that lives at Lake Verity. This item is needed to forge the Red Chain.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsarceus/items.shtml"
+    ],
+    "notes": "Texto de tabla de efectos de Serebii; no se ha verificado como transcripción literal de la mochila del juego. Idiomas adicionales no verificados."
+  },
+  {
+    "db_item_id": 1722,
+    "name_en": "Mountain Balm",
+    "description": null,
+    "text_kind": "wiki_summary",
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsarceus/items.shtml"
+    ],
+    "notes": "No se encontró una descripción verificable para este objeto en la fuente consultada; no se rellena con una paráfrasis inventada."
+  },
+  {
+    "db_item_id": 1650,
+    "name_en": "Mushroom Cake",
+    "description": {
+      "en": "A cake made by combining mushrooms with a Cake-Lure Base. These cakes are potently effective at attracting the more monstrous Pokémon, as well as dragon Pokémon.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsarceus/items.shtml"
+    ],
+    "notes": "Texto de tabla de efectos de Serebii; no se ha verificado como transcripción literal de la mochila del juego. Idiomas adicionales no verificados."
+  },
+  {
+    "db_item_id": 1610,
+    "name_en": "Mysterious Balm",
+    "description": null,
+    "text_kind": "wiki_summary",
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsarceus/items.shtml"
+    ],
+    "notes": "No se encontró una descripción verificable para este objeto en la fuente consultada; no se rellena con una paráfrasis inventada."
+  },
+  {
+    "db_item_id": 2602,
+    "name_en": "Nice Butter",
+    "description": {
+      "en": "A nice pack of butter found in Hyperspace Lumiose. With it, you should be able to make even higher quality donuts than before.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsz-a/items.shtml"
+    ],
+    "notes": "Texto de tabla de efectos de Serebii; no se ha verificado como transcripción literal de la mochila del juego. Idiomas adicionales no verificados."
+  },
+  {
+    "db_item_id": 1745,
+    "name_en": "Old Journal",
+    "description": {
+      "en": "A stab-bound journal that once had pages torn from it. All the pages have been collected and restored.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsarceus/items.shtml"
+    ],
+    "notes": "Texto de tabla de efectos de Serebii; no se ha verificado como transcripción literal de la mochila del juego. Idiomas adicionales no verificados."
+  },
+  {
+    "db_item_id": 1787,
+    "name_en": "Old Verse 1",
+    "description": {
+      "en": "Part of a series of old poems that have been unearthed around the Hisui region. Judging from the handwriting, it appears they were all written by the same person.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsarceus/items.shtml"
+    ],
+    "notes": "Texto de tabla de efectos de Serebii; no se ha verificado como transcripción literal de la mochila del juego. Idiomas adicionales no verificados."
+  },
+  {
+    "db_item_id": 1797,
+    "name_en": "Old Verse 10",
+    "description": {
+      "en": "Part of a series of old poems that have been unearthed around the Hisui region. Judging from the handwriting, it appears they were all written by the same person.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/legendsarceus/items.shtml"
+    ],
+    "notes": "Texto de tabla de efectos de Serebii; no se ha verificado como transcripción literal de la mochila del juego. Idiomas adicionales no verificados."
+  }
+]

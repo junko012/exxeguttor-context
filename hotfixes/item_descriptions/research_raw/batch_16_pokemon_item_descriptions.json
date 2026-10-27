@@ -1,0 +1,774 @@
+[
+  {
+    "db_item_id": 2468,
+    "name_en": "Litwick Soot",
+    "description": {
+      "en": "Material accidentally dropped by a Pokémon. It can be used to make TMs.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/itemdex/list/material.shtml"
+    ],
+    "notes": "Descripción de la lista de materiales de Serebii para materiales de Pokémon; no verificada como transcripción literal de la mochila del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 1886,
+    "name_en": "Loaded Dice",
+    "description": {
+      "en": "An item to be held by a Pokémon. This loaded dice always rolls a good number, and holding one can ensure that the holder's multistrike moves hit more times.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/scarletviolet/items.shtml"
+    ],
+    "notes": "Descripción tomada de la tabla de objetos de Serebii para Pokémon Scarlet/Violet; no verificada mediante captura del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 2456,
+    "name_en": "Lotad Leaf",
+    "description": {
+      "en": "Material accidentally dropped by a Pokémon. It can be used to make TMs.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/itemdex/list/material.shtml"
+    ],
+    "notes": "Descripción de la lista de materiales de Serebii para materiales de Pokémon; no verificada como transcripción literal de la mochila del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 2528,
+    "name_en": "Lugia Treat",
+    "description": {
+      "en": "A snack made from ingredients favored by the Legendary Pokémon Lugia.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/scarletviolet/newitems.shtml"
+    ],
+    "notes": "Descripción de la tabla de objetos nuevos de Serebii para Pokémon Scarlet/Violet; no verificada mediante captura del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 2542,
+    "name_en": "Lunala Treat",
+    "description": {
+      "en": "A snack made from ingredients favored by the Legendary Pokémon Lunala.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/scarletviolet/newitems.shtml"
+    ],
+    "notes": "Descripción de la tabla de objetos nuevos de Serebii para Pokémon Scarlet/Violet; no verificada mediante captura del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 453,
+    "name_en": "Lunar Feather",
+    "description": null,
+    "text_kind": "not_found",
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable en las fuentes consultadas; no se ha inferido ni traducido texto."
+  },
+  {
+    "db_item_id": 2015,
+    "name_en": "Luvdisc Scales",
+    "description": {
+      "en": "Material accidentally dropped by a Pokémon. It can be used to make TMs.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/itemdex/list/material.shtml"
+    ],
+    "notes": "Descripción de la lista de materiales de Serebii para materiales de Pokémon; no verificada como transcripción literal de la mochila del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 2493,
+    "name_en": "Magby Hair",
+    "description": {
+      "en": "Material accidentally dropped by a Pokémon. It can be used to make TMs.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/itemdex/list/material.shtml"
+    ],
+    "notes": "Descripción de la lista de materiales de Serebii para materiales de Pokémon; no verificada como transcripción literal de la mochila del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 2390,
+    "name_en": "Magical Heart Pick",
+    "description": null,
+    "text_kind": "not_found",
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable en las fuentes consultadas; no se ha inferido ni traducido texto."
+  },
+  {
+    "db_item_id": 2389,
+    "name_en": "Magical Star Pick",
+    "description": null,
+    "text_kind": "not_found",
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable en las fuentes consultadas; no se ha inferido ni traducido texto."
+  },
+  {
+    "db_item_id": 1971,
+    "name_en": "Magikarp Scales",
+    "description": {
+      "en": "Material accidentally dropped by a Pokémon. It can be used to make TMs.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/itemdex/list/material.shtml"
+    ],
+    "notes": "Descripción de la lista de materiales de Serebii para materiales de Pokémon; no verificada como transcripción literal de la mochila del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 1963,
+    "name_en": "Magnemite Screw",
+    "description": {
+      "en": "Material accidentally dropped by a Pokémon. It can be used to make TMs.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/itemdex/list/material.shtml"
+    ],
+    "notes": "Descripción de la lista de materiales de Serebii para materiales de Pokémon; no verificada como transcripción literal de la mochila del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 1999,
+    "name_en": "Makuhita Sweat",
+    "description": {
+      "en": "Material accidentally dropped by a Pokémon. It can be used to make TMs.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/itemdex/list/material.shtml"
+    ],
+    "notes": "Descripción de la lista de materiales de Serebii para materiales de Pokémon; no verificada como transcripción literal de la mochila del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 1960,
+    "name_en": "Mankey Fur",
+    "description": {
+      "en": "Material accidentally dropped by a Pokémon. It can be used to make TMs.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/itemdex/list/material.shtml"
+    ],
+    "notes": "Descripción de la lista de materiales de Serebii para materiales de Pokémon; no verificada como transcripción literal de la mochila del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 2070,
+    "name_en": "Mareanie Spike",
+    "description": {
+      "en": "Material accidentally dropped by a Pokémon. It can be used to make TMs.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/itemdex/list/material.shtml"
+    ],
+    "notes": "Descripción de la lista de materiales de Serebii para materiales de Pokémon; no verificada como transcripción literal de la mochila del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 1977,
+    "name_en": "Mareep Wool",
+    "description": {
+      "en": "Material accidentally dropped by a Pokémon. It can be used to make TMs.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/itemdex/list/material.shtml"
+    ],
+    "notes": "Descripción de la lista de materiales de Serebii para materiales de Pokémon; no verificada como transcripción literal de la mochila del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 2331,
+    "name_en": "Marill Ball",
+    "description": null,
+    "text_kind": "not_found",
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable en las fuentes consultadas; no se ha inferido ni traducido texto."
+  },
+  {
+    "db_item_id": 1901,
+    "name_en": "Marmalade",
+    "description": {
+      "en": "A condiment with sour and bitter notes. It's surprisingly useful, as it makes a nice counterpoint to oilier foods.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/scarletviolet/items.shtml"
+    ],
+    "notes": "Descripción tomada de la tabla de objetos de Serebii para Pokémon Scarlet/Violet; no verificada mediante captura del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 2135,
+    "name_en": "Maschiff Fang",
+    "description": {
+      "en": "Material accidentally dropped by a Pokémon. It can be used to make TMs.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/itemdex/list/material.shtml"
+    ],
+    "notes": "Descripción de la lista de materiales de Serebii para materiales de Pokémon; no verificada como transcripción literal de la mochila del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 2404,
+    "name_en": "Masterpiece Teacup",
+    "description": {
+      "en": "A peculiar teacup that can make a certain species of Pokémon evolve. It may be chipped, but tea drunk from it is delicious.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/scarletviolet/items.shtml"
+    ],
+    "notes": "Descripción tomada de la tabla de objetos de Serebii para Pokémon Scarlet/Violet; no verificada mediante captura del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 1889,
+    "name_en": "Mayonnaise",
+    "description": {
+      "en": "A condiment that packs a very tart punch yet pairs well with various ingredients.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/scarletviolet/items.shtml"
+    ],
+    "notes": "Descripción tomada de la tabla de objetos de Serebii para Pokémon Scarlet/Violet; no verificada mediante captura del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 2002,
+    "name_en": "Meditite Sweat",
+    "description": {
+      "en": "Material accidentally dropped by a Pokémon. It can be used to make TMs.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/itemdex/list/material.shtml"
+    ],
+    "notes": "Descripción de la lista de materiales de Serebii para materiales de Pokémon; no verificada como transcripción literal de la mochila del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 1958,
+    "name_en": "Meowth Fur",
+    "description": {
+      "en": "Material accidentally dropped by a Pokémon. It can be used to make TMs.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/itemdex/list/material.shtml"
+    ],
+    "notes": "Descripción de la lista de materiales de Serebii para materiales de Pokémon; no verificada como transcripción literal de la mochila del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 2482,
+    "name_en": "Metal Alloy",
+    "description": {
+      "en": "A peculiar metal that can make certain species of Pokémon evolve. It is composed of many layers.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/scarletviolet/items.shtml"
+    ],
+    "notes": "Descripción tomada de la tabla de objetos de Serebii para Pokémon Scarlet/Violet; no verificada mediante captura del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 2469,
+    "name_en": "Mienfoo Claw",
+    "description": {
+      "en": "Material accidentally dropped by a Pokémon. It can be used to make TMs.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/itemdex/list/material.shtml"
+    ],
+    "notes": "Descripción de la lista de materiales de Serebii para materiales de Pokémon; no verificada como transcripción literal de la mochila del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 2520,
+    "name_en": "Milcery Cream",
+    "description": {
+      "en": "Material accidentally dropped by a Pokémon. It can be used to make TMs.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/itemdex/list/material.shtml"
+    ],
+    "notes": "Descripción de la lista de materiales de Serebii para materiales de Pokémon; no verificada como transcripción literal de la mochila del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 2079,
+    "name_en": "Mimikyu Scrap",
+    "description": {
+      "en": "Material accidentally dropped by a Pokémon. It can be used to make TMs.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/itemdex/list/material.shtml"
+    ],
+    "notes": "Descripción de la lista de materiales de Serebii para materiales de Pokémon; no verificada como transcripción literal de la mochila del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 2510,
+    "name_en": "Minccino Fur",
+    "description": {
+      "en": "Material accidentally dropped by a Pokémon. It can be used to make TMs.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/itemdex/list/material.shtml"
+    ],
+    "notes": "Descripción de la lista de materiales de Serebii para materiales de Pokémon; no verificada como transcripción literal de la mochila del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 2519,
+    "name_en": "Minior Shell",
+    "description": {
+      "en": "Material accidentally dropped by a Pokémon. It can be used to make TMs.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/itemdex/list/material.shtml"
+    ],
+    "notes": "Descripción de la lista de materiales de Serebii para materiales de Pokémon; no verificada como transcripción literal de la mochila del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 2433,
+    "name_en": "Mint Chairs",
+    "description": null,
+    "text_kind": "not_found",
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable en las fuentes consultadas; no se ha inferido ni traducido texto."
+  },
+  {
+    "db_item_id": 2376,
+    "name_en": "Mint Tablecloth",
+    "description": null,
+    "text_kind": "not_found",
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable en las fuentes consultadas; no se ha inferido ni traducido texto."
+  },
+  {
+    "db_item_id": 2501,
+    "name_en": "Minun Fur",
+    "description": null,
+    "text_kind": "not_found",
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable en las fuentes consultadas; no se ha inferido ni traducido texto."
+  },
+  {
+    "db_item_id": 1832,
+    "name_en": "Miraidon’s Poke Ball",
+    "description": {
+      "en": "A Poke Ball that can hold the mysterious Pokémon known as Miraidon. A boy named Arven gave it to you.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/scarletviolet/items.shtml"
+    ],
+    "notes": "Descripción tomada de la tabla de objetos de Serebii para Pokémon Scarlet/Violet; no verificada mediante captura del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 1883,
+    "name_en": "Mirror Herb",
+    "description": {
+      "en": "An item to be held by a Pokémon. This herb will allow the holder to mirror an opponent's stat increases to boost its own stats—but only once.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/scarletviolet/items.shtml"
+    ],
+    "notes": "Descripción tomada de la tabla de objetos de Serebii para Pokémon Scarlet/Violet; no verificada mediante captura del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 1981,
+    "name_en": "Misdreavus Tears",
+    "description": {
+      "en": "Material accidentally dropped by a Pokémon. It can be used to make TMs.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/itemdex/list/material.shtml"
+    ],
+    "notes": "Descripción de la lista de materiales de Serebii para materiales de Pokémon; no verificada como transcripción literal de la mochila del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 2524,
+    "name_en": "Moltres Treat",
+    "description": {
+      "en": "A snack made from ingredients favored by the Legendary Pokémon Moltres.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/scarletviolet/newitems.shtml"
+    ],
+    "notes": "Descripción de la tabla de objetos nuevos de Serebii para Pokémon Scarlet/Violet; no verificada mediante captura del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 2428,
+    "name_en": "Monstrous Chairs",
+    "description": null,
+    "text_kind": "not_found",
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable en las fuentes consultadas; no se ha inferido ni traducido texto."
+  },
+  {
+    "db_item_id": 2371,
+    "name_en": "Monstrous Tablecloth",
+    "description": null,
+    "text_kind": "not_found",
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable en las fuentes consultadas; no se ha inferido ni traducido texto."
+  },
+  {
+    "db_item_id": 2477,
+    "name_en": "Morpeko Snack",
+    "description": {
+      "en": "Material accidentally dropped by a Pokémon. It can be used to make TMs.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/itemdex/list/material.shtml"
+    ],
+    "notes": "Descripción de la lista de materiales de Serebii para materiales de Pokémon; no verificada como transcripción literal de la mochila del juego. Los demás idiomas quedan null al no haberse verificado."
+  },
+  {
+    "db_item_id": 2071,
+    "name_en": "Mudbray Mud",
+    "description": {
+      "en": "Material accidentally dropped by a Pokémon. It can be used to make TMs.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/itemdex/list/material.shtml"
+    ],
+    "notes": "Descripción de la lista de materiales de Serebii para materiales de Pokémon; no verificada como transcripción literal de la mochila del juego. Los demás idiomas quedan null al no haberse verificado."
+  }
+]

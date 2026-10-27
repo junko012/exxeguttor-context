@@ -1,0 +1,830 @@
+[
+  {
+    "db_item_id": 2017,
+    "name_en": "Starly Feather",
+    "description": {
+      "en": null,
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable en las fuentes consultadas; se deja vacío para evitar inventar texto."
+  },
+  {
+    "db_item_id": 2353,
+    "name_en": "Steel Bottle (B)",
+    "description": {
+      "en": null,
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable en las fuentes consultadas; se deja vacío para evitar inventar texto."
+  },
+  {
+    "db_item_id": 2351,
+    "name_en": "Steel Bottle (R)",
+    "description": {
+      "en": null,
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable en las fuentes consultadas; se deja vacío para evitar inventar texto."
+  },
+  {
+    "db_item_id": 2352,
+    "name_en": "Steel Bottle (Y)",
+    "description": {
+      "en": null,
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable en las fuentes consultadas; se deja vacío para evitar inventar texto."
+  },
+  {
+    "db_item_id": 1878,
+    "name_en": "Steel Tera Shard",
+    "description": {
+      "en": "On rare occasions, these shards form when a Tera Pokémon falls in battle and its Tera Jewel shatters.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/scarletviolet/items.shtml"
+    ],
+    "notes": "Descripción publicada por una fuente de referencia para Pokémon Scarlet/Violet; no verificada con captura directa del juego."
+  },
+  {
+    "db_item_id": 2549,
+    "name_en": "Stellar Tera Shard",
+    "description": {
+      "en": "On rare occasions, these shards form when a Tera Pokémon falls in battle and its Tera Jewel shatters.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/scarletviolet/items.shtml"
+    ],
+    "notes": "Descripción publicada por una fuente de referencia para Pokémon Scarlet/Violet; no verificada con captura directa del juego."
+  },
+  {
+    "db_item_id": 436,
+    "name_en": "Sticker Bag",
+    "description": {
+      "en": null,
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable en las fuentes consultadas; se deja vacío para evitar inventar texto."
+  },
+  {
+    "db_item_id": 434,
+    "name_en": "Sticker Case",
+    "description": {
+      "en": null,
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable en las fuentes consultadas; se deja vacío para evitar inventar texto."
+  },
+  {
+    "db_item_id": 2097,
+    "name_en": "Stonjourner Stone",
+    "description": {
+      "en": null,
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable en las fuentes consultadas; se deja vacío para evitar inventar texto."
+  },
+  {
+    "db_item_id": 1818,
+    "name_en": "Stratospheric Slate",
+    "description": {
+      "en": "A slate overflowing with enigmatic energy. You can feel a strong connection between it and the Stratospheric Room at Ramanas Park.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/brilliantdiamondshiningpearl/items.shtml"
+    ],
+    "notes": "Resumen/transcripción de una fuente de referencia; no verificado con captura directa de la mochila del juego."
+  },
+  {
+    "db_item_id": 1937,
+    "name_en": "Strawberry",
+    "description": {
+      "en": "A very tart and sweet ingredient, popular for its ability to make a sandwich visually striking.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/itemdex/strawberry.shtml"
+    ],
+    "notes": "Resumen/transcripción de una fuente de referencia; no verificado con captura directa de la mochila del juego."
+  },
+  {
+    "db_item_id": 2316,
+    "name_en": "Striped Bottle",
+    "description": {
+      "en": null,
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable en las fuentes consultadas; se deja vacío para evitar inventar texto."
+  },
+  {
+    "db_item_id": 2429,
+    "name_en": "Striped Chairs",
+    "description": {
+      "en": null,
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable en las fuentes consultadas; se deja vacío para evitar inventar texto."
+  },
+  {
+    "db_item_id": 2320,
+    "name_en": "Striped Cup",
+    "description": {
+      "en": null,
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable en las fuentes consultadas; se deja vacío para evitar inventar texto."
+  },
+  {
+    "db_item_id": 2372,
+    "name_en": "Striped Tablecloth",
+    "description": {
+      "en": null,
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable en las fuentes consultadas; se deja vacío para evitar inventar texto."
+  },
+  {
+    "db_item_id": 2025,
+    "name_en": "Stunky Fur",
+    "description": {
+      "en": null,
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable en las fuentes consultadas; se deja vacío para evitar inventar texto."
+  },
+  {
+    "db_item_id": 2527,
+    "name_en": "Suicune Treat",
+    "description": {
+      "en": "A snack made from ingredients favored by the Legendary Pokémon Suicune.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://bulbapedia.bulbagarden.net/wiki/Suicune_Treat"
+    ],
+    "notes": "Resumen/transcripción de una fuente de referencia; no verificado con captura directa de la mochila del juego."
+  },
+  {
+    "db_item_id": 1979,
+    "name_en": "Sunkern Leaf",
+    "description": {
+      "en": null,
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable en las fuentes consultadas; se deja vacío para evitar inventar texto."
+  },
+  {
+    "db_item_id": 2394,
+    "name_en": "Sunrise Flower Pick",
+    "description": {
+      "en": null,
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable en las fuentes consultadas; se deja vacío para evitar inventar texto."
+  },
+  {
+    "db_item_id": 2393,
+    "name_en": "Sunset Flower Pick",
+    "description": {
+      "en": null,
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable en las fuentes consultadas; se deja vacío para evitar inventar texto."
+  },
+  {
+    "db_item_id": 1996,
+    "name_en": "Surskit Syrup",
+    "description": {
+      "en": null,
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable en las fuentes consultadas; se deja vacío para evitar inventar texto."
+  },
+  {
+    "db_item_id": 2008,
+    "name_en": "Swablu Fluff",
+    "description": {
+      "en": null,
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable en las fuentes consultadas; se deja vacío para evitar inventar texto."
+  },
+  {
+    "db_item_id": 1904,
+    "name_en": "Sweet Herba Mystica",
+    "description": {
+      "en": "A legendary condiment told of only in books. Word has it that one taste of its sweet flavor stimulates the digestive system and cures a lack of appetite.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/itemdex/sweetherbamystica.shtml"
+    ],
+    "notes": "Descripción publicada por una fuente de referencia para Pokémon Scarlet/Violet; no verificada con captura directa del juego."
+  },
+  {
+    "db_item_id": 2416,
+    "name_en": "Swift Mochi",
+    "description": {
+      "en": "A mochi cake with Berries kneaded into its dough. It increases base points for a Pokémon’s Speed stat.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/scarletviolet/items.shtml"
+    ],
+    "notes": "Resumen/transcripción de una fuente de referencia; no verificado con captura directa de la mochila del juego."
+  },
+  {
+    "db_item_id": 2454,
+    "name_en": "Swinub Hair",
+    "description": {
+      "en": null,
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable en las fuentes consultadas; se deja vacío para evitar inventar texto."
+  },
+  {
+    "db_item_id": 2553,
+    "name_en": "Synchro Machine",
+    "description": {
+      "en": "A device that synchronizes your mind and feelings with your Pokémon’s so that you can work as one. It’s still a prototype—hence its unrefined appearance.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/scarletviolet/synchromachine.shtml"
+    ],
+    "notes": "Descripción publicada por una fuente de referencia para Pokémon Scarlet/Violet; no verificada con captura directa del juego."
+  },
+  {
+    "db_item_id": 2402,
+    "name_en": "Syrupy Apple",
+    "description": {
+      "en": "A peculiar apple that can make a certain species of Pokémon evolve. It's exceptionally syrupy.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/itemdex/syrupyapple.shtml"
+    ],
+    "notes": "Descripción publicada por una fuente de referencia para Pokémon Scarlet/Violet; no verificada con captura directa del juego."
+  },
+  {
+    "db_item_id": 2115,
+    "name_en": "Tadbulb Mucus",
+    "description": {
+      "en": null,
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable en las fuentes consultadas; se deja vacío para evitar inventar texto."
+  },
+  {
+    "db_item_id": 2118,
+    "name_en": "Tandemaus Fur",
+    "description": {
+      "en": null,
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable en las fuentes consultadas; se deja vacío para evitar inventar texto."
+  },
+  {
+    "db_item_id": 2104,
+    "name_en": "Tarountula Thread",
+    "description": {
+      "en": null,
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable en las fuentes consultadas; se deja vacío para evitar inventar texto."
+  },
+  {
+    "db_item_id": 2121,
+    "name_en": "Tatsugiri Scales",
+    "description": {
+      "en": null,
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable en las fuentes consultadas; se deja vacío para evitar inventar texto."
+  },
+  {
+    "db_item_id": 1970,
+    "name_en": "Tauros Hair",
+    "description": {
+      "en": null,
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable en las fuentes consultadas; se deja vacío para evitar inventar texto."
+  },
+  {
+    "db_item_id": 2405,
+    "name_en": "Teal Mask",
+    "description": {
+      "en": "A teal mask patterned after the face of an ogre. Ogerpon dropped it while fleeing up the stairs after visiting the Festival of Masks.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/scarletviolet/items.shtml"
+    ],
+    "notes": "Descripción publicada por una fuente de referencia para Pokémon Scarlet/Violet; no verificada con captura directa del juego."
+  },
+  {
+    "db_item_id": 2409,
+    "name_en": "Teal Style Card",
+    "description": {
+      "en": "Having one of these cards increases the selection available to you in boutiques and hair salons.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/scarletviolet/items.shtml"
+    ],
+    "notes": "Descripción publicada por una fuente de referencia para Pokémon Scarlet/Violet; no verificada con captura directa del juego."
+  },
+  {
+    "db_item_id": 1817,
+    "name_en": "Tectonic Slate",
+    "description": {
+      "en": "A slate overflowing with enigmatic energy. You can feel a strong connection between it and the Tectonic Room at Ramanas Park.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/brilliantdiamondshiningpearl/items.shtml"
+    ],
+    "notes": "Resumen/transcripción de una fuente de referencia; no verificado con captura directa de la mochila del juego."
+  },
+  {
+    "db_item_id": 1988,
+    "name_en": "Teddiursa Claw",
+    "description": {
+      "en": null,
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable en las fuentes consultadas; se deja vacío para evitar inventar texto."
+  },
+  {
+    "db_item_id": 2485,
+    "name_en": "Tentacool Stinger",
+    "description": {
+      "en": null,
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable en las fuentes consultadas; se deja vacío para evitar inventar texto."
+  },
+  {
+    "db_item_id": 1833,
+    "name_en": "Tera Orb",
+    "description": {
+      "en": "An orb that holds within it the power to crystallize. When it is charged with energy, it can be used to cause Pokémon to Terastallize.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/itemdex/teraorb.shtml"
+    ],
+    "notes": "Descripción publicada por una fuente de referencia para Pokémon Scarlet/Violet; no verificada con captura directa del juego."
+  },
+  {
+    "db_item_id": 2536,
+    "name_en": "Terrakion Treat",
+    "description": {
+      "en": "A snack made from ingredients favored by the Legendary Pokémon Terrakion.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/scarletviolet/items.shtml"
+    ],
+    "notes": "Descripción publicada por una fuente de referencia para Pokémon Scarlet/Violet; no verificada con captura directa del juego."
+  },
+  {
+    "db_item_id": 2465,
+    "name_en": "Timburr Sweat",
+    "description": {
+      "en": null,
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable en las fuentes consultadas; se deja vacío para evitar inventar texto."
+  }
+]

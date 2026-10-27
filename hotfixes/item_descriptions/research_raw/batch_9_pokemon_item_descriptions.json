@@ -1,0 +1,720 @@
+[
+  {
+    "db_item_id": 90032,
+    "name_en": "ID Card",
+    "description": {
+      "en": "An item used for security checks at Cipher buildings.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://bulbapedia.bulbagarden.net/wiki/List_of_key_items_in_Pok%C3%A9mon_XD:_Gale_of_Darkness"
+    ],
+    "notes": "Resumen/descripción recogido de una wiki de referencia; no se ha verificado directamente mediante captura o volcado del texto dentro del juego. Los otros idiomas quedan null al no verificarse el texto oficial localizado."
+  },
+  {
+    "db_item_id": 90000,
+    "name_en": "Jail Key",
+    "description": {
+      "en": "The key to the jail in Pyrite Town's Police Station.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://bulbapedia.bulbagarden.net/wiki/List_of_key_items_in_Pok%C3%A9mon_Colosseum"
+    ],
+    "notes": "Resumen/descripción recogido de una wiki de referencia; no se ha verificado directamente mediante captura o volcado del texto dentro del juego. Los otros idiomas quedan null al no verificarse el texto oficial localizado."
+  },
+  {
+    "db_item_id": 90024,
+    "name_en": "Joy Scent",
+    "description": {
+      "en": null,
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": null,
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se localizó una descripción textual fiable y específica para este objeto en las fuentes consultadas; se deja null sin inferir ni traducir."
+  },
+  {
+    "db_item_id": 90042,
+    "name_en": "Krane Memo 1",
+    "description": {
+      "en": "A memo written by Krane about the Snag System.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://bulbapedia.bulbagarden.net/wiki/List_of_key_items_in_Pok%C3%A9mon_XD:_Gale_of_Darkness"
+    ],
+    "notes": "Resumen/descripción recogido de una wiki de referencia; no se ha verificado directamente mediante captura o volcado del texto dentro del juego. Los otros idiomas quedan null al no verificarse el texto oficial localizado."
+  },
+  {
+    "db_item_id": 90043,
+    "name_en": "Krane Memo 2",
+    "description": {
+      "en": "A memo written by Krane about the Aura Reader.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://bulbapedia.bulbagarden.net/wiki/List_of_key_items_in_Pok%C3%A9mon_XD:_Gale_of_Darkness"
+    ],
+    "notes": "Resumen/descripción recogido de una wiki de referencia; no se ha verificado directamente mediante captura o volcado del texto dentro del juego. Los otros idiomas quedan null al no verificarse el texto oficial localizado."
+  },
+  {
+    "db_item_id": 90044,
+    "name_en": "Krane Memo 3",
+    "description": {
+      "en": "A memo written by Krane about the Snag Machine.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://bulbapedia.bulbagarden.net/wiki/List_of_key_items_in_Pok%C3%A9mon_XD:_Gale_of_Darkness"
+    ],
+    "notes": "Resumen/descripción recogido de una wiki de referencia; no se ha verificado directamente mediante captura o volcado del texto dentro del juego. Los otros idiomas quedan null al no verificarse el texto oficial localizado."
+  },
+  {
+    "db_item_id": 90045,
+    "name_en": "Krane Memo 4",
+    "description": {
+      "en": "A memo written by Krane on purifying Shadow Pokémon.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://bulbapedia.bulbagarden.net/wiki/List_of_key_items_in_Pok%C3%A9mon_XD:_Gale_of_Darkness"
+    ],
+    "notes": "Resumen/descripción recogido de una wiki de referencia; no se ha verificado directamente mediante captura o volcado del texto dentro del juego. Los otros idiomas quedan null al no verificarse el texto oficial localizado."
+  },
+  {
+    "db_item_id": 90046,
+    "name_en": "Krane Memo 5",
+    "description": {
+      "en": "A memo written by Krane about the Purify Chamber.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://bulbapedia.bulbagarden.net/wiki/List_of_key_items_in_Pok%C3%A9mon_XD:_Gale_of_Darkness"
+    ],
+    "notes": "Resumen/descripción recogido de una wiki de referencia; no se ha verificado directamente mediante captura o volcado del texto dentro del juego. Los otros idiomas quedan null al no verificarse el texto oficial localizado."
+  },
+  {
+    "db_item_id": 90004,
+    "name_en": "L-Disk",
+    "description": {
+      "en": "The Disk for moving the UFO to the left.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://bulbapedia.bulbagarden.net/wiki/List_of_key_items_in_Pok%C3%A9mon_Colosseum"
+    ],
+    "notes": "Resumen/descripción recogido de una wiki de referencia; no se ha verificado directamente mediante captura o volcado del texto dentro del juego. Los otros idiomas quedan null al no verificarse el texto oficial localizado."
+  },
+  {
+    "db_item_id": 90008,
+    "name_en": "Maingate Key",
+    "description": {
+      "en": "The key for opening the Lab's main gate.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://bulbapedia.bulbagarden.net/wiki/List_of_key_items_in_Pok%C3%A9mon_Colosseum"
+    ],
+    "notes": "Resumen/descripción recogido de una wiki de referencia; no se ha verificado directamente mediante captura o volcado del texto dentro del juego. Los otros idiomas quedan null al no verificarse el texto oficial localizado."
+  },
+  {
+    "db_item_id": 90035,
+    "name_en": "Mayor's Note",
+    "description": {
+      "en": "An important letter from the Mayor to Justy.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://bulbapedia.bulbagarden.net/wiki/List_of_key_items_in_Pok%C3%A9mon_XD:_Gale_of_Darkness"
+    ],
+    "notes": "Resumen/descripción recogido de una wiki de referencia; no se ha verificado directamente mediante captura o volcado del texto dentro del juego. Los otros idiomas quedan null al no verificarse el texto oficial localizado."
+  },
+  {
+    "db_item_id": 90036,
+    "name_en": "Miror Radar",
+    "description": {
+      "en": "A found device that senses Miror B.'s presence.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://bulbapedia.bulbagarden.net/wiki/List_of_key_items_in_Pok%C3%A9mon_XD:_Gale_of_Darkness"
+    ],
+    "notes": "Resumen/descripción recogido de una wiki de referencia; no se ha verificado directamente mediante captura o volcado del texto dentro del juego. Los otros idiomas quedan null al no verificarse el texto oficial localizado."
+  },
+  {
+    "db_item_id": 90039,
+    "name_en": "Moon Shard",
+    "description": {
+      "en": "An odd shard that makes Eevee evolve into Umbreon.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://bulbapedia.bulbagarden.net/wiki/List_of_key_items_in_Pok%C3%A9mon_XD:_Gale_of_Darkness"
+    ],
+    "notes": "Resumen/descripción recogido de una wiki de referencia; no se ha verificado directamente mediante captura o volcado del texto dentro del juego. Los otros idiomas quedan null al no verificarse el texto oficial localizado."
+  },
+  {
+    "db_item_id": 90033,
+    "name_en": "Music Disc",
+    "description": {
+      "en": "A plaintive love song by a pop star. It is a big seller.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://bulbapedia.bulbagarden.net/wiki/List_of_key_items_in_Pok%C3%A9mon_XD:_Gale_of_Darkness"
+    ],
+    "notes": "Resumen/descripción recogido de una wiki de referencia; no se ha verificado directamente mediante captura o volcado del texto dentro del juego. Los otros idiomas quedan null al no verificarse el texto oficial localizado."
+  },
+  {
+    "db_item_id": 90037,
+    "name_en": "Poké Snack",
+    "description": {
+      "en": "Used to attract Pokémon to Poké Spots.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/xd/items.shtml"
+    ],
+    "notes": "Resumen/descripción recogido de una wiki de referencia; no se ha verificado directamente mediante captura o volcado del texto dentro del juego. Los otros idiomas quedan null al no verificarse el texto oficial localizado."
+  },
+  {
+    "db_item_id": 90027,
+    "name_en": "Powerup Part",
+    "description": {
+      "en": "A part to be delivered to Nett from Perr.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://bulbapedia.bulbagarden.net/wiki/List_of_key_items_in_Pok%C3%A9mon_Colosseum"
+    ],
+    "notes": "Resumen/descripción recogido de una wiki de referencia; no se ha verificado directamente mediante captura o volcado del texto dentro del juego. Los otros idiomas quedan null al no verificarse el texto oficial localizado."
+  },
+  {
+    "db_item_id": 90003,
+    "name_en": "R-Disk",
+    "description": {
+      "en": "The Disk for moving the UFO to the right.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://bulbapedia.bulbagarden.net/wiki/List_of_key_items_in_Pok%C3%A9mon_Colosseum"
+    ],
+    "notes": "Resumen/descripción recogido de una wiki de referencia; no se ha verificado directamente mediante captura o volcado del texto dentro del juego. Los otros idiomas quedan null al no verificarse el texto oficial localizado."
+  },
+  {
+    "db_item_id": 90014,
+    "name_en": "Red ID Badge",
+    "description": {
+      "en": "The red badge that Miror B. had.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://bulbapedia.bulbagarden.net/wiki/List_of_key_items_in_Pok%C3%A9mon_Colosseum"
+    ],
+    "notes": "Resumen/descripción recogido de una wiki de referencia; no se ha verificado directamente mediante captura o volcado del texto dentro del juego. Los otros idiomas quedan null al no verificarse el texto oficial localizado."
+  },
+  {
+    "db_item_id": 90029,
+    "name_en": "Safe Key",
+    "description": {
+      "en": null,
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": null,
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se localizó una descripción textual fiable y específica para este objeto en las fuentes consultadas; se deja null sin inferir ni traducir."
+  },
+  {
+    "db_item_id": 90001,
+    "name_en": "Small Tablet",
+    "description": {
+      "en": "A small stone tablet with inscriptions on the Relic Stone.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://bulbapedia.bulbagarden.net/wiki/List_of_key_items_in_Pok%C3%A9mon_Colosseum"
+    ],
+    "notes": "Resumen/descripción recogido de una wiki de referencia; no se ha verificado directamente mediante captura o volcado del texto dentro del juego. Los otros idiomas quedan null al no verificarse el texto oficial localizado."
+  },
+  {
+    "db_item_id": 90012,
+    "name_en": "Steel Teeth",
+    "description": {
+      "en": "An extremely tough set of false teeth made of steel.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://bulbapedia.bulbagarden.net/wiki/List_of_key_items_in_Pok%C3%A9mon_Colosseum"
+    ],
+    "notes": "Resumen/descripción recogido de una wiki de referencia; no se ha verificado directamente mediante captura o volcado del texto dentro del juego. Los otros idiomas quedan null al no verificarse el texto oficial localizado."
+  },
+  {
+    "db_item_id": 90007,
+    "name_en": "Subway Key",
+    "description": {
+      "en": "The operating key for The Under's subway.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://bulbapedia.bulbagarden.net/wiki/List_of_key_items_in_Pok%C3%A9mon_Colosseum"
+    ],
+    "notes": "Resumen/descripción recogido de una wiki de referencia; no se ha verificado directamente mediante captura o volcado del texto dentro del juego. Los otros idiomas quedan null al no verificarse el texto oficial localizado."
+  },
+  {
+    "db_item_id": 90038,
+    "name_en": "Sun Shard",
+    "description": {
+      "en": "An odd shard that makes Eevee evolve into Espeon.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://bulbapedia.bulbagarden.net/wiki/List_of_key_items_in_Pok%C3%A9mon_XD:_Gale_of_Darkness"
+    ],
+    "notes": "Resumen/descripción recogido de una wiki de referencia; no se ha verificado directamente mediante captura o volcado del texto dentro del juego. Los otros idiomas quedan null al no verificarse el texto oficial localizado."
+  },
+  {
+    "db_item_id": 90034,
+    "name_en": "System Lever",
+    "description": {
+      "en": "A handle-shaped lever that controls a machine.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://bulbapedia.bulbagarden.net/wiki/List_of_key_items_in_Pok%C3%A9mon_XD:_Gale_of_Darkness"
+    ],
+    "notes": "Resumen/descripción recogido de una wiki de referencia; no se ha verificado directamente mediante captura o volcado del texto dentro del juego. Los otros idiomas quedan null al no verificarse el texto oficial localizado."
+  },
+  {
+    "db_item_id": 90018,
+    "name_en": "Time Flute",
+    "description": {
+      "en": null,
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": null,
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se localizó una descripción textual fiable y específica para este objeto en las fuentes consultadas; se deja null sin inferir ni traducir."
+  },
+  {
+    "db_item_id": 90006,
+    "name_en": "U-Disk",
+    "description": {
+      "en": "The Disk for moving the UFO up.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://bulbapedia.bulbagarden.net/wiki/List_of_key_items_in_Pok%C3%A9mon_Colosseum"
+    ],
+    "notes": "Resumen/descripción recogido de una wiki de referencia; no se ha verificado directamente mediante captura o volcado del texto dentro del juego. Los otros idiomas quedan null al no verificarse el texto oficial localizado."
+  },
+  {
+    "db_item_id": 90026,
+    "name_en": "Vivid Scent",
+    "description": {
+      "en": null,
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": null,
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se localizó una descripción textual fiable y específica para este objeto en las fuentes consultadas; se deja null sin inferir ni traducir."
+  },
+  {
+    "db_item_id": 90047,
+    "name_en": "Voice Case 1",
+    "description": {
+      "en": "A special case that contains the cry of a Pokémon.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://bulbapedia.bulbagarden.net/wiki/List_of_key_items_in_Pok%C3%A9mon_XD:_Gale_of_Darkness"
+    ],
+    "notes": "Resumen/descripción recogido de una wiki de referencia; no se ha verificado directamente mediante captura o volcado del texto dentro del juego. Los otros idiomas quedan null al no verificarse el texto oficial localizado."
+  },
+  {
+    "db_item_id": 90048,
+    "name_en": "Voice Case 2",
+    "description": {
+      "en": "A special case that contains the cry of a Pokémon.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://bulbapedia.bulbagarden.net/wiki/List_of_key_items_in_Pok%C3%A9mon_XD:_Gale_of_Darkness"
+    ],
+    "notes": "Resumen/descripción recogido de una wiki de referencia; no se ha verificado directamente mediante captura o volcado del texto dentro del juego. Los otros idiomas quedan null al no verificarse el texto oficial localizado."
+  },
+  {
+    "db_item_id": 90049,
+    "name_en": "Voice Case 3",
+    "description": {
+      "en": "A special case that contains the cry of a Pokémon.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://bulbapedia.bulbagarden.net/wiki/List_of_key_items_in_Pok%C3%A9mon_XD:_Gale_of_Darkness"
+    ],
+    "notes": "Resumen/descripción recogido de una wiki de referencia; no se ha verificado directamente mediante captura o volcado del texto dentro del juego. Los otros idiomas quedan null al no verificarse el texto oficial localizado."
+  },
+  {
+    "db_item_id": 90050,
+    "name_en": "Voice Case 4",
+    "description": {
+      "en": "A special case that contains the cry of a Pokémon.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://bulbapedia.bulbagarden.net/wiki/List_of_key_items_in_Pok%C3%A9mon_XD:_Gale_of_Darkness"
+    ],
+    "notes": "Resumen/descripción recogido de una wiki de referencia; no se ha verificado directamente mediante captura o volcado del texto dentro del juego. Los otros idiomas quedan null al no verificarse el texto oficial localizado."
+  },
+  {
+    "db_item_id": 90051,
+    "name_en": "Voice Case 5",
+    "description": {
+      "en": "A special case that contains the cry of a Pokémon.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://bulbapedia.bulbagarden.net/wiki/List_of_key_items_in_Pok%C3%A9mon_XD:_Gale_of_Darkness"
+    ],
+    "notes": "Resumen/descripción recogido de una wiki de referencia; no se ha verificado directamente mediante captura o volcado del texto dentro del juego. Los otros idiomas quedan null al no verificarse el texto oficial localizado."
+  },
+  {
+    "db_item_id": 90017,
+    "name_en": "Ylw ID Badge",
+    "description": {
+      "en": "The yellow badge that Ein had.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://bulbapedia.bulbagarden.net/wiki/List_of_key_items_in_Pok%C3%A9mon_Colosseum"
+    ],
+    "notes": "Resumen/descripción recogido de una wiki de referencia; no se ha verificado directamente mediante captura o volcado del texto dentro del juego. Los otros idiomas quedan null al no verificarse el texto oficial localizado."
+  }
+]

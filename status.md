@@ -1327,6 +1327,18 @@ Revisados: selector de especie, Buscar IVs, Recrear, AutoFix, revisión de expor
 - Causa: PKHeX (ja/ko/zh) no trae nombre para las MT nuevas de Z-A (MT157+): quedaban con el nombre «TM157» de pokemon.db mezcladas con «わざ００１» y, al ordenar por nombre, parecían una segunda lista.
 - `ItemInventoryService.FillMissingMachineNames`: completa el nombre copiando el formato (prefijo, dígitos, ancho completo) de una MT/DT/MO del mismo tipo que sí lo tiene. Incluye esta entrega el ItemInventoryService de la 71 (reemplaza ese archivo). Sin compilar.
 
+### Entrega 74 — Origen de huevo de Gen3 (Ludicolo con Leech Seed): "From egg", PID sin patrón y búsqueda de IVs que se colgaba
+- Caso real: Ludicolo de Esmeralda con Leech Seed (movimiento huevo de Lotad) marcado ilegal. El check "From egg" no cambiaba nada y, tras poner Met level 5 + Route 117, "Corregir automáticamente" dejaba el loader "Searching valid IVs…" con la CPU al 100 % sin terminar.
+- Causa (medida contra PKHeX.Core 25.11.07, `EncounterEgg3`): un huevo eclosionado de Gen3 tiene Met level 0 (con 5 → `EggFMetLevel_0`), ubicación de eclosión fija (Route 117 en RSE), Poké Ball y un PID SIN patrón de RNG (`PIDType.None`; un PID Method 1 da `PIDTypeMismatch`). `Method1Solver`(App/Services)/`Method1IvSearch`(App/Services) forzaban Method 1, así que con origen de huevo nunca podían tener éxito: "Recrear" decía "no hay origen válido" y la búsqueda de IVs recorría millones de semillas sin fin. En Gen3 "From egg" era solo un flag de UI (no existe `EggLocation`), no escribía nada.
+- Nuevo `EggOriginService` (App/Services): `ApplyHatchedOrigin` (Met level 0 + ubicación de eclosión + Poké Ball), `TrySolvePid` (PID sin patrón conservando Naturaleza/Género/slot de Habilidad/Brillante, verificado con `LegalityAnalysis`) e `IsEggEncounter`. Solo Gen3 por ahora (`IsSupported`).
+- `EncounterRecreationService` (App/Services): los encuentros de huevo usan `EggOriginService` en vez de Method 1 (ahora "Recrear" ofrece la opción de huevo, conservando IVs/Naturaleza/Género/Habilidad/movimientos). `FindIvOptions` no se lanza con error de encuentro ni con origen de huevo y tiene tope de 25 s.
+- `PokemonEditorViewModel`: tildar "From egg" en Gen3 aplica el origen de huevo; al cargar, Gen3 con Met level 0 aparece tildado; el botón de PID usa el solver de huevo cuando corresponde y, con error de encuentro, avisa (reusa `Recreate_Iv_NoneFound`) en vez de buscar. Spinner de Met level con mínimo 0.
+- `LegalityArgumentFormatter`: texto nuevo `Legality_Fix_PidEgg` para el botón de PID de un huevo (13 idiomas; las 11 de `lang/` traducidas a mano, a revisar).
+- Pruebas: `EggOriginGen3Tests` (8 casos, 3 semillas; pasan en un harness con PKHeX 25.11.07 real compilado desde GitHub con SDK 10 vía apt). La app completa no se compiló en el sandbox: `PokemonEditorViewModel`/`.axaml` pasaron solo chequeo de sintaxis.
+- Nota de proceso: el sandbox SÍ puede compilar PKHeX.Core y correr pruebas contra él (`apt install dotnet-sdk-10.0`, PKHeX tag `25.11.07` con `TargetFramework` cambiado a net10.0); lo que no puede es restaurar NuGet (Avalonia, xunit). `CLAUDE.md` dice que no hay dotnet: actualizar esa línea.
+- Pendiente: revisar el mismo patrón en Gen4+ (huevos con correlación propia, `EggLocation`/fecha de huevo), probar con el save real, y decidir si "Recrear" debe ofrecer la opción de huevo primero cuando el movimiento solo se explica así.
+- Sin compilar.
+
 ### Entrega 75 — Descripciones de objetos, Fase 1 (extracción) — solo scripts/datos, sin tocar la app ni pokemon.db
 - Nueva carpeta `hotfixes/item_descriptions/` (repo de contexto): `extract.py`, `aliases.csv`, `README.md`, `out/` (items_text.csv, machine_moves.csv, unmatched_items.csv, report.md).
 - Resultado: 2112/2515 objetos con pareja en PokeAPI; textos para 1301 objetos × 9 idiomas; 2026 MT/MO/DT resueltas por juego (todos los ids de movimiento coinciden con PKHeX); 877 objetos usados en mochilas siguen sin texto (a investigar en la Fase 2).
@@ -1345,6 +1357,22 @@ Revisados: selector de especie, Buscar IVs, Recrear, AutoFix, revisión de expor
 - Aplicar en tu máquina: copia de seguridad, `create_tables.py`, `load_data.py --dry-run`, `load_data.py`, push del pokemon.db nuevo (blob normal, sin LFS).
 - 12 filas de MT sin movimiento en ItemGameCodes (RG/Yellow TM51–55, SV TM00, Z-A TM161): pendientes de decidir.
 - Siguiente: Fase 5 (la app lee de la base, retira el JSON y TmDescriptionResolver) y pruebas.
+
+### Entrega 78 — Datos de investigación de objetos cargados en el pipeline (scripts/datos; la app aún no los usa)
+- Recibidos 23 lotes JSON + CSV de 2.ª pasada de otra IA. Revisados (ver `hotfixes/item_descriptions/research_review.md`): todo en inglés, `wiki_summary`/`medium`, fuentes Serebii/Bulbapedia (+9 de GameGuides).
+- `validate_research.py`: ahora tolera tildes/apóstrofos en nombres, acepta una pasada posterior sobre `not_found`, y `--trust-wiki` marca verified=1 solo las fuentes Serebii/Bulbapedia. `import_second_round.py` nuevo.
+- `fix_item_descriptions/data/items_text_research.csv` (813 objetos; 804 verified=1, 9 verified=0); `load_data.py` lo carga solo.
+- Prueba en copia de la base: objetos de mochila sin MT: 2116 → 2042 con descripción verificada, 74 sin ella. integrity_check ok, 0 FK.
+- Pendiente: `Data ROM` (texto distinto en Colosseum y XD), 65 objetos sin texto, aprobar los 9 de GameGuides, y Fase 5 (la app lee de la base).
+
+### Entrega 79 — Fase 5: la app lee descripciones y MT desde pokemon.db (+ base migrada)
+- `pokemon.db` migrada (tablas `ItemDescriptions` 12 682 filas y `MachineMoves` 2 026; integrity_check ok, FK 0): reemplaza `pokemon-database/database/pokemon.db`. Se generó con `hotfixes/fix_item_descriptions` (create_tables.py + load_data.py --vacuum). Sin LFS.
+- `PokemonDatabase`: `GetItemDescriptions(ids, lang)` (Verified=1, idioma → en; base sin tabla = vacío) y `GetMachineMovesByItem(gameId)`.
+- `ItemDescriptionLocalizer` reescrito: `TeachesMove(moveId)`, `LegacyMachine(englishText)` (respaldo), `Get(...)` (tooltips). `ItemInventoryService`: descripciones por lote desde la base; MT/MO/DT por juego vía MachineMoves (incluye MT101+/TR/Z-A); respaldo al texto inglés si la base es antigua.
+- Retirados `Assets/item_descriptions.json` y su línea en `Exxeguttor.App.csproj` (BORRAR el JSON del repo).
+- Tests nuevos `ItemDescriptionsDbTests` (descripción en/es, respaldo a inglés, movimientos de TM108 Z-A y TM229 SV, ≤80 objetos sin descripción).
+- `TmDescriptionResolver` queda solo como respaldo.
+- Sin compilar. Pendiente: Data ROM (Colosseum/XD), 65 objetos sin texto, aprobar 9 de GameGuides, 12 filas MT inválidas en ItemGameCodes.
 
 
 

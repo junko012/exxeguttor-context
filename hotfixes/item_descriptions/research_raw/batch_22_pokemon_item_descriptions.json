@@ -1,0 +1,866 @@
+[
+  {
+    "db_item_id": 2156,
+    "name_en": "Tinkatink Hair",
+    "description": {
+      "en": "Material accidentally dropped by a Pokémon. It can be used to make TMs.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/itemdex/list/material.shtml"
+    ],
+    "notes": "Descripción recopilada de una página de referencia; no se verificó con captura directa del texto de la mochila en el juego."
+  },
+  {
+    "db_item_id": 1842,
+    "name_en": "Tiny Bamboo Shoot",
+    "description": {
+      "en": "A small and rare bamboo shoot. It's quite popular with a certain class of gourmands.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/scarletviolet/items.shtml"
+    ],
+    "notes": "Descripción recopilada de una página de referencia; no se verificó con captura directa del texto de la mochila en el juego."
+  },
+  {
+    "db_item_id": 2158,
+    "name_en": "Toedscool Flaps",
+    "description": {
+      "en": "Material accidentally dropped by a Pokémon. It can be used to make TMs.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/itemdex/list/material.shtml"
+    ],
+    "notes": "Descripción recopilada de una página de referencia; no se verificó con captura directa del texto de la mochila en el juego."
+  },
+  {
+    "db_item_id": 1931,
+    "name_en": "Tofu",
+    "description": {
+      "en": "An ingredient with a touch of sweetness. It's unclear how well this raw block of tofu will serve as a sandwich filling.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/scarletviolet/items.shtml"
+    ],
+    "notes": "Descripción recopilada de una página de referencia; no se verificó con captura directa del texto de la mochila en el juego."
+  },
+  {
+    "db_item_id": 1910,
+    "name_en": "Tomato",
+    "description": {
+      "en": "This very tart ingredient has a lot of savory elements to it, making it popular with many Pokémon.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/scarletviolet/items.shtml"
+    ],
+    "notes": "Descripción recopilada de una página de referencia; no se verificó con captura directa del texto de la mochila en el juego."
+  },
+  {
+    "db_item_id": 2005,
+    "name_en": "Torkoal Coal",
+    "description": {
+      "en": "Material accidentally dropped by a Pokémon. It can be used to make TMs.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/itemdex/list/material.shtml"
+    ],
+    "notes": "Descripción recopilada de una página de referencia; no se verificó con captura directa del texto de la mochila en el juego."
+  },
+  {
+    "db_item_id": 2085,
+    "name_en": "Toxel Sparks",
+    "description": {
+      "en": "Material accidentally dropped by a Pokémon. It can be used to make TMs.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/itemdex/list/material.shtml"
+    ],
+    "notes": "Descripción recopilada de una página de referencia; no se verificó con captura directa del texto de la mochila en el juego."
+  },
+  {
+    "db_item_id": 2502,
+    "name_en": "Trapinch Shell",
+    "description": {
+      "en": null,
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable en las fuentes consultadas; se deja vacío para evitar inventar texto."
+  },
+  {
+    "db_item_id": 2013,
+    "name_en": "Tropius Leaf",
+    "description": {
+      "en": "Material accidentally dropped by a Pokémon. It can be used to make TMs.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/itemdex/list/material.shtml"
+    ],
+    "notes": "Descripción recopilada de una página de referencia; no se verificó con captura directa del texto de la mochila en el juego."
+  },
+  {
+    "db_item_id": 2045,
+    "name_en": "Tynamo Slime",
+    "description": {
+      "en": "Material accidentally dropped by a Pokémon. It can be used to make TMs.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/itemdex/list/material.shtml"
+    ],
+    "notes": "Descripción recopilada de una página de referencia; no se verificó con captura directa del texto de la mochila en el juego."
+  },
+  {
+    "db_item_id": 2489,
+    "name_en": "Tyrogue Sweat",
+    "description": {
+      "en": "Material accidentally dropped by a Pokémon. It can be used to make TMs.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/itemdex/list/material.shtml"
+    ],
+    "notes": "Descripción recopilada de una página de referencia; no se verificó con captura directa del texto de la mochila en el juego."
+  },
+  {
+    "db_item_id": 2403,
+    "name_en": "Unremarkable Teacup",
+    "description": {
+      "en": "A peculiar teacup that can make a certain species of Pokémon evolve. It may be cracked, but tea drunk from it is delicious.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/scarletviolet/items.shtml"
+    ],
+    "notes": "Descripción recopilada de una página de referencia; no se verificó con captura directa del texto de la mochila en el juego."
+  },
+  {
+    "db_item_id": 2116,
+    "name_en": "Varoom Fume",
+    "description": {
+      "en": "Material accidentally dropped by a Pokémon. It can be used to make TMs.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/itemdex/list/material.shtml"
+    ],
+    "notes": "Descripción recopilada de una página de referencia; no se verificó con captura directa del texto de la mochila en el juego."
+  },
+  {
+    "db_item_id": 2340,
+    "name_en": "Vee-Vee Pick",
+    "description": {
+      "en": null,
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable en las fuentes consultadas; se deja vacío para evitar inventar texto."
+  },
+  {
+    "db_item_id": 2111,
+    "name_en": "Veluza Fillet",
+    "description": {
+      "en": "Material accidentally dropped by a Pokémon. It can be used to make TMs.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/itemdex/list/material.shtml"
+    ],
+    "notes": "Descripción recopilada de una página de referencia; no se verificó con captura directa del texto de la mochila en el juego."
+  },
+  {
+    "db_item_id": 1956,
+    "name_en": "Venonat Fang",
+    "description": {
+      "en": "Material accidentally dropped by a Pokémon. It can be used to make TMs.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/itemdex/list/material.shtml"
+    ],
+    "notes": "Descripción recopilada de una página de referencia; no se verificó con captura directa del texto de la mochila en el juego."
+  },
+  {
+    "db_item_id": 1903,
+    "name_en": "Vinegar",
+    "description": {
+      "en": "A very sour condiment. Vinegars derived from grapes are popular in Paldea. Highly effective when used to add just a light note of flavor.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/scarletviolet/items.shtml"
+    ],
+    "notes": "Descripción recopilada de una página de referencia; no se verificó con captura directa del texto de la mochila en el juego."
+  },
+  {
+    "db_item_id": 1835,
+    "name_en": "Violet Book",
+    "description": {
+      "en": "A record of the expedition that the author, Heath, went on within the Great Crater of Paldea. The book has the name “Turo” written on it in clumsy handwriting.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/scarletviolet/items.shtml"
+    ],
+    "notes": "Descripción recopilada de una página de referencia; no se verificó con captura directa del texto de la mochila en el juego."
+  },
+  {
+    "db_item_id": 2537,
+    "name_en": "Virizion Treat",
+    "description": {
+      "en": "A snack made from ingredients favored by the Legendary Pokémon Virizion.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/scarletviolet/items.shtml"
+    ],
+    "notes": "Descripción recopilada de una página de referencia; no se verificó con captura directa del texto de la mochila en el juego."
+  },
+  {
+    "db_item_id": 2459,
+    "name_en": "Volbeat Fluid",
+    "description": {
+      "en": "Material accidentally dropped by a Pokémon. It can be used to make TMs.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/itemdex/list/material.shtml"
+    ],
+    "notes": "Descripción recopilada de una página de referencia; no se verificó con captura directa del texto de la mochila en el juego."
+  },
+  {
+    "db_item_id": 1968,
+    "name_en": "Voltorb Sparks",
+    "description": {
+      "en": "Material accidentally dropped by a Pokémon. It can be used to make TMs.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/itemdex/list/material.shtml"
+    ],
+    "notes": "Descripción recopilada de una página de referencia; no se verificó con captura directa del texto de la mochila en el juego."
+  },
+  {
+    "db_item_id": 2470,
+    "name_en": "Vullaby Feather",
+    "description": {
+      "en": "Material accidentally dropped by a Pokémon. It can be used to make TMs.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/itemdex/list/material.shtml"
+    ],
+    "notes": "Descripción recopilada de una página de referencia; no se verificó con captura directa del texto de la mochila en el juego."
+  },
+  {
+    "db_item_id": 2441,
+    "name_en": "Vulpix Fur",
+    "description": {
+      "en": "Material accidentally dropped by a Pokémon. It can be used to make TMs.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/itemdex/list/material.shtml"
+    ],
+    "notes": "Descripción recopilada de una página de referencia; no se verificó con captura directa del texto de la mochila en el juego."
+  },
+  {
+    "db_item_id": 1944,
+    "name_en": "Wasabi",
+    "description": {
+      "en": "This very spicy condiment seems close to horseradish at first, but you'll find that it has a superb flavor all its own.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/scarletviolet/items.shtml"
+    ],
+    "notes": "Descripción recopilada de una página de referencia; no se verificó con captura directa del texto de la mochila en el juego."
+  },
+  {
+    "db_item_id": 1864,
+    "name_en": "Water Tera Shard",
+    "description": {
+      "en": "On rare occasions, these shards form when a Tera Pokémon falls in battle and its Tera Jewel shatters.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/scarletviolet/items.shtml"
+    ],
+    "notes": "Descripción recopilada de una página de referencia; no se verificó con captura directa del texto de la mochila en el juego."
+  },
+  {
+    "db_item_id": 1945,
+    "name_en": "Watercress",
+    "description": {
+      "en": "A very bitter ingredient that stands out among veggies for its quirky flavor. People tend to either like it or not like it—they rarely sit on the fence.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/scarletviolet/items.shtml"
+    ],
+    "notes": "Descripción recopilada de una página de referencia; no se verificó con captura directa del texto de la mochila en el juego."
+  },
+  {
+    "db_item_id": 2126,
+    "name_en": "Wattrel Feather",
+    "description": {
+      "en": "Material accidentally dropped by a Pokémon. It can be used to make TMs.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/itemdex/list/material.shtml"
+    ],
+    "notes": "Descripción recopilada de una página de referencia; no se verificó con captura directa del texto de la mochila en el juego."
+  },
+  {
+    "db_item_id": 2407,
+    "name_en": "Wellspring Mask",
+    "description": {
+      "en": "An item to be held by Ogerpon. This carved wooden mask is adorned with crystals and allows Ogerpon to wield the Water type during battle.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/scarletviolet/items.shtml"
+    ],
+    "notes": "Descripción recopilada de una página de referencia; no se verificó con captura directa del texto de la mochila en el juego."
+  },
+  {
+    "db_item_id": 2420,
+    "name_en": "Whimsical Chairs",
+    "description": {
+      "en": null,
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable en las fuentes consultadas; se deja vacío para evitar inventar texto."
+  },
+  {
+    "db_item_id": 2325,
+    "name_en": "Whimsical Tablecloth",
+    "description": {
+      "en": null,
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable en las fuentes consultadas; se deja vacío para evitar inventar texto."
+  },
+  {
+    "db_item_id": 1898,
+    "name_en": "Whipped Cream",
+    "description": {
+      "en": "A very sweet condiment. Folks in Paldea seem to love the varieties that really let the sweetness sing.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/scarletviolet/items.shtml"
+    ],
+    "notes": "Descripción recopilada de una página de referencia; no se verificó con captura directa del texto de la mochila en el juego."
+  },
+  {
+    "db_item_id": 2399,
+    "name_en": "White Dish",
+    "description": {
+      "en": null,
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable en las fuentes consultadas; se deja vacío para evitar inventar texto."
+  },
+  {
+    "db_item_id": 2109,
+    "name_en": "Wiglett Sand",
+    "description": {
+      "en": "Material accidentally dropped by a Pokémon. It can be used to make TMs.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/itemdex/list/material.shtml"
+    ],
+    "notes": "Descripción recopilada de una página de referencia; no se verificó con captura directa del texto de la mochila en el juego."
+  },
+  {
+    "db_item_id": 1994,
+    "name_en": "Wingull Feather",
+    "description": {
+      "en": "Material accidentally dropped by a Pokémon. It can be used to make TMs.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/itemdex/list/material.shtml"
+    ],
+    "notes": "Descripción recopilada de una página de referencia; no se verificó con captura directa del texto de la mochila en el juego."
+  },
+  {
+    "db_item_id": 2339,
+    "name_en": "Winking Pika Pick",
+    "description": {
+      "en": null,
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable en las fuentes consultadas; se deja vacío para evitar inventar texto."
+  },
+  {
+    "db_item_id": 2159,
+    "name_en": "Wooper Slime",
+    "description": {
+      "en": "Material accidentally dropped by a Pokémon. It can be used to make TMs.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/itemdex/list/material.shtml"
+    ],
+    "notes": "Descripción recopilada de una página de referencia; no se verificó con captura directa del texto de la mochila en el juego."
+  },
+  {
+    "db_item_id": 2451,
+    "name_en": "Yanma Spike",
+    "description": {
+      "en": "Material accidentally dropped by a Pokémon. It can be used to make TMs.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/itemdex/list/material.shtml"
+    ],
+    "notes": "Descripción recopilada de una página de referencia; no se verificó con captura directa del texto de la mochila en el juego."
+  },
+  {
+    "db_item_id": 2332,
+    "name_en": "Yarn Ball",
+    "description": {
+      "en": null,
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable en las fuentes consultadas; se deja vacío para evitar inventar texto."
+  },
+  {
+    "db_item_id": 1918,
+    "name_en": "Yellow Bell Pepper",
+    "description": {
+      "en": "An ingredient with some bitterness. It's not much different from its red counterpart in flavor, but mixing the colors makes a feast for the eyes.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/scarletviolet/items.shtml"
+    ],
+    "notes": "Descripción recopilada de una página de referencia; no se verificó con captura directa del texto de la mochila en el juego."
+  },
+  {
+    "db_item_id": 2350,
+    "name_en": "Yellow Bottle",
+    "description": {
+      "en": null,
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "wiki_summary",
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No se encontró una descripción verificable en las fuentes consultadas; se deja vacío para evitar inventar texto."
+  }
+]
