@@ -1,0 +1,880 @@
+db_item_id,name_en,group,games
+90053,Battle CD 01,colosseum_xd,galeofdarkness
+90054,Battle CD 02,colosseum_xd,galeofdarkness
+90055,Battle CD 03,colosseum_xd,galeofdarkness
+90056,Battle CD 04,colosseum_xd,galeofdarkness
+90057,Battle CD 05,colosseum_xd,galeofdarkness
+90058,Battle CD 06,colosseum_xd,galeofdarkness
+90059,Battle CD 07,colosseum_xd,galeofdarkness
+90060,Battle CD 08,colosseum_xd,galeofdarkness
+90061,Battle CD 09,colosseum_xd,galeofdarkness
+90062,Battle CD 10,colosseum_xd,galeofdarkness
+90063,Battle CD 11,colosseum_xd,galeofdarkness
+90064,Battle CD 12,colosseum_xd,galeofdarkness
+90065,Battle CD 13,colosseum_xd,galeofdarkness
+90066,Battle CD 14,colosseum_xd,galeofdarkness
+90067,Battle CD 15,colosseum_xd,galeofdarkness
+90068,Battle CD 16,colosseum_xd,galeofdarkness
+90069,Battle CD 17,colosseum_xd,galeofdarkness
+90070,Battle CD 18,colosseum_xd,galeofdarkness
+90071,Battle CD 19,colosseum_xd,galeofdarkness
+90072,Battle CD 20,colosseum_xd,galeofdarkness
+90073,Battle CD 21,colosseum_xd,galeofdarkness
+90074,Battle CD 22,colosseum_xd,galeofdarkness
+90075,Battle CD 23,colosseum_xd,galeofdarkness
+90076,Battle CD 24,colosseum_xd,galeofdarkness
+90077,Battle CD 25,colosseum_xd,galeofdarkness
+90078,Battle CD 26,colosseum_xd,galeofdarkness
+90079,Battle CD 27,colosseum_xd,galeofdarkness
+90080,Battle CD 28,colosseum_xd,galeofdarkness
+90081,Battle CD 29,colosseum_xd,galeofdarkness
+90082,Battle CD 30,colosseum_xd,galeofdarkness
+90083,Battle CD 31,colosseum_xd,galeofdarkness
+90084,Battle CD 32,colosseum_xd,galeofdarkness
+90085,Battle CD 33,colosseum_xd,galeofdarkness
+90086,Battle CD 34,colosseum_xd,galeofdarkness
+90087,Battle CD 35,colosseum_xd,galeofdarkness
+90088,Battle CD 36,colosseum_xd,galeofdarkness
+90089,Battle CD 37,colosseum_xd,galeofdarkness
+90090,Battle CD 38,colosseum_xd,galeofdarkness
+90091,Battle CD 39,colosseum_xd,galeofdarkness
+90092,Battle CD 40,colosseum_xd,galeofdarkness
+90093,Battle CD 41,colosseum_xd,galeofdarkness
+90094,Battle CD 42,colosseum_xd,galeofdarkness
+90095,Battle CD 43,colosseum_xd,galeofdarkness
+90096,Battle CD 44,colosseum_xd,galeofdarkness
+90097,Battle CD 45,colosseum_xd,galeofdarkness
+90098,Battle CD 46,colosseum_xd,galeofdarkness
+90099,Battle CD 47,colosseum_xd,galeofdarkness
+90100,Battle CD 48,colosseum_xd,galeofdarkness
+90101,Battle CD 49,colosseum_xd,galeofdarkness
+90102,Battle CD 50,colosseum_xd,galeofdarkness
+90103,Battle CD 51,colosseum_xd,galeofdarkness
+90104,Battle CD 52,colosseum_xd,galeofdarkness
+90105,Battle CD 53,colosseum_xd,galeofdarkness
+90106,Battle CD 54,colosseum_xd,galeofdarkness
+90107,Battle CD 55,colosseum_xd,galeofdarkness
+90108,Battle CD 56,colosseum_xd,galeofdarkness
+90109,Battle CD 57,colosseum_xd,galeofdarkness
+90110,Battle CD 58,colosseum_xd,galeofdarkness
+90111,Battle CD 59,colosseum_xd,galeofdarkness
+90112,Battle CD 60,colosseum_xd,galeofdarkness
+90016,Blu ID Badge,colosseum_xd,colosseum
+90030,Bonsly Card,colosseum_xd,galeofdarkness
+90040,Bonsly Photo,colosseum_xd,galeofdarkness
+90023,Cologne Case,colosseum_xd,colosseum;galeofdarkness
+90041,Cry Analyzer,colosseum_xd,galeofdarkness
+90005,D-Disk,colosseum_xd,colosseum
+90010,DNA Sample,colosseum_xd,colosseum
+90011,Data ROM,colosseum_xd,colosseum;galeofdarkness
+90052,Disc Case,colosseum_xd,galeofdarkness
+90009,Down St. Key,colosseum_xd,colosseum
+90021,Ein File C,colosseum_xd,colosseum
+90028,Ein File F,colosseum_xd,colosseum
+90020,Ein File H,colosseum_xd,colosseum
+90022,Ein File P,colosseum_xd,colosseum
+90019,Ein File S,colosseum_xd,colosseum
+90025,Excite Scent,colosseum_xd,colosseum;galeofdarkness
+90002,F-Disk,colosseum_xd,colosseum
+90013,Gear,colosseum_xd,colosseum
+90031,Gonzap's Key,colosseum_xd,galeofdarkness
+90015,Grn ID Badge,colosseum_xd,colosseum
+90032,ID Card,colosseum_xd,galeofdarkness
+90000,Jail Key,colosseum_xd,colosseum
+90024,Joy Scent,colosseum_xd,colosseum;galeofdarkness
+90042,Krane Memo 1,colosseum_xd,galeofdarkness
+90043,Krane Memo 2,colosseum_xd,galeofdarkness
+90044,Krane Memo 3,colosseum_xd,galeofdarkness
+90045,Krane Memo 4,colosseum_xd,galeofdarkness
+90046,Krane Memo 5,colosseum_xd,galeofdarkness
+90004,L-Disk,colosseum_xd,colosseum
+90008,Maingate Key,colosseum_xd,colosseum
+90035,Mayor's Note,colosseum_xd,galeofdarkness
+90036,Miror Radar,colosseum_xd,galeofdarkness
+90039,Moon Shard,colosseum_xd,galeofdarkness
+90033,Music Disc,colosseum_xd,galeofdarkness
+90037,Poké Snack,colosseum_xd,galeofdarkness
+90027,Powerup Part,colosseum_xd,colosseum
+90003,R-Disk,colosseum_xd,colosseum
+90014,Red ID Badge,colosseum_xd,colosseum
+90029,Safe Key,colosseum_xd,galeofdarkness
+90001,Small Tablet,colosseum_xd,colosseum
+90012,Steel Teeth,colosseum_xd,colosseum
+90007,Subway Key,colosseum_xd,colosseum
+90038,Sun Shard,colosseum_xd,galeofdarkness
+90034,System Lever,colosseum_xd,galeofdarkness
+90018,Time Flute,colosseum_xd,colosseum
+90006,U-Disk,colosseum_xd,colosseum
+90026,Vivid Scent,colosseum_xd,colosseum;galeofdarkness
+90047,Voice Case 1,colosseum_xd,galeofdarkness
+90048,Voice Case 2,colosseum_xd,galeofdarkness
+90049,Voice Case 3,colosseum_xd,galeofdarkness
+90050,Voice Case 4,colosseum_xd,galeofdarkness
+90051,Voice Case 5,colosseum_xd,galeofdarkness
+90017,Ylw ID Badge,colosseum_xd,colosseum
+2655,Hyper Aspear Berry,hyper_berry,legendsza
+2681,Hyper Babiri Berry,hyper_berry,legendsza
+2677,Hyper Charti Berry,hyper_berry,legendsza
+2651,Hyper Cheri Berry,hyper_berry,legendsza
+2652,Hyper Chesto Berry,hyper_berry,legendsza
+2682,Hyper Chilan Berry,hyper_berry,legendsza
+2671,Hyper Chople Berry,hyper_berry,legendsza
+2674,Hyper Coba Berry,hyper_berry,legendsza
+2680,Hyper Colbur Berry,hyper_berry,legendsza
+2664,Hyper Grepa Berry,hyper_berry,legendsza
+2679,Hyper Haban Berry,hyper_berry,legendsza
+2663,Hyper Hondew Berry,hyper_berry,legendsza
+2678,Hyper Kasib Berry,hyper_berry,legendsza
+2672,Hyper Kebia Berry,hyper_berry,legendsza
+2661,Hyper Kelpsy Berry,hyper_berry,legendsza
+2658,Hyper Lum Berry,hyper_berry,legendsza
+2666,Hyper Occa Berry,hyper_berry,legendsza
+2656,Hyper Oran Berry,hyper_berry,legendsza
+2667,Hyper Passho Berry,hyper_berry,legendsza
+2675,Hyper Payapa Berry,hyper_berry,legendsza
+2653,Hyper Pecha Berry,hyper_berry,legendsza
+2657,Hyper Persim Berry,hyper_berry,legendsza
+2660,Hyper Pomeg Berry,hyper_berry,legendsza
+2662,Hyper Qualot Berry,hyper_berry,legendsza
+2654,Hyper Rawst Berry,hyper_berry,legendsza
+2669,Hyper Rindo Berry,hyper_berry,legendsza
+2683,Hyper Roseli Berry,hyper_berry,legendsza
+2673,Hyper Shuca Berry,hyper_berry,legendsza
+2659,Hyper Sitrus Berry,hyper_berry,legendsza
+2665,Hyper Tamato Berry,hyper_berry,legendsza
+2676,Hyper Tanga Berry,hyper_berry,legendsza
+2668,Hyper Wacan Berry,hyper_berry,legendsza
+2670,Hyper Yache Berry,hyper_berry,legendsza
+2638,Absolite Z,mega_stone_za,legendsza
+2581,Barbaracite,mega_stone_za,legendsza
+2648,Baxcalibrite,mega_stone_za,legendsza
+2574,Chandelurite,mega_stone_za,legendsza
+2575,Chesnaughtite,mega_stone_za,legendsza
+2637,Chimechite,mega_stone_za,legendsza
+2559,Clefablite,mega_stone_za,legendsza
+2644,Crabominite,mega_stone_za,legendsza
+2568,Darkranite,mega_stone_za,legendsza
+2576,Delphoxite,mega_stone_za,legendsza
+2582,Dragalgite,mega_stone_za,legendsza
+2562,Dragoninite,mega_stone_za,legendsza
+2585,Drampanite,mega_stone_za,legendsza
+2573,Eelektrossite,mega_stone_za,legendsza
+2569,Emboarite,mega_stone_za,legendsza
+2570,Excadrite,mega_stone_za,legendsza
+2587,Falinksite,mega_stone_za,legendsza
+2564,Feraligite,mega_stone_za,legendsza
+2579,Floettite,mega_stone_za,legendsza
+2566,Froslassite,mega_stone_za,legendsza
+2640,Garchompite Z,mega_stone_za,legendsza
+2650,Glimmoranite,mega_stone_za,legendsza
+2645,Golisopite,mega_stone_za,legendsza
+2642,Golurkite,mega_stone_za,legendsza
+2577,Greninjite,mega_stone_za,legendsza
+2583,Hawluchanite,mega_stone_za,legendsza
+2567,Heatranite,mega_stone_za,legendsza
+2641,Lucarionite Z,mega_stone_za,legendsza
+2646,Magearnite,mega_stone_za,legendsza
+2580,Malamarite,mega_stone_za,legendsza
+2563,Meganiumite,mega_stone_za,legendsza
+2643,Meowsticite,mega_stone_za,legendsza
+2578,Pyroarite,mega_stone_za,legendsza
+2635,Raichunite X,mega_stone_za,legendsza
+2636,Raichunite Y,mega_stone_za,legendsza
+2571,Scolipite,mega_stone_za,legendsza
+2647,Scovillainite,mega_stone_za,legendsza
+2572,Scraftinite,mega_stone_za,legendsza
+2565,Skarmorite,mega_stone_za,legendsza
+2639,Staraptite,mega_stone_za,legendsza
+2561,Starminite,mega_stone_za,legendsza
+2649,Tatsugirinite,mega_stone_za,legendsza
+2560,Victreebelite,mega_stone_za,legendsza
+2586,Zeraorite,mega_stone_za,legendsza
+2584,Zygardite,mega_stone_za,legendsza
+1881,Ability Shield,other_legends,scarletviolet
+2329,Academy Ball,other_legends,scarletviolet
+2313,Academy Bottle,other_legends,scarletviolet
+2418,Academy Chairs,other_legends,scarletviolet
+2318,Academy Cup,other_legends,scarletviolet
+2323,Academy Tablecloth,other_legends,scarletviolet
+1777,Adamant Crystal,other_legends,legendsarceus;scarletviolet
+2450,Aipom Hair,other_legends,scarletviolet
+2044,Alomomola Mucus,other_legends,scarletviolet
+2604,Amazing Butter,other_legends,legendsza
+1938,Apple,other_legends,scarletviolet
+2094,Applin Juice,other_legends,scarletviolet
+1613,Apricorn,other_legends,legendsarceus
+2609,Arboliva Oil,other_legends,legendsza
+2083,Arrokuda Scales,other_legends,scarletviolet
+2522,Articuno Treat,other_legends,scarletviolet
+2344,Auspicious Armor,other_legends,legendsza;scarletviolet
+2597,Autographed Plush,other_legends,legendsza
+1676,Aux Evasion,other_legends,legendsarceus
+1674,Aux Guard,other_legends,legendsarceus
+1673,Aux Power,other_legends,legendsarceus
+1615,Aux Powerguard,other_legends,legendsarceus
+1919,Avocado,other_legends,scarletviolet
+2046,Axew Scales,other_legends,scarletviolet
+1626,Azelf’s Fang,other_legends,legendsarceus
+2000,Azurill Fur,other_legends,scarletviolet
+2426,B&W Grass Chairs,other_legends,scarletviolet
+2369,B&W Grass Tablecloth,other_legends,scarletviolet
+1920,Bacon,other_legends,scarletviolet
+2016,Bagon Scales,other_legends,scarletviolet
+1888,Baguette,other_legends,scarletviolet
+1684,Ball of Mud,other_legends,legendsarceus
+1936,Banana,other_legends,scarletviolet
+2011,Barboach Slime,other_legends,scarletviolet
+2355,Barred Cup,other_legends,scarletviolet
+1744,Basculegion Food,other_legends,legendsarceus
+2038,Basculin Fang,other_legends,scarletviolet
+1946,Basil,other_legends,scarletviolet
+2427,Battle Chairs,other_legends,scarletviolet
+2370,Battle Tablecloth,other_legends,scarletviolet
+1654,Bean Cake,other_legends,legendsarceus
+2503,Beldum Claw,other_legends,scarletviolet
+2443,Bellsprout Vine,other_legends,scarletviolet
+2064,Bergmite Ice,other_legends,scarletviolet
+1843,Big Bamboo Shoot,other_legends,scarletviolet
+1907,Bitter Herba Mystica,other_legends,scarletviolet
+1691,Black Augurite,other_legends,legendsarceus;legendsza
+1681,Black Tumblestone,other_legends,legendsarceus
+1780,Blank Plate,other_legends,legendsarceus
+2506,Blitzle Mane Hair,other_legends,scarletviolet
+2349,Blue Bottle,other_legends,scarletviolet
+2632,Blue Canari Plush,other_legends,legendsza
+2436,Blue Chairs,other_legends,scarletviolet
+2359,Blue Cup,other_legends,scarletviolet
+2395,Blue Dish,other_legends,scarletviolet
+2342,Blue Poké Ball Pick,other_legends,scarletviolet
+2379,Blue Tablecloth,other_legends,scarletviolet
+2337,Blue-Flag Pick,other_legends,scarletviolet
+2392,Blue-Sky Flower Pick,other_legends,scarletviolet
+2552,Blueberry Chairs,other_legends,scarletviolet
+2551,Blueberry Tablecloth,other_legends,scarletviolet
+2127,Bombirdier Feather,other_legends,scarletviolet
+2027,Bonsly Tears,other_legends,scarletviolet
+1880,Booster Energy,other_legends,scarletviolet
+2074,Bounsweet Sweat,other_legends,scarletviolet
+2136,Bramblin Twig,other_legends,scarletviolet
+2557,Briar’s Book,other_legends,scarletviolet
+2382,Bronze Bottle,other_legends,scarletviolet
+2384,Bronze Cup,other_legends,scarletviolet
+2026,Bronzor Fragment,other_legends,scarletviolet
+2080,Bruxish Tooth,other_legends,scarletviolet
+1873,Bug Tera Shard,other_legends,scarletviolet
+1651,Bugwort,other_legends,legendsarceus
+2022,Buizel Fur,other_legends,scarletviolet
+1892,Butter,other_legends,scarletviolet
+2007,Cacnea Needle,other_legends,scarletviolet
+1709,Cake-Lure Base,other_legends,legendsarceus
+2684,Canari Bread,other_legends,legendsza
+1708,Candy Truffle,other_legends,legendsarceus
+2114,Capsakid Seed,other_legends,scarletviolet
+2471,Carbink Jewel,other_legends,scarletviolet
+1620,Caster Fern,other_legends,legendsarceus
+1629,Celestica Flute,other_legends,legendsarceus
+2119,Cetoddle Grease,other_legends,scarletviolet
+2157,Charcadet Soot,other_legends,scarletviolet
+1935,Cheese,other_legends,scarletviolet
+2596,Cherished Ring,other_legends,legendsza
+1911,Cherry Tomatoes,other_legends,scarletviolet
+2081,Chewtle Claw,other_legends,scarletviolet
+1894,Chili Sauce,other_legends,scarletviolet
+2496,Chinchou Sparks,other_legends,scarletviolet
+2464,Chingling Fragment,other_legends,scarletviolet
+1617,Choice Dumpling,other_legends,legendsarceus
+1923,Chorizo,other_legends,scarletviolet
+2059,Clauncher Claw,other_legends,scarletviolet
+1882,Clear Amulet,other_legends,scarletviolet
+2440,Cleffa Fur,other_legends,scarletviolet
+2415,Clever Mochi,other_legends,scarletviolet
+2535,Cobalion Treat,other_legends,scarletviolet
+2619,Colorful Screw,other_legends,legendsza
+2020,Combee Honey,other_legends,scarletviolet
+2518,Comfey Flower,other_legends,scarletviolet
+2406,Cornerstone Mask,other_legends,scarletviolet
+2461,Corphish Shell,other_legends,scarletviolet
+2508,Cottonee Fluff,other_legends,scarletviolet
+1885,Covert Cloak,other_legends,scarletviolet
+2067,Crabrawler Shell,other_legends,scarletviolet
+1782,Crafting Kit,other_legends,legendsarceus
+2476,Cramorant Down,other_legends,scarletviolet
+2504,Cranidos Spike,other_legends,scarletviolet
+1899,Cream Cheese,other_legends,scarletviolet
+2033,Croagunk Poison,other_legends,scarletviolet
+1636,Crunchy Salt,other_legends,legendsarceus
+2048,Cryogonal Ice,other_legends,scarletviolet
+2410,Crystal Cluster,other_legends,scarletviolet
+2047,Cubchoo Fur,other_legends,scarletviolet
+1912,Cucumber,other_legends,scarletviolet
+2087,Cufant Tarnish,other_legends,scarletviolet
+1943,Curry Powder,other_legends,scarletviolet
+2474,Cutiefly Powder,other_legends,scarletviolet
+2333,Cyber Ball,other_legends,scarletviolet
+2122,Cyclizar Scales,other_legends,scarletviolet
+1822,DS Sounds,other_legends,brilliantdiamondshiningpearl
+1877,Dark Tera Shard,other_legends,scarletviolet
+1632,Dazzling Honey,other_legends,legendsarceus
+2061,Dedenne Fur,other_legends,scarletviolet
+2042,Deerling Hair,other_legends,scarletviolet
+2051,Deino Scales,other_legends,scarletviolet
+1989,Delibird Parcel,other_legends,scarletviolet
+2517,Dewpider Thread,other_legends,scarletviolet
+2317,Diamond Bottle,other_legends,scarletviolet
+2430,Diamond Chairs,other_legends,scarletviolet
+2356,Diamond Pattern Cup,other_legends,scarletviolet
+2373,Diamond Tablecloth,other_legends,scarletviolet
+1810,Digger Drill,other_legends,brilliantdiamondshiningpearl
+1957,Diglett Dirt,other_legends,scarletviolet
+1704,Direshroom,other_legends,legendsarceus
+2613,Dirty Scarf,other_legends,legendsza
+1820,Discovery Slate,other_legends,brilliantdiamondshiningpearl
+1821,Distortion Slate,other_legends,brilliantdiamondshiningpearl
+1972,Ditto Goo,other_legends,scarletviolet
+2486,Doduo Down,other_legends,scarletviolet
+2110,Dondozo Whisker,other_legends,scarletviolet
+1703,Doppel Bonnets,other_legends,legendsarceus
+1876,Dragon Tera Shard,other_legends,scarletviolet
+1974,Dratini Scales,other_legends,scarletviolet
+2099,Dreepy Powder,other_legends,scarletviolet
+2024,Drifloon Gas,other_legends,scarletviolet
+2507,Drilbur Claw,other_legends,scarletviolet
+1967,Drowzee Fur,other_legends,scarletviolet
+2467,Ducklett Feather,other_legends,scarletviolet
+1984,Dunsparce Scales,other_legends,scarletviolet
+2521,Duraludon Tarnish,other_legends,scarletviolet
+2463,Duskull Fragment,other_legends,scarletviolet
+2362,Eevee Cup,other_legends,scarletviolet
+1973,Eevee Fur,other_legends,scarletviolet
+1929,Egg,other_legends,scarletviolet
+2098,Eiscue Down,other_legends,scarletviolet
+2438,Ekans Fang,other_legends,scarletviolet
+1865,Electric Tera Shard,other_legends,scarletviolet
+2492,Elekid Fur,other_legends,scarletviolet
+2526,Entei Treat,other_legends,scarletviolet
+2514,Espurr Fur,other_legends,scarletviolet
+1624,Eternal Ice,other_legends,legendsarceus
+2488,Exeggcute Shell,other_legends,scarletviolet
+2365,Exercise Ball,other_legends,scarletviolet
+2401,Fairy Feather,other_legends,legendsza;scarletviolet
+1879,Fairy Tera Shard,other_legends,scarletviolet
+2086,Falinks Sweat,other_legends,scarletviolet
+2462,Feebas Scales,other_legends,scarletviolet
+2134,Fidough Fur,other_legends,scarletviolet
+2548,Fiery Pick,other_legends,scarletviolet
+1868,Fighting Tera Shard,other_legends,scarletviolet
+1631,Fine Remedy,other_legends,legendsarceus
+2112,Finizen Mucus,other_legends,scarletviolet
+2034,Finneon Scales,other_legends,scarletviolet
+2357,Fire Pattern Cup,other_legends,scarletviolet
+1863,Fire Tera Shard,other_legends,scarletviolet
+2056,Flabébé Pollen,other_legends,scarletviolet
+2129,Flamigo Down,other_legends,scarletviolet
+2053,Fletchling Feather,other_legends,scarletviolet
+2108,Flittle Down,other_legends,scarletviolet
+2322,Flower Pattern Cup,other_legends,scarletviolet
+1871,Flying Tera Shard,other_legends,scarletviolet
+2072,Fomantis Leaf,other_legends,scarletviolet
+2043,Foongus Spores,other_legends,scarletviolet
+1678,Forest Balm,other_legends,legendsarceus
+2479,Fresh-Start Mochi,other_legends,scarletviolet
+1928,Fried Fillet,other_legends,scarletviolet
+2120,Frigibax Scales,other_legends,scarletviolet
+1966,Gastly Gas,other_legends,scarletviolet
+2414,Genius Mochi,other_legends,scarletviolet
+1819,Genome Slate,other_legends,brilliantdiamondshiningpearl
+2444,Geodude Fragment,other_legends,scarletviolet
+1875,Ghost Tera Shard,other_legends,scarletviolet
+2030,Gible Scales,other_legends,scarletviolet
+2137,Gimmighoul Coin,other_legends,legendsza;scarletviolet
+1982,Girafarig Fur,other_legends,scarletviolet
+2545,Glastrier Treat,other_legends,scarletviolet
+2452,Gligar Fang,other_legends,scarletviolet
+2481,Glimmering Charm,other_legends,scarletviolet
+2132,Glimmet Crystal,other_legends,scarletviolet
+2381,Gold Bottle,other_legends,scarletviolet
+2623,Gold Canari Plush,other_legends,legendsza
+2383,Gold Cup,other_legends,scarletviolet
+2334,Gold Pick,other_legends,scarletviolet
+2513,Golett Shard,other_legends,scarletviolet
+2062,Goomy Goo,other_legends,scarletviolet
+2041,Gothita Eyelash,other_legends,scarletviolet
+1653,Grain Cake,other_legends,legendsarceus
+1866,Grass Tera Shard,other_legends,scarletviolet
+2603,Great Butter,other_legends,legendsza
+2107,Greavard Wax,other_legends,scarletviolet
+1916,Green Bell Pepper,other_legends,scarletviolet
+2629,Green Canari Plush,other_legends,legendsza
+2396,Green Dish,other_legends,scarletviolet
+2385,Green Poké Ball Pick,other_legends,scarletviolet
+1964,Grimer Toxin,other_legends,scarletviolet
+1779,Griseous Core,other_legends,legendsarceus;scarletviolet
+1759,Grit Dust,other_legends,legendsarceus
+1760,Grit Gravel,other_legends,legendsarceus
+1761,Grit Pebble,other_legends,legendsarceus
+1762,Grit Rock,other_legends,legendsarceus
+2533,Groudon Treat,other_legends,scarletviolet
+1870,Ground Tera Shard,other_legends,scarletviolet
+1961,Growlithe Fur,other_legends,scarletviolet
+2473,Grubbin Thread,other_legends,scarletviolet
+433,Guidebook,other_legends,brilliantdiamondshiningpearl;diamondpearl;platinum
+2003,Gulpin Mucus,other_legends,scarletviolet
+1921,Ham,other_legends,scarletviolet
+1925,Hamburger,other_legends,scarletviolet
+2028,Happiny Dust,other_legends,scarletviolet
+2096,Hatenna Dust,other_legends,scarletviolet
+2060,Hawlucha Down,other_legends,scarletviolet
+2411,Health Mochi,other_legends,scarletviolet
+2408,Hearthflame Mask,other_legends,scarletviolet
+1633,Hearty Grains,other_legends,legendsarceus
+1986,Heracross Claw,other_legends,scarletviolet
+1924,Herbed Sausage,other_legends,scarletviolet
+2388,Heroic Sword Pick,other_legends,scarletviolet
+2032,Hippopotas Sand,other_legends,scarletviolet
+2529,Ho-Oh Treat,other_legends,scarletviolet
+2607,Hoennian Salt,other_legends,legendsza
+1612,Hometown Muffin,other_legends,legendsarceus
+1652,Honey Cake,other_legends,legendsarceus
+2448,Hoothoot Feather,other_legends,scarletviolet
+1754,Hopo Berry,other_legends,legendsarceus
+1978,Hoppip Leaf,other_legends,scarletviolet
+2491,Horsea Ink,other_legends,scarletviolet
+1942,Horseradish,other_legends,scarletviolet
+1990,Houndour Fang,other_legends,scarletviolet
+2606,Hyperspace Butter,other_legends,legendsza
+1867,Ice Tera Shard,other_legends,scarletviolet
+1976,Igglybuff Fluff,other_legends,scarletviolet
+947,Ilima’s Normalium Z,other_legends,ultrasunultramoon
+2460,Illumise Fluid,other_legends,scarletviolet
+2093,Impidimp Hair,other_legends,scarletviolet
+2611,Important Letter,other_legends,legendsza
+2090,Indeedee Fur,other_legends,scarletviolet
+2547,Indigo Disk,other_legends,scarletviolet
+2483,Indigo Style Card,other_legends,scarletviolet
+2515,Inkay Ink,other_legends,scarletviolet
+1702,Iron Barktongue,other_legends,legendsarceus
+1679,Iron Chunk,other_legends,legendsarceus
+1941,Jalapeño,other_legends,scarletviolet
+1900,Jam,other_legends,scarletviolet
+2475,Jangmo-o Scales,other_legends,scarletviolet
+1812,Johto Slate,other_legends,brilliantdiamondshiningpearl
+2512,Joltik Thread,other_legends,scarletviolet
+1614,Jubilife Muffin,other_legends,legendsarceus
+1811,Kanto Slate,other_legends,brilliantdiamondshiningpearl
+1890,Ketchup,other_legends,scarletviolet
+2588,Key to Room 202,other_legends,legendsza
+1638,King’s Leaf,other_legends,legendsarceus
+1939,Kiwi,other_legends,scarletviolet
+2130,Klawf Claw,other_legends,scarletviolet
+1926,Klawf Stick,other_legends,scarletviolet
+2063,Klefki Key,other_legends,scarletviolet
+2445,Koffing Gas,other_legends,scarletviolet
+1836,Kofu’s Wallet,other_legends,scarletviolet
+2078,Komala Claw,other_legends,scarletviolet
+1831,Koraidon’s Poké Ball,other_legends,scarletviolet
+2018,Kricketot Shell,other_legends,scarletviolet
+2544,Kubfu Treat,other_legends,scarletviolet
+2532,Kyogre Treat,other_legends,scarletviolet
+2540,Kyurem Treat,other_legends,scarletviolet
+2590,Lab Key Card A,other_legends,legendsza
+2591,Lab Key Card B,other_legends,legendsza
+2592,Lab Key Card C,other_legends,legendsza
+2494,Lapras Teardrop,other_legends,scarletviolet
+2052,Larvesta Fuzz,other_legends,scarletviolet
+1993,Larvitar Claw,other_legends,scarletviolet
+2530,Latias Treat,other_legends,scarletviolet
+2531,Latios Treat,other_legends,scarletviolet
+2345,Leader’s Crest,other_legends,scarletviolet
+2421,Leafy Chairs,other_legends,scarletviolet
+2326,Leafy Tablecloth,other_legends,scarletviolet
+2103,Lechonk Hair,other_legends,scarletviolet
+1828,Legend Plate,other_legends,legendsarceus
+1909,Lettuce,other_legends,scarletviolet
+2600,Lida’s Things,other_legends,legendsza
+2432,Lilac Chairs,other_legends,scarletviolet
+2375,Lilac Tablecloth,other_legends,scarletviolet
+1611,Linking Cord,other_legends,legendsarceus
+2055,Litleo Tuft,other_legends,scarletviolet
+2468,Litwick Soot,other_legends,scarletviolet
+1886,Loaded Dice,other_legends,scarletviolet
+1765,Lost Satchel,other_legends,legendsarceus
+2456,Lotad Leaf,other_legends,scarletviolet
+2528,Lugia Treat,other_legends,scarletviolet
+2601,Lumiosian Butter,other_legends,legendsza
+2542,Lunala Treat,other_legends,scarletviolet
+453,Lunar Feather,other_legends,black2white2;brilliantdiamondshiningpearl;diamondpearl;platinum
+1778,Lustrous Globe,other_legends,legendsarceus;scarletviolet
+2015,Luvdisc Scales,other_legends,scarletviolet
+2493,Magby Hair,other_legends,scarletviolet
+2390,Magical Heart Pick,other_legends,scarletviolet
+2389,Magical Star Pick,other_legends,scarletviolet
+1971,Magikarp Scales,other_legends,scarletviolet
+1963,Magnemite Screw,other_legends,scarletviolet
+1999,Makuhita Sweat,other_legends,scarletviolet
+1861,Malicious Armor,other_legends,legendsza;scarletviolet
+1960,Mankey Fur,other_legends,scarletviolet
+2070,Mareanie Spike,other_legends,scarletviolet
+1977,Mareep Wool,other_legends,scarletviolet
+2331,Marill Ball,other_legends,scarletviolet
+1901,Marmalade,other_legends,scarletviolet
+1639,Marsh Balm,other_legends,legendsarceus
+2135,Maschiff Fang,other_legends,scarletviolet
+2404,Masterpiece Teacup,other_legends,scarletviolet
+1889,Mayonnaise,other_legends,scarletviolet
+1694,Medicinal Leek,other_legends,legendsarceus
+2002,Meditite Sweat,other_legends,scarletviolet
+2618,Mega Shard,other_legends,legendsza
+1958,Meowth Fur,other_legends,scarletviolet
+1627,Mesprit’s Plume,other_legends,legendsarceus
+2482,Metal Alloy,other_legends,scarletviolet
+2469,Mienfoo Claw,other_legends,scarletviolet
+2520,Milcery Cream,other_legends,scarletviolet
+2079,Mimikyu Scrap,other_legends,scarletviolet
+2510,Minccino Fur,other_legends,scarletviolet
+2519,Minior Shell,other_legends,scarletviolet
+2433,Mint Chairs,other_legends,scarletviolet
+2376,Mint Tablecloth,other_legends,scarletviolet
+2501,Minun Fur,other_legends,scarletviolet
+1832,Miraidon’s Poké Ball,other_legends,scarletviolet
+1883,Mirror Herb,other_legends,scarletviolet
+1981,Misdreavus Tears,other_legends,scarletviolet
+2524,Moltres Treat,other_legends,scarletviolet
+2428,Monstrous Chairs,other_legends,scarletviolet
+2371,Monstrous Tablecloth,other_legends,scarletviolet
+2477,Morpeko Snack,other_legends,scarletviolet
+1722,Mountain Balm,other_legends,legendsarceus
+2071,Mudbray Mud,other_legends,scarletviolet
+2446,Munchlax Fang,other_legends,scarletviolet
+1980,Murkrow Bauble,other_legends,scarletviolet
+2412,Muscle Mochi,other_legends,scarletviolet
+1650,Mushroom Cake,other_legends,legendsarceus
+1891,Mustard,other_legends,scarletviolet
+1610,Mysterious Balm,other_legends,legendsarceus
+1809,Mysterious Shard L,other_legends,brilliantdiamondshiningpearl
+1808,Mysterious Shard S,other_legends,brilliantdiamondshiningpearl
+2550,Mythical Pecha Berry,other_legends,scarletviolet
+2131,Nacli Salt,other_legends,scarletviolet
+2543,Necrozma Treat,other_legends,scarletviolet
+2602,Nice Butter,other_legends,legendsza
+2065,Noibat Fur,other_legends,scarletviolet
+1933,Noodles,other_legends,scarletviolet
+1862,Normal Tera Shard,other_legends,scarletviolet
+2458,Nosepass Fragment,other_legends,scarletviolet
+2004,Numel Lava,other_legends,scarletviolet
+2105,Nymble Claw,other_legends,scarletviolet
+1816,Oceanic Slate,other_legends,brilliantdiamondshiningpearl
+2484,Oddish Leaf,other_legends,scarletviolet
+1745,Old Journal,other_legends,legendsarceus
+1787,Old Verse 1,other_legends,legendsarceus
+1797,Old Verse 10,other_legends,legendsarceus
+1798,Old Verse 11,other_legends,legendsarceus
+1799,Old Verse 12,other_legends,legendsarceus
+1800,Old Verse 13,other_legends,legendsarceus
+1801,Old Verse 14,other_legends,legendsarceus
+1802,Old Verse 15,other_legends,legendsarceus
+1803,Old Verse 16,other_legends,legendsarceus
+1804,Old Verse 17,other_legends,legendsarceus
+1805,Old Verse 18,other_legends,legendsarceus
+1806,Old Verse 19,other_legends,legendsarceus
+1788,Old Verse 2,other_legends,legendsarceus
+1807,Old Verse 20,other_legends,legendsarceus
+1789,Old Verse 3,other_legends,legendsarceus
+1790,Old Verse 4,other_legends,legendsarceus
+1792,Old Verse 5,other_legends,legendsarceus
+1793,Old Verse 6,other_legends,legendsarceus
+1794,Old Verse 7,other_legends,legendsarceus
+1795,Old Verse 8,other_legends,legendsarceus
+1796,Old Verse 9,other_legends,legendsarceus
+1902,Olive Oil,other_legends,scarletviolet
+1914,Onion,other_legends,scarletviolet
+2397,Orange Dish,other_legends,scarletviolet
+2075,Oranguru Fur,other_legends,scarletviolet
+2068,Oricorio Feather,other_legends,scarletviolet
+1771,Origin Ball,other_legends,legendsarceus
+1776,Origin Ore,other_legends,legendsarceus
+2117,Orthworm Tarnish,other_legends,scarletviolet
+2021,Pachirisu Fur,other_legends,scarletviolet
+2391,Parasol Pick,other_legends,scarletviolet
+2387,Party Sparkler Pick,other_legends,scarletviolet
+2076,Passimian Fur,other_legends,scarletviolet
+2123,Pawmi Fur,other_legends,scarletviolet
+2049,Pawniard Blade,other_legends,scarletviolet
+2434,Peach Chairs,other_legends,scarletviolet
+2377,Peach Tablecloth,other_legends,scarletviolet
+1893,Peanut Butter,other_legends,scarletviolet
+1692,Peat Block,other_legends,legendsarceus
+2595,Pebble,other_legends,legendsza
+1696,Pep-Up Plant,other_legends,legendsarceus
+1896,Pepper,other_legends,scarletviolet
+2037,Petilil Leaf,other_legends,scarletviolet
+1991,Phanpy Nail,other_legends,scarletviolet
+2472,Phantump Twig,other_legends,scarletviolet
+1975,Pichu Fur,other_legends,scarletviolet
+1913,Pickle,other_legends,scarletviolet
+2311,Picnic Set,other_legends,scarletviolet
+2338,Pika-Pika Pick,other_legends,scarletviolet
+2361,Pikachu Cup,other_legends,scarletviolet
+2516,Pikipek Feather,other_legends,scarletviolet
+2091,Pincurchin Spines,other_legends,scarletviolet
+1940,Pineapple,other_legends,scarletviolet
+1983,Pineco Husk,other_legends,scarletviolet
+2348,Pink Bottle,other_legends,scarletviolet
+2626,Pink Canari Plush,other_legends,legendsza
+2437,Pink Chairs,other_legends,scarletviolet
+2358,Pink Cup,other_legends,scarletviolet
+2380,Pink Tablecloth,other_legends,scarletviolet
+2424,Plaid Chairs (B),other_legends,scarletviolet
+2425,Plaid Chairs (R),other_legends,scarletviolet
+2423,Plaid Chairs (Y),other_legends,scarletviolet
+2367,Plaid Tablecloth (B),other_legends,scarletviolet
+2368,Plaid Tablecloth (R),other_legends,scarletviolet
+2366,Plaid Tablecloth (Y),other_legends,scarletviolet
+1634,Plump Beans,other_legends,legendsarceus
+2500,Plusle Fur,other_legends,scarletviolet
+1869,Poison Tera Shard,other_legends,scarletviolet
+1786,Pokédex,other_legends,legendsarceus;redgreen;yellow
+1644,Pokéshi Doll,other_legends,legendsarceus
+2442,Poliwag Slime,other_legends,scarletviolet
+2315,Polka-Dot Bottle,other_legends,scarletviolet
+2431,Polka-Dot Chairs,other_legends,scarletviolet
+2321,Polka-Dot Cup,other_legends,scarletviolet
+2374,Polka-Dot Tablecloth,other_legends,scarletviolet
+2478,Poltchageist Powder,other_legends,scarletviolet
+2455,Poochyena Fang,other_legends,scarletviolet
+1686,Pop Pod,other_legends,legendsarceus
+2610,Popping Candy,other_legends,legendsza
+2495,Porygon Fragment,other_legends,scarletviolet
+1934,Potato Salad,other_legends,scarletviolet
+1930,Potato Tortilla,other_legends,scarletviolet
+1922,Prosciutto,other_legends,scarletviolet
+1872,Psychic Tera Shard,other_legends,scarletviolet
+1959,Psyduck Down,other_legends,scarletviolet
+1884,Punching Glove,other_legends,scarletviolet
+1985,Qwilfish Spines,other_legends,scarletviolet
+2525,Raikou Treat,other_legends,scarletviolet
+483,Rainbow Feather,other_legends,crystal;goldsilver;heartgoldsoulsilver
+1814,Rainbow Slate,other_legends,brilliantdiamondshiningpearl
+1995,Ralts Dust,other_legends,scarletviolet
+2534,Rayquaza Treat,other_legends,scarletviolet
+1917,Red Bell Pepper,other_legends,scarletviolet
+2620,Red Canari Plush,other_legends,legendsza
+2398,Red Dish,other_legends,scarletviolet
+1915,Red Onion,other_legends,scarletviolet
+2386,Red Poké Ball Pick,other_legends,scarletviolet
+2336,Red-Flag Pick,other_legends,scarletviolet
+2106,Rellor Mud,other_legends,scarletviolet
+1630,Remedy,other_legends,legendsarceus
+2538,Reshiram Treat,other_legends,scarletviolet
+2413,Resist Mochi,other_legends,scarletviolet
+2599,Revitalizing Twig,other_legends,legendsza
+2490,Rhyhorn Fang,other_legends,scarletviolet
+1932,Rice,other_legends,scarletviolet
+2031,Riolu Fur,other_legends,scarletviolet
+1874,Rock Tera Shard,other_legends,scarletviolet
+2069,Rockruff Rock,other_legends,scarletviolet
+2088,Rolycoly Coal,other_legends,scarletviolet
+2084,Rookidee Feather,other_legends,scarletviolet
+2480,Roto-Stick,other_legends,scarletviolet
+1829,Rotom Phone,other_legends,scarletviolet
+2036,Rotom Sparks,other_legends,scarletviolet
+2050,Rufflet Feather,other_legends,scarletviolet
+2001,Sableye Gem,other_legends,scarletviolet
+2073,Salandit Gas,other_legends,scarletviolet
+1895,Salt,other_legends,scarletviolet
+1655,Salt Cake,other_legends,legendsarceus
+1905,Salty Herba Mystica,other_legends,scarletviolet
+1705,Sand Radish,other_legends,legendsarceus
+2039,Sandile Claw,other_legends,scarletviolet
+2439,Sandshrew Claw,other_legends,scarletviolet
+1830,Sandwich,other_legends,scarletviolet
+2077,Sandygast Sand,other_legends,scarletviolet
+1834,Scarlet Book,other_legends,scarletviolet
+1647,Scatter Bang,other_legends,legendsarceus
+2054,Scatterbug Powder,other_legends,scarletviolet
+2509,Scraggy Sweat,other_legends,scarletviolet
+1857,Scroll of Darkness,other_legends,scarletviolet
+1858,Scroll of Waters,other_legends,scarletviolet
+1969,Scyther Claw,other_legends,scarletviolet
+464,Secret Medicine,other_legends,brilliantdiamondshiningpearl;crystal;diamondpearl;goldsilver;heartgoldsoulsilver;legendsarceus;platinum
+1621,Seed of Mastery,other_legends,legendsarceus;legendsza
+2457,Seedot Stem,other_legends,scarletviolet
+2487,Seel Fur,other_legends,scarletviolet
+2447,Sentret Fur,other_legends,scarletviolet
+2010,Seviper Fang,other_legends,scarletviolet
+2466,Sewaddle Leaf,other_legends,scarletviolet
+1965,Shellder Pearl,other_legends,scarletviolet
+2023,Shellos Mucus,other_legends,scarletviolet
+2505,Shieldon Claw,other_legends,scarletviolet
+2019,Shinx Fang,other_legends,scarletviolet
+2133,Shroodle Ink,other_legends,scarletviolet
+1997,Shroomish Spores,other_legends,scarletviolet
+2012,Shuppet Scrap,other_legends,scarletviolet
+2089,Silicobra Sand,other_legends,scarletviolet
+2354,Silver Bottle,other_legends,scarletviolet
+2364,Silver Cup,other_legends,scarletviolet
+482,Silver Feather,other_legends,crystal;goldsilver;heartgoldsoulsilver
+2335,Silver Pick,other_legends,scarletviolet
+2417,Simple Chairs,other_legends,scarletviolet
+2095,Sinistea Chip,other_legends,scarletviolet
+2498,Skarmory Feather,other_legends,scarletviolet
+2057,Skiddo Leaf,other_legends,scarletviolet
+2058,Skrelp Kelp,other_legends,scarletviolet
+2082,Skwovet Fur,other_legends,scarletviolet
+1682,Sky Tumblestone,other_legends,legendsarceus
+1998,Slakoth Fur,other_legends,scarletviolet
+1962,Slowpoke Claw,other_legends,scarletviolet
+2363,Slowpoke Cup,other_legends,scarletviolet
+2453,Slugma Lava,other_legends,scarletviolet
+2499,Smeargle Paint,other_legends,scarletviolet
+2341,Smiling Vee Pick,other_legends,scarletviolet
+1646,Smoke Bomb,other_legends,legendsarceus
+1927,Smoked Fillet,other_legends,scarletviolet
+2113,Smoliv Oil,other_legends,scarletviolet
+1987,Sneasel Claw,other_legends,scarletviolet
+2092,Snom Thread,other_legends,scarletviolet
+2014,Snorunt Fur,other_legends,scarletviolet
+2035,Snover Berries,other_legends,scarletviolet
+1723,Snow Balm,other_legends,legendsarceus
+2497,Snubbull Hair,other_legends,scarletviolet
+2541,Solgaleo Treat,other_legends,scarletviolet
+2511,Solosis Gel,other_legends,scarletviolet
+1687,Sootfoot Root,other_legends,legendsarceus
+1813,Soul Slate,other_legends,brilliantdiamondshiningpearl
+1906,Sour Herba Mystica,other_legends,scarletviolet
+1609,Space Balm,other_legends,legendsarceus
+2546,Spectrier Treat,other_legends,scarletviolet
+1908,Spicy Herba Mystica,other_legends,scarletviolet
+2449,Spinarak Thread,other_legends,scarletviolet
+2029,Spiritomb Fragment,other_legends,scarletviolet
+1688,Spoiled Apricorn,other_legends,legendsarceus
+2006,Spoink Pearl,other_legends,scarletviolet
+2422,Spooky Chairs,other_legends,scarletviolet
+2327,Spooky Tablecloth,other_legends,scarletviolet
+1635,Springy Mushroom,other_legends,legendsarceus
+1815,Squall Slate,other_legends,brilliantdiamondshiningpearl
+2128,Squawkabilly Feather,other_legends,scarletviolet
+1992,Stantler Hair,other_legends,scarletviolet
+2017,Starly Feather,other_legends,scarletviolet
+1671,Stealth Spray,other_legends,legendsarceus
+2353,Steel Bottle (B),other_legends,scarletviolet
+2351,Steel Bottle (R),other_legends,scarletviolet
+2352,Steel Bottle (Y),other_legends,scarletviolet
+1878,Steel Tera Shard,other_legends,scarletviolet
+2549,Stellar Tera Shard,other_legends,scarletviolet
+436,Sticker Bag,other_legends,diamondpearl;platinum
+434,Sticker Case,other_legends,diamondpearl;heartgoldsoulsilver;platinum
+1648,Sticky Glob,other_legends,legendsarceus
+2097,Stonjourner Stone,other_legends,scarletviolet
+1785,Strange Ball,other_legends,legendsarceus;scarletviolet
+1818,Stratospheric Slate,other_legends,brilliantdiamondshiningpearl
+1937,Strawberry,other_legends,scarletviolet
+2316,Striped Bottle,other_legends,scarletviolet
+2429,Striped Chairs,other_legends,scarletviolet
+2320,Striped Cup,other_legends,scarletviolet
+2372,Striped Tablecloth,other_legends,scarletviolet
+2025,Stunky Fur,other_legends,scarletviolet
+2527,Suicune Treat,other_legends,scarletviolet
+1979,Sunkern Leaf,other_legends,scarletviolet
+2394,Sunrise Flower Pick,other_legends,scarletviolet
+2393,Sunset Flower Pick,other_legends,scarletviolet
+2589,Super Lumiose Galette,other_legends,legendsza
+1663,Superb Remedy,other_legends,legendsarceus
+2605,Supreme Butter,other_legends,legendsza
+1996,Surskit Syrup,other_legends,scarletviolet
+1733,Survival Charm B,other_legends,legendsarceus
+1734,Survival Charm P,other_legends,legendsarceus
+1732,Survival Charm R,other_legends,legendsarceus
+1735,Survival Charm T,other_legends,legendsarceus
+1736,Survival Charm Y,other_legends,legendsarceus
+2008,Swablu Fluff,other_legends,scarletviolet
+1619,Swap Snack,other_legends,legendsarceus
+1904,Sweet Herba Mystica,other_legends,scarletviolet
+2416,Swift Mochi,other_legends,scarletviolet
+2454,Swinub Hair,other_legends,scarletviolet
+1701,Swordcap,other_legends,legendsarceus
+2553,Synchro Machine,other_legends,scarletviolet
+2402,Syrupy Apple,other_legends,scarletviolet
+2115,Tadbulb Mucus,other_legends,scarletviolet
+2118,Tandemaus Fur,other_legends,scarletviolet
+2104,Tarountula Thread,other_legends,scarletviolet
+2598,Tasty Trash,other_legends,legendsza
+2121,Tatsugiri Scales,other_legends,scarletviolet
+1970,Tauros Hair,other_legends,scarletviolet
+2405,Teal Mask,other_legends,scarletviolet
+2409,Teal Style Card,other_legends,scarletviolet
+1817,Tectonic Slate,other_legends,brilliantdiamondshiningpearl
+1988,Teddiursa Claw,other_legends,scarletviolet
+1699,Tempting Charm B,other_legends,legendsarceus
+1700,Tempting Charm P,other_legends,legendsarceus
+1764,Tempting Charm R,other_legends,legendsarceus
+1706,Tempting Charm T,other_legends,legendsarceus
+1707,Tempting Charm Y,other_legends,legendsarceus
+2485,Tentacool Stinger,other_legends,scarletviolet
+1833,Tera Orb,other_legends,scarletviolet
+2536,Terrakion Treat,other_legends,scarletviolet
+2465,Timburr Sweat,other_legends,scarletviolet
+1608,Time Balm,other_legends,legendsarceus
+2156,Tinkatink Hair,other_legends,scarletviolet
+1842,Tiny Bamboo Shoot,other_legends,scarletviolet
+2158,Toedscool Flaps,other_legends,scarletviolet
+1931,Tofu,other_legends,scarletviolet
+1910,Tomato,other_legends,scarletviolet
+2005,Torkoal Coal,other_legends,scarletviolet
+1737,Torn Journal,other_legends,legendsarceus
+2085,Toxel Sparks,other_legends,scarletviolet
+2502,Trapinch Shell,other_legends,scarletviolet
+2013,Tropius Leaf,other_legends,scarletviolet
+1628,Tumblestone,other_legends,legendsarceus
+1618,Twice-Spiced Radish,other_legends,legendsarceus
+2045,Tynamo Slime,other_legends,scarletviolet
+2489,Tyrogue Sweat,other_legends,scarletviolet
+2403,Unremarkable Teacup,other_legends,scarletviolet
+1625,Uxie’s Claw,other_legends,legendsarceus
+2116,Varoom Fume,other_legends,scarletviolet
+2340,Vee-Vee Pick,other_legends,scarletviolet
+2111,Veluza Fillet,other_legends,scarletviolet
+1956,Venonat Fang,other_legends,scarletviolet
+1903,Vinegar,other_legends,scarletviolet
+1835,Violet Book,other_legends,scarletviolet
+2537,Virizion Treat,other_legends,scarletviolet
+1695,Vivichoke,other_legends,legendsarceus
+2459,Volbeat Fluid,other_legends,scarletviolet
+1721,Volcano Balm,other_legends,legendsarceus
+1968,Voltorb Sparks,other_legends,scarletviolet
+2470,Vullaby Feather,other_legends,scarletviolet
+2441,Vulpix Fur,other_legends,scarletviolet
+1743,Wall Fragment,other_legends,legendsarceus
+1739,Warding Charm B,other_legends,legendsarceus
+1740,Warding Charm P,other_legends,legendsarceus
+1738,Warding Charm R,other_legends,legendsarceus
+1741,Warding Charm T,other_legends,legendsarceus
+1742,Warding Charm Y,other_legends,legendsarceus
+1944,Wasabi,other_legends,scarletviolet
+1864,Water Tera Shard,other_legends,scarletviolet
+1945,Watercress,other_legends,scarletviolet
+2126,Wattrel Feather,other_legends,scarletviolet
+2407,Wellspring Mask,other_legends,scarletviolet
+2420,Whimsical Chairs,other_legends,scarletviolet
+2325,Whimsical Tablecloth,other_legends,scarletviolet
+1898,Whipped Cream,other_legends,scarletviolet
+2399,White Dish,other_legends,scarletviolet
+2109,Wiglett Sand,other_legends,scarletviolet
+1994,Wingull Feather,other_legends,scarletviolet
+2339,Winking Pika Pick,other_legends,scarletviolet
+1637,Wood,other_legends,legendsarceus
+2159,Wooper Slime,other_legends,scarletviolet
+2451,Yanma Spike,other_legends,scarletviolet
+2332,Yarn Ball,other_legends,scarletviolet
+1918,Yellow Bell Pepper,other_legends,scarletviolet
+2350,Yellow Bottle,other_legends,scarletviolet
+2435,Yellow Chairs,other_legends,scarletviolet
+2360,Yellow Cup,other_legends,scarletviolet
+2400,Yellow Dish,other_legends,scarletviolet
+2378,Yellow Tablecloth,other_legends,scarletviolet
+1897,Yogurt,other_legends,scarletviolet
+2066,Yungoos Fur,other_legends,scarletviolet
+2009,Zangoose Claw,other_legends,scarletviolet
+2523,Zapdos Treat,other_legends,scarletviolet
+2539,Zekrom Treat,other_legends,scarletviolet
+2040,Zorua Fur,other_legends,scarletviolet
+2608,Épice Noire,other_legends,legendsza

@@ -1300,5 +1300,51 @@ Revisados: selector de especie, Buscar IVs, Recrear, AutoFix, revisión de expor
 - Pendiente: packaging (deb/rpm) usa `/usr/share/exxeguttor/lang` pero el código busca `/usr/share/maxpotion/lang`; rpm solo instala zh-CN.
 - Sin compilar (sandbox sin dotnet).
 
+### Entrega 69 — Fix crash al cambiar a japonés (ar.json con `_rtl: true`)
+- `LocalizationService`: los packs se leen con `ParseStrings` (JsonDocument): solo valores string, se omiten claves que empiezan con `_` (`_rtl`, `_note` de ar.json). Antes `Dictionary<string,string>` fallaba con el booleano y `AllTranslations` (usado por `TrainerViewModel.IsMaleText`) recorre todos los packs, por eso cualquier cambio de idioma crasheaba una vez que lang/ se copió a la salida.
+- Packs externos corruptos/ilegibles se ignoran (try/catch) en vez de cerrar la app.
+- Sin compilar.
+
+### Entrega 70 — Pestañas del editor y filtro de cintas localizados
+- `es.json`: `Tab_Moves/Learnsets/Effectiveness/Special/Ribbons` estaban en inglés → Movimientos, Aprendibles, Efectividad, Especial, Cintas.
+- Nuevas claves `Ribbon_Cat_*` (All, Champion, Battle, Contest, Mark, Memory, Event, Common, Other) en los 13 idiomas (en, es + 11 packs); 628 claves con paridad.
+- `RibbonCategoryColorPalette.LocalizedName` (UiText) reemplaza los nombres fijos en español de los chips de filtro y encabezados de grupo (`RibbonGroupViewModel.CategoryDisplay`, chips en `LoadRibbons`). Se reconstruyen al cambiar de idioma (ReloadForDataLanguage).
+- Los nombres de cada cinta vienen de PKHeX y siguen el idioma de DATOS, no el de la UI.
+- Sin compilar.
+
+### Entrega 71 — Descripciones de objetos (Mochila) en el idioma de los datos
+- Causa: `Items.Description` de pokemon.db solo tiene inglés, y 646 objetos (p. ej. MT109+ de Z-A) no tienen texto; no dependía de JA/KO/ZH sino de qué objeto era.
+- Nuevo `Assets/item_descriptions.json` (embebido en App; 1299 objetos × en/es/fr/de/it/ja/ko/zh-Hans/zh-Hant, texto de los juegos vía PokeAPI `item_flavor_text`, mapeado por nombre inglés al `ItemId` de pokemon.db; generado con script ad hoc, no versionado).
+- Nuevo `ItemDescriptionLocalizer` (App): texto en el idioma de DATOS, con respaldo al inglés de pokemon.db; MT/MO/DT = plantilla de UI `Bag_TmTeaches` + nombre de movimiento localizado (`MoveNames.Localize`).
+- `ItemInventoryService.GetItems` lo usa. Clave `Bag_TmTeaches` en los 13 idiomas (629 claves).
+- Pendiente: objetos sin descripción en pokemon.db ni en PokeAPI (p. ej. MT109+) siguen vacíos; tooltip del objeto equipado en el editor (`RecalcItemDescription`) sigue en inglés.
+- Sin compilar.
+
+### Entrega 72 — Tooltip del objeto equipado localizado
+- `PokemonEditorViewModel.RecalcItemDescription` usa `ItemDescriptionLocalizer` (idioma de datos, respaldo inglés) en vez del texto inglés de pokemon.db. Requiere la entrega 71. Sin compilar.
+
+### Entrega 73 — Nombres de MT faltantes en ciertos idiomas de datos
+- Causa: PKHeX (ja/ko/zh) no trae nombre para las MT nuevas de Z-A (MT157+): quedaban con el nombre «TM157» de pokemon.db mezcladas con «わざ００１» y, al ordenar por nombre, parecían una segunda lista.
+- `ItemInventoryService.FillMissingMachineNames`: completa el nombre copiando el formato (prefijo, dígitos, ancho completo) de una MT/DT/MO del mismo tipo que sí lo tiene. Incluye esta entrega el ItemInventoryService de la 71 (reemplaza ese archivo). Sin compilar.
+
+### Entrega 75 — Descripciones de objetos, Fase 1 (extracción) — solo scripts/datos, sin tocar la app ni pokemon.db
+- Nueva carpeta `hotfixes/item_descriptions/` (repo de contexto): `extract.py`, `aliases.csv`, `README.md`, `out/` (items_text.csv, machine_moves.csv, unmatched_items.csv, report.md).
+- Resultado: 2112/2515 objetos con pareja en PokeAPI; textos para 1301 objetos × 9 idiomas; 2026 MT/MO/DT resueltas por juego (todos los ids de movimiento coinciden con PKHeX); 877 objetos usados en mochilas siguen sin texto (a investigar en la Fase 2).
+- Filas probablemente inválidas en `ItemGameCodes`: Z-A TM161, SV TM00, RG/Yellow TM51–55.
+- Siguiente: Fase 2 (validador para datos de otras IAs) y plantillas (mega piedras Z-A, bayas Hyper).
+
+### Entrega 76 — Descripciones de objetos, Fase 2 (plantillas y validador) — solo scripts/datos
+- `hotfixes/item_descriptions/gen_templates.py` → `out/items_text_template.csv`: 45 mega piedras de Z-A × 9 idiomas (`source=template`, no es texto oficial). Bayas Hyper NO se plantillan (efecto desconocido).
+- `validate_research.py`: valida lotes JSON de otras IAs (id/nombre contra la lista, fuente URL no-portada, idioma plausible, largo, duplicados, variantes); salidas `items_text_research.csv` (con `verified`), `review_queue.csv`, `validation_report.md`. Probado con `tests/sample_research.json`.
+- Incluye `missing_item_descriptions.csv` y `prompt_research_items.md` en la carpeta.
+- Siguiente: recibir datos de la investigación (cuando los tengas) y Fase 3 (esquema + script de migración).
+
+### Entrega 77 — Descripciones de objetos, Fase 3 (esquema + migración) — scripts y datos, la app aún NO la usa
+- Nueva carpeta `hotfixes/fix_item_descriptions/` (mismo patrón que los otros fix_*): `create_tables.py`, `load_data.py` (`--dry-run`, `--research`, `--vacuum`), `instructions.md`, `data/`.
+- Tablas nuevas `ItemDescriptions` y `MachineMoves`; Items/ItemGameCodes/Games intactos. Probado sobre copia de pokemon.db: 11915 textos, 2026 movimientos de MT, integrity_check ok, 0 violaciones FK, idempotente.
+- Aplicar en tu máquina: copia de seguridad, `create_tables.py`, `load_data.py --dry-run`, `load_data.py`, push del pokemon.db nuevo (blob normal, sin LFS).
+- 12 filas de MT sin movimiento en ItemGameCodes (RG/Yellow TM51–55, SV TM00, Z-A TM161): pendientes de decidir.
+- Siguiente: Fase 5 (la app lee de la base, retira el JSON y TmDescriptionResolver) y pruebas.
+
 
 

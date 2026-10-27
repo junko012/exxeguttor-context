@@ -1,0 +1,6 @@
+[
+ {"db_item_id": 2559, "name_en": "Clefablite", "description": {"en": "Test text A.", "es": null, "ja": "テスト"}, "text_kind": "in_game", "confidence": "high", "variants": [], "sources": ["https://example.org/page/1"], "notes": ""},
+ {"db_item_id": 2635, "name_en": "WRONG NAME", "description": {"en": "x"}, "text_kind": "in_game", "confidence": "high", "variants": [], "sources": ["https://example.org/p"], "notes": ""},
+ {"db_item_id": 2636, "name_en": "Raichunite Y", "description": {"en": "Needs review."}, "text_kind": "wiki_summary", "confidence": "medium", "variants": [], "sources": ["https://example.org/"], "notes": ""},
+ {"db_item_id": 2638, "name_en": "Absolite Z", "description": {"en": "Ok one.", "ko": "this is not korean"}, "text_kind": "in_game", "confidence": "high", "variants": [], "sources": ["https://example.org/a/b"], "notes": ""}
+]
