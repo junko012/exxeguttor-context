@@ -1,0 +1,586 @@
+db_item_id,lang,name,source,source_url,confidence,verified
+2567,en,Heatranite,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Heatranite,medium,1
+2567,es,Heatranita,research-wiki,https://www.wikidex.net/wiki/Heatranita,medium,1
+2567,fr,Heatranite,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Heatranite,medium,1
+2567,de,Heatranit,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Heatranite,medium,1
+2567,it,Heatranite,research-wiki,https://www.wikidex.net/wiki/Heatranita,medium,1
+2567,ja,ヒードラナイト,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Heatranite,medium,1
+2567,ko,히드런나이트,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Heatranite,medium,1
+2567,zh-Hans,席多蓝恩进化石,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Heatranite,medium,1
+2567,zh-Hant,席多藍恩進化石,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Heatranite,medium,1
+2568,en,Darkranite,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Darkranite,high,1
+2568,es,Darkrainita,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Darkranite,high,1
+2568,fr,Darkraïte,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Darkranite,high,1
+2568,de,Darkrainit,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Darkranite,high,1
+2568,it,Darkraite,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Darkranite,high,1
+2568,ja,ダークライナイト,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Darkranite,high,1
+2568,ko,다크라이나이트,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Darkranite,high,1
+2568,zh-Hans,达克莱伊进化石,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Darkranite,high,1
+2568,zh-Hant,達克萊伊進化石,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Darkranite,high,1
+2586,en,Zeraorite,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Zeraorite,high,1
+2586,es,Zeraoranita,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Zeraorite,high,1
+2586,fr,Zeraorite,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Zeraorite,high,1
+2586,de,Zeraoranit,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Zeraorite,high,1
+2586,it,Zeraorite,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Zeraorite,high,1
+2586,ja,ゼラオラナイト,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Zeraorite,high,1
+2586,ko,제라오라나이트,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Zeraorite,high,1
+2586,zh-Hans,捷拉奥拉进化石,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Zeraorite,high,1
+2586,zh-Hant,捷拉奧拉進化石,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Zeraorite,high,1
+2601,en,Lumiosian Butter,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Lumiosian_Butter,medium,1
+2601,es,Mantequilla de Luminalia,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Lumiosian_Butter,medium,1
+2601,fr,Beurre d’Illumis,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Lumiosian_Butter,medium,1
+2601,de,Illumina-Butter,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Lumiosian_Butter,medium,1
+2601,it,Burro di Luminopoli,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Lumiosian_Butter,medium,1
+2601,ja,ミアレバター,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Lumiosian_Butter,medium,1
+2601,ko,미르버터,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Lumiosian_Butter,medium,1
+2601,zh-Hans,密阿雷黄油,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Lumiosian_Butter,medium,1
+2601,zh-Hant,密阿雷奶油,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Lumiosian_Butter,medium,1
+2602,en,Nice Butter,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Nice_Butter,medium,1
+2602,es,Supermantequilla,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Nice_Butter,medium,1
+2602,fr,Super Beurre,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Nice_Butter,medium,1
+2602,de,Superbutter,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Nice_Butter,medium,1
+2602,it,Burro super,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Nice_Butter,medium,1
+2602,ja,スーパーバター,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Nice_Butter,medium,1
+2602,ko,슈퍼버터,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Nice_Butter,medium,1
+2602,zh-Hans,超级黄油,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Nice_Butter,medium,1
+2602,zh-Hant,超級奶油,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Nice_Butter,medium,1
+2603,en,Great Butter,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Great_Butter,medium,1
+2603,es,Hipermantequilla,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Great_Butter,medium,1
+2603,fr,Hyper Beurre,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Great_Butter,medium,1
+2603,de,Hyperbutter,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Great_Butter,medium,1
+2603,it,Burro mega,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Great_Butter,medium,1
+2603,ja,ハイパーバター,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Great_Butter,medium,1
+2603,ko,하이퍼버터,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Great_Butter,medium,1
+2603,zh-Hans,高级黄油,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Great_Butter,medium,1
+2603,zh-Hant,高級奶油,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Great_Butter,medium,1
+2604,en,Amazing Butter,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Amazing_Butter,medium,1
+2604,es,Ultramantequilla,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Amazing_Butter,medium,1
+2604,fr,Ultra Beurre,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Amazing_Butter,medium,1
+2604,de,Ultrabutter,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Amazing_Butter,medium,1
+2604,it,Burro ultra,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Amazing_Butter,medium,1
+2604,ja,ウルトラバター,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Amazing_Butter,medium,1
+2604,ko,울트라버터,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Amazing_Butter,medium,1
+2604,zh-Hans,究极黄油,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Amazing_Butter,medium,1
+2604,zh-Hant,究極奶油,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Amazing_Butter,medium,1
+2605,en,Supreme Butter,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Supreme_Butter,medium,1
+2605,es,Mantequilla Máxima,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Supreme_Butter,medium,1
+2605,fr,Master Beurre,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Supreme_Butter,medium,1
+2605,de,Meisterbutter,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Supreme_Butter,medium,1
+2605,it,Burro master,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Supreme_Butter,medium,1
+2605,ja,マスターバター,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Supreme_Butter,medium,1
+2605,ko,마스터버터,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Supreme_Butter,medium,1
+2605,zh-Hans,大师黄油,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Supreme_Butter,medium,1
+2605,zh-Hant,大師奶油,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Supreme_Butter,medium,1
+2606,en,Hyperspace Butter,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyperspace_Butter,medium,1
+2606,es,Mantequilla dimensional,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyperspace_Butter,medium,1
+2606,fr,Extra Beurre,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyperspace_Butter,medium,1
+2606,de,Dimensionsbutter,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyperspace_Butter,medium,1
+2606,it,Burro dimensionale,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyperspace_Butter,medium,1
+2606,ja,いじげんバター,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyperspace_Butter,medium,1
+2606,ko,이차원버터,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyperspace_Butter,medium,1
+2606,zh-Hans,异次元黄油,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyperspace_Butter,medium,1
+2606,zh-Hant,異次元奶油,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyperspace_Butter,medium,1
+2607,en,Hoennian Salt,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hoennian_Salt,medium,1
+2607,es,Sal Gruesa de Hoenn,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hoennian_Salt,medium,1
+2607,fr,Gros Sel de Hoenn,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hoennian_Salt,medium,1
+2607,de,Hoenn-Steinsalz,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hoennian_Salt,medium,1
+2607,it,Sale grosso di Hoenn,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hoennian_Salt,medium,1
+2607,ja,ホウエンのあらじお,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hoennian_Salt,medium,1
+2607,ko,호연산왕소금,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hoennian_Salt,medium,1
+2607,zh-Hans,丰缘的粗盐,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hoennian_Salt,medium,1
+2607,zh-Hant,豐緣的粗鹽,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hoennian_Salt,medium,1
+2608,en,Épice Noire,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Épice_Noire,medium,1
+2608,es,Especia Negra,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Épice_Noire,medium,1
+2608,fr,Épice Noire,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Épice_Noire,medium,1
+2608,de,Dunkelwürze,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Épice_Noire,medium,1
+2608,it,Nero di spezie,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Épice_Noire,medium,1
+2608,ja,スパイスブラック,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Épice_Noire,medium,1
+2608,ko,스파이스블랙,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Épice_Noire,medium,1
+2608,zh-Hans,黑香料,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Épice_Noire,medium,1
+2608,zh-Hant,黑香料,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Épice_Noire,medium,1
+2609,en,Arboliva Oil,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Arboliva_Oil,medium,1
+2609,es,Aceite de Arboliva,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Arboliva_Oil,medium,1
+2609,fr,Huile d’Arboliva,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Arboliva_Oil,medium,1
+2609,de,Olithena-Öl,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Arboliva_Oil,medium,1
+2609,it,Olio d’Arboliva,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Arboliva_Oil,medium,1
+2609,ja,オリーヴァオイル,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Arboliva_Oil,medium,1
+2609,ko,올리르바오일,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Arboliva_Oil,medium,1
+2609,zh-Hans,奥利瓦油,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Arboliva_Oil,medium,1
+2609,zh-Hant,奧利瓦油,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Arboliva_Oil,medium,1
+2610,en,Popping Candy,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Popping_Candy,medium,1
+2610,es,Caramelos Chispeantes,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Popping_Candy,medium,1
+2610,fr,Bonbon Zap-Zap,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Popping_Candy,medium,1
+2610,de,Knisterbrause,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Popping_Candy,medium,1
+2610,it,Caramelle zipzap,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Popping_Candy,medium,1
+2610,ja,パチパチキャンディ,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Popping_Candy,medium,1
+2610,ko,톡톡캔디,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Popping_Candy,medium,1
+2610,zh-Hans,噼里啪啦糖果,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Popping_Candy,medium,1
+2610,zh-Hant,劈哩啪啦糖果,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Popping_Candy,medium,1
+2611,en,Important Letter,research-wiki,https://www.wikidex.net/wiki/Carta_Importante,high,1
+2611,es,Carta Importante,research-wiki,https://www.wikidex.net/wiki/Carta_Importante,high,1
+2611,fr,Lettre Importante,research-wiki,https://www.pokepedia.fr/Lettre_Importante,high,1
+2611,de,Wichtiger Brief,research-wiki,https://www.wikidex.net/wiki/Carta_Importante,high,1
+2611,it,Lettera importante,research-wiki,https://www.wikidex.net/wiki/Carta_Importante,high,1
+2611,ja,たいせつなてがみ,research-wiki,https://www.wikidex.net/wiki/Carta_Importante,high,1
+2611,ko,중요한편지,research-wiki,https://www.wikidex.net/wiki/Carta_Importante,high,1
+2611,zh-Hans,重要信件,research-wiki,https://www.pokepedia.fr/Lettre_Importante,high,1
+2611,zh-Hant,重要信件,research-wiki,https://www.wikidex.net/wiki/Carta_Importante,high,1
+2613,en,Dirty Scarf,research-wiki,https://www.wikidex.net/wiki/Pa%C3%B1uelo_Mugriento,medium,1
+2613,es,Pañuelo Mugriento,research-wiki,https://www.wikidex.net/wiki/Pa%C3%B1uelo_Mugriento,medium,1
+2613,fr,Mouchoir Sale,research-wiki,https://www.wikidex.net/wiki/Pa%C3%B1uelo_Mugriento,medium,1
+2613,de,Dreckiger Schal,research-wiki,https://www.wikidex.net/wiki/Pa%C3%B1uelo_Mugriento,medium,1
+2613,it,Sciarpa sporca,research-wiki,https://www.wikidex.net/wiki/Pa%C3%B1uelo_Mugriento,medium,1
+2613,ja,よごれたスカーフ,research-wiki,https://www.wikidex.net/wiki/Pa%C3%B1uelo_Mugriento,medium,1
+2613,ko,더러운스카프,research-wiki,https://www.wikidex.net/wiki/Pa%C3%B1uelo_Mugriento,medium,1
+2613,zh-Hans,脏围巾,research-wiki,https://www.wikidex.net/wiki/Pa%C3%B1uelo_Mugriento,medium,1
+2613,zh-Hant,髒圍巾,research-wiki,https://www.wikidex.net/wiki/Pa%C3%B1uelo_Mugriento,medium,1
+2635,en,Raichunite X,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Raichunite_X,high,1
+2635,es,Raichunita X,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Raichunite_X,high,1
+2635,fr,Raichuïte X,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Raichunite_X,high,1
+2635,de,Raichunit X,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Raichunite_X,high,1
+2635,it,Raichuite X,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Raichunite_X,high,1
+2635,ja,ライチュウナイトＸ,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Raichunite_X,high,1
+2635,ko,라이츄나이트X,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Raichunite_X,high,1
+2635,zh-Hans,雷丘进化石Ｘ,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Raichunite_X,high,1
+2635,zh-Hant,雷丘進化石Ｘ,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Raichunite_X,high,1
+2636,en,Raichunite Y,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Raichunite_Y,high,1
+2636,es,Raichunita Y,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Raichunite_Y,high,1
+2636,fr,Raichuïte Y,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Raichunite_Y,high,1
+2636,de,Raichunit Y,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Raichunite_Y,high,1
+2636,it,Raichuite Y,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Raichunite_Y,high,1
+2636,ja,ライチュウナイトＹ,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Raichunite_Y,high,1
+2636,ko,라이츄나이트Y,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Raichunite_Y,high,1
+2636,zh-Hans,雷丘进化石Ｙ,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Raichunite_Y,high,1
+2636,zh-Hant,雷丘進化石Ｙ,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Raichunite_Y,high,1
+2637,en,Chimechite,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Chimechite,high,1
+2637,es,Chimechita,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Chimechite,high,1
+2637,fr,Éokite,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Chimechite,high,1
+2637,de,Palimpalimonit,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Chimechite,high,1
+2637,it,Chimechite,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Chimechite,high,1
+2637,ja,チリーンナイト,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Chimechite,high,1
+2637,ko,치렁나이트,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Chimechite,high,1
+2637,zh-Hans,风铃铃进化石,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Chimechite,high,1
+2637,zh-Hant,風鈴鈴進化石,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Chimechite,high,1
+2638,en,Absolite Z,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Absolite_Z,medium,1
+2638,es,Absolita Z,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Absolite_Z,medium,1
+2638,fr,Absolite Z,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Absolite_Z,medium,1
+2638,de,Absolnit Z,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Absolite_Z,medium,1
+2638,it,Absolite Z,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Absolite_Z,medium,1
+2638,ja,アブソルナイトＺ,research-wiki,https://www.wikidex.net/wiki/Absolita_Z,medium,1
+2638,ko,앱솔나이트Z,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Absolite_Z,medium,1
+2638,zh-Hans,阿勃梭鲁进化石Ｚ,research-wiki,https://www.wikidex.net/wiki/Absolita_Z,medium,1
+2638,zh-Hant,阿勃梭魯進化石Ｚ,research-wiki,https://www.wikidex.net/wiki/Absolita_Z,medium,1
+2639,en,Staraptite,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Staraptite,high,1
+2639,es,Staraptorita,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Staraptite,high,1
+2639,fr,Étouraptorite,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Staraptite,high,1
+2639,de,Staraptornit,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Staraptite,high,1
+2639,it,Staraptorite,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Staraptite,high,1
+2639,ja,ムクホークナイト,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Staraptite,high,1
+2639,ko,찌르호크나이트,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Staraptite,high,1
+2639,zh-Hans,姆克鹰进化石,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Staraptite,high,1
+2639,zh-Hant,姆克鷹進化石,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Staraptite,high,1
+2640,en,Garchompite Z,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Garchompite_Z,high,1
+2640,es,Garchompita Z,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Garchompite_Z,high,1
+2640,fr,Carchacrokite Z,research-wiki,https://www.pokepedia.fr/Carchacrokite_Z,high,1
+2640,de,Knakracknit Z,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Garchompite_Z,high,1
+2640,it,Garchompite Z,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Garchompite_Z,high,1
+2640,ja,ガブリアスナイトＺ,research-wiki,https://www.wikidex.net/wiki/Garchompita_Z,high,1
+2640,ko,한카리아스나이트Z,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Garchompite_Z,high,1
+2640,zh-Hans,烈咬陆鲨进化石Ｚ,research-wiki,https://www.wikidex.net/wiki/Garchompita_Z,high,1
+2640,zh-Hant,烈咬陸鯊進化石Ｚ,research-wiki,https://www.wikidex.net/wiki/Garchompita_Z,high,1
+2641,en,Lucarionite Z,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Lucarionite_Z,medium,1
+2641,es,Lucarita Z,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Lucarionite_Z,medium,1
+2641,fr,Lucarite Z,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Lucarionite_Z,medium,1
+2641,de,Lucarionit Z,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Lucarionite_Z,medium,1
+2641,it,Lucarite Z,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Lucarionite_Z,medium,1
+2641,ja,ルカリオナイトＺ,research-wiki,https://www.wikidex.net/wiki/Lucarita_Z,medium,1
+2641,ko,루카리오나이트Z,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Lucarionite_Z,medium,1
+2641,zh-Hans,路卡利欧进化石Ｚ,research-wiki,https://www.wikidex.net/wiki/Lucarita_Z,medium,1
+2641,zh-Hant,路卡利歐進化石Ｚ,research-wiki,https://www.wikidex.net/wiki/Lucarita_Z,medium,1
+2642,en,Golurkite,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Golurkite,high,1
+2642,es,Golurkita,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Golurkite,high,1
+2642,fr,Golemastokite,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Golurkite,high,1
+2642,de,Golgantesnit,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Golurkite,high,1
+2642,it,Golurkite,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Golurkite,high,1
+2642,ja,ゴルーグナイト,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Golurkite,high,1
+2642,ko,골루그나이트,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Golurkite,high,1
+2642,zh-Hans,泥偶巨人进化石,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Golurkite,high,1
+2642,zh-Hant,泥偶巨人進化石,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Golurkite,high,1
+2643,en,Meowsticite,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Meowsticite,medium,1
+2643,es,Meowsticita,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Meowsticite,medium,1
+2643,fr,Mistigrixite,research-wiki,https://www.wikidex.net/wiki/Meowsticita,medium,1
+2643,de,Psiaugonit,research-wiki,https://www.wikidex.net/wiki/Meowsticita,medium,1
+2643,it,Meowsticite,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Meowsticite,medium,1
+2643,ja,ニャオニクスナイト,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Meowsticite,medium,1
+2643,ko,냐오닉스나이트,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Meowsticite,medium,1
+2643,zh-Hans,超能妙喵进化石,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Meowsticite,medium,1
+2643,zh-Hant,超能妙喵進化石,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Meowsticite,medium,1
+2644,en,Crabominite,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Crabominite,high,1
+2644,es,Crabominablita,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Crabominite,high,1
+2644,fr,Crabominablite,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Crabominite,high,1
+2644,de,Krawellonit,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Crabominite,high,1
+2644,it,Crabominablite,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Crabominite,high,1
+2644,ja,ケケンカニナイト,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Crabominite,high,1
+2644,ko,모단단게나이트,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Crabominite,high,1
+2644,zh-Hans,好胜毛蟹进化石,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Crabominite,high,1
+2644,zh-Hant,好勝毛蟹進化石,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Crabominite,high,1
+2645,en,Golisopite,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Golisopite,high,1
+2645,es,Golisopodita,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Golisopite,high,1
+2645,fr,Sarmuraïte,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Golisopite,high,1
+2645,de,Tectassnit,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Golisopite,high,1
+2645,it,Golisopodite,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Golisopite,high,1
+2645,ja,グソクムシャナイト,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Golisopite,high,1
+2645,ko,갑주무사나이트,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Golisopite,high,1
+2645,zh-Hans,具甲武者进化石,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Golisopite,high,1
+2645,zh-Hant,具甲武者進化石,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Golisopite,high,1
+2646,en,Magearnite,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Magearnite,high,1
+2646,es,Magearnita,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Magearnite,high,1
+2646,fr,Magearnite,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Magearnite,high,1
+2646,de,Magearnanit,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Magearnite,high,1
+2646,it,Magearnite,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Magearnite,high,1
+2646,ja,マギアナイト,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Magearnite,high,1
+2646,ko,마기아나이트,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Magearnite,high,1
+2646,zh-Hans,玛机雅娜进化石,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Magearnite,high,1
+2646,zh-Hant,瑪機雅娜進化石,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Magearnite,high,1
+2647,en,Scovillainite,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Scovillainite,high,1
+2647,es,Scovillainita,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Scovillainite,high,1
+2647,fr,Scovilainite,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Scovillainite,high,1
+2647,de,Halupenjonit,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Scovillainite,high,1
+2647,it,Scovillainite,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Scovillainite,high,1
+2647,ja,スコヴィラナイト,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Scovillainite,high,1
+2647,ko,스코빌런나이트,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Scovillainite,high,1
+2647,zh-Hans,狠辣椒进化石,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Scovillainite,high,1
+2647,zh-Hant,狠辣椒進化石,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Scovillainite,high,1
+2648,en,Baxcalibrite,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Baxcalibrite,high,1
+2648,es,Baxcaliburita,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Baxcalibrite,high,1
+2648,fr,Glaivodite,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Baxcalibrite,high,1
+2648,de,Espinodonit,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Baxcalibrite,high,1
+2648,it,Baxcaliburite,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Baxcalibrite,high,1
+2648,ja,セグレイブナイト,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Baxcalibrite,high,1
+2648,ko,드닐레이브나이트,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Baxcalibrite,high,1
+2648,zh-Hans,戟脊龙进化石,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Baxcalibrite,high,1
+2648,zh-Hant,戟脊龍進化石,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Baxcalibrite,high,1
+2649,en,Tatsugirinite,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Tatsugirinite,high,1
+2649,es,Tatsugirita,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Tatsugirinite,high,1
+2649,fr,Nigirigonite,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Tatsugirinite,high,1
+2649,de,Nigiraginit,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Tatsugirinite,high,1
+2649,it,Tatsugirite,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Tatsugirinite,high,1
+2649,ja,シャリタツナイト,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Tatsugirinite,high,1
+2649,ko,싸리용나이트,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Tatsugirinite,high,1
+2649,zh-Hans,米立龙进化石,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Tatsugirinite,high,1
+2649,zh-Hant,米立龍進化石,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Tatsugirinite,high,1
+2650,en,Glimmoranite,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Glimmoranite,high,1
+2650,es,Glimmoranita,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Glimmoranite,high,1
+2650,fr,Floréclatite,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Glimmoranite,high,1
+2650,de,Lumifloranit,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Glimmoranite,high,1
+2650,it,Glimmorite,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Glimmoranite,high,1
+2650,ja,キラフロルナイト,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Glimmoranite,high,1
+2650,ko,킬라플로르나이트,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Glimmoranite,high,1
+2650,zh-Hans,晶光花进化石,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Glimmoranite,high,1
+2650,zh-Hant,晶光花進化石,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Glimmoranite,high,1
+2651,en,Hyper Cheri Berry,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Cheri_Berry,medium,1
+2651,es,Baya Zreza D,research-wiki,https://www.wikidex.net/wiki/Baya_Zreza_D,medium,1
+2651,fr,Extra Baie Ceriz,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Cheri_Berry,medium,1
+2651,de,Dimensions-Amrenabeere,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Cheri_Berry,medium,1
+2651,it,Baccaliegia dimensionale,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Cheri_Berry,medium,1
+2651,ja,いじげんクラボのみ,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Cheri_Berry,medium,1
+2651,ko,이차원 버치열매,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Cheri_Berry,medium,1
+2651,zh-Hans,异次元樱子果,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Cheri_Berry,medium,1
+2651,zh-Hant,異次元櫻子果,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Cheri_Berry,medium,1
+2652,en,Hyper Chesto Berry,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Chesto_Berry,medium,1
+2652,es,Baya Atania D,research-wiki,https://www.wikidex.net/wiki/Baya_Atania_D,medium,1
+2652,fr,Extra Baie Maron,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Chesto_Berry,medium,1
+2652,de,Dimensions-Maronbeere,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Chesto_Berry,medium,1
+2652,it,Baccastagna dimensionale,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Chesto_Berry,medium,1
+2652,ja,いじげんカゴのみ,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Chesto_Berry,medium,1
+2652,ko,이차원 유루열매,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Chesto_Berry,medium,1
+2652,zh-Hans,异次元零余果,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Chesto_Berry,medium,1
+2652,zh-Hant,異次元零餘果,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Chesto_Berry,medium,1
+2653,en,Hyper Pecha Berry,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Pecha_Berry,medium,1
+2653,es,Baya Meloc D,research-wiki,https://www.wikidex.net/wiki/Baya_Meloc_D,medium,1
+2653,fr,Extra Baie Pêcha,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Pecha_Berry,medium,1
+2653,de,Dimensions-Pirsifbeere,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Pecha_Berry,medium,1
+2653,it,Baccapesca dimensionale,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Pecha_Berry,medium,1
+2653,ja,いじげんモモンのみ,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Pecha_Berry,medium,1
+2653,ko,이차원 복슝열매,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Pecha_Berry,medium,1
+2653,zh-Hans,异次元桃桃果,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Pecha_Berry,medium,1
+2653,zh-Hant,異次元桃桃果,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Pecha_Berry,medium,1
+2654,en,Hyper Rawst Berry,research-wiki,https://www.wikidex.net/wiki/Baya_Safre_D,medium,1
+2654,es,Baya Safre D,research-wiki,https://www.wikidex.net/wiki/Baya_Safre_D,medium,1
+2654,fr,Extra Baie Fraive,research-wiki,https://www.wikidex.net/wiki/Baya_Safre_D,medium,1
+2654,de,Dimensions-Fragiabeere,research-wiki,https://www.wikidex.net/wiki/Baya_Safre_D,medium,1
+2654,it,Baccafrago dimensionale,research-wiki,https://www.wikidex.net/wiki/Baya_Safre_D,medium,1
+2654,ja,いじげんチーゴのみ,research-wiki,https://www.wikidex.net/wiki/Baya_Safre_D,medium,1
+2654,ko,이차원 복분열매,research-wiki,https://www.wikidex.net/wiki/Baya_Safre_D,medium,1
+2654,zh-Hans,异次元莓莓果,research-wiki,https://www.wikidex.net/wiki/Baya_Safre_D,medium,1
+2654,zh-Hant,異次元莓莓果,research-wiki,https://www.wikidex.net/wiki/Baya_Safre_D,medium,1
+2655,en,Hyper Aspear Berry,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Aspear_Berry,medium,1
+2655,es,Baya Perasi D,research-wiki,https://www.wikidex.net/wiki/Baya_Perasi_D,medium,1
+2655,fr,Extra Baie Willia,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Aspear_Berry,medium,1
+2655,de,Dimensions-Wilbirbeere,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Aspear_Berry,medium,1
+2655,it,Baccaperina dimensionale,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Aspear_Berry,medium,1
+2655,ja,いじげんナナシのみ,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Aspear_Berry,medium,1
+2655,ko,이차원 배리열매,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Aspear_Berry,medium,1
+2655,zh-Hans,异次元利木果,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Aspear_Berry,medium,1
+2655,zh-Hant,異次元利木果,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Aspear_Berry,medium,1
+2656,en,Hyper Oran Berry,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Oran_Berry,medium,1
+2656,es,Baya Aranja D,research-wiki,https://www.wikidex.net/wiki/Baya_Aranja_D,medium,1
+2656,fr,Extra Baie Oran,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Oran_Berry,medium,1
+2656,de,Dimensions-Sinelbeere,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Oran_Berry,medium,1
+2656,it,Baccarancia dimensionale,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Oran_Berry,medium,1
+2656,ja,いじげんオレンのみ,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Oran_Berry,medium,1
+2656,ko,이차원 오랭열매,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Oran_Berry,medium,1
+2656,zh-Hans,异次元橙橙果,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Oran_Berry,medium,1
+2656,zh-Hant,異次元橙橙果,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Oran_Berry,medium,1
+2657,en,Hyper Persim Berry,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Persim_Berry,medium,1
+2657,es,Baya Caquic D,research-wiki,https://www.wikidex.net/wiki/Baya_Caquic_D,medium,1
+2657,fr,Extra Baie Kika,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Persim_Berry,medium,1
+2657,de,Dimensions-Persimbeere,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Persim_Berry,medium,1
+2657,it,Baccaki dimensionale,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Persim_Berry,medium,1
+2657,ja,いじげんキーのみ,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Persim_Berry,medium,1
+2657,ko,이차원 시몬열매,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Persim_Berry,medium,1
+2657,zh-Hans,异次元柿仔果,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Persim_Berry,medium,1
+2657,zh-Hant,異次元柿仔果,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Persim_Berry,medium,1
+2658,en,Hyper Lum Berry,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Lum_Berry,medium,1
+2658,es,Baya Ziuela D,research-wiki,https://www.wikidex.net/wiki/Baya_Ziuela_D,medium,1
+2658,fr,Extra Baie Prine,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Lum_Berry,medium,1
+2658,de,Dimensions-Prunusbeere,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Lum_Berry,medium,1
+2658,it,Baccaprugna dimensionale,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Lum_Berry,medium,1
+2658,ja,いじげんラムのみ,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Lum_Berry,medium,1
+2658,ko,이차원 리샘열매,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Lum_Berry,medium,1
+2658,zh-Hans,异次元木子果,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Lum_Berry,medium,1
+2658,zh-Hant,異次元木子果,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Lum_Berry,medium,1
+2659,en,Hyper Sitrus Berry,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Sitrus_Berry,medium,1
+2659,es,Baya Zidra D,research-wiki,https://www.wikidex.net/wiki/Baya_Zidra_D,medium,1
+2659,fr,Extra Baie Sitrus,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Sitrus_Berry,medium,1
+2659,de,Dimensions-Tsitrubeere,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Sitrus_Berry,medium,1
+2659,it,Baccacedro dimensionale,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Sitrus_Berry,medium,1
+2659,ja,いじげんオボンのみ,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Sitrus_Berry,medium,1
+2659,ko,이차원 자뭉열매,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Sitrus_Berry,medium,1
+2659,zh-Hans,异次元文柚果,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Sitrus_Berry,medium,1
+2659,zh-Hant,異次元文柚果,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Sitrus_Berry,medium,1
+2660,en,Hyper Pomeg Berry,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Pomeg_Berry,medium,1
+2660,es,Baya Grana D,research-wiki,https://www.wikidex.net/wiki/Baya_Grana_D,medium,1
+2660,fr,Extra Baie Grena,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Pomeg_Berry,medium,1
+2660,de,Dimensions-Granabeere,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Pomeg_Berry,medium,1
+2660,it,Baccagrana dimensionale,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Pomeg_Berry,medium,1
+2660,ja,いじげんザロクのみ,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Pomeg_Berry,medium,1
+2660,ko,이차원 유석열매,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Pomeg_Berry,medium,1
+2660,zh-Hans,异次元榴石果,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Pomeg_Berry,medium,1
+2660,zh-Hant,異次元榴石果,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Pomeg_Berry,medium,1
+2661,en,Hyper Kelpsy Berry,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Kelpsy_Berry,medium,1
+2661,es,Baya Algama D,research-wiki,https://www.wikidex.net/wiki/Baya_Algama_D,medium,1
+2661,fr,Extra Baie Alga,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Kelpsy_Berry,medium,1
+2661,de,Dimensions-Setangbeere,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Kelpsy_Berry,medium,1
+2661,it,Baccalga dimensionale,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Kelpsy_Berry,medium,1
+2661,ja,いじげんネコブのみ,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Kelpsy_Berry,medium,1
+2661,ko,이차원 시마열매,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Kelpsy_Berry,medium,1
+2661,zh-Hans,异次元藻根果,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Kelpsy_Berry,medium,1
+2661,zh-Hant,異次元藻根果,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Kelpsy_Berry,medium,1
+2662,en,Hyper Qualot Berry,research-wiki,https://www.wikidex.net/wiki/Baya_Ispero_D,medium,1
+2662,es,Baya Ispero D,research-wiki,https://www.wikidex.net/wiki/Baya_Ispero_D,medium,1
+2662,fr,Extra Baie Qualot,research-wiki,https://www.wikidex.net/wiki/Baya_Ispero_D,medium,1
+2662,de,Dimensions-Qualotbeere,research-wiki,https://www.wikidex.net/wiki/Baya_Ispero_D,medium,1
+2662,it,Baccaloquat dimensionale,research-wiki,https://www.wikidex.net/wiki/Baya_Ispero_D,medium,1
+2662,ja,いじげんタポルのみ,research-wiki,https://www.wikidex.net/wiki/Baya_Ispero_D,medium,1
+2662,ko,이차원 파비열매,research-wiki,https://www.wikidex.net/wiki/Baya_Ispero_D,medium,1
+2662,zh-Hans,异次元比巴果,research-wiki,https://www.wikidex.net/wiki/Baya_Ispero_D,medium,1
+2662,zh-Hant,異次元比巴果,research-wiki,https://www.wikidex.net/wiki/Baya_Ispero_D,medium,1
+2663,en,Hyper Hondew Berry,research-wiki,https://www.wikidex.net/wiki/Baya_Meluce_D,medium,1
+2663,es,Baya Meluce D,research-wiki,https://www.wikidex.net/wiki/Baya_Meluce_D,medium,1
+2663,fr,Extra Baie Lonme,research-wiki,https://www.wikidex.net/wiki/Baya_Meluce_D,medium,1
+2663,de,Dimensions-Honmelbeere,research-wiki,https://www.wikidex.net/wiki/Baya_Meluce_D,medium,1
+2663,it,Baccamelon dimensionale,research-wiki,https://www.wikidex.net/wiki/Baya_Meluce_D,medium,1
+2663,ja,いじげんロメのみ,research-wiki,https://www.wikidex.net/wiki/Baya_Meluce_D,medium,1
+2663,ko,이차원 로매열매,research-wiki,https://www.wikidex.net/wiki/Baya_Meluce_D,medium,1
+2663,zh-Hans,异次元哈密果,research-wiki,https://www.wikidex.net/wiki/Baya_Meluce_D,medium,1
+2663,zh-Hant,異次元哈密果,research-wiki,https://www.wikidex.net/wiki/Baya_Meluce_D,medium,1
+2664,en,Hyper Grepa Berry,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Grepa_Berry,medium,1
+2664,es,Baya Uvav D,research-wiki,https://www.wikidex.net/wiki/Baya_Uvav_D,medium,1
+2664,fr,Extra Baie Résin,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Grepa_Berry,medium,1
+2664,de,Dimensions-Labrusbeere,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Grepa_Berry,medium,1
+2664,it,Baccauva dimensionale,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Grepa_Berry,medium,1
+2664,ja,いじげんウブのみ,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Grepa_Berry,medium,1
+2664,ko,이차원 또뽀열매,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Grepa_Berry,medium,1
+2664,zh-Hans,异次元萄葡果,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Grepa_Berry,medium,1
+2664,zh-Hant,異次元萄葡果,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Grepa_Berry,medium,1
+2665,en,Hyper Tamato Berry,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Tamato_Berry,medium,1
+2665,es,Baya Tamate D,research-wiki,https://www.wikidex.net/wiki/Baya_Tamate_D,medium,1
+2665,fr,Extra Baie Tamato,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Tamato_Berry,medium,1
+2665,de,Dimensions-Tamotbeere,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Tamato_Berry,medium,1
+2665,it,Baccamodoro dimensionale,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Tamato_Berry,medium,1
+2665,ja,いじげんマトマのみ,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Tamato_Berry,medium,1
+2665,ko,이차원 토망열매,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Tamato_Berry,medium,1
+2665,zh-Hans,异次元茄番果,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Tamato_Berry,medium,1
+2665,zh-Hant,異次元茄番果,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Tamato_Berry,medium,1
+2666,en,Hyper Occa Berry,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Occa_Berry,medium,1
+2666,es,Baya Caoca D,research-wiki,https://www.wikidex.net/wiki/Baya_Caoca_D,medium,1
+2666,fr,Extra Baie Chocco,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Occa_Berry,medium,1
+2666,de,Dimensions-Koakobeere,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Occa_Berry,medium,1
+2666,it,Baccacao dimensionale,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Occa_Berry,medium,1
+2666,ja,いじげんオッカのみ,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Occa_Berry,medium,1
+2666,ko,이차원 오카열매,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Occa_Berry,medium,1
+2666,zh-Hans,异次元巧可果,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Occa_Berry,medium,1
+2666,zh-Hant,異次元巧可果,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Occa_Berry,medium,1
+2667,en,Hyper Passho Berry,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Passho_Berry,medium,1
+2667,es,Baya Pasio D,research-wiki,https://www.wikidex.net/wiki/Baya_Pasio_D,medium,1
+2667,fr,Extra Baie Pocpoc,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Passho_Berry,medium,1
+2667,de,Dimensions-Foepasbeere,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Passho_Berry,medium,1
+2667,it,Baccapasflo dimensionale,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Passho_Berry,medium,1
+2667,ja,いじげんイトケのみ,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Passho_Berry,medium,1
+2667,ko,이차원 꼬시개열매,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Passho_Berry,medium,1
+2667,zh-Hans,异次元千香果,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Passho_Berry,medium,1
+2667,zh-Hant,異次元千香果,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Passho_Berry,medium,1
+2668,en,Hyper Wacan Berry,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Wacan_Berry,medium,1
+2668,es,Baya Gualot D,research-wiki,https://www.wikidex.net/wiki/Baya_Gualot_D,medium,1
+2668,fr,Extra Baie Parma,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Wacan_Berry,medium,1
+2668,de,Dimensions-Kerzalbeere,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Wacan_Berry,medium,1
+2668,it,Baccaparmen dimensionale,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Wacan_Berry,medium,1
+2668,ja,いじげんソクノのみ,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Wacan_Berry,medium,1
+2668,ko,이차원 초나열매,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Wacan_Berry,medium,1
+2668,zh-Hans,异次元独木果,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Wacan_Berry,medium,1
+2668,zh-Hant,異次元獨木果,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Wacan_Berry,medium,1
+2669,en,Hyper Rindo Berry,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Rindo_Berry,medium,1
+2669,es,Baya Tamar D,research-wiki,https://www.wikidex.net/wiki/Baya_Tamar_D,medium,1
+2669,fr,Extra Baie Ratam,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Rindo_Berry,medium,1
+2669,de,Dimensions-Grindobeere,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Rindo_Berry,medium,1
+2669,it,Baccarindo dimensionale,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Rindo_Berry,medium,1
+2669,ja,いじげんリンドのみ,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Rindo_Berry,medium,1
+2669,ko,이차원 린드열매,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Rindo_Berry,medium,1
+2669,zh-Hans,异次元罗子果,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Rindo_Berry,medium,1
+2669,zh-Hant,異次元羅子果,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Rindo_Berry,medium,1
+2670,en,Hyper Yache Berry,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Yache_Berry,medium,1
+2670,es,Baya Rimoya D,research-wiki,https://www.wikidex.net/wiki/Baya_Rimoya_D,medium,1
+2670,fr,Extra Baie Nanone,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Yache_Berry,medium,1
+2670,de,Dimensions-Kiroyabeere,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Yache_Berry,medium,1
+2670,it,Baccamoya dimensionale,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Yache_Berry,medium,1
+2670,ja,いじげんヤチェのみ,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Yache_Berry,medium,1
+2670,ko,이차원 플카열매,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Yache_Berry,medium,1
+2670,zh-Hans,异次元番荔果,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Yache_Berry,medium,1
+2670,zh-Hant,異次元番荔果,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Yache_Berry,medium,1
+2671,en,Hyper Chople Berry,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Chople_Berry,medium,1
+2671,es,Baya Pomaro D,research-wiki,https://www.wikidex.net/wiki/Baya_Pomaro_D,medium,1
+2671,fr,Extra Baie Pomroz,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Chople_Berry,medium,1
+2671,de,Dimensions-Rospelbeere,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Chople_Berry,medium,1
+2671,it,Baccarosmel dimensionale,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Chople_Berry,medium,1
+2671,ja,いじげんヨプのみ,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Chople_Berry,medium,1
+2671,ko,이차원 로플열매,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Chople_Berry,medium,1
+2671,zh-Hans,异次元莲蒲果,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Chople_Berry,medium,1
+2671,zh-Hant,異次元蓮蒲果,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Chople_Berry,medium,1
+2672,en,Hyper Kebia Berry,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Kebia_Berry,medium,1
+2672,es,Baya Kebia D,research-wiki,https://www.wikidex.net/wiki/Baya_Kebia_D,medium,1
+2672,fr,Extra Baie Kébia,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Kebia_Berry,medium,1
+2672,de,Dimensions-Grarzbeere,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Kebia_Berry,medium,1
+2672,it,Baccakebia dimensionale,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Kebia_Berry,medium,1
+2672,ja,いじげんビアーのみ,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Kebia_Berry,medium,1
+2672,ko,이차원 으름열매,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Kebia_Berry,medium,1
+2672,zh-Hans,异次元通通果,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Kebia_Berry,medium,1
+2672,zh-Hant,異次元通通果,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Kebia_Berry,medium,1
+2673,en,Hyper Shuca Berry,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Shuca_Berry,medium,1
+2673,es,Baya Acardo D,research-wiki,https://www.wikidex.net/wiki/Baya_Acardo_D,medium,1
+2673,fr,Extra Baie Jouca,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Shuca_Berry,medium,1
+2673,de,Dimensions-Schukebeere,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Shuca_Berry,medium,1
+2673,it,Baccanaca dimensionale,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Shuca_Berry,medium,1
+2673,ja,いじげんシュカのみ,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Shuca_Berry,medium,1
+2673,ko,이차원 슈캐열매,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Shuca_Berry,medium,1
+2673,zh-Hans,异次元腰木果,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Shuca_Berry,medium,1
+2673,zh-Hant,異次元腰木果,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Shuca_Berry,medium,1
+2674,en,Hyper Coba Berry,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Coba_Berry,medium,1
+2674,es,Baya Kouba D,research-wiki,https://www.wikidex.net/wiki/Baya_Kouba_D,medium,1
+2674,fr,Extra Baie Cobaba,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Coba_Berry,medium,1
+2674,de,Dimensions-Kobabeere,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Coba_Berry,medium,1
+2674,it,Baccababa dimensionale,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Coba_Berry,medium,1
+2674,ja,いじげんバコウのみ,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Coba_Berry,medium,1
+2674,ko,이차원 바코열매,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Coba_Berry,medium,1
+2674,zh-Hans,异次元棱瓜果,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Coba_Berry,medium,1
+2674,zh-Hant,異次元稜瓜果,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Coba_Berry,medium,1
+2675,en,Hyper Payapa Berry,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Payapa_Berry,medium,1
+2675,es,Baya Payapa D,research-wiki,https://www.wikidex.net/wiki/Baya_Payapa_D,medium,1
+2675,fr,Extra Baie Yapap,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Payapa_Berry,medium,1
+2675,de,Dimensions-Pyapabeere,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Payapa_Berry,medium,1
+2675,it,Baccapayapa dimensionale,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Payapa_Berry,medium,1
+2675,ja,いじげんウタンのみ,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Payapa_Berry,medium,1
+2675,ko,이차원 야파열매,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Payapa_Berry,medium,1
+2675,zh-Hans,异次元福禄果,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Payapa_Berry,medium,1
+2675,zh-Hant,異次元福祿果,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Payapa_Berry,medium,1
+2676,en,Hyper Tanga Berry,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Tanga_Berry,medium,1
+2676,es,Baya Yecana D,research-wiki,https://www.wikidex.net/wiki/Baya_Yecana_D,medium,1
+2676,fr,Extra Baie Panga,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Tanga_Berry,medium,1
+2676,de,Dimensions-Tanigabeere,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Tanga_Berry,medium,1
+2676,it,Baccaitan dimensionale,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Tanga_Berry,medium,1
+2676,ja,いじげんタンガのみ,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Tanga_Berry,medium,1
+2676,ko,이차원 리체열매,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Tanga_Berry,medium,1
+2676,zh-Hans,异次元扁樱果,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Tanga_Berry,medium,1
+2676,zh-Hant,異次元扁櫻果,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Tanga_Berry,medium,1
+2677,en,Hyper Charti Berry,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Charti_Berry,medium,1
+2677,es,Baya Alcho D,research-wiki,https://www.wikidex.net/wiki/Baya_Alcho_D,medium,1
+2677,fr,Extra Baie Charti,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Charti_Berry,medium,1
+2677,de,Dimensions-Chiaribeere,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Charti_Berry,medium,1
+2677,it,Baccaciofo dimensionale,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Charti_Berry,medium,1
+2677,ja,いじげんヨロギのみ,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Charti_Berry,medium,1
+2677,ko,이차원 루미열매,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Charti_Berry,medium,1
+2677,zh-Hans,异次元草蚕果,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Charti_Berry,medium,1
+2677,zh-Hant,異次元草蠶果,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Charti_Berry,medium,1
+2678,en,Hyper Kasib Berry,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Kasib_Berry,medium,1
+2678,es,Baya Drasi D,research-wiki,https://www.wikidex.net/wiki/Baya_Drasi_D,medium,1
+2678,fr,Extra Baie Sédra,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Kasib_Berry,medium,1
+2678,de,Dimensions-Zitarzbeere,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Kasib_Berry,medium,1
+2678,it,Baccacitrus dimensionale,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Kasib_Berry,medium,1
+2678,ja,いじげんカシブのみ,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Kasib_Berry,medium,1
+2678,ko,이차원 수불열매,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Kasib_Berry,medium,1
+2678,zh-Hans,异次元佛柑果,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Kasib_Berry,medium,1
+2678,zh-Hant,異次元佛柑果,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Kasib_Berry,medium,1
+2679,en,Hyper Haban Berry,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Haban_Berry,medium,1
+2679,es,Baya Anjiro D,research-wiki,https://www.wikidex.net/wiki/Baya_Anjiro_D,medium,1
+2679,fr,Extra Baie Fraigo,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Haban_Berry,medium,1
+2679,de,Dimensions-Terirobeere,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Haban_Berry,medium,1
+2679,it,Baccahaban dimensionale,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Haban_Berry,medium,1
+2679,ja,いじげんハバンのみ,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Haban_Berry,medium,1
+2679,ko,이차원 하반열매,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Haban_Berry,medium,1
+2679,zh-Hans,异次元莓榴果,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Haban_Berry,medium,1
+2679,zh-Hant,異次元莓榴果,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Haban_Berry,medium,1
+2680,en,Hyper Colbur Berry,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Colbur_Berry,medium,1
+2680,es,Baya Dillo D,research-wiki,https://www.wikidex.net/wiki/Baya_Dillo_D,medium,1
+2680,fr,Extra Baie Lampou,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Colbur_Berry,medium,1
+2680,de,Dimensions-Burleobeere,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Colbur_Berry,medium,1
+2680,it,Baccaxan dimensionale,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Colbur_Berry,medium,1
+2680,ja,いじげんナモのみ,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Colbur_Berry,medium,1
+2680,ko,이차원 마코열매,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Colbur_Berry,medium,1
+2680,zh-Hans,异次元刺耳果,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Colbur_Berry,medium,1
+2680,zh-Hant,異次元刺耳果,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Colbur_Berry,medium,1
+2681,en,Hyper Babiri Berry,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Babiri_Berry,medium,1
+2681,es,Baya Baribá D,research-wiki,https://www.wikidex.net/wiki/Baya_Baribá_D,medium,1
+2681,fr,Extra Baie Babiri,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Babiri_Berry,medium,1
+2681,de,Dimensions-Babiribeere,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Babiri_Berry,medium,1
+2681,it,Baccababiri dimensionale,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Babiri_Berry,medium,1
+2681,ja,いじげんリリバのみ,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Babiri_Berry,medium,1
+2681,ko,이차원 바리비열매,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Babiri_Berry,medium,1
+2681,zh-Hans,异次元霹霹果,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Babiri_Berry,medium,1
+2681,zh-Hant,異次元霹霹果,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Babiri_Berry,medium,1
+2682,en,Hyper Chilan Berry,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Chilan_Berry,medium,1
+2682,es,Baya Chilan D,research-wiki,https://www.wikidex.net/wiki/Baya_Chilan_D,medium,1
+2682,fr,Extra Baie Zalis,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Chilan_Berry,medium,1
+2682,de,Dimensions-Latchibeere,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Chilan_Berry,medium,1
+2682,it,Baccacinlan dimensionale,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Chilan_Berry,medium,1
+2682,ja,いじげんホズのみ,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Chilan_Berry,medium,1
+2682,ko,이차원 카리열매,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Chilan_Berry,medium,1
+2682,zh-Hans,异次元灯浆果,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Chilan_Berry,medium,1
+2682,zh-Hant,異次元燈漿果,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Chilan_Berry,medium,1
+2683,en,Hyper Roseli Berry,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Roseli_Berry,medium,1
+2683,es,Baya Hibis D,research-wiki,https://www.wikidex.net/wiki/Baya_Hibis_D,medium,1
+2683,fr,Extra Baie Selro,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Roseli_Berry,medium,1
+2683,de,Dimensions-Hibisbeere,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Roseli_Berry,medium,1
+2683,it,Baccarcadè dimensionale,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Roseli_Berry,medium,1
+2683,ja,いじげんロゼルのみ,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Roseli_Berry,medium,1
+2683,ko,이차원 로셀열매,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Roseli_Berry,medium,1
+2683,zh-Hans,异次元洛玫果,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Roseli_Berry,medium,1
+2683,zh-Hant,異次元洛玫果,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Hyper_Roseli_Berry,medium,1
+2684,en,Canari Bread,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Canari_Bread,medium,1
+2684,es,Pan de Naria,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Canari_Bread,medium,1
+2684,fr,Pain Narica,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Canari_Bread,medium,1
+2684,de,Canary-Brot,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Canari_Bread,medium,1
+2684,it,Pan di Canary,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Canari_Bread,medium,1
+2684,ja,カナリィパン,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Canari_Bread,medium,1
+2684,ko,카나리빵,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Canari_Bread,medium,1
+2684,zh-Hans,卡娜莉面包,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Canari_Bread,medium,1
+2684,zh-Hant,卡娜莉麵包,research-wiki,https://bulbapedia.bulbagarden.net/wiki/Canari_Bread,medium,1

@@ -1374,5 +1374,60 @@ Revisados: selector de especie, Buscar IVs, Recrear, AutoFix, revisión de expor
 - `TmDescriptionResolver` queda solo como respaldo.
 - Sin compilar. Pendiente: Data ROM (Colosseum/XD), 65 objetos sin texto, aprobar 9 de GameGuides, 12 filas MT inválidas en ItemGameCodes.
 
+### Entrega 80 — Documentación y CHANGELOG del cambio en pokemon.db (ItemDescriptions / MachineMoves)
+- `pokemon-database/`: CHANGELOG.md (sección «Unreleased (ItemDescriptions / MachineMoves)»), docs/SCHEMA_REFERENCE.md (Items aclarado + nuevas ItemGameCodes, ItemDescriptions, MachineMoves, claves de Metadata, diagrama de relaciones), docs/POKEMON_DB_REFERENCE.md, DATA_SOURCES.md y docs/DATA_SOURCES.md (fuentes y aviso de textos no oficiales), README.md, ROADMAP.md. Reemplazan los actuales.
 
+### Entrega 81 — Mochila/estado tras cambiar idioma, MT sin nombre
+- `MainWindowViewModel`: el mensaje de la barra de estado ahora guarda clave+argumentos (`SetStatus`/`RefreshStatus`) y se vuelve a formatear al cambiar el idioma de la UI (antes «Datei geladen: main» se quedaba en el idioma anterior).
+- `BagViewModel.OnLocaleChanged` reconstruye las filas: la plantilla «Enseña X…» de las MT es del idioma de la UI y quedaba en el idioma anterior.
+- `ItemInventoryService`: MT/MO/DT se detectan también por nombre (TM161 de Z-A no tiene categoría ni fila en MachineMoves) para completar su nombre localizado (FillMissingMachineNames).
+- Hallazgo: 65 objetos nuevos de Z-A (mega piedras, mantequillas, etc.) no tienen nombre en NINGÚN idioma en PKHeX 25.11.07 → se ve el nombre inglés de pokemon.db. Lista en `za_items_without_names.csv`. Requiere fuente de nombres (investigación) y una tabla/columna de nombres en la base.
+- Sin compilar.
+
+### Entrega 82 — Prompt de investigación de nombres de objetos de Z-A
+- `prompt_research_item_names.md` + `za_item_names_to_research.csv` (65 objetos sin nombre en PKHeX 25.11.07 en ningún idioma). Salida JSON por lotes de 20, con fuente por idioma; prohíbe inventar o deducir nombres. Siguiente: validador + tabla/columna de nombres en pokemon.db (ItemNames) + lectura en `ItemInventoryService`.
+
+### Entrega 83 — Revisión de za_item_names (65 objetos de Z-A)
+- 4 lotes JSON revisados: 65/65 ids, 62 medium + 3 not_found (Hyper Hondew/Qualot/Rawst), todo `wiki`.
+- Corregido `es` de las 30 bayas "Hyper": venía el nombre de la baya normal; WikiDex confirma "Baya X D" (p.ej. "Baya Perasi D"). Fuente es = WikiDex por baya.
+- Pendiente: validar piedras mega (ancho completo ＸＹ en Raichunite), Dirty Scarf/Important Letter solo en; crear ItemNames + cargador + lectura en ItemInventoryService.
+
+### Entrega 84 — Contraste de za_item_names con WikiDex
+- 3 bayas Hyper antes `not_found` (Hondew/Qualot/Rawst) completadas desde WikiDex (9 idiomas).
+- Piedras mega contrastadas con WikiDex (19/19). Correcciones: Heatranite es="Heatranita" (it="Heatranite"); Meowsticite fr/de estaban intercambiados (fr Mistigrixite, de Psiaugonit); letras Z/X/Y en ancho completo (Ｚ) en ja/zh de Absolite Z, Garchompite Z, Lucarionite Z; Garchompite Z fr dejado null por conflicto (Carchacrokite Z vs Garchompite Z).
+- Baxcalibrite zh-Hant: WikiDex tiene un error de copia; se mantiene 戟脊龍進化石.
+- Confianza `high` = Bulbapedia (primer pase) y WikiDex coinciden; todo sigue siendo fuente wiki (no captura del juego).
+- Siguiente: validador + tabla ItemNames + lectura en ItemInventoryService.
+
+### Entrega 85 — Tabla ItemNames + fallback de nombres en la app
+- `pokemon.db.gz` (descomprimir y reemplazar `pokemon-database/database/pokemon.db`): nueva tabla `ItemNames` (568 filas / 65 objetos de Z-A sin nombre en PKHeX); Metadata `ItemNamesVersion/Source`. Integrity OK, FK sin violaciones.
+- `hotfixes/fix_item_names/` (create_tables.py, validate_names.py, load_data.py, instructions.md, research_raw/, data/item_names.csv, prompt).
+- App (sin compilar): `PokemonDatabase.GetItemNames(ids, lang)`; `ItemInventoryService` usa ese nombre cuando PKHeX no devuelve nombre; test `ItemNamesDbTests`.
+- Docs: CHANGELOG (sección ItemNames) y SCHEMA_REFERENCE (tabla ItemNames).
+- Vacíos conocidos: Dirty Scarf e Important Letter solo en inglés; Garchompite Z sin fr. Fuentes wiki, no capturas.
+
+### Entrega 86 — HiddenItems (MT sin movimiento fuera de la Mochila)
+- Tabla `HiddenItems` en pokemon.db (12 filas: RG/Yellow TM51–55, SV TM00, Z-A TM161); `ItemGameCodes` intacta. `pokemon.db.gz` reemplaza la anterior (incluye ItemNames de la entrega 85).
+- App (sin compilar): `PokemonDatabase.GetHiddenItemIds`; `ItemInventoryService` no ofrece esos objetos salvo que el save ya los tenga. Test `HiddenItemsDbTests`.
+- Hotfix `hotfixes/fix_hidden_items/` + CHANGELOG + SCHEMA_REFERENCE.
+- Prueba hecha por Erick: Hyper Berry, piedra mega y mantequilla de Z-A se guardan y leen bien → los 65 objetos nuevos NO se ocultan.
+
+### Entrega 87 — Nombres pendientes de ItemNames resueltos
+- Garchompite Z fr = "Carchacrokite Z" (Poképédia lo confirma; WikiDex tenía "Garchompite Z" por error).
+- Dirty Scarf (Pañuelo Mugriento, Mouchoir Sale, Dreckiger Schal, Sciarpa sporca, よごれたスカーフ, 더러운스카프, 脏围巾/髒圍巾) desde WikiDex (una fuente, medium).
+- Important Letter (Carta Importante, Lettre Importante, Wichtiger Brief, Lettera importante, たいせつなてがみ, 중요한편지, 重要信件) WikiDex + Poképédia (high).
+- ItemNames: ahora 65 objetos con 9 idiomas completos salvo las 3 bayas que antes eran not_found (ya completas en entrega 84). `pokemon.db.gz` reemplaza la anterior (incluye HiddenItems).
+
+### Entrega 88 — Descripciones: 74 → 28 objetos sin texto
+- 46 descripciones (en) añadidas/aprobadas: 9 objetos de picnic que estaban Verified=0 (confirmados por una segunda lectura, mismo texto), 38 nuevos (copas, botellas, platos, manteles, banderines "Pick", Picnic Set, Herba Mystica ácida/picante, golosinas de Raikou/Rayquaza/Solgaleo/Spectrier). Fuentes: GamerGuides (picnic) y Dittobase.
+- Gold Bottle entra con Verified=0 (una fuente que paráfrasis; mismo texto que Gold Cup/Bronze Bottle) → pendiente de confirmar.
+- Quedan 28 sin descripción verificada: `missing_item_descriptions_round3.csv` + `prompt_research_items_round3.md` para otra IA; luego `validate_research.py` / `import_second_round.py`.
+- `items_text_research.csv` (851 filas) y `pokemon.db.gz` (ItemDescriptions 12 720 filas; conserva ItemNames 585 y HiddenItems 12). CHANGELOG actualizado.
+- Límite: la herramienta de lectura resume y a veces parafrasea; solo se cargaron textos devueltos con todas sus frases citadas. Siguen siendo wikis/bases de fans, no capturas.
+
+### Entrega 89 — Ronda 3 de descripciones (28 → 10 sin texto)
+- Lote `round3_batch_1.json` validado con `validate_research.py --trust-wiki`: 15 aceptados + 3 aprobados a mano (Sticker Case, Lunar Feather, Malicious Armor: variantes solo de mayúsculas/contracciones o idénticas) + Gold Bottle ahora Verified=1 (Bulbapedia y Serebii coinciden).
+- Sin texto (10): Guidebook, Sticker Bag, Strange Ball, Pokédex, Carbink Jewel, Safe Key (sin fuente fiable); Secret Medicine, Data ROM, Red/Green Canari Plush (texto distinto por juego o por nivel; el esquema guarda un texto por objeto e idioma).
+- `items_text_research.csv` 868 filas; ItemDescriptions 12 737 filas; ItemNames 585 y HiddenItems 12 intactas. `pokemon.db.gz` reemplaza la anterior.
+- Archivos: `hotfixes/item_descriptions/research_raw/round3_batch_1.json`, `out_r3/`.
 

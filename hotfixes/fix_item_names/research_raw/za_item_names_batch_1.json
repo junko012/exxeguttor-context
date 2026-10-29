@@ -1,0 +1,553 @@
+[
+  {
+    "db_item_id": 2638,
+    "name_en_db": "Absolite Z",
+    "names": {
+      "en": "Absolite Z",
+      "es": "Absolita Z",
+      "fr": "Absolite Z",
+      "de": "Absolnit Z",
+      "it": "Absolite Z",
+      "ja": "アブソルナイトＺ",
+      "ko": "앱솔나이트Z",
+      "zh-Hans": "阿勃梭鲁进化石Ｚ",
+      "zh-Hant": "阿勃梭魯進化石Ｚ"
+    },
+    "text_kind": "wiki",
+    "confidence": "medium",
+    "sources": {
+      "en": "https://bulbapedia.bulbagarden.net/wiki/Absolite_Z",
+      "es": "https://bulbapedia.bulbagarden.net/wiki/Absolite_Z",
+      "fr": "https://bulbapedia.bulbagarden.net/wiki/Absolite_Z",
+      "de": "https://bulbapedia.bulbagarden.net/wiki/Absolite_Z",
+      "it": "https://bulbapedia.bulbagarden.net/wiki/Absolite_Z",
+      "ja": "https://www.wikidex.net/wiki/Absolita_Z",
+      "ko": "https://bulbapedia.bulbagarden.net/wiki/Absolite_Z",
+      "zh-Hans": "https://www.wikidex.net/wiki/Absolita_Z",
+      "zh-Hant": "https://www.wikidex.net/wiki/Absolita_Z"
+    },
+    "notes": "Nombres tomados de la tabla “In other languages” y del nombre principal de Bulbapedia; fuente wiki, no comprobación directa de la pantalla del juego. [Corrección 84] Contrastado con WikiDex; campos corregidos: ja: \"アブソルナイトZ\"→\"アブソルナイトＺ\", zh-Hans: \"阿勃梭鲁进化石Z\"→\"阿勃梭鲁进化石Ｚ\", zh-Hant: \"阿勃梭魯進化石Z\"→\"阿勃梭魯進化石Ｚ\"."
+  },
+  {
+    "db_item_id": 2648,
+    "name_en_db": "Baxcalibrite",
+    "names": {
+      "en": "Baxcalibrite",
+      "es": "Baxcaliburita",
+      "fr": "Glaivodite",
+      "de": "Espinodonit",
+      "it": "Baxcaliburite",
+      "ja": "セグレイブナイト",
+      "ko": "드닐레이브나이트",
+      "zh-Hans": "戟脊龙进化石",
+      "zh-Hant": "戟脊龍進化石"
+    },
+    "text_kind": "wiki",
+    "confidence": "high",
+    "sources": {
+      "en": "https://bulbapedia.bulbagarden.net/wiki/Baxcalibrite",
+      "es": "https://bulbapedia.bulbagarden.net/wiki/Baxcalibrite",
+      "fr": "https://bulbapedia.bulbagarden.net/wiki/Baxcalibrite",
+      "de": "https://bulbapedia.bulbagarden.net/wiki/Baxcalibrite",
+      "it": "https://bulbapedia.bulbagarden.net/wiki/Baxcalibrite",
+      "ja": "https://bulbapedia.bulbagarden.net/wiki/Baxcalibrite",
+      "ko": "https://bulbapedia.bulbagarden.net/wiki/Baxcalibrite",
+      "zh-Hans": "https://bulbapedia.bulbagarden.net/wiki/Baxcalibrite",
+      "zh-Hant": "https://bulbapedia.bulbagarden.net/wiki/Baxcalibrite"
+    },
+    "notes": "Nombres tomados de la tabla “In other languages” y del nombre principal de Bulbapedia; fuente wiki, no comprobación directa de la pantalla del juego. [Contraste 84] Coincide con WikiDex (https://www.wikidex.net/wiki/Baxcaliburita)."
+  },
+  {
+    "db_item_id": 2637,
+    "name_en_db": "Chimechite",
+    "names": {
+      "en": "Chimechite",
+      "es": "Chimechita",
+      "fr": "Éokite",
+      "de": "Palimpalimonit",
+      "it": "Chimechite",
+      "ja": "チリーンナイト",
+      "ko": "치렁나이트",
+      "zh-Hans": "风铃铃进化石",
+      "zh-Hant": "風鈴鈴進化石"
+    },
+    "text_kind": "wiki",
+    "confidence": "high",
+    "sources": {
+      "en": "https://bulbapedia.bulbagarden.net/wiki/Chimechite",
+      "es": "https://bulbapedia.bulbagarden.net/wiki/Chimechite",
+      "fr": "https://bulbapedia.bulbagarden.net/wiki/Chimechite",
+      "de": "https://bulbapedia.bulbagarden.net/wiki/Chimechite",
+      "it": "https://bulbapedia.bulbagarden.net/wiki/Chimechite",
+      "ja": "https://bulbapedia.bulbagarden.net/wiki/Chimechite",
+      "ko": "https://bulbapedia.bulbagarden.net/wiki/Chimechite",
+      "zh-Hans": "https://bulbapedia.bulbagarden.net/wiki/Chimechite",
+      "zh-Hant": "https://bulbapedia.bulbagarden.net/wiki/Chimechite"
+    },
+    "notes": "Nombres tomados de la tabla “In other languages” y del nombre principal de Bulbapedia; fuente wiki, no comprobación directa de la pantalla del juego. [Contraste 84] Coincide con WikiDex (https://www.wikidex.net/wiki/Chimechita)."
+  },
+  {
+    "db_item_id": 2644,
+    "name_en_db": "Crabominite",
+    "names": {
+      "en": "Crabominite",
+      "es": "Crabominablita",
+      "fr": "Crabominablite",
+      "de": "Krawellonit",
+      "it": "Crabominablite",
+      "ja": "ケケンカニナイト",
+      "ko": "모단단게나이트",
+      "zh-Hans": "好胜毛蟹进化石",
+      "zh-Hant": "好勝毛蟹進化石"
+    },
+    "text_kind": "wiki",
+    "confidence": "high",
+    "sources": {
+      "en": "https://bulbapedia.bulbagarden.net/wiki/Crabominite",
+      "es": "https://bulbapedia.bulbagarden.net/wiki/Crabominite",
+      "fr": "https://bulbapedia.bulbagarden.net/wiki/Crabominite",
+      "de": "https://bulbapedia.bulbagarden.net/wiki/Crabominite",
+      "it": "https://bulbapedia.bulbagarden.net/wiki/Crabominite",
+      "ja": "https://bulbapedia.bulbagarden.net/wiki/Crabominite",
+      "ko": "https://bulbapedia.bulbagarden.net/wiki/Crabominite",
+      "zh-Hans": "https://bulbapedia.bulbagarden.net/wiki/Crabominite",
+      "zh-Hant": "https://bulbapedia.bulbagarden.net/wiki/Crabominite"
+    },
+    "notes": "Nombres tomados de la tabla “In other languages” y del nombre principal de Bulbapedia; fuente wiki, no comprobación directa de la pantalla del juego. [Contraste 84] Coincide con WikiDex (https://www.wikidex.net/wiki/Crabominablita)."
+  },
+  {
+    "db_item_id": 2568,
+    "name_en_db": "Darkranite",
+    "names": {
+      "en": "Darkranite",
+      "es": "Darkrainita",
+      "fr": "Darkraïte",
+      "de": "Darkrainit",
+      "it": "Darkraite",
+      "ja": "ダークライナイト",
+      "ko": "다크라이나이트",
+      "zh-Hans": "达克莱伊进化石",
+      "zh-Hant": "達克萊伊進化石"
+    },
+    "text_kind": "wiki",
+    "confidence": "high",
+    "sources": {
+      "en": "https://bulbapedia.bulbagarden.net/wiki/Darkranite",
+      "es": "https://bulbapedia.bulbagarden.net/wiki/Darkranite",
+      "fr": "https://bulbapedia.bulbagarden.net/wiki/Darkranite",
+      "de": "https://bulbapedia.bulbagarden.net/wiki/Darkranite",
+      "it": "https://bulbapedia.bulbagarden.net/wiki/Darkranite",
+      "ja": "https://bulbapedia.bulbagarden.net/wiki/Darkranite",
+      "ko": "https://bulbapedia.bulbagarden.net/wiki/Darkranite",
+      "zh-Hans": "https://bulbapedia.bulbagarden.net/wiki/Darkranite",
+      "zh-Hant": "https://bulbapedia.bulbagarden.net/wiki/Darkranite"
+    },
+    "notes": "Nombres tomados de la tabla “In other languages” y del nombre principal de Bulbapedia; fuente wiki, no comprobación directa de la pantalla del juego. [Contraste 84] Coincide con WikiDex (https://www.wikidex.net/wiki/Darkrainita)."
+  },
+  {
+    "db_item_id": 2640,
+    "name_en_db": "Garchompite Z",
+    "names": {
+      "en": "Garchompite Z",
+      "es": "Garchompita Z",
+      "fr": "Carchacrokite Z",
+      "de": "Knakracknit Z",
+      "it": "Garchompite Z",
+      "ja": "ガブリアスナイトＺ",
+      "ko": "한카리아스나이트Z",
+      "zh-Hans": "烈咬陆鲨进化石Ｚ",
+      "zh-Hant": "烈咬陸鯊進化石Ｚ"
+    },
+    "text_kind": "wiki",
+    "confidence": "high",
+    "sources": {
+      "en": "https://bulbapedia.bulbagarden.net/wiki/Garchompite_Z",
+      "es": "https://bulbapedia.bulbagarden.net/wiki/Garchompite_Z",
+      "fr": "https://www.pokepedia.fr/Carchacrokite_Z",
+      "de": "https://bulbapedia.bulbagarden.net/wiki/Garchompite_Z",
+      "it": "https://bulbapedia.bulbagarden.net/wiki/Garchompite_Z",
+      "ja": "https://www.wikidex.net/wiki/Garchompita_Z",
+      "ko": "https://bulbapedia.bulbagarden.net/wiki/Garchompite_Z",
+      "zh-Hans": "https://www.wikidex.net/wiki/Garchompita_Z",
+      "zh-Hant": "https://www.wikidex.net/wiki/Garchompita_Z"
+    },
+    "notes": "Nombres tomados de la tabla “In other languages” y del nombre principal de Bulbapedia; fuente wiki, no comprobación directa de la pantalla del juego. [Corrección 84] Contrastado con WikiDex; campos corregidos: fr: \"Carchacrokite Z\"→\"Garchompite Z\", ja: \"ガブリアスナイトZ\"→\"ガブリアスナイトＺ\", zh-Hans: \"烈咬陆鲨进化石Z\"→\"烈咬陆鲨进化石Ｚ\", zh-Hant: \"烈咬陸鯊進化石Z\"→\"烈咬陸鯊進化石Ｚ\". [84] fr de Garchompite Z en conflicto: Bulbapedia (según la fuente original) daba \"Carchacrokite Z\", WikiDex \"Garchompite Z\"; se deja null hasta verificar. [87] fr resuelto: Poképédia titula la página \"Carchacrokite Z\" (Garchomp = Carchacrok en francés); el \"Garchompite Z\" de WikiDex era un error."
+  },
+  {
+    "db_item_id": 2650,
+    "name_en_db": "Glimmoranite",
+    "names": {
+      "en": "Glimmoranite",
+      "es": "Glimmoranita",
+      "fr": "Floréclatite",
+      "de": "Lumifloranit",
+      "it": "Glimmorite",
+      "ja": "キラフロルナイト",
+      "ko": "킬라플로르나이트",
+      "zh-Hans": "晶光花进化石",
+      "zh-Hant": "晶光花進化石"
+    },
+    "text_kind": "wiki",
+    "confidence": "high",
+    "sources": {
+      "en": "https://bulbapedia.bulbagarden.net/wiki/Glimmoranite",
+      "es": "https://bulbapedia.bulbagarden.net/wiki/Glimmoranite",
+      "fr": "https://bulbapedia.bulbagarden.net/wiki/Glimmoranite",
+      "de": "https://bulbapedia.bulbagarden.net/wiki/Glimmoranite",
+      "it": "https://bulbapedia.bulbagarden.net/wiki/Glimmoranite",
+      "ja": "https://bulbapedia.bulbagarden.net/wiki/Glimmoranite",
+      "ko": "https://bulbapedia.bulbagarden.net/wiki/Glimmoranite",
+      "zh-Hans": "https://bulbapedia.bulbagarden.net/wiki/Glimmoranite",
+      "zh-Hant": "https://bulbapedia.bulbagarden.net/wiki/Glimmoranite"
+    },
+    "notes": "Nombres tomados de la tabla “In other languages” y del nombre principal de Bulbapedia; fuente wiki, no comprobación directa de la pantalla del juego. [Contraste 84] Coincide con WikiDex (https://www.wikidex.net/wiki/Glimmoranita)."
+  },
+  {
+    "db_item_id": 2645,
+    "name_en_db": "Golisopite",
+    "names": {
+      "en": "Golisopite",
+      "es": "Golisopodita",
+      "fr": "Sarmuraïte",
+      "de": "Tectassnit",
+      "it": "Golisopodite",
+      "ja": "グソクムシャナイト",
+      "ko": "갑주무사나이트",
+      "zh-Hans": "具甲武者进化石",
+      "zh-Hant": "具甲武者進化石"
+    },
+    "text_kind": "wiki",
+    "confidence": "high",
+    "sources": {
+      "en": "https://bulbapedia.bulbagarden.net/wiki/Golisopite",
+      "es": "https://bulbapedia.bulbagarden.net/wiki/Golisopite",
+      "fr": "https://bulbapedia.bulbagarden.net/wiki/Golisopite",
+      "de": "https://bulbapedia.bulbagarden.net/wiki/Golisopite",
+      "it": "https://bulbapedia.bulbagarden.net/wiki/Golisopite",
+      "ja": "https://bulbapedia.bulbagarden.net/wiki/Golisopite",
+      "ko": "https://bulbapedia.bulbagarden.net/wiki/Golisopite",
+      "zh-Hans": "https://bulbapedia.bulbagarden.net/wiki/Golisopite",
+      "zh-Hant": "https://bulbapedia.bulbagarden.net/wiki/Golisopite"
+    },
+    "notes": "Nombres tomados de la tabla “In other languages” y del nombre principal de Bulbapedia; fuente wiki, no comprobación directa de la pantalla del juego. [Contraste 84] Coincide con WikiDex (https://www.wikidex.net/wiki/Golisopodita)."
+  },
+  {
+    "db_item_id": 2642,
+    "name_en_db": "Golurkite",
+    "names": {
+      "en": "Golurkite",
+      "es": "Golurkita",
+      "fr": "Golemastokite",
+      "de": "Golgantesnit",
+      "it": "Golurkite",
+      "ja": "ゴルーグナイト",
+      "ko": "골루그나이트",
+      "zh-Hans": "泥偶巨人进化石",
+      "zh-Hant": "泥偶巨人進化石"
+    },
+    "text_kind": "wiki",
+    "confidence": "high",
+    "sources": {
+      "en": "https://bulbapedia.bulbagarden.net/wiki/Golurkite",
+      "es": "https://bulbapedia.bulbagarden.net/wiki/Golurkite",
+      "fr": "https://bulbapedia.bulbagarden.net/wiki/Golurkite",
+      "de": "https://bulbapedia.bulbagarden.net/wiki/Golurkite",
+      "it": "https://bulbapedia.bulbagarden.net/wiki/Golurkite",
+      "ja": "https://bulbapedia.bulbagarden.net/wiki/Golurkite",
+      "ko": "https://bulbapedia.bulbagarden.net/wiki/Golurkite",
+      "zh-Hans": "https://bulbapedia.bulbagarden.net/wiki/Golurkite",
+      "zh-Hant": "https://bulbapedia.bulbagarden.net/wiki/Golurkite"
+    },
+    "notes": "Nombres tomados de la tabla “In other languages” y del nombre principal de Bulbapedia; fuente wiki, no comprobación directa de la pantalla del juego. [Contraste 84] Coincide con WikiDex (https://www.wikidex.net/wiki/Golurkita)."
+  },
+  {
+    "db_item_id": 2567,
+    "name_en_db": "Heatranite",
+    "names": {
+      "en": "Heatranite",
+      "es": "Heatranita",
+      "fr": "Heatranite",
+      "de": "Heatranit",
+      "it": "Heatranite",
+      "ja": "ヒードラナイト",
+      "ko": "히드런나이트",
+      "zh-Hans": "席多蓝恩进化石",
+      "zh-Hant": "席多藍恩進化石"
+    },
+    "text_kind": "wiki",
+    "confidence": "medium",
+    "sources": {
+      "en": "https://bulbapedia.bulbagarden.net/wiki/Heatranite",
+      "es": "https://www.wikidex.net/wiki/Heatranita",
+      "fr": "https://bulbapedia.bulbagarden.net/wiki/Heatranite",
+      "de": "https://bulbapedia.bulbagarden.net/wiki/Heatranite",
+      "it": "https://www.wikidex.net/wiki/Heatranita",
+      "ja": "https://bulbapedia.bulbagarden.net/wiki/Heatranite",
+      "ko": "https://bulbapedia.bulbagarden.net/wiki/Heatranite",
+      "zh-Hans": "https://bulbapedia.bulbagarden.net/wiki/Heatranite",
+      "zh-Hant": "https://bulbapedia.bulbagarden.net/wiki/Heatranite"
+    },
+    "notes": "Nombres tomados de la tabla “In other languages” y del nombre principal de Bulbapedia; fuente wiki, no comprobación directa de la pantalla del juego. [Corrección 84] Contrastado con WikiDex; campos corregidos: es: \"Heatranite\"→\"Heatranita\", it: \"Heatranita\"→\"Heatranite\"."
+  },
+  {
+    "db_item_id": 2641,
+    "name_en_db": "Lucarionite Z",
+    "names": {
+      "en": "Lucarionite Z",
+      "es": "Lucarita Z",
+      "fr": "Lucarite Z",
+      "de": "Lucarionit Z",
+      "it": "Lucarite Z",
+      "ja": "ルカリオナイトＺ",
+      "ko": "루카리오나이트Z",
+      "zh-Hans": "路卡利欧进化石Ｚ",
+      "zh-Hant": "路卡利歐進化石Ｚ"
+    },
+    "text_kind": "wiki",
+    "confidence": "medium",
+    "sources": {
+      "en": "https://bulbapedia.bulbagarden.net/wiki/Lucarionite_Z",
+      "es": "https://bulbapedia.bulbagarden.net/wiki/Lucarionite_Z",
+      "fr": "https://bulbapedia.bulbagarden.net/wiki/Lucarionite_Z",
+      "de": "https://bulbapedia.bulbagarden.net/wiki/Lucarionite_Z",
+      "it": "https://bulbapedia.bulbagarden.net/wiki/Lucarionite_Z",
+      "ja": "https://www.wikidex.net/wiki/Lucarita_Z",
+      "ko": "https://bulbapedia.bulbagarden.net/wiki/Lucarionite_Z",
+      "zh-Hans": "https://www.wikidex.net/wiki/Lucarita_Z",
+      "zh-Hant": "https://www.wikidex.net/wiki/Lucarita_Z"
+    },
+    "notes": "Nombres tomados de la tabla “In other languages” y del nombre principal de Bulbapedia; fuente wiki, no comprobación directa de la pantalla del juego. [Corrección 84] Contrastado con WikiDex; campos corregidos: ja: \"ルカリオナイトZ\"→\"ルカリオナイトＺ\", zh-Hans: \"路卡利欧进化石Z\"→\"路卡利欧进化石Ｚ\", zh-Hant: \"路卡利歐進化石Z\"→\"路卡利歐進化石Ｚ\"."
+  },
+  {
+    "db_item_id": 2646,
+    "name_en_db": "Magearnite",
+    "names": {
+      "en": "Magearnite",
+      "es": "Magearnita",
+      "fr": "Magearnite",
+      "de": "Magearnanit",
+      "it": "Magearnite",
+      "ja": "マギアナイト",
+      "ko": "마기아나이트",
+      "zh-Hans": "玛机雅娜进化石",
+      "zh-Hant": "瑪機雅娜進化石"
+    },
+    "text_kind": "wiki",
+    "confidence": "high",
+    "sources": {
+      "en": "https://bulbapedia.bulbagarden.net/wiki/Magearnite",
+      "es": "https://bulbapedia.bulbagarden.net/wiki/Magearnite",
+      "fr": "https://bulbapedia.bulbagarden.net/wiki/Magearnite",
+      "de": "https://bulbapedia.bulbagarden.net/wiki/Magearnite",
+      "it": "https://bulbapedia.bulbagarden.net/wiki/Magearnite",
+      "ja": "https://bulbapedia.bulbagarden.net/wiki/Magearnite",
+      "ko": "https://bulbapedia.bulbagarden.net/wiki/Magearnite",
+      "zh-Hans": "https://bulbapedia.bulbagarden.net/wiki/Magearnite",
+      "zh-Hant": "https://bulbapedia.bulbagarden.net/wiki/Magearnite"
+    },
+    "notes": "Nombres tomados de la tabla “In other languages” y del nombre principal de Bulbapedia; fuente wiki, no comprobación directa de la pantalla del juego. [Contraste 84] Coincide con WikiDex (https://www.wikidex.net/wiki/Magearnita)."
+  },
+  {
+    "db_item_id": 2643,
+    "name_en_db": "Meowsticite",
+    "names": {
+      "en": "Meowsticite",
+      "es": "Meowsticita",
+      "fr": "Mistigrixite",
+      "de": "Psiaugonit",
+      "it": "Meowsticite",
+      "ja": "ニャオニクスナイト",
+      "ko": "냐오닉스나이트",
+      "zh-Hans": "超能妙喵进化石",
+      "zh-Hant": "超能妙喵進化石"
+    },
+    "text_kind": "wiki",
+    "confidence": "medium",
+    "sources": {
+      "en": "https://bulbapedia.bulbagarden.net/wiki/Meowsticite",
+      "es": "https://bulbapedia.bulbagarden.net/wiki/Meowsticite",
+      "fr": "https://www.wikidex.net/wiki/Meowsticita",
+      "de": "https://www.wikidex.net/wiki/Meowsticita",
+      "it": "https://bulbapedia.bulbagarden.net/wiki/Meowsticite",
+      "ja": "https://bulbapedia.bulbagarden.net/wiki/Meowsticite",
+      "ko": "https://bulbapedia.bulbagarden.net/wiki/Meowsticite",
+      "zh-Hans": "https://bulbapedia.bulbagarden.net/wiki/Meowsticite",
+      "zh-Hant": "https://bulbapedia.bulbagarden.net/wiki/Meowsticite"
+    },
+    "notes": "Nombres tomados de la tabla “In other languages” y del nombre principal de Bulbapedia; fuente wiki, no comprobación directa de la pantalla del juego. [Corrección 84] Contrastado con WikiDex; campos corregidos: fr: \"Psiaugonit\"→\"Mistigrixite\", de: \"Mistigrixite\"→\"Psiaugonit\"."
+  },
+  {
+    "db_item_id": 2635,
+    "name_en_db": "Raichunite X",
+    "names": {
+      "en": "Raichunite X",
+      "es": "Raichunita X",
+      "fr": "Raichuïte X",
+      "de": "Raichunit X",
+      "it": "Raichuite X",
+      "ja": "ライチュウナイトＸ",
+      "ko": "라이츄나이트X",
+      "zh-Hans": "雷丘进化石Ｘ",
+      "zh-Hant": "雷丘進化石Ｘ"
+    },
+    "text_kind": "wiki",
+    "confidence": "high",
+    "sources": {
+      "en": "https://bulbapedia.bulbagarden.net/wiki/Raichunite_X",
+      "es": "https://bulbapedia.bulbagarden.net/wiki/Raichunite_X",
+      "fr": "https://bulbapedia.bulbagarden.net/wiki/Raichunite_X",
+      "de": "https://bulbapedia.bulbagarden.net/wiki/Raichunite_X",
+      "it": "https://bulbapedia.bulbagarden.net/wiki/Raichunite_X",
+      "ja": "https://bulbapedia.bulbagarden.net/wiki/Raichunite_X",
+      "ko": "https://bulbapedia.bulbagarden.net/wiki/Raichunite_X",
+      "zh-Hans": "https://bulbapedia.bulbagarden.net/wiki/Raichunite_X",
+      "zh-Hant": "https://bulbapedia.bulbagarden.net/wiki/Raichunite_X"
+    },
+    "notes": "Nombres tomados de la tabla “In other languages” y del nombre principal de Bulbapedia; fuente wiki, no comprobación directa de la pantalla del juego. [Contraste 84] Coincide con WikiDex (https://www.wikidex.net/wiki/Raichunita_X)."
+  },
+  {
+    "db_item_id": 2636,
+    "name_en_db": "Raichunite Y",
+    "names": {
+      "en": "Raichunite Y",
+      "es": "Raichunita Y",
+      "fr": "Raichuïte Y",
+      "de": "Raichunit Y",
+      "it": "Raichuite Y",
+      "ja": "ライチュウナイトＹ",
+      "ko": "라이츄나이트Y",
+      "zh-Hans": "雷丘进化石Ｙ",
+      "zh-Hant": "雷丘進化石Ｙ"
+    },
+    "text_kind": "wiki",
+    "confidence": "high",
+    "sources": {
+      "en": "https://bulbapedia.bulbagarden.net/wiki/Raichunite_Y",
+      "es": "https://bulbapedia.bulbagarden.net/wiki/Raichunite_Y",
+      "fr": "https://bulbapedia.bulbagarden.net/wiki/Raichunite_Y",
+      "de": "https://bulbapedia.bulbagarden.net/wiki/Raichunite_Y",
+      "it": "https://bulbapedia.bulbagarden.net/wiki/Raichunite_Y",
+      "ja": "https://bulbapedia.bulbagarden.net/wiki/Raichunite_Y",
+      "ko": "https://bulbapedia.bulbagarden.net/wiki/Raichunite_Y",
+      "zh-Hans": "https://bulbapedia.bulbagarden.net/wiki/Raichunite_Y",
+      "zh-Hant": "https://bulbapedia.bulbagarden.net/wiki/Raichunite_Y"
+    },
+    "notes": "Nombres tomados de la tabla “In other languages” y del nombre principal de Bulbapedia; fuente wiki, no comprobación directa de la pantalla del juego. [Contraste 84] Coincide con WikiDex (https://www.wikidex.net/wiki/Raichunita_Y)."
+  },
+  {
+    "db_item_id": 2647,
+    "name_en_db": "Scovillainite",
+    "names": {
+      "en": "Scovillainite",
+      "es": "Scovillainita",
+      "fr": "Scovilainite",
+      "de": "Halupenjonit",
+      "it": "Scovillainite",
+      "ja": "スコヴィラナイト",
+      "ko": "스코빌런나이트",
+      "zh-Hans": "狠辣椒进化石",
+      "zh-Hant": "狠辣椒進化石"
+    },
+    "text_kind": "wiki",
+    "confidence": "high",
+    "sources": {
+      "en": "https://bulbapedia.bulbagarden.net/wiki/Scovillainite",
+      "es": "https://bulbapedia.bulbagarden.net/wiki/Scovillainite",
+      "fr": "https://bulbapedia.bulbagarden.net/wiki/Scovillainite",
+      "de": "https://bulbapedia.bulbagarden.net/wiki/Scovillainite",
+      "it": "https://bulbapedia.bulbagarden.net/wiki/Scovillainite",
+      "ja": "https://bulbapedia.bulbagarden.net/wiki/Scovillainite",
+      "ko": "https://bulbapedia.bulbagarden.net/wiki/Scovillainite",
+      "zh-Hans": "https://bulbapedia.bulbagarden.net/wiki/Scovillainite",
+      "zh-Hant": "https://bulbapedia.bulbagarden.net/wiki/Scovillainite"
+    },
+    "notes": "Nombres tomados de la tabla “In other languages” y del nombre principal de Bulbapedia; fuente wiki, no comprobación directa de la pantalla del juego. [Contraste 84] Coincide con WikiDex (https://www.wikidex.net/wiki/Scovillainita)."
+  },
+  {
+    "db_item_id": 2639,
+    "name_en_db": "Staraptite",
+    "names": {
+      "en": "Staraptite",
+      "es": "Staraptorita",
+      "fr": "Étouraptorite",
+      "de": "Staraptornit",
+      "it": "Staraptorite",
+      "ja": "ムクホークナイト",
+      "ko": "찌르호크나이트",
+      "zh-Hans": "姆克鹰进化石",
+      "zh-Hant": "姆克鷹進化石"
+    },
+    "text_kind": "wiki",
+    "confidence": "high",
+    "sources": {
+      "en": "https://bulbapedia.bulbagarden.net/wiki/Staraptite",
+      "es": "https://bulbapedia.bulbagarden.net/wiki/Staraptite",
+      "fr": "https://bulbapedia.bulbagarden.net/wiki/Staraptite",
+      "de": "https://bulbapedia.bulbagarden.net/wiki/Staraptite",
+      "it": "https://bulbapedia.bulbagarden.net/wiki/Staraptite",
+      "ja": "https://bulbapedia.bulbagarden.net/wiki/Staraptite",
+      "ko": "https://bulbapedia.bulbagarden.net/wiki/Staraptite",
+      "zh-Hans": "https://bulbapedia.bulbagarden.net/wiki/Staraptite",
+      "zh-Hant": "https://bulbapedia.bulbagarden.net/wiki/Staraptite"
+    },
+    "notes": "Nombres tomados de la tabla “In other languages” y del nombre principal de Bulbapedia; fuente wiki, no comprobación directa de la pantalla del juego. [Contraste 84] Coincide con WikiDex (https://www.wikidex.net/wiki/Staraptorita)."
+  },
+  {
+    "db_item_id": 2649,
+    "name_en_db": "Tatsugirinite",
+    "names": {
+      "en": "Tatsugirinite",
+      "es": "Tatsugirita",
+      "fr": "Nigirigonite",
+      "de": "Nigiraginit",
+      "it": "Tatsugirite",
+      "ja": "シャリタツナイト",
+      "ko": "싸리용나이트",
+      "zh-Hans": "米立龙进化石",
+      "zh-Hant": "米立龍進化石"
+    },
+    "text_kind": "wiki",
+    "confidence": "high",
+    "sources": {
+      "en": "https://bulbapedia.bulbagarden.net/wiki/Tatsugirinite",
+      "es": "https://bulbapedia.bulbagarden.net/wiki/Tatsugirinite",
+      "fr": "https://bulbapedia.bulbagarden.net/wiki/Tatsugirinite",
+      "de": "https://bulbapedia.bulbagarden.net/wiki/Tatsugirinite",
+      "it": "https://bulbapedia.bulbagarden.net/wiki/Tatsugirinite",
+      "ja": "https://bulbapedia.bulbagarden.net/wiki/Tatsugirinite",
+      "ko": "https://bulbapedia.bulbagarden.net/wiki/Tatsugirinite",
+      "zh-Hans": "https://bulbapedia.bulbagarden.net/wiki/Tatsugirinite",
+      "zh-Hant": "https://bulbapedia.bulbagarden.net/wiki/Tatsugirinite"
+    },
+    "notes": "Nombres tomados de la tabla “In other languages” y del nombre principal de Bulbapedia; fuente wiki, no comprobación directa de la pantalla del juego. [Contraste 84] Coincide con WikiDex (https://www.wikidex.net/wiki/Tatsugirita)."
+  },
+  {
+    "db_item_id": 2586,
+    "name_en_db": "Zeraorite",
+    "names": {
+      "en": "Zeraorite",
+      "es": "Zeraoranita",
+      "fr": "Zeraorite",
+      "de": "Zeraoranit",
+      "it": "Zeraorite",
+      "ja": "ゼラオラナイト",
+      "ko": "제라오라나이트",
+      "zh-Hans": "捷拉奥拉进化石",
+      "zh-Hant": "捷拉奧拉進化石"
+    },
+    "text_kind": "wiki",
+    "confidence": "high",
+    "sources": {
+      "en": "https://bulbapedia.bulbagarden.net/wiki/Zeraorite",
+      "es": "https://bulbapedia.bulbagarden.net/wiki/Zeraorite",
+      "fr": "https://bulbapedia.bulbagarden.net/wiki/Zeraorite",
+      "de": "https://bulbapedia.bulbagarden.net/wiki/Zeraorite",
+      "it": "https://bulbapedia.bulbagarden.net/wiki/Zeraorite",
+      "ja": "https://bulbapedia.bulbagarden.net/wiki/Zeraorite",
+      "ko": "https://bulbapedia.bulbagarden.net/wiki/Zeraorite",
+      "zh-Hans": "https://bulbapedia.bulbagarden.net/wiki/Zeraorite",
+      "zh-Hant": "https://bulbapedia.bulbagarden.net/wiki/Zeraorite"
+    },
+    "notes": "Nombres tomados de la tabla “In other languages” y del nombre principal de Bulbapedia; fuente wiki, no comprobación directa de la pantalla del juego. [Contraste 84] Coincide con WikiDex (https://www.wikidex.net/wiki/Zeraoranita)."
+  }
+]

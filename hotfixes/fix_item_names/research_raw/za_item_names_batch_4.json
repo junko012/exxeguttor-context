@@ -1,0 +1,582 @@
+[
+  {
+    "db_item_id": 2666,
+    "name_en_db": "Hyper Occa Berry",
+    "names": {
+      "en": "Hyper Occa Berry",
+      "es": "Baya Caoca D",
+      "fr": "Extra Baie Chocco",
+      "de": "Dimensions-Koakobeere",
+      "it": "Baccacao dimensionale",
+      "ja": "いじげんオッカのみ",
+      "ko": "이차원 오카열매",
+      "zh-Hans": "异次元巧可果",
+      "zh-Hant": "異次元巧可果"
+    },
+    "text_kind": "wiki",
+    "confidence": "medium",
+    "sources": {
+      "en": "https://bulbapedia.bulbagarden.net/wiki/Hyper_Occa_Berry",
+      "es": "https://www.wikidex.net/wiki/Baya_Caoca_D",
+      "fr": "https://bulbapedia.bulbagarden.net/wiki/Hyper_Occa_Berry",
+      "de": "https://bulbapedia.bulbagarden.net/wiki/Hyper_Occa_Berry",
+      "it": "https://bulbapedia.bulbagarden.net/wiki/Hyper_Occa_Berry",
+      "ja": "https://bulbapedia.bulbagarden.net/wiki/Hyper_Occa_Berry",
+      "ko": "https://bulbapedia.bulbagarden.net/wiki/Hyper_Occa_Berry",
+      "zh-Hans": "https://bulbapedia.bulbagarden.net/wiki/Hyper_Occa_Berry",
+      "zh-Hant": "https://bulbapedia.bulbagarden.net/wiki/Hyper_Occa_Berry"
+    },
+    "notes": "Nombres tomados de la ficha de Bulbapedia para la baya de Hyperspace; se usa la variante española de España cuando la ficha distingue regiones. Fuente wiki, no captura directa del juego. [Corrección 83] es: la fuente original daba el nombre de la baya normal (\"Baya Caoca\"); WikiDex lo lista como \"Baya Caoca D\" (título de página verificado con el nombre inglés)."
+  },
+  {
+    "db_item_id": 2656,
+    "name_en_db": "Hyper Oran Berry",
+    "names": {
+      "en": "Hyper Oran Berry",
+      "es": "Baya Aranja D",
+      "fr": "Extra Baie Oran",
+      "de": "Dimensions-Sinelbeere",
+      "it": "Baccarancia dimensionale",
+      "ja": "いじげんオレンのみ",
+      "ko": "이차원 오랭열매",
+      "zh-Hans": "异次元橙橙果",
+      "zh-Hant": "異次元橙橙果"
+    },
+    "text_kind": "wiki",
+    "confidence": "medium",
+    "sources": {
+      "en": "https://bulbapedia.bulbagarden.net/wiki/Hyper_Oran_Berry",
+      "es": "https://www.wikidex.net/wiki/Baya_Aranja_D",
+      "fr": "https://bulbapedia.bulbagarden.net/wiki/Hyper_Oran_Berry",
+      "de": "https://bulbapedia.bulbagarden.net/wiki/Hyper_Oran_Berry",
+      "it": "https://bulbapedia.bulbagarden.net/wiki/Hyper_Oran_Berry",
+      "ja": "https://bulbapedia.bulbagarden.net/wiki/Hyper_Oran_Berry",
+      "ko": "https://bulbapedia.bulbagarden.net/wiki/Hyper_Oran_Berry",
+      "zh-Hans": "https://bulbapedia.bulbagarden.net/wiki/Hyper_Oran_Berry",
+      "zh-Hant": "https://bulbapedia.bulbagarden.net/wiki/Hyper_Oran_Berry"
+    },
+    "notes": "Nombres tomados de la ficha de Bulbapedia para la baya de Hyperspace; se usa la variante española de España cuando la ficha distingue regiones. Fuente wiki, no captura directa del juego. [Corrección 83] es: la fuente original daba el nombre de la baya normal (\"Baya Aranja\"); WikiDex lo lista como \"Baya Aranja D\" (título de página verificado con el nombre inglés)."
+  },
+  {
+    "db_item_id": 2667,
+    "name_en_db": "Hyper Passho Berry",
+    "names": {
+      "en": "Hyper Passho Berry",
+      "es": "Baya Pasio D",
+      "fr": "Extra Baie Pocpoc",
+      "de": "Dimensions-Foepasbeere",
+      "it": "Baccapasflo dimensionale",
+      "ja": "いじげんイトケのみ",
+      "ko": "이차원 꼬시개열매",
+      "zh-Hans": "异次元千香果",
+      "zh-Hant": "異次元千香果"
+    },
+    "text_kind": "wiki",
+    "confidence": "medium",
+    "sources": {
+      "en": "https://bulbapedia.bulbagarden.net/wiki/Hyper_Passho_Berry",
+      "es": "https://www.wikidex.net/wiki/Baya_Pasio_D",
+      "fr": "https://bulbapedia.bulbagarden.net/wiki/Hyper_Passho_Berry",
+      "de": "https://bulbapedia.bulbagarden.net/wiki/Hyper_Passho_Berry",
+      "it": "https://bulbapedia.bulbagarden.net/wiki/Hyper_Passho_Berry",
+      "ja": "https://bulbapedia.bulbagarden.net/wiki/Hyper_Passho_Berry",
+      "ko": "https://bulbapedia.bulbagarden.net/wiki/Hyper_Passho_Berry",
+      "zh-Hans": "https://bulbapedia.bulbagarden.net/wiki/Hyper_Passho_Berry",
+      "zh-Hant": "https://bulbapedia.bulbagarden.net/wiki/Hyper_Passho_Berry"
+    },
+    "notes": "Nombres tomados de la ficha de Bulbapedia para la baya de Hyperspace; se usa la variante española de España cuando la ficha distingue regiones. Fuente wiki, no captura directa del juego. [Corrección 83] es: la fuente original daba el nombre de la baya normal (\"Baya Pasio\"); WikiDex lo lista como \"Baya Pasio D\" (título de página verificado con el nombre inglés)."
+  },
+  {
+    "db_item_id": 2675,
+    "name_en_db": "Hyper Payapa Berry",
+    "names": {
+      "en": "Hyper Payapa Berry",
+      "es": "Baya Payapa D",
+      "fr": "Extra Baie Yapap",
+      "de": "Dimensions-Pyapabeere",
+      "it": "Baccapayapa dimensionale",
+      "ja": "いじげんウタンのみ",
+      "ko": "이차원 야파열매",
+      "zh-Hans": "异次元福禄果",
+      "zh-Hant": "異次元福祿果"
+    },
+    "text_kind": "wiki",
+    "confidence": "medium",
+    "sources": {
+      "en": "https://bulbapedia.bulbagarden.net/wiki/Hyper_Payapa_Berry",
+      "es": "https://www.wikidex.net/wiki/Baya_Payapa_D",
+      "fr": "https://bulbapedia.bulbagarden.net/wiki/Hyper_Payapa_Berry",
+      "de": "https://bulbapedia.bulbagarden.net/wiki/Hyper_Payapa_Berry",
+      "it": "https://bulbapedia.bulbagarden.net/wiki/Hyper_Payapa_Berry",
+      "ja": "https://bulbapedia.bulbagarden.net/wiki/Hyper_Payapa_Berry",
+      "ko": "https://bulbapedia.bulbagarden.net/wiki/Hyper_Payapa_Berry",
+      "zh-Hans": "https://bulbapedia.bulbagarden.net/wiki/Hyper_Payapa_Berry",
+      "zh-Hant": "https://bulbapedia.bulbagarden.net/wiki/Hyper_Payapa_Berry"
+    },
+    "notes": "Nombres tomados de la ficha de Bulbapedia para la baya de Hyperspace; se usa la variante española de España cuando la ficha distingue regiones. Fuente wiki, no captura directa del juego. [Corrección 83] es: la fuente original daba el nombre de la baya normal (\"Baya Payapa\"); WikiDex lo lista como \"Baya Payapa D\" (título de página verificado con el nombre inglés)."
+  },
+  {
+    "db_item_id": 2653,
+    "name_en_db": "Hyper Pecha Berry",
+    "names": {
+      "en": "Hyper Pecha Berry",
+      "es": "Baya Meloc D",
+      "fr": "Extra Baie Pêcha",
+      "de": "Dimensions-Pirsifbeere",
+      "it": "Baccapesca dimensionale",
+      "ja": "いじげんモモンのみ",
+      "ko": "이차원 복슝열매",
+      "zh-Hans": "异次元桃桃果",
+      "zh-Hant": "異次元桃桃果"
+    },
+    "text_kind": "wiki",
+    "confidence": "medium",
+    "sources": {
+      "en": "https://bulbapedia.bulbagarden.net/wiki/Hyper_Pecha_Berry",
+      "es": "https://www.wikidex.net/wiki/Baya_Meloc_D",
+      "fr": "https://bulbapedia.bulbagarden.net/wiki/Hyper_Pecha_Berry",
+      "de": "https://bulbapedia.bulbagarden.net/wiki/Hyper_Pecha_Berry",
+      "it": "https://bulbapedia.bulbagarden.net/wiki/Hyper_Pecha_Berry",
+      "ja": "https://bulbapedia.bulbagarden.net/wiki/Hyper_Pecha_Berry",
+      "ko": "https://bulbapedia.bulbagarden.net/wiki/Hyper_Pecha_Berry",
+      "zh-Hans": "https://bulbapedia.bulbagarden.net/wiki/Hyper_Pecha_Berry",
+      "zh-Hant": "https://bulbapedia.bulbagarden.net/wiki/Hyper_Pecha_Berry"
+    },
+    "notes": "Nombres tomados de la ficha de Bulbapedia para la baya de Hyperspace; se usa la variante española de España cuando la ficha distingue regiones. Fuente wiki, no captura directa del juego. [Corrección 83] es: la fuente original daba el nombre de la baya normal (\"Baya Meloc\"); WikiDex lo lista como \"Baya Meloc D\" (título de página verificado con el nombre inglés)."
+  },
+  {
+    "db_item_id": 2657,
+    "name_en_db": "Hyper Persim Berry",
+    "names": {
+      "en": "Hyper Persim Berry",
+      "es": "Baya Caquic D",
+      "fr": "Extra Baie Kika",
+      "de": "Dimensions-Persimbeere",
+      "it": "Baccaki dimensionale",
+      "ja": "いじげんキーのみ",
+      "ko": "이차원 시몬열매",
+      "zh-Hans": "异次元柿仔果",
+      "zh-Hant": "異次元柿仔果"
+    },
+    "text_kind": "wiki",
+    "confidence": "medium",
+    "sources": {
+      "en": "https://bulbapedia.bulbagarden.net/wiki/Hyper_Persim_Berry",
+      "es": "https://www.wikidex.net/wiki/Baya_Caquic_D",
+      "fr": "https://bulbapedia.bulbagarden.net/wiki/Hyper_Persim_Berry",
+      "de": "https://bulbapedia.bulbagarden.net/wiki/Hyper_Persim_Berry",
+      "it": "https://bulbapedia.bulbagarden.net/wiki/Hyper_Persim_Berry",
+      "ja": "https://bulbapedia.bulbagarden.net/wiki/Hyper_Persim_Berry",
+      "ko": "https://bulbapedia.bulbagarden.net/wiki/Hyper_Persim_Berry",
+      "zh-Hans": "https://bulbapedia.bulbagarden.net/wiki/Hyper_Persim_Berry",
+      "zh-Hant": "https://bulbapedia.bulbagarden.net/wiki/Hyper_Persim_Berry"
+    },
+    "notes": "Nombres tomados de la ficha de Bulbapedia para la baya de Hyperspace; se usa la variante española de España cuando la ficha distingue regiones. Fuente wiki, no captura directa del juego. [Corrección 83] es: la fuente original daba el nombre de la baya normal (\"Baya Caquic\"); WikiDex lo lista como \"Baya Caquic D\" (título de página verificado con el nombre inglés)."
+  },
+  {
+    "db_item_id": 2660,
+    "name_en_db": "Hyper Pomeg Berry",
+    "names": {
+      "en": "Hyper Pomeg Berry",
+      "es": "Baya Grana D",
+      "fr": "Extra Baie Grena",
+      "de": "Dimensions-Granabeere",
+      "it": "Baccagrana dimensionale",
+      "ja": "いじげんザロクのみ",
+      "ko": "이차원 유석열매",
+      "zh-Hans": "异次元榴石果",
+      "zh-Hant": "異次元榴石果"
+    },
+    "text_kind": "wiki",
+    "confidence": "medium",
+    "sources": {
+      "en": "https://bulbapedia.bulbagarden.net/wiki/Hyper_Pomeg_Berry",
+      "es": "https://www.wikidex.net/wiki/Baya_Grana_D",
+      "fr": "https://bulbapedia.bulbagarden.net/wiki/Hyper_Pomeg_Berry",
+      "de": "https://bulbapedia.bulbagarden.net/wiki/Hyper_Pomeg_Berry",
+      "it": "https://bulbapedia.bulbagarden.net/wiki/Hyper_Pomeg_Berry",
+      "ja": "https://bulbapedia.bulbagarden.net/wiki/Hyper_Pomeg_Berry",
+      "ko": "https://bulbapedia.bulbagarden.net/wiki/Hyper_Pomeg_Berry",
+      "zh-Hans": "https://bulbapedia.bulbagarden.net/wiki/Hyper_Pomeg_Berry",
+      "zh-Hant": "https://bulbapedia.bulbagarden.net/wiki/Hyper_Pomeg_Berry"
+    },
+    "notes": "Nombres tomados de la ficha de Bulbapedia para la baya de Hyperspace; se usa la variante española de España cuando la ficha distingue regiones. Fuente wiki, no captura directa del juego. [Corrección 83] es: la fuente original daba el nombre de la baya normal (\"Baya Grana\"); WikiDex lo lista como \"Baya Grana D\" (título de página verificado con el nombre inglés)."
+  },
+  {
+    "db_item_id": 2662,
+    "name_en_db": "Hyper Qualot Berry",
+    "names": {
+      "en": "Hyper Qualot Berry",
+      "es": "Baya Ispero D",
+      "fr": "Extra Baie Qualot",
+      "de": "Dimensions-Qualotbeere",
+      "it": "Baccaloquat dimensionale",
+      "ja": "いじげんタポルのみ",
+      "ko": "이차원 파비열매",
+      "zh-Hans": "异次元比巴果",
+      "zh-Hant": "異次元比巴果"
+    },
+    "text_kind": "wiki",
+    "confidence": "medium",
+    "sources": {
+      "en": "https://www.wikidex.net/wiki/Baya_Ispero_D",
+      "es": "https://www.wikidex.net/wiki/Baya_Ispero_D",
+      "fr": "https://www.wikidex.net/wiki/Baya_Ispero_D",
+      "de": "https://www.wikidex.net/wiki/Baya_Ispero_D",
+      "it": "https://www.wikidex.net/wiki/Baya_Ispero_D",
+      "ja": "https://www.wikidex.net/wiki/Baya_Ispero_D",
+      "ko": "https://www.wikidex.net/wiki/Baya_Ispero_D",
+      "zh-Hans": "https://www.wikidex.net/wiki/Baya_Ispero_D",
+      "zh-Hant": "https://www.wikidex.net/wiki/Baya_Ispero_D"
+    },
+    "notes": "[Corrección 84] Encontrado en WikiDex (https://www.wikidex.net/wiki/Baya_Ispero_D); sin segunda fuente."
+  },
+  {
+    "db_item_id": 2654,
+    "name_en_db": "Hyper Rawst Berry",
+    "names": {
+      "en": "Hyper Rawst Berry",
+      "es": "Baya Safre D",
+      "fr": "Extra Baie Fraive",
+      "de": "Dimensions-Fragiabeere",
+      "it": "Baccafrago dimensionale",
+      "ja": "いじげんチーゴのみ",
+      "ko": "이차원 복분열매",
+      "zh-Hans": "异次元莓莓果",
+      "zh-Hant": "異次元莓莓果"
+    },
+    "text_kind": "wiki",
+    "confidence": "medium",
+    "sources": {
+      "en": "https://www.wikidex.net/wiki/Baya_Safre_D",
+      "es": "https://www.wikidex.net/wiki/Baya_Safre_D",
+      "fr": "https://www.wikidex.net/wiki/Baya_Safre_D",
+      "de": "https://www.wikidex.net/wiki/Baya_Safre_D",
+      "it": "https://www.wikidex.net/wiki/Baya_Safre_D",
+      "ja": "https://www.wikidex.net/wiki/Baya_Safre_D",
+      "ko": "https://www.wikidex.net/wiki/Baya_Safre_D",
+      "zh-Hans": "https://www.wikidex.net/wiki/Baya_Safre_D",
+      "zh-Hant": "https://www.wikidex.net/wiki/Baya_Safre_D"
+    },
+    "notes": "[Corrección 84] Encontrado en WikiDex (https://www.wikidex.net/wiki/Baya_Safre_D); sin segunda fuente."
+  },
+  {
+    "db_item_id": 2669,
+    "name_en_db": "Hyper Rindo Berry",
+    "names": {
+      "en": "Hyper Rindo Berry",
+      "es": "Baya Tamar D",
+      "fr": "Extra Baie Ratam",
+      "de": "Dimensions-Grindobeere",
+      "it": "Baccarindo dimensionale",
+      "ja": "いじげんリンドのみ",
+      "ko": "이차원 린드열매",
+      "zh-Hans": "异次元罗子果",
+      "zh-Hant": "異次元羅子果"
+    },
+    "text_kind": "wiki",
+    "confidence": "medium",
+    "sources": {
+      "en": "https://bulbapedia.bulbagarden.net/wiki/Hyper_Rindo_Berry",
+      "es": "https://www.wikidex.net/wiki/Baya_Tamar_D",
+      "fr": "https://bulbapedia.bulbagarden.net/wiki/Hyper_Rindo_Berry",
+      "de": "https://bulbapedia.bulbagarden.net/wiki/Hyper_Rindo_Berry",
+      "it": "https://bulbapedia.bulbagarden.net/wiki/Hyper_Rindo_Berry",
+      "ja": "https://bulbapedia.bulbagarden.net/wiki/Hyper_Rindo_Berry",
+      "ko": "https://bulbapedia.bulbagarden.net/wiki/Hyper_Rindo_Berry",
+      "zh-Hans": "https://bulbapedia.bulbagarden.net/wiki/Hyper_Rindo_Berry",
+      "zh-Hant": "https://bulbapedia.bulbagarden.net/wiki/Hyper_Rindo_Berry"
+    },
+    "notes": "Nombres tomados de la ficha de Bulbapedia para la baya de Hyperspace; se usa la variante española de España cuando la ficha distingue regiones. Fuente wiki, no captura directa del juego. [Corrección 83] es: la fuente original daba el nombre de la baya normal (\"Baya Tamar\"); WikiDex lo lista como \"Baya Tamar D\" (título de página verificado con el nombre inglés)."
+  },
+  {
+    "db_item_id": 2683,
+    "name_en_db": "Hyper Roseli Berry",
+    "names": {
+      "en": "Hyper Roseli Berry",
+      "es": "Baya Hibis D",
+      "fr": "Extra Baie Selro",
+      "de": "Dimensions-Hibisbeere",
+      "it": "Baccarcadè dimensionale",
+      "ja": "いじげんロゼルのみ",
+      "ko": "이차원 로셀열매",
+      "zh-Hans": "异次元洛玫果",
+      "zh-Hant": "異次元洛玫果"
+    },
+    "text_kind": "wiki",
+    "confidence": "medium",
+    "sources": {
+      "en": "https://bulbapedia.bulbagarden.net/wiki/Hyper_Roseli_Berry",
+      "es": "https://www.wikidex.net/wiki/Baya_Hibis_D",
+      "fr": "https://bulbapedia.bulbagarden.net/wiki/Hyper_Roseli_Berry",
+      "de": "https://bulbapedia.bulbagarden.net/wiki/Hyper_Roseli_Berry",
+      "it": "https://bulbapedia.bulbagarden.net/wiki/Hyper_Roseli_Berry",
+      "ja": "https://bulbapedia.bulbagarden.net/wiki/Hyper_Roseli_Berry",
+      "ko": "https://bulbapedia.bulbagarden.net/wiki/Hyper_Roseli_Berry",
+      "zh-Hans": "https://bulbapedia.bulbagarden.net/wiki/Hyper_Roseli_Berry",
+      "zh-Hant": "https://bulbapedia.bulbagarden.net/wiki/Hyper_Roseli_Berry"
+    },
+    "notes": "Nombres tomados de la ficha de Bulbapedia para la baya de Hyperspace; se usa la variante española de España cuando la ficha distingue regiones. Fuente wiki, no captura directa del juego. [Corrección 83] es: la fuente original daba el nombre de la baya normal (\"Baya Hibis\"); WikiDex lo lista como \"Baya Hibis D\" (título de página verificado con el nombre inglés)."
+  },
+  {
+    "db_item_id": 2673,
+    "name_en_db": "Hyper Shuca Berry",
+    "names": {
+      "en": "Hyper Shuca Berry",
+      "es": "Baya Acardo D",
+      "fr": "Extra Baie Jouca",
+      "de": "Dimensions-Schukebeere",
+      "it": "Baccanaca dimensionale",
+      "ja": "いじげんシュカのみ",
+      "ko": "이차원 슈캐열매",
+      "zh-Hans": "异次元腰木果",
+      "zh-Hant": "異次元腰木果"
+    },
+    "text_kind": "wiki",
+    "confidence": "medium",
+    "sources": {
+      "en": "https://bulbapedia.bulbagarden.net/wiki/Hyper_Shuca_Berry",
+      "es": "https://www.wikidex.net/wiki/Baya_Acardo_D",
+      "fr": "https://bulbapedia.bulbagarden.net/wiki/Hyper_Shuca_Berry",
+      "de": "https://bulbapedia.bulbagarden.net/wiki/Hyper_Shuca_Berry",
+      "it": "https://bulbapedia.bulbagarden.net/wiki/Hyper_Shuca_Berry",
+      "ja": "https://bulbapedia.bulbagarden.net/wiki/Hyper_Shuca_Berry",
+      "ko": "https://bulbapedia.bulbagarden.net/wiki/Hyper_Shuca_Berry",
+      "zh-Hans": "https://bulbapedia.bulbagarden.net/wiki/Hyper_Shuca_Berry",
+      "zh-Hant": "https://bulbapedia.bulbagarden.net/wiki/Hyper_Shuca_Berry"
+    },
+    "notes": "Nombres tomados de la ficha de Bulbapedia para la baya de Hyperspace; se usa la variante española de España cuando la ficha distingue regiones. Fuente wiki, no captura directa del juego. [Corrección 83] es: la fuente original daba el nombre de la baya normal (\"Baya Acardo\"); WikiDex lo lista como \"Baya Acardo D\" (título de página verificado con el nombre inglés)."
+  },
+  {
+    "db_item_id": 2659,
+    "name_en_db": "Hyper Sitrus Berry",
+    "names": {
+      "en": "Hyper Sitrus Berry",
+      "es": "Baya Zidra D",
+      "fr": "Extra Baie Sitrus",
+      "de": "Dimensions-Tsitrubeere",
+      "it": "Baccacedro dimensionale",
+      "ja": "いじげんオボンのみ",
+      "ko": "이차원 자뭉열매",
+      "zh-Hans": "异次元文柚果",
+      "zh-Hant": "異次元文柚果"
+    },
+    "text_kind": "wiki",
+    "confidence": "medium",
+    "sources": {
+      "en": "https://bulbapedia.bulbagarden.net/wiki/Hyper_Sitrus_Berry",
+      "es": "https://www.wikidex.net/wiki/Baya_Zidra_D",
+      "fr": "https://bulbapedia.bulbagarden.net/wiki/Hyper_Sitrus_Berry",
+      "de": "https://bulbapedia.bulbagarden.net/wiki/Hyper_Sitrus_Berry",
+      "it": "https://bulbapedia.bulbagarden.net/wiki/Hyper_Sitrus_Berry",
+      "ja": "https://bulbapedia.bulbagarden.net/wiki/Hyper_Sitrus_Berry",
+      "ko": "https://bulbapedia.bulbagarden.net/wiki/Hyper_Sitrus_Berry",
+      "zh-Hans": "https://bulbapedia.bulbagarden.net/wiki/Hyper_Sitrus_Berry",
+      "zh-Hant": "https://bulbapedia.bulbagarden.net/wiki/Hyper_Sitrus_Berry"
+    },
+    "notes": "Nombres tomados de la ficha de Bulbapedia para la baya de Hyperspace; se usa la variante española de España cuando la ficha distingue regiones. Fuente wiki, no captura directa del juego. [Corrección 83] es: la fuente original daba el nombre de la baya normal (\"Baya Zidra\"); WikiDex lo lista como \"Baya Zidra D\" (título de página verificado con el nombre inglés)."
+  },
+  {
+    "db_item_id": 2665,
+    "name_en_db": "Hyper Tamato Berry",
+    "names": {
+      "en": "Hyper Tamato Berry",
+      "es": "Baya Tamate D",
+      "fr": "Extra Baie Tamato",
+      "de": "Dimensions-Tamotbeere",
+      "it": "Baccamodoro dimensionale",
+      "ja": "いじげんマトマのみ",
+      "ko": "이차원 토망열매",
+      "zh-Hans": "异次元茄番果",
+      "zh-Hant": "異次元茄番果"
+    },
+    "text_kind": "wiki",
+    "confidence": "medium",
+    "sources": {
+      "en": "https://bulbapedia.bulbagarden.net/wiki/Hyper_Tamato_Berry",
+      "es": "https://www.wikidex.net/wiki/Baya_Tamate_D",
+      "fr": "https://bulbapedia.bulbagarden.net/wiki/Hyper_Tamato_Berry",
+      "de": "https://bulbapedia.bulbagarden.net/wiki/Hyper_Tamato_Berry",
+      "it": "https://bulbapedia.bulbagarden.net/wiki/Hyper_Tamato_Berry",
+      "ja": "https://bulbapedia.bulbagarden.net/wiki/Hyper_Tamato_Berry",
+      "ko": "https://bulbapedia.bulbagarden.net/wiki/Hyper_Tamato_Berry",
+      "zh-Hans": "https://bulbapedia.bulbagarden.net/wiki/Hyper_Tamato_Berry",
+      "zh-Hant": "https://bulbapedia.bulbagarden.net/wiki/Hyper_Tamato_Berry"
+    },
+    "notes": "Nombres tomados de la ficha de Bulbapedia para la baya de Hyperspace; se usa la variante española de España cuando la ficha distingue regiones. Fuente wiki, no captura directa del juego. [Corrección 83] es: la fuente original daba el nombre de la baya normal (\"Baya Tamate\"); WikiDex lo lista como \"Baya Tamate D\" (título de página verificado con el nombre inglés)."
+  },
+  {
+    "db_item_id": 2676,
+    "name_en_db": "Hyper Tanga Berry",
+    "names": {
+      "en": "Hyper Tanga Berry",
+      "es": "Baya Yecana D",
+      "fr": "Extra Baie Panga",
+      "de": "Dimensions-Tanigabeere",
+      "it": "Baccaitan dimensionale",
+      "ja": "いじげんタンガのみ",
+      "ko": "이차원 리체열매",
+      "zh-Hans": "异次元扁樱果",
+      "zh-Hant": "異次元扁櫻果"
+    },
+    "text_kind": "wiki",
+    "confidence": "medium",
+    "sources": {
+      "en": "https://bulbapedia.bulbagarden.net/wiki/Hyper_Tanga_Berry",
+      "es": "https://www.wikidex.net/wiki/Baya_Yecana_D",
+      "fr": "https://bulbapedia.bulbagarden.net/wiki/Hyper_Tanga_Berry",
+      "de": "https://bulbapedia.bulbagarden.net/wiki/Hyper_Tanga_Berry",
+      "it": "https://bulbapedia.bulbagarden.net/wiki/Hyper_Tanga_Berry",
+      "ja": "https://bulbapedia.bulbagarden.net/wiki/Hyper_Tanga_Berry",
+      "ko": "https://bulbapedia.bulbagarden.net/wiki/Hyper_Tanga_Berry",
+      "zh-Hans": "https://bulbapedia.bulbagarden.net/wiki/Hyper_Tanga_Berry",
+      "zh-Hant": "https://bulbapedia.bulbagarden.net/wiki/Hyper_Tanga_Berry"
+    },
+    "notes": "Nombres tomados de la ficha de Bulbapedia para la baya de Hyperspace; se usa la variante española de España cuando la ficha distingue regiones. Fuente wiki, no captura directa del juego. [Corrección 83] es: la fuente original daba el nombre de la baya normal (\"Baya Yecana\"); WikiDex lo lista como \"Baya Yecana D\" (título de página verificado con el nombre inglés)."
+  },
+  {
+    "db_item_id": 2668,
+    "name_en_db": "Hyper Wacan Berry",
+    "names": {
+      "en": "Hyper Wacan Berry",
+      "es": "Baya Gualot D",
+      "fr": "Extra Baie Parma",
+      "de": "Dimensions-Kerzalbeere",
+      "it": "Baccaparmen dimensionale",
+      "ja": "いじげんソクノのみ",
+      "ko": "이차원 초나열매",
+      "zh-Hans": "异次元独木果",
+      "zh-Hant": "異次元獨木果"
+    },
+    "text_kind": "wiki",
+    "confidence": "medium",
+    "sources": {
+      "en": "https://bulbapedia.bulbagarden.net/wiki/Hyper_Wacan_Berry",
+      "es": "https://www.wikidex.net/wiki/Baya_Gualot_D",
+      "fr": "https://bulbapedia.bulbagarden.net/wiki/Hyper_Wacan_Berry",
+      "de": "https://bulbapedia.bulbagarden.net/wiki/Hyper_Wacan_Berry",
+      "it": "https://bulbapedia.bulbagarden.net/wiki/Hyper_Wacan_Berry",
+      "ja": "https://bulbapedia.bulbagarden.net/wiki/Hyper_Wacan_Berry",
+      "ko": "https://bulbapedia.bulbagarden.net/wiki/Hyper_Wacan_Berry",
+      "zh-Hans": "https://bulbapedia.bulbagarden.net/wiki/Hyper_Wacan_Berry",
+      "zh-Hant": "https://bulbapedia.bulbagarden.net/wiki/Hyper_Wacan_Berry"
+    },
+    "notes": "Nombres tomados de la ficha de Bulbapedia para la baya de Hyperspace; se usa la variante española de España cuando la ficha distingue regiones. Fuente wiki, no captura directa del juego. [Corrección 83] es: la fuente original daba el nombre de la baya normal (\"Baya Gualot\"); WikiDex lo lista como \"Baya Gualot D\" (título de página verificado con el nombre inglés)."
+  },
+  {
+    "db_item_id": 2670,
+    "name_en_db": "Hyper Yache Berry",
+    "names": {
+      "en": "Hyper Yache Berry",
+      "es": "Baya Rimoya D",
+      "fr": "Extra Baie Nanone",
+      "de": "Dimensions-Kiroyabeere",
+      "it": "Baccamoya dimensionale",
+      "ja": "いじげんヤチェのみ",
+      "ko": "이차원 플카열매",
+      "zh-Hans": "异次元番荔果",
+      "zh-Hant": "異次元番荔果"
+    },
+    "text_kind": "wiki",
+    "confidence": "medium",
+    "sources": {
+      "en": "https://bulbapedia.bulbagarden.net/wiki/Hyper_Yache_Berry",
+      "es": "https://www.wikidex.net/wiki/Baya_Rimoya_D",
+      "fr": "https://bulbapedia.bulbagarden.net/wiki/Hyper_Yache_Berry",
+      "de": "https://bulbapedia.bulbagarden.net/wiki/Hyper_Yache_Berry",
+      "it": "https://bulbapedia.bulbagarden.net/wiki/Hyper_Yache_Berry",
+      "ja": "https://bulbapedia.bulbagarden.net/wiki/Hyper_Yache_Berry",
+      "ko": "https://bulbapedia.bulbagarden.net/wiki/Hyper_Yache_Berry",
+      "zh-Hans": "https://bulbapedia.bulbagarden.net/wiki/Hyper_Yache_Berry",
+      "zh-Hant": "https://bulbapedia.bulbagarden.net/wiki/Hyper_Yache_Berry"
+    },
+    "notes": "Nombres tomados de la ficha de Bulbapedia para la baya de Hyperspace; se usa la variante española de España cuando la ficha distingue regiones. Fuente wiki, no captura directa del juego. [Corrección 83] es: la fuente original daba el nombre de la baya normal (\"Baya Rimoya\"); WikiDex lo lista como \"Baya Rimoya D\" (título de página verificado con el nombre inglés)."
+  },
+  {
+    "db_item_id": 2611,
+    "name_en_db": "Important Letter",
+    "names": {
+      "en": "Important Letter",
+      "es": "Carta Importante",
+      "fr": "Lettre Importante",
+      "de": "Wichtiger Brief",
+      "it": "Lettera importante",
+      "ja": "たいせつなてがみ",
+      "ko": "중요한편지",
+      "zh-Hans": "重要信件",
+      "zh-Hant": "重要信件"
+    },
+    "text_kind": "wiki",
+    "confidence": "high",
+    "sources": {
+      "en": "https://www.wikidex.net/wiki/Carta_Importante",
+      "es": "https://www.wikidex.net/wiki/Carta_Importante",
+      "fr": "https://www.pokepedia.fr/Lettre_Importante",
+      "de": "https://www.wikidex.net/wiki/Carta_Importante",
+      "it": "https://www.wikidex.net/wiki/Carta_Importante",
+      "ja": "https://www.wikidex.net/wiki/Carta_Importante",
+      "ko": "https://www.wikidex.net/wiki/Carta_Importante",
+      "zh-Hans": "https://www.pokepedia.fr/Lettre_Importante",
+      "zh-Hant": "https://www.wikidex.net/wiki/Carta_Importante"
+    },
+    "notes": "Solo pude respaldar el nombre inglés mediante la lista de objetos de Legends: Z-A; no encontré una tabla fiable con equivalentes oficiales en los otros ocho idiomas. [87] Resuelto: WikiDex y Poképédia coinciden (es, fr, it, ja, zh); de/it/ko/zh-Hant solo de WikiDex."
+  },
+  {
+    "db_item_id": 2610,
+    "name_en_db": "Popping Candy",
+    "names": {
+      "en": "Popping Candy",
+      "es": "Caramelos Chispeantes",
+      "fr": "Bonbon Zap-Zap",
+      "de": "Knisterbrause",
+      "it": "Caramelle zipzap",
+      "ja": "パチパチキャンディ",
+      "ko": "톡톡캔디",
+      "zh-Hans": "噼里啪啦糖果",
+      "zh-Hant": "劈哩啪啦糖果"
+    },
+    "text_kind": "wiki",
+    "confidence": "medium",
+    "sources": {
+      "en": "https://bulbapedia.bulbagarden.net/wiki/Popping_Candy",
+      "es": "https://bulbapedia.bulbagarden.net/wiki/Popping_Candy",
+      "fr": "https://bulbapedia.bulbagarden.net/wiki/Popping_Candy",
+      "de": "https://bulbapedia.bulbagarden.net/wiki/Popping_Candy",
+      "it": "https://bulbapedia.bulbagarden.net/wiki/Popping_Candy",
+      "ja": "https://bulbapedia.bulbagarden.net/wiki/Popping_Candy",
+      "ko": "https://bulbapedia.bulbagarden.net/wiki/Popping_Candy",
+      "zh-Hans": "https://bulbapedia.bulbagarden.net/wiki/Popping_Candy",
+      "zh-Hant": "https://bulbapedia.bulbagarden.net/wiki/Popping_Candy"
+    },
+    "notes": "Nombres tomados de una ficha o tabla de idiomas de Bulbapedia; fuente wiki, no confirmación directa mediante captura del juego."
+  },
+  {
+    "db_item_id": 2608,
+    "name_en_db": "Épice Noire",
+    "names": {
+      "en": "Épice Noire",
+      "es": "Especia Negra",
+      "fr": "Épice Noire",
+      "de": "Dunkelwürze",
+      "it": "Nero di spezie",
+      "ja": "スパイスブラック",
+      "ko": "스파이스블랙",
+      "zh-Hans": "黑香料",
+      "zh-Hant": "黑香料"
+    },
+    "text_kind": "wiki",
+    "confidence": "medium",
+    "sources": {
+      "en": "https://bulbapedia.bulbagarden.net/wiki/Épice_Noire",
+      "es": "https://bulbapedia.bulbagarden.net/wiki/Épice_Noire",
+      "fr": "https://bulbapedia.bulbagarden.net/wiki/Épice_Noire",
+      "de": "https://bulbapedia.bulbagarden.net/wiki/Épice_Noire",
+      "it": "https://bulbapedia.bulbagarden.net/wiki/Épice_Noire",
+      "ja": "https://bulbapedia.bulbagarden.net/wiki/Épice_Noire",
+      "ko": "https://bulbapedia.bulbagarden.net/wiki/Épice_Noire",
+      "zh-Hans": "https://bulbapedia.bulbagarden.net/wiki/Épice_Noire",
+      "zh-Hant": "https://bulbapedia.bulbagarden.net/wiki/Épice_Noire"
+    },
+    "notes": "Nombres tomados de una ficha o tabla de idiomas de Bulbapedia; fuente wiki, no confirmación directa mediante captura del juego."
+  }
+]

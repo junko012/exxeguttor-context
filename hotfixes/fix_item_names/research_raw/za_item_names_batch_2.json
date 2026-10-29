@@ -1,0 +1,176 @@
+[
+  {
+    "db_item_id": 2604,
+    "name_en_db": "Amazing Butter",
+    "names": {
+      "en": "Amazing Butter",
+      "es": "Ultramantequilla",
+      "fr": "Ultra Beurre",
+      "de": "Ultrabutter",
+      "it": "Burro ultra",
+      "ja": "ウルトラバター",
+      "ko": "울트라버터",
+      "zh-Hans": "究极黄油",
+      "zh-Hant": "究極奶油"
+    },
+    "text_kind": "wiki",
+    "confidence": "medium",
+    "sources": {
+      "en": "https://bulbapedia.bulbagarden.net/wiki/Amazing_Butter",
+      "es": "https://bulbapedia.bulbagarden.net/wiki/Amazing_Butter",
+      "fr": "https://bulbapedia.bulbagarden.net/wiki/Amazing_Butter",
+      "de": "https://bulbapedia.bulbagarden.net/wiki/Amazing_Butter",
+      "it": "https://bulbapedia.bulbagarden.net/wiki/Amazing_Butter",
+      "ja": "https://bulbapedia.bulbagarden.net/wiki/Amazing_Butter",
+      "ko": "https://bulbapedia.bulbagarden.net/wiki/Amazing_Butter",
+      "zh-Hans": "https://bulbapedia.bulbagarden.net/wiki/Amazing_Butter",
+      "zh-Hant": "https://bulbapedia.bulbagarden.net/wiki/Amazing_Butter"
+    },
+    "notes": "Nombre tomado de la ficha de Bulbapedia y su tabla “In other languages”; fuente wiki, no comprobación directa de la pantalla del juego. En chino se eligió la forma simplificada/tradicional correspondiente de las variantes publicadas."
+  },
+  {
+    "db_item_id": 2603,
+    "name_en_db": "Great Butter",
+    "names": {
+      "en": "Great Butter",
+      "es": "Hipermantequilla",
+      "fr": "Hyper Beurre",
+      "de": "Hyperbutter",
+      "it": "Burro mega",
+      "ja": "ハイパーバター",
+      "ko": "하이퍼버터",
+      "zh-Hans": "高级黄油",
+      "zh-Hant": "高級奶油"
+    },
+    "text_kind": "wiki",
+    "confidence": "medium",
+    "sources": {
+      "en": "https://bulbapedia.bulbagarden.net/wiki/Great_Butter",
+      "es": "https://bulbapedia.bulbagarden.net/wiki/Great_Butter",
+      "fr": "https://bulbapedia.bulbagarden.net/wiki/Great_Butter",
+      "de": "https://bulbapedia.bulbagarden.net/wiki/Great_Butter",
+      "it": "https://bulbapedia.bulbagarden.net/wiki/Great_Butter",
+      "ja": "https://bulbapedia.bulbagarden.net/wiki/Great_Butter",
+      "ko": "https://bulbapedia.bulbagarden.net/wiki/Great_Butter",
+      "zh-Hans": "https://bulbapedia.bulbagarden.net/wiki/Great_Butter",
+      "zh-Hant": "https://bulbapedia.bulbagarden.net/wiki/Great_Butter"
+    },
+    "notes": "Nombre tomado de la ficha de Bulbapedia y su tabla “In other languages”; fuente wiki, no comprobación directa de la pantalla del juego. En chino se eligió la forma simplificada/tradicional correspondiente de las variantes publicadas."
+  },
+  {
+    "db_item_id": 2606,
+    "name_en_db": "Hyperspace Butter",
+    "names": {
+      "en": "Hyperspace Butter",
+      "es": "Mantequilla dimensional",
+      "fr": "Extra Beurre",
+      "de": "Dimensionsbutter",
+      "it": "Burro dimensionale",
+      "ja": "いじげんバター",
+      "ko": "이차원버터",
+      "zh-Hans": "异次元黄油",
+      "zh-Hant": "異次元奶油"
+    },
+    "text_kind": "wiki",
+    "confidence": "medium",
+    "sources": {
+      "en": "https://bulbapedia.bulbagarden.net/wiki/Hyperspace_Butter",
+      "es": "https://bulbapedia.bulbagarden.net/wiki/Hyperspace_Butter",
+      "fr": "https://bulbapedia.bulbagarden.net/wiki/Hyperspace_Butter",
+      "de": "https://bulbapedia.bulbagarden.net/wiki/Hyperspace_Butter",
+      "it": "https://bulbapedia.bulbagarden.net/wiki/Hyperspace_Butter",
+      "ja": "https://bulbapedia.bulbagarden.net/wiki/Hyperspace_Butter",
+      "ko": "https://bulbapedia.bulbagarden.net/wiki/Hyperspace_Butter",
+      "zh-Hans": "https://bulbapedia.bulbagarden.net/wiki/Hyperspace_Butter",
+      "zh-Hant": "https://bulbapedia.bulbagarden.net/wiki/Hyperspace_Butter"
+    },
+    "notes": "Nombre tomado de la ficha de Bulbapedia y su tabla “In other languages”; fuente wiki, no comprobación directa de la pantalla del juego. En chino se eligió la forma simplificada/tradicional correspondiente de las variantes publicadas."
+  },
+  {
+    "db_item_id": 2601,
+    "name_en_db": "Lumiosian Butter",
+    "names": {
+      "en": "Lumiosian Butter",
+      "es": "Mantequilla de Luminalia",
+      "fr": "Beurre d’Illumis",
+      "de": "Illumina-Butter",
+      "it": "Burro di Luminopoli",
+      "ja": "ミアレバター",
+      "ko": "미르버터",
+      "zh-Hans": "密阿雷黄油",
+      "zh-Hant": "密阿雷奶油"
+    },
+    "text_kind": "wiki",
+    "confidence": "medium",
+    "sources": {
+      "en": "https://bulbapedia.bulbagarden.net/wiki/Lumiosian_Butter",
+      "es": "https://bulbapedia.bulbagarden.net/wiki/Lumiosian_Butter",
+      "fr": "https://bulbapedia.bulbagarden.net/wiki/Lumiosian_Butter",
+      "de": "https://bulbapedia.bulbagarden.net/wiki/Lumiosian_Butter",
+      "it": "https://bulbapedia.bulbagarden.net/wiki/Lumiosian_Butter",
+      "ja": "https://bulbapedia.bulbagarden.net/wiki/Lumiosian_Butter",
+      "ko": "https://bulbapedia.bulbagarden.net/wiki/Lumiosian_Butter",
+      "zh-Hans": "https://bulbapedia.bulbagarden.net/wiki/Lumiosian_Butter",
+      "zh-Hant": "https://bulbapedia.bulbagarden.net/wiki/Lumiosian_Butter"
+    },
+    "notes": "Nombre tomado de la ficha de Bulbapedia y su tabla “In other languages”; fuente wiki, no comprobación directa de la pantalla del juego. En chino se eligió la forma simplificada/tradicional correspondiente de las variantes publicadas."
+  },
+  {
+    "db_item_id": 2602,
+    "name_en_db": "Nice Butter",
+    "names": {
+      "en": "Nice Butter",
+      "es": "Supermantequilla",
+      "fr": "Super Beurre",
+      "de": "Superbutter",
+      "it": "Burro super",
+      "ja": "スーパーバター",
+      "ko": "슈퍼버터",
+      "zh-Hans": "超级黄油",
+      "zh-Hant": "超級奶油"
+    },
+    "text_kind": "wiki",
+    "confidence": "medium",
+    "sources": {
+      "en": "https://bulbapedia.bulbagarden.net/wiki/Nice_Butter",
+      "es": "https://bulbapedia.bulbagarden.net/wiki/Nice_Butter",
+      "fr": "https://bulbapedia.bulbagarden.net/wiki/Nice_Butter",
+      "de": "https://bulbapedia.bulbagarden.net/wiki/Nice_Butter",
+      "it": "https://bulbapedia.bulbagarden.net/wiki/Nice_Butter",
+      "ja": "https://bulbapedia.bulbagarden.net/wiki/Nice_Butter",
+      "ko": "https://bulbapedia.bulbagarden.net/wiki/Nice_Butter",
+      "zh-Hans": "https://bulbapedia.bulbagarden.net/wiki/Nice_Butter",
+      "zh-Hant": "https://bulbapedia.bulbagarden.net/wiki/Nice_Butter"
+    },
+    "notes": "Nombre tomado de la ficha de Bulbapedia y su tabla “In other languages”; fuente wiki, no comprobación directa de la pantalla del juego. En chino se eligió la forma simplificada/tradicional correspondiente de las variantes publicadas."
+  },
+  {
+    "db_item_id": 2605,
+    "name_en_db": "Supreme Butter",
+    "names": {
+      "en": "Supreme Butter",
+      "es": "Mantequilla Máxima",
+      "fr": "Master Beurre",
+      "de": "Meisterbutter",
+      "it": "Burro master",
+      "ja": "マスターバター",
+      "ko": "마스터버터",
+      "zh-Hans": "大师黄油",
+      "zh-Hant": "大師奶油"
+    },
+    "text_kind": "wiki",
+    "confidence": "medium",
+    "sources": {
+      "en": "https://bulbapedia.bulbagarden.net/wiki/Supreme_Butter",
+      "es": "https://bulbapedia.bulbagarden.net/wiki/Supreme_Butter",
+      "fr": "https://bulbapedia.bulbagarden.net/wiki/Supreme_Butter",
+      "de": "https://bulbapedia.bulbagarden.net/wiki/Supreme_Butter",
+      "it": "https://bulbapedia.bulbagarden.net/wiki/Supreme_Butter",
+      "ja": "https://bulbapedia.bulbagarden.net/wiki/Supreme_Butter",
+      "ko": "https://bulbapedia.bulbagarden.net/wiki/Supreme_Butter",
+      "zh-Hans": "https://bulbapedia.bulbagarden.net/wiki/Supreme_Butter",
+      "zh-Hant": "https://bulbapedia.bulbagarden.net/wiki/Supreme_Butter"
+    },
+    "notes": "Nombre tomado de la ficha de Bulbapedia y su tabla “In other languages”; fuente wiki, no comprobación directa de la pantalla del juego. En chino se eligió la forma simplificada/tradicional correspondiente de las variantes publicadas."
+  }
+]

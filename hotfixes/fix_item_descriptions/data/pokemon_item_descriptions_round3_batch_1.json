@@ -1,0 +1,772 @@
+[
+  {
+    "db_item_id": 433,
+    "name_en": "Guidebook",
+    "description": {
+      "en": null,
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": null,
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No reliable source found for an in-game bag description; likely an unused/internal item entry in the listed games."
+  },
+  {
+    "db_item_id": 434,
+    "name_en": "Sticker Case",
+    "description": {
+      "en": "A case for storing Seals that can be applied to the capsule cases of Poké Balls.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "in_game",
+    "confidence": "high",
+    "variants": [
+      {
+        "games": [
+          "diamondpearl",
+          "platinum"
+        ],
+        "description": {
+          "en": "A case for storing Seals that can be applied to the capsule cases of Poké Balls."
+        }
+      },
+      {
+        "games": [
+          "heartgoldsoulsilver"
+        ],
+        "description": {
+          "en": "A case for storing Seals that can be applied to the Capsule cases of Poké Balls."
+        }
+      }
+    ],
+    "sources": [
+      "https://bulbapedia.bulbagarden.net/wiki/Sticker_Case",
+      "https://www.wikidex.net/wiki/Caja_de_stickers"
+    ],
+    "notes": "The game-specific capitalization differs between DPPt and HGSS in the documented text. BDSP's later wording is not applicable because the item is not obtainable there."
+  },
+  {
+    "db_item_id": 436,
+    "name_en": "Sticker Bag",
+    "description": {
+      "en": null,
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": null,
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No reliable source found for an in-game description. The item appears to be an unused/removed development item; left empty rather than inferred."
+  },
+  {
+    "db_item_id": 453,
+    "name_en": "Lunar Feather",
+    "description": {
+      "en": "A feather that glows like the moon. It is said to possess the power to dispel nightmares.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "in_game",
+    "confidence": "high",
+    "variants": [
+      {
+        "games": [
+          "diamondpearl",
+          "platinum",
+          "heartgoldsoulsilver",
+          "black2white2"
+        ],
+        "description": {
+          "en": "A feather that glows like the moon. It is said to possess the power to dispel nightmares."
+        }
+      },
+      {
+        "games": [
+          "brilliantdiamondshiningpearl"
+        ],
+        "description": {
+          "en": "A feather that glows like the moon. It's said to possess the power to dispel nightmares."
+        }
+      }
+    ],
+    "sources": [
+      "https://bulbapedia.bulbagarden.net/wiki/Lunar_Feather"
+    ],
+    "notes": "Bulbapedia groups the same classic description for DPPt/HGSS and B2W2; BDSP uses the contracted wording."
+  },
+  {
+    "db_item_id": 464,
+    "name_en": "Secret Medicine",
+    "description": {
+      "en": "An astonishing medicine that can instantly restore health to any Pokémon. It is produced by an apothecary in Cianwood City.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "in_game",
+    "confidence": "high",
+    "variants": [
+      {
+        "games": [
+          "crystal",
+          "goldsilver",
+          "heartgoldsoulsilver"
+        ],
+        "description": {
+          "en": "Fully heals any Pokémon."
+        }
+      },
+      {
+        "games": [
+          "diamondpearl",
+          "platinum",
+          "brilliantdiamondshiningpearl"
+        ],
+        "description": {
+          "en": "A fantastic medicine dispensed by the pharmacy in Cianwood City. It fully heals a Pokémon of any ailment."
+        }
+      },
+      {
+        "games": [
+          "legendsarceus"
+        ],
+        "description": {
+          "en": "An astonishing medicine that can instantly restore health to any Pokémon. It is produced by an apothecary in Cianwood City."
+        }
+      }
+    ],
+    "sources": [
+      "https://bulbapedia.bulbagarden.net/wiki/%E3%81%B2%E3%81%A7%E3%82%93%E3%81%AE%E3%81%8F%E3%81%99%E3%82%8A"
+    ],
+    "notes": "The name and description vary by generation. The main description is the Hisui/Legends: Arceus variant."
+  },
+  {
+    "db_item_id": 1620,
+    "name_en": "Caster Fern",
+    "description": {
+      "en": "A fern used for crafting items made to be thrown. When these curled leaves are unfurled, they can serve as nature's wrapping paper.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "in_game",
+    "confidence": "high",
+    "variants": [],
+    "sources": [
+      "https://bulbapedia.bulbagarden.net/wiki/Caster_Fern",
+      "https://www.serebii.net/legendsarceus/newitems.shtml"
+    ],
+    "notes": ""
+  },
+  {
+    "db_item_id": 1632,
+    "name_en": "Dazzling Honey",
+    "description": {
+      "en": "Honey that sparkles with an amber hue. It is beloved by bug Pokémon and Pokémon with fairylike charms, so they will gather wherever a comb of it is thrown.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "in_game",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://bulbapedia.bulbagarden.net/wiki/Dazzling_Honey"
+    ],
+    "notes": ""
+  },
+  {
+    "db_item_id": 1633,
+    "name_en": "Hearty Grains",
+    "description": {
+      "en": "Beautiful stalks of rice bursting with life. Pokémon that dwell and wander among the fields love these grains and will gather wherever the stalks are thrown.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "in_game",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://bulbapedia.bulbagarden.net/wiki/Hearty_Grains"
+    ],
+    "notes": ""
+  },
+  {
+    "db_item_id": 1634,
+    "name_en": "Plump Beans",
+    "description": {
+      "en": "Large, juicy beans that grow in pods. These beans are beloved by fish Pokémon, as well as bird Pokémon and their flying ilk, so throw one and they will gather around.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "in_game",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://bulbapedia.bulbagarden.net/wiki/Plump_Beans"
+    ],
+    "notes": ""
+  },
+  {
+    "db_item_id": 1635,
+    "name_en": "Springy Mushroom",
+    "description": {
+      "en": "A large and well-ripened mushroom. It is beloved by the more monstrous Pokémon, as well as dragon Pokémon, so they will gather wherever one is thrown.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "in_game",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://bulbapedia.bulbagarden.net/wiki/Springy_Mushroom"
+    ],
+    "notes": ""
+  },
+  {
+    "db_item_id": 1636,
+    "name_en": "Crunchy Salt",
+    "description": {
+      "en": "Translucent crystals that are beloved by Pokémon bearing a resemblance to grass, plants, or minerals. They will gather wherever a lump of this salt is thrown.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "in_game",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://bulbapedia.bulbagarden.net/wiki/Crunchy_Salt"
+    ],
+    "notes": ""
+  },
+  {
+    "db_item_id": 1655,
+    "name_en": "Salt Cake",
+    "description": {
+      "en": "A cake made by combining salt with a Cake-Lure Base. These cakes are potently effective at attracting Pokémon that bear a resemblance to grass, plants, or minerals.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "in_game",
+    "confidence": "high",
+    "variants": [],
+    "sources": [
+      "https://bulbapedia.bulbagarden.net/wiki/Salt_Cake",
+      "https://www.serebii.net/legendsarceus/newitems.shtml"
+    ],
+    "notes": ""
+  },
+  {
+    "db_item_id": 1708,
+    "name_en": "Candy Truffle",
+    "description": {
+      "en": "A sweet-fleshed truffle that is packed full of mysterious energy. It is one of the materials needed for crafting various items.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "in_game",
+    "confidence": "high",
+    "variants": [],
+    "sources": [
+      "https://bulbapedia.bulbagarden.net/wiki/Candy_Truffle",
+      "https://www.serebii.net/legendsarceus/newitems.shtml"
+    ],
+    "notes": ""
+  },
+  {
+    "db_item_id": 1709,
+    "name_en": "Cake-Lure Base",
+    "description": {
+      "en": "A type of field provision that enhances the flavor of other foods it is mixed with.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "in_game",
+    "confidence": "high",
+    "variants": [],
+    "sources": [
+      "https://bulbapedia.bulbagarden.net/wiki/Cake-Lure_Base",
+      "https://www.serebii.net/legendsarceus/newitems.shtml"
+    ],
+    "notes": ""
+  },
+  {
+    "db_item_id": 1785,
+    "name_en": "Strange Ball",
+    "description": {
+      "en": null,
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": null,
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [
+      "https://bulbapedia.bulbagarden.net/wiki/Strange_Ball",
+      "https://www.dittobase.com/legends-arceus/items/lastrange-ball"
+    ],
+    "notes": "No ordinary in-game flavor text is documented: Bulbapedia shows blank/placeholder entries for LA and SV, and Dittobase describes it as a reference appearance rather than an obtainable item."
+  },
+  {
+    "db_item_id": 1786,
+    "name_en": "Pokédex",
+    "description": {
+      "en": null,
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": null,
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No reliable source found for a matching in-game bag description across the listed Red/Green/Yellow and Legends: Arceus entries; left empty rather than infer from narrative text."
+  },
+  {
+    "db_item_id": 1811,
+    "name_en": "Kanto Slate",
+    "description": {
+      "en": "A slate overflowing with enigmatic energy. You can feel a strong connection between it and the Kanto Room at Ramanas Park.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "in_game",
+    "confidence": "high",
+    "variants": [],
+    "sources": [
+      "https://bulbapedia.bulbagarden.net/wiki/List_of_items_by_pocket_%28Brilliant_Diamond_and_Shining_Pearl%29",
+      "https://bulbapedia.bulbagarden.net/wiki/Slate"
+    ],
+    "notes": ""
+  },
+  {
+    "db_item_id": 1812,
+    "name_en": "Johto Slate",
+    "description": {
+      "en": "A slate overflowing with enigmatic energy. You can feel a strong connection between it and the Johto Room at Ramanas Park.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "in_game",
+    "confidence": "high",
+    "variants": [],
+    "sources": [
+      "https://bulbapedia.bulbagarden.net/wiki/List_of_items_by_pocket_%28Brilliant_Diamond_and_Shining_Pearl%29",
+      "https://bulbapedia.bulbagarden.net/wiki/Slate"
+    ],
+    "notes": ""
+  },
+  {
+    "db_item_id": 1814,
+    "name_en": "Rainbow Slate",
+    "description": {
+      "en": "A slate overflowing with enigmatic energy. You can feel a strong connection between it and the Rainbow Room at Ramanas Park.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "in_game",
+    "confidence": "high",
+    "variants": [],
+    "sources": [
+      "https://bulbapedia.bulbagarden.net/wiki/List_of_items_by_pocket_%28Brilliant_Diamond_and_Shining_Pearl%29",
+      "https://bulbapedia.bulbagarden.net/wiki/Slate"
+    ],
+    "notes": ""
+  },
+  {
+    "db_item_id": 1861,
+    "name_en": "Malicious Armor",
+    "description": {
+      "en": "A peculiar set of armor that can make a certain species of Pokémon evolve. Malicious will lurks within it.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "in_game",
+    "confidence": "high",
+    "variants": [
+      {
+        "games": [
+          "scarletviolet",
+          "legendsza"
+        ],
+        "description": {
+          "en": "A peculiar set of armor that can make a certain species of Pokémon evolve. Malicious will lurks within it."
+        }
+      }
+    ],
+    "sources": [
+      "https://bulbapedia.bulbagarden.net/wiki/Malicious_Armor"
+    ],
+    "notes": "Bulbapedia lists the same English description for SV and Legends: Z-A."
+  },
+  {
+    "db_item_id": 1874,
+    "name_en": "Rock Tera Shard",
+    "description": {
+      "en": "On rare occasions, these shards form when a Tera Pokémon falls in battle and its Tera Jewel shatters.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "in_game",
+    "confidence": "high",
+    "variants": [],
+    "sources": [
+      "https://www.serebii.net/itemdex/rockterashard.shtml",
+      "https://pokemondb.net/item/rock-tera-shard"
+    ],
+    "notes": ""
+  },
+  {
+    "db_item_id": 2345,
+    "name_en": "Leader’s Crest",
+    "description": {
+      "en": "A shard of what appears to be an old blade of some sort. It is held only by Bisharp that head up a group of Pawniard.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "in_game",
+    "confidence": "medium",
+    "variants": [],
+    "sources": [
+      "https://bulbapedia.bulbagarden.net/wiki/Leader%27s_Crest"
+    ],
+    "notes": ""
+  },
+  {
+    "db_item_id": 2381,
+    "name_en": "Gold Bottle",
+    "description": {
+      "en": "A popular option among hikers. It's made with titanium, so it doesn't rust even if it's used to hold drinks with high sodium content.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "in_game",
+    "confidence": "high",
+    "variants": [],
+    "sources": [
+      "https://bulbapedia.bulbagarden.net/wiki/Gold_Bottle",
+      "https://www.serebii.net/itemdex/goldbottle.shtml"
+    ],
+    "notes": ""
+  },
+  {
+    "db_item_id": 2471,
+    "name_en": "Carbink Jewel",
+    "description": {
+      "en": null,
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": null,
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No reliable item-specific page or verified in-game description found in the sources checked; left empty rather than infer."
+  },
+  {
+    "db_item_id": 2620,
+    "name_en": "Red Canari Plush",
+    "description": {
+      "en": "A plush doll of Canari that holds a red charm. Having one of these increases the Exp. Points your Pokémon get by a lot.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "in_game",
+    "confidence": "high",
+    "variants": [
+      {
+        "games": [
+          "legendsza",
+          "level_1"
+        ],
+        "description": {
+          "en": "A plush doll of Canari that holds a red charm. Having one of these increases the Exp. Points your Pokémon get by a little."
+        }
+      },
+      {
+        "games": [
+          "legendsza",
+          "level_2"
+        ],
+        "description": {
+          "en": "A plush doll of Canari that holds a red charm. Having one of these increases the Exp. Points your Pokémon get."
+        }
+      },
+      {
+        "games": [
+          "legendsza",
+          "level_3"
+        ],
+        "description": {
+          "en": "A plush doll of Canari that holds a red charm. Having one of these increases the Exp. Points your Pokémon get by a lot."
+        }
+      }
+    ],
+    "sources": [
+      "https://www.serebii.net/itemdex/redcanariplush.shtml",
+      "https://bulbapedia.bulbagarden.net/wiki/Red_Canari_Plush"
+    ],
+    "notes": "The name covers three level variants; the main description is Level 3, matching the cited Serebii ItemDex result."
+  },
+  {
+    "db_item_id": 2629,
+    "name_en": "Green Canari Plush",
+    "description": {
+      "en": "A plush doll of Canari that holds a green charm. Having one of these makes you a lot less likely to black out from taking damage.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "in_game",
+    "confidence": "high",
+    "variants": [
+      {
+        "games": [
+          "legendsza",
+          "level_1"
+        ],
+        "description": {
+          "en": "A plush doll of Canari that holds a green charm. Having one of these makes you a little less likely to black out from taking damage."
+        }
+      },
+      {
+        "games": [
+          "legendsza",
+          "level_2"
+        ],
+        "description": {
+          "en": "A plush doll of Canari that holds a green charm. Having one of these makes you less likely to black out from taking damage."
+        }
+      },
+      {
+        "games": [
+          "legendsza",
+          "level_3"
+        ],
+        "description": {
+          "en": "A plush doll of Canari that holds a green charm. Having one of these makes you a lot less likely to black out from taking damage."
+        }
+      }
+    ],
+    "sources": [
+      "https://bulbapedia.bulbagarden.net/wiki/Green_Canari_Plush_Lv._1",
+      "https://www.gamerguides.com/pokemon-legends-z-a/database/items/key-items"
+    ],
+    "notes": "The name covers three level variants; the main description is Level 3."
+  },
+  {
+    "db_item_id": 90011,
+    "name_en": "Data ROM",
+    "description": {
+      "en": "A memory device that may contain Cipher's secrets.",
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": "in_game",
+    "confidence": "high",
+    "variants": [
+      {
+        "games": [
+          "colosseum"
+        ],
+        "description": {
+          "en": "A data rom of some sort found on Ein's desk."
+        }
+      },
+      {
+        "games": [
+          "galeofdarkness"
+        ],
+        "description": {
+          "en": "A memory device that may contain Cipher's secrets."
+        }
+      }
+    ],
+    "sources": [
+      "https://bulbapedia.bulbagarden.net/wiki/Data_Rom",
+      "https://bulbapedia.bulbagarden.net/wiki/List_of_key_items_in_Pok%C3%A9mon_XD"
+    ],
+    "notes": "The two games have distinct descriptions; main description is Pokémon XD: Gale of Darkness."
+  },
+  {
+    "db_item_id": 90029,
+    "name_en": "Safe Key",
+    "description": {
+      "en": null,
+      "es": null,
+      "fr": null,
+      "de": null,
+      "it": null,
+      "ja": null,
+      "ko": null,
+      "zh-Hans": null,
+      "zh-Hant": null
+    },
+    "text_kind": null,
+    "confidence": "not_found",
+    "variants": [],
+    "sources": [],
+    "notes": "No reliable source for an exact in-game description found in the sources checked; left empty rather than infer."
+  }
+]
