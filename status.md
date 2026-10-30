@@ -1455,4 +1455,12 @@ Revisados: selector de especie, Buscar IVs, Recrear, AutoFix, revisión de expor
 - `ExportReviewCardViewModel`: `IsBagPouch`, `ShowGlyph` (parche `ExportReviewCardViewModel_bag_icon.patch`). `MainWindow.axaml`: Viewbox con el ícono dentro del `Panel.card-sprite`; el TextBlock de glyph solo se muestra si no hay sprite ni mochila.
 - Sin compilar. Ningún archivo va completo (tu versión es más nueva que mi copia): solo el parche `MainWindow_bag_icon.patch` (`git apply`) o el cambio manual de un bloque.
 
+### Entrega 94 — Fix "PKM Format needs to be PA9" al exportar (base: commit 8731259)
+- Causa: encuentro de otro juego de la MISMA generación (ej. PK9 de SV en un save Z-A = PA9) no se convertía: el chequeo `Format < Generation` no los distingue.
+- `PokemonService.BuildPokemon`: si `pkm.GetType() != save.PKMType` → `EntityConverter.TryMakePKMCompatible`; si no convierte, cae al PKM en blanco del formato correcto.
+- `EditApplyService.ApplyPokemonSlot`: misma red de seguridad antes de escribir (cubre creaciones pendientes previas); lanza InvalidOperationException clara si no convierte.
+- `MainWindowViewModel.ConfirmExportAsync`: try/catch alrededor de ApplyIncluded (antes cerraba la app) → SetStatus("Error_Unknown").
+- Exposición en otros juegos (revisado): Gen8 BDSP (PB8) usa sets de SwSh (PK8), SwSh/otros Gen8 con sets de otros Gen8, Gen9 SV/ZA. La red de seguridad es genérica. Otros servicios (EncounterRecreation*, EggOrigin) ya comparan tipos o no escriben al save.
+- NO compilado ni probado. Probar: crear varios Pokémon en Z-A, BDSP y SwSh y exportar.
+
 
