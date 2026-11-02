@@ -1463,4 +1463,86 @@ Revisados: selector de especie, Buscar IVs, Recrear, AutoFix, revisión de expor
 - Exposición en otros juegos (revisado): Gen8 BDSP (PB8) usa sets de SwSh (PK8), SwSh/otros Gen8 con sets de otros Gen8, Gen9 SV/ZA. La red de seguridad es genérica. Otros servicios (EncounterRecreation*, EggOrigin) ya comparan tipos o no escriben al save.
 - NO compilado ni probado. Probar: crear varios Pokémon en Z-A, BDSP y SwSh y exportar.
 
+### Entrega 95 — Especies imposibles de crear en Z-A/BDSP/LA/LGPE ya no salen en blanco
+- Causa: tras el fix 94, un encuentro PK9 de una especie que NO está en Z-A (ej. Appletun) no se puede convertir a PA9 (PKHeX: `GameDataPA9.TryCreate` exige `PersonalTable.ZA.IsPresentInGame`) → caía al PKM en blanco (sin movimientos, ilegal).
+- `CreatableSpecies.HiddenForCreation(SaveFile)`: HiddenIn + (solo si PKMType es PA9/PA8/PB8/PB7) las especies sin ninguna forma presente en `save.Personal`. `MainWindowViewModel` la usa en `SpeciesPicker.SetHiddenSpecies`. El Pokédex sigue usando `HiddenIn` (sin cambio).
+- Archivos completos sobre commit 8731259 + entrega 94: CreatableSpecies.cs, MainWindowViewModel.cs (incluye cambios de 94).
+- NO compilado ni probado.
+
+### Entrega 96 — Álbum Pokédex unificado con el selector de crear
+- `PokedexService.GetAlbumEntries` usa `CreatableSpecies.HiddenForCreation(save)` (antes `HiddenIn`): el álbum solo lista especies que existen en el juego (tabla personal). Las 'transfer_only' (ej. 331 en Z-A) ya no aparecen. `hiddenDb` (HiddenIn) solo decide el respaldo restricted_dex_availability.json.
+- Depende de la entrega 95 (CreatableSpecies.HiddenForCreation). NO compilado ni probado.
+- Probar: Pokédex en Z-A (total de tarjetas menor), SwSh, BDSP, Gen 1-3; formas regionales/alternas (Zygarde en Z-A, Giratina Origen en LA) siguen apareciendo.
+
+### Entrega 97 — Barrido de legalidad de "Crear Pokémon" en 21 juegos + fix de hueco de movimientos
+- Barrido real (arnés propio: PKHeX 25.11.07 + código de la app compilados con .NET 10 en el sandbox) sobre commit 8731259 + entregas 94-96: se crean todas las especies que ofrece el selector (forma base, hasta 3 intentos) y se analiza con LegalityAnalysis.
+- Resultado antes del fix: Z-A 9 ilegales, BDSP 2, Gen4/5/6 6, Gen7 7. Resultado después: Gen4, Gen5, Gen7 y todos los demás 0 ilegales; quedan Z-A 9, BDSP 2, Gen6 (X/OR) 4.
+- Fix `PokemonService` (movimiento requerido por evolución): ya no deja un slot vacío en el medio (Sudowoodo, Ambipom, Lickilicky, Tangrowth, Yanmega, Mamoswine, Tsareena salían con "Invalid Move"); se compactan los movimientos y el requerido va después.
+- Pendientes conocidos: Z-A Mewtwo, Espeon, Umbreon, Pupitar, Scatterbug/Spewpa/Vivillon (PKHeX 25.11.07 lanza ArgumentOutOfRange en EvolutionGroupHOME.GetSingleEnv con PA9 + origen SV → "Analysis not available"), Hoopa y Volcanion (sin encuentro); BDSP Celebi (TransferTrackerMissing) y Milotic (EncInvalid); Gen6 Ambipom/Lickilicky/Tangrowth/Yanmega (huevo Nv.5 sin el movimiento).
+- Nuevo test `CreationLegalitySweepTests` (21 juegos, lista KnownGaps; falla solo por ilegales nuevos). NO compilado como xunit aquí (sin NuGet), pero la misma lógica corrió en el arnés.
+
+### Entrega 98 — Legalidad de "Crear Pokémon": Gen 6, BDSP y Z-A (Scatterbug) resueltos (reemplaza a la 97)
+- Barrido (21 juegos, forma base, 3 intentos; arnés PKHeX 25.11.07 + código de la app en .NET 10): ahora 0 ilegales en todos salvo Z-A (6).
+- `PokemonService.TryBuildFromLegitEncounter`:
+  - Gen4-7: un candidato de especie evolucionada cuyo moveset tiene movimientos inválidos ya no se devuelve de inmediato (`movesBadGen4To7`); la sonda de nivel exige además movimientos válidos.
+  - Evoluciones por "conocer un movimiento" (Ambipom, Tangrowth, Yanmega...) en Gen4-7: se sube el nivel hasta que el movimiento es legal (`_lastEvoKnowMoveByLevel`, `knowMoveByLevelGen4To7`). Resuelve Gen6 (Ambipom, Lickilicky, Tangrowth, Yanmega).
+  - El cruce de FORMATO dentro de la misma generación (PK8→PB8 en BDSP, PK9→PA9 en Z-A) cuenta como pase por HOME: se convierte dentro del bucle y recibe Tracker. Resuelve BDSP Celebi (TransferTrackerMissing) y Milotic, y Z-A Scatterbug/Spewpa/Vivillon.
+- `TryEvolveForward`: evolución por movimiento aprendible por nivel ya no depende solo de la inyección del movimiento (compactado sin huecos, entrega 97).
+- Pendiente Z-A (6): Mewtwo, Hoopa, Volcanion (origen de otro juego → "Plus Move flag must be set" + "Incorrectly transferred"); Espeon, Umbreon, Pupitar (EncInvalid: ningún encuentro de Z-A encaja con la evolución en PKHeX 25.11.07).
+- Test `CreationLegalitySweepTests` actualizado (KnownGaps solo Z-A). NO compilado como xunit; no se corrió RegionalForm/AlternateForm tests de la app (sin NuGet).
+
+### Entrega 99 — Legalidad de "Crear Pokémon": investigados los 8 casos de Z-A + Golem de Alola (reemplaza a la 98)
+- Investigación (PKHeX 25.11.07, arnés con el código real de la app):
+  - Mewtwo (150), Hoopa (720), Volcanion (721), Sliggoo de Hisui, Goodra de Hisui en Z-A: sin encuentro propio de Z-A; solo llegan como PA9 de origen no-Z-A y `TransferVerifier` marca TransferBad a todo PA9 así (`pk.ZA != pk is PA9`, "TODO: ZA HOME Compatibility"). Inarreglable desde la app hasta que PKHeX lo cambie.
+  - Espeon (196), Umbreon (197), Pupitar (247) en Z-A: `EvolutionUtil.Discard` quita de la cadena a la pre-evolución cuya habilidad (mismo índice) no coincide con la del Pokémon (Eevee/Larvitar ≠ Espeon/Umbreon/Pupitar) y queda EncounterInvalid. Límite de PKHeX; no se puede forzar desde la app.
+- Solo esos casos se ocultan del selector de Z-A: `CreatableSpecies.ZaUnlegalizable` + `HiddenInCreationPicker(save)` (usado SOLO por el selector; el Pokédex sigue con `HiddenForCreation` porque esas especies sí existen en el juego) y `RegionalFormCatalog.NotObtainable` (Sliggoo/Goodra de Hisui en Z-A). Revisar al actualizar PKHeX.
+- Let's Go: Golem de Alola (EncounterTrade7b) quedaba con "TransferHandlerFlagRequired"; `PokemonService` ahora aplica `MarkAsTransferred` (HT = entrenador del save, manejador actual = HT) a los candidatos EncounterTrade7b.
+- Resultado del barrido (21 juegos): 0 ilegales en especies (Z-A 227 creables) y en formas regionales ofrecidas (ZA 4, SL 44, SW 30, PLA 18, GP 18, SN 18, US 18).
+- `CreationLegalitySweepTests`: sin KnownGaps; añade barrido de formas regionales y una prueba de que Z-A no ofrece los casos ocultos. NO compilado como xunit en tu PC.
+- Archivos: PokemonService.cs, CreatableSpecies.cs, RegionalFormCatalog.cs, MainWindowViewModel.cs, tests/.../CreationLegalitySweepTests.cs.
+
+### Entrega 100 — El combo "Forma" del editor ya no genera ilegales (se suma a la 99)
+- Barrido del combo en 21 juegos (crear especie → forma ofrecida por `GetSelectableForms` → `ApplyForm` → `LegalityAnalysis`): antes ~380 combinaciones ilegales (colores de Flabébé/Florges sin encuentro, letras de Unown en Gen3-4/Legends, recortes de Furfrou, Vivillon de otras regiones, placas de Arceus sin liberar, Pikachu gorras, Gourgeist/Sinistea, etc.). Después: 0 en los 21 juegos.
+- `PokemonService.GetSelectableFormsCore`: se ofrece solo la forma actual y las que NO introducen ninguna alerta inválida nueva tras `ApplyForm` (`FormIsBlocked` estricto; si el análisis falla, no se ofrece). Se quitó la tolerancia a "corregibles a mano" y la excepción de Unown. `UncreatableForms` ya no interviene en el combo.
+- Efecto: se ofrecen menos formas (p. ej. Z-A 33→7, Legends: Arceus 66→11, Escarlata/Púrpura 114→90). Si se quiere recuperar alguna (letras de Unown, recortes de Furfrou, colores de Flabébé), hay que construirla con su encuentro/PID/argumento de forma correctos, no solo cambiar el índice.
+- `CreationLegalitySweepTests`: nueva prueba `ComboDeFormas_NoOfreceFormasQueDejanIlegalAlPokemon` (21 juegos). NO compilado como xunit en tu PC; tests existentes de formas que esperen las formas ahora ocultas podrían necesitar ajuste.
+- Archivos: PokemonService.cs, tests/.../CreationLegalitySweepTests.cs (sobre la entrega 99).
+
+### Entrega 101 — Formas que el combo ocultó (entrega 100) vuelven como tarjetas de creación
+- Las formas que el combo del editor dejó de ofrecer (entrega 100) y que `BuildPokemon(especie, forma)` sí construye legales se agregan a `Assets/creatable_forms.json` (formas alternativas = tarjetas propias en "Crear Pokémon"): letras de Unown (Gen3, Gen5, BDSP, Legends: Arceus), colores de Flabébé/Florges, tamaños de Gourgeist, Meowstic ♀, gorras de Pikachu en Escarlata/Púrpura y Espada/Escudo, Vivillon, Sinistea/Polteageist falsificados, Toxtricity, Indeedee/Basculegion/Oinkologne ♀, Maushold, Dudunsparce, Poltchageist/Sinistcha, Mothim/Shellos/Gastrodon (Legends: Arceus), formas Totem de Sol/Luna y Ultrasol/Ultraluna (Raticate, Marowak, Gumshoos, Vikavolt, Ribombee, Araquanid, Lurantis, Salazzle, Togedemaru, Mimikyu, Kommoo).
+- `AlternateFormCatalog`: el JSON embebido ahora SIEMPRE se une a lo que traiga la DB (`own_encounter`); antes, si la DB tenía filas, el JSON se ignoraba.
+- `GameVersionMappings.TryGetGameId`: se agregan S, W, B, W2, B2, GN y GP (devolvían 0, así que en saves de Zafiro, Blanco/Negro 1 y 2, Azul japonés y Let's Go Pikachu no había catálogo de formas alternativas — p. ej. Pikachu Partner/Eevee Partner en GP). Compilado contra PKHeX 25.11.07 en el arnés.
+- Sigue SIN estar disponible (no hay forma legal con el constructor actual): Vivillon/Scatterbug/Spewpa de patrones de otras regiones en Gen6/7 y casi todos en Z-A, Furfrou (recortes), placas de Arceus en Legends: Arceus, Origen de Dialga/Palkia/Giratina en Escarlata/Púrpura y Legends, formas Therian en Legends, Koraidon/Miraidon (modos), Unown de Gen4 (excepto A y !/?), Hoopa Desatado, Floette Eterna, Ash-Greninja en Z-A/Sol-Luna, Magearna Original, Gimmighoul Errante.
+- `CreationLegalitySweepTests`: nueva prueba de formas alternativas del catálogo (21 juegos). Sin compilar como xunit en tu PC.
+- Archivos: PokemonService.cs (entrega 100), AlternateFormCatalog.cs, GameVersionMappings.cs, Assets/creatable_forms.json, tests/.../CreationLegalitySweepTests.cs.
+
+### Entrega 102 — Furfrou y Vivillon (Gen 6/7) vuelven a ser creables (se suma a la 101)
+- `PokemonService.BuildPokemon`: Furfrou con corte (forma != 0) recibe el argumento de forma sugerido por PKHeX (5 días); sin él salía `FormArgumentInvalid` en Gen 6/7.
+- `TryBuildFromLegitEncounterCore` + nuevo `TrySetVivillonRegion`: en Gen 6/7 el patrón de Scatterbug/Spewpa/Vivillon se fija en el candidato y se le pone una región de consola 3DS + país + subregión coherentes con el patrón (`Vivillon3DS`, `Locale3DS`); primero respetando el idioma, y si el patrón es solo de Japón (Elegante) sin ese requisito. Los patrones Fancy/Poké Ball (de evento) siguen sin crearse.
+- `Assets/creatable_forms.json`: +9 Furfrou y +18 Scatterbug/Spewpa/Vivillon por juego en X/Y (22), ROSA (14), Sol/Luna (19) y Ultrasol/Ultraluna (21), y 1 Unown en Diamante/Perla.
+- Verificado (arnés PKHeX 25.11.07): 21 juegos, especies, formas regionales, tarjetas de formas alternativas y combo del editor, todo con 0 ilegales.
+- Pendiente (sin camino legal con el constructor actual): Furfrou/Vivillon en Z-A (TransferBad, PKHeX viejo), Unown de Gen 4 (letras por PID), placas de Arceus y formas Therian/Origen en Legends: Arceus, Origen de Dialga/Palkia/Giratina en Escarlata/Púrpura, Koraidon/Miraidon (modos), Hoopa Desatado, Floette Eterna, Ash-Greninja en Z-A/Sol-Luna, Magearna Original, Gimmighoul Errante.
+- Nota: en Gen 6 PKHeX exige que Furfrou/Shaymin/Hoopa con forma especial estén en el equipo (no en caja); el modal no controla en qué slot cae el Pokémon.
+
+### Entrega 103 — Unown de Gen 4 y formas Origen de Escarlata/Púrpura (se suma a la 102)
+- `TryBuildFromLegitEncounterCore`: Unown en Gen 4 se convierte con `EncounterCriteria { Form = letra }` (PKHeX respeta la letra al generar el PID); antes salía siempre la misma letra y la forma pedida se descartaba. Resuelve las letras de Unown en Diamante/Perla/Platino/HG/SS (y, por el salto de generación, en Ultrasol/Ultraluna).
+- `ApplyForm`: formas Origen de Dialga/Palkia/Giratina. Formato >= 9 (Escarlata/Púrpura): Cristal Adamante (1777), Globo Lustroso (1778) y Núcleo Griseo (1779); formato <= 8: solo Giratina con Orbe Griseo (112). La forma base no conserva el objeto. Con esto el combo del editor vuelve a ofrecer el Origen en Escarlata/Púrpura.
+- `Assets/creatable_forms.json`: +18 Unown en D/P, +18 en Platino, +6 en HG/SS y +27 en Ultrasol/Ultraluna.
+- Verificado (arnés PKHeX 25.11.07): 21 juegos, formas alternativas del catálogo y combo del editor con 0 ilegales.
+- Sigue sin camino legal: Furfrou/Vivillon en Z-A (PKHeX viejo), placas de Arceus (17), Origen de Dialga/Palkia, formas Therian, Shaymin Cielo y Basculegion hembra en Legends: Arceus; Koraidon/Miraidon (modos); Hoopa Desatado; Floette Eterna; Ash-Greninja; Magearna Original; Gimmighoul Errante; un Scatterbug/Spewpa en Escarlata/Púrpura; Shaymin Cielo en HG/SS.
+
+## Entrega 104 — Formas: tabla FormGameAvailability + reparaciones finales
+- Hotfix `hotfixes/fix_form_availability/` (create_tables.py, load_data.py, instructions.md, form_game_availability.json): 731 filas (498 own_encounter, 233 uncreatable), idempotente, `--dry-run`. Hay que correrlo sobre pokemon.db.
+- `AlternateFormCatalog`: vuelve a DB primero; `creatable_forms.json` solo es respaldo (mismo contenido que la DB, verificado por juego).
+- `PokemonService`: RepairHomeDeliveryFlags (tracker/handler HOME para formas creadas), argumento de forma Furfrou/Hoopa en ApplyForm, tamaños absolutos recalculados al cambiar de forma (IScaledSizeValue).
+- Ocultos por limitación de PKHeX 25.11.07: Mewtwo, Hoopa, Volcanion, Espeon, Umbreon, Pupitar (Z-A) y Sliggoo/Goodra de Hisui; se restauran al migrar a PKHeX nuevo/.NET 10.
+- Pendiente docs: CHANGELOG/SCHEMA_REFERENCE de pokemon-database (own_encounter ahora son 498; uncreatable ya no lo usa el combo).
+- No compilado ni probado en la PC de Erick (sí en arnés PKHeX 25.11.07).
+
+## Entrega 105 — Fix: slots de movimientos vacíos sin "+" al volver a un Pokémon con ediciones pendientes
+- Causa: `RestorePendingEdits` reaplica Move1-4 (por reflexión) después de que `LoadPokemon` ya calculó `RecalcMoveCreateSlots`; los `MoveNIsEmpty`/`IsCreateSlot`/`ShowDash` quedaban desactualizados (tarjetas sin mostrar, sin "+" ni "—"). Visto en Yellow (Gen 1), pero aplica a cualquier generación.
+- Fix: `RestorePendingEdits` llama a `RecalcMoveCreateSlots()` al final (PokemonEditorViewModel.cs, +4 líneas).
+- Verificado en arnés: PKHeX guarda/relee bien los movimientos de Gen 1 (también con huecos); el problema era solo de vista. No compilado en la PC de Erick.
+
+
 
