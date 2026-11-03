@@ -1544,5 +1544,30 @@ Revisados: selector de especie, Buscar IVs, Recrear, AutoFix, revisión de expor
 - Fix: `RestorePendingEdits` llama a `RecalcMoveCreateSlots()` al final (PokemonEditorViewModel.cs, +4 líneas).
 - Verificado en arnés: PKHeX guarda/relee bien los movimientos de Gen 1 (también con huecos); el problema era solo de vista. No compilado en la PC de Erick.
 
+## Entrega 106 — Selector de movimientos: todos los métodos de aprendizaje
+- Bug: `MoveSelectorViewModel` agrupaba por movimiento y conservaba un solo método (nivel > MT > tutor > crianza). Un movimiento aprendido por nivel y también por MT/tutor/crianza solo mostraba "Lv X" y no aparecía al filtrar por MT/Tutor/Egg.
+- Fix: `MoveOption.Methods` guarda todos los (método, nivel); la columna muestra "Lv 20 · TM · Egg" (varios niveles: "Lv 1/30"), con tooltip; el filtro por método y los chips usan todos los métodos. Columna de método ensanchada (60→110) en lista y encabezado (PokemonStatsView.axaml).
+- Verificado con un proyecto de prueba aparte (VM compilado con stubs). UI/axaml no compilados en la PC de Erick.
+
+## Entrega 107 — Limpieza de los 8 warnings de compilación
+- CS8601 SpeciesFormResolver: caché de `Entry?` (puede guardar null).
+- CS8604 x2 PokemonEditorViewModel: `edits` nunca es null (se quitó el `?.`/`!= null` redundante).
+- CS0618 PokemonEditorViewModel: Hidden Power usa `GetIVs(stackalloc)` en vez de `PKM.IVs` obsoleto.
+- xUnit2029 x4 (EggOriginGen2/Gen4Plus, PokedexAvailability, RecreateGroups): `Assert.Empty(x.Where(..))` → `Assert.DoesNotContain(x, ..)`.
+- Sin cambios de comportamiento. No compilado en el sandbox (solo la app completa en la PC de Erick).
+
+## Entrega 108 — Fix: tipo de Hidden Power
+- `HiddenPower.GetType` devuelve 0 = Fighting … 15 = Dark (sin Normal) y la app indexaba `strings.Types[...]` sin el +1: todo salía desfasado (ej. IVs 31 → "Dragon" en vez de Dark).
+- Gen 2 usaba la fórmula de bits de IV de Gen 3+; ahora usa la de DVs (Ataque/Defensa) vía `GetType(ivs, context)`.
+- Helper `HiddenPowerTypeName` en PokemonEditorViewModel (carga y recálculo). Este archivo reemplaza al de la entrega 107.
+- Hidden Power sigue visible solo en Gen 2-7. BDSP/Legends: Arceus solo la tienen en Unown (según pokemon.db), no se muestra.
+- Verificado con PKHeX en el arnés; no compilado en la PC de Erick.
+
+## Entrega 109 — Boceto: Liberar Pokémon (solo diseño)
+- Nueva carpeta de mockup `mockups/release_pokemon/` (release-pokemon-boceto.html + release-pokemon.md) para subir al repo de contexto.
+- Propuesta: botón "−" (esquina sup. izquierda del slot, caja y equipo), diálogo de confirmación con Rotom-Corte cortando un lazo (variantes: normal, con objeto, huevo, último del equipo bloqueado); confirmación siempre, liberación individual y aviso con Deshacer.
+- Sin cambios de código. Pendiente aprobación y verificar Gen 1/2 y Let's Go antes de implementar.
+- Asset pendiente: sprite Rotom-Corte 10012 (normal/shiny) + EXTRA_FORM_IDS en download-sprites.py.
+
 
 

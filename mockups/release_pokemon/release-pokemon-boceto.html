@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Exxeguttor — Boceto: Liberar Pokémon (botón "−" + confirmación con Rotom)</title>
+<style>
+  :root {
+    --bg-window:#ffffff; --bg-surface:#f4f4f5; --border:#dcdce0; --border-strong:#b8b8bf;
+    --text-primary:#1c1c1f; --text-secondary:#6b6b70; --danger:#ef4444; --danger-dark:#b91c1c;
+    --accent:#3b82f6; --ok:#16a34a;
+  }
+  * { box-sizing:border-box; }
+  body { margin:0; padding:28px; background:#e5e5e8; color:var(--text-primary);
+    font-family:-apple-system,"Segoe UI","Cantarell","Ubuntu",sans-serif; }
+  h2 { font-size:12px; text-transform:uppercase; letter-spacing:.04em; color:var(--text-secondary); margin:0 0 10px; font-weight:600; }
+  .note { font-size:12px; color:var(--text-secondary); text-align:center; margin:0 0 20px; }
+  .row { display:flex; flex-wrap:wrap; gap:24px; justify-content:center; align-items:flex-start; margin-bottom:28px; }
+  .card { background:var(--bg-window); border:1px solid var(--border); border-radius:12px; padding:18px; box-shadow:0 6px 18px rgba(0,0,0,.08); }
+
+  /* ── Slots ───────────────────────────────────────── */
+  .box-grid { display:grid; grid-template-columns:repeat(6,72px); gap:10px 6px; }
+  .slot { position:relative; height:84px; border-radius:8px; text-align:center; padding-top:6px; cursor:pointer; border:1px solid transparent; }
+  .slot:hover, .slot.hover { background:var(--bg-surface); border-color:var(--border); }
+  .slot.selected { background:#eaf2ff; border-color:var(--accent); }
+  .slot img { width:48px; height:48px; image-rendering:pixelated; }
+  .slot .lv { display:block; font-size:11px; color:var(--text-secondary); margin-top:-2px; }
+  .slot.empty { cursor:default; }
+  .slot.empty:hover { background:none; border-color:transparent; }
+
+  /* botón "−": esquina superior izquierda, aparece al pasar el mouse o con foco de teclado */
+  .rel-btn { position:absolute; top:3px; left:3px; width:18px; height:18px; border-radius:50%;
+    border:1.5px solid #fff; background:var(--danger); color:#fff; font-size:14px; font-weight:700; line-height:13px;
+    padding:0; display:flex; align-items:center; justify-content:center; cursor:pointer;
+    opacity:0; transform:scale(.8); transition:opacity .12s, transform .12s, background .12s;
+    box-shadow:0 1px 3px rgba(0,0,0,.35); }
+  .slot:hover .rel-btn, .slot.hover .rel-btn, .slot:focus-within .rel-btn, .party-row:hover .rel-btn, .party-row.hover .rel-btn { opacity:1; transform:scale(1); }
+  .rel-btn:hover, .rel-btn.hot { background:var(--danger-dark); transform:scale(1.12); }
+  .rel-btn[disabled] { background:#c9c9cf; cursor:not-allowed; box-shadow:none; }
+  .slot.empty .rel-btn { display:none; }
+
+  .party { width:200px; }
+  .party-row { position:relative; display:flex; align-items:center; gap:10px; height:60px; padding:0 8px 0 10px; border-radius:8px; border:1px solid transparent; cursor:pointer; }
+  .party-row:hover, .party-row.hover { background:var(--bg-surface); border-color:var(--border); }
+  .party-row img { width:44px; height:44px; image-rendering:pixelated; }
+  .party-row .nm { font-size:13px; font-weight:600; }
+  .party-row .lv { font-size:11px; color:var(--text-secondary); }
+  .party-row .rel-btn { top:6px; left:6px; }
+  .party-title { font-size:12px; font-weight:700; margin:0 0 6px; }
+
+  /* ── Diálogos ────────────────────────────────────── */
+  .dialog { width:400px; }
+  .dialog-label { font-size:11px; color:var(--text-secondary); text-transform:uppercase; letter-spacing:.03em; text-align:center; margin:0 0 10px; }
+  .dialog-body { display:flex; gap:16px; align-items:flex-start; }
+  .scene { position:relative; width:112px; height:78px; flex-shrink:0; }
+  .rotom { position:absolute; bottom:0; left:0; width:56px; height:56px; image-rendering:pixelated; animation:mow 2.8s ease-in-out infinite; transform-origin:50% 80%; }
+  /* Rotom-Corte: se carga hacia atrás y hace el corte en ~45% del loop */
+  @keyframes mow { 0%,30%{transform:translateY(0) rotate(0)} 38%{transform:translateY(-2px) rotate(-10deg)} 46%{transform:translateX(8px) rotate(14deg)} 56%,100%{transform:translateX(0) rotate(0)} }
+  /* Pokémon atado: el lazo lo une a Rotom; al cortarse sube, se encoge y se desvanece */
+  .goner { position:absolute; bottom:8px; right:0; width:48px; animation:leave 2.8s ease-in infinite; }
+  .goner img { width:48px; height:48px; image-rendering:pixelated; display:block; }
+  @keyframes leave { 0%,46%{transform:translate(0,0) scale(1);opacity:1} 50%{transform:translate(2px,0) scale(1)} 100%{transform:translate(6px,-30px) scale(.6);opacity:0} }
+  .rope { position:absolute; height:3px; background:repeating-linear-gradient(90deg,#a16207 0 4px,#ca8a04 4px 8px); border-radius:2px; }
+  .rope.l { left:44px; top:44px; width:30px; transform-origin:left center; animation:ropeL 2.8s ease-in infinite; }
+  @keyframes ropeL { 0%,46%{transform:rotate(0);opacity:1} 100%{transform:rotate(80deg) translateY(10px);opacity:0} }
+  .rope.r { right:40px; top:44px; width:24px; transform-origin:right center; animation:ropeR 2.8s ease-in infinite; }
+  @keyframes ropeR { 0%,46%{transform:translate(0,0);opacity:1} 100%{transform:translate(6px,-30px) rotate(-30deg);opacity:0} }
+  .slash { position:absolute; left:62px; top:30px; width:3px; height:30px; background:#fff; box-shadow:0 0 6px 2px #bfdbfe; transform:rotate(25deg); opacity:0; animation:slash 2.8s linear infinite; }
+  @keyframes slash { 0%,44%{opacity:0;transform:rotate(25deg) scaleY(.2)} 48%{opacity:1;transform:rotate(25deg) scaleY(1)} 56%,100%{opacity:0;transform:rotate(25deg) scaleY(1)} }
+  .spark { position:absolute; width:4px; height:4px; background:#fde68a; border-radius:50%; opacity:0; animation:spark 2.8s ease-out infinite; }
+  @keyframes spark { 0%,48%{opacity:0;transform:translate(0,0)} 56%{opacity:1} 100%{opacity:0;transform:translate(var(--dx),var(--dy))} }
+  .dialog-title { font-size:15px; font-weight:600; margin:0 0 6px; }
+  .dialog-text { font-size:13px; color:var(--text-secondary); margin:0; line-height:1.5; }
+  .dialog-text + .dialog-text { margin-top:6px; }
+  .chip { display:inline-block; font-size:11px; background:var(--bg-surface); border:1px solid var(--border); border-radius:10px; padding:1px 8px; color:var(--text-primary); margin-top:8px; }
+  .warn { color:#92400e; background:#fef3c7; border:1px solid #fcd34d; border-radius:6px; padding:5px 8px; font-size:12px; margin-top:8px; }
+  .dialog-footer { display:flex; justify-content:flex-end; gap:8px; margin-top:16px; }
+  .btn { font-size:13px; padding:6px 16px; border-radius:6px; border:1px solid var(--border); background:#fafafa; cursor:pointer; }
+  .btn.danger { background:var(--danger); color:#fff; border-color:var(--danger); }
+  .btn.primary { background:var(--accent); color:#fff; border-color:var(--accent); }
+
+  /* Rotom "no puede": sin animación de liberar, solo asiente con cuidado */
+  .rotom.still { animation:shake 2.2s ease-in-out infinite; transform-origin:50% 80%; }
+  .still-scene .rope.l,.still-scene .rope.r{animation:none;opacity:1} .still-scene .goner{animation:none} .still-scene .slash{display:none}
+  @keyframes shake { 0%,70%,100%{transform:translateX(0)} 75%{transform:translateX(-3px)} 80%{transform:translateX(3px)} 85%{transform:translateX(-2px)} 90%{transform:translateX(0)} }
+
+  /* modal en vivo (clic en un "−" del boceto) */
+  #live { position:fixed; inset:0; background:rgba(0,0,0,.35); display:none; align-items:center; justify-content:center; z-index:9; }
+  #live.on { display:flex; }
+  .toast { margin:0 auto; width:max-content; max-width:100%; background:#1c1c1f; color:#fff; font-size:12px; padding:7px 12px; border-radius:6px; display:flex; gap:12px; align-items:center; }
+  .toast a { color:#93c5fd; cursor:pointer; text-decoration:underline; }
+  ul.spec { font-size:12px; color:var(--text-secondary); line-height:1.6; margin:0; padding-left:18px; max-width:440px; }
+</style>
+</head>
+<body>
+
+<p class="note">Boceto interactivo — pasá el mouse sobre cualquier Pokémon para ver el "−"; hacé clic en él para abrir la confirmación real. (Ver release-pokemon.md)</p>
+
+<div class="row">
+  <div class="card">
+    <h2>Panel de cajas · Caja 2</h2>
+    <div class="box-grid" id="grid"></div>
+  </div>
+  <div class="card party">
+    <h2>Equipo</h2>
+    <div id="party"></div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="card" style="width:300px">
+    <h2>Estados del botón "−"</h2>
+    <ul class="spec">
+      <li><b>Oculto</b> por defecto; aparece con hover o foco de teclado (Tab).</li>
+      <li><b>Normal</b>: círculo rojo 18px, borde blanco, esquina superior izquierda del slot.</li>
+      <li><b>Hover</b>: rojo oscuro + escala 1.12. Tooltip "Liberar Pokémon".</li>
+      <li><b>Deshabilitado</b> (gris): único Pokémon del equipo. Tooltip "El equipo necesita al menos un Pokémon".</li>
+      <li><b>No existe</b> en slots vacíos.</li>
+    </ul>
+    <div style="display:flex;gap:18px;margin-top:14px;align-items:center">
+      <div class="slot hover" style="width:72px"><button class="rel-btn" tabindex="-1">−</button><img src="https://cdn.jsdelivr.net/gh/PokeAPI/sprites/sprites/pokemon/148.png"><span class="lv">Nv.30 ♂</span></div>
+      <div class="slot hover" style="width:72px"><button class="rel-btn hot" tabindex="-1">−</button><img src="https://cdn.jsdelivr.net/gh/PokeAPI/sprites/sprites/pokemon/80.png"><span class="lv">hover del botón</span></div>
+      <div class="slot hover" style="width:72px"><button class="rel-btn" disabled tabindex="-1">−</button><img src="https://cdn.jsdelivr.net/gh/PokeAPI/sprites/sprites/pokemon/133.png"><span class="lv">único del equipo</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="card dialog">
+    <p class="dialog-label">Diálogo 1 — Liberar un Pokémon</p>
+    <div class="dialog-body">
+      <div class="scene" data-sp="148"></div>
+      <div>
+        <p class="dialog-title">¿Liberar a Dragonair?</p>
+        <p class="dialog-text">Se quita del save y no se puede recuperar desde la app una vez exportado. Antes de exportar podés deshacerlo.</p>
+        <span class="chip">Caja 2 · Slot 5 · Nv.30</span>
+      </div>
+    </div>
+    <div class="dialog-footer"><button class="btn">Cancelar</button><button class="btn danger">Liberar</button></div>
+  </div>
+
+  <div class="card dialog">
+    <p class="dialog-label">Diálogo 1b — con objeto equipado (aviso extra)</p>
+    <div class="dialog-body">
+      <div class="scene" data-sp="80"></div>
+      <div>
+        <p class="dialog-title">¿Liberar a Slowbro?</p>
+        <p class="dialog-text">Se quita del save y no se puede recuperar desde la app una vez exportado. Antes de exportar podés deshacerlo.</p>
+        <span class="chip">Equipo · #3 · Nv.52</span>
+        <div class="warn">Lleva equipado: <b>Restos</b>. El objeto también se pierde.</div>
+      </div>
+    </div>
+    <div class="dialog-footer"><button class="btn">Cancelar</button><button class="btn danger">Liberar</button></div>
+  </div>
+
+  <div class="card dialog">
+    <p class="dialog-label">Diálogo 1c — Huevo (misma confirmación)</p>
+    <div class="dialog-body">
+      <div class="scene" data-sp="egg"></div>
+      <div>
+        <p class="dialog-title">¿Liberar el huevo?</p>
+        <p class="dialog-text">Se quita del save y no se puede recuperar desde la app una vez exportado. Antes de exportar podés deshacerlo.</p>
+        <span class="chip">Caja 1 · Slot 12 · Huevo</span>
+      </div>
+    </div>
+    <div class="dialog-footer"><button class="btn">Cancelar</button><button class="btn danger">Liberar</button></div>
+  </div>
+
+  <div class="card dialog">
+    <p class="dialog-label">Diálogo 2 — Último del equipo (bloqueado)</p>
+    <div class="dialog-body">
+      <div class="scene still-scene" data-sp="133"></div>
+      <div>
+        <p class="dialog-title">No se puede liberar</p>
+        <p class="dialog-text">Es el único Pokémon del equipo y el juego necesita al menos uno. Mové otro Pokémon al equipo y volvé a intentarlo.</p>
+      </div>
+    </div>
+    <div class="dialog-footer"><button class="btn primary">Entendido</button></div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="card" style="width:420px">
+    <h2>Después de confirmar</h2>
+    <div class="toast">Dragonair liberado · pendiente de exportar <a>Deshacer</a></div>
+    <ul class="spec" style="margin-top:12px">
+      <li>El slot queda vacío con su "+" (caja) o el equipo se reacomoda sin huecos (equipo).</li>
+      <li>El cambio aparece en el modal de revisión antes de exportar: "Dragonair — Caja 2, Slot 5: liberado".</li>
+      <li>"Descartar ediciones" y "Deshacer" lo restauran.</li>
+    </ul>
+  </div>
+</div>
+
+<div id="live"><div class="card dialog" id="liveCard"></div></div>
+
+<script>
+const SCENE = sp => `<img class="rotom" src="https://cdn.jsdelivr.net/gh/PokeAPI/sprites/sprites/pokemon/10012.png" alt="Rotom Corte">
+  <span class="rope l"></span><span class="slash"></span><span class="rope r"></span>
+  <div class="goner"><img src="https://cdn.jsdelivr.net/gh/PokeAPI/sprites/sprites/pokemon/${sp==='egg'?'0':sp}.png"></div>
+  <span class="spark" style="right:30px;bottom:46px;--dx:-8px;--dy:-18px"></span><span class="spark" style="right:10px;bottom:50px;--dx:8px;--dy:-22px;animation-delay:.1s"></span>`;
+document.querySelectorAll('.scene[data-sp]').forEach(e=>e.innerHTML=SCENE(e.dataset.sp));
+const S = id => `https://cdn.jsdelivr.net/gh/PokeAPI/sprites/sprites/pokemon/${id}.png`;
+const box = [[148,'30 ♂'],[149,'55 ♂'],[80,'52'],[94,'45 ♂'],[130,'38 ♀'],[131,'32 ♀'],
+             [143,'30 ♂'],[0],[0],[59,'40 ♂'],[0],[6,'50 ♂'],
+             [0],[0],[63,'12 ♂'],[0],[0],[0]];
+const names = {148:'Dragonair',149:'Dragonite',80:'Slowbro',94:'Gengar',130:'Gyarados',131:'Lapras',143:'Snorlax',59:'Arcanine',63:'Abra',6:'Charizard',133:'Eevee',132:'Ditto'};
+const grid = document.getElementById('grid');
+box.forEach(([id,lv],i)=>{
+  const d=document.createElement('div');
+  if(!id){ d.className='slot empty'; grid.appendChild(d); return; }
+  d.className='slot'+(i===1?' hover':'');
+  d.innerHTML=`<button class="rel-btn" title="Liberar Pokémon">−</button><img src="${S(id)}"><span class="lv">Nv.${lv}</span>`;
+  d.querySelector('.rel-btn').onclick=e=>{e.stopPropagation();ask(id,`Caja 2 · Slot ${i+1}`,lv.split(' ')[0],false)};
+  grid.appendChild(d);
+});
+const party=document.getElementById('party');
+[[132,'60',false],[133,'25',true]].forEach(([id,lv,last],i)=>{
+  const r=document.createElement('div'); r.className='party-row';
+  r.innerHTML=`<button class="rel-btn" title="${last?'El equipo necesita al menos un Pokémon':'Liberar Pokémon'}" ${last?'disabled':''}>−</button><img src="${S(id)}"><div><div class="nm">${names[id]}</div><div class="lv">Nv.${lv}</div></div>`;
+  if(!last) r.querySelector('.rel-btn').onclick=e=>{e.stopPropagation();ask(id,`Equipo · #${i+1}`,lv,false)};
+  party.appendChild(r);
+});
+function ask(id,where,lv){
+  const n=names[id];
+  document.getElementById('liveCard').innerHTML=`
+   <p class="dialog-label">Confirmación (en vivo)</p>
+   <div class="dialog-body"><div class="scene">${SCENE(id)}</div>
+   <div><p class="dialog-title">¿Liberar a ${n}?</p>
+   <p class="dialog-text">Se quita del save y no se puede recuperar desde la app una vez exportado. Antes de exportar podés deshacerlo.</p>
+   <span class="chip">${where} · Nv.${lv}</span></div></div>
+   <div class="dialog-footer"><button class="btn" onclick="live.classList.remove('on')">Cancelar</button><button class="btn danger" onclick="live.classList.remove('on')">Liberar</button></div>`;
+  document.getElementById('live').classList.add('on');
+}
+const live=document.getElementById('live'); live.onclick=e=>{if(e.target===live)live.classList.remove('on')};
+</script>
+</body>
+</html>
