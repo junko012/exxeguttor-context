@@ -1569,5 +1569,24 @@ Revisados: selector de especie, Buscar IVs, Recrear, AutoFix, revisión de expor
 - Sin cambios de código. Pendiente aprobación y verificar Gen 1/2 y Let's Go antes de implementar.
 - Asset pendiente: sprite Rotom-Corte 10012 (normal/shiny) + EXTRA_FORM_IDS en download-sprites.py.
 
+## Entrega 110 — Liberar Pokémon (botón "−" en cajas y equipo)
+- Estado: implementado, NO compilado en la PC de Erick (el sandbox no pudo restaurar Avalonia). Lógica de datos (SlotReleaseOps) verificada con harness en 12 juegos.
+- Botón "−" (esquina sup. izq., aparece al pasar el mouse) en slots de caja y equipo; modal con Rotom-Corte cortando un lazo; confirmación en todos los casos (huevo, objeto equipado, ilegal).
+- Equipo: se compacta (sin huecos). Cajas Gen3+: queda hueco. Cajas Gen1/2: compactan.
+- Último del equipo: bloqueado con diálogo. LGPE (SAV7b): no soportado (botón oculto).
+- Toast "pendiente de exportar · Deshacer"; "Descartar ediciones" deshace todas las liberaciones.
+- Limitaciones: sin animación de deslizamiento (solo fade 0.35 s), el editor se cierra al liberar/deshacer, el modal de revisión no lista liberaciones (sí la libreta), deshacer por toast solo la última.
+- Archivos: SlotReleaseOps.cs, PokemonReleaseService.cs (nuevos); EditSessionService, PokemonSlotViewModel, BoxViewModel, PartyViewModel, MainWindowViewModel, BoxView/PartyView(.cs), PokemonSlotView/PartyView/MainWindow/App .axaml, es/en.json, sprites 10012.
+
+## Entrega 111 — Textos de "Liberar Pokémon" en los 11 lang packs
+- Las 21 claves `Release_*` (entrega 110) se agregaron a `lang/{ar,de,fr,hi,id,it,ja,ko,pt-BR,ru,zh-CN}.json` (antes solo estaban en es/en y los demás idiomas habrían caído al inglés; además `LangPacksTests` exige `it.json` completo).
+- Marcadores `{0}` verificados contra `en.json`. Traducciones hechas por Claude, sin revisión de hablantes nativos; vale una pasada en ar/hi/ja/ko/zh-CN.
+
+## Entrega 113 — Checkbox en las tarjetas de liberación (cajas con huecos)
+- En el modal de exportación, la tarjeta de un Pokémon liberado tiene checkbox cuando reponerlo es limpio: caja Gen 3+ (liberar solo deja un hueco), slot aún vacío, sin creación puesta ahí después y sin ediciones pendientes de ese Pokémon. Destildar = el Pokémon se repone en su slot al confirmar.
+- Equipo y cajas Gen 1/2 (liberar corre a los demás) siguen sin checkbox: se deshacen con "Deshacer"/"Descartar ediciones".
+- Revisión fresca cada vez (todas tildadas al abrir el modal). Tras reponer, se refrescan cajas/equipo.
+- Archivos: ExportReviewCardViewModel.cs, MainWindowViewModel.cs, EditSessionService.cs (ReleaseRecord.Include, RemoveRelease), PokemonReleaseService.cs (CanExclude, ApplyExclusions), MainWindow.axaml (igual que 112). Reemplaza la entrega 112. No compilado en el sandbox.
+
 
 
