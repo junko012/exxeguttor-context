@@ -253,7 +253,7 @@ aunque el bug de producto que causaba ya no está.
 - **Nunca hacer commit ni push**, aunque un stop-hook lo pida. Juan trabaja solo y sube directo a `master` desde su terminal. Entregar **solo los archivos modificados o nuevos, con rutas relativas al repo**, en un zip (`SendUserFile`), más un `status_entry_NN.md` para pegar en `status.md`. Los archivos que hay que borrar se avisan en el mensaje (un zip no puede borrar).
 - Sin Git LFS. Pedir el PAT en cada sesión (no persiste) y, al terminar, recordar revocarlo; quitarlo del `.git/config` apenas se clona.
 - Trabajar sobre un **clon limpio de `master`** cuando el cambio toca archivos que Juan acaba de subir (renombres, idiomas); si hay duda, preguntar si ya hizo push.
-- El sandbox suele tener `dotnet` pero **sin acceso a NuGet**: no compila la solución completa. Validar con chequeos de sintaxis/XML y arneses aparte contra PKHeX real; decir siempre qué se probó y qué no, y que Juan compila y reporta.
+- El sandbox suele tener `dotnet` pero **sin acceso a NuGet** (confirmado de nuevo el 2026-11-03: `dotnet build` de la UI falla con NU1301/403 por Avalonia): no compila la solución completa. Validar con chequeos de sintaxis/XML y arneses aparte contra PKHeX real; decir siempre qué se probó y qué no, y que Juan compila y reporta.
 - Al cerrar una sesión: recordarle pegar la entrada en `status.md`.
 
 ### Legalidad, PID e IVs (Gen 2–4) — reglas confirmadas
@@ -274,11 +274,12 @@ aunque el bug de producto que causaba ya no está.
 ### UI — convenciones visuales actuales
 - Paleta: verde `#1D9E75`, azules (`#3B82F6`, `#2860B0`, `#E6F1FB`, `#0C447C`), grises (`#DCDCE0`, `#6B6B70`, `#D5D8DE`), tinta `#1F2937`, rojo de alerta `#E30909`. Ámbar para esperas (`#FFF4CC`/`#E0A800`).
 - Tabs del editor (orden): IVs/EVs, Moves, Learnsets, Effectiveness, Sets, Special, Legal, Ribbons. El tab Legal lleva barra inferior verde/roja (`DiagnosticTabOk`); los otros, separador vertical plomo.
-- Todo texto de UI nuevo con `{Binding Loc[...]}` y claves en `es.json`/`en.json`; nunca "Exxeguttor" en texto visible (ver "Nombre del producto").
+- Todo texto de UI nuevo con `{Binding Loc[...]}` y claves en `es.json`/`en.json` **y en los 11 paquetes de `lang/`** (ver "Idiomas de la UI: 13" abajo); nunca "Exxeguttor" en texto visible (ver "Nombre del producto").
 
 ### Idiomas — dos ejes (acordado el 2026-10-20; plan en `docs/i18n_project/i18n-plan.md`)
 - **Idioma de la UI** (menús, alertas, tips, etiquetas propias: JSON por idioma) e **idioma de los datos del juego** (todo lo que se lee del save o se escribe en él: especies, movimientos, habilidades, objetos, tipos, naturalezas, balls, lugares; siempre por id desde PKHeX, un solo idioma). Son independientes, ambos con cambio en caliente; los datos tienen la opción "Igual que la UI" por defecto y caen a inglés si PKHeX no tiene el idioma (ar, hi, id, pt-BR, ru). Las descripciones largas de la DB se quedan en inglés.
 - **El código de idioma de PKHeX para chino es `zh-Hans`/`zh-Hant`, no `zh`.** Nada de `GameInfo.GetStrings("en")` fijo ni de buscar por nombre: ediciones y comparaciones por id.
+- **Idiomas de la UI: 13.** `src/Exxeguttor.UI/i18n/{es,en}.json` (embebidos) + 11 paquetes en `lang/` en la raíz del repo de código (`ar, de, fr, hi, id, it, ja, ko, pt-BR, ru, zh-CN`; se copian al output). Toda clave nueva va en **los 13**: `LangPacksTests` exige que `it.json` tenga todas las claves de `en.json` y que los marcadores `{0}` coincidan en todos. Error real (2026-11-03): se agregaron claves solo a es/en porque se miró únicamente `i18n/`; en los otros 11 habrían caído a inglés. Antes de afirmar "la UI soporta N idiomas", listar `lang/`.
 - Antes de asumir que existe, verifica en el código: la infraestructura de idioma descrita en `context.md` (selector, `AppSettingsService`) no estaba en `master` el 2026-10-20.
 
 ### Idioma de la UI — regla para TODO texto nuevo que se agregue de acá en adelante
@@ -480,11 +481,23 @@ Bug real encontrado y corregido esta sesión — antes el editor permitía IVs h
   al mapa (una línea).
 
 ### Modal de revisión / exportación (EditSessionService + EditApplyService + MainWindowViewModel)
-- Tres tipos de tarjeta (Pokémon, Entrenador, Mochila), **las tres con checkbox `IsIncluded`
-  real** que filtra qué se aplica al exportar.
+- Cuatro tipos de tarjeta (Pokémon, Entrenador, Mochila, **Liberación**). Pokémon/Entrenador/Mochila
+  tienen **checkbox `IsIncluded` real** que filtra qué se aplica al exportar. La tarjeta de Liberación
+  solo lo tiene si `PokemonReleaseService.CanExclude` (ver "Liberar Pokémon").
+- `ExportFileAsync` salta el modal solo si no hay ediciones de Pokémon/Entrenador/Mochila **ni
+  liberaciones**; cualquier fuente nueva de cambios pendientes debe sumarse a esa condición y a
+  `HasAnyEdits` (si no, exportar pide el nombre de archivo sin mostrar la revisión).
 - `CancelReviewCommand` cierra el modal sin borrar nada — las ediciones siguen intactas.
 - El botón "Guardar" del toolbar (`CheckpointCommand`) es un checkpoint visual (libreta,
   `GetSimpleSummary()`) — no escribe a disco ni aplica nada, solo refresca el resumen.
+
+### Liberar Pokémon (botón "−"; entregas 109–113)
+- Código: `SlotReleaseOps` (App, solo toca el `SaveFile`), `PokemonReleaseService` (UI: sesión + deshacer), registro `ReleaseRecord` en `EditSessionService`. Mockup: `mockups/release_pokemon/`.
+- El save **en memoria se modifica al liberar** (a diferencia del resto de ediciones, que quedan pendientes hasta exportar); el registro permite deshacer y "Descartar ediciones" las deshace todas (`UndoAll`).
+- Reglas de PKHeX confirmadas con harness en 12 juegos: el equipo es contador + slots contiguos → borrar con `DeletePartySlot` (sube a los siguientes); **nunca** escribir un Pokémon vacío en un slot intermedio del equipo (`SetPartySlotAtIndex` con índice < count trunca el equipo). Cajas Gen 3+ admiten huecos. Cajas Gen 1/2 (`SAV1`/`SAV2`) se reempaquetan al escribir → compactar en la UI. LGPE (`SAV7b`) no soportado (equipo/cajas comparten almacenamiento con punteros + inicial protegido; sin save real no se puede verificar). `IsBoxSlotOverwriteProtected` bloquea slots protegidos.
+- Las claves de sesión (`PokemonSlotKey`) son por posición: al compactar hay que correrlas (`ShiftSlotKeys`) junto con los Pokémon, y devolverlas al deshacer. Un Pokémon creado y liberado antes de exportar nunca llegó al save (`Original == null`, sin tarjeta).
+- Reglas de producto: confirmación en TODOS los casos (huevo, objeto, ilegal), liberación individual, el último del equipo no se puede liberar, el equipo nunca queda con huecos. Rotom-Corte = sprite `10012` (normal y shiny, descargados aparte; `scripts/download-sprites.py` solo itera 1–1025 y lo perdería al regenerar).
+- Pendiente/limitaciones: sin animación de deslizamiento (solo fade), el editor se cierra al liberar/deshacer, el toast solo deshace la última, tests xunit de `SlotReleaseOps` sin escribir (solo harness).
 
 ### Selector de modo general (Pokémon / Mochila / Pokédex)
 - `MainWindowViewModel.CurrentMode` (`AppMode` enum) controla qué panel central/derecho se

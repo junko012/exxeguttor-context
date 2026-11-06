@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MaxPotion — Boceto: menú Ayuda y Acerca de</title>
+<style>
+:root{--bg:#f4f4f5;--bd:#dcdce0;--rule:#d5d8de;--ink:#1f2937;--t2:#6b6b70;--mu:#9a9aa0;--g:#1d9e75;--gs:#e6f6f0;--gl:#b5e3d3;--b:#3b82f6;--bs:#eef4ff;--bl:#c7d9f8;--a:#fff4cc;--al:#e0a800;--ai:#7a4b00;--r:#b42318;--rs:#fdecea}
+*{box-sizing:border-box}body{margin:0;font-family:-apple-system,"Segoe UI",Cantarell,Ubuntu,sans-serif;background:#8d8d92;color:var(--ink);display:flex;flex-direction:column;align-items:center;gap:12px;padding:16px 10px 40px}
+.note{font-size:12px;color:#f4f4f5;text-align:center;max-width:640px;line-height:1.5}
+.sc{display:flex;flex-wrap:wrap;gap:6px;justify-content:center}.sc button,.btn{font:inherit;font-size:12px;padding:6px 10px;border-radius:8px;border:1px solid var(--bd);background:#fff;cursor:pointer}
+.sc button[aria-pressed=true]{background:var(--ink);color:#fff;border-color:var(--ink)}button:focus-visible{outline:2px solid var(--b);outline-offset:2px}
+.win{position:relative;width:760px;max-width:100%;height:540px;background:#fff;border:1px solid var(--bd);border-radius:10px;overflow:hidden;display:flex;flex-direction:column}
+.mb{display:flex;gap:2px;padding:4px 8px;border-bottom:1px solid var(--bd);font-size:13px;position:relative;z-index:6}.mi{padding:4px 10px;border-radius:6px}.mi.open{background:#eceef2}
+.ct{flex:1;display:grid;grid-template-columns:56px 1fr;min-height:0}.rail{background:#eef0f3;border-right:1px solid var(--bd)}.stage{display:grid;place-items:center;color:var(--mu);font-size:12px}
+.sb{display:flex;justify-content:space-between;border-top:1px solid var(--bd);padding:4px 10px;font-size:12px;color:var(--t2)}
+.drop{position:absolute;top:30px;left:150px;width:300px;background:#fff;border:1px solid var(--bd);border-radius:10px;box-shadow:0 10px 24px rgba(0,0,0,.22);padding:6px;z-index:7;font-size:13px}
+.row{display:flex;gap:8px;padding:7px 10px;border-radius:7px}.row:hover{background:#eceef2}.row kbd{margin-left:auto;color:var(--mu);font:inherit;font-size:11px}.hr{height:1px;background:var(--rule);margin:5px 6px}
+.ov{position:absolute;inset:0;background:rgba(31,41,55,.45);display:grid;place-items:center;z-index:9;padding:10px}
+.md{background:#fff;border-radius:14px;width:560px;max-width:100%;max-height:96%;overflow:auto;box-shadow:0 20px 50px rgba(0,0,0,.35);padding:18px 20px;font-size:13px}
+.md h2{margin:0 0 4px;font-size:17px}.sub{color:var(--t2);font-size:12px;margin:0 0 12px}
+.tabs{display:flex;gap:4px;border-bottom:1px solid var(--bd);margin:12px 0}.tabs button{border:0;background:none;font:inherit;padding:7px 10px;cursor:pointer;color:var(--t2);border-bottom:2px solid transparent}.tabs button.on{color:var(--ink);font-weight:600;border-color:var(--g)}
+.pane{display:none}.pane.on{display:block}
+.hd{display:flex;gap:14px;align-items:center}.logo{width:64px;height:64px;border-radius:16px;background:var(--gs);border:1px solid var(--gl);display:grid;place-items:center}
+.chip{display:inline-block;font-size:11px;border:1px solid var(--gl);background:var(--gs);color:#0f6a4f;border-radius:999px;padding:1px 8px;margin-left:6px}
+.tbd{border-color:var(--al);background:var(--a);color:var(--ai)}
+.links{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}.links a{font-size:12px;padding:5px 10px;border:1px solid var(--bd);border-radius:8px;color:var(--ink);text-decoration:none;background:#fafafb}
+.kv{display:grid;grid-template-columns:150px 1fr;gap:3px 10px;font-size:12px}.kv b{color:var(--t2);font-weight:500}
+pre{background:#f4f4f5;border:1px solid var(--bd);border-radius:8px;padding:10px;font-size:11.5px;line-height:1.5;margin:8px 0;white-space:pre-wrap}
+.box{border:1px solid var(--bl);background:var(--bs);color:#1e3a8a;border-radius:8px;padding:8px 10px;font-size:12px;margin:8px 0}.box.am{border-color:var(--al);background:var(--a);color:var(--ai)}.box.rd{border-color:#f1b5ae;background:var(--rs);color:var(--r)}
+ul.ck{list-style:none;padding:0;margin:6px 0;font-size:12px}ul.ck li{padding:2px 0}.ok{color:var(--g);font-weight:700}.no{color:var(--r);font-weight:700}
+.ft{display:flex;gap:8px;justify-content:flex-end;margin-top:12px}.btn.p{background:var(--g);color:#fff;border-color:var(--g)}.btn.d{background:var(--r);color:#fff;border-color:var(--r)}
+input{width:100%;font:inherit;font-size:13px;padding:7px 9px;border:1px solid var(--bd);border-radius:8px}
+table{width:100%;border-collapse:collapse;font-size:12px}td{padding:4px 6px;border-bottom:1px solid var(--rule)}td:last-child{text-align:right;color:var(--t2);font-family:ui-monospace,monospace}h4{margin:12px 0 4px;font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--mu)}
+.ph{width:64px;height:64px;border-radius:16px;border:2px dashed var(--al);background:var(--a);display:grid;place-items:center;font-size:9px;color:var(--ai);text-align:center}
+</style></head><body>
+<div class="note">Boceto: menú <b>Ayuda</b> y ventanas de Max Potion. Escenas conmutables. Los chips ámbar son datos por confirmar.</div>
+<div class="sc" id="sc"></div>
+<div class="win">
+ <div class="mb"><span class="mi">File</span><span class="mi">Preferences</span><span class="mi" id="hm">Help</span></div>
+ <div class="ct"><div class="rail"></div><div class="stage">(editor de saves)</div></div>
+ <div class="sb"><span>Ready</span><span>UI ES · PK ES</span></div>
+
+ <div class="drop" data-s="0">
+  <div class="row">Guía rápida y consejos<kbd>F1</kbd></div><div class="row">Atajos de teclado</div><div class="hr"></div>
+  <div class="row">Reportar un error…</div><div class="row">Sugerir una función…</div><div class="hr"></div>
+  <div class="row">Buscar actualizaciones…</div><div class="row">Carpeta de configuración</div><div class="row">Carpeta de registros</div><div class="hr"></div>
+  <div class="row"><b>Acerca de Max Potion</b></div>
+ </div>
+
+ <div class="ov" data-s="1"><div class="md">
+  <div class="hd"><div class="logo"><svg width="38" height="38" viewBox="0 0 38 38"><rect x="14" y="3" width="10" height="6" rx="2" fill="#6b6b70"/><path d="M13 9h12l5 9v13a4 4 0 0 1-4 4H12a4 4 0 0 1-4-4V18z" fill="#1d9e75"/><rect x="15" y="20" width="8" height="2.6" fill="#fff"/><rect x="17.7" y="17.3" width="2.6" height="8" fill="#fff"/></svg></div>
+   <div><h2>Max Potion <span class="chip">1.0.0</span></h2><p class="sub" style="margin:0">Editor de saves Pokémon para Linux</p></div></div>
+  <div class="tabs" data-t><button class="on">General</button><button>Créditos</button><button>Licencias</button><button>Sistema</button></div>
+  <div class="pane on"><p style="margin:0 0 8px">Edita y verifica la legalidad de tus partidas de Gen 1 a Gen 9, con interfaz nativa.</p>
+   <div class="kv"><b>Creado por</b><span><a href="#">junko012</a> · autor y mantenedor <span class="chip tbd">nombre a mostrar por confirmar</span></span><b>Motor</b><span>PKHeX.Core 25.11.7 · Avalonia 11.3.8 · .NET 9</span><b>Licencia</b><span>GPL-3.0-or-later</span></div>
+   <div class="links"><a href="#">Código fuente ↗</a><a href="#">Reportar un error ↗</a><a href="#">Ver versiones ↗</a><a href="#">Licencia ↗</a></div>
+   <div class="box am">Pokémon y sus nombres son marcas de Nintendo, Creatures y Game Freak. Max Potion es un proyecto de fans, sin afiliación. Haz un respaldo de tu save antes de editarlo.</div></div>
+  <div class="pane"><h4>Creador</h4><div>junko012 — autor y mantenedor · <a href="#">GitHub ↗</a></div>
+   <h4>Colaboradores</h4><div style="color:var(--t2)">Aún nadie. ¿Quieres aparecer aquí? Abre un Pull Request.</div>
+   <h4>Traducciones (13 idiomas)</h4><div style="color:var(--t2)">Créditos de traductores <span class="chip tbd">por definir</span></div>
+   <h4>Proyectos de terceros</h4><table><tr><td>PKHeX.Core — kwsch y colaboradores</td><td>GPL-3.0</td></tr><tr><td>Avalonia UI</td><td>MIT</td></tr><tr><td>Microsoft.Data.Sqlite</td><td>MIT</td></tr><tr><td>Datos: PokeAPI, veekun <span class="chip tbd">confirmar atribución</span></td><td>—</td></tr><tr><td>Sprites e iconos <span class="chip tbd">fuente por confirmar</span></td><td>—</td></tr></table></div>
+  <div class="pane"><table><tr><td>Max Potion</td><td>GPL-3.0-or-later ▸</td></tr><tr><td>PKHeX.Core</td><td>GPL-3.0 ▸</td></tr><tr><td>Avalonia UI</td><td>MIT ▾</td></tr></table>
+   <pre>MIT License — Copyright (c) AvaloniaUI OÜ …
+(texto completo de cada licencia, embebido en la app)</pre></div>
+  <div class="pane"><pre>Max Potion       1.0.0 (commit a1b2c3d, 2026-10-30)
+.NET             9.0 · PKHeX.Core 25.11.7 · Avalonia 11.3.8
+Sistema          Ubuntu 24.04 · XFCE · X11
+Idioma           UI ES · datos ES
+Save abierto     Gen 4 · Platino</pre><div class="box">No incluye nombre de entrenador, ID ni rutas de tus carpetas.</div>
+   <div class="ft" style="margin:0"><button class="btn">Abrir carpeta de registros</button><button class="btn p">Copiar</button></div></div>
+  <div class="ft"><button class="btn">Cerrar</button></div>
+ </div></div>
+
+ <div class="ov" data-s="2"><div class="md">
+  <h2>Reportar un error</h2><p class="sub">Se abrirá GitHub en tu navegador con un reporte ya prellenado. Max Potion no envía nada por sí sola.</p>
+  <label>¿Qué pasó? (opcional, será el título)</label><input value="Al marcar From egg el Pokémon sale ilegal al exportar">
+  <h4>Qué se incluye</h4><ul class="ck"><li><span class="ok">✓</span> Versión, sistema operativo y escritorio</li><li><span class="ok">✓</span> Juego y generación del save abierto</li><li><span class="no">✗</span> Nombre de entrenador, ID y rutas de tus carpetas</li><li><span class="no">✗</span> El archivo del save (puedes adjuntarlo tú; contiene datos de tu partida)</li></ul>
+  <div class="box">Si no se abre el navegador, se copia el enlace al portapapeles.</div>
+  <div class="ft"><button class="btn">Cancelar</button><button class="btn">Copiar diagnóstico</button><button class="btn p">Abrir GitHub ↗</button></div>
+ </div></div>
+
+ <div class="ov" data-s="3"><div class="md">
+  <h2>Atajos de teclado</h2><p class="sub">Solo los que existen hoy; se amplía al agregar nuevos.</p>
+  <h4>Archivo</h4><table><tr><td>Abrir save</td><td>Ctrl+O</td></tr><tr><td>Guardar</td><td>Ctrl+S</td></tr><tr><td>Exportar</td><td>Ctrl+Shift+S</td></tr><tr><td>Cerrar save</td><td>Ctrl+W</td></tr></table>
+  <h4>Dentro de las ventanas</h4><table><tr><td>Revisión de exportación: tarjeta anterior / siguiente</td><td>← →</td></tr><tr><td>Consejos: anterior / siguiente</td><td>↑ ↓</td></tr><tr><td>Crear Pokémon: moverse / saltar</td><td>← → · Shift+← →</td></tr><tr><td>Crear Pokémon: inicio / fin / crear</td><td>Inicio · Fin · Enter</td></tr></table>
+  <h4>Ayuda</h4><table><tr><td>Guía rápida y consejos</td><td>F1</td></tr></table>
+  <div class="ft"><button class="btn">Cerrar</button></div>
+ </div></div>
+
+ <div class="ov" data-s="4"><div class="md">
+  <div class="hd"><div class="ph">ilustración temática por definir</div><div><h2>Algo salió mal</h2><p class="sub" style="margin:0">Max Potion encontró un error inesperado.</p></div></div>
+  <div class="box rd" style="margin-top:12px">Si ibas a guardar o exportar, revisa tu save antes de seguir. Puedes continuar o reportar el error.</div>
+  <pre>InvalidOperationException: Sequence contains no elements
+  en EditApplyService.ApplyPokemonSlot (…)</pre>
+  <div class="ft"><button class="btn">Copiar detalles</button><button class="btn">Continuar</button><button class="btn p">Reportar este error ↗</button><button class="btn d">Cerrar la app</button></div>
+ </div></div>
+</div>
+<script>
+const names=["1 · Menú Ayuda","2 · Acerca de","3 · Reportar un error","4 · Atajos","5 · Error inesperado"];
+const sc=document.getElementById('sc');let cur=0;
+names.forEach((n,i)=>{const b=document.createElement('button');b.textContent=n;b.onclick=()=>show(i);sc.appendChild(b)});
+function show(i){cur=i;[...sc.children].forEach((b,j)=>b.setAttribute('aria-pressed',j===i));document.querySelectorAll('[data-s]').forEach(e=>e.style.display=+e.dataset.s===i?'':'none');document.getElementById('hm').classList.toggle('open',i===0)}
+document.querySelectorAll('[data-t]').forEach(t=>{const panes=[...t.parentElement.querySelectorAll('.pane')];[...t.children].forEach((b,i)=>b.onclick=()=>{[...t.children].forEach((x,j)=>x.classList.toggle('on',j===i));panes.forEach((p,j)=>p.classList.toggle('on',j===i))})});
+show(0);
+</script></body></html>

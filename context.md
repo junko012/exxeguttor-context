@@ -1,6 +1,6 @@
 # context.md — Estado actual del proyecto Exxeguttor
 
-_Actualizado el 2026-10-20 (entrega 48): se agregó la sección "🔄 Actualización de octubre 2026" con los módulos construidos después de las secciones originales (formas, Pokédex, Gen 1–3, recrear con encuentro válido, rediseño visual) y la regla de nombres MaxPotion/Exxeguttor. Las secciones más antiguas conservan su redacción original y pueden estar parcialmente desfasadas: gana la sección de octubre y `status.md`._
+_Actualizado el 2026-11-04 (entrega 113): se agregó la sección "🔄 Actualización de noviembre 2026" (entregas 104–113: formas por juego, selector de movimientos, Hidden Power, **Liberar Pokémon**, idiomas) y se corrigió el modal de revisión (4 tipos de tarjeta). Antes: 2026-10-20 (entrega 48): se agregó la sección "🔄 Actualización de octubre 2026" con los módulos construidos después de las secciones originales (formas, Pokédex, Gen 1–3, recrear con encuentro válido, rediseño visual) y la regla de nombres MaxPotion/Exxeguttor. Las secciones más antiguas conservan su redacción original y pueden estar parcialmente desfasadas: gana la sección de octubre y `status.md`._
 
 _Texto previo — última actualización: sesión de Claude Code aparte (no git — Juan trabaja en 2 sesiones de
 código en paralelo además de esta de mockups/contexto, así que el repo real puede haber
@@ -526,6 +526,36 @@ vez, en vez de heredar el punto del ciclo anterior. Mockups completos en
 
 ---
 
+## 🔄 Actualización de noviembre 2026 — entregas 104–113
+
+_Detalle cronológico y archivos en `status.md` (entradas 104–113). Gana esta sección sobre las más antiguas._
+
+### Liberar Pokémon (entregas 109–113) — botón "−" en cajas y equipo
+- **Qué hace**: botón "−" en la esquina superior izquierda de cada slot (aparece al pasar el mouse; caja y equipo). Modal de confirmación con Rotom-Corte cortando un lazo (sprite `10012`, normal y shiny), **siempre** (huevo, objeto equipado, ilegal), liberación individual. Toast "…liberado · pendiente de exportar · Deshacer". El último Pokémon del equipo no se puede liberar (diálogo informativo). LGPE (`SAV7b`) no soportado: el botón no aparece.
+- **Cómo se reorganiza**: el equipo nunca tiene huecos (los siguientes suben, vacíos al final, como en los juegos); cajas Gen 3+ dejan hueco; cajas Gen 1/2 compactan (PKHeX las reempaqueta al escribir). Fade-out de 0.35 s y luego se recarga el panel (sin animación de deslizamiento todavía).
+- **Arquitectura**: `Exxeguttor.App/Services/SlotReleaseOps` (solo toca el `SaveFile`: `Remove/Insert/CanInsert/IsSupported/IsProtected/BoxCompacts`), `Exxeguttor.UI/Services/PokemonReleaseService` (sesión + deshacer: `Release`, `UndoLast`, `UndoAll`, `CanExclude`, `ApplyExclusions`), `ReleaseRecord` y `ShiftSlotKeys` en `EditSessionService`. UI: `Border.rel-btn` en `PokemonSlotView`/`PartyView` (el click lo detecta `BoxView.IsOnReleaseButton` en el handler de puntero), diálogo/toast en `MainWindow.axaml`, estado en `MainWindowViewModel` (`OnReleaseRequested`, `ConfirmReleaseAsync`, `RefreshSlotPanels`, `UndoRelease`).
+- **Modelo de sesión**: a diferencia de las demás ediciones, **liberar modifica el `SaveFile` en memoria al instante**; `ReleaseRecord` (clon original + estado de sesión del slot + si compactó) permite deshacer. `HasAnyEdits` cuenta las liberaciones; "Descartar ediciones" las deshace todas; la libreta lista "Liberado: X". Las claves de sesión son por posición, así que al compactar se corren (`ShiftSlotKeys`).
+- **Exportación**: el modal de revisión muestra una tarjeta por Pokémon liberado (las creaciones liberadas antes de exportar no, nunca llegaron al save). Checkbox solo si `CanExclude` (caja Gen 3+, slot aún vacío, sin creación posterior, sin ediciones pendientes); destildar repone el Pokémon al confirmar. En equipo y cajas Gen 1/2 no hay checkbox (reponer en el medio exigiría recalcular claves).
+- **Verificado**: lógica de datos con harness PKHeX en 12 juegos (YW, C, E, D, B2, X, SN, SW, BD, PLA, SL, ZA: quitar/reponer ida y vuelta). La UI y el modal **no se pudieron compilar en el sandbox** (sin NuGet); Erick compiló y probó a mano (entregas 110–113 OK).
+- **Pendiente**: animación de deslizamiento de los slots siguientes, el editor se cierra al liberar/deshacer, el toast solo deshace la última, soporte LGPE, tests xunit de `SlotReleaseOps` (solo existe el harness), `download-sprites.py` no incluye el 10012. Mockup: `mockups/release_pokemon/`.
+
+### Idiomas de la UI: 13 (corregido el 2026-11-03)
+- `i18n/es.json` y `en.json` embebidos + 11 paquetes en `lang/` (`ar, de, fr, hi, id, it, ja, ko, pt-BR, ru, zh-CN`). Toda clave nueva va en los 13 (`LangPacksTests`: `it.json` completo, marcadores `{0}` iguales a `en.json`). Las 21 claves `Release_*` están en los 13; las traducciones de los 11 paquetes las hizo Claude, sin revisión nativa (vale pasada en ar/hi/ja/ko/zh-CN).
+
+### Formas por juego (entrega 104)
+- Tabla `FormGameAvailability` de `pokemon.db` (hotfix `hotfixes/fix_form_availability/`, 731 filas: 498 `own_encounter`, 233 `uncreatable`); `AlternateFormCatalog` lee de la DB y `creatable_forms.json` queda de respaldo. Ocultos por limitación de PKHeX 25.11.07 (se restauran al migrar a PKHeX nuevo/.NET 10): Mewtwo, Hoopa, Volcanion, Espeon, Umbreon, Pupitar (Z-A) y Sliggoo/Goodra de Hisui. `PokemonService.RepairHomeDeliveryFlags` y tamaños recalculados al cambiar de forma.
+
+### Selector de movimientos y movimientos del editor (entregas 105–106)
+- `MoveOption.Methods` conserva **todos** los (método, nivel) de un movimiento ("Lv 20 · TM · Egg"); el filtro por método y los chips los usan todos. `RestorePendingEdits` llama a `RecalcMoveCreateSlots()` al final (si no, slots vacíos sin "+" al reabrir un Pokémon con ediciones pendientes; visto en Yellow).
+
+### Hidden Power (entrega 108)
+- `HiddenPower.GetType` da 0 = Fighting … 15 = Dark (sin Normal): se indexa `strings.Types[idx + 1]`. Gen 1/2 usan la fórmula de DVs vía `GetType(ivs, context)`. Visible solo en Gen 2–7 (en BDSP/Legends solo Unown la tiene según la DB; no se muestra).
+
+### Warnings (entrega 107)
+- Limpiados los 8 warnings (CS8601, CS8604 x2, CS0618 por `PKM.IVs` obsoleto → `GetIVs(stackalloc)`, xUnit2029 x4). Sin cambio de comportamiento.
+
+---
+
 ## 🔄 Actualización de octubre 2026 — módulos agregados después de las secciones de arriba (entregas 26–48)
 
 _Esta sección resume lo que se construyó después de que se escribieron las secciones anteriores; el detalle cronológico, las medidas y los pendientes viven en `status.md` (entradas 2026-10-04 a 2026-10-20)._
@@ -840,9 +870,11 @@ cambio de verdad al PKM (ver GAP CRÍTICO arriba). Antes de esta sesión, las ci
 pendientes para siempre — nunca se aplicaban ni con la exportación confirmada.
 
 ### Modal de revisión / exportación
-- Tres tipos de tarjeta: Pokémon (con legalidad previsualizada), Entrenador, Mochila (una por
-  pouch tocado). **Las tres con checkbox `IsIncluded` real** — antes solo la de Pokémon tenía
-  el checkbox, y era decorativo en las tres.
+- Cuatro tipos de tarjeta: Pokémon (con legalidad previsualizada), Entrenador, Mochila (una por
+  pouch tocado) y **Liberación** (una por Pokémon liberado, ver "Liberar Pokémon"). Pokémon/
+  Entrenador/Mochila con checkbox `IsIncluded` real; Liberación solo si `CanExclude`.
+  `ExportFileAsync` salta el modal solo si no hay nada de las cuatro fuentes (antes de la
+  entrega 112 ignoraba las liberaciones y exportar pedía el nombre de archivo directo).
 - `ConfirmExportCommand` ahora llama `EditApplyService.ApplyIncluded(...)` antes de
   `PerformExportAsync()` — el SaveFile que se termina escribiendo a disco ya refleja las
   ediciones tildadas.
@@ -1325,3 +1357,8 @@ obsoleto en su redacción original.)_
     iteraciones siguen pegadas sin re-aplicar el delay — útil para escalonar elementos
     idénticos (las 3 hojas voladas del diálogo de Rotom-Ventilador, las 3 gotas de agua del
     de Rotom-Lavadora) sin tener que hacer matemática de wraparound de cues a mano.
+
+39. **Dos carpetas de idiomas.** La UI se traduce con `src/Exxeguttor.UI/i18n/{es,en}.json` **y** `lang/*.json` (11 paquetes) en la raíz del repo. Mirar solo `i18n/` hace creer que hay 2 idiomas; una clave nueva que falte en un paquete cae a inglés y rompe `LangPacksTests` si es `it.json`.
+40. **`SetPartySlotAtIndex` con un Pokémon vacío en un índice < `PartyCount` trunca el equipo** (`PartyCount = índice`). Para quitar a alguien del equipo usar `DeletePartySlot`. En cajas de Gen 1/2 `SetBoxSlotAtIndex` vacío no basta: la lista se reempaqueta al escribir, hay que compactar a mano.
+41. **Un atajo del tipo "si no hay ediciones, exportar directo" tiene que enumerar TODAS las fuentes de cambios** (Pokémon, Entrenador, Mochila, liberaciones). Al sumar una fuente nueva, tocar ese `if` de `ExportFileAsync`, `HasAnyEdits` y `PerformClearEdits`.
+42. **El sandbox no compila la UI** (NU1301/403 al restaurar Avalonia): los cambios de XAML/ViewModels se entregan sin compilar y Erick compila. Revisar a mano bindings (`Classes.x="{Binding ...}"`), firmas de constructores y llamadas nuevas antes de entregar.

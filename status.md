@@ -1588,5 +1588,26 @@ Revisados: selector de especie, Buscar IVs, Recrear, AutoFix, revisión de expor
 - Revisión fresca cada vez (todas tildadas al abrir el modal). Tras reponer, se refrescan cajas/equipo.
 - Archivos: ExportReviewCardViewModel.cs, MainWindowViewModel.cs, EditSessionService.cs (ReleaseRecord.Include, RemoveRelease), PokemonReleaseService.cs (CanExclude, ApplyExclusions), MainWindow.axaml (igual que 112). Reemplaza la entrega 112. No compilado en el sandbox.
 
+## Entrega 114 — Pulido de 3 botones (Moves y Legal)
+- Tab Moves: el botón de editar cada movimiento (x4) usa un icono de lápiz azul (Path vectorial) sobre fondo azul claro con borde y hover/pressed (`Button.move-edit`), en vez del glifo "✎".
+- Selector de movimientos: los chips de filtro (All/Level up/TM/Tutor/Egg…) ahora son `MethodChip` (`Label`, `IsActive`); el activo se ve verde y en negrita (`Button.method-chip.active`), el resto gris con borde. `MoveSelectorViewModel.AvailableMethods` pasó de `List<string>` a `List<MethodChip>`.
+- Tab Legal: el botón "Corregir automáticamente" es una píldora verde con icono de llave inglesa (`Button.autofix`); el click sigue siendo `OnApplyAutoFix`.
+- Sin claves i18n nuevas. Archivos: PokemonStatsView.axaml, MoveSelectorViewModel.cs. No compilado en el sandbox (solo XML bien formado).
+
+## Entrega 115 — Barra de estado con íconos temáticos (mockups/status_bar)
+- Pokébola abstracta de 20 px a la izquierda del mensaje (Voltorb = abrir, Electrode = exportar, suma anillos): reposo (borde gris), abriendo (mitad azul girando 0,6 s), cargado (verde), error (parpadeo rojo/blanco, se calma a los 6 s; el mensaje queda), exportando (azul girando 0,35 s), exportado (verde con anillos).
+- Rotom (sprite 479) a la derecha, solo con save cargado: sin cambios = gris + 60 % de opacidad ("Sin cambios"); con cambios sin exportar = color + resplandor ámbar pulsante ("Cambios sin exportar"). Caja fija 22x20 con recorte (Canvas) para no agrandar la barra (Padding 8,2).
+- `IsDirty` = `HasSaveLoaded && EditSessionService.HasAnyEdits` (ediciones, creaciones y liberaciones), sondeado cada 0,4 s con un DispatcherTimer.
+- VM: `enum StatusIconKind`, `SetIoStatus(kind, key, ...)` para abrir/exportar; `SetStatus` normal deja el ícono en reposo/cargado; `RefreshStatus` (cambio de idioma) no toca el ícono. Errores de exportación usan el mismo parpadeo (el mockup no los diseñaba).
+- Claves nuevas `Status_Edit_Clean`/`Status_Edit_Dirty` en los 13 idiomas (traducciones de Claude, sin revisión nativa). Asset nuevo: `Assets/sprites/pokemon/ui/rotom_gray.png` (Rotom en grises, generado del 479; Avalonia no trae filtro grayscale). `SpriteService.GetStatusRotomGraySprite()`.
+- Archivos: App.axaml, MainWindow.axaml, MainWindowViewModel.cs, SpriteService.cs, es/en.json, lang/*.json, rotom_gray.png. No compilado en el sandbox (solo XML bien formado).
+
+## Entrega 119 — Splash en forma de pokébola (implementado)
+- `SplashWindow.axaml`: tarjeta circular de 340 px (`CornerRadius=170`, `ClipToBounds`) con dos hemisferios LCD (degradado de cortes duros), banda central, wordmark + subtítulo arriba, botón central (84 px) con aro de progreso (`Arc` `ProgressArc`, animado con `DoubleTransition` sobre `SweepAngle`) y punto `ButtonDot` que pasa a verde al terminar, carrusel de etapas abajo (270 px de ancho, texto con wrap a 2 líneas, sin degradados de máscara). La ventana pasa de 520×360 a **520×400** para que la sombra no se corte.
+- `SplashWindow.axaml.cs`: `StageRowHeight` 28 / `StageViewportCenterTop` 34; progreso = renglones mostrados sobre `ExpectedStages = 6` (el mensaje de cierre, `fraction >= 1`, lo completa); el canal de etapas pasa a tupla de 5 (`Complete`).
+- **Corrige un error de compilación de las entregas 116/117**: se había ampliado el tipo del `Channel` a 4 campos sin actualizar `CreateUnbounded` ni `SetStatus`. Esta entrega reemplaza ese archivo.
+- Windows y Linux: usa `TransparencyLevelHint="Transparent"` como antes; si `ActualTransparencyLevel` no es `Transparent` al abrir (sin compositor, escritorio remoto, etc.) se pinta un fondo liso `#C9CDBF` y se quita la sombra, para evitar esquinas negras. Sin claves i18n nuevas.
+- Incluye también `SplashStageItem.cs` y `App.axaml.cs` (entrega 116). No compilado en el sandbox; probar a ojo en Linux y Windows (posiciones de filas/aro).
+
 
 
